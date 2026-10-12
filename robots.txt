@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /*.bak$
+Disallow: /*.log$
+Disallow: /*.tmp$
 
 Sitemap: https://www.starkllm.com/sitemap.xml
-

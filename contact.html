@@ -3,31 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | StarkLLM</title>
-    <meta name="description" content="Contact details and source repository for StarkLLM.">
+    <title>Contact &amp; Support | StarkLLM</title>
+    <meta name="description" content="Get in touch with the StarkLLM open-source team. Contact channels for technical support, bug reports, security disclosures, and project collaboration.">
     <link rel="canonical" href="https://www.starkllm.com/contact.html">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact &amp; Support | StarkLLM">
+    <meta property="og:description" content="Get in touch with the StarkLLM open-source team. Contact channels for technical inquiries, bug reports, and research collaboration.">
+    <meta property="og:url" content="https://www.starkllm.com/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.starkllm.com/assets/logo.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact &amp; Support | StarkLLM">
+    <meta name="twitter:description" content="Reach the maintainers of StarkLLM for inquiries, contributions, and support.">
     <link rel="stylesheet" href="/styles.css?v=7">
     <link rel="icon" href="/favicon.ico?v=7" sizes="any">
     <link rel="icon" type="image/png" href="/assets/logo.png?v=7">
     <script defer src="https://umami.homomorphicprivacy.com/script.js?v=7" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "StarkLLM Contact & Support",
+      "url": "https://www.starkllm.com/contact.html",
+      "description": "Contact channels, support information, and maintainer details for StarkLLM.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "StarkLLM",
+        "url": "https://www.starkllm.com/",
+        "email": "info@starkllm.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Maxstr. 14",
+          "postalCode": "52070",
+          "addressLocality": "Aachen",
+          "addressCountry": "DE"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
     <canvas id="neural-canvas"></canvas>
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="/assets/logo.png?v=7" alt="StarkLLM Logo" class="logo-img">
                 Stark<span class="text-gradient">LLM</span>
             </a>
             <button class="menu-toggle" id="menuToggle">&#9776;</button>
             <nav>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="manual.html">Manual</a></li>
-                    <li><a href="download.html">Download</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product.html">Product</a></li>
+                    <li><a href="/manual.html">Manual</a></li>
+                    <li><a href="/download.html">Download</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html" class="active">Contact</a></li>
                     <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </nav>
@@ -35,18 +68,70 @@
     </header>
 
     <main class="container">
-        <div class="page-header">
-            <h1><span class="text-gradient">Contact</span></h1>
-            <p>Get in touch with the project maintainer.</p>
+        <div class="page-header text-center">
+            <h1><span class="text-gradient">Contact &amp; Community</span></h1>
+            <p>Connect with the maintainers, report issues, or contribute to local-first AI development.</p>
         </div>
 
-        <div class="content-block" style="text-align: center; max-width: 700px; margin: 0 auto;">
-            <h2>Reach Out</h2>
-            <p>If you have questions, feedback, or would like to contribute to the open-source Research Beta, please reach out via email or GitHub.</p>
-            <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; font-size: 1.05rem;">
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="feature-card">
+                <h3>Direct Email Inquiries</h3>
+                <p>For questions regarding software architecture, research collaborations, partnership opportunities, or feedback on local AI performance.</p>
                 <p><strong>Email:</strong> <a href="mailto:info@starkllm.com">info@starkllm.com</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">github.com/homomorphicprivacy/StarkLLM</a></p>
-                <p><strong>Location:</strong> Maxstr. 14, 52070 Aachen, Germany</p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Responses typically within 24–48 hours on business days.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Open-Source Repository</h3>
+                <p>StarkLLM is completely transparent and hosted on GitHub. Submit bug reports, request features, or review the source code.</p>
+                <p><strong>Repository:</strong> <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">github.com/homomorphicprivacy/StarkLLM</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Issue trackers and discussion boards are open for public participation.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Maintainer Location</h3>
+                <p>Maintained by Christian Stark under the Homomorphic Privacy research initiative.</p>
+                <p>
+                    <strong>Address:</strong><br>
+                    Maxstr. 14<br>
+                    52070 Aachen<br>
+                    Germany (Deutschland)
+                </p>
+            </div>
+        </div>
+
+        <div class="content-block" style="max-width: 900px; margin: 0 auto 3rem auto;">
+            <h2>How to Get Assistance</h2>
+            <p>Depending on what you need help with, here are the most effective ways to reach the right resource:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Installation or Setup Issues:</strong> Check our detailed <a href="/manual.html">User Manual</a> first. It covers Docker configuration, Ollama model setup, GPU acceleration, and troubleshooting port conflicts.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Bug Reports:</strong> If you encountered an application crash or unexpected error during document ingestion, please open an issue on <a href="https://github.com/homomorphicprivacy/StarkLLM/issues" target="_blank" rel="noopener">GitHub Issues</a> with system specs and reproducible steps.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Responsible Security Disclosures:</strong> If you discovered a potential local vulnerability, please email us directly at <a href="mailto:info@starkllm.com">info@starkllm.com</a> with subject prefix <code>[Security]</code> before public disclosure.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Hardware &amp; Model Sizing:</strong> Wondering whether your machine can run Qwen, Mistral, or Llama models comfortably? Review our <a href="/tech-local-models.html">Local Models Guide</a> or ask in GitHub Discussions.
+                </li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Is StarkLLM really 100% free and open-source?</h4>
+                    <p style="font-size: 0.95rem;">Yes. StarkLLM is provided under an open-source license. There are no subscriptions, hidden cloud fees, or API paywalls.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Does StarkLLM transmit any prompt data to external servers?</h4>
+                    <p style="font-size: 0.95rem;">Zero. All token generation, vector embeddings, document chunking, and database storage execute locally on your physical machine.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Where can I download the latest release?</h4>
+                    <p style="font-size: 0.95rem;">Visit the <a href="/download.html">Download Page</a> to obtain the official Windows Setup installer and verify SHA-256 integrity checksums.</p>
+                </div>
             </div>
         </div>
     </main>

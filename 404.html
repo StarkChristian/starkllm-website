@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found (404) | StarkLLM</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="/styles.css?v=7">
+    <link rel="icon" href="/favicon.ico?v=7" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=7">
+    <script>
+        // Automatic extensionless redirect (e.g. /download -> /download.html)
+        (function() {
+            var validSlugs = [
+                'product', 'download', 'manual', 'about', 'contact', 'impressum', 'datenschutz',
+                'tech-hybrid-search', 'tech-knowledge-base', 'tech-local-models',
+                'tech-multimodal', 'tech-privacy', 'tech-rag', 'tech-semantic-chunking',
+                'tech-voice', 'tech-workspaces'
+            ];
+            var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+            if (path === 'index') {
+                window.location.replace('/');
+                return;
+            }
+            if (validSlugs.indexOf(path) !== -1) {
+                window.location.replace('/' + path + '.html' + window.location.search + window.location.hash);
+            }
+        })();
+    </script>
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=7" alt="StarkLLM Logo" class="logo-img">
+                Stark<span class="text-gradient">LLM</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product.html">Product</a></li>
+                    <li><a href="/manual.html">Manual</a></li>
+                    <li><a href="/download.html">Download</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 4rem 1rem;">
+        <div class="content-block" style="text-align: center; max-width: 640px; margin: 0 auto; padding: 3rem 2rem;">
+            <p style="font-size: 5rem; font-weight: 800; line-height: 1; margin-bottom: 1rem;" class="text-gradient">404</p>
+            <h1 style="font-size: 2rem; margin-bottom: 1rem;">Page Not Found</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                The page you are looking for doesn't exist, has been moved, or the link may be outdated.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="btn btn-primary" style="padding: 0.8rem 1.6rem; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none;">Return Home</a>
+                <a href="/product.html" class="btn btn-secondary" style="padding: 0.8rem 1.6rem; border-radius: 8px; border: 1px solid var(--border); color: var(--text-primary); text-decoration: none;">View Product</a>
+                <a href="/download.html" class="btn btn-secondary" style="padding: 0.8rem 1.6rem; border-radius: 8px; border: 1px solid var(--border); color: var(--text-primary); text-decoration: none;">Download</a>
+                <a href="/manual.html" class="btn btn-secondary" style="padding: 0.8rem 1.6rem; border-radius: 8px; border: 1px solid var(--border); color: var(--text-primary); text-decoration: none;">User Manual</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=7" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided 'as-is' without warranties.<br>No liability for damages, data loss,<br>or decisions made based on this software.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=7"></script>
+</body>
+</html>
