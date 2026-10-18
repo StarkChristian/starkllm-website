@@ -727,7 +727,8 @@ footer {
 }
 
 .deep-dive-section {
-  padding: 6rem 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -804,6 +805,14 @@ header {
 
 /* --- Tablet breakpoint (≤ 900px) --- */
 @media (max-width: 900px) {
+  .container,
+  section.container,
+  .deep-dive-section.container,
+  [class*="container"] {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
   .manual-container, .tech-content {
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -819,14 +828,47 @@ header {
     max-height: none;
   }
 
-  /* Deep dive grids stack on tablet */
-  .deep-dive-grid {
-    grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+  /* Deep dive grids: stack completely in 1 column, never side-by-side */
+  .deep-dive-grid,
+  .deep-dive-grid.reverse {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    direction: ltr !important;
+    align-items: stretch !important;
   }
 
-  .deep-dive-grid.reverse {
-    direction: ltr;
+  .deep-dive-grid > *,
+  .deep-dive-grid.reverse > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    direction: ltr !important;
+  }
+
+  /* Text & heading first, screenshot directly beneath */
+  .deep-dive-text {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  .deep-dive-visual {
+    width: 100% !important;
+    order: 2 !important;
+  }
+
+  .showcase-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0.8rem !important;
+  }
+
+  .showcase-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 
   .deep-dive-text h2 {
@@ -848,6 +890,15 @@ header {
 
 /* --- Small tablet / large phone (≤ 768px) --- */
 @media (max-width: 768px) {
+  .container,
+  section.container,
+  .deep-dive-section.container,
+  [class*="container"],
+  [style*="padding: 3rem 0"] {
+    padding-left: 1.4rem !important;
+    padding-right: 1.4rem !important;
+  }
+
   h1 { font-size: 2rem; }
   h2 { font-size: 1.6rem; }
 
@@ -905,22 +956,41 @@ header {
 
   /* Deep dive sections less vertical padding */
   .deep-dive-section {
-    padding: 3rem 0;
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  .deep-dive-text h2 {
+    font-size: 1.85rem !important;
+    margin-bottom: 1rem !important;
   }
 
   .deep-dive-text p {
-    font-size: 1rem;
+    font-size: 1.05rem !important;
+    line-height: 1.7 !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .deep-dive-list {
+    padding-left: 0 !important;
+  }
+
+  .deep-dive-list li {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    padding-left: 1.8rem !important;
+    margin-bottom: 0.85rem !important;
   }
 
   /* Glass panels breathe on mobile */
   .glass-panel {
-    padding: 1.8rem 1.2rem;
+    padding: 1.8rem 1.3rem !important;
   }
 
   /* Showcase frames */
   .showcase-frame {
-    padding: 0.5rem;
-    border-radius: 10px;
+    padding: 0.6rem !important;
+    border-radius: 10px !important;
   }
 
   /* Tech pages sidebar → full width */
@@ -972,13 +1042,19 @@ header {
 
 /* --- Phone breakpoint (≤ 600px) --- */
 @media (max-width: 600px) {
+  .container,
+  section.container,
+  .deep-dive-section.container,
+  [class*="container"],
+  [style*="padding: 3rem 0"],
+  [style*="padding-bottom: 3rem"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.4rem; }
   h3 { font-size: 1.15rem; }
-
-  .container {
-    padding: 0 1rem;
-  }
 
   main { padding: 1.5rem 0; }
 
@@ -1011,13 +1087,26 @@ header {
     text-align: center;
   }
 
-  /* Deep dive text */
+  /* Deep dive text on mobile */
+  .deep-dive-grid,
+  .deep-dive-grid.reverse {
+    gap: 1.75rem !important;
+  }
+
   .deep-dive-text h2 {
-    font-size: 1.5rem;
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .deep-dive-text p {
+    font-size: 0.98rem !important;
+    line-height: 1.6 !important;
   }
 
   .deep-dive-list li {
-    font-size: 0.95rem;
+    font-size: 0.92rem !important;
+    padding-left: 1.6rem !important;
+    line-height: 1.55 !important;
   }
 
   /* Buttons: full-width on very small screens */
@@ -1027,6 +1116,10 @@ header {
   }
 
   /* Comparison cards */
+  .glass-panel {
+    padding: 1.5rem 1.15rem !important;
+  }
+
   .glass-panel h3 {
     font-size: 1.15rem;
   }
@@ -1107,11 +1200,17 @@ header {
 
 /* --- Small phone (≤ 400px) --- */
 @media (max-width: 400px) {
-  h1 { font-size: 1.5rem; }
-
-  .container {
-    padding: 0 0.75rem;
+  .container,
+  section.container,
+  .deep-dive-section.container,
+  [class*="container"],
+  [style*="padding: 3rem 0"],
+  [style*="padding-bottom: 3rem"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
+
+  h1 { font-size: 1.5rem; }
 
   .nav-container {
     height: 60px;
@@ -1137,7 +1236,7 @@ header {
   }
 
   .glass-panel {
-    padding: 1.3rem 0.9rem;
+    padding: 1.3rem 0.95rem !important;
     border-radius: 10px;
   }
 
