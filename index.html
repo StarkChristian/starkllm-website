@@ -87,19 +87,23 @@
                 StarkLLM is a private Windows research beta for technical users to chat with local documents and a personal Knowledge Base via Ollama. Built for developers, researchers, and privacy-conscious professionals who want local RAG running on their own Docker + Ollama stack.
             </p>
 
-            <!-- 2. First screen: 3 Bullets max -->
-            <ul style="list-style: none; padding: 0; margin: 0 auto 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; text-align: left; max-width: 850px;">
-                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
-                    <strong style="color: var(--text-primary);">&#128196; Local Documents:</strong><br>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Upload PDFs &amp; text files to isolated Workspaces.</span>
+            <!-- 2. First screen: 4 Core Architectural Strengths -->
+            <ul style="list-style: none; padding: 0; margin: 0 auto 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; text-align: left; max-width: 920px;">
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #c084fc;">🎯 Deep Hybrid RAG:</strong><br>
+                    <span style="font-size: 0.86rem; color: var(--text-secondary);">BM25 + Vector embeddings + TinyBERT Cross-Encoder Reranker for pinpoint citation accuracy.</span>
                 </li>
-                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
-                    <strong style="color: var(--text-primary);">&#128218; Knowledge Base:</strong><br>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Map a permanent folder on your PC for cross-chat RAG. Register the folder with <code>start.exe --add-folder</code> or [A] in the launcher. Sync is interval (~1 minute), not a kernel watcher. The web UI rejects raw C:\ paths.</span>
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #38bdf8;">🖥️ Native Desktop v2.0.0:</strong><br>
+                    <span style="font-size: 0.86rem; color: var(--text-secondary);">Runs in an isolated, sleek desktop window (Cursor/Claude style) with splash screen and zero browser tabs.</span>
                 </li>
-                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.2rem; border-radius: 8px; flex: 1; min-width: 240px;">
-                    <strong style="color: var(--text-primary);">&#128274; Strict Zero-Cloud:</strong><br>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Runs 100% on your hardware via Docker &amp; Ollama.</span>
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #4ade80;">⚡ Local Code Sandbox:</strong><br>
+                    <span style="font-size: 0.86rem; color: var(--text-secondary);">Safe in-process Python execution environment with AST validation and timeout protection.</span>
+                </li>
+                <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <strong style="color: #d4af37;">🔌 Local OpenAI Server:</strong><br>
+                    <span style="font-size: 0.86rem; color: var(--text-secondary);">Standard <code>/v1/chat/completions</code> endpoint to connect Cursor, Claude Code, and external tools.</span>
                 </li>
             </ul>
 
@@ -207,60 +211,60 @@
                 <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0.5rem auto 0;">An honest look at how StarkLLM fits into the local AI landscape alongside other popular open solutions.</p>
             </div>
 
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                <!-- AnythingLLM / Jan -->
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                <!-- LM Studio -->
                 <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Desktop App (.exe)</span>
-                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">AnythingLLM / Jan</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
-                            <strong>Easier Installation:</strong> Packaged as a single installer (.exe) with bundled local inference. Best if you want a zero-configuration consumer desktop application without installing Docker.
+                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Inference GUI</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">LM Studio</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+                            <strong>Model Runner &amp; Tuning:</strong> Superb for downloading GGUFs from Hugging Face and fine-tuning GPU layer offloading. However, it lacks deep multi-document RAG, persistent workspace knowledge bases, and safe code execution.
                         </p>
                     </div>
-                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
-                        Best for: Non-technical users seeking a one-click desktop app.
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #71717a;">
+                        Best for: Testing raw GGUFs without document grounding.
                     </div>
                 </div>
 
-                <!-- Hermes (NousResearch) -->
+                <!-- AnythingLLM -->
                 <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Fine-Tuned Model</span>
-                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">Hermes (NousResearch)</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
-                            <strong>Specialized Model Family:</strong> A family of fine-tuned models excelling at structured output, function calling, and agentic tasks. You can run Hermes models inside StarkLLM via Ollama.
+                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Basic RAG App</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">AnythingLLM</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+                            <strong>Document Chat:</strong> Popular for desktop RAG, but relies on naive chunking without cross-encoder reranking, often causing retrieval hallucinations on dense technical documents. Runs inside a heavier web-style dashboard.
                         </p>
                     </div>
-                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
-                        Best for: Developers who need strong tool-use &amp; structured output from a local model.
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #71717a;">
+                        Best for: Casual document chats where retrieval precision isn't mission-critical.
                     </div>
                 </div>
 
-                <!-- Open WebUI -->
+                <!-- Jan.ai -->
                 <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Server / Multi-User</span>
-                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">Open WebUI</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
-                            <strong>Feature-Rich Web Platform:</strong> Versatile, feature-dense web interface inspired by modern web apps. Primarily designed for server deployments, multi-user teams, and multi-model routing.
+                        <span style="background: rgba(255,255,255,0.1); color: #a1a1aa; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Minimalist Chat</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">Jan.ai</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+                            <strong>Open Source Clean Chat:</strong> A lightweight, zero-telemetry ChatGPT clone. However, it lacks advanced hybrid RAG, cross-encoder reranking, in-process code sandboxing, and multimodal document analysis.
                         </p>
                     </div>
-                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.88rem; color: #71717a;">
-                        Best for: Self-hosted team servers &amp; power users needing deep web customization.
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: #71717a;">
+                        Best for: Simple zero-telemetry chat without document workflows.
                     </div>
                 </div>
 
                 <!-- StarkLLM -->
-                <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.04); display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="glass-panel" style="padding: 1.8rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.4); background: rgba(212, 175, 55, 0.05); display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <span style="background: rgba(212, 175, 55, 0.2); color: #d4af37; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;">Windows Research Beta</span>
-                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.3rem;">StarkLLM</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
-                            <strong>Local RAG on Your Stack:</strong> Transparent, local-first RAG and persistent folder Knowledge Base running directly on your own infrastructure (Docker Desktop + Ollama) for Windows technical users.
+                        <span style="background: rgba(212, 175, 55, 0.2); color: #d4af37; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; text-transform: uppercase; font-weight: 700;">★ Definitive Local AI</span>
+                        <h3 style="color: #fff; margin: 0.8rem 0 0.5rem; font-size: 1.35rem;">StarkLLM v2.0.0</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5;">
+                            <strong>The Complete Local AI Workstation:</strong> Native Windows desktop app (.exe installer), Hybrid RAG with TinyBERT Cross-Encoder Reranking, Safe Python Code Sandbox, Local OpenAI Server (/v1), and 100% Zero-Cloud privacy.
                         </p>
                     </div>
-                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.88rem; color: #d4af37;">
-                        Best for: Windows developers &amp; researchers who want full control over containers, local vectors, and host Ollama models.
+                    <div style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(212, 175, 55, 0.2); font-size: 0.88rem; color: #d4af37; font-weight: 600;">
+                        Best for: Developers, researchers &amp; privacy-critical professionals who demand verified accuracy.
                     </div>
                 </div>
             </div>
