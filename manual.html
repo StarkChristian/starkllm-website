@@ -90,9 +90,16 @@
                 <li><a href="#workspace-vs-kb">14. Workspace vs Knowledge Base</a></li>
                 <li><a href="#switching-models">15. Switching models</a></li>
                 <li><a href="#voice">16. Voice features</a></li>
-                <li><a href="#troubleshooting">17. Troubleshooting</a></li>
-                <li><a href="#limitations">18. Limitations</a></li>
-                <li><a href="#faq">19. FAQ</a></li>
+                <li><a href="#local-tools">17. Using In-Process Local Tools (MCP Host)</a></li>
+                <li><a href="#themes">18. Customizing Themes &amp; Appearance</a></li>
+                <li><a href="#citations">19. Honest Citations &amp; Locators</a></li>
+                <li><a href="#folders">20. Chat Folders &amp; Organization</a></li>
+                <li><a href="#export">21. Multi-Format Conversation Export</a></li>
+                <li><a href="#languages">22. Internationalization &amp; Language Roadmap</a></li>
+                <li><a href="#telemetry">23. Hardware Telemetry &amp; VRAM Monitor</a></li>
+                <li><a href="#troubleshooting">24. Troubleshooting</a></li>
+                <li><a href="#limitations">25. Limitations</a></li>
+                <li><a href="#faq">26. FAQ</a></li>
             </ul>
         </aside>
 
@@ -395,8 +402,111 @@
                     handled locally without sending audio to external clouds.</p>
             </section>
 
+            <section id="local-tools">
+                <h2>17. Using In-Process Local Tools (MCP Host)</h2>
+                <p>Phase 2 adds safe, in-process read-only tool calling. When an open-weight model determines that it needs more information to fulfill your request, it issues a structured tool call. StarkLLM provides three built-in tools:</p>
+                <ul>
+                    <li><code>list_workspace_files</code>: Discovers document names, file sizes, chunk counts, and upload timestamps in your current workspace without filesystem escapes.</li>
+                    <li><code>search_local_kb</code>: Executes a hybrid vector and BM25 search over your global Knowledge Base to find matching passages.</li>
+                    <li><code>fetch_cited_chunk</code>: Retrieves the exact stored passage text for any citation locator directly from Chroma collections.</li>
+                </ul>
+
+                <h3>Human-in-the-Loop Confirmation</h3>
+                <p>StarkLLM requires manual confirmation for every tool execution. When the model invokes a tool:</p>
+                <ol>
+                    <li>A styled confirmation card appears in the chat stream showing the tool name and arguments.</li>
+                    <li>You can review the arguments, click into parameter fields to adjust values (e.g. refining a search query or increasing <code>top_k</code>), and click <strong>Approve &amp; Execute</strong>.</li>
+                    <li>If you prefer the model to proceed without running the tool, click <strong>Reject</strong>. The pending call token is cancelled, and your chat session continues uninterrupted.</li>
+                </ol>
+
+                <div class="alert info">
+                    <h4>Security Architecture</h4>
+                    <p>Tool calls execute via <code>POST /api/v1/mcp/execute</code> with single-use server-side validation tokens. Unregistered direct calls are rejected with HTTP 403 Forbidden. Fenced <code>```tool_call```</code> patterns inside retrieved document chunks are automatically stripped before prompt injection, eliminating malicious RAG execution vectors.</p>
+                </div>
+            </section>
+
+            <section id="themes">
+                <h2>18. Customizing Themes &amp; Appearance</h2>
+                <p>StarkLLM includes eight hand-crafted color palettes designed for comfort across day and night sessions:</p>
+                <ul>
+                    <li><strong>Cyberpunk Rose:</strong> High-energy pink, rose, and magenta neon highlights.</li>
+                    <li><strong>OLED Pitch Black:</strong> Absolute #000000 true black backgrounds optimized for OLED screens.</li>
+                    <li><strong>Liquid Glass:</strong> Translucent glassmorphism with frosted blur layers and glowing borders.</li>
+                    <li><strong>Matrix Emerald:</strong> Terminal-inspired cyberpunk emerald green.</li>
+                    <li><strong>Sunset Amber:</strong> Warm volcanic amber and orange gradient accents.</li>
+                    <li><strong>Nordic Frost:</strong> Cool cyan and arctic blue minimal tones.</li>
+                    <li><strong>Midnight Indigo:</strong> Deep cosmic purple and violet (default).</li>
+                    <li><strong>Daylight Minimal:</strong> Clean, crisp light mode with high daylight contrast.</li>
+                </ul>
+
+                <h3>How to Change Themes</h3>
+                <p>You can switch themes in two ways:</p>
+                <ul>
+                    <li><strong>Quick Switcher:</strong> Click the Palette icon (&#127912;) at the bottom of the left sidebar. A popover opens immediately; click any theme to apply it instantly.</li>
+                    <li><strong>Settings Gallery:</strong> Open Settings from the sidebar, navigate to <strong>Appearance</strong>, and browse all 8 theme cards with live swatch dots, gradient bars, and descriptions.</li>
+                </ul>
+                <p>Your active theme is automatically remembered across browser tabs and system restarts via client-side storage.</p>
+            </section>
+
+            <section id="citations">
+                <h2>19. Honest Citations &amp; Locators</h2>
+                <p>Hallucinated citations are a significant issue in many RAG systems. StarkLLM eliminates guesswork with verifiable, honest locators flowing from ingestion to display:</p>
+                <ul>
+                    <li><strong>PDF Documents:</strong> Citations display the 1-indexed source page number: <code>report.pdf (Page 4)</code>.</li>
+                    <li><strong>DOCX Documents:</strong> Citations group content by structural headings: <code>contract.docx (Section: 'Termination' Chunk 2)</code>.</li>
+                    <li><strong>Text &amp; Markdown:</strong> Citations reference the precise semantic partition: <code>notes.md (Chunk 5)</code>.</li>
+                    <li><strong>Images &amp; Vision:</strong> Scanned documents and images carry an <code>Image</code> locator.</li>
+                </ul>
+                <p>Headers are clearly formatted above AI responses, allowing you to cross-examine any claim against the original source file on your machine.</p>
+            </section>
+
+            <section id="folders">
+                <h2>20. Chat Folders &amp; Organization</h2>
+                <p>As your research expands, StarkLLM keeps your workspace clean and organized with sidebar conversation folders:</p>
+                <ul>
+                    <li><strong>Create Folders:</strong> Click the <strong>+ New Folder</strong> icon in the sidebar conversation list to group sessions by project, client, or topic (e.g., "Financial Audits", "Legal Briefs", "Code Reviews").</li>
+                    <li><strong>Drag or Assign:</strong> Assign any active conversation into a folder via the three-dot context menu or folder selection dropdown.</li>
+                    <li><strong>Collapsible Tree:</strong> Expand or collapse folders to keep focus on your active stream without visual clutter.</li>
+                    <li><strong>Folder Filtering:</strong> Search conversations within a specific folder or across the entire workspace in real time.</li>
+                </ul>
+            </section>
+
+            <section id="export">
+                <h2>21. Multi-Format Conversation Export</h2>
+                <p>Never lose your insights. StarkLLM provides one-click export into four standardized formats directly from the chat header:</p>
+                <ul>
+                    <li><strong>Markdown (.md):</strong> Formatted with full headings, code fences, source citations, timestamps, word count badges, and generation speed statistics.</li>
+                    <li><strong>Clean JSON (.json):</strong> Structured machine-readable export including message metadata, prompt parameters, citations, and model details for data pipelines.</li>
+                    <li><strong>Self-Contained HTML (.html):</strong> Standalone styled document with embedded dark mode aesthetics, perfect for sharing or browser-based "Print to PDF".</li>
+                    <li><strong>Plain Text (.txt):</strong> Stripped unformatted text for immediate copying into emails, notes, or scratchpads.</li>
+                </ul>
+            </section>
+
+            <section id="languages">
+                <h2>22. Internationalization &amp; Language Roadmap</h2>
+                <p>StarkLLM's internationalization architecture is prioritized according to global internet user demographics to serve users worldwide systematically:</p>
+                <ul>
+                    <li><strong>Default Language:</strong> English (en) &mdash; 1,500M+ users worldwide. Fully active and verified across all features and document parsers.</li>
+                    <li><strong>Tier 1 Roadmap:</strong> Chinese (zh, 1,100M+ users) and Spanish (es, 550M+ users). Core localization in development.</li>
+                    <li><strong>Tier 2 Roadmap:</strong> French (fr, 320M+ users) and German (de, 180M+ users). High-demand enterprise European localizations.</li>
+                    <li><strong>Tier 3 Roadmap:</strong> Arabic (ar, 270M+ users) and Persian / Farsi (fa, 80M+ users). Bidirectional (RTL) layout support and specialized font rendering.</li>
+                    <li><strong>Tier 4 Roadmap:</strong> Portuguese (pt, 260M+ users), Russian (ru, 250M+ users), and Japanese (ja, 125M+ users).</li>
+                </ul>
+                <p>All interface controls, settings, and documentation remain completely in English, with zero regional script clutter until an explicit language selection is enabled by the user.</p>
+            </section>
+
+            <section id="telemetry">
+                <h2>23. Hardware Telemetry &amp; VRAM Monitor</h2>
+                <p>Local AI requires clear visibility into system resources. The StarkLLM Dashboard provides real-time hardware telemetry:</p>
+                <ul>
+                    <li><strong>VRAM &amp; GPU Utilization:</strong> Monitor allocated video memory to ensure your chosen model (3B, 7B, 14B) fits comfortably within your GPU VRAM without spilling into system RAM.</li>
+                    <li><strong>System Health:</strong> Instant status indicators for the FastAPI backend, ChromaDB vector store, and Ollama inference daemon.</li>
+                    <li><strong>Workspace Metrics:</strong> Total indexed chunks, active documents, total conversations, and rapid-access links to your recent chat sessions.</li>
+                </ul>
+            </section>
+
             <section id="troubleshooting">
-                <h2>17. Troubleshooting</h2>
+                <h2>24. Troubleshooting</h2>
                 <ul>
                     <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system
                         tray. Ollama runs natively on the host, and the Docker container communicates via
@@ -413,7 +523,7 @@
             </section>
 
             <section id="limitations">
-                <h2>18. Limitations</h2>
+                <h2>25. Limitations</h2>
                 <ul>
                     <li>Initial setup requires installing Docker Desktop and Ollama.</li>
                     <li>Response speed and throughput depend on your local hardware.</li>
@@ -423,7 +533,7 @@
             </section>
 
             <section id="faq">
-                <h2>19. Frequently Asked Questions</h2>
+                <h2>26. Frequently Asked Questions</h2>
 
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data

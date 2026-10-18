@@ -231,7 +231,27 @@
                 <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
                     <img src="/assets/LLM20242.png?v=9" alt="StarkLLM Multi-Turn Conversation" class="showcase-img zoomable-img" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 4: Continuous Multi-Turn RAG</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Engage in multi-turn discussions exploring details across your private document sets.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Engage in multi-turn discussions exploring details with honest page citations.</p>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
+                    <div style="background: #0a0a0c; border: 1px solid rgba(140, 20, 252, 0.3); border-radius: 6px; padding: 1.2rem; font-family: monospace; color: #c084fc; font-size: 0.82rem; line-height: 1.5; height: 210px; overflow: hidden;">
+                        <span style="color: #4ade80;">&#9874;&#65039; tool_call: search_local_kb</span><br>
+                        <span style="color: #a1a1aa;">// Human approval gate</span><br><br>
+                        {<br>
+                        &nbsp;&nbsp;"query": "security policy",<br>
+                        &nbsp;&nbsp;"top_k": 3<br>
+                        }<br><br>
+                        <span style="color: #4ade80; border: 1px solid #4ade80; padding: 2px 6px; border-radius: 4px;">&#10003; Approved</span>
+                    </div>
+                    <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 5: Safe Local Tools (Phase 2)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Review, edit, and approve in-process model tool calls directly in the chat.</p>
+                </div>
+
+                <div class="glass-panel" style="padding: 1.2rem; border-radius: 10px;">
+                    <img src="/assets/Settings.png?v=9" alt="StarkLLM Theme Gallery" class="showcase-img zoomable-img" style="width: 100%; height: 210px; object-fit: cover; border-radius: 6px; border: 1px solid #333;">
+                    <h4 style="color: #fff; margin-top: 0.8rem; font-size: 1.05rem;">Step 6: 8 Handcrafted Themes</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 0;">Hot-swap between OLED Pitch Black, Cyberpunk Rose, Liquid Glass, and more.</p>
                 </div>
             </div>
 

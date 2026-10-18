@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Process Local Tools &amp; MCP Host | StarkLLM</title>
+    <meta name="description" content="Learn how StarkLLM performs safe in-process local tool calling (MCP Host) with human confirmation, execution gates, and prompt injection defense.">
+    <link rel="canonical" href="https://www.starkllm.com/tech-local-tools.html">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="In-Process Local Tools &amp; MCP Host | StarkLLM">
+    <meta property="og:description" content="Safe local tool calling architecture with human-in-the-loop confirmation, execution gates, and zero cloud reliance.">
+    <meta property="og:url" content="https://www.starkllm.com/tech-local-tools.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://www.starkllm.com/assets/logo.png">
+    <link rel="stylesheet" href="/styles-v9.css">
+    <link rel="icon" href="/favicon.ico?v=9" sizes="any">
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=9">
+    <script defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
+</head>
+<body>
+    <canvas id="neural-canvas"></canvas>
+    <header>
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/logo.png?v=9" alt="StarkLLM Logo" class="logo-img">
+                Stark<span class="text-gradient">LLM</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle">&#9776;</button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/product.html">Product</a></li>
+                    <li><a href="/manual.html">Manual</a></li>
+                    <li><a href="/download.html">Download</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="tech-header text-center">
+            <h1>In-Process Local Tools <span class="text-gradient">(MCP Host)</span></h1>
+            <p>Empowering local LLMs with safe, read-only tools gated by explicit user confirmation.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="tool-preview-panel" style="margin-bottom: 2.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.6rem;">
+                        <span class="tool-header-tag">&#9874;&#65039; tool_call: search_local_kb</span>
+                        <span class="tool-badge-status">&#10003; Awaiting Approval</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: #a1a1aa; margin-bottom: 0.5rem;">// Human-in-the-loop review card rendered directly in chat:</div>
+                    <pre style="background: rgba(0,0,0,0.6); padding: 0.8rem; border-radius: 6px; color: #38bdf8; overflow-x: auto; font-size: 0.84rem; margin-bottom: 1rem;"><code>{
+  "query": "quarterly revenue breakdown",
+  "top_k": 3
+}</code></pre>
+                    <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
+                        <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.82rem;">Reject</span>
+                        <span style="background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.82rem; font-weight: 700;">&#10003; Approve &amp; Execute</span>
+                    </div>
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>The In-Process Local Tool Host (Phase 2) allows the running AI model to request specific actions—such as listing active workspace documents, performing hybrid search over personal archives, or fetching exact citation chunks—while requiring your manual approval before any action takes place.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Standard LLM chats are passive: they can only respond using whatever initial text was supplied in the prompt. When an AI needs to clarify which files exist in your workspace or wants to retrieve a cited passage to verify its facts, tool calling gives it an active, structured way to request that information without guessing.</p>
+                
+                <h2>3. What Breaks Without Safe Tool Calling</h2>
+                <p>Without an in-process execution gate, tool calling is either completely disabled (forcing the model to hallucinate details it cannot retrieve) or dangerously unmonitored (executing system commands or external network queries without user awareness or consent).</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM provides a strictly scoped, local-first tool system engineered for research privacy:</p>
+                <ul>
+                    <li><strong>In-Process FastAPI Host:</strong> Tool registration and execution occur entirely inside the local backend container. No external RPC networks or third-party servers are contacted.</li>
+                    <li><strong>Three Built-in Read-Only Tools:</strong>
+                        <ul style="margin-top: 0.5rem;">
+                            <li><code>list_workspace_files</code>: Tenant-isolated document inspection (names, sizes, chunk counts).</li>
+                            <li><code>search_local_kb</code>: Hybrid vector and BM25 search across your personal Knowledge Base.</li>
+                            <li><code>fetch_cited_chunk</code>: Retrieves the exact stored passage text for a citation locator from Chroma collections.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Server-Side Execution Gate:</strong> Direct invocation of <code>POST /api/v1/mcp/execute</code> requires a valid single-use token registered when the model emits a tool call. Direct calls without pending tokens are rejected with HTTP 403 Forbidden.</li>
+                    <li><strong>Human-in-the-Loop Cards:</strong> When a tool call is generated, execution pauses. An interactive card appears in the UI displaying the tool name and arguments. You can edit the arguments, approve execution, or cancel the call without breaking the chat session.</li>
+                    <li><strong>RAG Prompt Injection Defense:</strong> Vector search excerpts containing embedded tool delimiters (<code>```tool_call</code>) are sanitized before prompt formatting so malicious document passages cannot trick the UI into triggering tool executions.</li>
+                </ul>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>You maintain 100% control over model actions. You can inspect exactly what query the model intends to run, correct any misspelled parameters in real time, and verify citations against genuine vector passages.</p>
+                
+                <h2>6. Explicit Non-Goals &amp; Safety Boundaries</h2>
+                <p>StarkLLM strictly rejects arbitrary shell execution, file system writes, and external web access. Your machine's OS remains safe and isolated.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into the architectural details and user workflows.</p>
+                    <a href="/manual.html#chat" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">User Manual Guide</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center; margin-bottom: 1rem;">View All Technologies</a>
+                    <a href="/tech-themes.html" class="btn btn-outline" style="width: 100%; text-align: center;">Visual Themes Guide</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="/assets/logo.png?v=9" alt="StarkLLM" class="footer-logo">
+                    <span class="footer-brand-name">StarkLLM</span>
+                </div>
+                <p>A free, open-source project.</p>
+                <p>Windows Research Beta</p>
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #71717a;">Provided 'as-is' without warranties.<br>No liability for damages, data loss,<br>or decisions made based on this software.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Related Projects</h4>
+                <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">GitHub Repository</a>
+                <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Christian Stark. Provided "as is" with no warranty or liability.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js?v=9"></script>
+</body>
+</html>
