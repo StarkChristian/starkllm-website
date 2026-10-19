@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-multimodal.head.html?raw';
+import main from '../content-html/tech-multimodal.main.html?raw';
+---
+<Layout title={"Multimodal Documents | StarkLLM"} headExtra={head} path="/tech-multimodal.html">
+  <Fragment set:html={main} />
+</Layout>

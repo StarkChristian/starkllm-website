@@ -1,0 +1,44 @@
+---
+import '../styles/legacy.css';
+import '../styles/tokens.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  /** Raw <meta>/<link>/JSON-LD tags carried over from the legacy page head (description, canonical, OG, ...). */
+  headExtra?: string;
+  description?: string;
+  canonical?: string;
+  lang?: Lang;
+  /** Path of this page, used for the active nav item and the language switch. */
+  path?: string;
+  alternates?: { hreflang: string; href: string }[];
+}
+const { title, headExtra = '', description, canonical, lang = 'en', path = Astro.url.pathname, alternates = [] } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <Fragment set:html={headExtra} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <link rel="icon" href="/favicon.ico?v=9" sizes="any" />
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=9" />
+    <script is:inline defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
+  </head>
+  <body>
+    <canvas id="neural-canvas"></canvas>
+    <Header lang={lang} path={path} />
+    <slot />
+    <Footer lang={lang} />
+    <script>
+      import '../scripts/site.js';
+    </script>
+  </body>
+</html>

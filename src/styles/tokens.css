@@ -1,0 +1,19 @@
+/* Design tokens for the redesign (Direction A: dark cinematic).
+   Legacy markup does not use these yet; Phase 3 migrates components onto them. */
+:root {
+  --c-bg: #07060b;
+  --c-surface: #100e18;
+  --c-surface-2: #171425;
+  --c-line: #272238;
+  --c-fg: #f2eefb;
+  --c-muted: #9d96b6;
+  --c-violet: #8c14fc;
+  --c-violet-soft: #b777ff;
+  --c-gold: #d4af37;
+  --font-display: 'Syne', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+.footer-disclaimer { margin-top: 1rem; font-size: 0.8rem; color: #71717a; }
+.lang-switch a { font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--c-line); border-radius: 4px; padding: 0.15rem 0.45rem; }

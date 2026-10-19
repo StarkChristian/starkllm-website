@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-local-tools.head.html?raw';
+import main from '../content-html/tech-local-tools.main.html?raw';
+---
+<Layout title={"In-Process Local Tools & MCP Host | StarkLLM"} headExtra={head} path="/tech-local-tools.html">
+  <Fragment set:html={main} />
+</Layout>

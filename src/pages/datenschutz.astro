@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/datenschutz.head.html?raw';
+import main from '../content-html/datenschutz.main.html?raw';
+---
+<Layout title={"Datenschutzerklärung | StarkLLM"} headExtra={head} path="/datenschutz.html">
+  <Fragment set:html={main} />
+</Layout>

@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-rag.head.html?raw';
+import main from '../content-html/tech-rag.main.html?raw';
+---
+<Layout title={"Retrieval-Augmented Generation (RAG) | StarkLLM"} headExtra={head} path="/tech-rag.html">
+  <Fragment set:html={main} />
+</Layout>

@@ -1,0 +1,41 @@
+<main class="container">
+        <div class="tech-header text-center">
+            <h1>Global <span class="text-gradient">Knowledge Base</span></h1>
+            <p>Your personal, persistent reference library.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/KnowledgeBase.png" alt="Global Knowledge Base | StarkLLM" class="showcase-img zoomable-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>The Global Knowledge Base is a persistent vector index of documents mapped directly from a designated local folder on your Windows PC.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Professionals often have a core set of reference material (SOPs, code snippets, research papers) that they need to access constantly across multiple different projects.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>Without a global base, you would have to manually re-upload the same reference PDFs into every single new workspace you create, duplicating data and wasting time.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM polls a mapped local directory at regular intervals (approximately every minute). It recursively extracts and embeds all supported text files and PDFs, storing them in a dedicated global collection in ChromaDB. New or modified files are re-indexed automatically on the next poll cycle.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>You have a single source of truth that is automatically available to query from any chat session, regardless of your current workspace.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>You map your Obsidian markdown vault to StarkLLM. You can now ask questions about your personal notes while simultaneously analyzing a newly uploaded PDF in a fresh workspace.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>

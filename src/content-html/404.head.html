@@ -1,0 +1,23 @@
+<meta name="robots" content="noindex, follow">
+
+
+
+<script>
+    // Automatic extensionless redirect (e.g. /download -> /download.html)
+    (function() {
+        var validSlugs = [
+            'product', 'download', 'manual', 'about', 'contact', 'impressum', 'datenschutz',
+            'tech-hybrid-search', 'tech-knowledge-base', 'tech-local-models',
+            'tech-multimodal', 'tech-privacy', 'tech-rag', 'tech-semantic-chunking',
+            'tech-voice', 'tech-workspaces'
+        ];
+        var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+        if (path === 'index') {
+            window.location.replace('/');
+            return;
+        }
+        if (validSlugs.indexOf(path) !== -1) {
+            window.location.replace('/' + path + '.html' + window.location.search + window.location.hash);
+        }
+    })();
+</script>

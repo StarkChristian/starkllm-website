@@ -1,0 +1,41 @@
+<main class="container">
+        <div class="tech-header text-center">
+            <h1>Privacy-First <span class="text-gradient">Architecture</span></h1>
+            <p>Local-first architecture. Core workflows stay on your PC.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/privacy.png" alt="Privacy & Architecture | StarkLLM" class="showcase-img zoomable-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>After Docker images and model weights are on the machine, core workflows run fully offline with zero telemetry. The architecture relies on Docker to containerize the database and backend, keeping all data on your hardware.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Enterprise data, legal briefs, and personal research are highly sensitive. Cloud AI providers often use user data to train future models. A local-first architecture helps mitigate this risk.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>Using cloud-based AI wrappers means your proprietary data is transmitted across the internet. A single data breach at the provider level exposes your confidential information.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>The frontend is a static web app communicating with a local FastAPI backend, which reads from a local SQLite database and a local ChromaDB vector store. Everything runs within isolated Docker containers on your host network.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>Alignment with privacy-conscious data governance practices, because core data processing is designed to stay on your local device.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>Once initial setup and model weights are downloaded, you can run StarkLLM on a laptop with Wi-Fi physically disabled (offline mode), and the entire system—document ingestion, local vector search, and LLM inference—functions 100% offline without any internet connection.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>

@@ -1,0 +1,30 @@
+---
+import { ui, localePath, type Lang } from '../i18n/ui';
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const f = ui[lang].footer;
+---
+<footer>
+  <div class="container footer-content">
+    <div class="footer-col">
+      <div class="footer-brand">
+        <img src="/assets/logo.png?v=9" alt="StarkLLM" class="footer-logo" />
+        <span class="footer-brand-name">StarkLLM</span>
+      </div>
+      <p>{f.tagline1}</p>
+      <p>{f.tagline2}</p>
+      <p class="footer-disclaimer">{f.disclaimer.map((l, i) => (<>{l}{i < f.disclaimer.length - 1 && <br />}</>))}</p>
+    </div>
+    <div class="footer-col">
+      <h4>{f.related}</h4>
+      <a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">{f.repo}</a>
+      <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>{f.legal}</h4>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href={localePath(lang, '/contact.html')}>{f.contact}</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>{f.bottom}</p></div>
+</footer>

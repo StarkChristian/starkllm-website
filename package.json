@@ -1,0 +1,15 @@
+{
+  "name": "starkllm-website",
+  "private": true,
+  "type": "module",
+  "version": "3.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check-links": "python -I tools/check_links.py --root dist"
+  },
+  "dependencies": {
+    "astro": "^7.4.1"
+  }
+}

@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/about.head.html?raw';
+import main from '../content-html/about.main.html?raw';
+---
+<Layout title={"About | StarkLLM"} headExtra={head} path="/about.html">
+  <Fragment set:html={main} />
+</Layout>

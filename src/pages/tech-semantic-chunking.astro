@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-semantic-chunking.head.html?raw';
+import main from '../content-html/tech-semantic-chunking.main.html?raw';
+---
+<Layout title={"Semantic Chunking | StarkLLM"} headExtra={head} path="/tech-semantic-chunking.html">
+  <Fragment set:html={main} />
+</Layout>

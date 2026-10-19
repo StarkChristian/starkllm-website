@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-privacy.head.html?raw';
+import main from '../content-html/tech-privacy.main.html?raw';
+---
+<Layout title={"Privacy & Architecture | StarkLLM"} headExtra={head} path="/tech-privacy.html">
+  <Fragment set:html={main} />
+</Layout>

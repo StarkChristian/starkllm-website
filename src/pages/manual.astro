@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/manual.head.html?raw';
+import main from '../content-html/manual.main.html?raw';
+---
+<Layout title={"User Manual | StarkLLM"} headExtra={head} path="/manual.html">
+  <Fragment set:html={main} />
+</Layout>

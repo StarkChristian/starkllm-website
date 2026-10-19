@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/index.head.html?raw';
+import main from '../content-html/index.main.html?raw';
+---
+<Layout title={"StarkLLM | 100% Private Local AI for Windows"} headExtra={head} path="/" alternates={[{ hreflang: 'en', href: 'https://www.starkllm.com/' }, { hreflang: 'de', href: 'https://www.starkllm.com/de/' }, { hreflang: 'x-default', href: 'https://www.starkllm.com/' }]}>
+  <Fragment set:html={main} />
+</Layout>

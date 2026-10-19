@@ -1,0 +1,41 @@
+<main class="container">
+        <div class="tech-header text-center">
+            <h1>Retrieval-Augmented <span class="text-gradient">Generation</span></h1>
+            <p>Ground AI responses in your exact documents.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/LLM20242.png" alt="Retrieval-Augmented Generation (RAG) | StarkLLM" class="showcase-img zoomable-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>Retrieval-Augmented Generation (RAG) is a framework that forces the AI to read specific excerpts from your uploaded documents before it attempts to answer your question.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Large Language Models are trained on public data. They do not know about your private contracts, proprietary research, or internal company wikis. RAG bridges this gap.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>Without RAG, an LLM will confidently hallucinate an answer based on its pre-trained weights if it doesn't know the exact facts of your specific query.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>When you ask a question, StarkLLM searches your local vector database (ChromaDB) for passages semantically related to your query, and injects those passages directly into the LLM's context window.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>You receive source-grounded answers. AI responses include the source filename and page or section locator, so you can find the relevant passage in your original document.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>If you ask 'What is the termination clause in the Smith contract?', the AI retrieves the relevant clause from the uploaded PDF. The retrieved passage is injected into the prompt to ground the answer. The model can still omit or misread details, so always check the cited page or section in your original document.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>

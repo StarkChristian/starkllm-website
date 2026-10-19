@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import head from '../content-html/tech-workspaces.head.html?raw';
+import main from '../content-html/tech-workspaces.main.html?raw';
+---
+<Layout title={"Multi-Workspace & Multi-Chat | StarkLLM"} headExtra={head} path="/tech-workspaces.html">
+  <Fragment set:html={main} />
+</Layout>

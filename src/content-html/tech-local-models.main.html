@@ -1,0 +1,41 @@
+<main class="container">
+        <div class="tech-header text-center">
+            <h1>Local Models via <span class="text-gradient">Ollama</span></h1>
+            <p>Run open-weight LLMs directly on your hardware.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="showcase-frame">
+                    <img src="/assets/LLM2024.png" alt="Local Models with Ollama | StarkLLM" class="showcase-img zoomable-img">
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>Ollama is a powerful, open-source inference engine that runs Large Language Models (like Llama 3 or Qwen) directly on your local CPU or GPU. It serves as the 'brain' of StarkLLM.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Running models locally is a highly effective way to maintain strong data privacy. It avoids subscription fees, is designed to work completely offline once downloaded, and allows you to swap models instantly.</p>
+                
+                <h2>3. What Breaks Without It</h2>
+                <p>If you rely on OpenAI or Anthropic APIs, you must trust them with your highly sensitive data. Furthermore, if you lose your internet connection, your AI assistant stops working.</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM connects to the Ollama API running on `localhost`. When you send a prompt, StarkLLM retrieves document context, formats it, sends it to Ollama, and streams the response back to your UI.</p>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>Fast, deeply private, and free AI inference that scales with your hardware and never tracks your behavior.</p>
+                
+                <h2>6. Practical Example</h2>
+                <p>You are on an airplane with no Wi-Fi. You can still upload a PDF to StarkLLM and have a full, intelligent conversation about it using a locally running 8B model.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into how to leverage this technology within the StarkLLM ecosystem.</p>
+                    <a href="/manual.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Read the User Manual</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center;">View All Technologies</a>
+                </div>
+            </aside>
+        </div>
+    </main>

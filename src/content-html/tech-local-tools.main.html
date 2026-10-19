@@ -1,0 +1,67 @@
+<main class="container">
+        <div class="tech-header text-center">
+            <h1>In-Process Local Tools <span class="text-gradient">(MCP Host)</span></h1>
+            <p>Empowering local LLMs with safe, read-only tools gated by explicit user confirmation.</p>
+        </div>
+
+        <div class="tech-content">
+            <div class="tech-main">
+                <div class="tool-preview-panel" style="margin-bottom: 2.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.6rem;">
+                        <span class="tool-header-tag">&#9874;&#65039; tool_call: search_local_kb</span>
+                        <span class="tool-badge-status">&#10003; Awaiting Approval</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: #a1a1aa; margin-bottom: 0.5rem;">// Human-in-the-loop review card rendered directly in chat:</div>
+                    <pre style="background: rgba(0,0,0,0.6); padding: 0.8rem; border-radius: 6px; color: #38bdf8; overflow-x: auto; font-size: 0.84rem; margin-bottom: 1rem;"><code>{
+  "query": "quarterly revenue breakdown",
+  "top_k": 3
+}</code></pre>
+                    <div style="display: flex; gap: 0.8rem; justify-content: flex-end;">
+                        <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.82rem;">Reject</span>
+                        <span style="background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.82rem; font-weight: 700;">&#10003; Approve &amp; Execute</span>
+                    </div>
+                </div>
+                
+                <h2>1. Plain-Language Definition</h2>
+                <p>The In-Process Local Tool Host (Phase 2) allows the running AI model to request specific actions—such as listing active workspace documents, performing hybrid search over personal archives, or fetching exact citation chunks—while requiring your manual approval before any action takes place.</p>
+                
+                <h2>2. Why It Exists</h2>
+                <p>Standard LLM chats are passive: they can only respond using whatever initial text was supplied in the prompt. When an AI needs to clarify which files exist in your workspace or wants to retrieve a cited passage to verify its facts, tool calling gives it an active, structured way to request that information without guessing.</p>
+                
+                <h2>3. What Breaks Without Safe Tool Calling</h2>
+                <p>Without an in-process execution gate, tool calling is either completely disabled (forcing the model to hallucinate details it cannot retrieve) or dangerously unmonitored (executing system commands or external network queries without user awareness or consent).</p>
+
+                <h2>4. How StarkLLM Implements It</h2>
+                <p>StarkLLM provides a strictly scoped, local-first tool system engineered for research privacy:</p>
+                <ul>
+                    <li><strong>In-Process FastAPI Host:</strong> Tool registration and execution occur entirely inside the local backend container. No external RPC networks or third-party servers are contacted.</li>
+                    <li><strong>Three Built-in Read-Only Tools:</strong>
+                        <ul style="margin-top: 0.5rem;">
+                            <li><code>list_workspace_files</code>: Tenant-isolated document inspection (names, sizes, chunk counts).</li>
+                            <li><code>search_local_kb</code>: Hybrid vector and BM25 search across your personal Knowledge Base.</li>
+                            <li><code>fetch_cited_chunk</code>: Retrieves the exact stored passage text for a citation locator from Chroma collections.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Server-Side Execution Gate:</strong> Direct invocation of <code>POST /api/v1/mcp/execute</code> requires a valid single-use token registered when the model emits a tool call. Direct calls without pending tokens are rejected with HTTP 403 Forbidden.</li>
+                    <li><strong>Human-in-the-Loop Cards:</strong> When a tool call is generated, execution pauses. An interactive card appears in the UI displaying the tool name and arguments. You can edit the arguments, approve execution, or cancel the call without breaking the chat session.</li>
+                    <li><strong>RAG Prompt Injection Defense:</strong> Vector search excerpts containing embedded tool delimiters (<code>```tool_call</code>) are sanitized before prompt formatting so malicious document passages cannot trick the UI into triggering tool executions.</li>
+                </ul>
+                
+                <h2>5. User-Visible Benefit</h2>
+                <p>You maintain 100% control over model actions. You can inspect exactly what query the model intends to run, correct any misspelled parameters in real time, and verify citations against genuine vector passages.</p>
+                
+                <h2>6. Explicit Non-Goals &amp; Safety Boundaries</h2>
+                <p>StarkLLM strictly rejects arbitrary shell execution, file system writes, and external web access. Your machine's OS remains safe and isolated.</p>
+            </div>
+            
+            <aside>
+                <div class="tech-sidebar glass-panel" style="padding: 2rem;">
+                    <h3 style="color: var(--text-primary);">Further Reading</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Dive deeper into the architectural details and user workflows.</p>
+                    <a href="/manual.html#chat" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">User Manual Guide</a>
+                    <a href="/product.html" class="btn btn-outline" style="width: 100%; text-align: center; margin-bottom: 1rem;">View All Technologies</a>
+                    <a href="/tech-themes.html" class="btn btn-outline" style="width: 100%; text-align: center;">Visual Themes Guide</a>
+                </div>
+            </aside>
+        </div>
+    </main>
