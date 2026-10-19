@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StarkLLM — Direction A: Dark Cinematic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Concept: a night-sky knowledge graph. Violet/gold from the existing brand, one big living canvas, everything else quiet. */
+:root{
+  --bg:#07060b; --surface:#100e18; --surface-2:#171425; --line:#272238;
+  --fg:#f2eefb; --muted:#9d96b6;
+  --violet:#8c14fc; --violet-soft:#b777ff; --gold:#d4af37;
+  --display:"Syne","Segoe UI",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--body);padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.wrap{max-width:1180px;margin-inline:auto}
+nav{display:flex;align-items:center;gap:2rem;padding-block:1.2rem;position:relative;z-index:3}
+.brand{display:flex;align-items:center;gap:.6rem;font:800 1.25rem var(--display);text-decoration:none}
+.brand img{width:34px;height:34px}
+nav ul{display:flex;gap:1.6rem;list-style:none;margin-left:auto;padding:0;font-size:.95rem;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:1px solid var(--line);transition:transform .2s,box-shadow .2s,border-color .2s}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn.primary{background:var(--violet);border-color:var(--violet);box-shadow:0 0 0 0 rgba(140,20,252,.5)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px -8px rgba(140,20,252,.8)}
+.btn.ghost:hover{border-color:var(--violet-soft)}
+/* hero */
+.hero{position:relative;min-height:640px;display:grid;align-content:center;padding-block:5rem 6rem;isolation:isolate}
+#graph{position:absolute;inset:0 calc(50% - 50vw);width:100vw;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;background:radial-gradient(60% 55% at 28% 50%,rgba(7,6,11,.92),rgba(7,6,11,0) 75%)}
+.eyebrow{font:500 .8rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+h1{font:800 clamp(2.6rem,7.2vw,5.6rem)/.98 var(--display);letter-spacing:-.02em;max-width:12ch;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--violet-soft),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:46ch;margin-top:1.6rem;font-size:1.2rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+.meta{margin-top:1.4rem;font:400 .82rem var(--mono);color:var(--muted)}
+/* pipeline */
+.pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;margin-top:-2rem;position:relative}
+.pipe div{padding:1.3rem 1.2rem;border-right:1px solid var(--line);min-width:0}
+.pipe div:last-child{border:0}
+.pipe b{display:block;font:600 .75rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.4rem}
+.pipe span{font-size:.95rem;color:var(--muted)}
+/* bento */
+section{padding-block:6rem 0}
+h2{font:800 clamp(1.9rem,4.4vw,3.2rem)/1.05 var(--display);letter-spacing:-.015em;max-width:18ch;text-wrap:balance}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-top:2.6rem}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.8rem;min-width:0;position:relative;overflow:hidden}
+.tile h3{font:700 1.25rem var(--display);margin-bottom:.6rem}
+.tile p{color:var(--muted);font-size:.98rem}
+.t1{grid-column:span 4}.t2{grid-column:span 2}.t3{grid-column:span 2}.t4{grid-column:span 4}
+.tile .tag{font:500 .72rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.bars{display:flex;gap:.5rem;margin-top:1.6rem;align-items:flex-end;height:90px}
+.bars i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(var(--violet-soft),var(--violet));opacity:.85}
+.swatches{display:flex;gap:.5rem;margin-top:1.4rem;flex-wrap:wrap}
+.swatches i{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.15)}
+code{font:400 .85rem var(--mono);background:var(--surface-2);padding:.15rem .45rem;border-radius:6px;color:var(--violet-soft)}
+/* download */
+.dl{margin-block:6rem;border:1px solid var(--line);border-radius:28px;padding:clamp(1.8rem,5vw,4rem);background:radial-gradient(80% 120% at 85% 0,rgba(140,20,252,.28),transparent 60%),var(--surface);display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center}
+.dl pre{font:400 .8rem/1.6 var(--mono);color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:1.1rem;overflow-x:auto}
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;gap:1rem 2rem}
+@media (max-width:820px){
+  nav ul{display:none}
+  .pipe{grid-template-columns:1fr 1fr}.pipe div{border-bottom:1px solid var(--line)}
+  .t1,.t2,.t3,.t4{grid-column:span 6}
+  .dl{grid-template-columns:1fr}
+  .hero{min-height:560px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#"><img src="../assets/logo.png" alt="">StarkLLM</a>
+    <ul><li><a href="#">Product</a></li><li><a href="#">Manual</a></li><li><a href="#">Download</a></li><li><a href="#">About</a></li></ul>
+    <a class="btn primary" href="#download" style="padding:.55rem 1.1rem;font-size:.9rem">Get v2.0.0</a>
+  </nav>
+
+  <header class="hero">
+    <canvas id="graph" aria-hidden="true"></canvas>
+    <p class="eyebrow">Local-first AI for Windows</p>
+    <h1>Ask your files. <em>Nothing</em> leaves your PC.</h1>
+    <p class="lede">StarkLLM indexes your documents on your own machine and answers with page-level citations, using Ollama models you run yourself.</p>
+    <div class="cta">
+      <a class="btn primary" href="#download">Download for Windows</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+    <p class="meta">v2.0.0 · 82.3 MB · Apache 2.0 · free</p>
+  </header>
+
+  <div class="pipe" id="how" role="list">
+    <div role="listitem"><b>Files</b><span>PDF, Word, text, code</span></div>
+    <div role="listitem"><b>Chunks</b><span>Split by meaning, not length</span></div>
+    <div role="listitem"><b>Hybrid search</b><span>BM25 + vector embeddings</span></div>
+    <div role="listitem"><b>Local model</b><span>Ollama on your GPU</span></div>
+    <div role="listitem"><b>Cited answer</b><span>Click through to the page</span></div>
+  </div>
+
+  <section>
+    <h2>Built for people who can't upload their documents.</h2>
+    <div class="bento">
+      <div class="tile t1"><span class="tag">Retrieval</span><h3>Hybrid RAG with a cross-encoder re-ranker</h3><p>Keyword and semantic search run together, then a TinyBERT re-ranker picks the passages that actually answer the question.</p>
+        <div class="bars" aria-hidden="true"><i style="height:30%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:42%"></i><i style="height:68%"></i><i style="height:36%"></i><i style="height:78%"></i><i style="height:48%"></i></div></div>
+      <div class="tile t2"><span class="tag">Desktop</span><h3>A real app window</h3><p>Own window, tray menu, splash screen. No browser tab.</p></div>
+      <div class="tile t3"><span class="tag">Tools</span><h3>Sandboxed local tools</h3><p><code>search_local_kb</code>, <code>fetch_cited_chunk</code>. Every call asks you first.</p></div>
+      <div class="tile t4"><span class="tag">Themes</span><h3>Eight themes, switch instantly</h3><p>Midnight Indigo, OLED Black, Liquid Glass, Cyberpunk Rose and four more.</p>
+        <div class="swatches" aria-hidden="true"><i style="background:#1a1740"></i><i style="background:#000"></i><i style="background:#2b3a55"></i><i style="background:#e0457b"></i><i style="background:#0f9d6a"></i><i style="background:#e8912d"></i><i style="background:#bfe3f5"></i><i style="background:#f2f2f0"></i></div></div>
+    </div>
+  </section>
+
+  <section class="dl" id="download">
+    <div>
+      <h2>Install it in two minutes.</h2>
+      <p class="lede" style="margin-top:1rem">Needs Windows 10/11, Docker Desktop and Ollama. 16 GB RAM recommended.</p>
+      <div class="cta"><a class="btn primary" href="https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.0/StarkLLM-v2.0.0-Setup.exe">Installer (.exe)</a><a class="btn ghost" href="https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.0/StarkLLM-v2.0.0-Portable.exe">Portable</a></div>
+    </div>
+    <pre>SHA-256  Setup.exe
+e6b29e6b77788dfd85eaa1e3e96634f38c97f1d4ed993b6ff6057340d4a457b5
+
+PS&gt; Get-FileHash StarkLLM-v2.0.0-Setup.exe</pre>
+  </section>
+
+  <footer><span>© 2026 Christian Stark</span><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">GitHub</a></footer>
+</div>
+
+<script>
+(function(){
+  var c=document.getElementById('graph'),x=c.getContext('2d'),W,H,N,P=[],mx=-9999,my=-9999,t=0;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var d=Math.min(devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);N=Math.round(Math.min(110,W*H/9000));P=[];for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.6,g:Math.random()<.12})}
+  function draw(){
+    x.clearRect(0,0,W,H);t+=.016;
+    for(var i=0;i<N;i++){var p=P[i];if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}}
+    for(i=0;i<N;i++){for(var j=i+1;j<N;j++){var a=P[i],b=P[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;
+      if(d<14000){var m=Math.hypot((a.x+b.x)/2-mx,(a.y+b.y)/2-my)<160;x.strokeStyle=m?'rgba(212,175,55,'+(1-d/14000)*.8+')':'rgba(140,20,252,'+(1-d/14000)*.35+')';x.lineWidth=m?1.1:.7;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}}
+    for(i=0;i<N;i++){p=P[i];x.fillStyle=p.g?'#d4af37':'#b777ff';x.shadowColor=p.g?'#d4af37':'#8c14fc';x.shadowBlur=p.g?14:8;x.beginPath();x.arc(p.x,p.y,p.r*(p.g?1.7:1),0,7);x.fill()}
+    x.shadowBlur=0;
+    if(!reduce)requestAnimationFrame(draw)
+  }
+  size();draw();addEventListener('resize',function(){size();if(reduce)draw()});
+  addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+})();
+</script>
+</body>
+</html>

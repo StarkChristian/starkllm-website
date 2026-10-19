@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StarkLLM — Direction B: Light Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Concept: a printed research journal. Cool paper, ink, one violet used like a highlighter. Asymmetric grid, a real figure, margin notes. */
+:root{
+  --paper:#eff2f0; --paper-2:#e4e9e6; --ink:#12151b; --ink-2:#4a515c; --rule:#c4cbc7;
+  --violet:#7a10dc; --mark:#e7d3ff;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Hanken Grotesk","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--sans);padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.wrap{max-width:1200px;margin-inline:auto}
+.top{display:flex;align-items:baseline;gap:2rem;padding-block:1.4rem;border-bottom:1px solid var(--ink)}
+.top .name{font:400 1.7rem var(--serif);text-decoration:none}
+.top small{font:400 .75rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.top nav{margin-left:auto;display:flex;gap:1.5rem;font-size:.95rem}
+.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:1.5rem}
+.hero{padding-block:4.5rem 3.5rem;align-items:end}
+h1{grid-column:1/10;font:400 clamp(3rem,8.4vw,7.2rem)/.94 var(--serif);letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:italic;background:linear-gradient(transparent 62%,var(--mark) 62% 94%,transparent 94%);padding-inline:.05em}
+.side{grid-column:10/13;font-size:.95rem;color:var(--ink-2);border-top:1px solid var(--ink);padding-top:.8rem}
+.side b{display:block;font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.4rem}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:1.6rem}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:.85rem 1.5rem;text-decoration:none;font-weight:700;border-radius:2px;transition:background .2s}
+.btn:hover{background:var(--violet)}.btn:focus-visible,a:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+.link{font-weight:500;text-underline-offset:5px}
+.intro{border-top:1px solid var(--ink);padding-block:3rem 4rem}
+.intro p.big{grid-column:2/9;font:400 clamp(1.5rem,2.8vw,2.3rem)/1.25 var(--serif)}
+.intro .note{grid-column:10/13;font-size:.88rem;color:var(--ink-2);align-self:start}
+figure{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-block:2rem;margin-bottom:4rem}
+figure svg{width:100%;height:auto;display:block;overflow:visible}
+figcaption{font:400 .8rem var(--mono);color:var(--ink-2);margin-top:1rem;max-width:70ch}
+.spec{border-top:1px solid var(--ink)}
+.spec h2{grid-column:1/5;font:400 clamp(2rem,4vw,3.2rem)/1 var(--serif);padding-top:1.2rem}
+.spec dl{grid-column:6/13}
+.spec .row{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding-block:1.1rem;border-bottom:1px solid var(--rule)}
+.spec dt{font:500 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;padding-top:.25rem}
+.spec dd{color:var(--ink-2)}
+.quote{padding-block:5rem;text-align:left}
+.quote blockquote{grid-column:2/11;font:italic 400 clamp(1.8rem,4vw,3.4rem)/1.1 var(--serif)}
+.quote cite{grid-column:2/11;display:block;margin-top:1.2rem;font:400 .8rem var(--mono);color:var(--ink-2);font-style:normal}
+.colophon{background:var(--ink);color:var(--paper);margin-inline:calc(50% - 50vw);padding:4rem max(16px,calc(50vw - 600px))}
+.colophon h2{grid-column:1/7;font:400 clamp(2rem,4.4vw,3.6rem)/1 var(--serif)}
+.colophon .r{grid-column:8/13}
+.colophon code{display:block;font:400 .78rem/1.6 var(--mono);word-break:break-all;margin-top:1rem;color:#c9d0cc}
+.colophon .btn{background:var(--paper);color:var(--ink)}.colophon .btn:hover{background:var(--mark)}
+footer{display:flex;flex-wrap:wrap;gap:1rem 2rem;padding-block:2rem 3rem;font-size:.88rem;color:var(--ink-2)}
+@media (max-width:860px){
+  h1,.side,.intro p.big,.intro .note,.spec h2,.spec dl,.quote blockquote,.quote cite,.colophon h2,.colophon .r{grid-column:1/-1}
+  .side{margin-top:1.6rem}.top small,.top nav{display:none}
+  .spec .row{grid-template-columns:1fr;gap:.2rem}
+  .colophon .r{margin-top:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="name" href="#">StarkLLM</a><small>Vol. 2 · Desktop · October 2026</small>
+    <nav><a href="#">Product</a><a href="#">Manual</a><a href="#">Download</a><a href="#">About</a></nav>
+  </div>
+
+  <header class="grid hero">
+    <h1>Your documents, <em>answered</em> in private.</h1>
+    <aside class="side"><b>In brief</b>A Windows app that reads your files on your own computer and cites the page it used. No account, no upload.
+      <div class="cta"><a class="btn" href="#get">Download v2.0.0</a></div></aside>
+  </header>
+
+  <div class="grid intro">
+    <p class="big">Most assistants send what you ask, and what you attach, to someone else's server. StarkLLM keeps the whole loop on the machine in front of you.</p>
+    <p class="note">Runs on Ollama and Docker Desktop. Every answer links back to its source passage.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 1100 250" role="img" aria-labelledby="f1">
+      <title id="f1">Data flow: documents, chunking, hybrid search, local model, cited answer, all inside your PC; cloud services outside are not used.</title>
+      <rect x="10" y="30" width="800" height="190" rx="4" fill="none" stroke="#12151b" stroke-width="1.5"/>
+      <text x="24" y="54" font-family="IBM Plex Mono,monospace" font-size="13" fill="#4a515c" letter-spacing="1.5">YOUR PC</text>
+      <g font-family="Hanken Grotesk,sans-serif" font-size="15" fill="#12151b" text-anchor="middle">
+        <rect x="34" y="95" width="120" height="70" fill="#e4e9e6" stroke="#12151b"/><text x="94" y="136">Files</text>
+        <rect x="204" y="95" width="120" height="70" fill="#e4e9e6" stroke="#12151b"/><text x="264" y="136">Chunks</text>
+        <rect x="374" y="95" width="130" height="70" fill="#e7d3ff" stroke="#7a10dc" stroke-width="2"/><text x="439" y="128">Hybrid</text><text x="439" y="148">search</text>
+        <rect x="554" y="95" width="110" height="70" fill="#e4e9e6" stroke="#12151b"/><text x="609" y="128">Local</text><text x="609" y="148">model</text>
+        <rect x="694" y="95" width="100" height="70" fill="#12151b"/><text x="744" y="128" fill="#eff2f0">Cited</text><text x="744" y="148" fill="#eff2f0">answer</text>
+      </g>
+      <g stroke="#12151b" stroke-width="1.5" fill="none"><path d="M154 130H204M324 130H374M504 130H554M664 130H694"/></g>
+      <g fill="#12151b"><path d="M204 130l-8-4v8zM374 130l-8-4v8zM554 130l-8-4v8zM694 130l-8-4v8z"/></g>
+      <g font-family="IBM Plex Mono,monospace" font-size="13" fill="#4a515c" text-anchor="middle">
+        <rect x="900" y="95" width="160" height="70" rx="35" fill="none" stroke="#4a515c" stroke-dasharray="5 5"/>
+        <text x="980" y="135">Cloud APIs</text>
+        <path d="M830 100l50 60M880 100l-50 60" stroke="#7a10dc" stroke-width="2"/>
+        <text x="980" y="200">not used</text>
+      </g>
+    </svg>
+    <figcaption>Fig. 1 — Everything inside the box happens locally. Retrieval combines BM25 keyword search with vector embeddings, then a TinyBERT cross-encoder re-ranks the passages.</figcaption>
+  </figure>
+
+  <section class="grid spec">
+    <h2>What is in the box</h2>
+    <dl>
+      <div class="row"><dt>Retrieval</dt><dd>Hybrid RAG with page and section locators, so each citation opens the right place in the PDF.</dd></div>
+      <div class="row"><dt>Local tools</dt><dd>Read-only tools such as <em>list_workspace_files</em> and <em>fetch_cited_chunk</em>. You approve every call.</dd></div>
+      <div class="row"><dt>Interface</dt><dd>Native desktop window, chat folders, eight themes, export to Markdown, JSON, HTML and text.</dd></div>
+      <div class="row"><dt>Hardware</dt><dd>8 GB RAM runs 3B models. 16 GB RAM and an 8 GB GPU suit 7B models.</dd></div>
+      <div class="row"><dt>Licence</dt><dd>Apache 2.0. Free and open source.</dd></div>
+    </dl>
+  </section>
+
+  <div class="grid quote">
+    <blockquote>If it cannot be uploaded, it should still be searchable.</blockquote>
+    <cite>The idea behind StarkLLM</cite>
+  </div>
+
+  <section class="colophon grid" id="get">
+    <h2>Get StarkLLM 2.0</h2>
+    <div class="r">
+      <div class="cta" style="margin-top:0"><a class="btn" href="https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.0/StarkLLM-v2.0.0-Setup.exe">Installer · 82.3 MB</a><a class="link" href="https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.0/StarkLLM-v2.0.0-Portable.exe">Portable</a></div>
+      <code>SHA-256 e6b29e6b77788dfd85eaa1e3e96634f38c97f1d4ed993b6ff6057340d4a457b5</code>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Christian Stark</span><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">GitHub</a></footer>
+</div>
+</body>
+</html>
