@@ -1,8 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import head from '../content-html/download.head.html?raw';
-import main from '../content-html/download.main.html?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import DownloadPage from '../components/DownloadPage.astro';
+import { download } from '../i18n/download';
+import { home } from '../i18n/home';
+import headExtra from '../content-html/download.head.html?raw';
 ---
-<Layout title={"Download | StarkLLM"} headExtra={head} path="/download.html">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout
+  title={download.en.meta.title}
+  headExtra={headExtra}
+  path="/download.html"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/download.html' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/download.html' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/download.html' },
+  ]}
+>
+  <DownloadPage lang="en" />
+</SiteLayout>

@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import DownloadPage from '../../components/DownloadPage.astro';
+import { download } from '../../i18n/download';
+import { home } from '../../i18n/home';
+---
+<SiteLayout
+  title={download.de.meta.title}
+  description={download.de.meta.description}
+  canonical="https://www.starkllm.com/de/download.html"
+  lang="de"
+  path="/download.html"
+  getLabel={home.de.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/download.html' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/download.html' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/download.html' },
+  ]}
+>
+  <DownloadPage lang="de" />
+</SiteLayout>

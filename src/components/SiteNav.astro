@@ -22,8 +22,8 @@ const items = [
     <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
     <li class="lang">
       {lang === 'en'
-        ? <a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a>
-        : <a href="/" hreflang="en" lang="en" title="English">EN</a>}
+        ? <a href={localePath('de', path)} hreflang="de" lang="de" title="Deutsch">DE</a>
+        : <a href={path} hreflang="en" lang="en" title="English">EN</a>}
     </li>
     <li><a class="btn primary small" href={SETUP_URL}>{getLabel}</a></li>
   </ul>

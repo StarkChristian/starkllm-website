@@ -17,10 +17,16 @@ export const GET: APIRoute = () => {
     })
     .sort();
 
-  const alt = (loc: string) =>
-    loc === '/' || loc === '/de/'
-      ? `\n    <xhtml:link rel="alternate" hreflang="en" href="${SITE}/"/>\n    <xhtml:link rel="alternate" hreflang="de" href="${SITE}/de/"/>`
+  // Pages that exist in both languages get hreflang alternates.
+  const pairs = new Set(urls.filter((u) => u.startsWith('/de/')).map((u) => u.slice(3)));
+  const alt = (loc: string) => {
+    const key = loc.startsWith('/de/') ? loc.slice(3) : loc;
+    return pairs.has(key)
+      ? `
+    <xhtml:link rel="alternate" hreflang="en" href="${SITE}${key}"/>
+    <xhtml:link rel="alternate" hreflang="de" href="${SITE}/de${key}"/>`
       : '';
+  };
 
   const body = urls
     .map(

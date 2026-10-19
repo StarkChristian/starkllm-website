@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+import chat from '../assets/LLM2024.png';
+import chat2 from '../assets/LLM20242.png';
+import kb from '../assets/KnowledgeBase.png';
+import settings from '../assets/Settings.png';
+import { download, consoleStep, toolStep, GITHUB_URL } from '../i18n/download';
+import { SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
+import type { Lang } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = download[lang];
+const imgs = { kb, chat, chat2, settings } as const;
+type Kind = keyof typeof imgs;
+---
+<header class="page-hero">
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1}</h1>
+  <p class="lede">{c.hero.lede}</p>
+</header>
+
+<section class="block" aria-labelledby="rel-h">
+  <h2 id="rel-h">{c.release.h2}</h2>
+  <div class="release">
+    <div class="tile auto">
+      <ul class="facts" style="margin-top:0">
+        {c.release.facts.map(([k, v]) => (<li><span>{k}</span><span>{v}</span></li>))}
+      </ul>
+      <div class="cta">
+        <a class="btn primary" href={SETUP_URL}>{c.release.installer}</a>
+        <a class="btn ghost" href={PORTABLE_URL}>{c.release.portable}</a>
+        <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noopener">{c.release.github}</a>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:.6rem">{c.release.shaH}</h3>
+      <p class="sec-lede" style="margin:0 0 1rem;font-size:.95rem">{c.release.shaLede}</p>
+      <div class="sha"><b>{c.release.setupLabel}</b><code>{SETUP_SHA}</code></div>
+      <div class="sha"><b>{c.release.portableLabel}</b><code>{PORTABLE_SHA}</code></div>
+      <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.release.verify} <code>Get-FileHash -Algorithm SHA256 StarkLLM-v2.0.0-Setup.exe</code></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="setup-h">
+  <h2 id="setup-h">{c.setup.h2}</h2>
+  <p class="sec-lede">{c.setup.intro}</p>
+  <ol class="steps" style="margin-top:2rem">
+    {c.setup.steps.map((s) => (
+      <li>
+        <b>{s.t}</b>
+        <span>{s.v}</span>
+        {'code' in s && s.code && <pre class="cmd">{s.code}</pre>}
+        {'after' in s && s.after && <span style="display:block;margin-top:.6rem">{s.after}</span>}
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section class="block" aria-labelledby="pre-h">
+  <h2 id="pre-h">{c.prereq.h2}</h2>
+  <p class="sec-lede">{c.prereq.lede}</p>
+  <ul class="check">
+    {c.prereq.items.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}
+  </ul>
+
+  <div class="callout">
+    <h3>{c.smart.h2}</h3>
+    <p>{c.smart.text}</p>
+  </div>
+
+  <h3 style="margin-top:3rem;font-size:1.5rem">{c.smart.optsH}</h3>
+  <p class="sec-lede">{c.smart.optsLede}</p>
+  <div class="opts">
+    {c.smart.opts.map((o) => (
+      <div>
+        <h3>{o.t}</h3>
+        <p>{o.v}</p>
+        {'ol' in o && o.ol && <ol>{o.ol.map((li) => <li>{li}</li>)}</ol>}
+        {'code' in o && o.code && <pre class="cmd">{o.code}</pre>}
+        {'after' in o && o.after && <p>{o.after}</p>}
+      </div>
+    ))}
+  </div>
+
+  <div class="notes" style="margin-top:2rem">
+    <h3>{c.notes.h}</h3>
+    {c.notes.items.map((n) => <p>{n}</p>)}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="walk-h">
+  <h2 id="walk-h">{c.walk.h2}</h2>
+  <p class="sec-lede">{c.walk.lede}</p>
+  <div class="walk">
+    {c.walk.steps.map((s) => (
+      <figure>
+        {s.kind === 'console' && <pre>{consoleStep}</pre>}
+        {s.kind === 'tool' && <pre>{toolStep}</pre>}
+        {s.kind in imgs && 'alt' in s && (
+          <Image src={imgs[s.kind as Kind]} alt={s.alt} widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 560px" format="webp" loading="lazy" />
+        )}
+        <figcaption><b>{s.t}</b><span>{s.v}</span></figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="faq-h">
+  <h2 id="faq-h">{c.faq.h2}</h2>
+  <div class="faq">
+    {c.faq.items.map(([q, a]) => (
+      <details><summary>{q}</summary><p>{a}</p></details>
+    ))}
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="con-h">
+  <h2 id="con-h">{c.contribute.h2}</h2>
+  <p class="sec-lede">{c.contribute.text}</p>
+  <div class="cta">
+    <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noopener">GitHub: homomorphicprivacy/StarkLLM</a>
+    <a class="btn ghost" href="mailto:info@starkllm.com">{c.contribute.mail}: info@starkllm.com</a>
+  </div>
+  <p class="sec-lede" style="font-size:.9rem">{c.contribute.repo}</p>
+</section>

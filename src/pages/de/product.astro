@@ -1,0 +1,21 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import ProductPage from '../../components/ProductPage.astro';
+import { product } from '../../i18n/product';
+import { home } from '../../i18n/home';
+---
+<SiteLayout
+  title={product.de.meta.title}
+  description={product.de.meta.description}
+  canonical="https://www.starkllm.com/de/product.html"
+  lang="de"
+  path="/product.html"
+  getLabel={home.de.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/product.html' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/product.html' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/product.html' },
+  ]}
+>
+  <ProductPage lang="de" />
+</SiteLayout>

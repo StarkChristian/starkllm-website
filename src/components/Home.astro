@@ -6,7 +6,8 @@ import type { Lang } from '../i18n/ui';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = home[lang];
-const swatches = ['#1a1740', '#000000', '#2b3a55', '#e0457b', '#0f9d6a', '#e8912d', '#bfe3f5', '#f2f2f0'];
+import { themes } from '../i18n/product';
+const swatches = themes.map((t) => `linear-gradient(135deg, ${t.g[0]}, ${t.g[1]})`);
 const bars = [30, 55, 90, 42, 68, 36, 78, 48];
 ---
 <header class="hero">

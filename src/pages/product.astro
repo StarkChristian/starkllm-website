@@ -1,8 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import head from '../content-html/product.head.html?raw';
-import main from '../content-html/product.main.html?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ProductPage from '../components/ProductPage.astro';
+import { product } from '../i18n/product';
+import { home } from '../i18n/home';
+import headExtra from '../content-html/product.head.html?raw';
 ---
-<Layout title={"Product | StarkLLM"} headExtra={head} path="/product.html">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout
+  title={product.en.meta.title}
+  headExtra={headExtra}
+  path="/product.html"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/product.html' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/product.html' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/product.html' },
+  ]}
+>
+  <ProductPage lang="en" />
+</SiteLayout>

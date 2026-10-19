@@ -44,7 +44,7 @@ export const ui = {
 } as const;
 
 // Pages that already have a German version; everything else links to the English page.
-export const translatedPaths: string[] = ['/'];
+export const translatedPaths: string[] = ['/', '/product.html', '/download.html'];
 
 export function localePath(lang: Lang, path: string): string {
   if (lang === 'en') return path;

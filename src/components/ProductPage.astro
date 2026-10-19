@@ -1,0 +1,140 @@
+---
+import { Image } from 'astro:assets';
+import chat from '../assets/LLM20242.png';
+import kb from '../assets/KnowledgeBase.png';
+import settings from '../assets/Settings.png';
+import { product, themes, toolSample } from '../i18n/product';
+import { SETUP_URL } from '../i18n/home';
+import { localePath, type Lang } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = product[lang];
+const sizes = '(max-width: 860px) 100vw, 560px';
+---
+<header class="page-hero">
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1}</h1>
+  <p class="lede">{c.hero.lede}</p>
+</header>
+
+<section class="block" aria-labelledby="life-h">
+  <h2 id="life-h">{c.lifecycle.h2}</h2>
+  <p class="sec-lede">{c.lifecycle.lede}</p>
+  <ol class="pipe four">
+    {c.lifecycle.steps.map((s) => (<li><b>{s.k}</b><span>{s.v}</span></li>))}
+  </ol>
+  <figure class="shot">
+    <Image src={chat} alt={c.lifecycle.shotAlt} widths={[640, 960, 1180]} sizes="(max-width: 1180px) 100vw, 1180px" format="webp" loading="lazy" />
+  </figure>
+</section>
+
+<section class="block" aria-labelledby="ver-h">
+  <span class="tag">{c.verify.tag}</span>
+  <h2 id="ver-h">{c.verify.h2}</h2>
+  <p class="sec-lede">{c.verify.lede}</p>
+  <div class="priv">
+    {c.verify.items.map((i) => (<div class="tile auto"><h3>{i.k}</h3><p>{i.v}</p></div>))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="lib-h">
+  <div class="split">
+    <div>
+      <span class="tag">{c.library.tag}</span>
+      <h2 id="lib-h">{c.library.h2}</h2>
+      <p class="sec-lede">{c.library.lede}</p>
+      <ul class="kv">{c.library.items.map((i) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+    </div>
+    <figure class="shot flat">
+      <Image src={kb} alt={c.library.shotAlt} widths={[480, 720, 1120]} sizes={sizes} format="webp" loading="lazy" />
+    </figure>
+  </div>
+  <h3 style="margin-top:4rem;font-size:1.5rem">{c.library.compareH3}</h3>
+  <p class="sec-lede">{c.library.compareLede}</p>
+  <div class="two">
+    {c.library.cards.map((card) => (
+      <div class="tile auto">
+        <h3>{card.title}</h3>
+        <ul>{card.points.map((p) => <li>{p}</li>)}</ul>
+        <p class="ex"><b>{card.ex}</b>{card.exText}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="ctl-h">
+  <div class="split rev">
+    <div>
+      <span class="tag">{c.control.tag}</span>
+      <h2 id="ctl-h">{c.control.h2}</h2>
+      <p class="sec-lede">{c.control.lede}</p>
+      <ul class="kv">{c.control.items.map((i) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+    </div>
+    <figure class="shot flat">
+      <Image src={settings} alt={c.control.shotAlt} widths={[480, 720, 1120]} sizes={sizes} format="webp" loading="lazy" />
+    </figure>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="tool-h">
+  <div class="split">
+    <div>
+      <span class="tag">{c.tools.tag}</span>
+      <h2 id="tool-h">{c.tools.h2}</h2>
+      <p class="sec-lede">{c.tools.lede}</p>
+      <ul class="kv">{c.tools.items.map((i) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+    </div>
+    <div class="toolcard">
+      <div class="t">{c.tools.card.title}</div>
+      <span class="badge">{c.tools.card.badge}</span>
+      <p>{c.tools.card.text}</p>
+      <small>{c.tools.card.example}</small>
+      <pre>{JSON.stringify(toolSample, null, 2)}</pre>
+      <small>{c.tools.card.foot}</small>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="thm-h">
+  <span class="tag">{c.themes.tag}</span>
+  <h2 id="thm-h">{c.themes.h2}</h2>
+  <p class="sec-lede">{c.themes.lede}</p>
+  <div class="themes">
+    {themes.map((t) => (
+      <div class="theme">
+        <div class="sw" style={`background:${t.bg}`}>
+          <b style={`background:linear-gradient(90deg,${t.g[0]},${t.g[1]})`}></b>
+          <i style={`background:${t.card}`}></i>
+        </div>
+        <div class="txt"><h3>{t.name}</h3><p>{t[lang]}</p></div>
+      </div>
+    ))}
+  </div>
+  <ul class="kv">{c.themes.items.map((i) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+</section>
+
+<section class="block" aria-labelledby="sup-h">
+  <h2 id="sup-h">{c.superior.h2}</h2>
+  <p class="sec-lede">{c.superior.lede}</p>
+  <div class="two">
+    {c.superior.items.map((i) => (<div class="tile auto"><h3>{i.k}</h3><p>{i.v}</p></div>))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="tech-h">
+  <h2 id="tech-h">{c.tech.h2}</h2>
+  <p class="sec-lede">{c.tech.lede}</p>
+  <div class="techs">
+    {c.tech.items.map((i) => (<a href={i.href}><b>{i.t}</b><span>{i.v}</span></a>))}
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="cta-h">
+  <h2 id="cta-h">{c.cta.h2}</h2>
+  <p class="sec-lede">{c.cta.text}</p>
+  <div class="cta">
+    <a class="btn primary" href={SETUP_URL}>{c.cta.installer}</a>
+    <a class="btn ghost" href={localePath(lang, '/download.html')}>{c.cta.all}</a>
+    <a class="btn ghost" href="/manual.html">{c.cta.manual}</a>
+  </div>
+</section>

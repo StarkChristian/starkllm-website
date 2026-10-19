@@ -1,5 +1,5 @@
 ---
-import { ui, localePath, type Lang } from '../i18n/ui';
+import { ui, localePath, translatedPaths, type Lang } from '../i18n/ui';
 const { lang = 'en', path = '/' } = Astro.props as { lang?: Lang; path?: string };
 const t = ui[lang].nav;
 const items = [
@@ -28,7 +28,7 @@ const isActive = (href: string) => clean === href || (href === '/' && (clean ===
         <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
         <li class="lang-switch">
           {lang === 'en'
-            ? <a href={localePath('de', clean)} hreflang="de" lang="de" title="Deutsch">DE</a>
+            ? <a href={translatedPaths.includes(clean) ? localePath('de', clean) : '/de/'} hreflang="de" lang="de" title="Deutsch">DE</a>
             : <a href={clean} hreflang="en" lang="en" title="English">EN</a>}
         </li>
       </ul>
