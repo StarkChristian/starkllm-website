@@ -4,3 +4,4 @@ dist
 downloads/
 *.bak
 *.log
+.preview-build

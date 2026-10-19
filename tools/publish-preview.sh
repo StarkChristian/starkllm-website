@@ -7,7 +7,8 @@ export MSYS_NO_PATHCONV=1
 REPO="${PREVIEW_REPO:-StarkChristian/starkllm-website-preview}"
 BASE="${PREVIEW_BASE:-/starkllm-website-preview}"
 SHA="$(git rev-parse HEAD)"
-TMP="$(mktemp -d)"
+TMP=".preview-build"
+rm -rf "$TMP"; mkdir -p "$TMP"
 
 npm run build
 python tools/check_links.py --root dist
