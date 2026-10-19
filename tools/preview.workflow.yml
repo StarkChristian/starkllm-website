@@ -1,0 +1,69 @@
+name: Preview
+
+# Builds the redesign branch and publishes it to a separate preview repo.
+# The live site (gh-pages of this repo, www.starkllm.com) is never touched.
+on:
+  push:
+    branches: [redesign]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview
+  cancel-in-progress: true
+
+env:
+  PREVIEW_REPO: StarkChristian/starkllm-website-preview
+  PREVIEW_BASE: /starkllm-website-preview
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Check links in the build
+        run: python3 tools/check_links.py --root dist
+
+      - name: Make it a preview (base path, noindex, banner)
+        env:
+          BASE: ${{ env.PREVIEW_BASE }}
+          SHA: ${{ github.sha }}
+        run: node tools/prepare-preview.mjs dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview-site
+          path: dist
+          retention-days: 14
+
+      - name: Publish to the preview repo
+        env:
+          DEPLOY_KEY: ${{ secrets.PREVIEW_DEPLOY_KEY }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "PREVIEW_DEPLOY_KEY is not set; build checked, nothing published."
+            exit 0
+          fi
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/preview_key
+          chmod 600 ~/.ssh/preview_key
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/preview_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+          cd dist
+          git init -q -b gh-pages
+          git config user.name "preview-bot"
+          git config user.email "preview-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Preview of ${GITHUB_SHA::7}"
+          git push --force "git@github.com:${PREVIEW_REPO}.git" gh-pages
