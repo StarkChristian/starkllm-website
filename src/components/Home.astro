@@ -1,0 +1,171 @@
+---
+import { Image } from 'astro:assets';
+import shot from '../assets/LLM2024.png';
+import { home, SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
+import type { Lang } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = home[lang];
+const swatches = ['#1a1740', '#000000', '#2b3a55', '#e0457b', '#0f9d6a', '#e8912d', '#bfe3f5', '#f2f2f0'];
+const bars = [30, 55, 90, 42, 68, 36, 78, 48];
+---
+<header class="hero">
+  <canvas id="graph" aria-hidden="true"></canvas>
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1[0]} <em>{c.hero.h1[1]}</em> {c.hero.h1[2]}</h1>
+  <p class="lede">{c.hero.lede}</p>
+  <div class="cta">
+    <a class="btn primary" href="#download">{c.hero.cta1}</a>
+    <a class="btn ghost" href="#how">{c.hero.cta2}</a>
+  </div>
+  <p class="meta">{c.hero.meta}</p>
+</header>
+
+<ol class="pipe" id="how">
+  {c.pipeline.map((p) => (<li><b>{p.k}</b><span>{p.v}</span></li>))}
+</ol>
+
+<figure class="shot">
+  <Image src={shot} alt={c.shot.alt} widths={[640, 960, 1180]} sizes="(max-width: 1180px) 100vw, 1180px" format="webp" loading="lazy" />
+  <figcaption>{c.shot.caption}</figcaption>
+</figure>
+
+<section class="block" aria-labelledby="features-h">
+  <h2 id="features-h">{c.features.h2}</h2>
+  <div class="bento">
+    {c.features.items.map((it) => (
+      <div class:list={['tile', { w4: 'wide' in it && it.wide }]}>
+        <span class="tag">{it.tag}</span>
+        <h3>{it.title}</h3>
+        <p>{it.text}</p>
+        {'art' in it && it.art === 'bars' && (<div class="bars" aria-hidden="true">{bars.map((h) => <i style={`height:${h}%`}></i>)}</div>)}
+        {'art' in it && it.art === 'swatches' && (<div class="swatches" aria-hidden="true">{swatches.map((s) => <i style={`background:${s}`}></i>)}</div>)}
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="cmp-h">
+  <h2 id="cmp-h">{c.compare.h2}</h2>
+  <p class="sec-lede">{c.compare.lede}</p>
+  <div class="cmp-wrap" tabindex="0" role="region" aria-label={c.compare.h2}>
+    <table class="cmp">
+      <thead><tr>{c.compare.cols.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+      <tbody>
+        {c.compare.rows.map((r) => (
+          <tr class:list={{ us: 'us' in r && r.us }}>
+            <th scope="row"><small>{r.kind}</small>{r.name}</th>
+            <td>{r.text}</td>
+            <td>{r.best}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="setup-h">
+  <h2 id="setup-h">{c.setup.h2}</h2>
+  <p class="sec-lede">{c.setup.intro}</p>
+  <div class="setup">
+    <ol class="steps">
+      {c.setup.steps.map((s) => (
+        <li>
+          <b>{s.title}</b>
+          <span>{s.text}</span>
+          {'code' in s && s.code && <pre class="cmd">{s.code}</pre>}
+        </li>
+      ))}
+    </ol>
+    <div class="notes">
+      <h3>{c.setup.notesTitle}</h3>
+      {c.setup.notes.map((n) => (<p><b>{n.k}.</b> {n.v}</p>))}
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="priv-h">
+  <h2 id="priv-h">{c.privacy.h2}</h2>
+  <p class="sec-lede">{c.privacy.lede}</p>
+  <div class="priv">
+    {c.privacy.items.map((it) => (<div class="tile" style="grid-column:auto"><h3>{it.title}</h3><p>{it.text}</p></div>))}
+  </div>
+</section>
+
+<section class="dl" id="download" aria-labelledby="dl-h">
+  <div>
+    <h2 id="dl-h">{c.download.h2}</h2>
+    <p class="sec-lede">{c.download.lede}</p>
+    <ul aria-label={c.download.reqTitle}>
+      {c.download.req.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}
+    </ul>
+    <div class="cta">
+      <a class="btn primary" href={SETUP_URL}>{c.download.installer}</a>
+      <a class="btn ghost" href={PORTABLE_URL}>{c.download.portable}</a>
+      <a class="btn ghost" href="/download.html">{c.download.all}</a>
+    </div>
+  </div>
+  <div>
+    <div class="sha"><b>{c.download.shaTitle} · Setup.exe</b><code>{SETUP_SHA}</code></div>
+    <div class="sha"><b>{c.download.shaTitle} · Portable.exe</b><code>{PORTABLE_SHA}</code></div>
+    <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.download.verify} <code>Get-FileHash -Algorithm SHA256 StarkLLM-v2.0.0-Setup.exe</code></p>
+  </div>
+</section>
+
+<script>
+  // Hero: a small knowledge graph that reacts to the pointer. Static frame when motion is reduced; paused off-screen.
+  const c = document.getElementById('graph') as HTMLCanvasElement | null;
+  if (c) {
+    const x = c.getContext('2d')!;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    type P = { x: number; y: number; vx: number; vy: number; r: number; g: boolean };
+    let W = 0, H = 0, P: P[] = [], mx = -9999, my = -9999, running = false, visible = true;
+
+    const size = () => {
+      const d = Math.min(devicePixelRatio || 1, 2);
+      W = c.clientWidth; H = c.clientHeight;
+      c.width = W * d; c.height = H * d;
+      x.setTransform(d, 0, 0, d, 0, 0);
+      const n = Math.round(Math.min(110, (W * H) / 9000));
+      P = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+        r: Math.random() * 1.6 + 0.6, g: Math.random() < 0.12,
+      }));
+    };
+
+    const draw = () => {
+      x.clearRect(0, 0, W, H);
+      if (!reduce) for (const p of P) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; }
+      for (let i = 0; i < P.length; i++) {
+        for (let j = i + 1; j < P.length; j++) {
+          const a = P[i], b = P[j], dx = a.x - b.x, dy = a.y - b.y, d = dx * dx + dy * dy;
+          if (d < 14000) {
+            const near = Math.hypot((a.x + b.x) / 2 - mx, (a.y + b.y) / 2 - my) < 160;
+            x.strokeStyle = near ? `rgba(212,175,55,${(1 - d / 14000) * 0.8})` : `rgba(140,20,252,${(1 - d / 14000) * 0.35})`;
+            x.lineWidth = near ? 1.1 : 0.7;
+            x.beginPath(); x.moveTo(a.x, a.y); x.lineTo(b.x, b.y); x.stroke();
+          }
+        }
+      }
+      for (const p of P) {
+        x.fillStyle = p.g ? '#d4af37' : '#b777ff';
+        x.shadowColor = p.g ? '#d4af37' : '#8c14fc';
+        x.shadowBlur = p.g ? 14 : 8;
+        x.beginPath(); x.arc(p.x, p.y, p.r * (p.g ? 1.7 : 1), 0, 7); x.fill();
+      }
+      x.shadowBlur = 0;
+    };
+
+    const loop = () => { if (!running) return; draw(); requestAnimationFrame(loop); };
+    const start = () => { if (reduce || running || !visible || document.hidden) return; running = true; requestAnimationFrame(loop); };
+    const stop = () => { running = false; };
+
+    size(); draw();
+    addEventListener('resize', () => { size(); draw(); });
+    addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? start() : stop(); }).observe(c);
+    start();
+  }
+</script>

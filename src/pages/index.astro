@@ -1,8 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import head from '../content-html/index.head.html?raw';
-import main from '../content-html/index.main.html?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Home from '../components/Home.astro';
+import { home } from '../i18n/home';
+import headExtra from '../content-html/index.head.html?raw';
 ---
-<Layout title={"StarkLLM | 100% Private Local AI for Windows"} headExtra={head} path="/" alternates={[{ hreflang: 'en', href: 'https://www.starkllm.com/' }, { hreflang: 'de', href: 'https://www.starkllm.com/de/' }, { hreflang: 'x-default', href: 'https://www.starkllm.com/' }]}>
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout
+  title={home.en.meta.title}
+  headExtra={headExtra}
+  path="/"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/' },
+  ]}
+>
+  <Home lang="en" />
+</SiteLayout>

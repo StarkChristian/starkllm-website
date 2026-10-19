@@ -1,0 +1,30 @@
+---
+import { ui, localePath, type Lang } from '../i18n/ui';
+import { SETUP_URL } from '../i18n/home';
+const { lang = 'en', path = '/', getLabel } = Astro.props as { lang?: Lang; path?: string; getLabel: string };
+const t = ui[lang].nav;
+const items = [
+  { href: '/', label: t.home },
+  { href: '/product.html', label: t.product },
+  { href: '/manual.html', label: t.manual },
+  { href: '/download.html', label: t.download },
+  { href: '/about.html', label: t.about },
+  { href: '/contact.html', label: t.contact },
+];
+---
+<nav class="nav" aria-label="Main">
+  <a class="brand" href={localePath(lang, '/')}><img src="/assets/logo.png?v=9" alt="" width="34" height="34" />StarkLLM</a>
+  <button class="menu-btn" id="menuBtn" aria-controls="navLinks" aria-expanded="false" aria-label={ui[lang].menu}>&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    {items.map((i) => (
+      <li><a href={localePath(lang, i.href)} aria-current={i.href === path ? 'page' : undefined}>{i.label}</a></li>
+    ))}
+    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
+    <li class="lang">
+      {lang === 'en'
+        ? <a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a>
+        : <a href="/" hreflang="en" lang="en" title="English">EN</a>}
+    </li>
+    <li><a class="btn primary small" href={SETUP_URL}>{getLabel}</a></li>
+  </ul>
+</nav>

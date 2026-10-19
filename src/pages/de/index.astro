@@ -1,70 +1,20 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-
-const title = 'StarkLLM | 100 % private lokale KI für Windows';
-const description =
-  'StarkLLM ist ein kostenloser, quelloffener, lokaler KI-Assistent für Windows. Chatten Sie privat mit Ihren Dokumenten und Ihrer Wissensdatenbank auf Ihrem eigenen Rechner.';
-const setup = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.0/StarkLLM-v2.0.0-Setup.exe';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Home from '../../components/Home.astro';
+import { home } from '../../i18n/home';
 ---
-<Layout
-  title={title}
-  description={description}
-  lang="de"
+<SiteLayout
+  title={home.de.meta.title}
+  description={home.de.meta.description}
   canonical="https://www.starkllm.com/de/"
-  path="/de/"
+  lang="de"
+  path="/"
+  getLabel={home.de.nav.getBtn}
   alternates={[
     { hreflang: 'en', href: 'https://www.starkllm.com/' },
     { hreflang: 'de', href: 'https://www.starkllm.com/de/' },
     { hreflang: 'x-default', href: 'https://www.starkllm.com/' },
   ]}
 >
-  <main>
-    <section class="hero container" style="max-width: 950px; text-align: center; padding-bottom: 2rem;">
-      <span class="badge">Research Beta &mdash; Windows</span>
-      <h1 style="font-size: 3rem; margin-bottom: 1rem;">Private Windows-KI für Ihre <span class="text-gradient">lokalen Dokumente</span></h1>
-      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 1.5rem; color: var(--text-secondary); line-height: 1.6;">
-        StarkLLM ist eine private Windows-Research-Beta für technisch versierte Nutzer: Chatten Sie über Ollama mit lokalen Dokumenten und einer persönlichen Wissensdatenbank. Für Entwickler, Forschende und datenschutzbewusste Fachleute, die lokales RAG auf dem eigenen Docker-und-Ollama-Stack betreiben möchten.
-      </p>
-
-      <ul style="list-style: none; padding: 0; margin: 0 auto 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; text-align: left; max-width: 920px;">
-        <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
-          <strong style="color: #c084fc;">Hybrides RAG:</strong><br />
-          <span style="font-size: 0.86rem; color: var(--text-secondary);">BM25 + Vektor-Embeddings + TinyBERT-Cross-Encoder-Reranker für präzise Quellenangaben.</span>
-        </li>
-        <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
-          <strong style="color: #38bdf8;">Native Desktop-App v2.0.0:</strong><br />
-          <span style="font-size: 0.86rem; color: var(--text-secondary);">Läuft in einem eigenen Desktop-Fenster mit Startbildschirm, ganz ohne Browser-Tabs.</span>
-        </li>
-        <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
-          <strong style="color: #4ade80;">Lokale Code-Sandbox:</strong><br />
-          <span style="font-size: 0.86rem; color: var(--text-secondary);">Sichere Python-Ausführung im Prozess mit AST-Prüfung und Zeitlimit.</span>
-        </li>
-        <li style="background: rgba(20, 20, 25, 0.7); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 1.1rem; border-radius: 8px; flex: 1; min-width: 200px;">
-          <strong style="color: #d4af37;">Lokaler OpenAI-Server:</strong><br />
-          <span style="font-size: 0.86rem; color: var(--text-secondary);">Standard-Endpunkt <code>/v1/chat/completions</code> für Cursor, Claude Code und andere Werkzeuge.</span>
-        </li>
-      </ul>
-
-      <div style="background: rgba(212, 175, 55, 0.06); border: 1px solid rgba(212, 175, 55, 0.25); padding: 1.2rem 1.5rem; border-radius: 10px; max-width: 800px; margin: 0 auto 2rem; text-align: left;">
-        <h4 style="color: #d4af37; margin-bottom: 0.5rem; font-size: 1.05rem;">Vor dem Download: Systemvoraussetzungen</h4>
-        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.4rem 1.5rem;">
-          <li><strong>Betriebssystem:</strong> Windows 10/11 mit aktiviertem WSL2.</li>
-          <li><strong>Docker Desktop:</strong> installiert und im Infobereich aktiv.</li>
-          <li><strong>Ollama:</strong> nativ auf dem Windows-Host installiert.</li>
-          <li><strong>Hardware:</strong> mind. 8 GB RAM, empfohlen 16 GB (NVIDIA-GPU mit 8 GB+ VRAM empfohlen).</li>
-          <li><strong>Modelle:</strong> <code>ollama pull qwen2.5:7b</code> und <code>nomic-embed-text</code> (oder leichter: <code>qwen2.5:3b</code>)</li>
-        </ul>
-      </div>
-
-      <div class="hero-actions" style="justify-content: center; gap: 1rem; flex-wrap: wrap;">
-        <a href={setup} class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1.1rem; font-weight: 700;">Installer v2.0.0 herunterladen (.exe)</a>
-        <a href="/download.html" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">Alle Downloads</a>
-        <a href="/manual.html" class="btn btn-outline" style="padding: 0.9rem 1.5rem; font-size: 1.05rem;">Handbuch (EN)</a>
-      </div>
-    </section>
-
-    <section class="container hero-img-section">
-      <img src="/assets/LLM2024.png?v=9" alt="StarkLLM: Chat-Oberfläche mit dokumentbasierten Antworten" class="hero-screenshot zoomable-img" />
-    </section>
-  </main>
-</Layout>
+  <Home lang="de" />
+</SiteLayout>

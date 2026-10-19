@@ -1,0 +1,54 @@
+---
+import '../styles/fonts.css';
+import '../styles/tokens.css';
+import '../styles/site.css';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  /** Raw meta/link/JSON-LD tags (OG, Twitter, structured data). */
+  headExtra?: string;
+  lang?: Lang;
+  /** Path of this page without locale prefix. */
+  path?: string;
+  getLabel: string;
+  alternates?: { hreflang: string; href: string }[];
+}
+const { title, description, canonical, headExtra = '', lang = 'en', path = '/', getLabel, alternates = [] } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07060b" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <Fragment set:html={headExtra} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <link rel="icon" href="/favicon.ico?v=9" sizes="any" />
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=9" />
+    <script is:inline defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
+    <div class="wrap">
+      <SiteNav lang={lang} path={path} getLabel={getLabel} />
+      <main id="main"><slot /></main>
+      <SiteFooter lang={lang} />
+    </div>
+    <script>
+      const btn = document.getElementById('menuBtn');
+      const links = document.getElementById('navLinks');
+      btn?.addEventListener('click', () => {
+        const open = links!.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+    </script>
+  </body>
+</html>
