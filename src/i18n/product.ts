@@ -183,7 +183,7 @@ export const product = {
     },
     themes: {
       tag: 'Gestaltung',
-      h2: 'Acht handgemachte Themes',
+      h2: 'Acht handgefertigte Themes',
       lede: 'Für konzentriertes Arbeiten bei unterschiedlichem Licht, mit sofortigem Wechsel.',
       items: [
         { k: 'Schnelle Palettenauswahl', v: 'Klicken Sie auf das Paletten-Symbol in der Seitenleiste, um Themes ohne Unterbrechung zu wechseln.' },

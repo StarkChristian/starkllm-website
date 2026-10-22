@@ -57,8 +57,9 @@ export const home = {
       steps: [
         { title: 'Start Docker Desktop', text: 'Make sure it is running in your system tray.' },
         { title: 'Install Ollama and pull the models', text: 'In a terminal, run:', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text' },
+        { title: 'Get the project and start its services', text: 'The desktop app only displays StarkLLM; it does not start the services. Download the project from GitHub, extract it, then run start.cmd (choose 1) or:', code: 'docker compose up --build -d' },
         { title: 'Run the StarkLLM installer', text: 'Download and run StarkLLM-v2.0.0-Setup.exe, or use the portable build. The wizard creates the desktop shortcuts.' },
-        { title: 'Launch StarkLLM', text: 'Click the desktop shortcut. Services start automatically.' },
+        { title: 'Launch StarkLLM', text: 'Click the desktop shortcut. The window loads as soon as the services are running.' },
       ],
       notesTitle: 'Important notes',
       notes: [
@@ -110,7 +111,7 @@ export const home = {
     },
     pipeline: [
       { k: 'Dateien', v: 'PDF, Word, Text, Code' },
-      { k: 'Chunks', v: 'Nach Sinn geteilt, nicht nach Länge' },
+      { k: 'Chunks', v: 'Nach Bedeutung geteilt, nicht nach Länge' },
       { k: 'Hybridsuche', v: 'BM25 + Vektor-Embeddings' },
       { k: 'Lokales Modell', v: 'Ollama auf Ihrer GPU' },
       { k: 'Belegte Antwort', v: 'Direkt zur Quellseite' },
@@ -119,7 +120,7 @@ export const home = {
     features: {
       h2: 'Für alle, die ihre Dokumente nicht hochladen können.',
       items: [
-        { tag: 'Suche', title: 'Hybrides RAG mit Cross-Encoder-Reranker', text: 'Stichwort- und semantische Suche laufen zusammen; ein TinyBERT-Cross-Encoder sortiert die Passagen, die die Frage wirklich beantworten.', wide: true, art: 'bars' },
+        { tag: 'Suche', title: 'Hybrides RAG mit Cross-Encoder-Reranker', text: 'Stichwort- und semantische Suche laufen zusammen; ein TinyBERT-Cross-Encoder sortiert die Treffer neu und stellt die Passagen nach oben, die die Frage wirklich beantworten.', wide: true, art: 'bars' },
         { tag: 'Desktop', title: 'Ein echtes App-Fenster', text: 'Eigenes Fenster mit Startbildschirm und Tray-Menü. Kein Browser-Tab.' },
         { tag: 'Werkzeuge', title: 'Lokale Tools mit Bestätigung', text: 'Nur lesende Tools wie search_local_kb und fetch_cited_chunk. Jeder Aufruf braucht Ihre Bestätigung und ein Einmal-Token.' },
         { tag: 'Themes', title: 'Acht Themes, sofort umschaltbar', text: 'Midnight Indigo, OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost und Daylight Minimal.', wide: true, art: 'swatches' },
@@ -133,10 +134,10 @@ export const home = {
       lede: 'Ein ehrlicher Blick darauf, wo StarkLLM neben anderen beliebten offenen Lösungen steht.',
       cols: ['Tool', 'Stärken und Grenzen', 'Am besten für'],
       rows: [
-        { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. Es fehlen tiefes RAG über mehrere Dokumente, dauerhafte Workspace-Wissensdatenbanken und sichere Code-Ausführung.', best: 'GGUF-Modelle ohne Dokumentbezug testen.' },
+        { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. Nicht enthalten sind tiefes RAG über mehrere Dokumente, dauerhafte Workspace-Wissensdatenbanken und sichere Code-Ausführung.', best: 'GGUF-Modelle ohne Dokumentbezug testen.' },
         { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Beliebt für Desktop-RAG, nutzt aber einfaches Chunking ohne Cross-Encoder-Reranking, was bei dichten technischen Dokumenten zu Fehlern in der Suche führen kann. Läuft in einem schwereren Web-Dashboard.', best: 'Lockere Dokument-Chats, bei denen Präzision nicht kritisch ist.' },
-        { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte, telemetriefreie Open-Source-App im ChatGPT-Stil. Es fehlen fortgeschrittenes Hybrid-RAG, Cross-Encoder-Reranking, Code-Sandbox im Prozess und multimodale Dokumentanalyse.', best: 'Einfacher telemetriefreier Chat ohne Dokument-Workflows.' },
-        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.0', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und datenschutzkritische Fachleute, die geprüfte Genauigkeit brauchen.', us: true },
+        { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte, telemetriefreie Open-Source-App im ChatGPT-Stil. Nicht enthalten sind fortgeschrittenes Hybrid-RAG, Cross-Encoder-Reranking, eine Code-Sandbox im Prozess und multimodale Dokumentanalyse.', best: 'Einfacher telemetriefreier Chat ohne Dokument-Workflows.' },
+        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.0', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und Fachleute mit hohen Datenschutzanforderungen, die nachprüfbare Genauigkeit brauchen.', us: true },
       ],
     },
     setup: {
@@ -144,9 +145,10 @@ export const home = {
       intro: 'Sind Docker, Ollama und die Modelle bereits installiert, dauert die Einrichtung etwa 5 Minuten. Der erste Download von Modellen und Docker-Images hängt von Ihrer Bandbreite ab.',
       steps: [
         { title: 'Docker Desktop starten', text: 'Stellen Sie sicher, dass es im Infobereich läuft.' },
-        { title: 'Ollama installieren und Modelle laden', text: 'Führen Sie im Terminal aus:', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text' },
+        { title: 'Ollama installieren und Modelle laden', text: 'Führen Sie im Terminal Folgendes aus:', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text' },
+        { title: 'Projekt holen und Dienste starten', text: 'Die Desktop-App zeigt StarkLLM nur an; sie startet die Dienste nicht. Laden Sie das Projekt von GitHub herunter, entpacken Sie es und starten Sie start.cmd (Auswahl 1) oder führen Sie aus:', code: 'docker compose up --build -d' },
         { title: 'StarkLLM-Installer ausführen', text: 'StarkLLM-v2.0.0-Setup.exe herunterladen und starten, oder die portable Version nutzen. Der Assistent legt die Verknüpfungen an.' },
-        { title: 'StarkLLM starten', text: 'Klicken Sie auf die Desktop-Verknüpfung. Die Dienste starten automatisch.' },
+        { title: 'StarkLLM starten', text: 'Klicken Sie auf die Desktop-Verknüpfung. Das Fenster lädt, sobald die Dienste laufen.' },
       ],
       notesTitle: 'Wichtige Hinweise',
       notes: [
