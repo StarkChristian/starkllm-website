@@ -45,8 +45,9 @@ export const download = {
       steps: [
         { t: 'Start Docker Desktop', v: 'Make sure Docker Desktop is running in your system tray.' },
         { t: 'Install Ollama and pull the models', v: 'In a terminal, run:', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text', after: 'For 8 GB RAM laptops use ollama pull qwen2.5:3b. For power workstations use ollama pull qwen2.5:14b.' },
+        { t: 'Get the StarkLLM project and start its services', v: 'The desktop app only displays StarkLLM; it does not start the services itself. Download the project from GitHub (Code, then Download ZIP, or git clone), extract it, open a terminal in that folder and run start.cmd and choose 1 (Start StarkLLM), or run:', code: 'docker compose up --build -d', after: 'The first start builds the containers and can take a few minutes.' },
         { t: 'Run the StarkLLM installer', v: 'Download and run StarkLLM-v2.0.0-Setup.exe, or use the zero-install portable executable. The installer creates desktop shortcuts.' },
-        { t: 'Launch the desktop app', v: 'Click the StarkLLM desktop shortcut. Local services initialize and StarkLLM opens in its own standalone application window, with no browser tabs or URL bar.' },
+        { t: 'Launch the desktop app', v: 'Click the StarkLLM desktop shortcut. Once the services from the earlier step are running, StarkLLM opens in its own application window, with no browser tabs or URL bar. If the services are not running, the window stays on "Connecting to local engine…".' },
       ],
     },
     prereq: {
@@ -63,7 +64,7 @@ export const download = {
     },
     smart: {
       h2: 'Windows SmartScreen and execution notice',
-      text: 'Files downloaded from the web carry a Mark of the Web (MOTW) flag. When you run start.exe, click More info, then Run anyway, or run unblock.ps1 in PowerShell to clear the flag locally.',
+      text: 'Files downloaded from the web carry a Mark of the Web (MOTW) flag, and the StarkLLM installer and portable app are not code-signed, so Windows SmartScreen may warn when you run them. Click More info, then Run anyway. For the launcher scripts you can also run unblock.ps1 in PowerShell to clear the flag locally.',
       optsH: 'Alternative launch options',
       optsLede: 'These apply to the portable folder or ZIP that includes the launcher scripts.',
       opts: [
@@ -96,6 +97,7 @@ export const download = {
         ['What hardware do I need?', 'Minimum 8 GB RAM for 3B models, 16 GB RAM for 7B models. For power-user models (14B to 32B), 24 GB VRAM or 64 GB system RAM is recommended.'],
         ['What is the difference between normal chat and document chat?', 'Normal chat relies only on the model\'s pre-trained knowledge. Document chat uses RAG: it searches your uploaded documents first, feeds the relevant chunks to the model, and answers with verifiable citations.'],
         ['What is the difference between workspace documents and the Knowledge Base?', 'Workspace documents are isolated to one project. The Knowledge Base is a persistent, global folder on your machine that any chat can reference.'],
+        ['The desktop window stays on "Connecting to local engine…". What now?', 'The desktop app only displays StarkLLM; the services must already be running. Check that Docker Desktop is running, start StarkLLM from the project folder with start.cmd (or docker compose up --build -d), and make sure Ollama is running. The window loads by itself once the services answer.'],
         ['What if the app opens but chat does not connect?', 'Make sure Docker Desktop and Ollama are running, and that you pulled the default models (ollama pull qwen2.5:7b and ollama pull nomic-embed-text). The backend container talks to Ollama on your host via host.docker.internal:11434. If needed, restart the containers with docker compose down, then docker compose up --build -d.'],
         ['Can I inspect the source code?', 'Yes. StarkLLM is fully open source on GitHub at homomorphicprivacy/StarkLLM under the Apache 2.0 license.'],
         ['Where can I send feedback or contribute?', 'We welcome feedback. Email info@starkllm.com or open an issue on the GitHub repository.'],
@@ -129,8 +131,9 @@ export const download = {
       steps: [
         { t: 'Docker Desktop starten', v: 'Stellen Sie sicher, dass Docker Desktop im Infobereich läuft.' },
         { t: 'Ollama installieren und Modelle laden', v: 'Führen Sie im Terminal aus:', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text', after: 'Für Laptops mit 8 GB RAM: ollama pull qwen2.5:3b. Für leistungsstarke Workstations: ollama pull qwen2.5:14b.' },
+        { t: 'StarkLLM-Projekt holen und Dienste starten', v: 'Die Desktop-App zeigt StarkLLM nur an; sie startet die Dienste nicht selbst. Laden Sie das Projekt von GitHub herunter (Code, dann Download ZIP, oder git clone), entpacken Sie es, öffnen Sie in diesem Ordner ein Terminal und führen Sie start.cmd aus und wählen Sie 1 (Start StarkLLM), oder führen Sie aus:', code: 'docker compose up --build -d', after: 'Beim ersten Start werden die Container gebaut, das kann einige Minuten dauern.' },
         { t: 'StarkLLM-Installer ausführen', v: 'Laden Sie StarkLLM-v2.0.0-Setup.exe herunter und starten Sie sie, oder nutzen Sie die portable Programmdatei ohne Installation. Der Installer legt Desktop-Verknüpfungen an.' },
-        { t: 'Desktop-App starten', v: 'Klicken Sie auf die StarkLLM-Verknüpfung. Die lokalen Dienste starten und StarkLLM öffnet sich in einem eigenen Anwendungsfenster, ohne Browser-Tabs und Adressleiste.' },
+        { t: 'Desktop-App starten', v: 'Klicken Sie auf die StarkLLM-Verknüpfung. Laufen die Dienste aus dem früheren Schritt, öffnet sich StarkLLM in einem eigenen Anwendungsfenster, ohne Browser-Tabs und Adressleiste. Laufen die Dienste nicht, bleibt das Fenster auf „Connecting to local engine…“.' },
       ],
     },
     prereq: {
@@ -147,7 +150,7 @@ export const download = {
     },
     smart: {
       h2: 'Windows SmartScreen und Ausführungshinweis',
-      text: 'Aus dem Web geladene Dateien tragen die Markierung „Mark of the Web“ (MOTW). Beim Start von start.exe klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“, oder führen unblock.ps1 in PowerShell aus, um die Markierung lokal zu entfernen.',
+      text: 'Aus dem Web geladene Dateien tragen die Markierung „Mark of the Web“ (MOTW), und der StarkLLM-Installer sowie die portable App sind nicht code-signiert, daher kann Windows SmartScreen beim Start warnen. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Bei den Start-Skripten können Sie zusätzlich unblock.ps1 in PowerShell ausführen, um die Markierung lokal zu entfernen.',
       optsH: 'Alternative Startmöglichkeiten',
       optsLede: 'Diese gelten für den portablen Ordner oder das ZIP mit den Start-Skripten.',
       opts: [
@@ -180,6 +183,7 @@ export const download = {
         ['Welche Hardware brauche ich?', 'Mindestens 8 GB RAM für 3B-Modelle, 16 GB RAM für 7B-Modelle. Für große Modelle (14B bis 32B) werden 24 GB VRAM oder 64 GB Arbeitsspeicher empfohlen.'],
         ['Was ist der Unterschied zwischen normalem Chat und Dokument-Chat?', 'Der normale Chat nutzt nur das vortrainierte Wissen des Modells. Der Dokument-Chat nutzt RAG: Er durchsucht zuerst Ihre hochgeladenen Dokumente, gibt die relevanten Chunks an das Modell und antwortet mit überprüfbaren Quellenangaben.'],
         ['Was ist der Unterschied zwischen Workspace-Dokumenten und Wissensdatenbank?', 'Workspace-Dokumente sind auf ein Projekt beschränkt. Die Wissensdatenbank ist ein dauerhafter, globaler Ordner auf Ihrem Rechner, auf den jeder Chat zugreifen kann.'],
+        ['Das Desktop-Fenster bleibt auf „Connecting to local engine…“. Was tun?', 'Die Desktop-App zeigt StarkLLM nur an; die Dienste müssen bereits laufen. Prüfen Sie, ob Docker Desktop läuft, starten Sie StarkLLM im Projektordner mit start.cmd (oder docker compose up --build -d) und stellen Sie sicher, dass Ollama läuft. Das Fenster lädt von selbst, sobald die Dienste antworten.'],
         ['Was, wenn die App startet, aber der Chat keine Verbindung hat?', 'Stellen Sie sicher, dass Docker Desktop und Ollama laufen und dass Sie die Standardmodelle geladen haben (ollama pull qwen2.5:7b und ollama pull nomic-embed-text). Der Backend-Container erreicht Ollama auf Ihrem Host über host.docker.internal:11434. Bei Bedarf starten Sie die Container mit docker compose down und anschließend docker compose up --build -d neu.'],
         ['Kann ich den Quellcode einsehen?', 'Ja. StarkLLM ist vollständig quelloffen auf GitHub unter homomorphicprivacy/StarkLLM, lizenziert unter Apache 2.0.'],
         ['Wohin kann ich Feedback senden oder beitragen?', 'Wir freuen uns über Rückmeldungen. Schreiben Sie an info@starkllm.com oder eröffnen Sie ein Issue im GitHub-Repository.'],
