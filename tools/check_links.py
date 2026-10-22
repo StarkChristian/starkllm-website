@@ -1,6 +1,7 @@
 """Link checker for the static site.
 
-Checks every local href/src in *.html resolves to a file, and (with --external)
+Checks every local href/src in *.html resolves to a file (clean URLs like /about map to about.html;
+links that still end in .html are reported), and (with --external)
 that every https:// link answers 2xx/3xx. This is the check that would have
 caught the 404 installer links (downloads/ was gitignored).
 
@@ -13,6 +14,14 @@ from urllib.parse import urlparse, unquote
 
 ATTR = re.compile(r'''(?:href|src)\s*=\s*["']([^"'#][^"']*)["']''', re.I)
 SKIP = ("mailto:", "tel:", "javascript:", "data:")
+SITE = "https://www.starkllm.com"
+
+def is_html_url(link: str) -> bool:
+    """Public URLs must be clean (/about, not /about.html): Cloudflare Pages 308-redirects *.html."""
+    if link.startswith(("http://", "https://", "//")):
+        if not link.startswith(SITE):
+            return False
+    return urlparse(link).path.endswith(".html")
 
 def local_target(root: Path, page: Path, link: str):
     path = unquote(urlparse(link).path)
@@ -22,6 +31,11 @@ def local_target(root: Path, page: Path, link: str):
     t = (base / path.lstrip("/")).resolve()
     if t.is_dir():
         t = t / "index.html"
+    elif not t.exists() and not t.suffix:
+        # Cloudflare Pages serves /about from about.html
+        alt = t.with_name(t.name + ".html")
+        if alt.exists():
+            t = alt
     return t
 
 def head_ok(url: str) -> bool:
@@ -52,6 +66,9 @@ def main():
             if link.startswith(SKIP):
                 continue
             n += 1
+            if is_html_url(link):
+                bad.append((page.relative_to(root), link + "  (use the clean URL without .html)"))
+                continue
             if link.startswith(("http://", "https://", "//")):
                 if a.external:
                     url = "https:" + link if link.startswith("//") else link

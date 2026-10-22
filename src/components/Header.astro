@@ -4,14 +4,14 @@ const { lang = 'en', path = '/' } = Astro.props as { lang?: Lang; path?: string 
 const t = ui[lang].nav;
 const items = [
   { href: '/', label: t.home },
-  { href: '/product.html', label: t.product },
-  { href: '/manual.html', label: t.manual },
-  { href: '/download.html', label: t.download },
-  { href: '/about.html', label: t.about },
-  { href: '/contact.html', label: t.contact },
+  { href: '/product', label: t.product },
+  { href: '/manual', label: t.manual },
+  { href: '/download', label: t.download },
+  { href: '/about', label: t.about },
+  { href: '/contact', label: t.contact },
 ];
-const clean = path.replace(/^\/de(?=\/|$)/, '') || '/';
-const isActive = (href: string) => clean === href || (href === '/' && (clean === '/index.html' || clean === '/'));
+const clean = path.replace(/^\/de(?=\/|$)/, '').replace(/\.html$/, '').replace(/\/index$/, '/') || '/';
+const isActive = (href: string) => clean === href;
 ---
 <header>
   <div class="container nav-container">

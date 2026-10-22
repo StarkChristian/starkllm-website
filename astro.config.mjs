@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// Output keeps the legacy URLs (about.html, tech-rag.html, ...) so SEO and inbound links survive.
+// Files are still written as about.html, tech-rag.html, ... but every public URL (links, canonical, sitemap) is the clean form /about, /tech-rag.
+// Cloudflare Pages serves the clean form and 308-redirects *.html to it, so old .html links keep working.
 export default defineConfig({
   site: 'https://www.starkllm.com',
   trailingSlash: 'ignore',
