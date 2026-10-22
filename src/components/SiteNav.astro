@@ -5,11 +5,11 @@ const { lang = 'en', path = '/', getLabel } = Astro.props as { lang?: Lang; path
 const t = ui[lang].nav;
 const items = [
   { href: '/', label: t.home },
-  { href: '/product.html', label: t.product },
-  { href: '/manual.html', label: t.manual },
-  { href: '/download.html', label: t.download },
-  { href: '/about.html', label: t.about },
-  { href: '/contact.html', label: t.contact },
+  { href: '/product', label: t.product },
+  { href: '/manual', label: t.manual },
+  { href: '/download', label: t.download },
+  { href: '/about', label: t.about },
+  { href: '/contact', label: t.contact },
 ];
 ---
 <nav class="nav" aria-label="Main">

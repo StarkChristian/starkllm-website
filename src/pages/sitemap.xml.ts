@@ -1,9 +1,9 @@
-// Keeps the legacy /sitemap.xml URL. Lists every built page except the 404.
+// Keeps the legacy /sitemap.xml URL. Lists every built page except the 404, as clean URLs (Cloudflare Pages redirects *.html to them).
 import type { APIRoute } from 'astro';
 
 const SITE = 'https://www.starkllm.com';
 const pages = import.meta.glob('./**/*.astro');
-const priority: Record<string, string> = { '/': '1.0', '/product.html': '0.9', '/download.html': '0.9', '/manual.html': '0.8' };
+const priority: Record<string, string> = { '/': '1.0', '/product': '0.9', '/download': '0.9', '/manual': '0.8' };
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().slice(0, 10);
@@ -13,7 +13,7 @@ export const GET: APIRoute = () => {
     .map((p) => {
       if (p === 'index') return '/';
       if (p === 'de/index') return '/de/';
-      return `/${p}.html`;
+      return `/${p}`;
     })
     .sort();
 
