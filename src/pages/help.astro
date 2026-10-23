@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HelpPage from '../components/HelpPage.astro';
+import { help } from '../i18n/help';
+import { home } from '../i18n/home';
+---
+<SiteLayout
+  title={help.en.meta.title}
+  description={help.en.meta.description}
+  canonical="https://www.starkllm.com/help"
+  path="/help"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/help' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/help' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/help' },
+  ]}
+>
+  <HelpPage lang="en" />
+</SiteLayout>

@@ -22,6 +22,7 @@ export const download = {
   en: {
     meta: { title: 'Download | StarkLLM' },
     hero: { eyebrow: 'Download', h1: 'Download StarkLLM', lede: 'Get started with the Windows Research Beta.' },
+    helpCallout: { h: 'Installation not working?', text: 'StarkLLM is made of four parts (Docker Desktop, Ollama, the project folder and the desktop window). The Help page has a checklist with a test for every step and fixes for the 23 most common problems.', link: 'Open Help & Troubleshooting' },
     release: {
       h2: 'Release package',
       facts: [
@@ -108,6 +109,7 @@ export const download = {
   de: {
     meta: { title: 'Download | StarkLLM', description: 'StarkLLM v2.0.0 für Windows herunterladen: Installer, portable Version, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.' },
     hero: { eyebrow: 'Download', h1: 'StarkLLM herunterladen', lede: 'Starten Sie mit der Windows Research Beta.' },
+    helpCallout: { h: 'Die Installation klappt nicht?', text: 'StarkLLM besteht aus vier Teilen (Docker Desktop, Ollama, Projektordner und Desktop-Fenster). Die Hilfe-Seite hat eine Checkliste mit Test pro Schritt und Lösungen für die 23 häufigsten Probleme.', link: 'Hilfe & Problemlösung öffnen' },
     release: {
       h2: 'Release-Paket',
       facts: [

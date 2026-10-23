@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 
 const SITE = 'https://www.starkllm.com';
 const pages = import.meta.glob('./**/*.astro');
-const priority: Record<string, string> = { '/': '1.0', '/product': '0.9', '/download': '0.9', '/manual': '0.8' };
+const priority: Record<string, string> = { '/': '1.0', '/product': '0.9', '/download': '0.9', '/manual': '0.8', '/help': '0.8' };
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().slice(0, 10);

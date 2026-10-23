@@ -1,0 +1,101 @@
+---
+import { help } from '../i18n/help';
+import { localePath, type Lang } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = help[lang];
+const L = lang === 'de'
+  ? { cause: 'Wahrscheinliche Ursache', fix: 'Was zu tun ist', jump: 'Springe zu', toc: ['Checkliste', 'Probleme', 'Hilfe holen', 'Grenzen'] }
+  : { cause: 'Likely cause', fix: 'What to do', jump: 'Jump to', toc: ['Checklist', 'Problems', 'Get help', 'Limits'] };
+// The code block belongs right after the list item that introduces it (the first one ending with ":"), otherwise after the list.
+const codeAfter = (fix: readonly string[]) => { const i = fix.findIndex((f) => f.trim().endsWith(':')); return i; };
+---
+<header class="page-hero">
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1}</h1>
+  <p class="lede">{c.hero.lede}</p>
+  <p class="help-jump"><span>{L.jump}:</span> <a href="#steps-h">{L.toc[0]}</a> · <a href="#problems-h">{L.toc[1]}</a> · <a href="#report-h">{L.toc[2]}</a> · <a href="#limits-h">{L.toc[3]}</a></p>
+</header>
+
+<section class="block" aria-labelledby="how-h">
+  <h2 id="how-h">{c.how.h2}</h2>
+  <p class="sec-lede">{c.how.lede}</p>
+  <div class="opts">
+    {c.how.parts.map((p) => (<div><h3>{p.t}</h3><p>{p.v}</p></div>))}
+  </div>
+  <div class="callout"><p>{c.how.warn}</p></div>
+  <div class="notes" style="margin-top:1.5rem"><p>{c.honest}</p></div>
+</section>
+
+<section class="block" aria-labelledby="steps-h">
+  <h2 id="steps-h">{c.steps.h2}</h2>
+  <p class="sec-lede">{c.steps.lede}</p>
+  <ol class="steps help-steps" style="margin-top:2rem">
+    {c.steps.items.map((s) => (
+      <li>
+        <b>{s.t}</b>
+        <span>{s.v}</span>
+        {'code' in s && s.code && <pre class="cmd">{s.code}</pre>}
+        <span class="check-line">{s.check}</span>
+      </li>
+    ))}
+  </ol>
+</section>
+
+<section class="block" aria-labelledby="problems-h">
+  <h2 id="problems-h">{c.problems.h2}</h2>
+  <p class="sec-lede">{c.problems.lede}</p>
+  {c.problems.groups.map((g) => (
+    <div class="help-group">
+      <h3>{g.h}</h3>
+      <div class="faq">
+        {g.items.map((p) => {
+          const n = p.q.split('.')[0];
+          const at = 'code' in p && p.code ? codeAfter(p.fix) : -1;
+          return (
+            <details id={'p' + n}>
+              <summary>{p.q}</summary>
+              <div class="help-body">
+                <p><b>{L.cause}:</b> {p.cause}</p>
+                <p class="help-fix-h"><b>{L.fix}:</b></p>
+                <ol>
+                  {p.fix.map((f, i) => (
+                    <>
+                      <li>{f}</li>
+                      {i === at && <li class="code-li"><pre class="cmd">{'code' in p ? p.code : ''}</pre></li>}
+                    </>
+                  ))}
+                  {'code' in p && p.code && at === -1 && <li class="code-li"><pre class="cmd">{p.code}</pre></li>}
+                </ol>
+              </div>
+            </details>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</section>
+
+<section class="block" aria-labelledby="report-h">
+  <h2 id="report-h">{c.report.h2}</h2>
+  <p class="sec-lede">{c.report.lede}</p>
+  <pre class="cmd" style="margin-top:1.2rem">{c.report.code}</pre>
+  <p class="sec-lede" style="margin-top:1rem">{c.report.note}</p>
+</section>
+
+<section class="block" aria-labelledby="limits-h">
+  <h2 id="limits-h">{c.limits.h2}</h2>
+  <p class="sec-lede">{c.limits.lede}</p>
+  <ul class="check">
+    {c.limits.items.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}
+  </ul>
+</section>
+
+<section class="cta-band" aria-labelledby="back-h">
+  <h2 id="back-h">{c.cta.h2}</h2>
+  <div class="cta">
+    <a class="btn ghost" href={localePath(lang, '/manual')}>{c.cta.manual}</a>
+    <a class="btn ghost" href={localePath(lang, '/download')}>{c.cta.download}</a>
+    <a class="btn ghost" href={localePath(lang, '/contact')}>{c.cta.contact}</a>
+  </div>
+</section>
