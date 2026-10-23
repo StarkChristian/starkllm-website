@@ -231,3 +231,17 @@ pre.cmd { margin-top: .6rem; font: 400 .82rem/1.6 var(--font-mono); background: 
 .steps li, .opts > div, .faq details, .callout, .notes, .toolcard, .kv li, .pipe li { min-width: 0; }
 h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 pre { max-width: 100%; }
+
+/* help page */
+.help-jump { margin-top: 1rem; color: var(--c-muted); font-size: .95rem; }
+.help-jump span { margin-right: .3rem; }
+.help-group { margin-top: 2.6rem; }
+.help-group h3 { font-size: 1.35rem; }
+.help-body { padding-bottom: 1.2rem; color: var(--c-muted); font-size: .96rem; }
+.help-body p { padding-bottom: 0; }
+.help-body .help-fix-h { margin-top: .9rem; }
+.help-body ol { padding-left: 1.3rem; margin-top: .4rem; display: grid; gap: .45rem; }
+.help-body li.code-li { list-style: none; margin-left: -1.3rem; }
+.help-body pre.cmd { margin: .2rem 0 .3rem; }
+.help-steps .check-line { display: block; margin-top: .6rem; color: var(--c-violet-soft); }
+.help-steps pre.cmd { white-space: pre-wrap; }

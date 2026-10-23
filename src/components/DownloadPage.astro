@@ -6,7 +6,7 @@ import kb from '../assets/KnowledgeBase.png';
 import settings from '../assets/Settings.png';
 import { download, consoleStep, toolStep, GITHUB_URL } from '../i18n/download';
 import { SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
-import type { Lang } from '../i18n/ui';
+import { localePath, type Lang } from '../i18n/ui';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = download[lang];
@@ -18,6 +18,11 @@ type Kind = keyof typeof imgs;
   <h1>{c.hero.h1}</h1>
   <p class="lede">{c.hero.lede}</p>
 </header>
+
+<div class="callout" style="margin-top:0">
+  <h3>{c.helpCallout.h}</h3>
+  <p>{c.helpCallout.text} <a href={localePath(lang, '/help')}>{c.helpCallout.link}</a></p>
+</div>
 
 <section class="block" aria-labelledby="rel-h">
   <h2 id="rel-h">{c.release.h2}</h2>

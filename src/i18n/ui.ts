@@ -15,6 +15,7 @@ export const ui = {
         'Dependent on user hardware, setup, and chosen local models.',
         'Not a substitute for professional judgment.',
       ],
+      help: 'Help & Troubleshooting',
       related: 'Related Projects',
       repo: 'GitHub Repository',
       legal: 'Legal',
@@ -34,6 +35,7 @@ export const ui = {
         'Abhängig von Hardware, Einrichtung und gewählten lokalen Modellen.',
         'Kein Ersatz für professionelles Urteilsvermögen.',
       ],
+      help: 'Hilfe & Problemlösung',
       related: 'Verwandte Projekte',
       repo: 'GitHub-Repository',
       legal: 'Rechtliches',
@@ -44,7 +46,7 @@ export const ui = {
 } as const;
 
 // Pages that already have a German version; everything else links to the English page.
-export const translatedPaths: string[] = ['/', '/product', '/download'];
+export const translatedPaths: string[] = ['/', '/product', '/download', '/help'];
 
 export function localePath(lang: Lang, path: string): string {
   if (lang === 'en') return path;

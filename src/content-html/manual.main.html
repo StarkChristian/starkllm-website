@@ -120,9 +120,10 @@
                             ollama pull nomic-embed-text
                         </div>
                     </li>
-                    <li>Run <code>StarkLLM-Setup.exe</code> (Windows Installer) or extract the Portable ZIP.
-                    </li>
-                </ol>
+                    <li>Download the project from GitHub (<em>Code &rarr; Download ZIP</em>), extract it completely and start the services in that folder with <code>start.exe</code>, <code>start.cmd</code> or <code>docker compose up --build -d</code>.</li>
+<li>Optional: install <code>StarkLLM-Setup.exe</code> (or use the Portable app) for a native window. The window only displays StarkLLM; it does not start Docker, Ollama or the services.</li>
+</ol>
+<p>Each step has a test and a fix list on the <a href="/help">Help &amp; Troubleshooting</a> page.</p>
             </section>
 
             <section id="first-launch">
@@ -144,7 +145,7 @@
                 </div>
 
                 <h3>Option 1 &mdash; Windows Desktop Installer (Recommended)</h3>
-                <p>Run <code>StarkLLM-v2.0.0-Setup.exe</code> to install StarkLLM as a native Windows application. It creates desktop and start menu shortcuts and runs in a sleek, isolated native window without opening web browser tabs.</p>
+                <p>Run <code>StarkLLM-v2.0.0-Setup.exe</code> to install the native Windows window. It creates desktop and start menu shortcuts and shows StarkLLM without browser tabs. <strong>It does not start Docker, Ollama or the StarkLLM services</strong>: start them first (Option 3 or 4), otherwise the window stays on &ldquo;Connecting to local engine&hellip;&rdquo;.</p>
 
                 <h3>Option 2 &mdash; Portable Standalone Application</h3>
                 <p>Run <code>StarkLLM-v2.0.0-Portable.exe</code> directly from any directory or USB drive without system installation.</p>
@@ -423,7 +424,8 @@
 
             <section id="troubleshooting">
                 <h2>24. Troubleshooting</h2>
-                <ul>
+<p>The full guide, with an install checklist and 24 problems and fixes, is on the <a href="/help">Help &amp; Troubleshooting</a> page. The most common ones:</p>
+<ul>
                     <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running in your Windows system
                         tray. Ollama runs natively on the host, and the Docker container communicates via
                         <code>host.docker.internal:11434</code>. Verify you pulled the required model
@@ -443,7 +445,10 @@
                 <ul>
                     <li>Initial setup requires installing Docker Desktop and Ollama.</li>
                     <li>Response speed and throughput depend on your local hardware.</li>
-                    <li>Document retrieval quality depends on the formatting and clarity of the input text.</li>
+                    <li>Document retrieval quality depends on the formatting and clarity of the input text. Questions in another language than the document, very long files without punctuation (logs) and mixed old and new versions of a document are the usual causes of missed facts.</li>
+<li>The default 7B model can confuse similar values, miscalculate or miss a fact. Check the cited source for important decisions.</li>
+<li>The desktop window does not start the services itself, and v2.0.0 is meant for one person per installation (every account can create a backup of the whole database).</li>
+<li>See <a href="/help">Help &amp; Troubleshooting</a> for causes and fixes.</li>
                     <li>StarkLLM is provided "as is" as an open-source Research Beta under Apache 2.0.</li>
                 </ul>
             </section>
