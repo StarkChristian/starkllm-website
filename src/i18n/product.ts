@@ -71,7 +71,7 @@ export const product = {
       items: [
         { k: 'Three built-in tools', v: 'list_workspace_files inspects active workspace files. search_local_kb runs hybrid vector and BM25 search over personal archives. fetch_cited_chunk fetches the exact passage text.' },
         { k: 'Human-in-the-loop gate', v: 'Each tool call creates a card in the chat. Review the parameters, change values, or cancel.' },
-        { k: 'Adversarial prompt defense', v: 'Retrieved passages are stripped of tool-call markers before they reach the model context, which closes off prompt injection through documents.' },
+        { k: 'Adversarial prompt defense', v: 'Retrieved passages are stripped of tool-call markers before they reach the model context, which makes prompt injection through documents harder (no technique removes that risk completely).' },
         { k: 'Server-side execution gate', v: 'A single-use invocation token blocks direct execution and replay attempts.' },
       ],
       card: { title: 'in_process_tool: list_workspace_files', badge: 'Local isolation', text: 'Tenant-isolated workspace file reader. The model inspects active workspace files without access to the host filesystem.', example: 'Example output', foot: 'Protected by a server-side execution gate and a single-use invocation token.' },
@@ -176,7 +176,7 @@ export const product = {
       items: [
         { k: 'Drei integrierte Tools', v: 'list_workspace_files zeigt Dateien des aktiven Workspaces. search_local_kb führt eine hybride Vektor- und BM25-Suche über persönliche Archive aus. fetch_cited_chunk holt den genauen Passagentext.' },
         { k: 'Bestätigung durch den Menschen', v: 'Jeder Tool-Aufruf erzeugt eine Karte im Chat. Prüfen Sie die Parameter, ändern Sie Werte oder brechen Sie ab.' },
-        { k: 'Schutz vor Prompt-Injection', v: 'Aus abgerufenen Passagen werden Tool-Marker entfernt, bevor sie in den Modellkontext gelangen. Das schließt Prompt-Injection über Dokumente aus.' },
+        { k: 'Schutz vor Prompt-Injection', v: 'Aus abgerufenen Passagen werden Tool-Marker entfernt, bevor sie in den Modellkontext gelangen. Das erschwert Prompt-Injection über Dokumente (kein Verfahren beseitigt dieses Risiko vollständig).' },
         { k: 'Serverseitige Ausführungssperre', v: 'Ein Einmal-Token verhindert direkte Ausführung und Wiederholungsangriffe.' },
       ],
       card: { title: 'in_process_tool: list_workspace_files', badge: 'Lokale Isolation', text: 'Mandantengetrennter Leser für Workspace-Dateien. Das Modell sieht die Dateien des aktiven Workspaces, ohne Zugriff auf das Dateisystem des Hosts.', example: 'Beispielausgabe', foot: 'Geschützt durch serverseitige Ausführungssperre und Einmal-Token.' },

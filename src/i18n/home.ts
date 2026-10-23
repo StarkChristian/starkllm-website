@@ -43,12 +43,13 @@ export const home = {
     compare: {
       h2: 'How StarkLLM compares',
       lede: 'An honest look at how StarkLLM fits into the local AI landscape next to other popular open solutions.',
+      note: 'As of October 2026, based on each tool\'s public documentation. Features change quickly, so please check the current versions. StarkLLM\'s answers also come from a small local model: check the cited source for anything important.',
       cols: ['Tool', 'Strength and limits', 'Best for'],
       rows: [
-        { kind: 'Inference GUI', name: 'LM Studio', text: 'Superb for downloading GGUFs from Hugging Face and tuning GPU layer offloading. It lacks deep multi-document RAG, persistent workspace knowledge bases and safe code execution.', best: 'Testing raw GGUFs without document grounding.' },
-        { kind: 'Basic RAG app', name: 'AnythingLLM', text: 'Popular for desktop RAG, but relies on naive chunking without cross-encoder reranking, which can cause retrieval hallucinations on dense technical documents. Runs inside a heavier web-style dashboard.', best: "Casual document chats where retrieval precision isn't mission-critical." },
-        { kind: 'Minimalist chat', name: 'Jan.ai', text: 'A lightweight, zero-telemetry, open-source ChatGPT-style app. It lacks advanced hybrid RAG, cross-encoder reranking, in-process code sandboxing and multimodal document analysis.', best: 'Simple zero-telemetry chat without document workflows.' },
-        { kind: 'This project', name: 'StarkLLM v2.0.0', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a safe Python sandbox, a local OpenAI server (/v1) and zero-cloud privacy.', best: 'Developers, researchers and privacy-critical professionals who need verified accuracy.', us: true },
+        { kind: 'Inference GUI', name: 'LM Studio', text: 'Superb for downloading GGUFs from Hugging Face and tuning GPU layer offloading. Its "Chat with Documents" attaches files to a conversation (short files are pasted in whole, long ones go through retrieval); per its documentation and third-party guides it has no persistent workspaces or shared knowledge bases.', best: 'Trying out models, with occasional documents attached to a chat.' },
+        { kind: 'Basic RAG app', name: 'AnythingLLM', text: 'A popular app for chatting with your documents in workspaces. Retrieval options such as reranking depend on the version and the vector database you choose, so compare it on your own documents.', best: 'Document chats where you want a ready-made workspace app.' },
+        { kind: 'Minimalist chat', name: 'Jan.ai', text: 'A lightweight, open-source ChatGPT-style app that keeps data on the device. Document retrieval exists as an optional setting that its documentation calls experimental; the focus is chat rather than document workflows.', best: 'Simple local chat with a clean interface.' },
+        { kind: 'This project', name: 'StarkLLM v2.0.0', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a safe Python sandbox, a local OpenAI server (/v1) and zero-cloud privacy.', best: 'Developers, researchers and privacy-conscious professionals who want answers with sources they can check.', us: true },
       ],
     },
     setup: {
@@ -132,12 +133,13 @@ export const home = {
     compare: {
       h2: 'StarkLLM im Vergleich',
       lede: 'Ein ehrlicher Blick darauf, wo StarkLLM neben anderen beliebten offenen Lösungen steht.',
+      note: 'Stand Oktober 2026, nach der öffentlichen Dokumentation der jeweiligen Tools. Funktionen ändern sich schnell, prüfen Sie bitte die aktuellen Versionen. Auch die Antworten von StarkLLM stammen von einem kleinen lokalen Modell: Prüfen Sie bei Wichtigem die genannte Quelle.',
       cols: ['Tool', 'Stärken und Grenzen', 'Am besten für'],
       rows: [
-        { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. Nicht enthalten sind tiefes RAG über mehrere Dokumente, dauerhafte Workspace-Wissensdatenbanken und sichere Code-Ausführung.', best: 'GGUF-Modelle ohne Dokumentbezug testen.' },
-        { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Beliebt für Desktop-RAG, nutzt aber einfaches Chunking ohne Cross-Encoder-Reranking, was bei dichten technischen Dokumenten zu Fehlern in der Suche führen kann. Läuft in einem schwereren Web-Dashboard.', best: 'Lockere Dokument-Chats, bei denen Präzision nicht kritisch ist.' },
-        { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte, telemetriefreie Open-Source-App im ChatGPT-Stil. Nicht enthalten sind fortgeschrittenes Hybrid-RAG, Cross-Encoder-Reranking, eine Code-Sandbox im Prozess und multimodale Dokumentanalyse.', best: 'Einfacher telemetriefreier Chat ohne Dokument-Workflows.' },
-        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.0', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und Fachleute mit hohen Datenschutzanforderungen, die nachprüfbare Genauigkeit brauchen.', us: true },
+        { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. „Chat with Documents“ hängt Dateien an eine Unterhaltung an (kurze Dateien werden ganz eingefügt, lange laufen über Retrieval); laut Dokumentation und Drittanleitungen gibt es keine dauerhaften Workspaces oder gemeinsamen Wissensdatenbanken.', best: 'Modelle ausprobieren, gelegentlich mit Dokumenten im Chat.' },
+        { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Eine beliebte App, um in Workspaces mit den eigenen Dokumenten zu chatten. Retrieval-Optionen wie Reranking hängen von Version und gewählter Vektordatenbank ab; vergleichen Sie sie an Ihren eigenen Dokumenten.', best: 'Dokument-Chats mit einer fertigen Workspace-App.' },
+        { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte Open-Source-App im ChatGPT-Stil, die Daten auf dem Gerät hält. Dokument-Retrieval gibt es als optionale Einstellung, die ihre Dokumentation als experimentell bezeichnet; der Schwerpunkt liegt auf Chat statt auf Dokument-Workflows.', best: 'Einfacher lokaler Chat mit klarer Oberfläche.' },
+        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.0', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und datenschutzbewusste Fachleute, die Antworten mit nachprüfbaren Quellen wollen.', us: true },
       ],
     },
     setup: {

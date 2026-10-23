@@ -24,7 +24,7 @@ export const ui = {
     },
   },
   de: {
-    nav: { home: 'Start', product: 'Produkt', manual: 'Handbuch', download: 'Download', about: 'Über uns', contact: 'Kontakt', github: 'GitHub' },
+    nav: { home: 'Start', product: 'Produkt', manual: 'Handbuch', download: 'Download', about: 'Über StarkLLM', contact: 'Kontakt', github: 'GitHub' },
     menu: 'Menü',
     footer: {
       tagline1: 'Ein kostenloses Open-Source-Projekt.',
