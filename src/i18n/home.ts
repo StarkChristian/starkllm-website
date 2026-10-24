@@ -1,8 +1,8 @@
 // Copy for the home page, EN and DE. German is a first draft and needs a native review before launch.
-export const SETUP_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.1/StarkLLM-v2.0.1-Setup.exe';
-export const PORTABLE_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.1/StarkLLM-v2.0.1-Portable.exe';
-export const SETUP_SHA = 'a4c99421221803aa52757c03ad9265d439d73257fb1186840d29561eb51b40e4';
-export const PORTABLE_SHA = '782b0b166854031e31bd00ba236b231868f66d18f04d87880205181f7469dd11';
+export const SETUP_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.2/StarkLLM-v2.0.2-Setup.exe';
+export const PORTABLE_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.2/StarkLLM-v2.0.2-Portable.exe';
+export const SETUP_SHA = 'a4579caaf2b86050337123c97793ea8330b59a68826ea17e1703562ae29992cb';
+export const PORTABLE_SHA = 'b499bcf7b6db2540acd007cc3d588b2413f3f373f352af99084e5eae46ea4ded';
 
 export const home = {
   en: {
@@ -11,14 +11,14 @@ export const home = {
       description:
         'StarkLLM is a free, open-source, local-first AI assistant for Windows. Chat privately with your documents and Knowledge Base on your own machine.',
     },
-    nav: { getBtn: 'Get v2.0.1' },
+    nav: { getBtn: 'Get v2.0.2' },
     hero: {
       eyebrow: 'Local-first AI for Windows · Research Beta',
       h1: ['Ask your files.', 'Nothing', 'leaves your PC.'],
       lede: 'StarkLLM indexes your documents on your own machine and answers with page-level citations, using Ollama models you run yourself.',
       cta1: 'Download for Windows',
       cta2: 'See how it works',
-      meta: 'v2.0.1 · 199 MB · Apache 2.0 · free',
+      meta: 'v2.0.2 · 199 MB · Apache 2.0 · free',
     },
     pipeline: [
       { k: 'Files', v: 'PDF, Word, text, code' },
@@ -49,7 +49,7 @@ export const home = {
         { kind: 'Inference GUI', name: 'LM Studio', text: 'Superb for downloading GGUFs from Hugging Face and tuning GPU layer offloading. Its "Chat with Documents" attaches files to a conversation (short files are pasted in whole, long ones go through retrieval); per its documentation and third-party guides it has no persistent workspaces or shared knowledge bases.', best: 'Trying out models, with occasional documents attached to a chat.' },
         { kind: 'Basic RAG app', name: 'AnythingLLM', text: 'A popular app for chatting with your documents in workspaces. Retrieval options such as reranking depend on the version and the vector database you choose, so compare it on your own documents.', best: 'Document chats where you want a ready-made workspace app.' },
         { kind: 'Minimalist chat', name: 'Jan.ai', text: 'A lightweight, open-source ChatGPT-style app that keeps data on the device. Document retrieval exists as an optional setting that its documentation calls experimental; the focus is chat rather than document workflows.', best: 'Simple local chat with a clean interface.' },
-        { kind: 'This project', name: 'StarkLLM v2.0.1', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a safe Python sandbox, a local OpenAI server (/v1) and zero-cloud privacy.', best: 'Developers, researchers and privacy-conscious professionals who want answers with sources they can check.', us: true },
+        { kind: 'This project', name: 'StarkLLM v2.0.2', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a safe Python sandbox, a local OpenAI server (/v1) and zero-cloud privacy.', best: 'Developers, researchers and privacy-conscious professionals who want answers with sources they can check.', us: true },
       ],
     },
     setup: {
@@ -58,7 +58,7 @@ export const home = {
       steps: [
         { title: 'Install Docker Desktop', text: 'From docker.com (with WSL2). Start it once and finish its setup.' },
         { title: 'Install Ollama', text: 'From ollama.com. No terminal needed: StarkLLM downloads the models itself.' },
-        { title: 'Install and start StarkLLM', text: 'Run StarkLLM-v2.0.1-Setup.exe (or the portable build) and click the shortcut. The app starts Docker and Ollama, downloads the models, builds its engine and shows the progress.' },
+        { title: 'Install and start StarkLLM', text: 'Run StarkLLM-v2.0.2-Setup.exe (or the portable build) and click the shortcut. The app starts Docker and Ollama, downloads the models, builds its engine and shows the progress.' },
         { title: 'If something is missing', text: 'The window says what is missing and how to fix it, with a Retry button. The Help page has a checklist.' },
       ],
       notesTitle: 'Important notes',
@@ -100,14 +100,14 @@ export const home = {
       description:
         'StarkLLM ist ein kostenloser, quelloffener, lokaler KI-Assistent für Windows. Chatten Sie privat mit Ihren Dokumenten und Ihrer Wissensdatenbank auf Ihrem eigenen Rechner.',
     },
-    nav: { getBtn: 'v2.0.1 laden' },
+    nav: { getBtn: 'v2.0.2 laden' },
     hero: {
       eyebrow: 'Lokale KI für Windows · Research Beta',
       h1: ['Fragen Sie Ihre Dateien.', 'Nichts', 'verlässt Ihren PC.'],
       lede: 'StarkLLM indexiert Ihre Dokumente auf Ihrem eigenen Rechner und antwortet mit seitengenauen Quellenangaben, mit Ollama-Modellen, die Sie selbst betreiben.',
       cta1: 'Für Windows herunterladen',
       cta2: 'So funktioniert es',
-      meta: 'v2.0.1 · 199 MB · Apache 2.0 · kostenlos',
+      meta: 'v2.0.2 · 199 MB · Apache 2.0 · kostenlos',
     },
     pipeline: [
       { k: 'Dateien', v: 'PDF, Word, Text, Code' },
@@ -138,7 +138,7 @@ export const home = {
         { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. „Chat with Documents“ hängt Dateien an eine Unterhaltung an (kurze Dateien werden ganz eingefügt, lange laufen über Retrieval); laut Dokumentation und Drittanleitungen gibt es keine dauerhaften Workspaces oder gemeinsamen Wissensdatenbanken.', best: 'Modelle ausprobieren, gelegentlich mit Dokumenten im Chat.' },
         { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Eine beliebte App, um in Workspaces mit den eigenen Dokumenten zu chatten. Retrieval-Optionen wie Reranking hängen von Version und gewählter Vektordatenbank ab; vergleichen Sie sie an Ihren eigenen Dokumenten.', best: 'Dokument-Chats mit einer fertigen Workspace-App.' },
         { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte Open-Source-App im ChatGPT-Stil, die Daten auf dem Gerät hält. Dokument-Retrieval gibt es als optionale Einstellung, die ihre Dokumentation als experimentell bezeichnet; der Schwerpunkt liegt auf Chat statt auf Dokument-Workflows.', best: 'Einfacher lokaler Chat mit klarer Oberfläche.' },
-        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.1', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und datenschutzbewusste Fachleute, die Antworten mit nachprüfbaren Quellen wollen.', us: true },
+        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.2', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und datenschutzbewusste Fachleute, die Antworten mit nachprüfbaren Quellen wollen.', us: true },
       ],
     },
     setup: {
@@ -147,7 +147,7 @@ export const home = {
       steps: [
         { title: 'Docker Desktop installieren', text: 'Von docker.com (mit WSL2). Einmal starten und die Einrichtung abschließen.' },
         { title: 'Ollama installieren', text: 'Von ollama.com. Kein Terminal nötig: StarkLLM lädt die Modelle selbst.' },
-        { title: 'StarkLLM installieren und starten', text: 'StarkLLM-v2.0.1-Setup.exe (oder die portable Version) ausführen und auf die Verknüpfung klicken. Die App startet Docker und Ollama, lädt die Modelle, baut ihre Engine und zeigt den Fortschritt.' },
+        { title: 'StarkLLM installieren und starten', text: 'StarkLLM-v2.0.2-Setup.exe (oder die portable Version) ausführen und auf die Verknüpfung klicken. Die App startet Docker und Ollama, lädt die Modelle, baut ihre Engine und zeigt den Fortschritt.' },
         { title: 'Wenn etwas fehlt', text: 'Das Fenster sagt, was fehlt und wie Sie es beheben, mit einer Retry-Schaltfläche. Die Hilfe-Seite hat eine Checkliste.' },
       ],
       notesTitle: 'Wichtige Hinweise',
