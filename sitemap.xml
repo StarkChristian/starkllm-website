@@ -2,138 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.starkllm.com/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/about</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/contact</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/datenschutz</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/de/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/de/download</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/download"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/download"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/de/help</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/help"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/help"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/de/product</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/product"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/product"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/download</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/download"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/download"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/help</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/help"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/help"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/impressum</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/manual</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/product</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/product"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/product"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-hybrid-search</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-knowledge-base</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-local-models</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-local-tools</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-multimodal</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-privacy</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-rag</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-semantic-chunking</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-themes</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-voice</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-workspaces</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
