@@ -115,7 +115,7 @@ export const product = {
         { href: '/manual#telemetry', t: 'Hardware health and VRAM monitor', v: 'Live GPU memory, container status, indexed chunk counts and a recent-chat launcher.' },
       ],
     },
-    cta: { h2: 'Ready to try StarkLLM?', text: 'Download the free, open-source Windows Research Beta.', installer: 'Download v2.0.0 installer', all: 'All downloads', manual: 'Read the manual' },
+    cta: { h2: 'Ready to try StarkLLM?', text: 'Download the free, open-source Windows Research Beta.', installer: 'Download v2.0.1 installer', all: 'All downloads', manual: 'Read the manual' },
   },
   de: {
     meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und acht Themes. Alles auf Ihrem Windows-PC.' },
@@ -220,7 +220,7 @@ export const product = {
         { href: '/manual#telemetry', t: 'Hardware-Zustand und VRAM-Monitor', v: 'Live-GPU-Speicher, Container-Status, Chunk-Zähler und Schnellzugriff auf letzte Chats.' },
       ],
     },
-    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: 'Installer v2.0.0 herunterladen', all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
+    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: 'Installer v2.0.1 herunterladen', all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
   },
 } as const;
 
