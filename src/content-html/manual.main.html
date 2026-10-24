@@ -127,13 +127,14 @@
             </section>
 
             <section id="first-launch">
-                <h2>8. Launching StarkLLM (v2.0.0 Native Desktop)</h2>
-                <p>StarkLLM v2.0.0 runs as an independent, standalone desktop application window (similar to Cursor and Claude Desktop). Choose your preferred launch option:</p>
+                <h2>8. Launching StarkLLM (v2.0.1 Native Desktop)</h2>
+                <p>StarkLLM v2.0.1 runs as an independent, standalone desktop application window (similar to Cursor and Claude Desktop). Choose your preferred launch option:</p>
 
                 <div class="alert info" style="margin-bottom: 1rem;">
-                    <strong>First Launch Note:</strong> First launch can take several minutes while Docker images
-                    initialize. Once containers are running, the backend initializes in <strong>1–2 minutes</strong>.
-                    StarkLLM displays a dedicated dark splash screen while checking services, then smoothly loads the application window.
+                    <strong>First Launch Note:</strong> Install Docker Desktop and Ollama once. On its first start the
+                    desktop app starts both, downloads the AI models (about 5 GB) and builds its engine, which takes
+                    <strong>10&ndash;20 minutes</strong>; the splash screen shows each step. Later starts take seconds.
+                    If a part is missing, the window says which one and how to fix it (log: <code>%APPDATA%\StarkLLM\engine.log</code>).
                 </div>
 
                 <div class="alert warning">
@@ -145,10 +146,10 @@
                 </div>
 
                 <h3>Option 1 &mdash; Windows Desktop Installer (Recommended)</h3>
-                <p>Run <code>StarkLLM-v2.0.0-Setup.exe</code> to install the native Windows window. It creates desktop and start menu shortcuts and shows StarkLLM without browser tabs. <strong>It does not start Docker, Ollama or the StarkLLM services</strong>: start them first (Option 3 or 4), otherwise the window stays on &ldquo;Connecting to local engine&hellip;&rdquo;.</p>
+                <p>Run <code>StarkLLM-v2.0.1-Setup.exe</code> to install the native Windows app. It creates desktop and start menu shortcuts. When you start it, it starts Docker Desktop and Ollama, downloads missing models, builds and starts the StarkLLM engine and then shows StarkLLM in its own window. Data is stored in <code>%APPDATA%\StarkLLM\data</code>, the Knowledge Base folder is <code>Documents\StarkLLM Knowledge Base</code>. (v2.0.0 started nothing and only waited on &ldquo;Connecting to local engine&hellip;&rdquo;.)</p>
 
                 <h3>Option 2 &mdash; Portable Standalone Application</h3>
-                <p>Run <code>StarkLLM-v2.0.0-Portable.exe</code> directly from any directory or USB drive without system installation.</p>
+                <p>Run <code>StarkLLM-v2.0.1-Portable.exe</code> directly from any directory without installation. It does the same as the installed app and uses the same data folder.</p>
 
                 <h3>Option 3 &mdash; start.exe / start.cmd Launcher</h3>
                 <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, starts containers, and launches the native desktop window.
@@ -447,7 +448,7 @@
                     <li>Response speed and throughput depend on your local hardware.</li>
                     <li>Document retrieval quality depends on the formatting and clarity of the input text. Questions in another language than the document, very long files without punctuation (logs) and mixed old and new versions of a document are the usual causes of missed facts.</li>
 <li>The default 7B model can confuse similar values, miscalculate or miss a fact. Check the cited source for important decisions.</li>
-<li>The desktop window does not start the services itself, and v2.0.0 is meant for one person per installation (every account can create a backup of the whole database).</li>
+<li>The first start of the desktop app takes 10&ndash;20 minutes (models and engine are downloaded and built). The first account is the administrator and can back up the whole database, including other accounts&rsquo; documents.</li>
 <li>See <a href="/help">Help &amp; Troubleshooting</a> for causes and fixes.</li>
                     <li>StarkLLM is provided "as is" as an open-source Research Beta under Apache 2.0.</li>
                 </ul>
