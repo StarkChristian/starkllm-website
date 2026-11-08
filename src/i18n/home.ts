@@ -7,7 +7,7 @@ export const PORTABLE_SHA = '74b87cd2e16e93512e5c0db30495388f72d8c24a9b4424fa3e4
 export const home = {
   en: {
     meta: {
-      title: 'StarkLLM | 100% Private Local AI for Windows',
+      title: 'StarkLLM | Private, local-first AI for your documents (Windows)',
       description:
         'StarkLLM is a free, open-source, local-first AI assistant for Windows. Chat privately with your documents and Knowledge Base on your own machine.',
     },
@@ -97,7 +97,7 @@ export const home = {
   },
   de: {
     meta: {
-      title: 'StarkLLM | 100 % private lokale KI für Windows',
+      title: 'StarkLLM | Private, lokale KI für Ihre Dokumente (Windows)',
       description:
         'StarkLLM ist ein kostenloser, quelloffener, lokaler KI-Assistent für Windows. Chatten Sie privat mit Ihren Dokumenten und Ihrer Wissensdatenbank auf Ihrem eigenen Rechner.',
     },
