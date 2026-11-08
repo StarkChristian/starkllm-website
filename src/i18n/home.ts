@@ -1,8 +1,8 @@
 // Copy for the home page, EN and DE. German is a first draft and needs a native review before launch.
 export const SETUP_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.4/StarkLLM-v2.0.4-Setup.exe';
 export const PORTABLE_URL = 'https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.4/StarkLLM-v2.0.4-Portable.exe';
-export const SETUP_SHA = 'e1c9ff78a7731f8c1c1bd7ceb9b850fafb69d34578e7e6bdbaf65cce85442fb0';
-export const PORTABLE_SHA = '74b87cd2e16e93512e5c0db30495388f72d8c24a9b4424fa3e405ecd3b0e7c97';
+export const SETUP_SHA = '0b35f9ea5946357e0f4cff0280c2465f0ff7bfa156013782534e625867240f8e';
+export const PORTABLE_SHA = '8e700da4bdacdb8d7aed25ea4660c5c46a3a8ef099d0577e98275a2f956d077b';
 
 export const home = {
   en: {
