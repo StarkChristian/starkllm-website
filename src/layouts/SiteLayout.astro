@@ -31,8 +31,10 @@ const { title, description, canonical, headExtra = '', lang = 'en', path = '/', 
     {canonical && <link rel="canonical" href={canonical} />}
     <Fragment set:html={headExtra} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
-    <link rel="icon" href="/favicon.ico?v=9" sizes="any" />
-    <link rel="icon" type="image/png" href="/assets/logo.png?v=9" />
+    <link rel="icon" href="/favicon.ico?v=10" sizes="any" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=10" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10" />
+    <link rel="manifest" href="/site.webmanifest" />
     <script is:inline defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
   </head>
   <body>
