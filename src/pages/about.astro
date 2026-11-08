@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import LegacyBody from '../components/LegacyBody.astro';
+import { home } from '../i18n/home';
 import head from '../content-html/about.head.html?raw';
 import main from '../content-html/about.main.html?raw';
 ---
-<Layout title={"About | StarkLLM"} headExtra={head} path="/about">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout title={"About | StarkLLM"} headExtra={head} path="/about" getLabel={home.en.nav.getBtn}>
+  <LegacyBody html={main} />
+</SiteLayout>

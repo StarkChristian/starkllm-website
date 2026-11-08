@@ -26,6 +26,10 @@ npm run check-links    # build first; checks every local href/src in dist/
 | `mockups/` | The three design directions (A was chosen). Not built. |
 | `downloads/` | Gitignored. Installers are on GitHub Releases, not on this site. |
 
+## Release data
+
+Version, download links, sizes and SHA-256 come from the latest GitHub release of `StarkChristian/StarkLLM` when the site is built (`src/data/release.ts`). A new release needs no text edits; rebuild and deploy. `src/data/release.json` is the fallback for offline builds (`STARKLLM_OFFLINE=1`); refresh it with `node tools/update_release.mjs`.
+
 ## Rules
 
 - Installers go to GitHub Releases. Never put binaries under `public/`.

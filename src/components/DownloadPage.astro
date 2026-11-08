@@ -12,6 +12,7 @@ const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = download[lang];
 const imgs = { kb, chat, chat2, settings } as const;
 type Kind = keyof typeof imgs;
+import { RELEASE } from '../data/release';
 ---
 <header class="page-hero">
   <p class="eyebrow">{c.hero.eyebrow}</p>
@@ -42,7 +43,7 @@ type Kind = keyof typeof imgs;
       <p class="sec-lede" style="margin:0 0 1rem;font-size:.95rem">{c.release.shaLede}</p>
       <div class="sha"><b>{c.release.setupLabel}</b><code>{SETUP_SHA}</code></div>
       <div class="sha"><b>{c.release.portableLabel}</b><code>{PORTABLE_SHA}</code></div>
-      <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.release.verify} <code>Get-FileHash -Algorithm SHA256 StarkLLM-v2.0.5-Setup.exe</code></p>
+      <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.release.verify} <code>Get-FileHash -Algorithm SHA256 {RELEASE.setup.name}</code></p>
     </div>
   </div>
 </section>
@@ -124,7 +125,7 @@ type Kind = keyof typeof imgs;
   <h2 id="con-h">{c.contribute.h2}</h2>
   <p class="sec-lede">{c.contribute.text}</p>
   <div class="cta">
-    <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noopener">GitHub: homomorphicprivacy/StarkLLM</a>
+    <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noopener">GitHub: StarkChristian/StarkLLM</a>
     <a class="btn ghost" href="mailto:info@starkllm.com">{c.contribute.mail}: info@starkllm.com</a>
   </div>
   <p class="sec-lede" style="font-size:.9rem">{c.contribute.repo}</p>

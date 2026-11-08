@@ -1,5 +1,6 @@
 // Copy for the product page, EN and DE. German is a first draft and needs a native review before launch.
 // Theme names, colors and descriptions mirror frontend/src/utils/themes.js in the app repo.
+import { V, SIZE_MB } from '../data/release';
 export const themes = [
   { name: 'Midnight Indigo', bg: '#05070a', card: '#121622', g: ['#6366f1', '#8b5cf6'], en: 'Classic deep slate with rich indigo and violet radiance.', de: 'Klassisches tiefes Schiefer mit kräftigem Indigo und Violett.' },
   { name: 'Cyberpunk Rose', bg: '#0a040b', card: '#220f28', g: ['#ec4899', '#f43f5e'], en: 'Vibrant neon pink and rose with a warm ambient glow.', de: 'Leuchtendes Neonpink und Rosé mit warmem Schimmer.' },
@@ -98,24 +99,8 @@ export const product = {
     tech: {
       h2: 'Core technologies',
       lede: 'Explore the architecture and capabilities behind StarkLLM.',
-      items: [
-        { href: '/tech-local-tools', t: 'Local tools (MCP host)', v: 'The in-process read-only tool host with human confirmation and server-side execution gates.' },
-        { href: '/tech-themes', t: 'Aesthetics and 8 themes', v: 'The eight palettes, OLED black, glassmorphism and the instant switcher.' },
-        { href: '/tech-rag', t: 'Retrieval-Augmented Generation', v: 'How StarkLLM retrieves context from your documents with honest page and section citations.' },
-        { href: '/tech-knowledge-base', t: 'Global Knowledge Base', v: 'Index local folders as a persistent reference library across all chats, with auto-sync.' },
-        { href: '/tech-semantic-chunking', t: 'Semantic chunking', v: 'How documents are split to preserve meaning and section locators.' },
-        { href: '/tech-hybrid-search', t: 'Hybrid search and re-ranking', v: 'Vector similarity combined with BM25 keyword search and re-ranking.' },
-        { href: '/tech-multimodal', t: 'Multimodal documents', v: 'PDFs, images and scanned documents through OCR and vision models.' },
-        { href: '/tech-workspaces', t: 'Multi-workspace and multi-chat', v: 'Isolated workspaces and separate chat sessions with auto-summaries.' },
-        { href: '/tech-voice', t: 'Voice I/O (STT/TTS)', v: 'Hands-free use with local speech-to-text and offline Piper text-to-speech.' },
-        { href: '/tech-local-models', t: 'Local models with Ollama', v: 'Run open-weight models on your GPU without cloud dependencies.' },
-        { href: '/tech-privacy', t: 'Privacy and local-first architecture', v: 'The Docker-based design that keeps your data on your PC.' },
-        { href: '/manual#folders', t: 'Chat folders and universal export', v: 'Collapsible folders, and export to Markdown, JSON, HTML or TXT.' },
-        { href: '/manual#languages', t: 'Languages', v: 'English interface, German next; answers follow the language of your question.' },
-        { href: '/manual#telemetry', t: 'Hardware health and VRAM monitor', v: 'Live GPU memory, container status, indexed chunk counts and a recent-chat launcher.' },
-      ],
     },
-    cta: { h2: 'Ready to try StarkLLM?', text: 'Download the free, open-source Windows Research Beta.', installer: 'Download v2.0.5 installer', all: 'All downloads', manual: 'Read the manual' },
+    cta: { h2: 'Ready to try StarkLLM?', text: 'Download the free, open-source Windows Research Beta.', installer: `Download v${V} installer`, all: 'All downloads', manual: 'Read the manual' },
   },
   de: {
     meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und acht Themes. Alles auf Ihrem Windows-PC.' },
@@ -202,25 +187,9 @@ export const product = {
     },
     tech: {
       h2: 'Kerntechnologien',
-      lede: 'Die Architektur und Fähigkeiten hinter StarkLLM. (Die Detailseiten sind derzeit auf Englisch.)',
-      items: [
-        { href: '/tech-local-tools', t: 'Lokale Tools (MCP-Host)', v: 'Der lesende Tool-Host im Prozess mit Bestätigung und serverseitiger Ausführungssperre.' },
-        { href: '/tech-themes', t: 'Gestaltung und 8 Themes', v: 'Die acht Paletten, OLED-Schwarz, Glassmorphismus und der Sofort-Umschalter.' },
-        { href: '/tech-rag', t: 'Retrieval-Augmented Generation', v: 'Wie StarkLLM Kontext aus Ihren Dokumenten abruft, mit ehrlichen Seiten- und Abschnittsangaben.' },
-        { href: '/tech-knowledge-base', t: 'Globale Wissensdatenbank', v: 'Lokale Ordner als dauerhafte Referenzbibliothek für alle Chats, mit automatischem Abgleich.' },
-        { href: '/tech-semantic-chunking', t: 'Semantisches Chunking', v: 'Wie Dokumente zerlegt werden, damit Bedeutung und Abschnittsangaben erhalten bleiben.' },
-        { href: '/tech-hybrid-search', t: 'Hybridsuche und Re-Ranking', v: 'Vektorähnlichkeit kombiniert mit BM25-Stichwortsuche und Neusortierung.' },
-        { href: '/tech-multimodal', t: 'Multimodale Dokumente', v: 'PDFs, Bilder und Scans über OCR und Bildmodelle.' },
-        { href: '/tech-workspaces', t: 'Mehrere Workspaces und Chats', v: 'Getrennte Workspaces und Chat-Sitzungen mit automatischen Zusammenfassungen.' },
-        { href: '/tech-voice', t: 'Sprach-Ein-/Ausgabe (STT/TTS)', v: 'Freihändige Nutzung mit lokaler Spracherkennung und Piper-Sprachausgabe offline.' },
-        { href: '/tech-local-models', t: 'Lokale Modelle mit Ollama', v: 'Offene Modelle auf Ihrer GPU ausführen, ohne Cloud-Abhängigkeit.' },
-        { href: '/tech-privacy', t: 'Datenschutz und Local-First-Architektur', v: 'Das Docker-basierte Design, das Ihre Daten auf Ihrem PC hält.' },
-        { href: '/manual#folders', t: 'Chat-Ordner und Export', v: 'Einklappbare Ordner und Export nach Markdown, JSON, HTML oder TXT.' },
-        { href: '/manual#languages', t: 'Sprachen', v: 'Oberfläche auf Englisch, Deutsch folgt; Antworten in der Sprache Ihrer Frage.' },
-        { href: '/manual#telemetry', t: 'Hardware-Zustand und VRAM-Monitor', v: 'Live-GPU-Speicher, Container-Status, Chunk-Zähler und Schnellzugriff auf letzte Chats.' },
-      ],
+      lede: 'Die Architektur und Fähigkeiten hinter StarkLLM.',
     },
-    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: 'Installer v2.0.5 herunterladen', all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
+    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: `Installer v${V} herunterladen`, all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
   },
 } as const;
 

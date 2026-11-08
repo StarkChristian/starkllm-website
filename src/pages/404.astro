@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import LegacyBody from '../components/LegacyBody.astro';
+import { home } from '../i18n/home';
 import head from '../content-html/404.head.html?raw';
 import main from '../content-html/404.main.html?raw';
 ---
-<Layout title={"Page Not Found (404) | StarkLLM"} headExtra={head} path="/404">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout title={"Page Not Found (404) | StarkLLM"} headExtra={head} path="/404" getLabel={home.en.nav.getBtn}>
+  <LegacyBody html={main} />
+</SiteLayout>

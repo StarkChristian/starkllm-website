@@ -1,0 +1,7 @@
+---
+// Renders an older content page (src/content-html/*.main.html) inside the site layout.
+// The page's own <main> becomes a div, because SiteLayout already has the <main> landmark.
+const { html } = Astro.props as { html: string };
+const body = html.replace(/^\s*<main\b([^>]*)>/, '<div$1>').replace(/<\/main>\s*$/, '</div>');
+---
+<div class="legacy-body"><Fragment set:html={body} /></div>
