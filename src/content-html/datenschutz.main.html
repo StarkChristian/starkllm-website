@@ -6,7 +6,7 @@
 
         <div class="content-block" style="max-width: 900px;">
             <h2>1. Datenschutz auf einen Blick</h2>
-            <p><strong>Allgemeine Hinweise:</strong> Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. StarkLLM ist als privates, lokales Open-Source-Forschungsprojekt konzipiert. Die Anwendung selbst läuft zu 100 % lokal auf Ihrer eigenen Hardware. Diese Erklärung informiert Sie über Art, Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten auf dieser Website.</p>
+            <p><strong>Allgemeine Hinweise:</strong> Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. StarkLLM ist als privates, lokales Open-Source-Forschungsprojekt konzipiert. Die Anwendung selbst läuft standardmäßig lokal auf Ihrer eigenen Hardware. Diese Erklärung informiert Sie über Art, Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten auf dieser Website.</p>
 
             <h2>2. Verantwortliche Stelle</h2>
             <p>
@@ -41,12 +41,21 @@
             <p>Wenn Sie uns per E-Mail kontaktieren, wird Ihre E-Mail inklusive der von Ihnen angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO.</p>
 
             <h2>4. Lokale StarkLLM-Software (Desktop App)</h2>
-            <p>Die StarkLLM Windows-Anwendung arbeitet nach dem Prinzip <strong>Strict Zero-Cloud / Local-First</strong>:</p>
+            <p>Die StarkLLM Windows-Anwendung arbeitet nach dem Prinzip <strong>Local-First</strong>:</p>
             <ul>
                 <li>Alle Dokumente, Vektordatenbanken (ChromaDB) und Benutzerkonten werden ausschließlich lokal auf Ihrem Computer gespeichert.</li>
                 <li>Die Sprachmodelle laufen über Ollama lokal auf Ihrer CPU/GPU.</li>
                 <li>Es werden durch die Software keine Telemetrie- oder Nutzungsdaten an externe Server übertragen.</li>
             </ul>
+            <p>Folgende Funktionen stellen nur dann eine Verbindung ins Internet her, wenn Sie sie selbst einschalten oder auslösen:</p>
+            <ul>
+                <li><strong>Websuche</strong> (Schalter im Chat): Ihre Frage wird an DuckDuckGo gesendet.</li>
+                <li><strong>Cloud-Modellanbieter</strong> (Einstellungen, z. B. DeepSeek, OpenRouter, Groq): Ihre Frage und die gefundenen Dokumentabschnitte werden an den gewählten Anbieter gesendet.</li>
+                <li><strong>YouTube- und GitHub-Import</strong>: Die App lädt das angegebene Video-Transkript bzw. Repository herunter.</li>
+                <li><strong>Marktpreise</strong> (Widget, standardmäßig aus): Abruf bei Yahoo Finance.</li>
+                <li><strong>Update-Prüfung</strong> (beim ersten Start gefragt, jederzeit abschaltbar): Abfrage der neuesten Version bei GitHub, ohne Nutzungsdaten.</li>
+            </ul>
+            <p>Für diese Verbindungen gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
 
             <h2>5. Ihre Rechte</h2>
             <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>

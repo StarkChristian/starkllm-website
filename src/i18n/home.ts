@@ -36,7 +36,7 @@ export const home = {
         { tag: 'Tools', title: 'Local tools with a confirmation gate', text: 'Read-only tools such as search_local_kb and fetch_cited_chunk. Every call needs your confirmation and a single-use token.' },
         { tag: 'Themes', title: 'Eight themes, switched instantly', text: 'Midnight Indigo, OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost and Daylight Minimal.', wide: true, art: 'swatches' },
         { tag: 'Knowledge', title: 'Workspaces and a global knowledge base', text: 'Map Windows folders, keep projects isolated, and query the shared knowledge base from any chat.' },
-        { tag: 'Code', title: 'Local Python sandbox', text: 'In-process execution with AST validation and timeout protection.' },
+        { tag: 'Code', title: 'Local Python sandbox', text: 'Runs in the app with code checks and time and memory limits. A convenience limit, not a security boundary: only run code you trust.' },
         { tag: 'API', title: 'Local OpenAI-compatible server', text: 'A standard /v1/chat/completions endpoint for Cursor, Claude Code and other tools.' },
       ],
     },
@@ -49,7 +49,7 @@ export const home = {
         { kind: 'Inference GUI', name: 'LM Studio', text: 'Superb for downloading GGUFs from Hugging Face and tuning GPU layer offloading. Its "Chat with Documents" attaches files to a conversation (short files are pasted in whole, long ones go through retrieval); per its documentation and third-party guides it has no persistent workspaces or shared knowledge bases.', best: 'Trying out models, with occasional documents attached to a chat.' },
         { kind: 'Basic RAG app', name: 'AnythingLLM', text: 'A popular app for chatting with your documents in workspaces. Retrieval options such as reranking depend on the version and the vector database you choose, so compare it on your own documents.', best: 'Document chats where you want a ready-made workspace app.' },
         { kind: 'Minimalist chat', name: 'Jan.ai', text: 'A lightweight, open-source ChatGPT-style app that keeps data on the device. Document retrieval exists as an optional setting that its documentation calls experimental; the focus is chat rather than document workflows.', best: 'Simple local chat with a clean interface.' },
-        { kind: 'This project', name: 'StarkLLM v2.0.3', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a safe Python sandbox, a local OpenAI server (/v1) and zero-cloud privacy.', best: 'Developers, researchers and privacy-conscious professionals who want answers with sources they can check.', us: true },
+        { kind: 'This project', name: 'StarkLLM v2.0.3', text: 'Native Windows desktop app with hybrid RAG and TinyBERT cross-encoder reranking, a Python code runner with time and memory limits, a local OpenAI server (/v1) and local-by-default privacy.', best: 'Developers, researchers and privacy-conscious professionals who want answers with sources they can check.', us: true },
       ],
     },
     setup: {
@@ -75,6 +75,7 @@ export const home = {
         { title: 'Local inference', text: 'Powered by Ollama, language models run on your own CPU or GPU. Designed to work fully offline once models are downloaded.' },
         { title: 'Local storage', text: 'Documents are chunked and embedded into a local ChromaDB vector store running in an isolated Docker container.' },
         { title: 'Zero telemetry', text: 'The Windows app has no telemetry and no analytics SDK. This website uses self-hosted Umami analytics; see the Datenschutz page.' },
+        { title: 'Online only when you choose it', text: 'Web search, cloud model providers, YouTube and GitHub import, market prices and the update check are off until you turn them on. The chat shows when a request leaves your PC.' },
       ],
     },
     download: {
@@ -125,7 +126,7 @@ export const home = {
         { tag: 'Werkzeuge', title: 'Lokale Tools mit Bestätigung', text: 'Nur lesende Tools wie search_local_kb und fetch_cited_chunk. Jeder Aufruf braucht Ihre Bestätigung und ein Einmal-Token.' },
         { tag: 'Themes', title: 'Acht Themes, sofort umschaltbar', text: 'Midnight Indigo, OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost und Daylight Minimal.', wide: true, art: 'swatches' },
         { tag: 'Wissen', title: 'Workspaces und globale Wissensdatenbank', text: 'Windows-Ordner einbinden, Projekte getrennt halten und die gemeinsame Wissensdatenbank aus jedem Chat abfragen.' },
-        { tag: 'Code', title: 'Lokale Python-Sandbox', text: 'Ausführung im Prozess mit AST-Prüfung und Zeitlimit.' },
+        { tag: 'Code', title: 'Lokale Python-Sandbox', text: 'Läuft in der App mit Code-Prüfung sowie Zeit- und Speicherlimit. Eine Komfortgrenze, keine Sicherheitsgrenze: führen Sie nur Code aus, dem Sie vertrauen.' },
         { tag: 'API', title: 'Lokaler OpenAI-kompatibler Server', text: 'Ein Standard-Endpunkt /v1/chat/completions für Cursor, Claude Code und andere Tools.' },
       ],
     },
@@ -138,7 +139,7 @@ export const home = {
         { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. „Chat with Documents“ hängt Dateien an eine Unterhaltung an (kurze Dateien werden ganz eingefügt, lange laufen über Retrieval); laut Dokumentation und Drittanleitungen gibt es keine dauerhaften Workspaces oder gemeinsamen Wissensdatenbanken.', best: 'Modelle ausprobieren, gelegentlich mit Dokumenten im Chat.' },
         { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Eine beliebte App, um in Workspaces mit den eigenen Dokumenten zu chatten. Retrieval-Optionen wie Reranking hängen von Version und gewählter Vektordatenbank ab; vergleichen Sie sie an Ihren eigenen Dokumenten.', best: 'Dokument-Chats mit einer fertigen Workspace-App.' },
         { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte Open-Source-App im ChatGPT-Stil, die Daten auf dem Gerät hält. Dokument-Retrieval gibt es als optionale Einstellung, die ihre Dokumentation als experimentell bezeichnet; der Schwerpunkt liegt auf Chat statt auf Dokument-Workflows.', best: 'Einfacher lokaler Chat mit klarer Oberfläche.' },
-        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.3', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, sicherer Python-Sandbox, lokalem OpenAI-Server (/v1) und Datenschutz ohne Cloud.', best: 'Entwickler, Forschende und datenschutzbewusste Fachleute, die Antworten mit nachprüfbaren Quellen wollen.', us: true },
+        { kind: 'Dieses Projekt', name: 'StarkLLM v2.0.3', text: 'Native Windows-Desktop-App mit Hybrid-RAG und TinyBERT-Cross-Encoder-Reranking, Python-Code-Ausführung mit Zeit- und Speicherlimit, lokalem OpenAI-Server (/v1) und standardmäßig lokalem Datenschutz.', best: 'Entwickler, Forschende und datenschutzbewusste Fachleute, die Antworten mit nachprüfbaren Quellen wollen.', us: true },
       ],
     },
     setup: {
@@ -164,6 +165,7 @@ export const home = {
         { title: 'Lokale Inferenz', text: 'Mit Ollama laufen Sprachmodelle auf Ihrer eigenen CPU oder GPU. Nach dem Download der Modelle ist der Betrieb vollständig offline möglich.' },
         { title: 'Lokaler Speicher', text: 'Dokumente werden in Chunks zerlegt und in einen lokalen ChromaDB-Vektorspeicher in einem isolierten Docker-Container eingebettet.' },
         { title: 'Keine Telemetrie', text: 'Die Windows-App enthält weder Telemetrie noch ein Analyse-SDK. Diese Website nutzt selbst gehostetes Umami; siehe Datenschutzerklärung.' },
+        { title: 'Online nur, wenn Sie es wählen', text: 'Websuche, Cloud-Modellanbieter, YouTube- und GitHub-Import, Marktpreise und die Update-Prüfung sind aus, bis Sie sie einschalten. Der Chat zeigt an, wenn eine Anfrage Ihren PC verlässt.' },
       ],
     },
     download: {

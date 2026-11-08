@@ -91,7 +91,7 @@ export const product = {
       items: [
         { k: 'Hybrid RAG with a cross-encoder', v: 'Most desktop RAG tools rely on vector embeddings alone and can miss exact keywords. StarkLLM merges BM25 keyword frequency with dense vector search, then re-ranks chunks with a local TinyBERT cross-encoder.' },
         { k: 'Native standalone window', v: 'No browser tabs or address bar. A standalone desktop app with a frameless title bar, splash screen, system tray integration and a Windows NSIS installer.' },
-        { k: 'In-process code sandbox', v: 'Run Python calculations, data analysis and formula work on your own machine, protected by strict AST validation, memory caps and timeout watchdogs.' },
+        { k: 'Python code runner', v: 'Run Python calculations, data analysis and formula work on your own machine, with code checks, memory caps and time limits. These are convenience limits, not a security boundary: only run code you trust.' },
         { k: 'Local OpenAI-compatible API', v: 'A local gateway exposing /v1/chat/completions and /v1/models. Connect IDEs like Cursor, tools like Claude Code, Obsidian plugins or your own Python scripts to your local models.' },
       ],
     },
@@ -196,7 +196,7 @@ export const product = {
       items: [
         { k: 'Hybrides RAG mit Cross-Encoder', v: 'Die meisten Desktop-RAG-Tools nutzen nur Vektor-Embeddings und können exakte Stichwörter verpassen. StarkLLM verbindet BM25-Stichwortgewichtung mit dichter Vektorsuche und sortiert die Chunks mit einem lokalen TinyBERT-Cross-Encoder neu.' },
         { k: 'Natives, eigenständiges Fenster', v: 'Keine Browser-Tabs, keine Adressleiste. Eine eigenständige Desktop-App mit rahmenloser Titelleiste, Startbildschirm, Tray-Integration und Windows-NSIS-Installer.' },
-        { k: 'Code-Sandbox im Prozess', v: 'Führen Sie Python-Berechnungen, Datenanalysen und Formelarbeit auf Ihrem Rechner aus, geschützt durch strikte AST-Prüfung, Speichergrenzen und Zeitüberwachung.' },
+        { k: 'Python-Code-Ausführung', v: 'Führen Sie Python-Berechnungen, Datenanalysen und Formelarbeit auf Ihrem Rechner aus, mit Code-Prüfung, Speichergrenzen und Zeitlimit. Das sind Komfortgrenzen, keine Sicherheitsgrenze: führen Sie nur Code aus, dem Sie vertrauen.' },
         { k: 'Lokale OpenAI-kompatible API', v: 'Ein lokales Gateway mit /v1/chat/completions und /v1/models. Verbinden Sie IDEs wie Cursor, Werkzeuge wie Claude Code, Obsidian-Plugins oder eigene Python-Skripte mit Ihren lokalen Modellen.' },
       ],
     },
