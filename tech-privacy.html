@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy &amp; Architecture | StarkLLM</title><meta name="description" content="Understand StarkLLM's zero-telemetry, offline privacy architecture. Your confidential files, chats, and embeddings never leave your computer.">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy &amp; Architecture | StarkLLM</title><meta name="description" content="Understand StarkLLM's zero-telemetry, offline privacy architecture. Your files, chats and embeddings stay on your computer unless you turn on an online feature.">
 <link rel="canonical" href="https://www.starkllm.com/tech-privacy">
 <meta name="robots" content="index, follow">
 <!-- Open Graph -->
@@ -36,7 +36,18 @@
                 <p>Alignment with privacy-conscious data governance practices, because core data processing is designed to stay on your local device.</p>
                 
                 <h2>6. Practical Example</h2>
-                <p>Once initial setup and model weights are downloaded, you can run StarkLLM on a laptop with Wi-Fi physically disabled (offline mode), and the entire system—document ingestion, local vector search, and LLM inference—functions 100% offline without any internet connection.</p>
+                <p>Once initial setup and model weights are downloaded, you can run StarkLLM on a laptop with Wi-Fi physically disabled (offline mode), and the entire system—document ingestion, local vector search, and LLM inference—functions offline without any internet connection.</p>
+
+                <h2>7. Optional Online Features</h2>
+                <p>A few features connect to the internet, and only when you turn them on or start them yourself. The chat shows when a request leaves your PC.</p>
+                <ul>
+                    <li><strong>Web search</strong> (toggle in the chat): your question is sent to DuckDuckGo.</li>
+                    <li><strong>Cloud model providers</strong> (Settings, e.g. DeepSeek, OpenRouter, Groq): your question and the retrieved document passages are sent to that provider.</li>
+                    <li><strong>YouTube and GitHub import</strong>: the app downloads the transcript or repository you entered.</li>
+                    <li><strong>Market prices</strong> (widget, off by default): fetched from Yahoo Finance.</li>
+                    <li><strong>Update check</strong> (asked on first start, can be turned off): asks GitHub for the newest version number; no usage data is sent.</li>
+                </ul>
+                <p><strong>One-time downloads without your data:</strong> the AI models you choose (from Ollama), the re-ranker model (TinyBERT, on the first search) and the speech-recognition model (Whisper, on the first voice input) are downloaded once from the internet. They receive no documents, questions or usage data. Without internet the search works without re-ranking.</p>
             </div>
             
             <aside>
