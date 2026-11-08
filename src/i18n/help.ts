@@ -18,7 +18,7 @@ export const help = {
         { t: 'The StarkLLM app (StarkLLM.exe)', v: 'Contains the engine. On every start it checks Docker and Ollama, downloads missing models, builds and starts the engine and then shows StarkLLM. If a part is missing it says which one and how to fix it.' },
         { t: 'From source (optional)', v: 'Developers can still run the project folder with start.cmd or docker compose up --build -d and open http://localhost:5173 in a browser. The desktop app uses an engine that is already running.' },
       ],
-      warn: 'v2.0.0 (before 24 October 2026) only displayed the web interface and started nothing, so on a new PC its window always ended on an error. Please install v2.0.3 or newer.',
+      warn: 'v2.0.0 (before 24 October 2026) only displayed the web interface and started nothing, so on a new PC its window always ended on an error. Please install v2.0.4 or newer.',
     },
     steps: {
       h2: 'Install checklist with a test for every step',
@@ -28,7 +28,7 @@ export const help = {
         { t: '2. Docker Desktop', v: 'Install Docker Desktop, start it and wait until it reports that the engine is running (steady whale icon in the tray). Use Linux containers, not Windows containers.', code: 'docker info', check: 'Test: the output contains a "Server:" section. If you only see "error during connect ... dockerDesktopLinuxEngine", Docker Desktop is not running yet.' },
         { t: '3. Ollama', v: 'Install Ollama from ollama.com and make sure it is running (icon in the tray).', code: 'ollama --version\ncurl http://localhost:11434/api/tags', check: 'Test: the second command prints JSON (a list of models, possibly empty).' },
         { t: '4. The two models', v: 'The default setup uses a 7B chat model and a small embedding model. Together about 5 GB of download.', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text\nollama list', check: 'Test: ollama list shows both. Short on memory (8 GB PC)? Use qwen2.5:3b instead and select it in the chat. Old copies of the instructions mention qwen3 models; ignore them (see problem 5 below).' },
-        { t: '5. Install and start StarkLLM', v: 'Download StarkLLM-v2.0.3-Setup.exe from the download page, install it and start StarkLLM. The first start downloads the two models (about 5 GB) and builds the engine; this takes 10 to 20 minutes and the window shows the progress. Steps 3 and 4 are done for you if Ollama is installed.', check: 'Test: the StarkLLM login page appears. If the window says "StarkLLM could not start", it lists what is missing; the full log is in %APPDATA%\\StarkLLM\\engine.log.' },
+        { t: '5. Install and start StarkLLM', v: 'Download StarkLLM-v2.0.4-Setup.exe from the download page, install it and start StarkLLM. The first start downloads the two models (about 5 GB) and builds the engine; this takes 10 to 20 minutes and the window shows the progress. Steps 3 and 4 are done for you if Ollama is installed.', check: 'Test: the StarkLLM login page appears. If the window says "StarkLLM could not start", it lists what is missing; the full log is in %APPDATA%\\StarkLLM\\engine.log.' },
         { t: '6. First test', v: 'Register an account (the first account is the administrator of this installation).', check: 'Test: you can create a workspace and upload a small text file; its status changes to "indexed". Then ask a question about it and check that the answer names the file.' },
       ],
     },
@@ -90,7 +90,7 @@ export const help = {
       note: 'Write to info@starkllm.com or open an issue on GitHub. Please tell us your Windows version, the amount of RAM and whether you have an NVIDIA GPU.',
     },
     limits: {
-      h2: 'Known limits of v2.0.3',
+      h2: 'Known limits of v2.0.4',
       lede: 'We prefer to say this openly:',
       items: [
         ['The first start takes long', 'About 5 GB of models plus the engine are downloaded and built (10 to 20 minutes, internet needed). Docker Desktop and Ollama must be installed once by you.'],
@@ -120,7 +120,7 @@ export const help = {
         { t: 'Die StarkLLM-App (StarkLLM.exe)', v: 'Enthält die Engine. Bei jedem Start prüft sie Docker und Ollama, lädt fehlende Modelle, baut und startet die Engine und zeigt dann StarkLLM. Fehlt ein Teil, sagt sie welcher und wie Sie ihn beheben.' },
         { t: 'Aus dem Quellcode (optional)', v: 'Entwickler können den Projektordner weiter mit start.cmd oder docker compose up --build -d starten und http://localhost:5173 im Browser öffnen. Die Desktop-App nutzt eine bereits laufende Engine.' },
       ],
-      warn: 'v2.0.0 (vor dem 24. Oktober 2026) zeigte nur die Weboberfläche an und startete nichts, daher endete das Fenster auf einem neuen PC immer mit einem Fehler. Bitte installieren Sie v2.0.3 oder neuer.',
+      warn: 'v2.0.0 (vor dem 24. Oktober 2026) zeigte nur die Weboberfläche an und startete nichts, daher endete das Fenster auf einem neuen PC immer mit einem Fehler. Bitte installieren Sie v2.0.4 oder neuer.',
     },
     steps: {
       h2: 'Installations-Checkliste mit Test pro Schritt',
@@ -130,7 +130,7 @@ export const help = {
         { t: '2. Docker Desktop', v: 'Installieren und starten Sie Docker Desktop und warten Sie, bis die Engine läuft (ruhiges Wal-Symbol im Infobereich). Verwenden Sie Linux-Container, keine Windows-Container.', code: 'docker info', check: 'Test: Die Ausgabe enthält einen Abschnitt „Server:“. Sehen Sie nur „error during connect ... dockerDesktopLinuxEngine“, läuft Docker Desktop noch nicht.' },
         { t: '3. Ollama', v: 'Installieren Sie Ollama von ollama.com und stellen Sie sicher, dass es läuft (Symbol im Infobereich).', code: 'ollama --version\ncurl http://localhost:11434/api/tags', check: 'Test: Der zweite Befehl gibt JSON aus (eine Modellliste, möglicherweise leer).' },
         { t: '4. Die zwei Modelle', v: 'Die Standardeinrichtung nutzt ein 7B-Chatmodell und ein kleines Embedding-Modell. Zusammen etwa 5 GB Download.', code: 'ollama pull qwen2.5:7b\nollama pull nomic-embed-text\nollama list', check: 'Test: ollama list zeigt beide. Wenig Speicher (PC mit 8 GB)? Nehmen Sie stattdessen qwen2.5:3b und wählen es im Chat aus. Alte Kopien der Anleitung nennen qwen3-Modelle; ignorieren Sie diese (siehe Problem 5).' },
-        { t: '5. StarkLLM installieren und starten', v: 'Laden Sie StarkLLM-v2.0.3-Setup.exe von der Download-Seite, installieren Sie es und starten Sie StarkLLM. Der erste Start lädt die zwei Modelle (etwa 5 GB) und baut die Engine; das dauert 10 bis 20 Minuten, das Fenster zeigt den Fortschritt. Die Schritte 3 und 4 erledigt die App, wenn Ollama installiert ist.', check: 'Test: Die StarkLLM-Anmeldeseite erscheint. Zeigt das Fenster „StarkLLM could not start“, nennt es, was fehlt; das vollständige Protokoll liegt in %APPDATA%\\StarkLLM\\engine.log.' },
+        { t: '5. StarkLLM installieren und starten', v: 'Laden Sie StarkLLM-v2.0.4-Setup.exe von der Download-Seite, installieren Sie es und starten Sie StarkLLM. Der erste Start lädt die zwei Modelle (etwa 5 GB) und baut die Engine; das dauert 10 bis 20 Minuten, das Fenster zeigt den Fortschritt. Die Schritte 3 und 4 erledigt die App, wenn Ollama installiert ist.', check: 'Test: Die StarkLLM-Anmeldeseite erscheint. Zeigt das Fenster „StarkLLM could not start“, nennt es, was fehlt; das vollständige Protokoll liegt in %APPDATA%\\StarkLLM\\engine.log.' },
         { t: '6. Erster Test', v: 'Registrieren Sie ein Konto (das erste Konto ist der Administrator dieser Installation).', check: 'Test: Sie können einen Workspace anlegen und eine kleine Textdatei hochladen; ihr Status wechselt auf „indexed“. Stellen Sie danach eine Frage dazu und prüfen Sie, dass die Antwort die Datei nennt.' },
       ],
     },
@@ -192,7 +192,7 @@ export const help = {
       note: 'Schreiben Sie an info@starkllm.com oder eröffnen Sie ein Issue auf GitHub. Nennen Sie bitte Ihre Windows-Version, die RAM-Größe und ob Sie eine NVIDIA-GPU haben.',
     },
     limits: {
-      h2: 'Bekannte Grenzen von v2.0.3',
+      h2: 'Bekannte Grenzen von v2.0.4',
       lede: 'Das sagen wir lieber offen:',
       items: [
         ['Der erste Start dauert lange', 'Etwa 5 GB Modelle und die Engine werden geladen und gebaut (10 bis 20 Minuten, Internet nötig). Docker Desktop und Ollama installieren Sie einmal selbst.'],
