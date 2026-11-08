@@ -51,6 +51,83 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/product"/>
   </url>
   <url>
+    <loc>https://www.starkllm.com/de/tech-hybrid-search</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-hybrid-search"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-hybrid-search"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-knowledge-base</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-knowledge-base"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-knowledge-base"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-local-models</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-local-models"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-local-models"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-local-tools</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-local-tools"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-local-tools"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-multimodal</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-multimodal"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-multimodal"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-privacy</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-privacy"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-rag</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-rag"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-rag"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-semantic-chunking</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-semantic-chunking"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-semantic-chunking"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-themes</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-themes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-themes"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-voice</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-voice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-voice"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/tech-workspaces</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-workspaces"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-workspaces"/>
+  </url>
+  <url>
     <loc>https://www.starkllm.com/download</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.9</priority>
@@ -85,55 +162,77 @@
     <loc>https://www.starkllm.com/tech-hybrid-search</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-hybrid-search"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-hybrid-search"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-knowledge-base</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-knowledge-base"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-knowledge-base"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-local-models</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-local-models"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-local-models"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-local-tools</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-local-tools"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-local-tools"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-multimodal</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-multimodal"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-multimodal"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-privacy</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-privacy"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-rag</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-rag"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-rag"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-semantic-chunking</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-semantic-chunking"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-semantic-chunking"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-themes</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-themes"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-themes"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-voice</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-voice"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-voice"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/tech-workspaces</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/tech-workspaces"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/tech-workspaces"/>
   </url>
 </urlset>
