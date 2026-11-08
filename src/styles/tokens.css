@@ -10,9 +10,9 @@
   --c-violet: #8c14fc;
   --c-violet-soft: #b777ff;
   --c-gold: #d4af37;
-  --font-display: 'Syne', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'Manrope', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --font-display: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Geist', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, Consolas, monospace;
 }
 
 .footer-disclaimer { margin-top: 1rem; font-size: 0.8rem; color: #71717a; }
