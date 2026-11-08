@@ -19,7 +19,7 @@ const items = [
     {items.map((i) => (
       <li><a href={localePath(lang, i.href)} aria-current={i.href === path ? 'page' : undefined}>{i.label}</a></li>
     ))}
-    <li><a href="https://github.com/homomorphicprivacy/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
+    <li><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
     <li class="lang">
       {lang === 'en'
         ? <a href={localePath('de', path)} hreflang="de" lang="de" title="Deutsch">DE</a>

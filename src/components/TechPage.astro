@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import chat from '../assets/LLM20242.png';
+import kb from '../assets/KnowledgeBase.png';
+import settings from '../assets/Settings.png';
+import { tech, techLabels, techOrder, type TechSlug } from '../i18n/tech';
+import { SETUP_URL } from '../i18n/home';
+import { localePath, type Lang } from '../i18n/ui';
+
+const { lang = 'en', slug } = Astro.props as { lang?: Lang; slug: TechSlug };
+const t = tech[lang][slug];
+const l = techLabels[lang];
+const shots = { chat, kb, settings };
+const others = techOrder.filter((s) => s !== slug);
+---
+<header class="page-hero">
+  <p class="eyebrow">{t.eyebrow}</p>
+  <h1>{t.h1}</h1>
+  <p class="lede">{t.lede}</p>
+</header>
+
+<section class="block tech-body">
+  <div class="tech-text">
+    {t.sections.map((s) => (
+      <div class="tech-sec">
+        <h2>{s.h}</h2>
+        {s.p && <p>{s.p}</p>}
+        {s.list && <ul class="check">{s.list.map((i) => <li>{i}</li>)}</ul>}
+      </div>
+    ))}
+  </div>
+  {t.shot && (
+    <figure class="shot flat">
+      <Image src={shots[t.shot]} alt={t.shotAlt ?? ''} widths={[480, 720, 1120]} sizes="(max-width: 860px) 100vw, 560px" format="webp" loading="lazy" />
+    </figure>
+  )}
+</section>
+
+<section class="block" aria-labelledby="more-h">
+  <h2 id="more-h">{l.more}</h2>
+  <div class="techs">
+    {others.map((o) => (
+      <a href={localePath(lang, '/' + o)}><b>{tech[lang][o].h1}</b><span>{tech[lang][o].lede}</span></a>
+    ))}
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta">
+    <a class="btn primary" href={SETUP_URL}>{l.cta}</a>
+    <a class="btn ghost" href={localePath(lang, '/manual')}>{l.manual}</a>
+  </div>
+</section>

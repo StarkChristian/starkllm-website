@@ -1,8 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import head from '../content-html/tech-privacy.head.html?raw';
-import main from '../content-html/tech-privacy.main.html?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import TechPage from '../components/TechPage.astro';
+import { tech } from '../i18n/tech';
+import { home } from '../i18n/home';
+const t = tech.en['tech-privacy'];
+const url = 'https://www.starkllm.com/tech-privacy';
+const og = `<meta property="og:title" content="${t.title}"><meta property="og:description" content="${t.lede}"><meta property="og:url" content="${url}"><meta property="og:type" content="article"><meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta name="robots" content="index, follow">`;
 ---
-<Layout title={"Privacy & Architecture | StarkLLM"} headExtra={head} path="/tech-privacy">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout
+  title={t.title}
+  description={t.lede}
+  canonical={url}
+  headExtra={og}
+  lang="en"
+  path="/tech-privacy"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/tech-privacy' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/tech-privacy' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/tech-privacy' },
+  ]}
+>
+  <TechPage lang="en" slug="tech-privacy" />
+</SiteLayout>

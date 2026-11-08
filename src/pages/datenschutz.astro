@@ -1,8 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import LegacyBody from '../components/LegacyBody.astro';
+import { home } from '../i18n/home';
 import head from '../content-html/datenschutz.head.html?raw';
 import main from '../content-html/datenschutz.main.html?raw';
 ---
-<Layout title={"Datenschutzerklärung | StarkLLM"} headExtra={head} path="/datenschutz">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout title={"Datenschutzerklärung | StarkLLM"} headExtra={head} path="/datenschutz" getLabel={home.en.nav.getBtn}>
+  <LegacyBody html={main} />
+</SiteLayout>

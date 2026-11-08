@@ -1,0 +1,16 @@
+{
+  "version": "2.0.5",
+  "published": "2026-11-08",
+  "setup": {
+    "name": "StarkLLM-v2.0.5-Setup.exe",
+    "url": "https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.5/StarkLLM-v2.0.5-Setup.exe",
+    "size": 199143721,
+    "sha256": "14b00ad2b9a8b7fe24d7dc17fa4b897ae2a3bf3c2269a4d25ec5e3a1f5df1a4e"
+  },
+  "portable": {
+    "name": "StarkLLM-v2.0.5-Portable.exe",
+    "url": "https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.5/StarkLLM-v2.0.5-Portable.exe",
+    "size": 198823445,
+    "sha256": "7101e471675ca06c2ab0550cc4778ab2907117bf8cc87985118b4f63545e2c44"
+  }
+}

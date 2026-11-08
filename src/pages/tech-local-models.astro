@@ -1,8 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import head from '../content-html/tech-local-models.head.html?raw';
-import main from '../content-html/tech-local-models.main.html?raw';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import TechPage from '../components/TechPage.astro';
+import { tech } from '../i18n/tech';
+import { home } from '../i18n/home';
+const t = tech.en['tech-local-models'];
+const url = 'https://www.starkllm.com/tech-local-models';
+const og = `<meta property="og:title" content="${t.title}"><meta property="og:description" content="${t.lede}"><meta property="og:url" content="${url}"><meta property="og:type" content="article"><meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta name="robots" content="index, follow">`;
 ---
-<Layout title={"Local Models with Ollama | StarkLLM"} headExtra={head} path="/tech-local-models">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout
+  title={t.title}
+  description={t.lede}
+  canonical={url}
+  headExtra={og}
+  lang="en"
+  path="/tech-local-models"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/tech-local-models' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/tech-local-models' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/tech-local-models' },
+  ]}
+>
+  <TechPage lang="en" slug="tech-local-models" />
+</SiteLayout>

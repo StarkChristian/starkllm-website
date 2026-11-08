@@ -1,4 +1,4 @@
-/* New site shell (Direction A: dark cinematic). Loaded only by SiteLayout; legacy pages keep legacy.css.
+/* Site shell and page styles (Direction A: dark cinematic), used by every page through SiteLayout.
    Tokens live in tokens.css. */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
@@ -245,3 +245,54 @@ pre { max-width: 100%; }
 .help-body pre.cmd { margin: .2rem 0 .3rem; }
 .help-steps .check-line { display: block; margin-top: .6rem; color: var(--c-violet-soft); }
 .help-steps pre.cmd { white-space: pre-wrap; }
+
+/* feature pages (/tech-*) */
+.tech-body { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.tech-body:not(:has(figure)) { grid-template-columns: minmax(0, 68ch); }
+.tech-text { display: grid; gap: 2.2rem; }
+.tech-sec h2 { font-size: 1.35rem; margin-bottom: .6rem; }
+.tech-sec p { color: var(--c-muted); max-width: 62ch; line-height: 1.7; }
+.tech-sec .check { margin-top: .9rem; }
+.tech-body figure { position: sticky; top: 2rem; }
+@media (max-width: 860px) { .tech-body { grid-template-columns: 1fr; } .tech-body figure { position: static; } }
+
+/* older content pages (about, contact, legal, manual, 404) inside the new layout */
+.legacy-body { --text-primary: var(--c-fg); --text-secondary: var(--c-muted); --accent: var(--c-violet-soft); --border: var(--c-line); padding-block: 3rem 5rem; }
+.legacy-body .page-header { padding-block: 1rem 2rem; }
+.legacy-body .page-header h1, .legacy-body > div > h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.legacy-body .page-header p { color: var(--c-muted); max-width: 56ch; margin-top: .8rem; }
+.legacy-body .text-gradient { background: linear-gradient(90deg, var(--c-violet-soft), var(--c-gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.legacy-body .content-block, .legacy-body .glass-panel, .legacy-body .feature-card { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: 16px; padding: clamp(1.2rem, 3vw, 2rem); }
+.legacy-body .content-block { max-width: 78ch; }
+.legacy-body h2 { font-size: 1.45rem; margin: 2.2rem 0 .7rem; }
+.legacy-body h3 { font-size: 1.1rem; margin: 1.6rem 0 .5rem; }
+.legacy-body h2:first-child, .legacy-body h3:first-child { margin-top: 0; }
+.legacy-body p, .legacy-body li { color: var(--c-muted); line-height: 1.75; }
+.legacy-body p + p { margin-top: .8rem; }
+.legacy-body ul, .legacy-body ol { padding-left: 1.3rem; margin: .6rem 0; display: grid; gap: .35rem; }
+.legacy-body a { color: var(--c-violet-soft); }
+.legacy-body strong, .legacy-body b { color: var(--c-fg); }
+.legacy-body code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surface-2); border: 1px solid var(--c-line); border-radius: 6px; padding: .05rem .35rem; }
+.legacy-body pre, .legacy-body .code-block { font-family: var(--font-mono); font-size: .85rem; background: var(--c-surface-2); border: 1px solid var(--c-line); border-radius: 12px; padding: 1rem 1.2rem; overflow-x: auto; margin: 1rem 0; }
+.legacy-body pre code, .legacy-body .code-block code { border: 0; background: none; padding: 0; }
+.legacy-body table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .92rem; }
+.legacy-body th, .legacy-body td { border: 1px solid var(--c-line); padding: .55rem .75rem; text-align: left; vertical-align: top; }
+.legacy-body .features-grid, .legacy-body .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.legacy-body .alert { border-radius: 14px; padding: 1rem 1.2rem; margin: 1.2rem 0; border: 1px solid var(--c-line); background: var(--c-surface); }
+.legacy-body .alert.info { border-color: rgba(183, 119, 255, .45); }
+.legacy-body .alert.warning { border-color: rgba(212, 175, 55, .5); background: rgba(212, 175, 55, .06); }
+.legacy-body .alert h4 { color: var(--c-fg); margin-bottom: .3rem; }
+.legacy-body .showcase-frame { border: 1px solid var(--c-line); border-radius: 16px; overflow: hidden; margin: 1.4rem 0; }
+.legacy-body .showcase-img { display: block; width: 100%; height: auto; }
+.legacy-body .btn-primary { background: var(--c-violet); color: #fff; }
+.legacy-body .btn-secondary, .legacy-body .btn-outline { border: 1px solid var(--c-line); }
+.legacy-body .btn { display: inline-flex; padding: .7rem 1.2rem; border-radius: 999px; text-decoration: none; font-weight: 600; }
+.legacy-body .manual-container { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 3rem; align-items: start; }
+.legacy-body .manual-nav { position: sticky; top: 1.5rem; max-height: calc(100vh - 3rem); overflow-y: auto; border: 1px solid var(--c-line); border-radius: 16px; padding: 1rem; background: var(--c-surface); }
+.legacy-body .manual-nav ul { list-style: none; padding: 0; gap: .1rem; }
+.legacy-body .manual-nav a { display: block; color: var(--c-muted); text-decoration: none; font-size: .88rem; padding: .3rem .5rem; border-radius: 8px; }
+.legacy-body .manual-nav a:hover { color: var(--c-fg); background: var(--c-surface-2); }
+.legacy-body .manual-content section { scroll-margin-top: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--c-line); margin-bottom: 1.5rem; }
+.legacy-body .manual-content { min-width: 0; }
+.legacy-body .grid > *, .legacy-body .features-grid > * { min-width: 0; }
+@media (max-width: 860px) { .legacy-body .manual-container, .legacy-body .grid { grid-template-columns: 1fr !important; } .legacy-body .manual-nav { position: static; max-height: none; } }

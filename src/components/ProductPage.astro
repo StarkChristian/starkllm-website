@@ -6,6 +6,7 @@ import settings from '../assets/Settings.png';
 import { product, themes, toolSample } from '../i18n/product';
 import { SETUP_URL } from '../i18n/home';
 import { localePath, type Lang } from '../i18n/ui';
+import { tech, techOrder } from '../i18n/tech';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = product[lang];
@@ -125,7 +126,7 @@ const sizes = '(max-width: 860px) 100vw, 560px';
   <h2 id="tech-h">{c.tech.h2}</h2>
   <p class="sec-lede">{c.tech.lede}</p>
   <div class="techs">
-    {c.tech.items.map((i) => (<a href={i.href}><b>{i.t}</b><span>{i.v}</span></a>))}
+    {techOrder.map((slug) => (<a href={localePath(lang, '/' + slug)}><b>{tech[lang][slug].h1}</b><span>{tech[lang][slug].lede}</span></a>))}
   </div>
 </section>
 

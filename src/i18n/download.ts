@@ -1,5 +1,6 @@
 // Copy for the download page, EN and DE. German is a first draft and needs a native review before launch.
-export const GITHUB_URL = 'https://github.com/homomorphicprivacy/StarkLLM';
+import { V, SIZE_MB } from '../data/release';
+export const GITHUB_URL = 'https://github.com/StarkChristian/StarkLLM';
 
 export const consoleStep = `============================================
           StarkLLM Control Panel
@@ -26,18 +27,18 @@ export const download = {
     release: {
       h2: 'Release package',
       facts: [
-        ['Version', 'v2.0.5 (Native Desktop, starts its own engine)'],
+        ['Version', `v${V} (Native Desktop, starts its own engine)`],
         ['License', 'Apache 2.0 (open source)'],
         ['Installer size', '199.1 MB (199,132,004 bytes, includes the engine)'],
         ['Portable app size', '198.8 MB (198,811,759 bytes)'],
       ],
-      installer: 'Download v2.0.5 installer (.exe)',
+      installer: `Download v${V} installer (.exe)`,
       portable: 'Portable (.exe)',
       github: 'GitHub',
       shaH: 'SHA-256 checksums',
       shaLede: 'To verify file integrity before you run it, compare the SHA-256 hash of your download:',
-      setupLabel: 'StarkLLM-v2.0.5-Setup.exe (Windows installer)',
-      portableLabel: 'StarkLLM-v2.0.5-Portable.exe (portable executable)',
+      setupLabel: `StarkLLM-v${V}-Setup.exe (Windows installer)`,
+      portableLabel: `StarkLLM-v${V}-Portable.exe (portable executable)`,
       verify: 'Verify in PowerShell:',
     },
     setup: {
@@ -46,7 +47,7 @@ export const download = {
       steps: [
         { t: 'Install Docker Desktop', v: 'Install Docker Desktop (with WSL2) from docker.com, start it once and finish its setup. It may ask you to restart the PC.' },
         { t: 'Install Ollama', v: 'Install Ollama from ollama.com. You do not need to pull models by hand: StarkLLM downloads qwen2.5:7b and nomic-embed-text on its first start.' },
-        { t: 'Run the StarkLLM installer', v: 'Download and run StarkLLM-v2.0.5-Setup.exe, or use the portable executable. The installer creates desktop shortcuts.' },
+        { t: 'Run the StarkLLM installer', v: `Download and run StarkLLM-v${V}-Setup.exe, or use the portable executable. The installer creates desktop shortcuts.` },
         { t: 'Start StarkLLM and wait for the first start', v: 'Click the StarkLLM shortcut. The app starts Docker Desktop and Ollama, downloads the models, builds its engine and shows the progress, then opens StarkLLM in its own window. If something is missing, the window says what and how to fix it (log: %APPDATA%\\StarkLLM\\engine.log).' },
         { t: 'Create your account', v: 'Register the first account; it is the administrator of this installation (backup and restore). Then create a workspace and upload a document.' },
       ],
@@ -100,31 +101,31 @@ export const download = {
         ['What is the difference between workspace documents and the Knowledge Base?', 'Workspace documents are isolated to one project. The Knowledge Base is a persistent, global folder on your machine that any chat can reference.'],
         ['The window says "StarkLLM could not start". What now?', 'Since v2.0.1 the app starts Docker Desktop, Ollama and its engine itself. When a step fails, the window lists what is missing (for example Docker Desktop not installed, a busy port, or an engine error with its last log lines) and has a Retry button. The full log is in %APPDATA%\\StarkLLM\\engine.log. On v2.0.0 the window only waited on "Connecting to local engine…"; please install v2.0.1.'],
         ['What if the app opens but chat does not connect?', 'The chat needs Ollama. If the window said "StarkLLM is running without its AI runtime", install or start Ollama and press Retry; StarkLLM then downloads the models (qwen2.5:7b and nomic-embed-text). The engine talks to Ollama on your PC via host.docker.internal:11434.'],
-        ['Can I inspect the source code?', 'Yes. StarkLLM is fully open source on GitHub at homomorphicprivacy/StarkLLM under the Apache 2.0 license.'],
+        ['Can I inspect the source code?', 'Yes. StarkLLM is fully open source on GitHub at StarkChristian/StarkLLM under the Apache 2.0 license.'],
         ['Where can I send feedback or contribute?', 'We welcome feedback. Email info@starkllm.com or open an issue on the GitHub repository.'],
       ],
     },
     contribute: { h2: 'Contribute and suggest improvements', text: 'StarkLLM is an open, evolving project. If you hit a bug, have a feature idea or want to inspect the source:', repo: 'Browse the source, inspect the launchers and open issues.', mail: 'Email' },
   },
   de: {
-    meta: { title: 'Download | StarkLLM', description: 'StarkLLM v2.0.5 für Windows herunterladen: Installer, portable Version, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.' },
+    meta: { title: 'Download | StarkLLM', description: `StarkLLM v${V} für Windows herunterladen: Installer, portable Version, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.` },
     hero: { eyebrow: 'Download', h1: 'StarkLLM herunterladen', lede: 'Starten Sie mit der Windows Research Beta.' },
     helpCallout: { h: 'Die Installation klappt nicht?', text: 'StarkLLM braucht Docker Desktop und Ollama auf Ihrem PC; seit v2.0.1 startet die App beide und ihre Engine selbst. Die Hilfe-Seite hat eine Checkliste mit Test pro Schritt und Lösungen für die 24 häufigsten Probleme.', link: 'Hilfe & Problemlösung öffnen' },
     release: {
       h2: 'Release-Paket',
       facts: [
-        ['Version', 'v2.0.5 (Native Desktop, startet seine Engine selbst)'],
+        ['Version', `v${V} (Native Desktop, startet seine Engine selbst)`],
         ['Lizenz', 'Apache 2.0 (Open Source)'],
         ['Größe des Installers', '199,1 MB (199.132.004 Bytes, mit Engine)'],
         ['Größe der portablen App', '198,8 MB (198.811.759 Bytes)'],
       ],
-      installer: 'Installer v2.0.5 herunterladen (.exe)',
+      installer: `Installer v${V} herunterladen (.exe)`,
       portable: 'Portable (.exe)',
       github: 'GitHub',
       shaH: 'SHA-256-Prüfsummen',
       shaLede: 'Um die Integrität vor der Ausführung zu prüfen, vergleichen Sie den SHA-256-Hash Ihres Downloads:',
-      setupLabel: 'StarkLLM-v2.0.5-Setup.exe (Windows-Installer)',
-      portableLabel: 'StarkLLM-v2.0.5-Portable.exe (portable Programmdatei)',
+      setupLabel: `StarkLLM-v${V}-Setup.exe (Windows-Installer)`,
+      portableLabel: `StarkLLM-v${V}-Portable.exe (portable Programmdatei)`,
       verify: 'Prüfen in PowerShell:',
     },
     setup: {
@@ -133,7 +134,7 @@ export const download = {
       steps: [
         { t: 'Docker Desktop installieren', v: 'Installieren Sie Docker Desktop (mit WSL2) von docker.com, starten Sie es einmal und schließen Sie die Einrichtung ab. Eventuell verlangt es einen Neustart.' },
         { t: 'Ollama installieren', v: 'Installieren Sie Ollama von ollama.com. Modelle müssen Sie nicht von Hand laden: StarkLLM lädt qwen2.5:7b und nomic-embed-text beim ersten Start.' },
-        { t: 'StarkLLM-Installer ausführen', v: 'Laden Sie StarkLLM-v2.0.5-Setup.exe herunter und starten Sie sie, oder nutzen Sie die portable Programmdatei. Der Installer legt Desktop-Verknüpfungen an.' },
+        { t: 'StarkLLM-Installer ausführen', v: `Laden Sie StarkLLM-v${V}-Setup.exe herunter und starten Sie sie, oder nutzen Sie die portable Programmdatei. Der Installer legt Desktop-Verknüpfungen an.` },
         { t: 'StarkLLM starten und den ersten Start abwarten', v: 'Klicken Sie auf die StarkLLM-Verknüpfung. Die App startet Docker Desktop und Ollama, lädt die Modelle, baut ihre Engine, zeigt den Fortschritt und öffnet StarkLLM dann im eigenen Fenster. Fehlt etwas, sagt das Fenster was und wie Sie es beheben (Protokoll: %APPDATA%\\StarkLLM\\engine.log).' },
         { t: 'Konto anlegen', v: 'Registrieren Sie das erste Konto; es ist der Administrator dieser Installation (Backup und Wiederherstellung). Legen Sie dann einen Workspace an und laden Sie ein Dokument hoch.' },
       ],
@@ -187,7 +188,7 @@ export const download = {
         ['Was ist der Unterschied zwischen Workspace-Dokumenten und Wissensdatenbank?', 'Workspace-Dokumente sind auf ein Projekt beschränkt. Die Wissensdatenbank ist ein dauerhafter, globaler Ordner auf Ihrem Rechner, auf den jeder Chat zugreifen kann.'],
         ['Das Fenster zeigt „StarkLLM could not start“. Was tun?', 'Seit v2.0.1 startet die App Docker Desktop, Ollama und ihre Engine selbst. Scheitert ein Schritt, listet das Fenster auf, was fehlt (zum Beispiel Docker Desktop nicht installiert, ein belegter Port oder ein Engine-Fehler mit den letzten Protokollzeilen), und bietet Retry an. Das vollständige Protokoll liegt in %APPDATA%\\StarkLLM\\engine.log. Unter v2.0.0 wartete das Fenster nur bei „Connecting to local engine…“; bitte installieren Sie v2.0.1.'],
         ['Was, wenn die App startet, aber der Chat keine Verbindung hat?', 'Der Chat braucht Ollama. Zeigte das Fenster „StarkLLM is running without its AI runtime“, installieren oder starten Sie Ollama und klicken auf Retry; StarkLLM lädt dann die Modelle (qwen2.5:7b und nomic-embed-text). Die Engine erreicht Ollama auf Ihrem PC über host.docker.internal:11434.'],
-        ['Kann ich den Quellcode einsehen?', 'Ja. StarkLLM ist vollständig quelloffen auf GitHub unter homomorphicprivacy/StarkLLM, lizenziert unter Apache 2.0.'],
+        ['Kann ich den Quellcode einsehen?', 'Ja. StarkLLM ist vollständig quelloffen auf GitHub unter StarkChristian/StarkLLM, lizenziert unter Apache 2.0.'],
         ['Wohin kann ich Feedback senden oder beitragen?', 'Wir freuen uns über Rückmeldungen. Schreiben Sie an info@starkllm.com oder eröffnen Sie ein Issue im GitHub-Repository.'],
       ],
     },

@@ -3,7 +3,9 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import DownloadPage from '../components/DownloadPage.astro';
 import { download } from '../i18n/download';
 import { home } from '../i18n/home';
-import headExtra from '../content-html/download.head.html?raw';
+import headRaw from '../content-html/download.head.html?raw';
+import { RELEASE } from '../data/release';
+const headExtra = headRaw.replaceAll('{{SETUP_URL}}', RELEASE.setup.url);
 ---
 <SiteLayout
   title={download.en.meta.title}

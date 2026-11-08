@@ -2,7 +2,9 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Home from '../components/Home.astro';
 import { home } from '../i18n/home';
-import headExtra from '../content-html/index.head.html?raw';
+import headRaw from '../content-html/index.head.html?raw';
+import { V } from '../data/release';
+const headExtra = headRaw.replaceAll('{{V}}', V);
 ---
 <SiteLayout
   title={home.en.meta.title}

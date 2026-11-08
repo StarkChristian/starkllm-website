@@ -9,6 +9,7 @@ const c = home[lang];
 import { themes } from '../i18n/product';
 const swatches = themes.map((t) => `linear-gradient(135deg, ${t.g[0]}, ${t.g[1]})`);
 const bars = [30, 55, 90, 42, 68, 36, 78, 48];
+import { RELEASE } from '../data/release';
 ---
 <header class="hero">
   <canvas id="graph" aria-hidden="true"></canvas>
@@ -110,7 +111,7 @@ const bars = [30, 55, 90, 42, 68, 36, 78, 48];
   <div>
     <div class="sha"><b>{c.download.shaTitle} · Setup.exe</b><code>{SETUP_SHA}</code></div>
     <div class="sha"><b>{c.download.shaTitle} · Portable.exe</b><code>{PORTABLE_SHA}</code></div>
-    <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.download.verify} <code>Get-FileHash -Algorithm SHA256 StarkLLM-v2.0.5-Setup.exe</code></p>
+    <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.download.verify} <code>Get-FileHash -Algorithm SHA256 {RELEASE.setup.name}</code></p>
   </div>
 </section>
 

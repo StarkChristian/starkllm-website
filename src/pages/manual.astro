@@ -1,8 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import LegacyBody from '../components/LegacyBody.astro';
+import { home } from '../i18n/home';
 import head from '../content-html/manual.head.html?raw';
 import main from '../content-html/manual.main.html?raw';
+import { V } from '../data/release';
 ---
-<Layout title={"User Manual | StarkLLM"} headExtra={head} path="/manual">
-  <Fragment set:html={main} />
-</Layout>
+<SiteLayout title={"User Manual | StarkLLM"} headExtra={head} path="/manual" getLabel={home.en.nav.getBtn}>
+  <LegacyBody html={main.replaceAll('{{V}}', V)} />
+</SiteLayout>
