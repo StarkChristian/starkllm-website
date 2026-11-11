@@ -6,7 +6,8 @@ export const REPO = 'StarkChristian/StarkLLM';
 export const REPO_URL = `https://github.com/${REPO}`;
 
 type Asset = { name: string; url: string; size: number; sha256: string };
-export type Release = { version: string; published: string; setup: Asset; portable: Asset };
+// portable is null from 2.0.13 on: the Portable exe is no longer built (roadmap 2026-11-09).
+export type Release = { version: string; published: string; setup: Asset; portable: Asset | null };
 
 async function fromGitHub(): Promise<Release | null> {
   if (process.env.STARKLLM_OFFLINE) return null;
@@ -23,7 +24,7 @@ async function fromGitHub(): Promise<Release | null> {
     };
     const setup = pick('-Setup.exe');
     const portable = pick('-Portable.exe');
-    if (!setup || !portable) return null;
+    if (!setup) return null;
     return { version: String(j.tag_name).replace(/^v/, ''), published: String(j.published_at).slice(0, 10), setup, portable };
   } catch {
     return null;
