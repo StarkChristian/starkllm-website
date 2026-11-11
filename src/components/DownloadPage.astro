@@ -34,7 +34,7 @@ import { RELEASE } from '../data/release';
       </ul>
       <div class="cta">
         <a class="btn primary" href={SETUP_URL}>{c.release.installer}</a>
-        <a class="btn ghost" href={PORTABLE_URL}>{c.release.portable}</a>
+        {PORTABLE_URL && <a class="btn ghost" href={PORTABLE_URL}>{c.release.portable}</a>}
         <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noopener">{c.release.github}</a>
       </div>
     </div>
@@ -42,7 +42,7 @@ import { RELEASE } from '../data/release';
       <h3 style="margin-bottom:.6rem">{c.release.shaH}</h3>
       <p class="sec-lede" style="margin:0 0 1rem;font-size:.95rem">{c.release.shaLede}</p>
       <div class="sha"><b>{c.release.setupLabel}</b><code>{SETUP_SHA}</code></div>
-      <div class="sha"><b>{c.release.portableLabel}</b><code>{PORTABLE_SHA}</code></div>
+      {PORTABLE_SHA && <div class="sha"><b>{c.release.portableLabel}</b><code>{PORTABLE_SHA}</code></div>}
       <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.release.verify} <code>Get-FileHash -Algorithm SHA256 {RELEASE.setup.name}</code></p>
     </div>
   </div>

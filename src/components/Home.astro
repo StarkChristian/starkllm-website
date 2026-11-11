@@ -104,13 +104,13 @@ import { RELEASE } from '../data/release';
     </ul>
     <div class="cta">
       <a class="btn primary" href={SETUP_URL}>{c.download.installer}</a>
-      <a class="btn ghost" href={PORTABLE_URL}>{c.download.portable}</a>
+      {PORTABLE_URL && <a class="btn ghost" href={PORTABLE_URL}>{c.download.portable}</a>}
       <a class="btn ghost" href="/download">{c.download.all}</a>
     </div>
   </div>
   <div>
     <div class="sha"><b>{c.download.shaTitle} · Setup.exe</b><code>{SETUP_SHA}</code></div>
-    <div class="sha"><b>{c.download.shaTitle} · Portable.exe</b><code>{PORTABLE_SHA}</code></div>
+    {PORTABLE_SHA && <div class="sha"><b>{c.download.shaTitle} · Portable.exe</b><code>{PORTABLE_SHA}</code></div>}
     <p class="sec-lede" style="font-size:.85rem;margin-top:1rem">{c.download.verify} <code>Get-FileHash -Algorithm SHA256 {RELEASE.setup.name}</code></p>
   </div>
 </section>
