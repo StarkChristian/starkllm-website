@@ -45,7 +45,7 @@ export const download = {
       setupLabel: `StarkLLM-v${V}-Setup.exe (Windows installer)`,
       portableLabel: `StarkLLM-v${V}-Portable.exe (portable executable)`,
       verify: 'Verify in PowerShell:',
-      signing: 'Who signs a release and how:',
+      signing: 'Free code signing provided by SignPath.io, certificate by SignPath Foundation.',
       signingLink: 'Code signing policy',
     },
     setup: {
@@ -134,7 +134,7 @@ export const download = {
       setupLabel: `StarkLLM-v${V}-Setup.exe (Windows-Installer)`,
       portableLabel: `StarkLLM-v${V}-Portable.exe (portable Programmdatei)`,
       verify: 'Prüfen in PowerShell:',
-      signing: 'Wer eine Version signiert und wie:',
+      signing: 'Kostenloses Code-Signing durch SignPath.io, Zertifikat der SignPath Foundation.',
       signingLink: 'Code-Signing-Richtlinie',
     },
     setup: {
