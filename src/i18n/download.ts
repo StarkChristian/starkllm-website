@@ -45,6 +45,8 @@ export const download = {
       setupLabel: `StarkLLM-v${V}-Setup.exe (Windows installer)`,
       portableLabel: `StarkLLM-v${V}-Portable.exe (portable executable)`,
       verify: 'Verify in PowerShell:',
+      signing: 'Who signs a release and how:',
+      signingLink: 'Code signing policy',
     },
     setup: {
       h2: 'Setup steps',
@@ -132,6 +134,8 @@ export const download = {
       setupLabel: `StarkLLM-v${V}-Setup.exe (Windows-Installer)`,
       portableLabel: `StarkLLM-v${V}-Portable.exe (portable Programmdatei)`,
       verify: 'Prüfen in PowerShell:',
+      signing: 'Wer eine Version signiert und wie:',
+      signingLink: 'Code-Signing-Richtlinie',
     },
     setup: {
       h2: 'Einrichtung',

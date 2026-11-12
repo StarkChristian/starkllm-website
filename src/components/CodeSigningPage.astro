@@ -1,0 +1,23 @@
+---
+import { signing } from '../i18n/signing';
+import type { Lang } from '../i18n/ui';
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = signing[lang];
+---
+<header class="page-hero">
+  <p class="eyebrow">{t.eyebrow}</p>
+  <h1>{t.h1}</h1>
+  <p class="lede" set:html={t.lede} />
+</header>
+
+<section class="block tech-body">
+  <div class="tech-text">
+    {t.sections.map((s) => (
+      <div class="tech-sec">
+        <h2>{s.h}</h2>
+        {s.p && <p set:html={s.p} />}
+        {s.list && <ul class="check">{s.list.map((i) => <li set:html={i} />)}</ul>}
+      </div>
+    ))}
+  </div>
+</section>

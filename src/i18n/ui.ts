@@ -20,6 +20,7 @@ export const ui = {
       repo: 'GitHub Repository',
       legal: 'Legal',
       contact: 'Contact',
+      signing: 'Code signing policy',
       bottom: '© 2026 Christian Stark. Provided "as is" with no warranty or liability.',
     },
   },
@@ -40,6 +41,7 @@ export const ui = {
       repo: 'GitHub-Repository',
       legal: 'Rechtliches',
       contact: 'Kontakt',
+      signing: 'Code-Signing-Richtlinie',
       bottom: '© 2026 Christian Stark. Bereitgestellt „wie besehen“ ohne Gewährleistung oder Haftung.',
     },
   },
@@ -48,7 +50,7 @@ export const ui = {
 // Pages that already have a German version; everything else links to the English page.
 export const translatedPaths: string[] = ['/', '/product', '/download', '/help',
   '/tech-rag', '/tech-hybrid-search', '/tech-semantic-chunking', '/tech-knowledge-base', '/tech-workspaces', '/tech-multimodal',
-  '/tech-local-models', '/tech-privacy', '/tech-local-tools', '/tech-voice', '/tech-themes'];
+  '/tech-local-models', '/tech-privacy', '/tech-local-tools', '/tech-voice', '/tech-themes', '/code-signing'];
 
 export function localePath(lang: Lang, path: string): string {
   if (lang === 'en') return path;

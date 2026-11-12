@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import CodeSigningPage from '../components/CodeSigningPage.astro';
+import { signing } from '../i18n/signing';
+import { home } from '../i18n/home';
+const t = signing.en;
+const url = 'https://www.starkllm.com/code-signing';
+const og = `<meta property="og:title" content="${t.title}"><meta property="og:description" content="${t.description}"><meta property="og:url" content="${url}"><meta property="og:type" content="article"><meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta name="robots" content="index, follow">`;
+---
+<SiteLayout
+  title={t.title}
+  description={t.description}
+  canonical={url}
+  headExtra={og}
+  lang="en"
+  path="/code-signing"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/code-signing' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/code-signing' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/code-signing' },
+  ]}
+>
+  <CodeSigningPage lang="en" />
+</SiteLayout>
