@@ -1,0 +1,135 @@
+// Lucy's answer engine: BM25 over the passages of the site, plus a curated FAQ that points at real passages.
+// Pure functions, no DOM, no network: the browser (lucy-chat.ts) and the build test (tools/test-lucy.mjs) use the same file.
+// Input: the index built by tools/build-lucy-index.mjs (pages, passages c, faq, stop words, suffixes, legal pages).
+// Every answer is text copied from a passage of the site; nothing is generated.
+
+const K1 = 1.2, B = 0.75;
+const FAQ_MIN = 0.5;       // question match needed for a curated FAQ answer (0..1)
+const COVER_MIN = 0.55;    // share of the question's content words (idf-weighted) that a passage must contain
+const UNSEEN_MAX = 0.3;    // share of the question's words that appear nowhere on the site (then it is probably about something else)
+const SCORE_MIN = 3.2;     // minimum BM25 score of the best passage
+
+export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i');
+
+export function createEngine(data) {
+  const stop = new Set((data.stop || []).map(fold));
+  const suf = [...(data.suf || [])].sort((a, b) => b.length - a.length);
+  const advice = (data.advice || []).map(fold);
+
+  const stem = (t) => {
+    for (const s of suf) if (t.length - s.length >= 3 && t.endsWith(s)) return t.slice(0, -s.length);
+    return t;
+  };
+  const tokens = (text) => fold(text).split(/[^\p{L}\p{N}@.]+/u).map((t) => t.replace(/^\.+|\.+$/g, '')).filter((t) => t && !stop.has(t) && (t.length > 1 || /\d/.test(t))).map(stem);
+
+  // documents
+  const docs = data.c.map(([pi, id, h, t], i) => {
+    const head = tokens(h), body = tokens(t), title = tokens(data.pages[pi].t);
+    const all = [...head, ...head, ...title, ...body]; // heading counts double, page title once
+    const tf = new Map();
+    for (const w of all) tf.set(w, (tf.get(w) || 0) + 1);
+    return { i, pi, id, h, t, tf, len: all.length, seq: body };
+  });
+  const N = docs.length;
+  const avg = docs.reduce((a, d) => a + d.len, 0) / Math.max(1, N);
+  const df = new Map();
+  for (const d of docs) for (const w of d.tf.keys()) df.set(w, (df.get(w) || 0) + 1);
+  const idf = (w) => Math.log(1 + (N - (df.get(w) || 0) + 0.5) / ((df.get(w) || 0) + 0.5));
+  const maxIdf = idf('\u0000unseen');
+
+  const urlOf = (d) => data.pages[d.pi].u + (d.id ? '#' + d.id : '');
+
+  function bm25(q, d) {
+    let s = 0;
+    for (const w of q) {
+      const f = d.tf.get(w); if (!f) continue;
+      s += idf(w) * (f * (K1 + 1)) / (f + K1 * (1 - B + B * d.len / avg));
+    }
+    // adjacent pairs of the question that also stand next to each other in the passage
+    for (let i = 0; i + 1 < q.length; i++) {
+      for (let j = 0; j + 1 < d.seq.length; j++) if (d.seq[j] === q[i] && d.seq[j + 1] === q[i + 1]) { s += 0.8 * Math.min(idf(q[i]), idf(q[i + 1])); break; }
+    }
+    return s;
+  }
+  const vocab = new Set();
+  const seen = (q) => q.filter((w) => df.has(w) || vocab.has(w));
+  const coverage = (q, d) => {
+    let have = 0, all = 0;
+    for (const w of seen(q)) { const x = idf(w); all += x; if (d.tf.has(w)) have += x; }
+    return all ? have / all : 0;
+  };
+
+  // curated FAQ: the question text matches the visitor's question; the answer is the passage the entry points at
+  const faq = (data.faq || []).map((e) => ({
+    id: e.id, ci: e.ci, m: e.m,
+    qs: e.q.map((x) => new Set(tokens(x))).filter((s) => s.size),
+  }));
+  for (const e of faq) for (const s of e.qs) for (const w of s) vocab.add(w);
+  function faqMatch(q) {
+    if (!q.length) return null;
+    const qs = new Set(q);
+    const wq = [...qs].reduce((a, w) => a + (df.has(w) ? idf(w) : maxIdf), 0);
+    let best = null;
+    for (const e of faq) for (const s of e.qs) {
+      let hit = 0, wf = 0, hitf = 0;
+      for (const w of s) { const x = df.has(w) ? idf(w) : maxIdf; wf += x; if (qs.has(w)) { hitf += x; } }
+      for (const w of qs) if (s.has(w)) hit += df.has(w) ? idf(w) : maxIdf;
+      const cq = hit / wq, cf = hitf / wf;
+      const f = cq && cf ? (2 * cq * cf) / (cq + cf) : 0;
+      if (!best || f > best.f) best = { f, e };
+    }
+    return best && best.f >= FAQ_MIN ? best : null;
+  }
+
+  // pick the sentences of a passage that carry the question's words (kept contiguous, at most ~360 characters)
+  function quote(d, q) {
+    const t = d.t;
+    if (t.length <= 360) return t;
+    const sents = t.split(/(?<=[.!?…])\s+/);
+    const sc = sents.map((s) => { const tk = new Set(tokens(s)); return q.reduce((a, w) => a + (tk.has(w) ? idf(w) : 0), 0); });
+    let bi = 0; for (let i = 1; i < sc.length; i++) if (sc[i] > sc[bi]) bi = i;
+    let from = bi, to = bi, out = sents[bi].trim();
+    if (out.length > 360) return out.slice(0, 360);
+    while (out.length < 200) {
+      const next = (sc[to + 1] ?? -1) >= (sc[from - 1] ?? -1) ? to + 1 : from - 1;
+      if (next > to && next < sents.length) { to = next; } else if (next < from && next >= 0) { from = next; } else break;
+      out = sents.slice(from, to + 1).join(' ').trim();
+      if (out.length > 360) { out = out.slice(0, 360); break; }
+    }
+    return out;
+  }
+
+  const norm = (u) => u.replace(/\.html$/, '').replace(/(.)\/$/, '$1') || '/';
+
+  /** answer(question, {page}) -> {kind, text, url, title, heading, more[]} ; kind: faq | passage | advice | none */
+  function answer(question, opts = {}) {
+    const qn = fold(question);
+    const here = opts.page ? norm(opts.page) : null;
+    const scoped = !!(here && (data.legal || []).includes(here));
+    if (advice.some((a) => qn.includes(a))) return { kind: 'advice' };
+    const q = tokens(question);
+    if (!q.length) return { kind: 'none' };
+    const mk = (d, kind) => ({ kind, text: quote(d, q), url: urlOf(d), page: data.pages[d.pi].u, title: data.pages[d.pi].t, heading: d.h, doc: d.i });
+    if ((q.length - seen(q).length) / q.length > UNSEEN_MAX) return { kind: 'none', scoped, page: scoped ? here : null };
+    if (!scoped) {
+      const f = faqMatch(q);
+      if (f) return mk(docs[f.e.ci], 'faq');
+    }
+    const pool = scoped ? docs.filter((d) => data.pages[d.pi].u === here) : docs;
+    const ranked = pool.map((d) => ({ d, s: bm25(q, d), c: coverage(q, d) })).filter((r) => r.s > 0).sort((a, b) => b.s - a.s);
+    const top = ranked[0];
+    const need = q.length >= 5 ? COVER_MIN - 0.1 : COVER_MIN;
+    if (!top || top.s < SCORE_MIN || top.c < need) return { kind: 'none', scoped, page: scoped ? here : null };
+    const out = mk(top.d, 'passage');
+    out.more = ranked.slice(1, 12).filter((r) => r.s >= top.s * 0.6 && r.c >= need && data.pages[r.d.pi].u !== data.pages[top.d.pi].u).slice(0, 1).map((r) => ({ url: urlOf(r.d), title: data.pages[r.d.pi].t, heading: r.d.h }));
+    return out;
+  }
+  /** for tuning: what the engine sees for a question */
+  function explain(question) {
+    const q = tokens(question);
+    const f = faqMatch(q);
+    const ranked = docs.map((d) => ({ d, s: bm25(q, d), c: coverage(q, d) })).sort((a, b) => b.s - a.s).slice(0, 3);
+    return { q, unseen: q.filter((w) => !df.has(w)), faq: f && { id: f.e.id, f: +f.f.toFixed(2) }, top: ranked.map((r) => `${data.pages[r.d.pi].u}#${r.d.id} s=${r.s.toFixed(1)} c=${r.c.toFixed(2)} "${r.d.t.slice(0, 50)}"`) };
+  }
+  return { answer, tokens, docs, explain };
+}

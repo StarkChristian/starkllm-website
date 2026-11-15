@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the home page, EN and DE. German is a first draft and needs a native review before launch.
 import { RELEASE, V, SIZE_MB } from '../data/release';
 export const SETUP_URL = RELEASE.setup.url;
@@ -5,7 +6,7 @@ export const PORTABLE_URL = RELEASE.portable?.url ?? null;
 export const SETUP_SHA = RELEASE.setup.sha256;
 export const PORTABLE_SHA = RELEASE.portable?.sha256 ?? null;
 
-export const home = {
+const homeBase = {
   en: {
     meta: {
       title: 'StarkLLM | Private, local-first AI for your documents (Windows)',
@@ -35,7 +36,7 @@ export const home = {
       lede: 'Add a PDF, a scan or a photo from your phone. StarkLLM reads it on your PC, groups the letters of one sender into a case and puts every deadline on the start page. Each value links to the page and line it was read from.',
       dashCaption: 'Start page: deadlines and payment dates found in your letters, with the amount and the page.',
       inboxCaption: 'Inbox: one case per sender, the nearest deadline first, a mark on a possible scam.',
-      note: 'Letters and the interface work in English and German. Text recognition (OCR) for photos and scans reads English and German. Other languages are filed as ordinary documents, without deadlines and amounts. Demo documents with invented names and numbers.',
+      note: 'Letters and the interface work in English and German. Text recognition (OCR) for photos and scans reads English and German. Other languages are filed as ordinary documents, without deadlines and amounts. Coming with the next versions (in progress, not released yet): letter rules for French, Spanish, Italian and Turkish, and the interface in Spanish, French, Italian and Turkish. Demo documents with invented names and numbers.',
     },
     features: {
       h2: "Built for people who can't upload their documents.",
@@ -137,7 +138,7 @@ export const home = {
       lede: 'Fügen Sie ein PDF, einen Scan oder ein Foto vom Handy hinzu. StarkLLM liest es auf Ihrem PC, fasst die Briefe eines Absenders zu einem Vorgang zusammen und zeigt jede Frist auf der Startseite. Jeder Wert verweist auf die Seite und Zeile, aus der er gelesen wurde.',
       dashCaption: 'Startseite: Fristen und Zahlungstermine aus Ihren Briefen, mit Betrag und Seite.',
       inboxCaption: 'Posteingang: ein Vorgang je Absender, die nächste Frist zuerst, ein Hinweis bei möglichem Betrug.',
-      note: 'Briefe und Oberfläche funktionieren auf Englisch und Deutsch. Die Texterkennung (OCR) für Fotos und Scans liest Englisch und Deutsch. Andere Sprachen werden als normale Dokumente abgelegt, ohne Fristen und Beträge. Demo-Dokumente mit erfundenen Namen und Zahlen.',
+      note: 'Briefe und Oberfläche funktionieren auf Englisch und Deutsch. Die Texterkennung (OCR) für Fotos und Scans liest Englisch und Deutsch. Andere Sprachen werden als normale Dokumente abgelegt, ohne Fristen und Beträge. Mit den nächsten Versionen kommen (in Arbeit, noch nicht veröffentlicht): Briefregeln für Französisch, Spanisch, Italienisch und Türkisch sowie die Oberfläche auf Spanisch, Französisch, Italienisch und Türkisch. Demo-Dokumente mit erfundenen Namen und Zahlen.',
     },
     features: {
       h2: 'Für alle, die ihre Dokumente nicht hochladen können.',
@@ -211,3 +212,6 @@ export const home = {
     },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/home.ts (default export, same shape as the English object).
+export const home = { ...homeBase, ...byLang(import.meta.glob('./langs/*/home.ts', { eager: true, import: 'default' }), homeBase.en, 'home') } as unknown as Record<Lang, typeof homeBase.en>;

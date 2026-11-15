@@ -4,9 +4,9 @@ import { localePath, type Lang } from '../i18n/ui';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = help[lang];
-const L = lang === 'de'
+const L = (c as any).labels ?? (lang === 'de'
   ? { cause: 'Wahrscheinliche Ursache', fix: 'Was zu tun ist', jump: 'Springe zu', toc: ['Checkliste', 'Probleme', 'Hilfe holen', 'Grenzen'] }
-  : { cause: 'Likely cause', fix: 'What to do', jump: 'Jump to', toc: ['Checklist', 'Problems', 'Get help', 'Limits'] };
+  : { cause: 'Likely cause', fix: 'What to do', jump: 'Jump to', toc: ['Checklist', 'Problems', 'Get help', 'Limits'] });
 // The code block belongs right after the list item that introduces it (the first one ending with ":"), otherwise after the list.
 const codeAfter = (fix: readonly string[]) => { const i = fix.findIndex((f) => f.trim().endsWith(':')); return i; };
 ---

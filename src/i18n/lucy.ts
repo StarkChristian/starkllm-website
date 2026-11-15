@@ -1,28 +1,34 @@
 // Everything Lucy says, in English and German. The scripts contain no words: they read these texts from the page.
 // Kept in its own file (not in ui.ts) so the language restructuring in PR #19 can move or merge it later without conflicts.
-import type { Lang } from './ui';
+import { byLang, languages, type Lang } from './ui';
 
 /** Which kind of page this is. `null` means Lucy must not appear (legal pages and pages that ask for the visitor's full attention). */
-export type LucyProfile = 'home' | 'download' | 'product' | 'tech' | 'about' | 'lost';
+export type LucyProfile = 'home' | 'download' | 'product' | 'tech' | 'help' | 'manual' | 'about' | 'lost';
 
 export function lucyProfile(path: string): LucyProfile | null {
-  const p = path.replace(/\.html$/, '').replace(/^\/de(?=\/|$)/, '') || '/';
+  const p = path.replace(/\.html$/, '').replace(new RegExp(`^/(${Object.keys(languages).join('|')})(?=/|$)`), '') || '/';
   if (p === '/') return 'home';
   if (p === '/download') return 'download';
   if (p === '/product') return 'product';
+  if (p === '/help') return 'help';
+  if (p === '/manual') return 'manual';
   if (p === '/about') return 'about';
   if (p === '/404') return 'lost';
   if (p.startsWith('/tech-')) return 'tech';
-  // Everything else (imprint, privacy policy, code signing policy, contact, manual, help, ...) stays Lucy-free.
+  // Everything else (imprint, privacy policy and its translation, code signing policy, contact, ...) stays Lucy-free.
   return null;
 }
 
+/** The imprint and the privacy policy are German texts: Lucy speaks German there, whatever the interface language is. */
+export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz', '/code-signing'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
+
 export type Step = { sel: string; text: string };
 
-export const lucy = {
+const lucyBase = {
   en: {
     title: 'Lucy, the StarkLLM robot',
     hide: 'Hide Lucy',
+    ask: 'Ask me',
     show: 'Show Lucy',
     tour: 'Show me around',
     next: 'Next',
@@ -30,7 +36,7 @@ export const lucy = {
     stop: 'Stop tour',
     step: 'Step {n} of {m}',
     stripText: 'Lucy is the StarkLLM guide.',
-    hero: { line: "Hi, I'm Lucy! Your documents stay on your PC. Shall I show you around?" },
+    hero: { line: "Hi, I'm Lucy! Your documents stay on your PC. Ask me anything about StarkLLM, or shall I show you around?" },
     download: {
       news: 'Version {v} is out!',
       newsDate: 'Released {d}.',
@@ -50,7 +56,32 @@ export const lucy = {
     about: {
       h: 'About Lucy',
       p1: 'Lucy is the StarkLLM robot: a small blue helper with three yellow hairs. She explains things, points at screenshots and, if you ask, shows you around this website.',
-      p2: 'She is quiet (no sound, ever), starts nothing on her own except a friendly wave, and stays out of the way. You can hide her with the "Hide Lucy" button at the bottom of any page, and your choice is remembered on your device only.',
+      origin: 'Lucy\'s original artwork was made with the help of AI; we redrew it ourselves as a vector drawing so that she can move.',
+      p2: 'She is quiet (no sound, ever), starts nothing on her own except a friendly wave, and stays out of the way. She answers questions about StarkLLM from the pages of this website, entirely in your browser. You can hide her with the small x next to her or the "Hide Lucy" button in her chat window, and your choice is remembered on your device only.',
+    },
+    chat: {
+      open: 'Ask Lucy',
+      title: 'Ask Lucy',
+      close: 'Close',
+      note: 'Lucy is an automated assistant, not a person. Her answers are quotes from the pages of this website. Your questions stay in your browser and are not sent anywhere. This is not legal or financial advice.',
+      placeholder: 'Ask about StarkLLM',
+      label: 'Your question',
+      send: 'Send',
+      suggestions: ['Is StarkLLM free?', 'Does my data leave my PC?', 'How do I install it?', 'Why does Windows warn me?'],
+      suggestionsLabel: 'Try asking',
+      loading: 'Lucy is getting ready…',
+      loadError: 'I could not load my notes. Please try again later, or use the links below.',
+      source: 'Source',
+      also: 'Also see',
+      none: 'I could not find that on this site.',
+      noneLinks: 'You may find help here:',
+      scoped: 'On this page I only answer from the text of the page itself, and I cannot give legal advice. Please read the page:',
+      advice: 'I cannot give legal advice. You can read the legal texts of this site here, and for legal questions please ask a lawyer:',
+      you: 'You',
+      lucy: 'Lucy',
+      clear: 'Clear conversation',
+      hrefs: { help: '/help', manual: '/manual', contact: '/contact', issues: 'https://github.com/StarkChristian/StarkLLM/issues', privacy: '/privacy-policy', imprint: '/impressum' },
+      links: { help: 'Help & Troubleshooting', manual: 'Manual', issues: 'GitHub issues', contact: 'Contact', privacy: 'Privacy policy', imprint: 'Imprint (Impressum)' },
     },
     tours: {
       home: [
@@ -80,6 +111,23 @@ export const lucy = {
         { sel: '.tech-body figure', text: 'This is how it looks in the app.' },
         { sel: '#more-h', text: 'More features are listed here.' },
       ],
+      help: [
+        { sel: '#how-h', text: 'This page helps when StarkLLM does not start or something goes wrong. First, how the pieces fit together.' },
+        { sel: '#steps-h', text: 'A checklist with a test for every step. Work through it from top to bottom.' },
+        { sel: '#problems-h', text: 'Common problems, each with the likely cause and what to do.' },
+        { sel: '#report-h', text: 'Still stuck? This is what to send us.' },
+        { sel: '#limits-h', text: 'What StarkLLM cannot do yet.' },
+      ],
+      manual: [
+        { sel: '#what-it-is', text: 'The manual starts with what StarkLLM is. The list of sections at the top helps you jump around.' },
+        { sel: '#hardware', text: 'What your PC needs: memory, graphics card and disk space.' },
+        { sel: '#installation', text: 'How to install and start StarkLLM.' },
+        { sel: '#first-week', text: 'A path for your first week: what to try in which order.' },
+        { sel: '#inbox', text: 'The inbox: letters grouped into cases, with deadlines and amounts.' },
+        { sel: '#knowledge-base', text: 'The Knowledge Base: folders on this PC that are read and kept searchable.' },
+        { sel: '#troubleshooting', text: 'If something does not work, start here.' },
+        { sel: '#faq', text: 'And the questions people ask most often.' },
+      ],
       about: [],
       lost: [],
     } as Record<LucyProfile, Step[]>,
@@ -87,6 +135,7 @@ export const lucy = {
   de: {
     title: 'Lucy, der StarkLLM-Roboter',
     hide: 'Lucy ausblenden',
+    ask: 'Frag mich',
     show: 'Lucy einblenden',
     tour: 'Zeig mir die Seite',
     next: 'Weiter',
@@ -94,7 +143,7 @@ export const lucy = {
     stop: 'Rundgang beenden',
     step: 'Schritt {n} von {m}',
     stripText: 'Lucy ist die Begleiterin von StarkLLM.',
-    hero: { line: 'Hallo, ich bin Lucy! Ihre Dokumente bleiben auf Ihrem PC. Soll ich Ihnen die Seite zeigen?' },
+    hero: { line: 'Hallo, ich bin Lucy! Ihre Dokumente bleiben auf Ihrem PC. Fragen Sie mich etwas zu StarkLLM, oder soll ich Ihnen die Seite zeigen?' },
     download: {
       news: 'Version {v} ist da!',
       newsDate: 'Veröffentlicht am {d}.',
@@ -114,7 +163,32 @@ export const lucy = {
     about: {
       h: 'Über Lucy',
       p1: 'Lucy ist der StarkLLM-Roboter: ein kleiner blauer Helfer mit drei gelben Haaren. Sie erklärt Dinge, zeigt auf Screenshots und führt Sie auf Wunsch über diese Website.',
-      p2: 'Sie ist leise (nie ein Ton), startet von sich aus nur ein freundliches Winken und bleibt aus dem Weg. Mit dem Knopf „Lucy ausblenden“ am Ende jeder Seite blenden Sie sie aus; Ihre Wahl wird nur auf Ihrem Gerät gespeichert.',
+      origin: 'Lucys ursprüngliche Zeichnung ist mit Hilfe von KI entstanden; wir haben sie selbst als Vektorgrafik neu gezeichnet, damit sie sich bewegen kann.',
+      p2: 'Sie ist leise (nie ein Ton), startet von sich aus nur ein freundliches Winken und bleibt aus dem Weg. Fragen zu StarkLLM beantwortet sie aus den Seiten dieser Website, ganz in Ihrem Browser. Mit dem kleinen Kreuz neben ihr oder dem Knopf „Lucy ausblenden“ im Chatfenster blenden Sie sie aus; Ihre Wahl wird nur auf Ihrem Gerät gespeichert.',
+    },
+    chat: {
+      open: 'Lucy fragen',
+      title: 'Lucy fragen',
+      close: 'Schließen',
+      note: 'Lucy ist eine automatische Assistentin, keine Person. Ihre Antworten sind Zitate von den Seiten dieser Website. Ihre Fragen bleiben in Ihrem Browser und werden nirgendwohin gesendet. Das ist keine Rechts- oder Finanzberatung.',
+      placeholder: 'Fragen zu StarkLLM',
+      label: 'Ihre Frage',
+      send: 'Senden',
+      suggestions: ['Ist StarkLLM kostenlos?', 'Verlassen meine Daten meinen PC?', 'Wie installiere ich es?', 'Warum warnt mich Windows?'],
+      suggestionsLabel: 'Zum Beispiel',
+      loading: 'Lucy macht sich bereit …',
+      loadError: 'Ich konnte meine Notizen nicht laden. Bitte versuchen Sie es später noch einmal oder nutzen Sie die Links unten.',
+      source: 'Quelle',
+      also: 'Siehe auch',
+      none: 'Das habe ich auf dieser Website nicht gefunden.',
+      noneLinks: 'Hilfe finden Sie hier:',
+      scoped: 'Auf dieser Seite antworte ich nur aus dem Text der Seite selbst und gebe keine Rechtsberatung. Bitte lesen Sie die Seite:',
+      advice: 'Ich gebe keine Rechtsberatung. Die rechtlichen Texte dieser Website finden Sie hier; bei rechtlichen Fragen wenden Sie sich bitte an eine Anwältin oder einen Anwalt:',
+      you: 'Sie',
+      lucy: 'Lucy',
+      clear: 'Gespräch löschen',
+      hrefs: { help: '/de/help', manual: '/de/manual', contact: '/contact', issues: 'https://github.com/StarkChristian/StarkLLM/issues', privacy: '/datenschutz', imprint: '/impressum' },
+      links: { help: 'Hilfe und Problemlösung', manual: 'Handbuch', issues: 'GitHub-Issues', contact: 'Kontakt', privacy: 'Datenschutzerklärung', imprint: 'Impressum' },
     },
     tours: {
       home: [
@@ -144,11 +218,31 @@ export const lucy = {
         { sel: '.tech-body figure', text: 'So sieht es in der App aus.' },
         { sel: '#more-h', text: 'Weitere Funktionen stehen hier.' },
       ],
+      help: [
+        { sel: '#how-h', text: 'Diese Seite hilft, wenn StarkLLM nicht startet oder etwas schiefgeht. Zuerst: wie die Teile zusammenspielen.' },
+        { sel: '#steps-h', text: 'Eine Checkliste mit einem Test für jeden Schritt. Gehen Sie sie von oben nach unten durch.' },
+        { sel: '#problems-h', text: 'Häufige Probleme, jeweils mit der wahrscheinlichen Ursache und dem, was zu tun ist.' },
+        { sel: '#report-h', text: 'Immer noch hängen? Das schicken Sie uns.' },
+        { sel: '#limits-h', text: 'Was StarkLLM noch nicht kann.' },
+      ],
+      manual: [
+        { sel: '#what-it-is', text: 'Das Handbuch beginnt damit, was StarkLLM ist. Die Liste der Abschnitte oben hilft beim Springen.' },
+        { sel: '#hardware', text: 'Was Ihr PC braucht: Arbeitsspeicher, Grafikkarte und Speicherplatz.' },
+        { sel: '#installation', text: 'So installieren und starten Sie StarkLLM.' },
+        { sel: '#first-week', text: 'Ein Weg für Ihre erste Woche: was Sie in welcher Reihenfolge ausprobieren.' },
+        { sel: '#inbox', text: 'Der Posteingang: Briefe, nach Vorgängen gruppiert, mit Fristen und Beträgen.' },
+        { sel: '#knowledge-base', text: 'Die Knowledge Base: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
+        { sel: '#troubleshooting', text: 'Wenn etwas nicht funktioniert, fangen Sie hier an.' },
+        { sel: '#faq', text: 'Und die Fragen, die am häufigsten gestellt werden.' },
+      ],
       about: [],
       lost: [],
     } as Record<LucyProfile, Step[]>,
   },
-} as const satisfies Record<Lang, unknown>;
+} as const;
+
+// Other languages: src/i18n/langs/<lang>/lucy.ts (default export, same shape as lucyBase.en).
+export const lucy = { ...lucyBase, ...byLang(import.meta.glob('./langs/*/lucy.ts', { eager: true, import: 'default' }), lucyBase.en, 'lucy') } as unknown as Record<Lang, typeof lucyBase.en>;
 
 export function fill(t: string, vars: Record<string, string>): string {
   return t.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');

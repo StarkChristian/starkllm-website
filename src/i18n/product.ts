@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the product page, EN and DE. German is a first draft and needs a native review before launch.
 // Theme names, colors and descriptions mirror frontend/src/utils/themes.js in the app repo.
 import { V, SIZE_MB } from '../data/release';
@@ -17,7 +18,7 @@ export const themes = [
   { name: 'Starry Night', bg: '#0a0f24', card: '#161e44', g: ['#6366f1', '#f59e0b'], en: 'A quiet night sky full of small stars, with warm gold accents.', de: 'Ein ruhiger Nachthimmel voller kleiner Sterne mit warmen Goldakzenten.' },
 ];
 
-export const product = {
+const productBase = {
   en: {
     meta: { title: 'Product | StarkLLM' },
     hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'An end-to-end local pipeline designed with data privacy in mind.' },
@@ -50,7 +51,7 @@ export const product = {
         { k: 'With amount and page', v: 'Every date comes with its sentence, the amount if there is one and the page it was read from.' },
         { k: 'Add to calendar', v: '"Add to calendar" saves the dates as a calendar file on request.' },
         { k: 'Made by rules on this PC', v: 'Dates, amounts and senders are found by fixed rules over the text of your letters, not guessed by a model, so each one is in the document. Check the letter before you act on it.' },
-        { k: 'Languages', v: 'Letters in English and German are understood. Photos and scans are read as English or German text. Letters in other languages are filed and can be searched, but without deadlines and amounts.' },
+        { k: 'Languages', v: 'Letters in English and German are understood. Photos and scans are read as English or German text. Letters in other languages are filed and can be searched, but without deadlines and amounts. Coming with the next versions (in progress, not released yet): letter rules for French, Spanish, Italian and Turkish, and the interface in Spanish, French, Italian and Turkish.' },
       ],
     },
     verify: {
@@ -158,7 +159,7 @@ export const product = {
         { k: 'Mit Betrag und Seite', v: 'Zu jedem Datum gehören der Satz, der Betrag, falls es einen gibt, und die Seite, aus der es gelesen wurde.' },
         { k: 'Zum Kalender', v: '„Zum Kalender“ speichert die Termine auf Wunsch als Kalenderdatei.' },
         { k: 'Nach festen Regeln auf diesem PC', v: 'Daten, Beträge und Absender werden nach festen Regeln im Text Ihrer Briefe gefunden und nicht von einem Modell geraten, jeder Wert steht also im Dokument. Prüfen Sie den Brief, bevor Sie handeln.' },
-        { k: 'Sprachen', v: 'Briefe auf Englisch und Deutsch werden verstanden. Fotos und Scans werden als englischer oder deutscher Text gelesen. Briefe in anderen Sprachen werden abgelegt und lassen sich durchsuchen, aber ohne Fristen und Beträge.' },
+        { k: 'Sprachen', v: 'Briefe auf Englisch und Deutsch werden verstanden. Fotos und Scans werden als englischer oder deutscher Text gelesen. Briefe in anderen Sprachen werden abgelegt und lassen sich durchsuchen, aber ohne Fristen und Beträge. Mit den nächsten Versionen kommen (in Arbeit, noch nicht veröffentlicht): Briefregeln für Französisch, Spanisch, Italienisch und Türkisch sowie die Oberfläche auf Spanisch, Französisch, Italienisch und Türkisch.' },
       ],
     },
     verify: {
@@ -235,6 +236,9 @@ export const product = {
     cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: `Installer v${V} herunterladen`, all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/product.ts (default export, same shape as the English object).
+export const product = { ...productBase, ...byLang(import.meta.glob('./langs/*/product.ts', { eager: true, import: 'default' }), productBase.en, 'product') } as unknown as Record<Lang, typeof productBase.en>;
 
 export const toolSample = [
   { name: 'research_notes.pdf', size: 1048576, chunks: 42 },

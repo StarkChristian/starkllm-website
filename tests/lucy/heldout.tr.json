@@ -1,0 +1,162 @@
+{
+ "questions": [
+  {
+   "q": "iPhone için bir sürüm var mı?",
+   "pages": [
+    "/tr/product",
+    "/tr/manual",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "StarkLLM’i kullanmak için hesap açmam gerekir mi?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "İlk başlatmada neler oluyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "El yazısıyla yazılmış mektupları okuyabiliyor mu?",
+   "pages": [
+    "/tr/tech-multimodal",
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM cevap uyduruyor mu?",
+   "pages": [
+    "/tr/tech-rag",
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Bir konuşmayı dışa aktarabilir miyim?",
+   "pages": [
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Belge klasörünü nasıl eklerim?",
+   "pages": [
+    "/tr/manual",
+    "/tr/tech-knowledge-base",
+    "/tr/tech-workspaces"
+   ]
+  },
+  {
+   "q": "Web sitesi beni takip ediyor mu?",
+   "pages": [
+    "/tr/about",
+    "/tr/legal"
+   ]
+  },
+  {
+   "q": "Hangi ekran kartı gerekiyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/manual",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Başka bir dil modeli seçebilir miyim?",
+   "pages": [
+    "/tr/tech-local-models",
+    "/tr/manual",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Bir hatayı nereye bildirebilirim?",
+   "pages": [
+    "/tr/contact",
+    "/tr/about",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Windows 10’da çalışıyor mu?",
+   "pages": [
+    "/tr/download",
+    "/tr/",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Python sandbox’ı nedir?",
+   "pages": [
+    "/tr/",
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Diğer programlar StarkLLM’i kullanabilir mi?",
+   "pages": [
+    "/tr/",
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Docker StarkLLM için ne yapıyor?",
+   "pages": [
+    "/tr/help",
+    "/tr/download",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM’i nasıl durdururum?",
+   "pages": [
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Mektuplarımdaki son tarihleri buluyor mu?",
+   "pages": [
+    "/tr/product",
+    "/tr/",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Koyu tema var mı?",
+   "pages": [
+    "/tr/tech-themes",
+    "/tr/",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Web sitesinin sahibi kim?",
+   "pages": [
+    "/tr/about",
+    "/tr/contact",
+    "/tr/legal"
+   ]
+  },
+  {
+   "q": "Kaynak kodu herkese açık mı?",
+   "pages": [
+    "/tr/about",
+    "/tr/contact",
+    "/tr/download"
+   ]
+  }
+ ],
+ "unrelated": [],
+ "advice": []
+}

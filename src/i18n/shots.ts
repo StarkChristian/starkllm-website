@@ -20,16 +20,16 @@ import deKb from '../assets/shots/de-kb.webp';
 import deSettings from '../assets/shots/de-settings.webp';
 import deAppearance from '../assets/shots/de-appearance.webp';
 import deOtherApps from '../assets/shots/de-otherapps.webp';
-import type { Lang } from './ui';
+import { aiTranslated, byLang, type Lang } from './ui';
 
 export type ShotKey = 'dashboard' | 'inbox' | 'chat' | 'sources' | 'warning' | 'kb' | 'settings' | 'appearance' | 'otherapps';
 
-export const shots: Record<Lang, Record<ShotKey, ImageMetadata>> = {
+const shotsBase: Record<'en' | 'de', Record<ShotKey, ImageMetadata>> = {
   en: { dashboard: enDashboard, inbox: enInbox, chat: enChat, sources: enSources, warning: enWarning, kb: enKb, settings: enSettings, appearance: enAppearance, otherapps: enOtherApps },
   de: { dashboard: deDashboard, inbox: deInbox, chat: deChat, sources: deSources, warning: deWarning, kb: deKb, settings: deSettings, appearance: deAppearance, otherapps: deOtherApps },
 };
 
-export const alt: Record<Lang, Record<ShotKey, string>> = {
+const altBase: Record<'en' | 'de', Record<ShotKey, string>> = {
   en: {
     dashboard: 'StarkLLM start page with upcoming deadlines and payment dates found in letters, and the newest documents',
     inbox: 'StarkLLM inbox grouping letters into cases by sender, with the next deadline and a "suspicious" mark on one letter',
@@ -53,3 +53,8 @@ export const alt: Record<Lang, Record<ShotKey, string>> = {
     otherapps: 'StarkLLM-Einstellungen, Andere Programme: standardmäßig aus, Schlüssel, MCP-Server und Adresse der OpenAI-kompatiblen API',
   },
 };
+
+// The app has no interface in the other languages yet: they show the English screenshots with their own alt texts
+// (src/i18n/langs/<lang>/shots.ts, default export: the alt texts, same keys as altBase.en).
+export const shots = { ...shotsBase, ...Object.fromEntries(aiTranslated.map((l) => [l, shotsBase.en])) } as Record<Lang, Record<ShotKey, ImageMetadata>>;
+export const alt = { ...altBase, ...byLang(import.meta.glob('./langs/*/shots.ts', { eager: true, import: 'default' }), altBase.en, 'shots') } as Record<Lang, Record<ShotKey, string>>;

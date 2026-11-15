@@ -1,0 +1,620 @@
+{
+ "lang": "de",
+ "stop": [
+  "der",
+  "die",
+  "das",
+  "den",
+  "dem",
+  "des",
+  "ein",
+  "eine",
+  "einen",
+  "einem",
+  "einer",
+  "eines",
+  "und",
+  "oder",
+  "aber",
+  "wenn",
+  "weil",
+  "als",
+  "wie",
+  "was",
+  "wer",
+  "wo",
+  "wann",
+  "warum",
+  "wieso",
+  "welche",
+  "welcher",
+  "welches",
+  "ist",
+  "sind",
+  "war",
+  "waren",
+  "sein",
+  "bin",
+  "bist",
+  "seid",
+  "wird",
+  "werden",
+  "wurde",
+  "wurden",
+  "hat",
+  "haben",
+  "hatte",
+  "hatten",
+  "habe",
+  "kann",
+  "kannst",
+  "koennen",
+  "konnte",
+  "soll",
+  "sollen",
+  "muss",
+  "muessen",
+  "darf",
+  "duerfen",
+  "will",
+  "wollen",
+  "mag",
+  "ich",
+  "mir",
+  "mich",
+  "du",
+  "dir",
+  "dich",
+  "er",
+  "sie",
+  "es",
+  "wir",
+  "uns",
+  "ihr",
+  "euch",
+  "ihnen",
+  "ihre",
+  "ihren",
+  "ihrem",
+  "ihrer",
+  "ihres",
+  "mein",
+  "meine",
+  "meinen",
+  "meinem",
+  "meiner",
+  "mit",
+  "von",
+  "zu",
+  "zum",
+  "zur",
+  "bei",
+  "aus",
+  "nach",
+  "vor",
+  "fuer",
+  "fur",
+  "auf",
+  "an",
+  "am",
+  "im",
+  "in",
+  "ins",
+  "um",
+  "ueber",
+  "unter",
+  "durch",
+  "gegen",
+  "ohne",
+  "bis",
+  "auch",
+  "noch",
+  "nur",
+  "schon",
+  "sehr",
+  "mehr",
+  "nicht",
+  "kein",
+  "keine",
+  "keinen",
+  "keinem",
+  "keiner",
+  "da",
+  "dort",
+  "hier",
+  "so",
+  "dass",
+  "ob",
+  "oder",
+  "denn",
+  "doch",
+  "ja",
+  "nein",
+  "gibt",
+  "software",
+  "programm",
+  "app",
+  "anwendung",
+  "viel",
+  "viele",
+  "brauche",
+  "brauchen",
+  "machen",
+  "macht",
+  "mache",
+  "genau",
+  "wirklich",
+  "eigentlich",
+  "irgendwo",
+  "irgendwohin",
+  "irgendetwas",
+  "bitte",
+  "mal"
+ ],
+ "suffixes": [
+  "ungen",
+  "ung",
+  "ern",
+  "en",
+  "er",
+  "es",
+  "em",
+  "e",
+  "n",
+  "s"
+ ],
+ "extraPages": [
+  "/impressum",
+  "/datenschutz"
+ ],
+ "legalPages": [
+  "/impressum",
+  "/datenschutz",
+  "/privacy-policy",
+  "/code-signing",
+  "/de/code-signing"
+ ],
+ "advice": [
+  "rechtsberatung",
+  "rechtlich beraten",
+  "anwalt",
+  "verklagen",
+  "ist das legal",
+  "ist es legal",
+  "ist dies legal",
+  "rechtssicher",
+  "klage einreichen"
+ ],
+ "links": {
+  "help": "/de/help",
+  "manual": "/de/manual",
+  "contact": "/contact",
+  "issues": "https://github.com/StarkChristian/StarkLLM/issues"
+ },
+ "faq": [
+  {
+   "id": "what",
+   "q": [
+    "Was ist StarkLLM?",
+    "Was macht StarkLLM?",
+    "Worum geht es hier?",
+    "Erzähl mir etwas über StarkLLM"
+   ],
+   "page": "/de/about",
+   "match": "StarkLLM ist ein privater, Local-first-KI-Assistent für Windows"
+  },
+  {
+   "id": "free",
+   "q": [
+    "Ist StarkLLM kostenlos?",
+    "Kostet StarkLLM Geld?",
+    "Was kostet das?",
+    "Gibt es ein Abo oder versteckte Kosten?",
+    "Wie hoch ist der Preis?",
+    "Muss ich dafür bezahlen?",
+    "Muss ich irgendetwas bezahlen?",
+    "Ist es wirklich kostenlos?",
+    "Ist es gratis?"
+   ],
+   "page": "/de/download",
+   "match": "Ist StarkLLM kostenlos? Ja."
+  },
+  {
+   "id": "license",
+   "q": [
+    "Welche Lizenz hat StarkLLM?",
+    "Ist StarkLLM Open Source?",
+    "Darf ich es kommerziell nutzen?",
+    "Unter welcher Lizenz steht es?",
+    "Unter welcher Lizenz wird es veröffentlicht?",
+    "Wie lauten die Lizenzbedingungen?"
+   ],
+   "page": "/de/download",
+   "match": "Lizenziert unter Apache 2.0, kostenlos für private, wissenschaftliche und kommerzielle Nutzung"
+  },
+  {
+   "id": "leave",
+   "q": [
+    "Verlassen meine Daten meinen PC?",
+    "Werden meine Daten in die Cloud gesendet?",
+    "Schickt StarkLLM meine Dokumente irgendwohin?",
+    "Ist es privat?",
+    "Sammelt ihr Telemetrie oder Nutzungsdaten?",
+    "Wird irgendetwas hochgeladen oder an Dritte weitergegeben?",
+    "Wo werden meine Daten gespeichert?",
+    "Werden meine Dateien hochgeladen?",
+    "Telefoniert es nach Hause?",
+    "Sendet StarkLLM Telemetrie?",
+    "Werden meine Daten hochgeladen?",
+    "Ist es sicher für vertrauliche oder sensible Dokumente?",
+    "Sendet StarkLLM Telemetrie oder Nutzungsdaten?"
+   ],
+   "page": "/de/tech-privacy",
+   "match": "Es gibt keine Telemetrie und kein Konto auf einem Server"
+  },
+  {
+   "id": "online",
+   "q": [
+    "Welche Funktionen gehen online?",
+    "Wann verbindet sich StarkLLM mit dem Internet?",
+    "Braucht StarkLLM Internet?",
+    "Was verlässt meinen Rechner?"
+   ],
+   "page": "/de/tech-privacy",
+   "match": "Diese verbinden sich nur mit dem Internet, wenn Sie sie einschalten oder starten"
+  },
+  {
+   "id": "offline",
+   "q": [
+    "Funktioniert es offline?",
+    "Kann ich StarkLLM ohne Internet nutzen?",
+    "Läuft es ohne Internetverbindung?",
+    "Muss es online sein?",
+    "Kann ich ohne Verbindung arbeiten?"
+   ],
+   "page": "/de/tech-local-models",
+   "match": "funktioniert nach dem Download ohne Internet"
+  },
+  {
+   "id": "install",
+   "q": [
+    "Wie installiere ich StarkLLM?",
+    "Wie fange ich an?",
+    "Welche Schritte gibt es zur Installation?",
+    "Wie richte ich es ein?"
+   ],
+   "page": "/de/download",
+   "match": "Zwei Programme installieren Sie einmal, den Rest erledigt StarkLLM"
+  },
+  {
+   "id": "smartscreen",
+   "q": [
+    "Warum warnt mich Windows?",
+    "Der Computer wurde durch Windows geschützt. Was nun?",
+    "Ist die SmartScreen-Warnung gefährlich?",
+    "Warum wird der Installer blockiert?",
+    "Ist der Installer signiert?"
+   ],
+   "page": "/de/download",
+   "match": "der StarkLLM-Installer ist nicht digital signiert, daher kann Windows SmartScreen beim Start warnen"
+  },
+  {
+   "id": "checksum",
+   "q": [
+    "Wie prüfe ich meinen Download?",
+    "Was ist die SHA-256-Prüfsumme?",
+    "Wie stelle ich sicher, dass der Installer echt ist?",
+    "Wie kann ich prüfen, dass der Installer nicht verändert wurde?",
+    "Wie prüfe ich die Integrität des Downloads?",
+    "Hash des Installers prüfen"
+   ],
+   "page": "/de/download",
+   "match": "Integrität vor der Ausführung zu prüfen"
+  },
+  {
+   "id": "requirements",
+   "q": [
+    "Was sind die Systemvoraussetzungen?",
+    "Welche Hardware brauche ich?",
+    "Wie viel Arbeitsspeicher brauche ich?",
+    "Brauche ich eine Grafikkarte oder GPU?",
+    "Wie viel Arbeitsspeicher braucht mein Rechner?",
+    "Ist mein Rechner leistungsfähig genug?",
+    "Welche Specs braucht mein PC?"
+   ],
+   "page": "/de/download",
+   "match": "Mindestens 8 GB RAM für 3B-Modelle, 16 GB RAM für 7B-Modelle"
+  },
+  {
+   "id": "os",
+   "q": [
+    "Welche Windows-Versionen werden unterstützt?",
+    "Läuft es unter Windows 11?",
+    "Gibt es StarkLLM für Mac oder Linux?",
+    "Welches Betriebssystem brauche ich?",
+    "Läuft es auch auf einem Mac?",
+    "Gibt es eine Linux-Version?",
+    "Läuft es auf meinem Betriebssystem?"
+   ],
+   "page": "/de/download",
+   "match": "Betriebssystem: Windows 10 oder 11 mit aktiviertem WSL2"
+  },
+  {
+   "id": "docker",
+   "q": [
+    "Brauche ich Docker?",
+    "Brauche ich Ollama?",
+    "Welche Software muss ich vorher installieren?",
+    "Was sind die Voraussetzungen?"
+   ],
+   "page": "/de/download",
+   "match": "Docker Desktop: Einmal installiert (StarkLLM startet es)"
+  },
+  {
+   "id": "firststart",
+   "q": [
+    "Wie lange dauert der erste Start?",
+    "Warum dauert der erste Start so lange?",
+    "Wie groß ist der Download der Modelle?"
+   ],
+   "page": "/de/download",
+   "match": "Der erste Start lädt die Engine und die KI-Modelle, die noch fehlen"
+  },
+  {
+   "id": "languages",
+   "q": [
+    "Welche Sprachen unterstützt StarkLLM?",
+    "Gibt es StarkLLM auf Deutsch?",
+    "Gibt es eine spanische oder französische Version?",
+    "In welchen Sprachen kann es Briefe lesen?",
+    "Wird Spanisch unterstützt werden?"
+   ],
+   "page": "/de/manual",
+   "match": "Briefe: Der Posteingang versteht Briefe auf Englisch und Deutsch"
+  },
+  {
+   "id": "inbox",
+   "q": [
+    "Was ist der Posteingang?",
+    "Was macht der Briefe-Posteingang?",
+    "Wie geht StarkLLM mit meinen Briefen um?",
+    "Was sind Vorgänge und Fristen?"
+   ],
+   "page": "/de/product",
+   "match": "Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu"
+  },
+  {
+   "id": "phone",
+   "q": [
+    "Kann ich es auf dem Handy nutzen?",
+    "Gibt es eine App fürs Smartphone?",
+    "Gibt es eine Android- oder iPhone-App?"
+   ],
+   "page": "/de/product",
+   "match": "Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu"
+  },
+  {
+   "id": "scam",
+   "q": [
+    "Warnt es mich vor Betrugsbriefen?",
+    "Erkennt StarkLLM gefälschte Briefe?",
+    "Wie werden betrügerische Briefe erkannt?",
+    "Wie erkennt es Betrugsbriefe?",
+    "Wie werden Betrugsversuche erkannt?",
+    "Erkennt es Phishing-Briefe?"
+   ],
+   "page": "/de/product",
+   "match": "Ein rotes Feld über der Antwort erscheint, wenn ein Brief Zahlung"
+  },
+  {
+   "id": "models",
+   "q": [
+    "Welche KI-Modelle kann ich nutzen?",
+    "Was ist Ollama?",
+    "Ist ein Sprachmodell enthalten?",
+    "Welches Modell soll ich wählen?"
+   ],
+   "page": "/de/tech-local-models",
+   "match": "Ollama ist ein kostenloses Programm, das offene Sprachmodelle"
+  },
+  {
+   "id": "cloudmodels",
+   "q": [
+    "Kann ich ChatGPT oder andere Cloud-Modelle nutzen?",
+    "Kann ich DeepSeek oder OpenRouter anbinden?",
+    "Werden Cloud-Modellanbieter unterstützt?"
+   ],
+   "page": "/de/tech-privacy",
+   "match": "Cloud-Modellanbieter (Einstellungen, z. B. DeepSeek, OpenRouter, Groq)"
+  },
+  {
+   "id": "sources",
+   "q": [
+    "Zeigt es, woher die Antworten stammen?",
+    "Haben die Antworten Quellenangaben?",
+    "Kann ich die Quellen einer Antwort prüfen?",
+    "Aus welchem Dokument stammt die Antwort?",
+    "Kann ich sehen, woher eine Antwort kommt?"
+   ],
+   "page": "/de/tech-rag",
+   "match": "Jede Antwort nennt ihre Quellen mit Dateiname und Seite oder Abschnitt"
+  },
+  {
+   "id": "rag",
+   "q": [
+    "Was ist RAG?",
+    "Wie beantwortet StarkLLM Fragen zu meinen Dokumenten?",
+    "Was ist Retrieval-Augmented Generation?"
+   ],
+   "page": "/de/tech-rag",
+   "match": "Retrieval-Augmented Generation (RAG) bedeutet"
+  },
+  {
+   "id": "formats",
+   "q": [
+    "Welche Dateitypen kann StarkLLM lesen?",
+    "Kann es gescannte PDFs und Fotos lesen?",
+    "Welche Dokumentformate werden unterstützt?",
+    "Welche Dateiformate kann ich hochladen?",
+    "Kann ich Word-, Excel- oder PDF-Dateien hochladen?",
+    "Welche Dokumente kann ich hinzufügen?"
+   ],
+   "page": "/de/tech-multimodal",
+   "match": "14 Dateitypen"
+  },
+  {
+   "id": "voice",
+   "q": [
+    "Gibt es Spracheingabe?",
+    "Kann es Antworten vorlesen?",
+    "Gibt es Spracherkennung?",
+    "Kann ich per Sprache mit ihm sprechen?",
+    "Kann ich mit der Stimme steuern?",
+    "Gibt es Sprachausgabe?",
+    "Kann ich mit ihm sprechen?"
+   ],
+   "page": "/de/tech-voice",
+   "match": "StarkLLM nutzt Whisper für die Spracherkennung und Piper-Stimmen"
+  },
+  {
+   "id": "themes",
+   "q": [
+    "Wie viele Themes gibt es?",
+    "Gibt es einen Dunkelmodus?",
+    "Kann ich die Farben der App ändern?",
+    "Wie viele Farbthemen gibt es?",
+    "Welche Designs gibt es?"
+   ],
+   "page": "/de/tech-themes",
+   "match": "StarkLLM hat dreizehn Themen"
+  },
+  {
+   "id": "tools",
+   "q": [
+    "Was sind lokale Tools?",
+    "Kann das Modell Befehle auf meinem PC ausführen?",
+    "Handelt die KI ohne Rückfrage?",
+    "Führt die KI ohne Rückfrage Programme auf meinem Rechner aus?",
+    "Darf die KI Programme ausführen?",
+    "Führt die KI Programme aus, ohne mich zu fragen?"
+   ],
+   "page": "/de/tech-local-tools",
+   "match": "Das Modell kann drei reine Lesewerkzeuge anfordern"
+  },
+  {
+   "id": "contact",
+   "q": [
+    "Wie kann ich Sie kontaktieren?",
+    "Wie lautet Ihre E-Mail-Adresse?",
+    "An wen wende ich mich für Support?",
+    "Wo melde ich einen Fehler?",
+    "Wie erreiche ich Sie per E-Mail?",
+    "Wie nehme ich Kontakt auf?",
+    "Ich brauche Support, an wen schreibe ich?"
+   ],
+   "page": "/impressum",
+   "match": "info@starkllm.com"
+  },
+  {
+   "id": "creator",
+   "q": [
+    "Wer hat StarkLLM gemacht?",
+    "Wer steckt hinter StarkLLM?",
+    "Wer ist der Entwickler?",
+    "Wer hat diese Software entwickelt?",
+    "Wer hat es gebaut?",
+    "Wer ist der Autor?",
+    "Wer ist der Betreiber?"
+   ],
+   "page": "/de/about",
+   "match": "Christian Stark. Maxstr. 14, 52070 Aachen, Deutschland"
+  },
+  {
+   "id": "source",
+   "q": [
+    "Wo ist der Quellcode?",
+    "Gibt es ein GitHub-Repository?",
+    "Wie kann ich mitmachen?"
+   ],
+   "page": "/de/about",
+   "match": "StarkLLM ist Open Source unter der Apache-2.0-Lizenz"
+  },
+  {
+   "id": "password",
+   "q": [
+    "Ich habe mein Passwort vergessen",
+    "Kann ich mein Passwort zurücksetzen?",
+    "Wie lege ich ein Konto an?"
+   ],
+   "page": "/de/help",
+   "match": "StarkLLM hat noch keine Passwort-Zurücksetzung"
+  },
+  {
+   "id": "uninstall",
+   "q": [
+    "Wie deinstalliere ich StarkLLM?",
+    "Wie stoppe ich StarkLLM?",
+    "Wie entferne ich das Programm?"
+   ],
+   "page": "/de/help",
+   "match": "Wie stoppe oder deinstalliere ich StarkLLM?"
+  },
+  {
+   "id": "analytics",
+   "q": [
+    "Trackt mich diese Website?",
+    "Nutzt die Website Cookies oder Analytics?",
+    "Wie sieht es mit Webanalyse auf dieser Seite aus?",
+    "Welche Daten speichert ihr über Website-Besucher?",
+    "Welche Daten speichert diese Website über Besucher?"
+   ],
+   "page": "/datenschutz",
+   "match": "Umami setzt keine Cookies"
+  },
+  {
+   "id": "slow",
+   "q": [
+    "Warum sind die Antworten langsam?",
+    "Wie kann ich es schneller machen?",
+    "Warum ist es auf meinem PC langsam?"
+   ],
+   "page": "/de/download",
+   "match": "Warum können Antworten langsam sein?"
+  },
+  {
+   "id": "update",
+   "q": [
+    "Was macht die Update-Prüfung?",
+    "Prüft StarkLLM auf Updates?",
+    "Aktualisiert sich die App selbst?"
+   ],
+   "page": "/de/tech-privacy",
+   "match": "Update-Prüfung"
+  },
+  {
+   "id": "delete",
+   "q": [
+    "Kann StarkLLM meine Dateien löschen oder ändern?",
+    "Benennt es meine Dokumente um oder verschiebt sie?",
+    "Kann das Programm meine Dateien löschen?"
+   ],
+   "page": "/de/product",
+   "match": "Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM läuft nach dem Schließen weiter",
+    "Warum läuft StarkLLM noch, nachdem ich es beendet habe?",
+    "Docker Desktop läuft weiter, obwohl ich StarkLLM geschlossen habe",
+    "Wie beende ich StarkLLM vollständig?",
+    "Docker läuft weiter, wenn ich die App schließe",
+    "Warum ist Docker noch aktiv, wenn ich die Anwendung schließe?",
+    "Läuft StarkLLM im Hintergrund weiter?",
+    "Wie stoppe ich die StarkLLM-Engine und ihre Container?"
+   ],
+   "page": "/de/manual",
+   "match": "damit der nächste Start nur etwa anderthalb Sekunden dauert"
+  }
+ ]
+}

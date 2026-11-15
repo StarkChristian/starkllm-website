@@ -3,7 +3,7 @@
 
 usage: python3 tools/make_shots.py <raw-dir> [--lang en] [--lang de]
 Expects <raw-dir>/<lang>-<name>.png for every name in SHOTS (see src/i18n/shots.ts). Writes src/assets/shots/<lang>-<name>.webp,
-copies the English set to public/assets/shots/ (the manual is plain HTML and cannot use Astro's image pipeline) and makes
+copies every language's set to public/assets/shots/ (the manual is plain HTML and cannot use Astro's image pipeline) and makes
 the social preview image public/assets/shots/social.png (1200x630).
 """
 import argparse, pathlib, shutil
@@ -25,8 +25,7 @@ for lang in a.lang or ["en", "de"]:
         dst = out / f"{lang}-{name}.webp"
         im.save(dst, "WEBP", quality=86, method=6)
         print(dst.relative_to(ROOT), dst.stat().st_size // 1024, "KB")
-        if lang == "en":
-            shutil.copy(dst, pub / dst.name)
+        shutil.copy(dst, pub / dst.name)  # English and German manual use the plain-HTML copies
 # social preview: the English chat, cropped to 1.91:1
 im = Image.open(raw / "en-chat.png").convert("RGB")
 w, h = im.size; ch = int(w / 1.905)

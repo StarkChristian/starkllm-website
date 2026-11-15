@@ -1,0 +1,740 @@
+{
+ "lang": "es",
+ "stop": [
+  "a",
+  "aca",
+  "ahi",
+  "ahora",
+  "al",
+  "algo",
+  "alguien",
+  "algun",
+  "alguna",
+  "algunas",
+  "alguno",
+  "algunos",
+  "alla",
+  "alli",
+  "ante",
+  "antes",
+  "aplicacion",
+  "app",
+  "aqui",
+  "asi",
+  "aun",
+  "aunque",
+  "bien",
+  "cada",
+  "como",
+  "con",
+  "contar",
+  "contra",
+  "cosa",
+  "cosas",
+  "cual",
+  "cuales",
+  "cuan",
+  "cuando",
+  "cuanta",
+  "cuantas",
+  "cuanto",
+  "cuantos",
+  "cuenta",
+  "cuentame",
+  "cuya",
+  "cuyo",
+  "de",
+  "decir",
+  "del",
+  "desde",
+  "despues",
+  "dime",
+  "dinos",
+  "donde",
+  "dos",
+  "durante",
+  "el",
+  "ella",
+  "ellas",
+  "ello",
+  "ellos",
+  "en",
+  "entonces",
+  "entre",
+  "era",
+  "eran",
+  "eres",
+  "es",
+  "esa",
+  "esas",
+  "ese",
+  "eso",
+  "esos",
+  "esta",
+  "estaba",
+  "estais",
+  "estamos",
+  "estan",
+  "estar",
+  "estare",
+  "estas",
+  "este",
+  "esten",
+  "esto",
+  "estos",
+  "estoy",
+  "exactamente",
+  "favor",
+  "fue",
+  "fuera",
+  "fueron",
+  "gracias",
+  "ha",
+  "habia",
+  "hace",
+  "hacen",
+  "hacer",
+  "haces",
+  "hacia",
+  "hago",
+  "han",
+  "hasta",
+  "hay",
+  "he",
+  "hola",
+  "incluso",
+  "la",
+  "las",
+  "le",
+  "les",
+  "lo",
+  "los",
+  "luego",
+  "mal",
+  "mas",
+  "me",
+  "mediante",
+  "mi",
+  "mientras",
+  "mira",
+  "mirar",
+  "mis",
+  "misma",
+  "mismo",
+  "mucha",
+  "muchas",
+  "mucho",
+  "muchos",
+  "muy",
+  "necesita",
+  "necesitar",
+  "necesitas",
+  "necesito",
+  "ni",
+  "no",
+  "nos",
+  "nosotros",
+  "nuestra",
+  "nuestro",
+  "otra",
+  "otras",
+  "otro",
+  "otros",
+  "para",
+  "pero",
+  "poco",
+  "podemos",
+  "poder",
+  "podria",
+  "podrias",
+  "por",
+  "porque",
+  "programa",
+  "puede",
+  "pueden",
+  "puedes",
+  "puedo",
+  "pues",
+  "que",
+  "querer",
+  "quien",
+  "quienes",
+  "quiere",
+  "quieres",
+  "quiero",
+  "realmente",
+  "saber",
+  "se",
+  "sea",
+  "sean",
+  "segun",
+  "ser",
+  "seria",
+  "si",
+  "sin",
+  "sino",
+  "sobre",
+  "software",
+  "son",
+  "soy",
+  "su",
+  "sus",
+  "tal",
+  "tales",
+  "tambien",
+  "tampoco",
+  "tan",
+  "tanto",
+  "te",
+  "tener",
+  "tenga",
+  "tengo",
+  "ti",
+  "tiene",
+  "tienen",
+  "tienes",
+  "toda",
+  "todas",
+  "todavia",
+  "todo",
+  "todos",
+  "tras",
+  "tu",
+  "tus",
+  "un",
+  "una",
+  "unas",
+  "uno",
+  "unos",
+  "usa",
+  "usan",
+  "usar",
+  "usas",
+  "uso",
+  "usted",
+  "ustedes",
+  "utilizar",
+  "vale",
+  "vamos",
+  "ver",
+  "vez",
+  "vosotros",
+  "voy",
+  "y",
+  "ya",
+  "yo"
+ ],
+ "suffixes": [
+  "iros",
+  "aros",
+  "eros",
+  "amos",
+  "emos",
+  "aciones",
+  "iones",
+  "ciones",
+  "cion",
+  "mente",
+  "ando",
+  "iendo",
+  "adores",
+  "ador",
+  "ables",
+  "able",
+  "ibles",
+  "ible",
+  "ados",
+  "adas",
+  "ado",
+  "ada",
+  "idos",
+  "idas",
+  "ido",
+  "ida",
+  "ares",
+  "ar",
+  "er",
+  "ir",
+  "es",
+  "as",
+  "os",
+  "an",
+  "en",
+  "s",
+  "a",
+  "o",
+  "e"
+ ],
+ "extraPages": [],
+ "legalPages": [
+  "/es/legal",
+  "/privacy-policy",
+  "/impressum",
+  "/datenschutz"
+ ],
+ "advice": [
+  "asesoramiento juridico",
+  "asesoria juridica",
+  "asesoramiento legal",
+  "asesoria legal",
+  "consejo legal",
+  "consejo juridico",
+  "es legal",
+  "es ilegal",
+  "legalmente responsable",
+  "abogado",
+  "abogada",
+  "demandar",
+  "demandarte",
+  "demandaros",
+  "demanda judicial",
+  "tribunal",
+  "juzgado"
+ ],
+ "links": {
+  "help": "/es/help",
+  "manual": "/es/manual",
+  "contact": "/es/contact",
+  "issues": "https://github.com/StarkChristian/StarkLLM/issues"
+ },
+ "faq": [
+  {
+   "id": "what",
+   "q": [
+    "¿Qué es StarkLLM?",
+    "¿Qué hace StarkLLM?",
+    "¿De qué va esto?",
+    "Cuéntame algo sobre StarkLLM",
+    "¿Qué puedo hacer con StarkLLM?"
+   ],
+   "page": "/es/about",
+   "match": "StarkLLM es un asistente de IA privado y local para Windows"
+  },
+  {
+   "id": "free",
+   "q": [
+    "¿StarkLLM es gratis?",
+    "¿StarkLLM cuesta dinero?",
+    "¿Cuánto cuesta?",
+    "¿Hay suscripción o costes ocultos?",
+    "¿Cuál es el precio?",
+    "¿Tengo que pagar por usarlo?"
+   ],
+   "page": "/es/download",
+   "match": "¿StarkLLM es gratuito? Sí."
+  },
+  {
+   "id": "license",
+   "q": [
+    "¿Qué licencia usa StarkLLM?",
+    "¿StarkLLM es de código abierto?",
+    "¿Puedo usarlo con fines comerciales?",
+    "¿Bajo qué licencia se distribuye?",
+    "¿Cuáles son las condiciones de la licencia?"
+   ],
+   "page": "/es/download",
+   "match": "Con licencia Apache 2.0, gratuito para uso personal, de investigación y comercial"
+  },
+  {
+   "id": "leave",
+   "q": [
+    "¿Mis datos salen de mi PC?",
+    "¿Mis datos se envían a la nube?",
+    "¿StarkLLM envía mis documentos a alguna parte?",
+    "¿Es privado?",
+    "¿Recopila telemetría o datos de uso?",
+    "¿Dónde se guardan mis datos?",
+    "¿Se suben mis datos a algún sitio?",
+    "¿Es seguro para documentos confidenciales o sensibles?"
+   ],
+   "page": "/es/tech-privacy",
+   "match": "No tiene telemetría ni una cuenta en ningún servidor"
+  },
+  {
+   "id": "online",
+   "q": [
+    "¿Qué funciones se conectan a internet?",
+    "¿Cuándo se conecta StarkLLM a internet?",
+    "¿StarkLLM necesita acceso a internet?",
+    "¿Qué sale de mi ordenador?"
+   ],
+   "page": "/es/tech-privacy",
+   "match": "Estas se conectan a internet solo cuando las activas o las inicias"
+  },
+  {
+   "id": "offline",
+   "q": [
+    "¿Funciona sin conexión?",
+    "¿Puedo usar StarkLLM sin internet?",
+    "¿Funciona sin conexión a internet?",
+    "¿Tiene que estar conectado a internet?",
+    "¿Puedo trabajar sin conexión?"
+   ],
+   "page": "/es/tech-local-models",
+   "match": "sigue funcionando sin internet una vez descargado"
+  },
+  {
+   "id": "install",
+   "q": [
+    "¿Cómo instalo StarkLLM?",
+    "¿Cómo empiezo?",
+    "¿Cuáles son los pasos de instalación?",
+    "¿Cómo lo configuro?"
+   ],
+   "page": "/es/download",
+   "match": "Se instalan dos programas una sola vez y después StarkLLM hace el resto"
+  },
+  {
+   "id": "smartscreen",
+   "q": [
+    "¿Por qué me avisa Windows?",
+    "Windows protegió su PC. ¿Qué hago?",
+    "¿Es peligroso el aviso de Windows SmartScreen?",
+    "¿Por qué se bloquea el instalador?",
+    "¿El instalador está firmado digitalmente?"
+   ],
+   "page": "/es/download",
+   "match": "el instalador de StarkLLM no está firmado digitalmente, así que Windows SmartScreen puede mostrar un aviso"
+  },
+  {
+   "id": "checksum",
+   "q": [
+    "¿Cómo verifico mi descarga?",
+    "¿Qué es la suma de comprobación SHA-256?",
+    "¿Cómo compruebo que el instalador es auténtico?",
+    "¿Cómo puedo saber que el instalador no ha sido manipulado?",
+    "¿Cómo compruebo la integridad del archivo descargado?",
+    "Verificar el hash del instalador"
+   ],
+   "page": "/es/download",
+   "match": "Para verificar la integridad del archivo antes de ejecutarlo"
+  },
+  {
+   "id": "requirements",
+   "q": [
+    "¿Cuáles son los requisitos del sistema?",
+    "¿Qué hardware necesito?",
+    "¿Cuánta RAM necesito?",
+    "¿Necesito una tarjeta gráfica o GPU?",
+    "¿Cuánta memoria necesita mi ordenador?",
+    "¿Mi ordenador es lo bastante potente?",
+    "¿Qué especificaciones necesita mi PC?"
+   ],
+   "page": "/es/download",
+   "match": "Mínimo 8 GB de RAM para modelos de 3B y 16 GB de RAM para modelos de 7B"
+  },
+  {
+   "id": "os",
+   "q": [
+    "¿Qué versiones de Windows son compatibles?",
+    "¿Funciona en Windows 11?",
+    "¿Funciona en Mac o en Linux?",
+    "¿Qué sistema operativo necesito?",
+    "¿Puedo ejecutarlo en un Mac?",
+    "¿Hay una versión para Linux?"
+   ],
+   "page": "/es/download",
+   "match": "Windows 10 u 11 con WSL2 activado"
+  },
+  {
+   "id": "docker",
+   "q": [
+    "¿Necesito Docker?",
+    "¿Necesito Ollama?",
+    "¿Qué software tengo que instalar antes?",
+    "¿Cuáles son los requisitos previos?",
+    "¿Es obligatorio Docker?",
+    "¿Hace falta instalar Docker?",
+    "¿Para qué sirve Docker?",
+    "¿Qué función tiene Docker?"
+   ],
+   "page": "/es/download",
+   "match": "Docker Desktop: Se instala una sola vez (StarkLLM lo inicia)"
+  },
+  {
+   "id": "firststart",
+   "q": [
+    "¿Cuánto tarda el primer arranque?",
+    "¿Por qué el primer arranque tarda tanto?",
+    "¿Cuánto pesa la descarga de los modelos?",
+    "¿Cuánto dura el primer arranque?",
+    "¿Cuánto tiempo tarda la primera vez?"
+   ],
+   "page": "/es/download",
+   "match": "El primer arranque descarga el motor y los modelos de IA que aún no tengas"
+  },
+  {
+   "id": "languages",
+   "q": [
+    "¿Qué idiomas admite StarkLLM?",
+    "¿Funciona en alemán?",
+    "¿Hay una versión en español o en francés?",
+    "¿En qué idiomas puede leer cartas?",
+    "¿Se admitirá el español?",
+    "¿Habrá soporte para español?"
+   ],
+   "page": "/es/manual",
+   "match": "Cartas: la bandeja de entrada entiende cartas en inglés y alemán"
+  },
+  {
+   "id": "inbox",
+   "q": [
+    "¿Qué es la bandeja de entrada?",
+    "¿Qué hace la bandeja de entrada de cartas?",
+    "¿Cómo trata StarkLLM mis cartas?",
+    "¿Qué son los expedientes y los plazos?"
+   ],
+   "page": "/es/product",
+   "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
+  },
+  {
+   "id": "phone",
+   "q": [
+    "¿Puedo usarlo en el móvil?",
+    "¿Hay una aplicación para móvil?",
+    "¿Hay una aplicación para Android o iPhone?",
+    "¿Hay una versión para móvil o tableta?"
+   ],
+   "page": "/es/product",
+   "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
+  },
+  {
+   "id": "scam",
+   "q": [
+    "¿Me avisa de cartas fraudulentas?",
+    "¿Puede StarkLLM detectar cartas falsas?",
+    "¿Cómo se reconocen las cartas fraudulentas?",
+    "¿Puede StarkLLM descubrir cartas falsas o estafas?"
+   ],
+   "page": "/es/product",
+   "match": "Aparece un recuadro rojo sobre la respuesta si una carta pide un pago"
+  },
+  {
+   "id": "models",
+   "q": [
+    "¿Qué modelos de IA puedo usar?",
+    "¿Qué es Ollama?",
+    "¿StarkLLM incluye un modelo de lenguaje?",
+    "¿Qué modelo debería elegir?",
+    "¿Para qué sirve Ollama?"
+   ],
+   "page": "/es/tech-local-models",
+   "match": "Ollama es un programa gratuito que ejecuta modelos de lenguaje abiertos"
+  },
+  {
+   "id": "cloudmodels",
+   "q": [
+    "¿Puedo usar ChatGPT u otros modelos en la nube?",
+    "¿Puedo conectar DeepSeek u OpenRouter?",
+    "¿Admite proveedores de modelos en la nube?"
+   ],
+   "page": "/es/tech-privacy",
+   "match": "Proveedores de modelos en la nube (Settings, p. ej. DeepSeek, OpenRouter, Groq)"
+  },
+  {
+   "id": "sources",
+   "q": [
+    "¿Muestra de dónde salen las respuestas?",
+    "¿Las respuestas llevan citas?",
+    "¿Puedo comprobar las fuentes de una respuesta?",
+    "¿De qué documento salió la respuesta?",
+    "¿Puedo ver de dónde viene una respuesta?"
+   ],
+   "page": "/es/tech-rag",
+   "match": "Cada respuesta enumera sus fuentes con el nombre del archivo y la página o la sección"
+  },
+  {
+   "id": "rag",
+   "q": [
+    "¿Qué es RAG?",
+    "¿Cómo responde StarkLLM a preguntas sobre mis documentos?",
+    "¿Qué es la generación aumentada por recuperación?"
+   ],
+   "page": "/es/tech-rag",
+   "match": "La generación aumentada por recuperación (RAG, por sus siglas en inglés) significa que el modelo recibe primero los pasajes"
+  },
+  {
+   "id": "kb",
+   "q": [
+    "¿Qué es la Knowledge Base?",
+    "¿Cómo añado una carpeta a la Knowledge Base?",
+    "¿Qué diferencia hay entre un Workspace y la Knowledge Base?",
+    "¿Qué es la base de conocimiento?",
+    "¿Cómo vinculo una carpeta de mi PC?"
+   ],
+   "page": "/es/tech-knowledge-base",
+   "match": "La Knowledge Base (base de conocimiento) es una carpeta de tu PC"
+  },
+  {
+   "id": "formats",
+   "q": [
+    "¿Qué tipos de archivo puede leer StarkLLM?",
+    "¿Puede leer PDF escaneados y fotos?",
+    "¿Qué formatos de documento son compatibles?",
+    "¿Qué formatos de archivo puedo subir?",
+    "¿Puedo subir archivos de Word, Excel o PDF?",
+    "¿Qué documentos puedo añadir?",
+    "¿Puede leer escritura a mano?"
+   ],
+   "page": "/es/tech-multimodal",
+   "match": "14 tipos de archivo, incluidos PDF escaneados y fotos"
+  },
+  {
+   "id": "voice",
+   "q": [
+    "¿Admite entrada de voz?",
+    "¿Puede leer las respuestas en voz alta?",
+    "¿Tiene reconocimiento de voz?",
+    "¿Puedo hablarle con mi voz?",
+    "¿Puedo hablar con él?"
+   ],
+   "page": "/es/tech-voice",
+   "match": "StarkLLM usa Whisper para el reconocimiento de voz y voces de Piper"
+  },
+  {
+   "id": "themes",
+   "q": [
+    "¿Cuántos temas hay?",
+    "¿Hay modo oscuro?",
+    "¿Puedo cambiar los colores de la aplicación?"
+   ],
+   "page": "/es/tech-themes",
+   "match": "StarkLLM tiene trece temas"
+  },
+  {
+   "id": "tools",
+   "q": [
+    "¿Qué son las herramientas locales?",
+    "¿Puede el modelo ejecutar comandos en mi PC?",
+    "¿La IA actúa sin preguntarme?",
+    "¿La IA ejecuta programas sin preguntarme?",
+    "¿Puede la IA ejecutar cosas en mi ordenador?"
+   ],
+   "page": "/es/tech-local-tools",
+   "match": "Cada llamada a una herramienta se detiene en una tarjeta del chat"
+  },
+  {
+   "id": "contact",
+   "q": [
+    "¿Cómo puedo contactar con vosotros?",
+    "¿Cuál es vuestra dirección de correo electrónico?",
+    "¿A quién escribo para pedir soporte?",
+    "¿Dónde puedo informar de un error?",
+    "¿Cómo os puedo escribir por correo?",
+    "¿Cómo me pongo en contacto?",
+    "Necesito ayuda, ¿a quién puedo escribir?",
+    "¿Cómo puedo escribiros un correo electrónico?",
+    "¿Dónde puedo comunicar un problema o un fallo?",
+    "¿Dónde reporto un fallo o un bug?"
+   ],
+   "page": "/es/contact",
+   "match": "Correo electrónico: info@starkllm.com. Respuesta habitual"
+  },
+  {
+   "id": "creator",
+   "q": [
+    "¿Quién hizo StarkLLM?",
+    "¿Quién está detrás de StarkLLM?",
+    "¿Quién es el desarrollador?",
+    "¿Quién desarrolló este software?",
+    "¿Quién lo ha creado?",
+    "¿Quién es el autor?",
+    "¿Quién mantiene el proyecto?",
+    "¿Quién es el responsable de esta web?"
+   ],
+   "page": "/es/about",
+   "match": "Christian Stark. Maxstr. 14, 52070 Aachen, Alemania"
+  },
+  {
+   "id": "source",
+   "q": [
+    "¿Dónde está el código fuente?",
+    "¿Hay un repositorio en GitHub?",
+    "¿Cómo puedo colaborar?"
+   ],
+   "page": "/es/about",
+   "match": "StarkLLM es de código abierto, con licencia Apache 2.0"
+  },
+  {
+   "id": "password",
+   "q": [
+    "He olvidado mi contraseña",
+    "¿Puedo restablecer mi contraseña?",
+    "¿Cómo creo una cuenta?",
+    "¿Necesito registrarme o tener una cuenta?"
+   ],
+   "page": "/es/help",
+   "match": "StarkLLM todavía no tiene restablecimiento de contraseña"
+  },
+  {
+   "id": "uninstall",
+   "q": [
+    "¿Cómo desinstalo StarkLLM?",
+    "¿Cómo detengo StarkLLM?",
+    "¿Cómo elimino el programa?",
+    "¿Cómo se apaga o se cierra StarkLLM?"
+   ],
+   "page": "/es/help",
+   "match": "Quitar el programa: Configuración de Windows > Aplicaciones > StarkLLM"
+  },
+  {
+   "id": "analytics",
+   "q": [
+    "¿Este sitio web me rastrea?",
+    "¿El sitio web usa cookies o analítica?",
+    "¿Qué pasa con la analítica de este sitio?",
+    "¿Qué datos guardáis de los visitantes del sitio web?",
+    "¿Qué datos guarda este sitio web sobre los visitantes?"
+   ],
+   "page": "/es/about",
+   "match": "usa Umami, un servicio de analítica alojado por nosotros mismos, sin cookies"
+  },
+  {
+   "id": "slow",
+   "q": [
+    "¿Por qué son lentas las respuestas?",
+    "¿Cómo puedo hacer que vaya más rápido?",
+    "¿Por qué va lento en mi PC?"
+   ],
+   "page": "/es/download",
+   "match": "¿Por qué pueden ser lentas las respuestas?"
+  },
+  {
+   "id": "update",
+   "q": [
+    "¿Qué hace la comprobación de actualizaciones?",
+    "¿StarkLLM busca actualizaciones?",
+    "¿La aplicación se actualiza sola?"
+   ],
+   "page": "/es/tech-privacy",
+   "match": "Comprobación de actualizaciones (se pregunta una vez en el primer arranque)"
+  },
+  {
+   "id": "delete",
+   "q": [
+    "¿Puede StarkLLM borrar o cambiar mis archivos?",
+    "¿Cambiará el nombre o moverá mis documentos?",
+    "¿Puede el programa borrar mis archivos?"
+   ],
+   "page": "/es/product",
+   "match": "Nunca cambia el nombre de tus archivos, ni los mueve, ni los borra"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM sigue funcionando después de cerrarlo",
+    "¿Por qué StarkLLM sigue en marcha después de salir?",
+    "Docker Desktop sigue abierto después de cerrar StarkLLM",
+    "¿Cómo detengo StarkLLM por completo?",
+    "Docker sigue funcionando cuando cierro la aplicación",
+    "¿Por qué Docker sigue activo al cerrar la aplicación?",
+    "¿StarkLLM sigue funcionando en segundo plano?",
+    "¿Cómo detengo el motor de StarkLLM y sus contenedores?",
+    "¿Cómo apago el motor y Docker al cerrar StarkLLM?",
+    "Quiero apagar el motor de StarkLLM y Docker del todo"
+   ],
+   "page": "/es/manual",
+   "match": "para que el siguiente inicio tarde solo un segundo y medio"
+  }
+ ]
+}

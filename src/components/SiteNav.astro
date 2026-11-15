@@ -1,8 +1,10 @@
 ---
-import { ui, localePath, type Lang } from '../i18n/ui';
+import { ui, languages, langsFor, localePath, type Lang } from '../i18n/ui';
 import { SETUP_URL } from '../i18n/home';
 const { lang = 'en', path = '/', getLabel } = Astro.props as { lang?: Lang; path?: string; getLabel: string };
 const t = ui[lang].nav;
+// Offer a language only where this page exists in it; pages that exist once (the legal texts) get no switcher.
+const switchTo = langsFor(path).filter((l) => l !== lang);
 const items = [
   { href: '/', label: t.home },
   { href: '/product', label: t.product },
@@ -20,11 +22,16 @@ const items = [
       <li><a href={localePath(lang, i.href)} aria-current={i.href === path ? 'page' : undefined}>{i.label}</a></li>
     ))}
     <li><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
-    <li class="lang">
-      {lang === 'en'
-        ? <a href={localePath('de', path)} hreflang="de" lang="de" title="Deutsch">DE</a>
-        : <a href={path} hreflang="en" lang="en" title="English">EN</a>}
-    </li>
+    {switchTo.length > 0 && (
+      <li class="lang">
+        <details>
+          <summary aria-label={languages[lang].name} title={languages[lang].name}>{lang.toUpperCase()}</summary>
+          <div class="lang-menu">
+            {switchTo.map((l) => <a href={localePath(l, path)} hreflang={l} lang={l}>{languages[l].name}</a>)}
+          </div>
+        </details>
+      </li>
+    )}
     <li><a class="btn primary small" href={SETUP_URL}>{getLabel}</a></li>
   </ul>
 </nav>

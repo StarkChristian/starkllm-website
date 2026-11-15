@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the Help & Troubleshooting page, EN and DE. German is a first draft and needs a native review before launch.
 // Every command and error text below was taken from the launcher scripts, the compose file or a real test run; nothing is invented.
 import { V, SIZE_MB } from '../data/release';
@@ -5,7 +6,7 @@ import { V, SIZE_MB } from '../data/release';
 type Problem = { q: string; cause: string; fix: string[]; code?: string; note?: string };
 type Group = { h: string; items: Problem[] };
 
-export const help = {
+const helpBase = {
   en: {
     meta: { title: 'Help & Troubleshooting | StarkLLM', description: 'How StarkLLM fits together, an install checklist with a test for every step, and fixes for the problems people hit most: Docker, WSL2, Ollama, models, ports, memory, documents and answer quality.' },
     hero: { eyebrow: 'Help', h1: 'Help & Troubleshooting', lede: 'If StarkLLM does not start or an answer looks wrong, start here. Every step has a test, so you can see which part is missing.' },
@@ -103,7 +104,7 @@ export const help = {
         ['Not tested on every Windows PC', 'The self-starting desktop app was tested with the packaged app on Linux and built for Windows; tell us at info@starkllm.com if a step fails on your PC.'],
         ['Background services', 'The engine keeps running in Docker after you close the window, so the next start is fast. Stop it in Docker Desktop if you need the memory.'],
         ['One administrator per installation', 'The first account can back up the whole database, including the documents of other accounts. Share an installation only with people you trust.'],
-        ['No password reset, unsigned programs', 'See problems 1 and 22.'],
+        ['No password reset, unsigned programs', 'See problems 1 and 23.'],
         ['Speed', 'CPU-only PCs are slow; see problem 13.'],
       ],
     },
@@ -206,10 +207,13 @@ export const help = {
         ['Nicht auf jedem Windows-PC getestet', 'Die selbststartende Desktop-App wurde als gepackte App unter Linux getestet und für Windows gebaut; schreiben Sie uns an info@starkllm.com, wenn ein Schritt auf Ihrem PC scheitert.'],
         ['Dienste im Hintergrund', 'Die Engine läuft nach dem Schließen des Fensters in Docker weiter, damit der nächste Start schnell ist. Stoppen Sie sie in Docker Desktop, wenn Sie den Speicher brauchen.'],
         ['Ein Administrator pro Installation', 'Das erste Konto kann die ganze Datenbank sichern, auch die Dokumente anderer Konten. Teilen Sie eine Installation nur mit Personen, denen Sie vertrauen.'],
-        ['Keine Passwort-Zurücksetzung, nicht signierte Programme', 'Siehe Probleme 1 und 22.'],
+        ['Keine Passwort-Zurücksetzung, nicht signierte Programme', 'Siehe Probleme 1 und 23.'],
         ['Geschwindigkeit', 'PCs ohne GPU sind langsam; siehe Problem 13.'],
       ],
     },
     cta: { h2: 'Zurück zu den Anleitungen', manual: 'Handbuch', download: 'Download', contact: 'Kontakt' },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/help.ts (default export, same shape as the English object).
+export const help = { ...helpBase, ...byLang(import.meta.glob('./langs/*/help.ts', { eager: true, import: 'default' }), helpBase.en, 'help') } as unknown as Record<Lang, typeof helpBase.en>;

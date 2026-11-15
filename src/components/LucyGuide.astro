@@ -1,29 +1,32 @@
 ---
-// The visitor-started tour. At the end of the page: a small strip with "Show me around" and "Hide Lucy".
-// Nothing starts by itself. The words come from src/i18n/lucy.ts and reach the script as JSON.
+// Lucy on every page: the docked figure (bottom right), the data for her chat panel and, where the page has one, the tour.
+// Nothing starts by itself. The words come from src/i18n/lucy.ts and reach the scripts as JSON (no words in the scripts).
+// Legal pages get the dock but no tour and no bubble; the chat there answers only from the open page (see docs/lucy-assistant.md).
 import Lucy from './Lucy.astro';
 import { lucy, type LucyProfile } from '../i18n/lucy';
 import type { Lang } from '../i18n/ui';
 
-interface Props { lang?: Lang; profile: LucyProfile }
+interface Props { lang?: Lang; profile: LucyProfile | null }
 const { lang = 'en', profile } = Astro.props;
 const t = lucy[lang];
-const steps = t.tours[profile];
+const steps = profile ? t.tours[profile] : [];
 const data = {
+  lang,
+  idx: `/assets/lucy/index-${lang}.json`,
+  chat: t.chat,
   labels: { next: t.next, finish: t.finish, stop: t.stop, hide: t.hide, step: t.step },
   steps,
+  hide: t.hide,
+  tour: t.tour,
 };
 ---
-<aside class="lucy-strip" aria-label={t.title}>
-    <img src="/assets/lucy/lucy-face-64.png" alt="" width="36" height="36" />
-    <span>{t.stripText}</span>
-    <div class="lucy-btns">
-      {steps.length > 0 && <button type="button" class="lucy-btn primary lucy-tour-btn" data-lucy-tour>{t.tour}</button>}
-      <button type="button" class="lucy-btn" data-lucy-toggle>
-        <span class="lucy-on">{t.hide}</span><span class="lucy-off">{t.show}</span>
-      </button>
-    </div>
-</aside>
+<div class="lucy-dock" data-lucy-dock>
+  <button type="button" class="lucy-dock-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="lucy-panel" aria-label={t.chat.open}>
+    <Lucy lang={lang} state="idle" size={72} uid="lucy-dock" title={t.chat.open} />
+  </button>
+  <button type="button" class="lucy-dock-x" data-lucy-toggle aria-label={t.hide} title={t.hide}>×</button>
+</div>
+<button type="button" class="lucy-chip" data-lucy-toggle>{t.show}</button>
 {steps.length > 0 && <template id="lucy-tpl"><Lucy lang={lang} state="point" size={96} uid="lucy-tour" /></template>}
-{steps.length > 0 && <script type="application/json" id="lucy-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />}
-<script>import '../scripts/lucy-guide.ts';</script>
+<script type="application/json" id="lucy-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+<script>import '../scripts/lucy-dock.ts'; import '../scripts/lucy-guide.ts';</script>
