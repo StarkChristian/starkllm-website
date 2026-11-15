@@ -40,7 +40,7 @@ for url, p in pages.items():
     if alts:
         langs = [k for k in alts if k != "x-default"]
         if SITE + url not in alts.values(): errors.append(f"{url}: hreflang set does not include the page itself")
-        if "x-default" not in alts or alts["x-default"] != alts.get(a.default_lang): errors.append(f"{url}: x-default must equal the {a.default_lang} URL")
+        if "x-default" not in alts or alts["x-default"] != alts.get(a.default_lang, alts.get(langs[0])): errors.append(f"{url}: x-default must equal the {a.default_lang} URL (or the first language if the page does not exist in it)")
         for l, href in alts.items():
             q = pages.get(href.replace(SITE, "") or "/")
             if q is None: errors.append(f"{url}: hreflang {l} -> {href} does not exist")

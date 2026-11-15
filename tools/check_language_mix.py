@@ -14,10 +14,10 @@ STOP = {
  "it": "il lo la gli le dei del della di e un una per con su è sono non più come ma anche quando può questo questa tuo nel che".split(),
  "tr": "ve bir bu için ile de da çok daha ama gibi olarak olan en mi mı değil var yok ne nasıl veya sizin".split(),
 }
-# English words that are also words of other languages (shared function words) are dropped from the lists
-for a in STOP:
-    for b in STOP:
-        if a != b: STOP[a] = [w for w in STOP[a] if w not in STOP[b]]
+# Words that belong to more than one language's list (shared function words) are dropped: only words of exactly one language count
+_all = {w for l in STOP.values() for w in l}
+_count = {w: sum(w in l for l in STOP.values()) for w in _all}
+STOP = {k: [w for w in v if _count[w] == 1] for k, v in STOP.items()}
 ap = argparse.ArgumentParser(); ap.add_argument("--root", default="dist"); ap.add_argument("--max", type=float, default=0.025)
 a = ap.parse_args(); root = pathlib.Path(a.root)
 LANGS = {"de", "es", "fr", "it", "tr"}
@@ -37,7 +37,8 @@ for f in sorted(root.rglob("*.html")):
         if other == lang: continue
         hits = sum(1 for w in words if w in lst)
         # the German imprint mentions English terms; the English footer names German legal pages: allow a few hits
-        if hits / n > a.max and hits > 8:
+        limit = 0.06 if rel in SINGLE else a.max   # the German legal pages sit in the English interface (navigation, footer)
+        if hits / n > limit and hits > 8:
             print(f"{rel}: {hits} {other} words in a {lang} page ({hits / n:.1%})"); bad += 1
 print(f"{bad} page(s) with mixed languages" if bad else "no language mixing found")
 sys.exit(1 if bad else 0)
