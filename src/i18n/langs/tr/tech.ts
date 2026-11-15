@@ -52,7 +52,7 @@ const pages = {
       'Knowledge Base, bilgisayarınızdaki bir klasördür (varsayılan olarak Belgeler klasörünüzdeki “StarkLLM Knowledge Base”); StarkLLM bu klasördeki dosyaları dizinler ve güncel tutar.',
       'Prosedürler, kılavuzlar veya notlar gibi başvuru materyallerine birçok projede ihtiyaç duyulur. Ortak bir kütüphane olmadan aynı dosyaları her workspace’e yüklemeniz gerekirdi.',
       'StarkLLM kayıtlı klasörleri her 30 saniyede bir denetler ve yeni ve değişen dosyaları dizinler; “Sync Now” bunu hemen yapar. Sohbette Knowledge Base anahtarı, bu dosyaların da aranıp aranmayacağını belirler. Buradan gelen kaynaklar “Personal KB” olarak işaretlenir.',
-      'Ekip el kitabınızı klasörde tutarsınız. Yeni bir projeye ait workspace’te proje dosyaları ve el kitabı hakkında aynı soruda sorular sorabilirsiniz.'),
+      'Ekip el kitabınızı klasörde tutarsınız. Yeni bir projenin workspace’inde, aynı soruda hem proje dosyalarını hem de el kitabını sorabilirsiniz.'),
   },
   'tech-workspaces': {
     title: 'Workspace’ler | StarkLLM', eyebrow: 'Düzen',

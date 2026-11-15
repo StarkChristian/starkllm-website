@@ -3,6 +3,7 @@
 import { V } from '../../../data/release';
 
 export default {
+  labels: { cause: 'Olası neden', fix: 'Yapılacaklar', jump: 'Şuraya git', toc: ['Kontrol listesi', 'Sorunlar', 'Yardım alın', 'Sınırlar'] },
   meta: { title: 'Yardım ve sorun giderme | StarkLLM', description: 'StarkLLM’in parçaları nasıl bir araya gelir, her adımı için test içeren bir kurulum kontrol listesi ve en sık karşılaşılan sorunların çözümleri: Docker, WSL2, Ollama, modeller, portlar, bellek, belgeler ve yanıt kalitesi.' },
   hero: { eyebrow: 'Yardım', h1: 'Yardım ve sorun giderme', lede: 'StarkLLM açılmıyorsa veya bir yanıt yanlış görünüyorsa buradan başlayın. Her adımın bir testi vardır; böylece hangi parçanın eksik olduğunu görebilirsiniz.' },
   honest: 'Dürüst bir not: adımlar, başlatıcı betiklerinden ve Linux üzerinde Docker ve Ollama ile yapılan gerçek test çalıştırmalarından derlendi. Her Windows bilgisayarında test edemedik. Buradaki bir şey sizin gördüğünüzle uyuşmuyorsa bize info@starkllm.com adresinden bildirin; bu sayfayı düzeltelim.',
