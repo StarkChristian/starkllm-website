@@ -2,7 +2,7 @@
 // Keep every claim true for the current release; German needs a native review before larger changes.
 import type { Lang } from './ui';
 
-export type Shot = 'chat' | 'kb' | 'settings';
+export type Shot = 'chat' | 'kb' | 'settings' | 'appearance';
 export type Section = { h: string; p?: string; list?: string[] };
 export type Tech = { title: string; eyebrow: string; h1: string; lede: string; shot?: Shot; shotAlt?: string; sections: Section[] };
 
@@ -147,9 +147,10 @@ export const tech: Record<Lang, Record<TechSlug, Tech>> = {
     },
     'tech-themes': {
       title: 'Themes | StarkLLM', eyebrow: 'Appearance',
-      h1: 'Themes', lede: 'Eight colour themes, from pure black for OLED screens to a light theme.',
+      shot: 'appearance', shotAlt: 'StarkLLM settings, Appearance: the theme gallery',
+      h1: 'Themes', lede: 'Thirteen colour themes, from pure black for OLED screens to light themes and pattern themes.',
       sections: [
-        { h: en.what, p: 'StarkLLM has eight themes: Midnight Indigo (default), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost and Daylight Minimal.' },
+        { h: en.what, p: 'StarkLLM has thirteen themes: Midnight Indigo (default), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost and Daylight Minimal, plus five pattern themes: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code and Starry Night.' },
         { h: en.why, p: 'Long sessions are easier on the eyes when contrast and brightness fit your screen and your room.' },
         { h: en.how, p: 'Change the theme with the palette button at the bottom of the sidebar or in Settings, Appearance. The choice is saved and applied immediately.' },
       ],
@@ -272,9 +273,10 @@ export const tech: Record<Lang, Record<TechSlug, Tech>> = {
     },
     'tech-themes': {
       title: 'Farbthemen | StarkLLM', eyebrow: 'Darstellung',
-      h1: 'Farbthemen', lede: 'Acht Farbthemen, von reinem Schwarz für OLED-Bildschirme bis zu einem hellen Thema.',
+      shot: 'appearance', shotAlt: 'StarkLLM-Einstellungen, Darstellung: die Theme-Galerie',
+      h1: 'Farbthemen', lede: 'Dreizehn Farbthemen, von reinem Schwarz für OLED-Bildschirme über helle Themen bis zu Mustern.',
       sections: [
-        { h: de.what, p: 'StarkLLM hat acht Themen: Midnight Indigo (Standard), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost und Daylight Minimal.' },
+        { h: de.what, p: 'StarkLLM hat dreizehn Themen: Midnight Indigo (Standard), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost und Daylight Minimal, dazu fünf Muster-Themen: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code und Starry Night.' },
         { h: de.why, p: 'Lange Sitzungen schonen die Augen, wenn Kontrast und Helligkeit zu Bildschirm und Raum passen.' },
         { h: de.how, p: 'Wechseln Sie das Thema mit der Paletten-Schaltfläche unten in der Seitenleiste oder unter Einstellungen, Darstellung. Die Wahl wird gespeichert und sofort übernommen.' },
       ],

@@ -10,6 +10,11 @@ export const themes = [
   { name: 'Sunset Amber', bg: '#0b0602', card: '#26190b', g: ['#f59e0b', '#ea580c'], en: 'Volcanic slate with warm glowing amber and flame accents.', de: 'Vulkanisches Schiefer mit warmen Bernstein- und Flammenakzenten.' },
   { name: 'Arctic Frost', bg: '#060f18', card: '#152c43', g: ['#06b6d4', '#3b82f6'], en: 'Sub-zero navy with crystalline cyan and blue frost.', de: 'Eisiges Marineblau mit kristallinem Cyan und Frostblau.' },
   { name: 'Daylight Minimal', bg: '#f0f2f8', card: '#ffffff', g: ['#ffffff', '#e0e7ff'], en: 'Clean daylight look with soft shadows and crisp contrast.', de: 'Klarer Tageslicht-Look mit weichen Schatten und scharfem Kontrast.' },
+  { name: 'Doodle Chat', bg: '#efe6dc', card: '#fffdf9', g: ['#0d9488', '#14b8a6'], en: 'Warm paper with little dolls, hearts, letters and stars drawn in the background.', de: 'Warmes Papier mit kleinen Puppen, Herzen, Briefen und Sternen im Hintergrund.' },
+  { name: 'Doodle Night', bg: '#0b141a', card: '#1f2c33', g: ['#14b8a6', '#06b6d4'], en: 'The doodles on a calm dark chat background.', de: 'Dieselben Zeichnungen auf ruhigem dunklem Chat-Hintergrund.' },
+  { name: 'Flower Meadow', bg: '#fdf2f6', card: '#ffffff', g: ['#ec4899', '#f59e0b'], en: 'Small pink, lilac and peach flowers on soft blush.', de: 'Kleine rosa, lila und pfirsichfarbene Blumen auf zartem Rosé.' },
+  { name: 'Matrix Code', bg: '#000a03', card: '#02140a', g: ['#16a34a', '#4ade80'], en: 'Green code rain on black, in a monospace font.', de: 'Grüner Code-Regen auf Schwarz, in Festbreitenschrift.' },
+  { name: 'Starry Night', bg: '#0a0f24', card: '#161e44', g: ['#6366f1', '#f59e0b'], en: 'A quiet night sky full of small stars, with warm gold accents.', de: 'Ein ruhiger Nachthimmel voller kleiner Sterne mit warmen Goldakzenten.' },
 ];
 
 export const product = {
@@ -25,7 +30,28 @@ export const product = {
         { k: 'Embed', v: 'A local embedding model turns each block into a vector, stored in your private ChromaDB container.' },
         { k: 'Answer', v: 'When you ask a question, the most relevant passages are injected into the context window of your chosen Ollama model, so the response is grounded in your sources.' },
       ],
-      shotAlt: 'StarkLLM chat answering from indexed documents',
+    },
+    letters: {
+      tag: 'Document inbox',
+      h2: 'Every letter, read and filed',
+      lede: 'Add a letter as a PDF, a scan or a photo from your phone. StarkLLM reads it on your PC and suggests what you need. It never renames, moves or deletes your files.',
+      items: [
+        { k: 'What it reads', v: 'The kind of letter (bill, reminder, tax notice, contract, fine and more), sender, letter date, reference numbers such as customer, contract or tax number, amounts, bank accounts and deadlines, in English and German letters.' },
+        { k: 'Every value has a source', v: 'Each value is found word for word on a page. Click it and the letter opens at that page with the line marked.' },
+        { k: 'Cases per sender', v: 'Letters of one sender are put together, the case with the nearest deadline first. The same letter as a photo and as a PDF is marked, and so are a replaced letter and a possible scam.' },
+        { k: 'You decide', v: 'Mark a letter done or give it your own title. The number of new letters is shown next to "Inbox".' },
+      ],
+    },
+    deadlines: {
+      tag: 'Deadlines',
+      h2: 'Deadlines on the start page',
+      lede: 'The start page shows your newest documents and the deadlines, appointments and payments found in them.',
+      items: [
+        { k: 'With amount and page', v: 'Every date comes with its sentence, the amount if there is one and the page it was read from.' },
+        { k: 'Add to calendar', v: '"Add to calendar" saves the dates as a calendar file on request.' },
+        { k: 'Made by rules on this PC', v: 'Dates, amounts and senders are found by fixed rules over the text of your letters, not guessed by a model, so each one is in the document. Check the letter before you act on it.' },
+        { k: 'Languages', v: 'Letters in English and German are understood. Photos and scans are read as English or German text. Letters in other languages are filed and can be searched, but without deadlines and amounts.' },
+      ],
     },
     verify: {
       tag: 'Verifiable intelligence',
@@ -33,15 +59,14 @@ export const product = {
       lede: 'Language models can produce unsupported claims when they answer from memory alone. StarkLLM addresses this with Retrieval-Augmented Generation (RAG).',
       items: [
         { k: 'Source-backed responses', v: 'The AI retrieves text passages from your exact documents before it formulates an answer.' },
-        { k: 'Direct citations', v: 'Responses cite the source filename and a page or section locator, so you can find the passage in your original document.' },
-        { k: 'Reduced hallucination', v: 'Grounding generation in your documents sharply reduces unsupported statements.' },
+        { k: 'Passages you can read', v: 'Responses cite the source filename and a page or section locator. Click a source under an answer to see the passages it was based on, word for word, and open the document at that page.' },
+        { k: 'Warnings for fake letters', v: 'A red box above the answer appears if a letter asks for payment to a foreign account, by voucher or through a link, contains text addressed to AI assistants, or a sender suddenly names a different account.' },
       ],
     },
     library: {
       tag: 'Persistent library',
       h2: 'A knowledge base that stays in sync',
       lede: 'Workspace uploads suit isolated projects. The Global Knowledge Base is your permanent reference library, reachable from every chat.',
-      shotAlt: 'StarkLLM knowledge base settings',
       items: [
         { k: 'Local folder indexing', v: 'Map any folder on your Windows machine. StarkLLM recursively indexes supported files into a global vector collection.' },
         { k: 'Universal access', v: 'Query the Knowledge Base from any chat, whatever workspace you are in.' },
@@ -58,7 +83,6 @@ export const product = {
       tag: 'Local control',
       h2: 'Tune it to your hardware',
       lede: 'StarkLLM gives you administrative control over your local inference environment.',
-      shotAlt: 'StarkLLM settings screen',
       items: [
         { k: 'Model selection', v: 'Switch between any model you downloaded via Ollama (for example Qwen 2.5, Llama 3.2, Mistral) from the chat interface.' },
         { k: 'Runtime configuration', v: 'Adjust context window size, temperature and advanced parameters to balance speed and reasoning depth.' },
@@ -79,7 +103,7 @@ export const product = {
     },
     themes: {
       tag: 'Aesthetics',
-      h2: 'Eight handcrafted themes',
+      h2: 'Thirteen themes',
       lede: 'Designed for focused work in different lighting conditions, with instant hot-swapping.',
       items: [
         { k: 'Quick palette popover', v: 'Click the palette icon in the sidebar footer to switch themes without interrupting your research.' },
@@ -103,7 +127,7 @@ export const product = {
     cta: { h2: 'Ready to try StarkLLM?', text: 'Download the free, open-source Windows Research Beta.', installer: `Download v${V} installer`, all: 'All downloads', manual: 'Read the manual' },
   },
   de: {
-    meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und acht Themes. Alles auf Ihrem Windows-PC.' },
+    meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und dreizehn Themes. Alles auf Ihrem Windows-PC.' },
     hero: { eyebrow: 'Produkt', h1: 'So funktioniert StarkLLM', lede: 'Eine durchgängig lokale Pipeline, entwickelt mit Blick auf den Datenschutz.' },
     lifecycle: {
       h2: 'Der Weg eines Dokuments',
@@ -114,7 +138,28 @@ export const product = {
         { k: 'Einbetten', v: 'Ein lokales Embedding-Modell wandelt jeden Block in einen Vektor um, gespeichert in Ihrem privaten ChromaDB-Container.' },
         { k: 'Antworten', v: 'Bei einer Frage werden die relevantesten Passagen in das Kontextfenster Ihres gewählten Ollama-Modells eingefügt, sodass die Antwort auf Ihren Quellen beruht.' },
       ],
-      shotAlt: 'StarkLLM-Chat beantwortet Fragen aus indexierten Dokumenten',
+    },
+    letters: {
+      tag: 'Posteingang',
+      h2: 'Jeder Brief gelesen und abgelegt',
+      lede: 'Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu. StarkLLM liest ihn auf Ihrem PC und macht Vorschläge. Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht.',
+      items: [
+        { k: 'Was gelesen wird', v: 'Die Art des Briefs (Rechnung, Mahnung, Bescheid, Vertrag, Bußgeld und mehr), Absender, Briefdatum, Nummern wie Kunden-, Vertrags- oder Steuernummer, Beträge, Bankkonten und Fristen, bei englischen und deutschen Briefen.' },
+        { k: 'Jeder Wert hat eine Quelle', v: 'Jeder Wert wird wörtlich auf einer Seite gefunden. Ein Klick öffnet den Brief auf dieser Seite, die Zeile ist markiert.' },
+        { k: 'Vorgänge je Absender', v: 'Briefe eines Absenders werden zusammengefasst, der Vorgang mit der nächsten Frist zuerst. Derselbe Brief als Foto und als PDF wird markiert, ebenso ein ersetzter Brief und ein möglicher Betrug.' },
+        { k: 'Sie entscheiden', v: 'Haken Sie einen Brief ab oder geben Sie ihm einen eigenen Titel. Die Zahl der neuen Briefe steht neben „Posteingang“.' },
+      ],
+    },
+    deadlines: {
+      tag: 'Fristen',
+      h2: 'Fristen auf der Startseite',
+      lede: 'Die Startseite zeigt Ihre neuesten Dokumente und die Fristen, Termine und Zahlungen darin.',
+      items: [
+        { k: 'Mit Betrag und Seite', v: 'Zu jedem Datum gehören der Satz, der Betrag, falls es einen gibt, und die Seite, aus der es gelesen wurde.' },
+        { k: 'Zum Kalender', v: '„Zum Kalender“ speichert die Termine auf Wunsch als Kalenderdatei.' },
+        { k: 'Nach festen Regeln auf diesem PC', v: 'Daten, Beträge und Absender werden nach festen Regeln im Text Ihrer Briefe gefunden und nicht von einem Modell geraten, jeder Wert steht also im Dokument. Prüfen Sie den Brief, bevor Sie handeln.' },
+        { k: 'Sprachen', v: 'Briefe auf Englisch und Deutsch werden verstanden. Fotos und Scans werden als englischer oder deutscher Text gelesen. Briefe in anderen Sprachen werden abgelegt und lassen sich durchsuchen, aber ohne Fristen und Beträge.' },
+      ],
     },
     verify: {
       tag: 'Überprüfbare Intelligenz',
@@ -122,15 +167,14 @@ export const product = {
       lede: 'Sprachmodelle können unbelegte Behauptungen erzeugen, wenn sie nur aus dem Gedächtnis antworten. StarkLLM begegnet dem mit Retrieval-Augmented Generation (RAG).',
       items: [
         { k: 'Antworten mit Quellenbezug', v: 'Die KI ruft Textpassagen aus Ihren Dokumenten ab, bevor sie eine Antwort formuliert.' },
-        { k: 'Direkte Quellenangaben', v: 'Antworten nennen Dateiname sowie Seite oder Abschnitt, sodass Sie die Passage im Originaldokument finden.' },
-        { k: 'Weniger Halluzinationen', v: 'Die Verankerung in Ihren Dokumenten verringert unbelegte Aussagen deutlich.' },
+        { k: 'Textstellen zum Nachlesen', v: 'Antworten nennen Dateiname sowie Seite oder Abschnitt. Ein Klick auf eine Quelle unter der Antwort zeigt die Textstellen, auf denen sie beruht, wörtlich, und öffnet das Dokument auf dieser Seite.' },
+        { k: 'Warnungen vor gefälschten Briefen', v: 'Ein rotes Feld über der Antwort erscheint, wenn ein Brief Zahlung auf ein ausländisches Konto, per Gutschein oder über einen Link verlangt, Text an KI-Assistenten enthält oder ein Absender plötzlich ein anderes Konto nennt.' },
       ],
     },
     library: {
       tag: 'Dauerhafte Bibliothek',
       h2: 'Eine Wissensdatenbank, die aktuell bleibt',
       lede: 'Workspace-Uploads eignen sich für abgeschlossene Projekte. Die globale Wissensdatenbank ist Ihre dauerhafte Referenzbibliothek, aus jedem Chat erreichbar.',
-      shotAlt: 'StarkLLM-Einstellungen der Wissensdatenbank',
       items: [
         { k: 'Indexierung lokaler Ordner', v: 'Binden Sie beliebige Ordner Ihres Windows-Rechners ein. StarkLLM indexiert unterstützte Dateien rekursiv in eine globale Vektorsammlung.' },
         { k: 'Zugriff von überall', v: 'Fragen Sie die Wissensdatenbank aus jedem Chat ab, unabhängig vom aktuellen Workspace.' },
@@ -147,7 +191,6 @@ export const product = {
       tag: 'Lokale Kontrolle',
       h2: 'Auf Ihre Hardware abgestimmt',
       lede: 'StarkLLM gibt Ihnen Kontrolle über Ihre lokale Inferenzumgebung.',
-      shotAlt: 'StarkLLM-Einstellungen',
       items: [
         { k: 'Modellauswahl', v: 'Wechseln Sie im Chat zwischen allen über Ollama geladenen Modellen (zum Beispiel Qwen 2.5, Llama 3.2, Mistral).' },
         { k: 'Laufzeit-Konfiguration', v: 'Passen Sie Kontextfenster, Temperatur und weitere Parameter an, um Tempo und Denktiefe abzuwägen.' },
@@ -168,7 +211,7 @@ export const product = {
     },
     themes: {
       tag: 'Gestaltung',
-      h2: 'Acht handgefertigte Themes',
+      h2: 'Dreizehn Themes',
       lede: 'Für konzentriertes Arbeiten bei unterschiedlichem Licht, mit sofortigem Wechsel.',
       items: [
         { k: 'Schnelle Palettenauswahl', v: 'Klicken Sie auf das Paletten-Symbol in der Seitenleiste, um Themes ohne Unterbrechung zu wechseln.' },

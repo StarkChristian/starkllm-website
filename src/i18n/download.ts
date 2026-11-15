@@ -89,9 +89,9 @@ export const download = {
         { t: 'Step 1: Start-up', v: 'StarkLLM starts Docker Desktop, Ollama and its engine and shows each step until the app opens. Developers can also start the engine from the project folder with start.exe or start.cmd (shown here).', kind: 'console' },
         { t: 'Step 2: Knowledge Base and workspaces', v: 'Map local folders to index documents into a persistent Knowledge Base layer.', kind: 'kb', alt: 'StarkLLM knowledge base configuration' },
         { t: 'Step 3: Document-grounded chat', v: 'Ask questions grounded in indexed documents, with source file indicators.', kind: 'chat', alt: 'StarkLLM document-grounded chat' },
-        { t: 'Step 4: Continuous multi-turn RAG', v: 'Explore details across several turns, with honest page citations.', kind: 'chat2', alt: 'StarkLLM multi-turn conversation' },
+        { t: 'Step 4: Sources you can check', v: 'Click a source under an answer to read the passages it was based on, word for word, and open the document at that page.', kind: 'sources', alt: 'The passages an answer was based on, shown word for word with a link to the page' },
         { t: 'Step 5: Safe local tools', v: 'Review, edit and approve in-process model tool calls directly in the chat.', kind: 'tool' },
-        { t: 'Step 6: Eight handcrafted themes', v: 'Hot-swap between OLED Pitch Black, Cyberpunk Rose, Liquid Glass and more.', kind: 'settings', alt: 'StarkLLM settings and theme gallery' },
+        { t: 'Step 6: Thirteen themes', v: 'Hot-swap between OLED Pitch Black, Cyberpunk Rose, Liquid Glass and more.', kind: 'appearance', alt: 'StarkLLM settings and theme gallery' },
       ],
     },
     faq: {
@@ -176,9 +176,9 @@ export const download = {
         { t: 'Schritt 1: Start', v: 'StarkLLM startet Docker Desktop, Ollama und seine Engine und zeigt jeden Schritt, bis die App öffnet. Entwickler können die Engine auch im Projektordner mit start.exe oder start.cmd starten (hier gezeigt).', kind: 'console' },
         { t: 'Schritt 2: Wissensdatenbank und Workspaces', v: 'Binden Sie lokale Ordner ein, um Dokumente in eine dauerhafte Wissensdatenbank zu indexieren.', kind: 'kb', alt: 'StarkLLM-Konfiguration der Wissensdatenbank' },
         { t: 'Schritt 3: Dokumentbasierter Chat', v: 'Stellen Sie Fragen zu indexierten Dokumenten, mit Hinweisen auf die Quelldateien.', kind: 'chat', alt: 'StarkLLM-Chat mit Dokumentbezug' },
-        { t: 'Schritt 4: Fortlaufendes RAG über mehrere Runden', v: 'Vertiefen Sie Details über mehrere Runden, mit ehrlichen Seitenangaben.', kind: 'chat2', alt: 'StarkLLM-Unterhaltung über mehrere Runden' },
+        { t: 'Schritt 4: Quellen zum Nachprüfen', v: 'Klicken Sie unter einer Antwort auf eine Quelle, um die Textstellen wörtlich zu lesen und das Dokument auf dieser Seite zu öffnen.', kind: 'sources', alt: 'Die Textstellen, auf denen eine Antwort beruht, wörtlich angezeigt, mit Link zur Seite' },
         { t: 'Schritt 5: Sichere lokale Tools', v: 'Prüfen, ändern und bestätigen Sie Tool-Aufrufe des Modells direkt im Chat.', kind: 'tool' },
-        { t: 'Schritt 6: Acht handgefertigte Themes', v: 'Wechseln Sie sofort zwischen OLED Pitch Black, Cyberpunk Rose, Liquid Glass und mehr.', kind: 'settings', alt: 'StarkLLM-Einstellungen und Theme-Galerie' },
+        { t: 'Schritt 6: Dreizehn Themes', v: 'Wechseln Sie sofort zwischen OLED Pitch Black, Cyberpunk Rose, Liquid Glass und mehr.', kind: 'appearance', alt: 'StarkLLM-Einstellungen und Theme-Galerie' },
       ],
     },
     faq: {

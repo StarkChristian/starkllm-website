@@ -1,10 +1,22 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import LegacyBody from '../components/LegacyBody.astro';
+import LucyAbout from '../components/LucyAbout.astro';
 import { home } from '../i18n/home';
 import head from '../content-html/about.head.html?raw';
 import main from '../content-html/about.main.html?raw';
 ---
-<SiteLayout title={"About | StarkLLM"} headExtra={head} path="/about" getLabel={home.en.nav.getBtn}>
+<SiteLayout
+  title={"About | StarkLLM"}
+  headExtra={head}
+  path="/about"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/about' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/about' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/about' },
+  ]}
+>
   <LegacyBody html={main} />
+  <LucyAbout lang="en" />
 </SiteLayout>
