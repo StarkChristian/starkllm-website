@@ -4,7 +4,7 @@ import { V, SIZE_MB, RELEASE } from '../data/release';
 // Sizes come from the release itself, so they cannot go stale (2.0.11 showed the 2.0.5 sizes).
 const mb = (b: number, locale: string) => (b / 1_000_000).toLocaleString(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const bytes = (b: number, locale: string) => b.toLocaleString(locale);
-const SETUP = RELEASE.setup.size, PORTABLE = RELEASE.portable.size;
+const SETUP = RELEASE.setup.size, PORTABLE = RELEASE.portable?.size ?? 0;
 export const GITHUB_URL = 'https://github.com/StarkChristian/StarkLLM';
 
 export const consoleStep = `============================================
@@ -35,7 +35,7 @@ export const download = {
         ['Version', `v${V} (Native Desktop, starts its own engine)`],
         ['License', 'Apache 2.0 (open source)'],
         ['Installer size', `${mb(SETUP, 'en-US')} MB (${bytes(SETUP, 'en-US')} bytes)`],
-        ['Portable app size', `${mb(PORTABLE, 'en-US')} MB (${bytes(PORTABLE, 'en-US')} bytes)`],
+        ...(PORTABLE ? [['Portable app size', `${mb(PORTABLE, 'en-US')} MB (${bytes(PORTABLE, 'en-US')} bytes)`]] : []),
       ],
       installer: `Download v${V} installer (.exe)`,
       portable: 'Portable (.exe)',
@@ -52,7 +52,7 @@ export const download = {
       steps: [
         { t: 'Install Docker Desktop', v: 'Install Docker Desktop (with WSL2) from docker.com, start it once and finish its setup. It may ask you to restart the PC.' },
         { t: 'Install Ollama', v: 'Install Ollama from ollama.com. You do not need to pull models by hand: StarkLLM downloads qwen2.5:7b and nomic-embed-text on its first start.' },
-        { t: 'Run the StarkLLM installer', v: `Download and run StarkLLM-v${V}-Setup.exe, or use the portable executable. The installer creates desktop shortcuts.` },
+        { t: 'Run the StarkLLM installer', v: `Download and run StarkLLM-v${V}-Setup.exe. The installer creates desktop shortcuts.` },
         { t: 'Start StarkLLM and wait for the first start', v: 'Click the StarkLLM shortcut. The app starts Docker Desktop and Ollama, downloads the models, builds its engine and shows the progress, then opens StarkLLM in its own window. If something is missing, the window says what and how to fix it (log: %APPDATA%\\StarkLLM\\engine.log).' },
         { t: 'Create your account', v: 'Register the first account; it is the administrator of this installation (backup and restore). Then create a workspace and upload a document.' },
       ],
@@ -71,7 +71,7 @@ export const download = {
     },
     smart: {
       h2: 'Windows SmartScreen and execution notice',
-      text: 'Files downloaded from the web carry a Mark of the Web (MOTW) flag, and the StarkLLM installer and portable app are not code-signed, so Windows SmartScreen may warn when you run them. Click More info, then Run anyway. For the launcher scripts you can also run unblock.ps1 in PowerShell to clear the flag locally.',
+      text: 'Files downloaded from the web carry a Mark of the Web (MOTW) flag, and the StarkLLM installer is not code-signed, so Windows SmartScreen may warn when you run them. Click More info, then Run anyway. For the launcher scripts you can also run unblock.ps1 in PowerShell to clear the flag locally.',
       optsH: 'Alternative launch options',
       optsLede: 'These apply to the portable folder or ZIP that includes the launcher scripts.',
       opts: [
@@ -113,7 +113,7 @@ export const download = {
     contribute: { h2: 'Contribute and suggest improvements', text: 'StarkLLM is an open, evolving project. If you hit a bug, have a feature idea or want to inspect the source:', repo: 'Browse the source, inspect the launchers and open issues.', mail: 'Email' },
   },
   de: {
-    meta: { title: 'Download | StarkLLM', description: `StarkLLM v${V} für Windows herunterladen: Installer, portable Version, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.` },
+    meta: { title: 'Download | StarkLLM', description: `StarkLLM v${V} für Windows herunterladen: Installer, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.` },
     hero: { eyebrow: 'Download', h1: 'StarkLLM herunterladen', lede: 'Starten Sie mit der Windows Research Beta.' },
     helpCallout: { h: 'Die Installation klappt nicht?', text: 'StarkLLM braucht Docker Desktop und Ollama auf Ihrem PC; seit v2.0.1 startet die App beide und ihre Engine selbst. Die Hilfe-Seite hat eine Checkliste mit Test pro Schritt und Lösungen für die 24 häufigsten Probleme.', link: 'Hilfe & Problemlösung öffnen' },
     release: {
@@ -122,7 +122,7 @@ export const download = {
         ['Version', `v${V} (Native Desktop, startet seine Engine selbst)`],
         ['Lizenz', 'Apache 2.0 (Open Source)'],
         ['Größe des Installers', `${mb(SETUP, 'de-DE')} MB (${bytes(SETUP, 'de-DE')} Bytes)`],
-        ['Größe der portablen App', `${mb(PORTABLE, 'de-DE')} MB (${bytes(PORTABLE, 'de-DE')} Bytes)`],
+        ...(PORTABLE ? [['Größe der portablen App', `${mb(PORTABLE, 'de-DE')} MB (${bytes(PORTABLE, 'de-DE')} Bytes)`]] : []),
       ],
       installer: `Installer v${V} herunterladen (.exe)`,
       portable: 'Portable (.exe)',
@@ -139,7 +139,7 @@ export const download = {
       steps: [
         { t: 'Docker Desktop installieren', v: 'Installieren Sie Docker Desktop (mit WSL2) von docker.com, starten Sie es einmal und schließen Sie die Einrichtung ab. Eventuell verlangt es einen Neustart.' },
         { t: 'Ollama installieren', v: 'Installieren Sie Ollama von ollama.com. Modelle müssen Sie nicht von Hand laden: StarkLLM lädt qwen2.5:7b und nomic-embed-text beim ersten Start.' },
-        { t: 'StarkLLM-Installer ausführen', v: `Laden Sie StarkLLM-v${V}-Setup.exe herunter und starten Sie sie, oder nutzen Sie die portable Programmdatei. Der Installer legt Desktop-Verknüpfungen an.` },
+        { t: 'StarkLLM-Installer ausführen', v: `Laden Sie StarkLLM-v${V}-Setup.exe herunter und starten Sie sie. Der Installer legt Desktop-Verknüpfungen an.` },
         { t: 'StarkLLM starten und den ersten Start abwarten', v: 'Klicken Sie auf die StarkLLM-Verknüpfung. Die App startet Docker Desktop und Ollama, lädt die Modelle, baut ihre Engine, zeigt den Fortschritt und öffnet StarkLLM dann im eigenen Fenster. Fehlt etwas, sagt das Fenster was und wie Sie es beheben (Protokoll: %APPDATA%\\StarkLLM\\engine.log).' },
         { t: 'Konto anlegen', v: 'Registrieren Sie das erste Konto; es ist der Administrator dieser Installation (Backup und Wiederherstellung). Legen Sie dann einen Workspace an und laden Sie ein Dokument hoch.' },
       ],
@@ -158,7 +158,7 @@ export const download = {
     },
     smart: {
       h2: 'Windows SmartScreen und Ausführungshinweis',
-      text: 'Aus dem Web geladene Dateien tragen die Markierung „Mark of the Web“ (MOTW), und der StarkLLM-Installer sowie die portable App sind nicht digital signiert, daher kann Windows SmartScreen beim Start warnen. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Bei den Start-Skripten können Sie zusätzlich unblock.ps1 in PowerShell ausführen, um die Markierung lokal zu entfernen.',
+      text: 'Aus dem Web geladene Dateien tragen die Markierung „Mark of the Web“ (MOTW), und der StarkLLM-Installer ist nicht digital signiert, daher kann Windows SmartScreen beim Start warnen. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Bei den Start-Skripten können Sie zusätzlich unblock.ps1 in PowerShell ausführen, um die Markierung lokal zu entfernen.',
       optsH: 'Alternative Startmöglichkeiten',
       optsLede: 'Diese gelten für den portablen Ordner oder das ZIP mit den Start-Skripten.',
       opts: [

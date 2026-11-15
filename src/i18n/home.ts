@@ -1,9 +1,9 @@
 // Copy for the home page, EN and DE. German is a first draft and needs a native review before launch.
 import { RELEASE, V, SIZE_MB } from '../data/release';
 export const SETUP_URL = RELEASE.setup.url;
-export const PORTABLE_URL = RELEASE.portable.url;
+export const PORTABLE_URL = RELEASE.portable?.url ?? null;
 export const SETUP_SHA = RELEASE.setup.sha256;
-export const PORTABLE_SHA = RELEASE.portable.sha256;
+export const PORTABLE_SHA = RELEASE.portable?.sha256 ?? null;
 
 export const home = {
   en: {
@@ -59,7 +59,7 @@ export const home = {
       steps: [
         { title: 'Install Docker Desktop', text: 'From docker.com (with WSL2). Start it once and finish its setup.' },
         { title: 'Install Ollama', text: 'From ollama.com. No terminal needed: StarkLLM downloads the models itself.' },
-        { title: 'Install and start StarkLLM', text: `Run StarkLLM-v${V}-Setup.exe (or the portable build) and click the shortcut. The app starts Docker and Ollama, downloads the models, builds its engine and shows the progress.` },
+        { title: 'Install and start StarkLLM', text: `Run StarkLLM-v${V}-Setup.exe and click the shortcut. The app starts Docker and Ollama, downloads the models, builds its engine and shows the progress.` },
         { title: 'If something is missing', text: 'The window says what is missing and how to fix it, with a Retry button. The Help page has a checklist.' },
       ],
       notesTitle: 'Important notes',
@@ -149,7 +149,7 @@ export const home = {
       steps: [
         { title: 'Docker Desktop installieren', text: 'Von docker.com (mit WSL2). Einmal starten und die Einrichtung abschließen.' },
         { title: 'Ollama installieren', text: 'Von ollama.com. Kein Terminal nötig: StarkLLM lädt die Modelle selbst.' },
-        { title: 'StarkLLM installieren und starten', text: `StarkLLM-v${V}-Setup.exe (oder die portable Version) ausführen und auf die Verknüpfung klicken. Die App startet Docker und Ollama, lädt die Modelle, baut ihre Engine und zeigt den Fortschritt.` },
+        { title: 'StarkLLM installieren und starten', text: `StarkLLM-v${V}-Setup.exe ausführen und auf die Verknüpfung klicken. Die App startet Docker und Ollama, lädt die Modelle, baut ihre Engine und zeigt den Fortschritt.` },
         { title: 'Wenn etwas fehlt', text: 'Das Fenster sagt, was fehlt und wie Sie es beheben, mit einer Retry-Schaltfläche. Die Hilfe-Seite hat eine Checkliste.' },
       ],
       notesTitle: 'Wichtige Hinweise',
