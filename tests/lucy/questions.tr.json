@@ -1,0 +1,426 @@
+{
+ "questions": [
+  {
+   "q": "StarkLLM tam olarak nedir?",
+   "pages": [
+    "/tr/about",
+    "/tr/",
+    "/tr/manual",
+    "/tr/product"
+   ]
+  },
+  {
+   "q": "Gerçekten ücretsiz mi kullanılıyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/contact",
+    "/tr/about"
+   ]
+  },
+  {
+   "q": "Bir şey ödemem gerekiyor mu?",
+   "pages": [
+    "/tr/download",
+    "/tr/contact",
+    "/tr/about"
+   ]
+  },
+  {
+   "q": "Yazılım hangi lisans altında?",
+   "pages": [
+    "/tr/download",
+    "/tr/about"
+   ]
+  },
+  {
+   "q": "Verilerim bir yere yükleniyor mu?",
+   "pages": [
+    "/tr/tech-privacy",
+    "/tr/",
+    "/tr/contact",
+    "/tr/download",
+    "/tr/about",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM internete bağlı olmadan çalışabilir mi?",
+   "pages": [
+    "/tr/tech-local-models",
+    "/tr/tech-privacy",
+    "/tr/",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Windows’a nasıl kurarım?",
+   "pages": [
+    "/tr/download",
+    "/tr/manual",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Yükleyiciyi başlatınca Windows uyarı veriyor, ne yapmalıyım?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "SmartScreen yükleyiciyi neden engelliyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Yükleyici dosyasının değiştirilmediğini nasıl kontrol ederim?",
+   "pages": [
+    "/tr/download",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Bilgisayarımda ne kadar bellek olmalı?",
+   "pages": [
+    "/tr/download",
+    "/tr/manual",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "İyi bir ekran kartına ihtiyacım var mı?",
+   "pages": [
+    "/tr/download",
+    "/tr/manual",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Mac’te çalıştırabilir miyim?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Docker şart mı?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "İlk açılış ne kadar sürüyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Gelen kutusu hangi dillerdeki mektupları okuyabiliyor?",
+   "pages": [
+    "/tr/manual",
+    "/tr/product",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Almanca arayüzü var mı?",
+   "pages": [
+    "/tr/manual",
+    "/tr/product",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "İspanyolca desteği gelecek mi?",
+   "pages": [
+    "/tr/manual",
+    "/tr/product",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Gelen kutusu ne işe yarıyor?",
+   "pages": [
+    "/tr/product",
+    "/tr/",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Telefonumdan bir mektup fotoğrafı ekleyebilir miyim?",
+   "pages": [
+    "/tr/product",
+    "/tr/manual",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Dolandırıcılık mektuplarını nasıl fark ediyor?",
+   "pages": [
+    "/tr/product",
+    "/tr/manual",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Hangi yapay zekâ modellerini çalıştırıyor?",
+   "pages": [
+    "/tr/tech-local-models",
+    "/tr/manual",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Ollama ne işe yarar?",
+   "pages": [
+    "/tr/tech-local-models",
+    "/tr/help",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "DeepSeek gibi çevrimiçi modelleri kullanabilir miyim?",
+   "pages": [
+    "/tr/tech-privacy",
+    "/tr/manual",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Bir yanıtın hangi belgeden geldiğini nereden görebilirim?",
+   "pages": [
+    "/tr/tech-rag",
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Erişimle zenginleştirilmiş üretim ne demek?",
+   "pages": [
+    "/tr/tech-rag",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Bilgi tabanı nedir?",
+   "pages": [
+    "/tr/tech-knowledge-base",
+    "/tr/manual",
+    "/tr/product"
+   ]
+  },
+  {
+   "q": "Workspace ile bilgi tabanı arasında ne fark var?",
+   "pages": [
+    "/tr/manual",
+    "/tr/product",
+    "/tr/tech-workspaces",
+    "/tr/tech-knowledge-base",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "Hangi dosya biçimlerini yükleyebilirim?",
+   "pages": [
+    "/tr/tech-multimodal",
+    "/tr/download",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Sesimle konuşabilir miyim?",
+   "pages": [
+    "/tr/tech-voice",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Kaç tane renk teması var?",
+   "pages": [
+    "/tr/tech-themes",
+    "/tr/",
+    "/tr/manual",
+    "/tr/product"
+   ]
+  },
+  {
+   "q": "Yapay zekâ bilgisayarımda sormadan program çalıştırır mı?",
+   "pages": [
+    "/tr/tech-local-tools",
+    "/tr/manual",
+    "/tr/product"
+   ]
+  },
+  {
+   "q": "Hibrit arama nedir?",
+   "pages": [
+    "/tr/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "Anlamsal parçalama ne demek?",
+   "pages": [
+    "/tr/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "Size e-postayla nasıl ulaşabilirim?",
+   "pages": [
+    "/tr/contact",
+    "/tr/about",
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Bu yazılımı kim geliştirdi?",
+   "pages": [
+    "/tr/about",
+    "/tr/contact"
+   ]
+  },
+  {
+   "q": "Kodu GitHub’da nerede bulabilirim?",
+   "pages": [
+    "/tr/about",
+    "/tr/contact",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "Parolamı unuttum, şimdi ne yapacağım?",
+   "pages": [
+    "/tr/help"
+   ]
+  },
+  {
+   "q": "Nasıl kaldırırım?",
+   "pages": [
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Web sitesi çerez kullanıyor mu?",
+   "pages": [
+    "/tr/about",
+    "/tr/legal"
+   ]
+  },
+  {
+   "q": "Yanıtlar neden bu kadar yavaş?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Web sitesi ziyaretçiler hakkında hangi verileri saklıyor?",
+   "pages": [
+    "/tr/about",
+    "/tr/legal"
+   ]
+  },
+  {
+   "q": "StarkLLM telemetri gönderiyor mu?",
+   "pages": [
+    "/tr/tech-privacy",
+    "/tr/",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "Sistem gereksinimleri neler?",
+   "pages": [
+    "/tr/download",
+    "/tr/manual",
+    "/tr/"
+   ]
+  },
+  {
+   "q": "Güncelleme denetimi ne yapıyor?",
+   "pages": [
+    "/tr/tech-privacy"
+   ]
+  },
+  {
+   "q": "Açık kaynaklı mı?",
+   "pages": [
+    "/tr/about",
+    "/tr/contact",
+    "/tr/download"
+   ]
+  },
+  {
+   "q": "Program dosyalarımı silebilir mi?",
+   "pages": [
+    "/tr/product",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Gizli belgeler için StarkLLM’i kullanabilir miyim?",
+   "pages": [
+    "/tr/tech-privacy",
+    "/tr/",
+    "/tr/about",
+    "/tr/tech-local-models"
+   ]
+  },
+  {
+   "q": "İş yerimde ticari amaçla kullanmak serbest mi?",
+   "pages": [
+    "/tr/download",
+    "/tr/about"
+   ]
+  },
+  {
+   "q": "Hangi Windows sürümleri gerekiyor?",
+   "pages": [
+    "/tr/download",
+    "/tr/help",
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM’i kapattıktan sonra arka planda çalışmaya devam etmesi normal mi?",
+   "pages": [
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Uygulamayı kapattıktan sonra StarkLLM motorunu ve Docker’ı nasıl kapatırım?",
+   "pages": [
+    "/tr/manual"
+   ]
+  }
+ ],
+ "unrelated": [
+  "Bugün İstanbul’da hava nasıl olacak?",
+  "Dünya Kupası’nı kim kazandı?",
+  "Ekşi mayalı ekmek nasıl yapılır?",
+  "Avustralya’nın başkenti neresi?",
+  "Bana deniz hakkında bir şiir yaz",
+  "İyi bir film önerir misin?",
+  "Almak için en iyi akıllı telefon hangisi?",
+  "Everest Dağı kaç metre yüksekliğinde?",
+  "Bana bir fıkra anlat",
+  "Gitar çalmayı nasıl öğrenebilirim?",
+  "Günaydın sözünü Japoncaya çevir",
+  "Fransa’nın cumhurbaşkanı kim?"
+ ],
+ "advice": [
+  "Bunu hukuk bürosunda kullanmak yasal mı?",
+  "Bir şey ters giderse sizi dava edebilir miyim?",
+  "Sözleşmem konusunda hukuki tavsiyeye ihtiyacım var"
+ ]
+}

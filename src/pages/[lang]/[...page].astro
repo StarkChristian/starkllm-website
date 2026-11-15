@@ -1,0 +1,14 @@
+---
+// Every translated page except the home page in the other languages, under the language code: /de/product, /de/tech-rag, ...
+import LocalizedPage from '../../components/LocalizedPage.astro';
+import { otherLangs, localizedPaths, type Lang } from '../../i18n/ui';
+import { pages, paramOf, pathOfParam } from '../../i18n/pages';
+
+export function getStaticPaths() {
+  return otherLangs.flatMap((lang) =>
+    localizedPaths[lang].filter((p) => p in pages && p !== '/').map((p) => ({ params: { lang, page: paramOf(p) } })),
+  );
+}
+const { lang, page } = Astro.params;
+---
+<LocalizedPage lang={lang as Lang} path={pathOfParam(page)} />

@@ -1,0 +1,176 @@
+{
+ "questions": [
+  {
+   "q": "Is there a version for iPhone?",
+   "pages": [
+    "/product",
+    "/manual",
+    "/download",
+    "/"
+   ]
+  },
+  {
+   "q": "Do I need an account to use StarkLLM?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual",
+    "/tech-privacy"
+   ]
+  },
+  {
+   "q": "What happens during the first start?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Can it read handwritten letters?",
+   "pages": [
+    "/tech-multimodal",
+    "/product",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Does StarkLLM invent answers?",
+   "pages": [
+    "/tech-rag",
+    "/product",
+    "/manual",
+    "/",
+    "/help"
+   ]
+  },
+  {
+   "q": "Can I export a conversation?",
+   "pages": [
+    "/manual"
+   ]
+  },
+  {
+   "q": "How do I add a folder of documents?",
+   "pages": [
+    "/manual",
+    "/tech-knowledge-base",
+    "/tech-workspaces",
+    "/download"
+   ]
+  },
+  {
+   "q": "Is the website tracking me?",
+   "pages": [
+    "/privacy-policy",
+    "/about"
+   ]
+  },
+  {
+   "q": "What GPU do I need?",
+   "pages": [
+    "/download",
+    "/manual",
+    "/",
+    "/help"
+   ]
+  },
+  {
+   "q": "Can I choose a different language model?",
+   "pages": [
+    "/tech-local-models",
+    "/manual",
+    "/help",
+    "/"
+   ]
+  },
+  {
+   "q": "Where do I report a bug?",
+   "pages": [
+    "/contact",
+    "/about",
+    "/help",
+    "/download"
+   ]
+  },
+  {
+   "q": "Does it work on Windows 10?",
+   "pages": [
+    "/download",
+    "/",
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "What is the Python sandbox?",
+   "pages": [
+    "/",
+    "/product",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Can other programs use StarkLLM?",
+   "pages": [
+    "/",
+    "/product",
+    "/manual"
+   ]
+  },
+  {
+   "q": "What does Docker do for StarkLLM?",
+   "pages": [
+    "/help",
+    "/download",
+    "/manual"
+   ]
+  },
+  {
+   "q": "How do I stop StarkLLM?",
+   "pages": [
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Does it find deadlines in my letters?",
+   "pages": [
+    "/product",
+    "/",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Is there a dark theme?",
+   "pages": [
+    "/tech-themes",
+    "/",
+    "/manual",
+    "/product"
+   ]
+  },
+  {
+   "q": "Who owns the website?",
+   "pages": [
+    "/about",
+    "/contact",
+    "/privacy-policy"
+   ]
+  },
+  {
+   "q": "Is the source code public?",
+   "pages": [
+    "/about",
+    "/contact",
+    "/download",
+    "/",
+    "/manual"
+   ]
+  }
+ ],
+ "unrelated": [],
+ "advice": []
+}

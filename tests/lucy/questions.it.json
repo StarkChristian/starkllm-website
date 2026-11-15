@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "q": "Che cos'è esattamente StarkLLM?",
+   "pages": [
+    "/it/about",
+    "/it/",
+    "/it/manual",
+    "/it/product"
+   ]
+  },
+  {
+   "q": "È davvero gratuito da usare?",
+   "pages": [
+    "/it/download",
+    "/it/contact",
+    "/it/about"
+   ]
+  },
+  {
+   "q": "Devo pagare qualcosa?",
+   "pages": [
+    "/it/download",
+    "/it/contact",
+    "/it/about"
+   ]
+  },
+  {
+   "q": "Con quale licenza è distribuito il software?",
+   "pages": [
+    "/it/download",
+    "/it/about"
+   ]
+  },
+  {
+   "q": "I miei dati vengono caricati da qualche parte?",
+   "pages": [
+    "/it/tech-privacy",
+    "/it/",
+    "/it/contact",
+    "/it/download",
+    "/it/about",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM può funzionare senza essere collegato a internet?",
+   "pages": [
+    "/it/tech-local-models",
+    "/it/tech-privacy",
+    "/it/",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Come lo installo su Windows?",
+   "pages": [
+    "/it/download",
+    "/it/manual",
+    "/it/help",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Windows mostra un avviso quando avvio l'installer, che cosa devo fare?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Perché Windows SmartScreen blocca l'installer?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Come posso controllare che il file dell'installer non sia stato manomesso?",
+   "pages": [
+    "/it/download",
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Di quanta memoria ha bisogno il mio computer?",
+   "pages": [
+    "/it/download",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Mi serve una buona scheda grafica?",
+   "pages": [
+    "/it/download",
+    "/it/manual",
+    "/it/help",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Posso farlo girare su un Mac?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Docker è obbligatorio?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Quanto tempo ci mette il primo avvio?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "In quali lingue riesce a leggere le lettere l'inbox?",
+   "pages": [
+    "/it/manual",
+    "/it/product",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Ha un'interfaccia in tedesco?",
+   "pages": [
+    "/it/manual",
+    "/it/product",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Sarà supportato anche lo spagnolo?",
+   "pages": [
+    "/it/manual",
+    "/it/product",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Che cosa fa l'inbox?",
+   "pages": [
+    "/it/product",
+    "/it/",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Posso aggiungere la foto di una lettera scattata col telefono?",
+   "pages": [
+    "/it/product",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Come riconosce le lettere truffa?",
+   "pages": [
+    "/it/product",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Quali modelli di IA esegue?",
+   "pages": [
+    "/it/tech-local-models",
+    "/it/manual",
+    "/it/help",
+    "/it/product"
+   ]
+  },
+  {
+   "q": "A che cosa serve Ollama?",
+   "pages": [
+    "/it/tech-local-models",
+    "/it/help",
+    "/it/download",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Posso usare modelli online come DeepSeek?",
+   "pages": [
+    "/it/tech-privacy",
+    "/it/manual",
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Dove vedo da quale documento viene una risposta?",
+   "pages": [
+    "/it/tech-rag",
+    "/it/product",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Che cos'è la retrieval augmented generation?",
+   "pages": [
+    "/it/tech-rag",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Che cos'è la knowledge base?",
+   "pages": [
+    "/it/tech-knowledge-base",
+    "/it/manual",
+    "/it/product"
+   ]
+  },
+  {
+   "q": "In che cosa un workspace è diverso dalla knowledge base?",
+   "pages": [
+    "/it/manual",
+    "/it/product",
+    "/it/tech-workspaces",
+    "/it/tech-knowledge-base"
+   ]
+  },
+  {
+   "q": "Quali formati di file posso caricare?",
+   "pages": [
+    "/it/tech-multimodal",
+    "/it/download",
+    "/it/manual",
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Posso parlargli con la mia voce?",
+   "pages": [
+    "/it/tech-voice",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Quanti temi di colore ci sono?",
+   "pages": [
+    "/it/tech-themes",
+    "/it/",
+    "/it/manual",
+    "/it/product"
+   ]
+  },
+  {
+   "q": "L'IA esegue programmi sul mio computer senza chiedere?",
+   "pages": [
+    "/it/tech-local-tools",
+    "/it/manual",
+    "/it/product"
+   ]
+  },
+  {
+   "q": "Che cos'è la ricerca ibrida?",
+   "pages": [
+    "/it/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "Che cos'è il chunking semantico?",
+   "pages": [
+    "/it/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "Come posso scrivervi un'e-mail?",
+   "pages": [
+    "/it/contact",
+    "/it/about",
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Chi ha sviluppato questo software?",
+   "pages": [
+    "/it/about",
+    "/it/contact"
+   ]
+  },
+  {
+   "q": "Dove trovo il codice su GitHub?",
+   "pages": [
+    "/it/about",
+    "/it/contact",
+    "/it/download",
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Ho dimenticato la password, e adesso?",
+   "pages": [
+    "/it/help"
+   ]
+  },
+  {
+   "q": "Come lo disinstallo?",
+   "pages": [
+    "/it/help",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Il sito usa i cookie?",
+   "pages": [
+    "/it/about"
+   ]
+  },
+  {
+   "q": "Perché le risposte sono così lente?",
+   "pages": [
+    "/it/download",
+    "/it/help",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Quali dati salva il sito sui visitatori?",
+   "pages": [
+    "/it/about"
+   ]
+  },
+  {
+   "q": "StarkLLM invia telemetria?",
+   "pages": [
+    "/it/tech-privacy",
+    "/it/",
+    "/it/download",
+    "/it/contact",
+    "/it/manual",
+    "/it/about"
+   ]
+  },
+  {
+   "q": "Quali sono i requisiti di sistema?",
+   "pages": [
+    "/it/download",
+    "/it/manual",
+    "/it/"
+   ]
+  },
+  {
+   "q": "Che cosa fa il controllo degli aggiornamenti?",
+   "pages": [
+    "/it/tech-privacy"
+   ]
+  },
+  {
+   "q": "È open source?",
+   "pages": [
+    "/it/about",
+    "/it/contact",
+    "/it/download"
+   ]
+  },
+  {
+   "q": "Il programma può cancellare i miei file?",
+   "pages": [
+    "/it/product",
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Posso usare StarkLLM per documenti riservati?",
+   "pages": [
+    "/it/tech-privacy",
+    "/it/",
+    "/it/about",
+    "/it/manual",
+    "/it/tech-local-models"
+   ]
+  },
+  {
+   "q": "È normale che StarkLLM continui a funzionare in background dopo la chiusura?",
+   "pages": [
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Come spengo il motore di StarkLLM e Docker dopo aver chiuso l’app?",
+   "pages": [
+    "/it/manual"
+   ]
+  }
+ ],
+ "unrelated": [
+  "Che tempo fa oggi a Roma?",
+  "Chi ha vinto i mondiali di calcio?",
+  "Come si prepara la pasta alla carbonara?",
+  "Qual è la capitale dell'Australia?",
+  "Scrivimi una poesia sul mare",
+  "Mi consigli un bel film?",
+  "Qual è il miglior smartphone da comprare?",
+  "Quanto è alto il Monte Bianco?",
+  "Raccontami una barzelletta",
+  "Come imparo a suonare la chitarra?",
+  "Traduci buongiorno in giapponese",
+  "Chi è il presidente della Francia?"
+ ],
+ "advice": [
+  "È legale usarlo nel mio studio legale?",
+  "Posso farvi causa se qualcosa va storto?",
+  "Mi serve una consulenza legale sul mio contratto"
+ ]
+}

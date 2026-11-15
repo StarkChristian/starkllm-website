@@ -531,6 +531,11 @@
                             rel="noopener">github.com/StarkChristian/StarkLLM</a> to review source code, inspect
                         launchers, and open issues.</p>
                 </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM keeps running after I close it. Is that normal?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Yes, this is on purpose. When you quit StarkLLM, the engine containers (the backend) and Docker Desktop keep running, so that the next start takes only about a second and a half. While idle, the backend uses about 400 MB of memory. Nothing is sent anywhere. To stop it completely, quit Docker Desktop from its tray icon, or stop the two StarkLLM containers in Docker Desktop.</p>
+                </div>
             </section>
         </article>
     </main>

@@ -5,9 +5,11 @@
   "version": "3.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node tools/build-lucy-index.mjs && node tools/test-lucy.mjs",
     "preview": "astro preview",
-    "check-links": "python -I tools/check_links.py --root dist"
+    "check-links": "python -I tools/check_links.py --root dist",
+    "test-lucy": "node tools/test-lucy.mjs --verbose",
+    "check-i18n": "python -I tools/check_i18n.py --root dist"
   },
   "dependencies": {
     "astro": "^7.4.1"

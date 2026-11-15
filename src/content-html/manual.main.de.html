@@ -531,6 +531,11 @@
                             rel="noopener">github.com/StarkChristian/StarkLLM</a>, um den Quellcode zu prüfen, die Launcher
                         anzusehen und Issues zu eröffnen.</p>
                 </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM läuft nach dem Schließen weiter. Ist das normal?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Ja, das ist Absicht. Wenn Sie StarkLLM beenden, laufen die Engine-Container (das Backend) und Docker Desktop weiter, damit der nächste Start nur etwa anderthalb Sekunden dauert. Im Leerlauf belegt das Backend etwa 400 MB Arbeitsspeicher. Es wird nichts irgendwohin gesendet. Um alles vollständig zu beenden, beenden Sie Docker Desktop über das Symbol im Infobereich oder stoppen Sie die beiden StarkLLM-Container in Docker Desktop.</p>
+                </div>
             </section>
         </article>
     </main>

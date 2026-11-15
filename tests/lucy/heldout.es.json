@@ -1,0 +1,174 @@
+{
+ "questions": [
+  {
+   "q": "¿Existe una versión para iPhone?",
+   "pages": [
+    "/es/product",
+    "/es/manual",
+    "/es/download",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Necesito una cuenta para usar StarkLLM?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual",
+    "/es/tech-privacy"
+   ]
+  },
+  {
+   "q": "¿Qué ocurre durante el primer arranque?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Es capaz de leer cartas escritas a mano?",
+   "pages": [
+    "/es/tech-multimodal",
+    "/es/product",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿StarkLLM se inventa las respuestas?",
+   "pages": [
+    "/es/tech-rag",
+    "/es/product",
+    "/es/manual",
+    "/es/",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Puedo exportar una conversación?",
+   "pages": [
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cómo añado una carpeta con documentos?",
+   "pages": [
+    "/es/manual",
+    "/es/tech-knowledge-base",
+    "/es/tech-workspaces",
+    "/es/download"
+   ]
+  },
+  {
+   "q": "¿Me está rastreando la web?",
+   "pages": [
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Qué GPU necesito?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Puedo elegir otro modelo de lenguaje?",
+   "pages": [
+    "/es/tech-local-models",
+    "/es/manual",
+    "/es/help",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Dónde notifico un fallo?",
+   "pages": [
+    "/es/contact",
+    "/es/about",
+    "/es/help",
+    "/es/download"
+   ]
+  },
+  {
+   "q": "¿Funciona con Windows 10?",
+   "pages": [
+    "/es/download",
+    "/es/",
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Qué es el sandbox de Python?",
+   "pages": [
+    "/es/",
+    "/es/product",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Otros programas pueden usar StarkLLM?",
+   "pages": [
+    "/es/",
+    "/es/product",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Qué papel tiene Docker en StarkLLM?",
+   "pages": [
+    "/es/help",
+    "/es/download",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cómo paro StarkLLM?",
+   "pages": [
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Encuentra los plazos de mis cartas?",
+   "pages": [
+    "/es/product",
+    "/es/",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Hay un tema oscuro?",
+   "pages": [
+    "/es/tech-themes",
+    "/es/",
+    "/es/manual",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿De quién es esta web?",
+   "pages": [
+    "/es/about",
+    "/es/contact"
+   ]
+  },
+  {
+   "q": "¿El código fuente es público?",
+   "pages": [
+    "/es/about",
+    "/es/contact",
+    "/es/download",
+    "/es/",
+    "/es/manual"
+   ]
+  }
+ ],
+ "unrelated": [],
+ "advice": []
+}

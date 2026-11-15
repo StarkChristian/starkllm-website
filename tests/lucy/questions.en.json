@@ -1,0 +1,426 @@
+{
+ "questions": [
+  {
+   "q": "What exactly is StarkLLM?",
+   "pages": [
+    "/about",
+    "/",
+    "/manual",
+    "/product"
+   ]
+  },
+  {
+   "q": "Is it really free to use?",
+   "pages": [
+    "/download",
+    "/contact",
+    "/about"
+   ]
+  },
+  {
+   "q": "Do I have to pay anything?",
+   "pages": [
+    "/download",
+    "/contact",
+    "/about"
+   ]
+  },
+  {
+   "q": "Which license is the software under?",
+   "pages": [
+    "/download",
+    "/about"
+   ]
+  },
+  {
+   "q": "Does my data get uploaded somewhere?",
+   "pages": [
+    "/tech-privacy",
+    "/",
+    "/contact",
+    "/download",
+    "/about",
+    "/privacy-policy",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Can StarkLLM work without being connected to the internet?",
+   "pages": [
+    "/tech-local-models",
+    "/tech-privacy",
+    "/",
+    "/manual"
+   ]
+  },
+  {
+   "q": "How do I install it on Windows?",
+   "pages": [
+    "/download",
+    "/manual",
+    "/help",
+    "/"
+   ]
+  },
+  {
+   "q": "Windows shows a warning when I start the installer, what should I do?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Why does Windows SmartScreen block the installer?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "How can I check that the installer file was not tampered with?",
+   "pages": [
+    "/download",
+    "/help"
+   ]
+  },
+  {
+   "q": "How much memory does my computer need?",
+   "pages": [
+    "/download",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Do I need a good graphics card?",
+   "pages": [
+    "/download",
+    "/manual",
+    "/help",
+    "/"
+   ]
+  },
+  {
+   "q": "Can I run it on a Mac?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Is Docker required?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "How long does the first launch take?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Which languages can the inbox read letters in?",
+   "pages": [
+    "/manual",
+    "/product",
+    "/"
+   ]
+  },
+  {
+   "q": "Does it have a German interface?",
+   "pages": [
+    "/manual",
+    "/product",
+    "/"
+   ]
+  },
+  {
+   "q": "Will Spanish be supported?",
+   "pages": [
+    "/manual",
+    "/product",
+    "/"
+   ]
+  },
+  {
+   "q": "What does the inbox do?",
+   "pages": [
+    "/product",
+    "/",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Can I add a photo of a letter from my phone?",
+   "pages": [
+    "/product",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "How does it spot scam letters?",
+   "pages": [
+    "/product",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "Which AI models does it run?",
+   "pages": [
+    "/tech-local-models",
+    "/manual",
+    "/help",
+    "/product"
+   ]
+  },
+  {
+   "q": "What is Ollama for?",
+   "pages": [
+    "/tech-local-models",
+    "/help",
+    "/download",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Can I use online models like DeepSeek?",
+   "pages": [
+    "/tech-privacy",
+    "/manual",
+    "/help"
+   ]
+  },
+  {
+   "q": "Where do I see which document an answer came from?",
+   "pages": [
+    "/tech-rag",
+    "/product",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "What is retrieval augmented generation?",
+   "pages": [
+    "/tech-rag",
+    "/manual"
+   ]
+  },
+  {
+   "q": "What is the knowledge base?",
+   "pages": [
+    "/tech-knowledge-base",
+    "/manual",
+    "/product"
+   ]
+  },
+  {
+   "q": "How is a workspace different from the knowledge base?",
+   "pages": [
+    "/manual",
+    "/product",
+    "/tech-workspaces",
+    "/tech-knowledge-base"
+   ]
+  },
+  {
+   "q": "What file formats can I upload?",
+   "pages": [
+    "/tech-multimodal",
+    "/download",
+    "/manual",
+    "/help"
+   ]
+  },
+  {
+   "q": "Can I talk to it with my voice?",
+   "pages": [
+    "/tech-voice",
+    "/manual"
+   ]
+  },
+  {
+   "q": "How many colour themes are there?",
+   "pages": [
+    "/tech-themes",
+    "/",
+    "/manual",
+    "/product"
+   ]
+  },
+  {
+   "q": "Does the AI run programs on my computer without asking?",
+   "pages": [
+    "/tech-local-tools",
+    "/manual",
+    "/product"
+   ]
+  },
+  {
+   "q": "What is hybrid search?",
+   "pages": [
+    "/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "What is semantic chunking?",
+   "pages": [
+    "/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "How can I reach you by email?",
+   "pages": [
+    "/contact",
+    "/about",
+    "/help"
+   ]
+  },
+  {
+   "q": "Who developed this software?",
+   "pages": [
+    "/about",
+    "/contact"
+   ]
+  },
+  {
+   "q": "Where can I find the code on GitHub?",
+   "pages": [
+    "/about",
+    "/contact",
+    "/download",
+    "/help"
+   ]
+  },
+  {
+   "q": "I forgot my password, what now?",
+   "pages": [
+    "/help"
+   ]
+  },
+  {
+   "q": "How do I uninstall it?",
+   "pages": [
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Does the website use cookies?",
+   "pages": [
+    "/privacy-policy",
+    "/about"
+   ]
+  },
+  {
+   "q": "Why are the answers so slow?",
+   "pages": [
+    "/download",
+    "/help",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Which data does the website store about visitors?",
+   "pages": [
+    "/privacy-policy"
+   ]
+  },
+  {
+   "q": "Does StarkLLM send telemetry?",
+   "pages": [
+    "/tech-privacy",
+    "/",
+    "/download",
+    "/privacy-policy",
+    "/contact",
+    "/manual",
+    "/about"
+   ]
+  },
+  {
+   "q": "What are the system requirements?",
+   "pages": [
+    "/download",
+    "/manual",
+    "/"
+   ]
+  },
+  {
+   "q": "What does the update check do?",
+   "pages": [
+    "/tech-privacy",
+    "/privacy-policy"
+   ]
+  },
+  {
+   "q": "Is it open source?",
+   "pages": [
+    "/about",
+    "/contact",
+    "/download"
+   ]
+  },
+  {
+   "q": "Can the program delete my files?",
+   "pages": [
+    "/product",
+    "/manual"
+   ]
+  },
+  {
+   "q": "Can I use StarkLLM for confidential documents?",
+   "pages": [
+    "/tech-privacy",
+    "/",
+    "/about",
+    "/manual",
+    "/tech-local-models"
+   ]
+  },
+  {
+   "q": "Is it normal that StarkLLM is still running in the background after I quit?",
+   "pages": [
+    "/manual"
+   ]
+  },
+  {
+   "q": "How do I shut down the StarkLLM engine and Docker after closing the app?",
+   "pages": [
+    "/manual"
+   ]
+  }
+ ],
+ "unrelated": [
+  "What's the weather in Berlin today?",
+  "Who won the football world cup?",
+  "How do I bake sourdough bread?",
+  "What is the capital of Australia?",
+  "Write me a poem about the sea",
+  "Can you recommend a good movie?",
+  "What is the best smartphone to buy?",
+  "How tall is Mount Everest?",
+  "Tell me a joke",
+  "How do I learn to play the guitar?",
+  "Translate good morning into Japanese",
+  "Who is the president of France?"
+ ],
+ "advice": [
+  "Is it legal to use this in my law firm?",
+  "Can I sue you if something goes wrong?",
+  "I need legal advice about my contract"
+ ]
+}

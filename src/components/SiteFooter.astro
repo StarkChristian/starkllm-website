@@ -18,10 +18,12 @@ const f = ui[lang].footer;
   </div>
   <div>
     <h4>{f.legal}</h4>
-    <a href="/impressum">Impressum</a>
-    <a href="/datenschutz">Datenschutz</a>
+    {f.legalPage
+      ? <a href={localePath(lang, '/legal')}>{f.legalPage}</a>
+      : <><a href="/impressum" hreflang="de">{f.impressum}</a><a href="/datenschutz" hreflang="de">{f.privacy}</a></>}
     {lang === 'en' && <a href="/privacy-policy">Privacy policy (English translation)</a>}
     <a href={localePath(lang, '/contact')}>{f.contact}</a>
   </div>
+  {f.aiNote && <p class="foot-ai">{f.aiNote.text} <a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">{f.aiNote.issues}</a> · <a href={localePath(lang, '/contact')}>{f.aiNote.contact}</a></p>}
   <div class="foot-bottom">{f.bottom}</div>
 </footer>
