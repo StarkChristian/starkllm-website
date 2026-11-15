@@ -425,6 +425,18 @@
     "/es/manual",
     "/es/product"
    ]
+  },
+  {
+   "q": "¿Es normal que StarkLLM siga funcionando en segundo plano después de salir?",
+   "pages": [
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cómo apago el motor de StarkLLM y Docker después de cerrar la aplicación?",
+   "pages": [
+    "/es/manual"
+   ]
   }
  ],
  "unrelated": [

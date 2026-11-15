@@ -390,6 +390,18 @@
     "/tr/help",
     "/tr/manual"
    ]
+  },
+  {
+   "q": "StarkLLM’i kapattıktan sonra arka planda çalışmaya devam etmesi normal mi?",
+   "pages": [
+    "/tr/manual"
+   ]
+  },
+  {
+   "q": "Uygulamayı kapattıktan sonra StarkLLM motorunu ve Docker’ı nasıl kapatırım?",
+   "pages": [
+    "/tr/manual"
+   ]
   }
  ],
  "unrelated": [

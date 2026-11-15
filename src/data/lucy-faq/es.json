@@ -718,6 +718,23 @@
    ],
    "page": "/es/product",
    "match": "Nunca cambia el nombre de tus archivos, ni los mueve, ni los borra"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM sigue funcionando después de cerrarlo",
+    "¿Por qué StarkLLM sigue en marcha después de salir?",
+    "Docker Desktop sigue abierto después de cerrar StarkLLM",
+    "¿Cómo detengo StarkLLM por completo?",
+    "Docker sigue funcionando cuando cierro la aplicación",
+    "¿Por qué Docker sigue activo al cerrar la aplicación?",
+    "¿StarkLLM sigue funcionando en segundo plano?",
+    "¿Cómo detengo el motor de StarkLLM y sus contenedores?",
+    "¿Cómo apago el motor y Docker al cerrar StarkLLM?",
+    "Quiero apagar el motor de StarkLLM y Docker del todo"
+   ],
+   "page": "/es/manual",
+   "match": "para que el siguiente inicio tarde solo un segundo y medio"
   }
  ]
 }

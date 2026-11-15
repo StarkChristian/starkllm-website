@@ -390,6 +390,18 @@
     "/manual",
     "/tech-local-models"
    ]
+  },
+  {
+   "q": "Is it normal that StarkLLM is still running in the background after I quit?",
+   "pages": [
+    "/manual"
+   ]
+  },
+  {
+   "q": "How do I shut down the StarkLLM engine and Docker after closing the app?",
+   "pages": [
+    "/manual"
+   ]
   }
  ],
  "unrelated": [

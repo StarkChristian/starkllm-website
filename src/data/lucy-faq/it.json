@@ -733,6 +733,21 @@
    ],
    "page": "/it/product",
    "match": "Non rinomina, non sposta e non elimina mai i tuoi file"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM continua a funzionare dopo la chiusura",
+    "Perché StarkLLM è ancora attivo dopo che l’ho chiuso?",
+    "Docker Desktop resta aperto dopo aver chiuso StarkLLM",
+    "Come fermo StarkLLM del tutto?",
+    "Docker resta attivo quando chiudo l’app",
+    "Perché Docker resta attivo quando chiudo l’applicazione?",
+    "StarkLLM è ancora in esecuzione in background?",
+    "Come fermo il motore di StarkLLM e i suoi container?"
+   ],
+   "page": "/it/manual",
+   "match": "così il prossimo avvio richiede solo circa un secondo e mezzo"
   }
  ]
 }

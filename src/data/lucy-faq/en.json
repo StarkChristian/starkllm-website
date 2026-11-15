@@ -575,6 +575,21 @@
    ],
    "page": "/product",
    "match": "It never renames, moves or deletes your files"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM keeps running after I close it",
+    "Why is StarkLLM still running after I quit?",
+    "Docker Desktop is still running after I closed StarkLLM",
+    "How do I stop StarkLLM completely?",
+    "Docker keeps running after I close the app",
+    "Why is Docker still active when I close the application?",
+    "Is StarkLLM still running in the background?",
+    "How do I stop the StarkLLM engine and its containers?"
+   ],
+   "page": "/manual",
+   "match": "keep running, so that the next start takes only about a second and a half"
   }
  ]
 }

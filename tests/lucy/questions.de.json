@@ -394,6 +394,18 @@
     "/de/manual",
     "/de/tech-local-models"
    ]
+  },
+  {
+   "q": "Ist es normal, dass StarkLLM nach dem Beenden im Hintergrund weiterläuft?",
+   "pages": [
+    "/de/manual"
+   ]
+  },
+  {
+   "q": "Wie fahre ich die StarkLLM-Engine und Docker nach dem Schließen der App herunter?",
+   "pages": [
+    "/de/manual"
+   ]
   }
  ],
  "unrelated": [
