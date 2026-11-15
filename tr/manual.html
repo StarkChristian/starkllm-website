@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#07060b"><title>Kullanım kılavuzu | StarkLLM</title><link rel="canonical" href="https://www.starkllm.com/tr/manual"><meta property="og:title" content="Kullanım kılavuzu | StarkLLM"><meta property="og:url" content="https://www.starkllm.com/tr/manual"><meta property="og:type" content="website"><meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta property="og:locale" content="tr_TR"><meta name="robots" content="index, follow"><link rel="alternate" hreflang="en" href="https://www.starkllm.com/manual"><link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/manual"><link rel="alternate" hreflang="es" href="https://www.starkllm.com/es/manual"><link rel="alternate" hreflang="fr" href="https://www.starkllm.com/fr/manual"><link rel="alternate" hreflang="it" href="https://www.starkllm.com/it/manual"><link rel="alternate" hreflang="tr" href="https://www.starkllm.com/tr/manual"><link rel="alternate" hreflang="x-default" href="https://www.starkllm.com/manual"><link rel="icon" href="/favicon.ico?v=10" sizes="any"><link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=10"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10"><link rel="manifest" href="/site.webmanifest"><script>try{if(localStorage.getItem('lucy-hidden')==='1')document.documentElement.setAttribute('data-lucy','off')}catch(e){}</script><script defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script><link rel="stylesheet" href="/_astro/LegacyBody.Bq_3cGlS.css"></head><body><a class="skip" href="#main">İçeriğe geç</a><div class="wrap"><nav class="nav" aria-label="Main"><a class="brand" href="/tr/"><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26">StarkLLM</a><button class="menu-btn" id="menuBtn" aria-controls="navLinks" aria-expanded="false" aria-label="Menü">&#9776;</button><ul class="nav-links" id="navLinks"><li><a href="/tr/">Ana sayfa</a></li><li><a href="/tr/product">Ürün</a></li><li><a href="/tr/manual" aria-current="page">Kılavuz</a></li><li><a href="/tr/download">İndir</a></li><li><a href="/tr/about">StarkLLM hakkında</a></li><li><a href="/tr/contact">İletişim</a></li><li><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">GitHub</a></li><li class="lang"><details><summary aria-label="Türkçe" title="Türkçe">TR</summary><div class="lang-menu"><a href="/manual" hreflang="en" lang="en">English</a><a href="/de/manual" hreflang="de" lang="de">Deutsch</a><a href="/es/manual" hreflang="es" lang="es">Español</a><a href="/fr/manual" hreflang="fr" lang="fr">Français</a><a href="/it/manual" hreflang="it" lang="it">Italiano</a></div></details></li><li><a class="btn primary small" href="https://github.com/StarkChristian/StarkLLM/releases/download/v2.0.15/StarkLLM-v2.0.15-Setup.exe">v2.0.15 indir</a></li></ul></nav><main id="main"><div class="legacy-body"><div class="container manual-container">
+        <aside class="manual-nav">
+            <ul>
+                <li><a href="#what-it-is">1. StarkLLM nedir?</a></li>
+                <li><a href="#who-it-is-for">2. Kimler için?</a></li>
+                <li><a href="#what-it-is-not">3. Ne için değildir?</a></li>
+                <li><a href="#hardware">4. Gerekli donanım</a></li>
+                <li><a href="#software">5. Gerekli yazılım</a></li>
+                <li><a href="#models">6. Önerilen modeller</a></li>
+                <li><a href="#installation">7. Kuruluma genel bakış</a></li>
+                <li><a href="#first-launch">8. StarkLLM’i başlatma (v2.0.15 yerel masaüstü)</a></li>
+                <li><a href="#first-week">9. İlk hafta kullanım yolu</a></li>
+                <li><a href="#workspaces">10. Workspace oluşturma</a></li>
+                <li><a href="#documents">11. Belge yükleme ve en iyi uygulamalar</a></li>
+                <li><a href="#inbox">12. Gelen kutusu, dosyalar ve son tarihler</a></li>
+                <li><a href="#warnings">13. Sahte mektuplara karşı uyarılar</a></li>
+                <li><a href="#chat">14. Belgelerle sohbet</a></li>
+                <li><a href="#knowledge-base">15. Knowledge Base kullanımı ve en iyi uygulamalar</a></li>
+                <li><a href="#workspace-vs-kb">16. Workspace mi, Knowledge Base mi?</a></li>
+                <li><a href="#switching-models">17. Model değiştirme</a></li>
+                <li><a href="#voice">18. Ses özellikleri</a></li>
+                <li><a href="#local-tools">19. Süreç içi yerel araçları (MCP ana bilgisayarı) kullanma</a></li>
+                <li><a href="#other-apps">20. StarkLLM’i diğer programlardan kullanma</a></li>
+                <li><a href="#themes">21. Temaları ve görünümü özelleştirme</a></li>
+                <li><a href="#citations">22. Dürüst kaynak gösterimi ve konum bilgileri</a></li>
+                <li><a href="#folders">23. Sohbet klasörleri ve düzen</a></li>
+                <li><a href="#export">24. Çok biçimli konuşma dışa aktarma</a></li>
+                <li><a href="#languages">25. Diller</a></li>
+                <li><a href="#telemetry">26. Donanım telemetrisi ve VRAM izleyicisi</a></li>
+                <li><a href="#troubleshooting">27. Sorun giderme</a></li>
+                <li><a href="#limitations">28. Sınırlamalar</a></li>
+                <li><a href="#faq">29. Sık sorulan sorular</a></li>
+            </ul>
+        </aside>
+
+        <article class="manual-content">
+            <section id="what-it-is">
+                <h2>1. StarkLLM nedir?</h2>
+                <p>StarkLLM, Windows için tasarlanmış, özel ve yerel öncelikli bir yapay zekâ asistanıdır. Doğrudan makinenizde çalışan
+                    açık ağırlıklı büyük dil modelleriyle (LLM) sohbet etmek için güvenli bir arayüz sunar. Aynı zamanda mektuplar için özel bir gelen kutusu görevi görür: faturaları, vergi bildirimlerini, sözleşmeleri ve diğer mektupları okur, içlerindeki göndericiyi, tutarları ve son tarihleri bulur ve aynı göndericinin mektuplarını bir arada dosyalar.
+                    Retrieval-Augmented Generation (RAG, erişimle zenginleştirilmiş üretim) sayesinde belge yüklemenize (PDF, DOCX, TXT, Markdown (.md), CSV, JSON, HTML ve görüntüler (PNG, JPG; taramalar ve görüntüler için yerel OCR ile)) ve bunları yerel bir vektör veritabanında saklayarak sorularınıza kaynağa dayalı
+                    yanıtlar almanıza olanak tanır.</p>
+            </section>
+
+            <section id="who-it-is-for">
+                <h2>2. Kimler için?</h2>
+                <p>StarkLLM; mektuplarını, faturalarını ve sözleşmelerini özel tutmak isteyen kişiler için ve hassas belgeleri üçüncü taraf bulut sağlayıcılarına
+                    açmadan sorgulamak zorunda olan araştırmacılar, analistler, geliştiriciler ve gizliliğe önem veren profesyoneller için geliştirilmiştir. Sıkı veri yönetişimi
+                    politikaları altında çalışıyorsanız ya da sadece veri gizliliğine değer veriyorsanız bu araç sizin için tasarlandı.
+                </p>
+            </section>
+
+            <section id="what-it-is-not">
+                <h2>3. Ne için değildir?</h2>
+                <p>StarkLLM bir bulut sohbet robotu (ChatGPT veya Claude gibi) <strong>değildir</strong>. Uzak
+                    sunucu çiftliklerine dayanmaz. Ayrıca sıfır yapılandırmayla çalışan bir tüketici uygulaması da değildir; ilk kurulum,
+                    Docker ve Ollama gibi temel bağımlılıkların kurulmasını gerektirir. Anında, az çaba gerektiren bir yapay zekâ istiyorsanız ve
+                    verilerin buluta aktarılmasında sakınca görmüyorsanız bir bulut aboneliği daha kolay ve hızlı olacaktır.</p>
+            </section>
+
+            <section id="hardware">
+                <h2>4. Gerekli donanım</h2>
+                <div class="alert warning">
+                    <h4>Donanım rehberi</h4>
+                    <p>StarkLLM yerel bir yapay zekâ sistemidir. Çıkarım hızı ve yeteneği bilgisayarınızın özelliklerine bağlıdır.
+                        Ayrı GPU’lar yanıt üretimini önemli ölçüde hızlandırır.</p>
+                </div>
+                <ul>
+                    <li><strong>Temel / dizüstü kademesi:</strong> Modern bir CPU, 8 GB RAM. Hafif 3B
+                        modeller için önerilir (örneğin <code>qwen2.5:3b</code>). Belge özetleri için kullanılabilir, ancak büyük
+                        bağlamda daha yavaştır.</li>
+                    <li><strong>Standart kademe (önerilen):</strong> Intel i7 / Ryzen 7, 16–32 GB RAM, NVIDIA RTX 3060
+                        / 4060 (8 GB+ VRAM). 7B modeller için (örneğin <code>qwen2.5:7b</code>) hızlı ve akıcı çıkarım sunar.
+                        14B modeller bu kademede daha fazla VRAM gerektirir veya yavaş çalışır.</li>
+                    <li><strong>İleri düzey kademe:</strong> Intel i9 / Ryzen 9, 32–64 GB RAM, NVIDIA RTX 3090 / 4090
+                        (16–24 GB VRAM). Geniş bağlam pencereleriyle daha büyük 14B–32B modelleri çalıştırmayı sağlar.</li>
+                    <li><strong>Depolama:</strong> Docker kapsayıcıları ve yerel model ağırlıkları için en az 30–50 GB boş alanı olan hızlı bir NVMe veya SATA SSD.</li>
+                </ul>
+            </section>
+
+            <section id="software">
+                <h2>5. Gerekli yazılım</h2>
+                <p>StarkLLM tamamen yerel çalıştığı için standart kapsayıcılaştırma ve çıkarım motorlarına dayanır:
+                </p>
+                <ul>
+                    <li><strong>Windows 10 veya 11</strong>, WSL2 (Linux için Windows Alt Sistemi) etkin olarak.</li>
+                    <li><strong>Docker Desktop:</strong> Vektör veritabanını, arka uç API’sini ve ön yüz arayüzünü
+                        yönetmek için kullanılır.</li>
+                    <li><strong>Ollama:</strong> LLM modellerini ana bilgisayarınızda yerel olarak çalıştırmaktan sorumlu
+                        çıkarım motoru.</li>
+                </ul>
+            </section>
+
+            <section id="models">
+                <h2>6. Önerilen modeller</h2>
+                <div class="alert info">
+                    <h4>Önerilen model yapılandırması</h4>
+                    <p>StarkLLM, varsayılan metin modeli olarak <strong><code>qwen2.5:7b</code></strong> ve belge vektör gömmesi için
+                        <strong><code>nomic-embed-text</code></strong> ile gelir.
+                    </p>
+                </div>
+                <ul>
+                    <li><strong>Önerilen varsayılan (qwen2.5:7b):</strong> Güçlü belge kavrayışına sahip, yüksek doğruluklu akıl yürütme modeli. 8–16 GB RAM ve ayrı 8 GB+ VRAM için dengeli akıl yürütme.</li>
+                    <li><strong>Daha hafif alternatif (qwen2.5:3b):</strong> 8 GB RAM’li dizüstü bilgisayarlar veya yalnızca CPU’lu kurulumlar için hızlı, düşük kaynaklı model.</li>
+                    <li><strong>İleri düzey seçenek (qwen2.5:14b veya daha büyük):</strong> 16 GB+ VRAM veya 32 GB+ sistem RAM’i ile en iyi sonucu verir. Daha zayıf donanımda daha yavaştır.</li>
+                    <li><strong>Varsayılan gömme modeli (nomic-embed-text):</strong> Yerel RAG erişimi için optimize edilmiş, hızlı ve hafif gömme
+                        modeli.</li>
+                </ul>
+            </section>
+
+            <section id="installation">
+                <h2>7. Kuruluma genel bakış</h2>
+                <p>Kurulum, ana bilgisayarınızı hazırlamayı ve ardından başlatıcıyı çalıştırmayı içerir:</p>
+                <ol>
+                    <li>Docker Desktop’ın kurulu ve çalışır durumda olduğundan emin olun.</li>
+                    <li>Ollama’yı <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> adresinden kurun.
+                    </li>
+                    <li>İsteğe bağlı (masaüstü uygulaması modelleri sizin için indirir): varsayılan modelleri terminalinizde çekin:
+                        <div class="code-block">
+                            ollama pull qwen2.5:7b<br>
+                            ollama pull nomic-embed-text
+                        </div>
+                    </li>
+                    <li><code>StarkLLM-v2.0.15-Setup.exe</code> dosyasını kurun (önerilir). Uygulama ilk başlatmada Docker Desktop’ı ve Ollama’yı başlatır, modelleri indirir ve motorunu derler; ardından StarkLLM’i kendi penceresinde gösterir.</li>
+<li>Geliştiriciler bunun yerine projeyi GitHub’dan indirebilir (<em>Code &rarr; Download ZIP</em>), tamamen çıkarabilir ve hizmetleri o klasörde <code>start.exe</code>, <code>start.cmd</code> veya <code>docker compose up --build -d</code> ile başlatabilir.</li>
+</ol>
+<p>Her adımın bir testi ve bir çözüm listesi <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır.</p>
+            </section>
+
+            <section id="first-launch">
+                <h2>8. StarkLLM’i başlatma (v2.0.15 yerel masaüstü)</h2>
+                <p>StarkLLM v2.0.15, bağımsız, kendi başına bir masaüstü uygulama penceresi olarak çalışır (Cursor ve Claude Desktop’a benzer). Tercih ettiğiniz başlatma seçeneğini seçin. 2.0.13’ten beri taşınabilir sürüm yoktur; lütfen yükleyiciyi kullanın:</p>
+
+                <div class="alert info" style="margin-bottom: 1rem;">
+                    <strong>İlk başlatma notu:</strong> Docker Desktop ve Ollama’yı bir kez kurun. Masaüstü uygulaması ilk
+                    başlatmada ikisini de başlatır, yapay zekâ modellerini (yaklaşık 5 GB) indirir ve motorunu derler; bu
+                    <strong>10&ndash;20 dakika</strong> sürer, açılış ekranı her adımı gösterir. Sonraki başlatmalar saniyeler sürer.
+                    Bir parça eksikse pencere hangisi olduğunu ve nasıl giderileceğini söyler (günlük: <code>%APPDATA%\StarkLLM\engine.log</code>).
+                </div>
+
+                <div class="alert warning">
+                    <h4>⚠️ Windows SmartScreen / çalıştırma uyarısı</h4>
+                    <p>İndirilen zip arşivlerinden çıkarılan dosyalar bir <em>Mark of the Web (MOTW)</em> özniteliği taşır.
+                        <code>start.exe</code> çalıştırılırken <strong>Daha fazla bilgi</strong> (More info) &rarr; <strong>Yine de
+                            çalıştır</strong> (Run anyway) seçeneğine tıklayın veya özniteliği yerel olarak temizlemek için PowerShell’de <code>unblock.ps1</code> dosyasını çalıştırın.</p>
+                </div>
+
+                <h3>Seçenek 1 &mdash; Windows masaüstü yükleyicisi (önerilir)</h3>
+                <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v2.0.15-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda Docker Desktop’ı ve Ollama’yı başlatır, eksik modelleri indirir, StarkLLM motorunu derleyip başlatır ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Knowledge Base klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. (v2.0.0 hiçbir şey başlatmıyor ve yalnızca &ldquo;Connecting to local engine&hellip;&rdquo; ekranında bekliyordu.)</p>
+
+                <h3>Seçenek 2 &mdash; start.exe / start.cmd başlatıcısı</h3>
+                <p>StarkLLM, Docker Desktop durumunu otomatik olarak denetleyen, Ollama’nın kullanılabilirliğini kontrol eden, kapsayıcıları başlatan ve yerel masaüstü penceresini açan bağımsız bir <code>start.exe</code> başlatıcısı içerir.
+                </p>
+                <ol>
+                    <li>Çıkardığınız klasörü Dosya Gezgini’nde açın.</li>
+                    <li><code>start.exe</code> dosyasına çift tıklayın veya Komut İstemi’nde <code>start.exe</code> yazın (PowerShell’de: <code>.\start.exe</code>).</li>
+                </ol>
+
+                <h3>Seçenek 3 &mdash; Doğrudan Docker Compose</h3>
+                <p>Başsız (headless) veya sunucu ortamları için kapsayıcıları doğrudan terminalden başlatın:</p>
+                <p><code>docker compose up --build -d</code></p>
+
+                <h3>Seçenek 4 &mdash; unblock.ps1’i çalıştırın (çalıştırma engellenirse)</h3>
+                <p>Windows SmartScreen veya yürütme ilkeleri betik çalıştırmayı engelliyorsa çıkardığınız klasörde PowerShell’i açın ve şunu çalıştırın:</p>
+                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
+                <p><code>unblock.ps1</code> çalıştırıldıktan sonra <code>start.exe</code> veya <code>start.cmd</code> (ya da
+                    <code>start.bat</code>) dosyasını çalıştırın.
+                </p>
+            </section>
+
+            <section id="first-week">
+                <h2>9. İlk hafta kullanım yolu</h2>
+                <p>StarkLLM’den en iyi şekilde yararlanmak için ilk haftanızda şu sırayı öneriyoruz:</p>
+                <ol>
+                    <li><strong>1. gün:</strong> Küçük başlayın. Tek bir workspace oluşturun, 2-3 standart belge
+                        yükleyin (araştırma makaleleri veya kılavuzlar gibi) ve soru sorma alıştırması yapın. Kaynak gösterimlerinin
+                        nasıl çalıştığını gözlemleyin.</li>
+                    <li><strong>2. gün:</strong> Model değiştirmeyi deneyin. Ollama ile farklı bir model indirin
+                        (örneğin <code>qwen2.5:3b</code> ile <code>qwen2.5:7b</code> veya <code>llama3.2</code> modellerini deneyin) ve
+                        aynı belge sorularını nasıl yanıtladıklarını karşılaştırın.</li>
+                    <li><strong>3. gün:</strong> Karmaşık, çok sayfalı bir rapor yükleyin. Anlamsal parçalamanın bunu
+                        mantıksal bloklara nasıl ayırdığına dikkat edin.</li>
+                    <li><strong>4. gün:</strong> Düzenleyin. Farklı projeler için ayrı workspace’ler oluşturun (örneğin
+                        “Finans”, “Kod tabanı”, “Hukuk”).</li>
+                    <li><strong>5. gün ve sonrası:</strong> Genel Knowledge Base’inizi kurun. StarkLLM’i kalıcı
+                        notlar klasörünüze yönlendirin; böylece onu tüm sohbet oturumlarında sorgulayabilirsiniz.</li>
+                </ol>
+            </section>
+
+            <section id="workspaces">
+                <h2>10. Workspace oluşturma</h2>
+                <p>Workspace’ler verilerinizi yalıtır. Sol kenar çubuğunda yeni bir bağlam oluşturmak için “New Workspace” (yeni workspace) düğmesine tıklayın.
+                    Örneğin bir “Legal Review” (hukuki inceleme) workspace’i ve ayrı bir “Market Research” (pazar araştırması) workspace’i oluşturabilirsiniz.
+                    Bir workspace’teki belgeler ve sohbetler bir diğerini kirletemez.</p>
+            </section>
+
+            <section id="documents">
+                <h2>11. Belge yükleme ve en iyi uygulamalar</h2>
+                <p>Bir workspace’in içinde “Upload Document” (belge yükle) düğmesine tıklayın veya desteklenen dosyaları (PDF, DOCX,
+                    TXT, MD, HTML ve görüntüler) belirlenen alana sürükleyip bırakın. StarkLLM belgeyi arka planda
+                    işler: metni çıkarır, anlamsal parçalar üretir ve vektörleri yerel ChromaDB’ye gömer.
+                </p>
+
+                <div class="alert info">
+                    <h4>RAG için en iyi uygulamalar</h4>
+                    <p>Yüksek kaliteli yanıtlar için belgelerinizin temiz metin içerdiğinden emin olun. Erişim motorunun en ilgili
+                        bölümleri bulmasına yardımcı olmak için belirsiz istemler yerine belirli, hedefli
+                        sorular sorun.</p>
+                </div>
+            </section>
+
+            <section id="inbox">
+                <h2>12. Gelen kutusu, dosyalar ve son tarihler</h2>
+                <p>Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin (pencerenin üzerine sürükleyin veya ana sayfadaki <em>Add a letter or document</em> (mektup veya belge ekle) seçeneğini kullanın). StarkLLM bunu bilgisayarınızda okur ve <strong>Inbox</strong> (gelen kutusu) içinde listeler. Diskinizde hiçbir şeyin adı değiştirilmez, hiçbir şey taşınmaz veya silinmez; StarkLLM yalnızca önerir.</p>
+                <ul>
+                    <li><strong>Neleri okur:</strong> mektubun türü (fatura, hatırlatma, vergi bildirimi, sözleşme, para cezası, borç tahsilatı, kısa mesaj ve daha fazlası), gönderen, mektubun tarihi, referans numaraları (müşteri, sözleşme, vergi numarası ve daha fazlası), tutarlar, banka hesapları ve son tarihler.</li>
+                    <li><strong>Her değerin bir kaynağı var:</strong> her değer, mektubun bir sayfasında kelimesi kelimesine bulunur. Üzerine tıklayın; mektup o sayfada, ilgili satır işaretlenmiş olarak açılır.</li>
+                    <li><strong>Dosyalar (cases):</strong> aynı göndericinin mektupları bir araya getirilir; en yakın son tarihli dosya en üstte yer alır. Aynı mektubun fotoğraf ve PDF olarak iki kez eklenmesi, değiştirilmiş bir mektup ve olası bir dolandırıcılık da işaretlenir.</li>
+                    <li><strong>Yeni ve tamamlanan:</strong> yeni mektupların sayısı <em>Inbox</em> yanında gösterilir. Bir mektupla ilgilendiğinizde onu tamamlandı olarak işaretleyin veya ona kendi başlığınızı verin. Notlar, hesap tabloları, günlükler ve fotoğraf betimlemeleri mektup olarak ele alınmaz.</li>
+                    <li><strong>Ana sayfada son tarihler:</strong> ana sayfa, mektuplarınızda bulunan son tarihleri, randevuları ve ödeme tarihlerini tutar ve sayfa bilgisiyle listeler. <em>Add to calendar</em> (takvime ekle) bunları bir takvim dosyası olarak kaydeder.</li>
+                </ul>
+                <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-inbox.webp?v=10" alt="StarkLLM gelen kutusu: mektuplar gönderene göre dosyalara ayrılmış, en yakın son tarih ve bir mektupta &quot;suspicious&quot; (şüpheli) işareti (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+                <div class="alert info">
+                    <h4>Tahmin edilmez, kurallarla bulunur</h4>
+                    <p>Göndericiler, tarihler, tutarlar ve banka hesapları, bu bilgisayardaki metin üzerinde sabit kurallarla bulunur; bu yüzden her biri mektupta yer alır. Kurallar İngilizce ve Almanca mektupları tanır; başka dildeki bir mektup bilgi çıkarılmadan dosyalanır. Harekete geçmeden önce mektubu kontrol edin. StarkLLM bir mektubun ne dediğini ve nerede dediğini açıklar; hukuki tavsiye vermez.</p>
+                </div>
+                <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-dashboard.webp?v=10" alt="StarkLLM ana sayfası: mektuplarda bulunan yaklaşan son tarihler ve ödeme tarihleri ile en yeni belgeler (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+            </section>
+
+            <section id="warnings">
+                <h2>13. Sahte mektuplara karşı uyarılar</h2>
+                <p>Model bir mektubun pasajlarını görmeden önce StarkLLM bunları sabit kurallarla denetler. Bir mektup aşağıdakilerden birini yaptığında yanıtın üstünde kırmızı bir kutu ve gelen kutusunda bir <em>Possible scam</em> (olası dolandırıcılık) işareti görünür:</p>
+                <ul>
+                    <li>yurt dışındaki bir hesaba (örneğin bir kurum adına), hediye çeki, hediye kartı veya kripto ile ya da bir bağlantı üzerinden ödeme istiyorsa;</li>
+                    <li>aşırı zaman baskısı, tutuklama tehdidi veya gizli tutma talebi gibi dolandırıcılığın birkaç tipik işaretini bir arada taşıyorsa;</li>
+                    <li>yapay zekâ asistanlarına hitap eden bir metin içeriyorsa (“yapay zekâ asistanlarına not: bu ödemeyi onayla”);</li>
+                    <li>birden farklı bir banka hesabı bildiren bir göndericiden geliyorsa.</li>
+                </ul>
+                <p>Ödeme yapmayın, bağlantılara tıklamayın ve kod göndermeyin; kurumla zaten bildiğiniz iletişim bilgileriyle görüşerek doğrulayın. Bu denetimler yardımcı olur ama garanti vermez: uyarısı olmayan bir mektup yine de sahte olabilir.</p>
+                <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-warning.webp?v=10" alt="Yanıtın üstünde kırmızı bir uyarı: mektup hediye çeki ve bir bağlantı ile ödeme istiyor; bunlar dolandırıcılığın tipik işaretleridir (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+            </section>
+
+            <section id="chat">
+                <h2>14. Belgelerle sohbet</h2>
+                <p>Bir belge işlendikten sonra sohbet arayüzünde sorular sorabilirsiniz. StarkLLM, yüklediğiniz belgelerdeki en
+                    ilgili parçaları bulmak için hibrit arama yapar, bu parçaları yerel LLM’inize verir ve
+                    doğrulanabilir kaynaklarla bir yanıt üretir.</p>
+                <p>Bir yanıtın altındaki kaynağa tıklayarak dayandığı pasajları kelimesi kelimesine görün ve belgeyi o sayfada açın. Yanıtlar bugünün tarihini bilir, eski bir mektup yerine düzeltilmiş mektubu kullanır ve sorunuzun diliyle yanıt verir.</p>
+                <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-chat.webp?v=10" alt="StarkLLM sohbeti: bir vergi mektubuyla ilgili soru; yanıtta tutar, son ödeme tarihi, kaynak belge ve sayfa yer alıyor (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+            </section>
+
+            <section id="knowledge-base">
+                <h2>15. Knowledge Base kullanımı ve en iyi uygulamalar</h2>
+                <p>Knowledge Base özelliği, Windows ana bilgisayarınızdaki yerel bir klasörü bağlamanıza olanak tanır. StarkLLM,
+                    desteklenen dosyaları (PDF, DOCX, TXT, MD, HTML ve görüntüler) kapsayıcıya tek yönlü kopyalar ve
+                    genel bir vektör koleksiyonuna dizinler. Workspace’e özgü belgelerden farklı olarak Knowledge
+                    Base, her sohbet oturumundan sorgulayabileceğiniz genel bir başvuru kütüphanesi işlevi görür. Sistem,
+                    bağlanan klasörü yaklaşık dakikada bir yoklar ve yeni veya değiştirilmiş dosyaları otomatik olarak yeniden dizinler.
+                    Ana bilgisayarınızdaki kaynak dosyalar asla silinmez veya değiştirilmez.</p>
+                <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-kb.webp?v=10" alt="StarkLLM Knowledge Base: bu bilgisayarda okunan ve aranabilir tutulan klasörler, dizinlenmiş dosyalarla (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+
+                <h3>Knowledge Base klasörü nasıl eklenir?</h3>
+                <p>Terminalinizden başlatıcıyı kullanarak bir klasör kaydedin:</p>
+                <ul>
+                    <li><strong>Etkileşimli:</strong> <code>start.exe</code> açıldıktan sonra başlatıcı konsolunda
+                        <code>[A]</code> tuşuna basın ve istendiğinde Windows yolunun tamamını yapıştırın (örneğin
+                        <code>C:\Users\me\research</code>).
+                    </li>
+                    <li><strong>CLI bayrağı:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code>
+                    </li>
+                </ul>
+
+                <div class="alert warning">
+                    <h4>⚠️ Windows yollarını web arayüzüne yapıştırmayın</h4>
+                    <p>Tarayıcı tabanlı Knowledge Base paneli <code>C:\Users\...</code> gibi ham Windows yollarını
+                        kabul etmez. Klasörleri her zaman başlatıcı aracılığıyla kaydedin (<code>[A]</code> veya
+                        <code>--add-folder</code>). Bir Windows yolu doğrudan girilirse web arayüzü bir hata
+                        gösterir.
+                    </p>
+                </div>
+
+                <div class="alert info">
+                    <h4>Knowledge Base rehberi</h4>
+                    <p>Yerel klasörünüzü mantıklı bir biçimde, metin ağırlıklı belgelerle (Markdown, TXT, temiz PDF’ler) yapılandırın.
+                        Knowledge Base’i, binlerce ikili sistem dosyası içeren bir kök sürücünün tamamına
+                        yönlendirmekten kaçının.</p>
+                </div>
+            </section>
+
+            <section id="workspace-vs-kb">
+                <h2>16. Workspace mi, Knowledge Base mi?</h2>
+                <p>StarkLLM, yapay zekâya bağlam kazandırmanın iki yolunu sunar. Aradaki farkı anlamak, bilgilerinizi
+                    düzenlemek için çok önemlidir:</p>
+
+                <div class="grid"
+                    style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+                    <div class="glass-panel" style="border-top: 4px solid #c084fc;">
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Workspace belgeleri</h3>
+                        <ul
+                            style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                            <li>Kesinlikle tek bir workspace’e bağlıdır.</li>
+                            <li>Bağlam karışmasını önlemek için işi yalıtılmış tutar.</li>
+                            <li>Geçici veya projeye özel belge kümeleri için en uygunudur.</li>
+                        </ul>
+                        <div
+                            style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; border: 1px solid #333; font-size: 0.9rem;">
+                            <strong style="color: var(--text-primary);">Örnek:</strong> Belirli bir hukuki inceleme için
+                            sözleşmeler.
+                        </div>
+                    </div>
+
+                    <div class="glass-panel" style="border-top: 4px solid #d4af37;">
+                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Knowledge Base</h3>
+                        <ul
+                            style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+                            <li>Kalıcı, genel bir bilgi katmanıdır.</li>
+                            <li>Tüm sohbetlerde ve workspace’lerde aynı anda kullanılabilir.</li>
+                            <li>Kalıcı başvuru materyali ve kişisel arşivler için en uygunudur.</li>
+                        </ul>
+                        <div
+                            style="background: rgba(0,0,0,0.3); padding: 0.8rem; border-radius: 6px; border: 1px solid #333; font-size: 0.9rem;">
+                            <strong style="color: var(--text-primary);">Örnek:</strong> Araştırma arşivi veya
+                            mühendislik belgeleri.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="switching-models">
+                <h2>17. Model değiştirme</h2>
+                <p>Ollama ile birden fazla model indirdiyseniz (örneğin <code>qwen2.5:7b</code>,
+                    <code>llama3.2</code> veya <code>mistral</code>), StarkLLM sohbet arayüzündeki açılır menüyle bunlar
+                    arasında geçiş yapabilirsiniz. Model değiştirmek sohbet geçmişini korur; yeni yanıtlar için seçilen model
+                    kullanılır.
+                </p>
+                <div class="showcase-frame" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-settings.webp?v=10" alt="StarkLLM ayarları: model, bağlam penceresi ve üretim seçenekleri (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+            </section>
+
+            <section id="voice">
+                <h2>18. Ses özellikleri</h2>
+                <p>StarkLLM, mesajları dikte etmek için yerel Speech-to-Text (STT, konuşmadan metne) ve yanıtları sesli okumak için Text-to-Speech (TTS, metinden konuşmaya)
+                    özelliğini destekler. Tarayıcı mikrofon izinlerinin etkin olduğundan emin olun. Ses işleme
+                    yerel olarak yapılır; ses harici bulutlara gönderilmez.</p>
+            </section>
+
+            <section id="local-tools">
+                <h2>19. Süreç içi yerel araçları (MCP ana bilgisayarı) kullanma</h2>
+                <p>Faz 2, güvenli, süreç içi, salt okunur araç çağırma ekler. Açık ağırlıklı bir model isteğinizi yerine getirmek için daha fazla bilgiye ihtiyaç duyduğunu belirlediğinde yapılandırılmış bir araç çağrısı yapar. StarkLLM üç yerleşik araç sunar:</p>
+                <ul>
+                    <li><code>list_workspace_files</code>: Dosya sistemi dışına çıkmadan, geçerli workspace’inizdeki belge adlarını, dosya boyutlarını, parça sayılarını ve yükleme zaman damgalarını bulur.</li>
+                    <li><code>search_local_kb</code>: Eşleşen pasajları bulmak için genel Knowledge Base’inizde hibrit vektör ve BM25 araması yürütür.</li>
+                    <li><code>fetch_cited_chunk</code>: Herhangi bir kaynak gösterimi konumu için saklanan tam pasaj metnini doğrudan Chroma koleksiyonlarından getirir.</li>
+                </ul>
+
+                <h3>İnsan onayı (Human-in-the-Loop)</h3>
+                <p>StarkLLM, her araç yürütmesi için elle onay gerektirir. Model bir aracı çağırdığında:</p>
+                <ol>
+                    <li>Sohbet akışında, araç adını ve bağımsız değişkenlerini gösteren şık bir onay kartı görünür.</li>
+                    <li>Bağımsız değişkenleri inceleyebilir, değerleri ayarlamak için parametre alanlarına tıklayabilir (örneğin bir arama sorgusunu inceltmek veya <code>top_k</code> değerini artırmak) ve <strong>Approve &amp; Execute</strong> (Onayla ve çalıştır) düğmesine tıklayabilirsiniz.</li>
+                    <li>Modelin aracı çalıştırmadan devam etmesini tercih ederseniz <strong>Reject</strong> (Reddet) düğmesine tıklayın. Bekleyen çağrı belirteci iptal edilir ve sohbet oturumunuz kesintisiz sürer.</li>
+                </ol>
+
+                <div class="alert info">
+                    <h4>Güvenlik mimarisi</h4>
+                    <p>Araç çağrıları, tek kullanımlık sunucu tarafı doğrulama belirteçleriyle <code>POST /api/v1/mcp/execute</code> üzerinden yürütülür. Kayıtsız doğrudan çağrılar HTTP 403 Forbidden ile reddedilir. Getirilen belge parçalarının içindeki çitli <code>```tool_call```</code> kalıpları, istem enjeksiyonundan önce otomatik olarak ayıklanır; bu da kötü amaçlı RAG yürütme vektörlerini ortadan kaldırır.</p>
+                </div>
+            </section>
+
+            <section id="other-apps">
+                <h2>20. StarkLLM’i diğer programlardan kullanma</h2>
+                <p><strong>Settings &rarr; Other apps</strong> (Ayarlar &rarr; Diğer uygulamalar) altında bu bilgisayardaki programların StarkLLM’i kullanmasına izin verebilirsiniz: VS Code ve Cursor gibi düzenleyiciler, MCP’yi destekleyen yapay zekâ asistanları veya kendi betikleriniz. Belgelerinizde arama yapabilir ve belgeler hakkında soru sorabilirler. Hiçbir şeyi değiştiremez veya silemezler.</p>
+                <ul>
+                    <li><strong>Varsayılan olarak kapalı.</strong> Yalnızca bu bilgisayardaki programlar bağlanabilir ve her biri için o sayfada oluşturduğunuz bir anahtar gerekir.</li>
+                    <li><strong>İki giriş yolu:</strong> bir MCP sunucusu ve OpenAI uyumlu bir API (<code>/v1</code>). Daha önce <code>/v1</code> API’sini kullandıysanız artık bir anahtar gerektirir.</li>
+                    <li><strong>Bağlanmadan önce düşünün:</strong> bir programın okuduğu şey StarkLLM’den çıkar. Bir bulut asistanı okuduğu pasajları şirketine gönderir. Yalnızca güvendiğiniz programları bağlayın.</li>
+                </ul>
+                <div class="showcase-frame" style="margin: 1.5rem 0;">
+                    <img src="/assets/shots/en-otherapps.webp?v=10" alt="StarkLLM ayarları, Other apps: varsayılan olarak kapalı, anahtarlar, MCP sunucusu ve OpenAI uyumlu API adresleri (arayüz İngilizce)" class="showcase-img zoomable-img">
+                </div>
+            </section>
+
+            <section id="themes">
+                <h2>21. Temaları ve görünümü özelleştirme</h2>
+                <p>StarkLLM, gündüz ve gece oturumlarında rahatlık için tasarlanmış on üç renk teması içerir. Bunlar sekiz klasik tema:</p>
+                <ul>
+                    <li><strong>Cyberpunk Rose:</strong> Yüksek enerjili pembe, gül rengi ve macenta neon vurgular.</li>
+                    <li><strong>OLED Pitch Black:</strong> OLED ekranlar için optimize edilmiş mutlak #000000 gerçek siyah arka planlar.</li>
+                    <li><strong>Liquid Glass:</strong> Buzlu bulanıklık katmanları ve parlayan kenarlıklarla yarı saydam glassmorphism.</li>
+                    <li><strong>Matrix Emerald:</strong> Terminalden ilham alan siberpunk zümrüt yeşili.</li>
+                    <li><strong>Sunset Amber:</strong> Sıcak volkanik kehribar ve turuncu gradyan vurgular.</li>
+                    <li><strong>Nordic Frost:</strong> Serin camgöbeği ve kutup mavisi minimal tonlar.</li>
+                    <li><strong>Midnight Indigo:</strong> Derin kozmik mor ve menekşe (varsayılan).</li>
+                    <li><strong>Daylight Minimal:</strong> Yüksek gün ışığı kontrastına sahip temiz, net açık mod.</li>
+                </ul>
+                <p>Beş desenli tema, çizilmiş bir arka plan ekler: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code ve Starry Night.</p>
+
+                <h3>Temalar nasıl değiştirilir?</h3>
+                <p>Temaları iki yolla değiştirebilirsiniz:</p>
+                <ul>
+                    <li><strong>Quick Switcher (hızlı değiştirici):</strong> Sol kenar çubuğunun altındaki Palet simgesine (&#127912;) tıklayın. Bir açılır pencere hemen açılır; uygulamak için herhangi bir temaya tıklayın, anında uygulanır.</li>
+                    <li><strong>Settings Gallery (ayarlar galerisi):</strong> Kenar çubuğundan Settings’i açın, <strong>Appearance</strong> bölümüne gidin ve canlı renk noktaları, gradyan çubukları ve açıklamalarla tüm tema kartlarına göz atın.</li>
+                </ul>
+                <p>Etkin temanız, istemci tarafı depolama sayesinde tarayıcı sekmeleri ve sistem yeniden başlatmaları boyunca otomatik olarak hatırlanır.</p>
+            </section>
+
+            <section id="citations">
+                <h2>22. Dürüst kaynak gösterimi ve konum bilgileri</h2>
+                <p>Uydurma kaynak gösterimleri, birçok RAG sisteminde önemli bir sorundur. StarkLLM, alımdan görüntülemeye kadar akan doğrulanabilir, dürüst konum bilgileriyle tahmin yürütmeyi ortadan kaldırır:</p>
+                <ul>
+                    <li><strong>PDF belgeleri:</strong> Kaynak gösterimleri, 1’den başlayan kaynak sayfa numarasını gösterir: <code>report.pdf (Page 4)</code>.</li>
+                    <li><strong>DOCX belgeleri:</strong> Kaynak gösterimleri içeriği yapısal başlıklara göre gruplar: <code>contract.docx (Section: 'Termination' Chunk 2)</code>.</li>
+                    <li><strong>Metin ve Markdown:</strong> Kaynak gösterimleri kesin anlamsal bölümü belirtir: <code>notes.md (Chunk 5)</code>.</li>
+                    <li><strong>Görüntüler ve görme:</strong> Taranmış belgeler ve görüntüler bir <code>Image</code> konum bilgisi taşır.</li>
+                </ul>
+                <p>Başlıklar yapay zekâ yanıtlarının üstünde açıkça biçimlendirilir; böylece herhangi bir iddiayı makinenizdeki özgün kaynak dosyayla çapraz denetleyebilirsiniz.</p>
+            </section>
+
+            <section id="folders">
+                <h2>23. Sohbet klasörleri ve düzen</h2>
+                <p>Araştırmanız genişledikçe StarkLLM, kenar çubuğundaki konuşma klasörleriyle çalışma alanınızı temiz ve düzenli tutar:</p>
+                <ul>
+                    <li><strong>Klasör oluşturma:</strong> Oturumları proje, müşteri veya konuya göre gruplamak için kenar çubuğu konuşma listesindeki <strong>+ New Folder</strong> (yeni klasör) simgesine tıklayın (örneğin “Mali denetimler”, “Hukuki dosyalar”, “Kod incelemeleri”).</li>
+                    <li><strong>Sürükleme veya atama:</strong> Etkin bir konuşmayı, üç noktalı bağlam menüsü veya klasör seçimi açılır listesi aracılığıyla bir klasöre atayın.</li>
+                    <li><strong>Daraltılabilir ağaç:</strong> Görsel karmaşa olmadan etkin akışınıza odaklanmak için klasörleri genişletin veya daraltın.</li>
+                    <li><strong>Klasör filtreleme:</strong> Konuşmaları belirli bir klasörde veya tüm workspace’te gerçek zamanlı arayın.</li>
+                </ul>
+            </section>
+
+            <section id="export">
+                <h2>24. Çok biçimli konuşma dışa aktarma</h2>
+                <p>İçgörülerinizi asla kaybetmeyin. StarkLLM, sohbet başlığından tek tıklamayla dört standart biçimde dışa aktarma sunar:</p>
+                <ul>
+                    <li><strong>Markdown (.md):</strong> Tam başlıklar, kod çitleri, kaynak gösterimleri, zaman damgaları, sözcük sayısı rozetleri ve üretim hızı istatistikleriyle biçimlendirilir.</li>
+                    <li><strong>Temiz JSON (.json):</strong> Veri işlem hatları için ileti üst verilerini, istem parametrelerini, kaynak gösterimlerini ve model ayrıntılarını içeren, makine tarafından okunabilir yapılandırılmış dışa aktarma.</li>
+                    <li><strong>Kendi içinde tam HTML (.html):</strong> Gömülü karanlık mod estetiğine sahip bağımsız, biçimlendirilmiş belge; paylaşmak veya tarayıcıdan “PDF olarak yazdır” için mükemmel.</li>
+                    <li><strong>Düz metin (.txt):</strong> E-postalara, notlara veya karalama defterlerine hemen kopyalamak için biçimsiz, sadeleştirilmiş metin.</li>
+                </ul>
+            </section>
+
+            <section id="languages">
+                <h2>25. Diller</h2>
+                <ul>
+                    <li><strong>Arayüz:</strong> İngilizce ve Almanca. Dil, sistem dilinizi izler (Almanca bir Windows, Almanca arayüzü gösterir) ve Settings &rarr; Language &amp; Locale bölümünden değiştirilebilir. İspanyolca, Fransızca, İtalyanca ve Türkçe üzerinde çalışmalar sürüyor ve sonraki sürümlerle gelecek (henüz yayımlanmadı).</li>
+                    <li><strong>Yanıtlar:</strong> StarkLLM, sorunuzun diliyle yanıt verir. Her dildeki yanıt kalitesi seçtiğiniz modele bağlıdır; küçük modeller en çok İngilizce ve Almancada güçlüdür.</li>
+                    <li><strong>Mektuplar:</strong> gelen kutusu İngilizce ve Almanca mektupları anlar (mektup türleri, göndericiler, tutarlar, son tarihler). Fotoğraflar ve taramalar İngilizce veya Almanca metin olarak okunur. Diğer dillerdeki mektuplar kaydedilir ve aranabilir, ancak son tarih ve tutar çıkarılmaz. Fransızca, İspanyolca, İtalyanca ve Türkçe için mektup kuralları üzerinde çalışmalar sürüyor ve sonraki sürümlerle gelecek (henüz yayımlanmadı).</li>
+                    <li><strong>Sesli çıkış:</strong> İngilizce ve Almanca için yerel Piper sesleri dahildir.</li>
+                </ul>
+            </section>
+
+            <section id="telemetry">
+                <h2>26. Donanım telemetrisi ve VRAM izleyicisi</h2>
+                <p>Yerel yapay zekâ, sistem kaynaklarının net biçimde görülmesini gerektirir. StarkLLM Dashboard (gösterge paneli) gerçek zamanlı donanım telemetrisi sunar:</p>
+                <ul>
+                    <li><strong>VRAM ve GPU kullanımı:</strong> Seçtiğiniz modelin (3B, 7B, 14B) sistem RAM’ine taşmadan GPU VRAM’inize rahatça sığdığından emin olmak için ayrılan video belleğini izleyin.</li>
+                    <li><strong>Sistem sağlığı:</strong> FastAPI arka ucu, ChromaDB vektör deposu ve Ollama çıkarım arka plan programı için anlık durum göstergeleri.</li>
+                    <li><strong>Workspace ölçümleri:</strong> Toplam dizinlenen parça sayısı, etkin belgeler, toplam konuşmalar ve son sohbet oturumlarınıza hızlı erişim bağlantıları.</li>
+                </ul>
+            </section>
+
+            <section id="troubleshooting">
+                <h2>27. Sorun giderme</h2>
+<p>Bir kurulum kontrol listesi ile 24 sorun ve çözümü içeren tam rehber <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır. En yaygın olanlar:</p>
+<ul>
+                    <li><strong>“Cannot connect to Ollama”:</strong> Ollama’nın Windows sistem tepsinizde çalıştığından emin olun.
+                        Ollama ana bilgisayarda yerel olarak çalışır ve Docker kapsayıcısı
+                        <code>host.docker.internal:11434</code> üzerinden iletişim kurar. Gerekli modeli
+                        çektiğinizi doğrulayın (<code>ollama pull qwen2.5:7b</code>).
+                    </li>
+                    <li><strong>Docker başlamıyor:</strong> Docker Desktop’ın WSL2 entegrasyonuyla çalıştığından emin olun.
+                        Kapsayıcılar başarısız olursa önce <code>docker compose down</code>, ardından
+                        <code>docker compose up --build -d</code> komutunu çalıştırmayı deneyin.
+                    </li>
+                    <li><strong>Yavaş yanıtlar:</strong> Ollama’nın CPU çıkarımına varsayılan olarak dönmek yerine ayrı NVIDIA
+                        GPU’nuzu kullandığından emin olun.</li>
+                </ul>
+            </section>
+
+            <section id="limitations">
+                <h2>28. Sınırlamalar</h2>
+                <ul>
+                    <li>İlk kurulum, Docker Desktop ve Ollama’nın kurulmasını gerektirir.</li>
+                    <li>Yanıt hızı ve verimlilik, yerel donanımınıza bağlıdır.</li>
+                    <li>Belge erişim kalitesi, girdi metninin biçimine ve netliğine bağlıdır. Belgeden farklı bir dildeki sorular, noktalama işareti olmayan çok uzun dosyalar (günlükler) ve bir belgenin eski ve yeni sürümlerinin karışması, kaçırılan bilgilerin olağan nedenleridir.</li>
+<li>Varsayılan 7B model benzer değerleri karıştırabilir, yanlış hesaplayabilir veya bir bilgiyi kaçırabilir. Önemli kararlar için alıntılanan kaynağı kontrol edin.</li>
+<li>Masaüstü uygulamasının ilk başlatması 10&ndash;20 dakika sürer (modeller ve motor indirilir ve derlenir). İlk hesap yöneticidir ve diğer hesapların belgeleri dahil tüm veritabanını yedekleyebilir.</li>
+<li>Nedenler ve çözümler için <a href="/tr/help">Yardım ve sorun giderme</a> sayfasına bakın.</li>
+                    <li>StarkLLM, Apache 2.0 altında açık kaynaklı bir Research Beta olarak “olduğu gibi” sunulur.</li>
+                </ul>
+            </section>
+
+            <section id="faq">
+                <h2>29. Sık sorulan sorular</h2>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Verilerim
+                        bilgisayarımdan çıkıyor mu?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Hayır. StarkLLM, verileri kesinlikle
+                        makinenizde tutacak şekilde tasarlanmıştır. Belgeler yerel ChromaDB kapsayıcılarında saklanır ve çıkarım,
+                        bilgisayarınızdaki Ollama ile çalışır.</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">2. StarkLLM
+                        ücretsiz ve açık kaynaklı mı?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Evet. StarkLLM, Apache 2.0 lisansı altında
+                        ücretsiz ve açık kaynaklıdır. Kaynak kodu <a
+                            href="https://github.com/StarkChristian/StarkLLM" target="_blank"
+                            rel="noopener">GitHub</a>’da bulunur.</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Kaynak kodunu
+                        nerede inceleyebilir veya katkıda bulunabilirim?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Kaynak kodu incelemek, başlatıcıları denetlemek
+                        ve issue açmak için <a
+                            href="https://github.com/StarkChristian/StarkLLM" target="_blank"
+                            rel="noopener">github.com/StarkChristian/StarkLLM</a> adresini ziyaret edin.</p>
+                </div>
+            </section>
+        </article>
+    </div></div></main><div class="lucy-dock" data-lucy-dock><button type="button" class="lucy-dock-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="lucy-panel" aria-label="Lucy’ye sorun"><svg class="lucy" data-state="idle" xmlns="http://www.w3.org/2000/svg" viewBox="90 -50 1080 1050" width="72" height="70" role="img" aria-labelledby="lucy-dock-t"><title id="lucy-dock-t">Lucy’ye sorun</title><defs><linearGradient id="lucy-dock-body-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4390d0"></stop><stop offset="0.55" stop-color="#3a84c4"></stop><stop offset="1" stop-color="#3178b6"></stop></linearGradient><linearGradient id="lucy-dock-limb-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f8ccc"></stop><stop offset="1" stop-color="#2f74b0"></stop></linearGradient><linearGradient id="lucy-dock-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.16"></stop><stop offset="0.4" stop-color="#ffffff" stop-opacity="0"></stop></linearGradient><radialGradient id="lucy-dock-eye-fill" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#3b3531"></stop><stop offset="1" stop-color="#1d1917"></stop></radialGradient><filter id="lucy-dock-soft" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="16"></feGaussianBlur></filter></defs><ellipse class="lucy-shadow" cx="640" cy="954" rx="350" ry="30" fill="#0b1b2b" opacity="0.28" filter="url(#lucy-dock-soft)"></ellipse><g class="lucy-figure"><g class="lucy-leg lucy-leg-l"><rect x="502" y="780" width="70" height="130" rx="26" fill="url(#lucy-dock-limb-fill)"></rect><g class="lucy-shoe lucy-shoe-l"><rect x="486" y="890" width="102" height="50" rx="22" fill="#e2492c"></rect><rect x="482" y="918" width="110" height="30" rx="15" fill="#f6c313"></rect><rect x="476" y="942" width="122" height="16" rx="8" fill="#ffffff" stroke="#cfd6de" stroke-width="2"></rect><path d="M517 904h40M515 912h44M517 920h40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"></path></g></g><g class="lucy-leg lucy-leg-r"><rect x="685" y="780" width="72" height="130" rx="26" fill="url(#lucy-dock-limb-fill)"></rect><g class="lucy-shoe lucy-shoe-r"><rect x="670" y="890" width="102" height="50" rx="22" fill="#e2492c"></rect><rect x="666" y="918" width="110" height="30" rx="15" fill="#f6c313"></rect><rect x="660" y="942" width="122" height="16" rx="8" fill="#ffffff" stroke="#cfd6de" stroke-width="2"></rect><path d="M701 904h40M699 912h44M701 920h40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"></path></g></g><g class="lucy-arm lucy-arm-l"><rect x="108" y="532" width="174" height="66" rx="28" fill="url(#lucy-dock-limb-fill)"></rect></g><g class="lucy-arm lucy-arm-r"><rect x="986" y="532" width="164" height="68" rx="28" fill="url(#lucy-dock-limb-fill)"></rect></g><g class="lucy-head-g"><path class="lucy-hair lucy-hair-1" d="M508 262 C 508 170 486 110 448 62" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><path class="lucy-hair lucy-hair-2" d="M633 262 C 633 170 640 90 660 30" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><path class="lucy-hair lucy-hair-3" d="M757 262 C 757 190 770 130 808 80" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><rect class="lucy-body" x="262" y="258" width="744" height="548" rx="52" fill="url(#lucy-dock-body-fill)"></rect><rect x="262" y="258" width="744" height="548" rx="52" fill="url(#lucy-dock-shine)"></rect><g class="lucy-eyes"><circle cx="467" cy="481" r="75" fill="#1c4a78" opacity="0.28"></circle><circle cx="798" cy="481" r="75" fill="#1c4a78" opacity="0.28"></circle><ellipse class="lucy-eye" cx="467" cy="478" rx="68" ry="68" fill="url(#lucy-dock-eye-fill)"></ellipse><ellipse class="lucy-eye" cx="798" cy="478" rx="68" ry="68" fill="url(#lucy-dock-eye-fill)"></ellipse></g><path class="lucy-mouth" d="M551 628 C 575 690 690 692 716 622" fill="none" stroke="#d6363d" stroke-width="30" stroke-linecap="round"></path></g></g></svg></button><button type="button" class="lucy-dock-x" data-lucy-toggle aria-label="Lucy’yi gizle" title="Lucy’yi gizle">×</button></div><button type="button" class="lucy-chip" data-lucy-toggle>Lucy’yi göster</button><template id="lucy-tpl"><svg class="lucy" data-state="point" xmlns="http://www.w3.org/2000/svg" viewBox="90 -50 1080 1050" width="96" height="93" role="img" aria-labelledby="lucy-tour-t"><title id="lucy-tour-t">Lucy, StarkLLM robotu</title><defs><linearGradient id="lucy-tour-body-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4390d0"></stop><stop offset="0.55" stop-color="#3a84c4"></stop><stop offset="1" stop-color="#3178b6"></stop></linearGradient><linearGradient id="lucy-tour-limb-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f8ccc"></stop><stop offset="1" stop-color="#2f74b0"></stop></linearGradient><linearGradient id="lucy-tour-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.16"></stop><stop offset="0.4" stop-color="#ffffff" stop-opacity="0"></stop></linearGradient><radialGradient id="lucy-tour-eye-fill" cx="0.4" cy="0.35" r="0.75"><stop offset="0" stop-color="#3b3531"></stop><stop offset="1" stop-color="#1d1917"></stop></radialGradient><filter id="lucy-tour-soft" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="16"></feGaussianBlur></filter></defs><ellipse class="lucy-shadow" cx="640" cy="954" rx="350" ry="30" fill="#0b1b2b" opacity="0.28" filter="url(#lucy-tour-soft)"></ellipse><g class="lucy-figure"><g class="lucy-leg lucy-leg-l"><rect x="502" y="780" width="70" height="130" rx="26" fill="url(#lucy-tour-limb-fill)"></rect><g class="lucy-shoe lucy-shoe-l"><rect x="486" y="890" width="102" height="50" rx="22" fill="#e2492c"></rect><rect x="482" y="918" width="110" height="30" rx="15" fill="#f6c313"></rect><rect x="476" y="942" width="122" height="16" rx="8" fill="#ffffff" stroke="#cfd6de" stroke-width="2"></rect><path d="M517 904h40M515 912h44M517 920h40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"></path></g></g><g class="lucy-leg lucy-leg-r"><rect x="685" y="780" width="72" height="130" rx="26" fill="url(#lucy-tour-limb-fill)"></rect><g class="lucy-shoe lucy-shoe-r"><rect x="670" y="890" width="102" height="50" rx="22" fill="#e2492c"></rect><rect x="666" y="918" width="110" height="30" rx="15" fill="#f6c313"></rect><rect x="660" y="942" width="122" height="16" rx="8" fill="#ffffff" stroke="#cfd6de" stroke-width="2"></rect><path d="M701 904h40M699 912h44M701 920h40" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"></path></g></g><g class="lucy-arm lucy-arm-l"><rect x="108" y="532" width="174" height="66" rx="28" fill="url(#lucy-tour-limb-fill)"></rect></g><g class="lucy-arm lucy-arm-r"><rect x="986" y="532" width="164" height="68" rx="28" fill="url(#lucy-tour-limb-fill)"></rect></g><g class="lucy-head-g"><path class="lucy-hair lucy-hair-1" d="M508 262 C 508 170 486 110 448 62" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><path class="lucy-hair lucy-hair-2" d="M633 262 C 633 170 640 90 660 30" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><path class="lucy-hair lucy-hair-3" d="M757 262 C 757 190 770 130 808 80" fill="none" stroke="#f6b800" stroke-width="10" stroke-linecap="round"></path><rect class="lucy-body" x="262" y="258" width="744" height="548" rx="52" fill="url(#lucy-tour-body-fill)"></rect><rect x="262" y="258" width="744" height="548" rx="52" fill="url(#lucy-tour-shine)"></rect><g class="lucy-eyes"><circle cx="467" cy="481" r="75" fill="#1c4a78" opacity="0.28"></circle><circle cx="798" cy="481" r="75" fill="#1c4a78" opacity="0.28"></circle><ellipse class="lucy-eye" cx="467" cy="478" rx="68" ry="68" fill="url(#lucy-tour-eye-fill)"></ellipse><ellipse class="lucy-eye" cx="798" cy="478" rx="68" ry="68" fill="url(#lucy-tour-eye-fill)"></ellipse></g><path class="lucy-mouth" d="M551 628 C 575 690 690 692 716 622" fill="none" stroke="#d6363d" stroke-width="30" stroke-linecap="round"></path></g></g></svg></template><script type="application/json" id="lucy-data">{"lang":"tr","idx":"/assets/lucy/index-tr.json","chat":{"open":"Lucy’ye sorun","title":"Lucy’ye sorun","close":"Kapat","note":"Lucy bir kişi değil, otomatik bir asistandır. Yanıtları bu web sitesinin sayfalarından alıntılardır. Soruları tarayıcınızda kalır ve hiçbir yere gönderilmez. Bu, hukuki veya mali tavsiye değildir.","placeholder":"StarkLLM hakkında sorun","label":"Sorunuz","send":"Gönder","suggestions":["StarkLLM ücretsiz mi?","Verilerim bilgisayarımdan çıkıyor mu?","Nasıl kurarım?","Windows neden uyarı veriyor?"],"suggestionsLabel":"Şunları sorabilirsiniz","loading":"Lucy hazırlanıyor…","loadError":"Notlarımı yükleyemedim. Lütfen daha sonra yeniden deneyin ya da aşağıdaki bağlantıları kullanın.","source":"Kaynak","also":"Ayrıca bakın","none":"Bunu bu sitede bulamadım.","noneLinks":"Burada yardım bulabilirsiniz:","scoped":"Bu sayfada yalnızca sayfanın kendi metninden yanıt veririm ve hukuki tavsiye veremem. Lütfen sayfayı okuyun:","advice":"Hukuki tavsiye veremem. Bu sitenin yasal metinlerini burada okuyabilirsiniz; hukuki sorular için lütfen bir avukata danışın:","you":"Siz","lucy":"Lucy","clear":"Konuşmayı temizle","hrefs":{"help":"/tr/help","manual":"/tr/manual","contact":"/tr/contact","issues":"https://github.com/StarkChristian/StarkLLM/issues","privacy":"/privacy-policy","imprint":"/impressum"},"links":{"help":"Yardım ve sorun giderme","manual":"Kılavuz","issues":"GitHub issues","contact":"İletişim","privacy":"Gizlilik politikası (İngilizce çeviri)","imprint":"Impressum (Almanca)"}},"labels":{"next":"İleri","finish":"Bitir","stop":"Turu durdur","hide":"Lucy’yi gizle","step":"Adım {n} / {m}"},"steps":[{"sel":"#what-it-is","text":"Kılavuz, StarkLLM’in ne olduğuyla başlar. Üstteki bölüm listesi, sayfada gezinmenize yardımcı olur."},{"sel":"#hardware","text":"Bilgisayarınızın neye ihtiyacı var: bellek, ekran kartı ve disk alanı."},{"sel":"#installation","text":"StarkLLM nasıl kurulur ve başlatılır."},{"sel":"#first-week","text":"İlk haftanız için bir yol: neyi hangi sırayla denemeli."},{"sel":"#inbox","text":"Gelen kutusu: dosyalara ayrılmış mektuplar, son tarihler ve tutarlarla."},{"sel":"#knowledge-base","text":"Knowledge Base: bu bilgisayarda okunan ve aranabilir tutulan klasörler."},{"sel":"#troubleshooting","text":"Bir şey çalışmıyorsa buradan başlayın."},{"sel":"#faq","text":"Ve en sık sorulan sorular."}],"hide":"Lucy’yi gizle","tour":"Sayfayı gezdir"}</script><script type="module" src="/_astro/LucyGuide.astro_astro_type_script_index_0_lang.C51y2_tU.js"></script><footer class="foot"><div><a class="brand" href="/tr/" style="padding:0"><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26">StarkLLM</a><p style="margin-top:.8rem">Ücretsiz, açık kaynaklı bir proje.</p><p>Windows Research Beta</p><p class="small">Hiçbir türde garanti verilmeksizin, “olduğu gibi” sunulur.<br>Zarar, veri kaybı veya sonuçlar için sorumluluk kabul edilmez.<br>Kullanıcının donanımına, kurulumuna ve seçtiği yerel modellere bağlıdır.<br>Profesyonel muhakemenin yerini tutmaz.</p></div><div><h4>İlgili projeler</h4><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">GitHub deposu</a><a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a><a href="/tr/help">Yardım ve sorun giderme</a></div><div><h4>Yasal bilgiler</h4><a href="/tr/legal">Yasal bilgiler</a><a href="/tr/contact">İletişim</a></div><p class="foot-ai">Bu sayfa yapay zekâ desteğiyle çevrildi. Hataları lütfen bildirin: <a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">GitHub Issues</a> · <a href="/tr/contact">İletişim</a></p><div class="foot-bottom">© 2026 Christian Stark. Hiçbir garanti veya sorumluluk olmaksızın “olduğu gibi” sunulur.</div></footer></div><script type="module">var e=document.getElementById(`menuBtn`),t=document.getElementById(`navLinks`);e?.addEventListener(`click`,()=>{let n=t.classList.toggle(`open`);e.setAttribute(`aria-expanded`,String(n))});</script></body></html>
