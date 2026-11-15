@@ -1,8 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import chat from '../assets/LLM20242.png';
-import kb from '../assets/KnowledgeBase.png';
-import settings from '../assets/Settings.png';
+import { shots as allShots } from '../i18n/shots';
 import { tech, techLabels, techOrder, type TechSlug } from '../i18n/tech';
 import { SETUP_URL } from '../i18n/home';
 import { localePath, type Lang } from '../i18n/ui';
@@ -10,7 +8,7 @@ import { localePath, type Lang } from '../i18n/ui';
 const { lang = 'en', slug } = Astro.props as { lang?: Lang; slug: TechSlug };
 const t = tech[lang][slug];
 const l = techLabels[lang];
-const shots = { chat, kb, settings };
+const shots = allShots[lang];
 const others = techOrder.filter((s) => s !== slug);
 ---
 <header class="page-hero">

@@ -1,16 +1,13 @@
 ---
 import { Image } from 'astro:assets';
-import chat from '../assets/LLM2024.png';
-import chat2 from '../assets/LLM20242.png';
-import kb from '../assets/KnowledgeBase.png';
-import settings from '../assets/Settings.png';
+import { shots } from '../i18n/shots';
 import { download, consoleStep, toolStep, GITHUB_URL } from '../i18n/download';
 import { SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
 import { localePath, type Lang } from '../i18n/ui';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = download[lang];
-const imgs = { kb, chat, chat2, settings } as const;
+const imgs = shots[lang];
 type Kind = keyof typeof imgs;
 import { RELEASE } from '../data/release';
 ---
