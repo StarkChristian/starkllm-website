@@ -1,0 +1,12 @@
+---
+// Every translated page in the default language (English), at the site root: /, /product, /tech-rag, ...
+import LocalizedPage from '../components/LocalizedPage.astro';
+import { defaultLang, localizedPaths } from '../i18n/ui';
+import { pages, paramOf, pathOfParam } from '../i18n/pages';
+
+export function getStaticPaths() {
+  return localizedPaths[defaultLang].filter((p) => p in pages).map((p) => ({ params: { page: paramOf(p) } }));
+}
+const path = pathOfParam(Astro.params.page);
+---
+<LocalizedPage lang={defaultLang} path={path} />

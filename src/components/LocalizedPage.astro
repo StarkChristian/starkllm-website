@@ -1,0 +1,55 @@
+---
+// One template for every translated page: picks the body component, title, description and head tags for (lang, path).
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Home from './Home.astro';
+import ProductPage from './ProductPage.astro';
+import DownloadPage from './DownloadPage.astro';
+import HelpPage from './HelpPage.astro';
+import TechPage from './TechPage.astro';
+import { home } from '../i18n/home';
+import { product } from '../i18n/product';
+import { download } from '../i18n/download';
+import { help } from '../i18n/help';
+import { tech } from '../i18n/tech';
+import { pages } from '../i18n/pages';
+import { absoluteUrl, defaultLang, languages, type Lang } from '../i18n/ui';
+import { RELEASE, V } from '../data/release';
+import indexHead from '../content-html/index.head.html?raw';
+import productHead from '../content-html/product.head.html?raw';
+import downloadHead from '../content-html/download.head.html?raw';
+
+const { lang, path } = Astro.props as { lang: Lang; path: string };
+const def = pages[path];
+const url = absoluteUrl(lang, path);
+const esc = (s: string) => s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+// Open Graph tags for pages without a hand-written head (every language except the default one, and the feature pages).
+const og = (title: string, description: string | undefined, type = 'website') =>
+  `<meta property="og:title" content="${esc(title)}">` +
+  (description ? `<meta property="og:description" content="${esc(description)}">` : '') +
+  `<meta property="og:url" content="${url}"><meta property="og:type" content="${type}">` +
+  `<meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta property="og:locale" content="${languages[lang].locale}">` +
+  `<meta name="robots" content="index, follow">`;
+
+let title = '';
+let description: string | undefined;
+let headExtra = '';
+// The default language keeps its hand-written head files (description, Open Graph, Twitter card, structured data).
+const raw = lang === defaultLang
+  ? ({ home: indexHead.replaceAll('{{V}}', V), product: productHead, download: downloadHead.replaceAll('{{SETUP_URL}}', RELEASE.setup.url) } as Record<string, string>)[def.kind]
+  : undefined;
+
+if (def.kind === 'home') { ({ title, description } = home[lang].meta as { title: string; description?: string }); }
+if (def.kind === 'product') { ({ title, description } = product[lang].meta as { title: string; description?: string }); }
+if (def.kind === 'download') { ({ title, description } = download[lang].meta as { title: string; description?: string }); }
+if (def.kind === 'help') { ({ title, description } = help[lang].meta as { title: string; description?: string }); }
+if (def.kind === 'tech') { const t = tech[lang][def.slug!]; title = t.title; description = t.lede; headExtra = og(t.title, t.lede, 'article'); }
+if (raw) { headExtra = raw; description = undefined; }
+else if (def.kind !== 'tech') headExtra = og(title, description);
+---
+<SiteLayout title={title} description={description} headExtra={headExtra} lang={lang} path={path} getLabel={home[lang].nav.getBtn}>
+  {def.kind === 'home' && <Home lang={lang} />}
+  {def.kind === 'product' && <ProductPage lang={lang} />}
+  {def.kind === 'download' && <DownloadPage lang={lang} />}
+  {def.kind === 'help' && <HelpPage lang={lang} />}
+  {def.kind === 'tech' && <TechPage lang={lang} slug={def.slug!} />}
+</SiteLayout>
