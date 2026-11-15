@@ -1,6 +1,7 @@
 import { V } from '../../../data/release';
 
 export default {
+  labels: { cause: 'Causa probabile', fix: 'Che cosa fare', jump: 'Vai a', toc: ['Lista di controllo', 'Problemi', 'Ottieni aiuto', 'Limiti'] },
   meta: { title: 'Aiuto e risoluzione dei problemi | StarkLLM', description: 'Come si incastrano le parti di StarkLLM, una lista di controllo per l\'installazione con una prova per ogni passaggio e le soluzioni ai problemi più frequenti: Docker, WSL2, Ollama, modelli, porte, memoria, documenti e qualità delle risposte.' },
   hero: { eyebrow: 'Aiuto', h1: 'Aiuto e risoluzione dei problemi', lede: 'Se StarkLLM non si avvia o una risposta sembra sbagliata, parti da qui. Ogni passaggio ha una prova, così vedi quale parte manca.' },
   honest: 'Nota sincera: i passaggi sono stati ricavati dagli script di avvio e da prove reali su Linux con Docker e Ollama. Non abbiamo potuto provare ogni PC Windows. Se qualcosa qui non corrisponde a ciò che vedi, scrivici a info@starkllm.com e correggeremo questa pagina.',
