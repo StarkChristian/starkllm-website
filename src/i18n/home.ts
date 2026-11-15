@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the home page, EN and DE. German is a first draft and needs a native review before launch.
 import { RELEASE, V, SIZE_MB } from '../data/release';
 export const SETUP_URL = RELEASE.setup.url;
@@ -5,7 +6,7 @@ export const PORTABLE_URL = RELEASE.portable?.url ?? null;
 export const SETUP_SHA = RELEASE.setup.sha256;
 export const PORTABLE_SHA = RELEASE.portable?.sha256 ?? null;
 
-export const home = {
+const homeBase = {
   en: {
     meta: {
       title: 'StarkLLM | Private, local-first AI for your documents (Windows)',
@@ -211,3 +212,6 @@ export const home = {
     },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/home.ts (default export, same shape as the English object).
+export const home = { ...homeBase, ...byLang(import.meta.glob('./langs/*/home.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof homeBase.en>;

@@ -1,12 +1,12 @@
 // Everything Lucy says, in English and German. The scripts contain no words: they read these texts from the page.
 // Kept in its own file (not in ui.ts) so the language restructuring in PR #19 can move or merge it later without conflicts.
-import type { Lang } from './ui';
+import { byLang, languages, type Lang } from './ui';
 
 /** Which kind of page this is. `null` means Lucy must not appear (legal pages and pages that ask for the visitor's full attention). */
 export type LucyProfile = 'home' | 'download' | 'product' | 'tech' | 'help' | 'manual' | 'about' | 'lost';
 
 export function lucyProfile(path: string): LucyProfile | null {
-  const p = path.replace(/\.html$/, '').replace(/^\/de(?=\/|$)/, '') || '/';
+  const p = path.replace(/\.html$/, '').replace(new RegExp(`^/(${Object.keys(languages).join('|')})(?=/|$)`), '') || '/';
   if (p === '/') return 'home';
   if (p === '/download') return 'download';
   if (p === '/product') return 'product';
@@ -24,7 +24,7 @@ export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '
 
 export type Step = { sel: string; text: string };
 
-export const lucy = {
+const lucyBase = {
   en: {
     title: 'Lucy, the StarkLLM robot',
     hide: 'Hide Lucy',
@@ -239,7 +239,10 @@ export const lucy = {
       lost: [],
     } as Record<LucyProfile, Step[]>,
   },
-} as const satisfies Record<Lang, unknown>;
+} as const;
+
+// Other languages: src/i18n/langs/<lang>/lucy.ts (default export, same shape as lucyBase.en).
+export const lucy = { ...lucyBase, ...byLang(import.meta.glob('./langs/*/lucy.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof lucyBase.en>;
 
 export function fill(t: string, vars: Record<string, string>): string {
   return t.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');

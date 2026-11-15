@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the Help & Troubleshooting page, EN and DE. German is a first draft and needs a native review before launch.
 // Every command and error text below was taken from the launcher scripts, the compose file or a real test run; nothing is invented.
 import { V, SIZE_MB } from '../data/release';
@@ -5,7 +6,7 @@ import { V, SIZE_MB } from '../data/release';
 type Problem = { q: string; cause: string; fix: string[]; code?: string; note?: string };
 type Group = { h: string; items: Problem[] };
 
-export const help = {
+const helpBase = {
   en: {
     meta: { title: 'Help & Troubleshooting | StarkLLM', description: 'How StarkLLM fits together, an install checklist with a test for every step, and fixes for the problems people hit most: Docker, WSL2, Ollama, models, ports, memory, documents and answer quality.' },
     hero: { eyebrow: 'Help', h1: 'Help & Troubleshooting', lede: 'If StarkLLM does not start or an answer looks wrong, start here. Every step has a test, so you can see which part is missing.' },
@@ -213,3 +214,6 @@ export const help = {
     cta: { h2: 'Zurück zu den Anleitungen', manual: 'Handbuch', download: 'Download', contact: 'Kontakt' },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/help.ts (default export, same shape as the English object).
+export const help = { ...helpBase, ...byLang(import.meta.glob('./langs/*/help.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof helpBase.en>;

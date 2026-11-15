@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the download page, EN and DE. German is a first draft and needs a native review before launch.
 import { V, SIZE_MB, RELEASE } from '../data/release';
 
@@ -24,7 +25,7 @@ export const toolStep = `tool_call: search_local_kb
 }
 Approved`;
 
-export const download = {
+const downloadBase = {
   en: {
     meta: { title: 'Download | StarkLLM' },
     hero: { eyebrow: 'Download', h1: 'Download StarkLLM', lede: 'Get started with the Windows Research Beta.' },
@@ -200,3 +201,6 @@ export const download = {
     contribute: { h2: 'Mitwirken und Verbesserungen vorschlagen', text: 'StarkLLM ist ein offenes, sich ständig weiterentwickelndes Projekt. Wenn Sie einen Fehler finden, eine Idee haben oder den Quellcode einsehen möchten:', repo: 'Quellcode ansehen, Starter prüfen und Issues eröffnen.', mail: 'E-Mail' },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/download.ts (default export, same shape as the English object).
+export const download = { ...downloadBase, ...byLang(import.meta.glob('./langs/*/download.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof downloadBase.en>;

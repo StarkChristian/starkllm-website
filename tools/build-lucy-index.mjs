@@ -108,6 +108,7 @@ export function build() {
   mkdirSync(OUT, { recursive: true });
   const langs = readdirSync(DATA).filter((f) => f.endsWith('.json')).map((f) => JSON.parse(readFileSync(join(DATA, f), 'utf8')));
   const report = [];
+  const prefixed = langs.filter((l) => !l.default).map((l) => l.lang);
   for (const L of langs) {
     const all = walk(DIST);
     const files = all.filter((f) => {
@@ -115,7 +116,7 @@ export function build() {
       if (['/404'].includes(u) || u.startsWith('/_astro')) return false;
       if ((L.exclude || []).includes(u)) return false;
       if ((L.extraPages || []).includes(u)) return true;
-      return L.default ? !/^\/(de|es|fr|it|tr)\//.test(u) : u.startsWith(`/${L.lang}/`);
+      return L.default ? !prefixed.some((c) => u.startsWith(`/${c}/`)) : u.startsWith(`/${L.lang}/`);
     }).sort();
     const pages = [], chunks = [];
     for (const f of files) {

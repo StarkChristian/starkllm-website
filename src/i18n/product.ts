@@ -1,3 +1,4 @@
+import { byLang, type Lang } from './ui';
 // Copy for the product page, EN and DE. German is a first draft and needs a native review before launch.
 // Theme names, colors and descriptions mirror frontend/src/utils/themes.js in the app repo.
 import { V, SIZE_MB } from '../data/release';
@@ -17,7 +18,7 @@ export const themes = [
   { name: 'Starry Night', bg: '#0a0f24', card: '#161e44', g: ['#6366f1', '#f59e0b'], en: 'A quiet night sky full of small stars, with warm gold accents.', de: 'Ein ruhiger Nachthimmel voller kleiner Sterne mit warmen Goldakzenten.' },
 ];
 
-export const product = {
+const productBase = {
   en: {
     meta: { title: 'Product | StarkLLM' },
     hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'An end-to-end local pipeline designed with data privacy in mind.' },
@@ -235,6 +236,9 @@ export const product = {
     cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: `Installer v${V} herunterladen`, all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
   },
 } as const;
+
+// Other languages: src/i18n/langs/<lang>/product.ts (default export, same shape as the English object).
+export const product = { ...productBase, ...byLang(import.meta.glob('./langs/*/product.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof productBase.en>;
 
 export const toolSample = [
   { name: 'research_notes.pdf', size: 1048576, chunks: 42 },
