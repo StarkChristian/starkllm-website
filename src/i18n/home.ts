@@ -214,4 +214,4 @@ const homeBase = {
 } as const;
 
 // Other languages: src/i18n/langs/<lang>/home.ts (default export, same shape as the English object).
-export const home = { ...homeBase, ...byLang(import.meta.glob('./langs/*/home.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof homeBase.en>;
+export const home = { ...homeBase, ...byLang(import.meta.glob('./langs/*/home.ts', { eager: true, import: 'default' }), homeBase.en, 'home') } as unknown as Record<Lang, typeof homeBase.en>;

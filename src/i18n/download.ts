@@ -203,4 +203,4 @@ const downloadBase = {
 } as const;
 
 // Other languages: src/i18n/langs/<lang>/download.ts (default export, same shape as the English object).
-export const download = { ...downloadBase, ...byLang(import.meta.glob('./langs/*/download.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof downloadBase.en>;
+export const download = { ...downloadBase, ...byLang(import.meta.glob('./langs/*/download.ts', { eager: true, import: 'default' }), downloadBase.en, 'download') } as unknown as Record<Lang, typeof downloadBase.en>;

@@ -216,4 +216,4 @@ const helpBase = {
 } as const;
 
 // Other languages: src/i18n/langs/<lang>/help.ts (default export, same shape as the English object).
-export const help = { ...helpBase, ...byLang(import.meta.glob('./langs/*/help.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof helpBase.en>;
+export const help = { ...helpBase, ...byLang(import.meta.glob('./langs/*/help.ts', { eager: true, import: 'default' }), helpBase.en, 'help') } as unknown as Record<Lang, typeof helpBase.en>;

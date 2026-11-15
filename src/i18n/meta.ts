@@ -17,4 +17,4 @@ const base: Record<'en' | 'de', PagesMeta> = {
   en: { manual: { title: 'User Manual | StarkLLM' }, about: { title: 'About | StarkLLM' }, contact: { title: 'Contact & Support | StarkLLM', description: 'Contact and support for StarkLLM: email, GitHub and community.' } },
   de: { manual: { title: 'Handbuch | StarkLLM' }, about: { title: 'Über StarkLLM | StarkLLM' }, contact: { title: 'Kontakt und Support | StarkLLM', description: 'Kontakt und Support für StarkLLM: E-Mail, GitHub und Community.' } },
 };
-export const pageMeta = { ...base, ...byLang(import.meta.glob('./langs/*/pages.ts', { eager: true, import: 'default' })) } as Record<Lang, PagesMeta>;
+export const pageMeta = { ...base, ...byLang(import.meta.glob('./langs/*/pages.ts', { eager: true, import: 'default' }), { ...base.en, legal: { title: '', description: '', h1: '', lede: '', notice: '', privacyEn: '', privacyDe: '', imprintDe: '' } }, 'pages') } as Record<Lang, PagesMeta>;

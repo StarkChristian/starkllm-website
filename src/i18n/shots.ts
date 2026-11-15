@@ -57,4 +57,4 @@ const altBase: Record<'en' | 'de', Record<ShotKey, string>> = {
 // The app has no interface in the other languages yet: they show the English screenshots with their own alt texts
 // (src/i18n/langs/<lang>/shots.ts, default export: the alt texts, same keys as altBase.en).
 export const shots = { ...shotsBase, ...Object.fromEntries(aiTranslated.map((l) => [l, shotsBase.en])) } as Record<Lang, Record<ShotKey, ImageMetadata>>;
-export const alt = { ...altBase, ...byLang(import.meta.glob('./langs/*/shots.ts', { eager: true, import: 'default' })) } as Record<Lang, Record<ShotKey, string>>;
+export const alt = { ...altBase, ...byLang(import.meta.glob('./langs/*/shots.ts', { eager: true, import: 'default' }), altBase.en, 'shots') } as Record<Lang, Record<ShotKey, string>>;

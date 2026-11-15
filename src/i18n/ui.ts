@@ -18,8 +18,31 @@ const wanted = (process.env.SITE_LANGS || Object.keys(allLanguages).join(',')).s
 export const languages = Object.fromEntries(Object.entries(allLanguages).filter(([l]) => wanted.includes(l))) as Record<Lang, (typeof allLanguages)[Lang]>;
 /** Languages whose text was translated with AI assistance and still needs a native-speaker review (they show a notice). */
 export const aiTranslated: Lang[] = ['es', 'fr', 'it', 'tr'];
-/** Collects the per-language files src/i18n/langs/<lang>/<name>.ts (import.meta.glob result) into { <lang>: default export }. */
-export const byLang = (mods: Record<string, unknown>) => Object.fromEntries(Object.entries(mods).map(([p, v]) => [p.split('/').slice(-2)[0], v]));
+/** Collects the per-language files src/i18n/langs/<lang>/<name>.ts (import.meta.glob result) into { <lang>: default export }.
+ *  With `base` (the English object) it also checks that the translation has every key the English one has, with the same array lengths,
+ *  and fails the build with the list of what is missing, so a half-translated language cannot go live unnoticed. */
+export const byLang = (mods: Record<string, unknown>, base?: unknown, label = '') => {
+  const out = Object.fromEntries(Object.entries(mods).map(([p, v]) => [p.split('/').slice(-2)[0], v])) as Record<string, unknown>;
+  if (base !== undefined) {
+    const problems: string[] = [];
+    const walk = (b: unknown, o: unknown, path: string, l: string) => {
+      if (Array.isArray(b)) {
+        if (!Array.isArray(o)) { problems.push(`${l} ${label}: ${path} should be a list`); return; }
+        if (o.length !== b.length) problems.push(`${l} ${label}: ${path} has ${o.length} items, English has ${b.length}`);
+        b.forEach((x, i) => { if (o[i] !== undefined) walk(x, o[i], `${path}[${i}]`, l); });
+      } else if (b && typeof b === 'object') {
+        if (!o || typeof o !== 'object') { problems.push(`${l} ${label}: ${path} should be an object`); return; }
+        for (const k of Object.keys(b)) {
+          if (!(k in (o as object))) problems.push(`${l} ${label}: missing ${path}.${k}`);
+          else walk((b as Record<string, unknown>)[k], (o as Record<string, unknown>)[k], `${path}.${k}`, l);
+        }
+      } else if (typeof b === 'string' && typeof o !== 'string') problems.push(`${l} ${label}: ${path} should be text`);
+    };
+    for (const [l, v] of Object.entries(out)) walk(base, v, '', l);
+    if (problems.length) throw new Error(`[i18n] incomplete translation:\n${problems.slice(0, 60).join('\n')}${problems.length > 60 ? `\n... and ${problems.length - 60} more` : ''}`);
+  }
+  return out;
+};
 /** The default language lives at the site root (/product); every other language under its code (/de/product). */
 export const defaultLang: Lang = 'en';
 export const langList = Object.keys(languages) as Lang[];
@@ -73,7 +96,7 @@ const uiBase = {
     },
   },
 } as const;
-const uiMore = byLang(import.meta.glob('./langs/*/ui.ts', { eager: true, import: 'default' }));
+const uiMore = byLang(import.meta.glob('./langs/*/ui.ts', { eager: true, import: 'default' }), { ...uiBase.en, skip: '', footer: { ...uiBase.en.footer, legalPage: '', aiNote: { text: '', issues: '', contact: '' } } }, 'ui');
 export const ui = { ...uiBase, ...uiMore } as unknown as Record<Lang, typeof uiBase.en & { skip: string; footer: { legalPage?: string; aiNote?: { text: string; issues: string; contact: string } } }>;
 
 // Pages that are translated (the same page file renders every language, see src/pages/[...page].astro). The imprint, the privacy

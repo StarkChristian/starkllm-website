@@ -285,6 +285,6 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
 };
 
 // Other languages: src/i18n/langs/<lang>/tech.ts, default export { labels, pages } (same shape as techLabelsBase.en and techBase.en).
-const techMore = byLang(import.meta.glob('./langs/*/tech.ts', { eager: true, import: 'default' })) as Record<string, { labels: L; pages: Record<TechSlug, Tech> }>;
+const techMore = byLang(import.meta.glob('./langs/*/tech.ts', { eager: true, import: 'default' }), { labels: techLabelsBase.en, pages: techBase.en }, 'tech') as Record<string, { labels: L; pages: Record<TechSlug, Tech> }>;
 export const techLabels = { ...techLabelsBase, ...Object.fromEntries(Object.entries(techMore).map(([l, v]) => [l, v.labels])) } as Record<Lang, L>;
 export const tech: Record<Lang, Record<TechSlug, Tech>> = { ...techBase, ...Object.fromEntries(Object.entries(techMore).map(([l, v]) => [l, v.pages])) } as Record<Lang, Record<TechSlug, Tech>>;

@@ -242,7 +242,7 @@ const lucyBase = {
 } as const;
 
 // Other languages: src/i18n/langs/<lang>/lucy.ts (default export, same shape as lucyBase.en).
-export const lucy = { ...lucyBase, ...byLang(import.meta.glob('./langs/*/lucy.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof lucyBase.en>;
+export const lucy = { ...lucyBase, ...byLang(import.meta.glob('./langs/*/lucy.ts', { eager: true, import: 'default' }), lucyBase.en, 'lucy') } as unknown as Record<Lang, typeof lucyBase.en>;
 
 export function fill(t: string, vars: Record<string, string>): string {
   return t.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');

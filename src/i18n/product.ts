@@ -238,7 +238,7 @@ const productBase = {
 } as const;
 
 // Other languages: src/i18n/langs/<lang>/product.ts (default export, same shape as the English object).
-export const product = { ...productBase, ...byLang(import.meta.glob('./langs/*/product.ts', { eager: true, import: 'default' })) } as unknown as Record<Lang, typeof productBase.en>;
+export const product = { ...productBase, ...byLang(import.meta.glob('./langs/*/product.ts', { eager: true, import: 'default' }), productBase.en, 'product') } as unknown as Record<Lang, typeof productBase.en>;
 
 export const toolSample = [
   { name: 'research_notes.pdf', size: 1048576, chunks: 42 },
