@@ -1,0 +1,22 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import LegacyBody from '../../components/LegacyBody.astro';
+import { home } from '../../i18n/home';
+import head from '../../content-html/manual.head.de.html?raw';
+import main from '../../content-html/manual.main.de.html?raw';
+import { V } from '../../data/release';
+---
+<SiteLayout
+  title={"Handbuch | StarkLLM"}
+  headExtra={head}
+  lang="de"
+  path="/manual"
+  getLabel={home.de.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/manual' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/manual' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/manual' },
+  ]}
+>
+  <LegacyBody html={main.replaceAll('{{V}}', V)} />
+</SiteLayout>

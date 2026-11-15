@@ -28,7 +28,7 @@ npm run check-links    # build first; checks every local href/src in dist/
 
 ## Lucy (the mascot)
 
-Lucy is the StarkLLM robot. She appears on the home, product, download, feature (`tech-*`) and About pages and on the 404 page, and never on legal pages or pages that ask for the visitor's full attention (the list is `lucyProfile()` in `src/i18n/lucy.ts`; a page not listed there gets no Lucy).
+Lucy is the StarkLLM robot. She appears on the home, product, download, feature (`tech-*`) and About pages and on the 404 page; Help and Manual get only the tour button at the end of the page. She never appears on legal pages (imprint, privacy policy and its English courtesy translation) or pages that ask for the visitor's full attention (the list is `lucyProfile()` in `src/i18n/lucy.ts`; a page not listed there gets no Lucy).
 
 | Path | What |
 |---|---|
@@ -49,7 +49,7 @@ Version, download links, sizes and SHA-256 come from the latest GitHub release o
 
 - Installers go to GitHub Releases. Never put binaries under `public/`.
 - Run `npm run build && npm run check-links` before every deploy. This is the check that would have caught the 404 download links.
-- Legal pages (`impressum`, `datenschutz`) are German legal text: change them only on purpose.
+- Legal pages (`impressum`, `datenschutz`) are German legal text: change them only on purpose. `/privacy-policy` is the English courtesy translation of `datenschutz`; the German text is legally binding, so change both together and keep the notice on both pages.
 ## Preview deploys
 
 Previews go to a **separate** repo (`StarkChristian/starkllm-website-preview`, GitHub Pages), never to the live `gh-pages` of this repo.

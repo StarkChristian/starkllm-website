@@ -20,6 +20,7 @@ const f = ui[lang].footer;
     <h4>{f.legal}</h4>
     <a href="/impressum">Impressum</a>
     <a href="/datenschutz">Datenschutz</a>
+    {lang === 'en' && <a href="/privacy-policy">Privacy policy (English translation)</a>}
     <a href={localePath(lang, '/contact')}>{f.contact}</a>
   </div>
   <div class="foot-bottom">{f.bottom}</div>

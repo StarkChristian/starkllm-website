@@ -46,7 +46,7 @@ export const ui = {
 } as const;
 
 // Pages that already have a German version; everything else links to the English page.
-export const translatedPaths: string[] = ['/', '/product', '/download', '/help', '/about',
+export const translatedPaths: string[] = ['/', '/product', '/download', '/help', '/manual', '/about',
   '/tech-rag', '/tech-hybrid-search', '/tech-semantic-chunking', '/tech-knowledge-base', '/tech-workspaces', '/tech-multimodal',
   '/tech-local-models', '/tech-privacy', '/tech-local-tools', '/tech-voice', '/tech-themes'];
 

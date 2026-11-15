@@ -3,17 +3,19 @@
 import type { Lang } from './ui';
 
 /** Which kind of page this is. `null` means Lucy must not appear (legal pages and pages that ask for the visitor's full attention). */
-export type LucyProfile = 'home' | 'download' | 'product' | 'tech' | 'about' | 'lost';
+export type LucyProfile = 'home' | 'download' | 'product' | 'tech' | 'help' | 'manual' | 'about' | 'lost';
 
 export function lucyProfile(path: string): LucyProfile | null {
   const p = path.replace(/\.html$/, '').replace(/^\/de(?=\/|$)/, '') || '/';
   if (p === '/') return 'home';
   if (p === '/download') return 'download';
   if (p === '/product') return 'product';
+  if (p === '/help') return 'help';
+  if (p === '/manual') return 'manual';
   if (p === '/about') return 'about';
   if (p === '/404') return 'lost';
   if (p.startsWith('/tech-')) return 'tech';
-  // Everything else (imprint, privacy policy, code signing policy, contact, manual, help, ...) stays Lucy-free.
+  // Everything else (imprint, privacy policy and its translation, code signing policy, contact, ...) stays Lucy-free.
   return null;
 }
 
@@ -50,6 +52,7 @@ export const lucy = {
     about: {
       h: 'About Lucy',
       p1: 'Lucy is the StarkLLM robot: a small blue helper with three yellow hairs. She explains things, points at screenshots and, if you ask, shows you around this website.',
+      origin: 'Lucy\'s original artwork was made with the help of AI; we redrew it ourselves as a vector drawing so that she can move.',
       p2: 'She is quiet (no sound, ever), starts nothing on her own except a friendly wave, and stays out of the way. You can hide her with the "Hide Lucy" button at the bottom of any page, and your choice is remembered on your device only.',
     },
     tours: {
@@ -79,6 +82,23 @@ export const lucy = {
         { sel: '.tech-text', text: 'This page explains one feature: what it is, why it matters and how StarkLLM does it.' },
         { sel: '.tech-body figure', text: 'This is how it looks in the app.' },
         { sel: '#more-h', text: 'More features are listed here.' },
+      ],
+      help: [
+        { sel: '#how-h', text: 'This page helps when StarkLLM does not start or something goes wrong. First, how the pieces fit together.' },
+        { sel: '#steps-h', text: 'A checklist with a test for every step. Work through it from top to bottom.' },
+        { sel: '#problems-h', text: 'Common problems, each with the likely cause and what to do.' },
+        { sel: '#report-h', text: 'Still stuck? This is what to send us.' },
+        { sel: '#limits-h', text: 'What StarkLLM cannot do yet.' },
+      ],
+      manual: [
+        { sel: '#what-it-is', text: 'The manual starts with what StarkLLM is. The list of sections at the top helps you jump around.' },
+        { sel: '#hardware', text: 'What your PC needs: memory, graphics card and disk space.' },
+        { sel: '#installation', text: 'How to install and start StarkLLM.' },
+        { sel: '#first-week', text: 'A path for your first week: what to try in which order.' },
+        { sel: '#inbox', text: 'The inbox: letters grouped into cases, with deadlines and amounts.' },
+        { sel: '#knowledge-base', text: 'The Knowledge Base: folders on this PC that are read and kept searchable.' },
+        { sel: '#troubleshooting', text: 'If something does not work, start here.' },
+        { sel: '#faq', text: 'And the questions people ask most often.' },
       ],
       about: [],
       lost: [],
@@ -114,6 +134,7 @@ export const lucy = {
     about: {
       h: 'Über Lucy',
       p1: 'Lucy ist der StarkLLM-Roboter: ein kleiner blauer Helfer mit drei gelben Haaren. Sie erklärt Dinge, zeigt auf Screenshots und führt Sie auf Wunsch über diese Website.',
+      origin: 'Lucys ursprüngliche Zeichnung ist mit Hilfe von KI entstanden; wir haben sie selbst als Vektorgrafik neu gezeichnet, damit sie sich bewegen kann.',
       p2: 'Sie ist leise (nie ein Ton), startet von sich aus nur ein freundliches Winken und bleibt aus dem Weg. Mit dem Knopf „Lucy ausblenden“ am Ende jeder Seite blenden Sie sie aus; Ihre Wahl wird nur auf Ihrem Gerät gespeichert.',
     },
     tours: {
@@ -143,6 +164,23 @@ export const lucy = {
         { sel: '.tech-text', text: 'Diese Seite erklärt eine Funktion: was sie ist, warum sie wichtig ist und wie StarkLLM sie umsetzt.' },
         { sel: '.tech-body figure', text: 'So sieht es in der App aus.' },
         { sel: '#more-h', text: 'Weitere Funktionen stehen hier.' },
+      ],
+      help: [
+        { sel: '#how-h', text: 'Diese Seite hilft, wenn StarkLLM nicht startet oder etwas schiefgeht. Zuerst: wie die Teile zusammenspielen.' },
+        { sel: '#steps-h', text: 'Eine Checkliste mit einem Test für jeden Schritt. Gehen Sie sie von oben nach unten durch.' },
+        { sel: '#problems-h', text: 'Häufige Probleme, jeweils mit der wahrscheinlichen Ursache und dem, was zu tun ist.' },
+        { sel: '#report-h', text: 'Immer noch hängen? Das schicken Sie uns.' },
+        { sel: '#limits-h', text: 'Was StarkLLM noch nicht kann.' },
+      ],
+      manual: [
+        { sel: '#what-it-is', text: 'Das Handbuch beginnt damit, was StarkLLM ist. Die Liste der Abschnitte oben hilft beim Springen.' },
+        { sel: '#hardware', text: 'Was Ihr PC braucht: Arbeitsspeicher, Grafikkarte und Speicherplatz.' },
+        { sel: '#installation', text: 'So installieren und starten Sie StarkLLM.' },
+        { sel: '#first-week', text: 'Ein Weg für Ihre erste Woche: was Sie in welcher Reihenfolge ausprobieren.' },
+        { sel: '#inbox', text: 'Der Posteingang: Briefe, nach Vorgängen gruppiert, mit Fristen und Beträgen.' },
+        { sel: '#knowledge-base', text: 'Die Knowledge Base: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
+        { sel: '#troubleshooting', text: 'Wenn etwas nicht funktioniert, fangen Sie hier an.' },
+        { sel: '#faq', text: 'Und die Fragen, die am häufigsten gestellt werden.' },
       ],
       about: [],
       lost: [],

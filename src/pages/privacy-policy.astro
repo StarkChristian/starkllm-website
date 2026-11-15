@@ -1,0 +1,11 @@
+---
+// English courtesy translation of the privacy policy. The German page (/datenschutz) is the legally binding text.
+import SiteLayout from '../layouts/SiteLayout.astro';
+import LegacyBody from '../components/LegacyBody.astro';
+import { home } from '../i18n/home';
+import head from '../content-html/privacy-policy.head.html?raw';
+import main from '../content-html/privacy-policy.main.html?raw';
+---
+<SiteLayout title={"Privacy Policy (courtesy translation) | StarkLLM"} headExtra={head} path="/privacy-policy" getLabel={home.en.nav.getBtn}>
+  <LegacyBody html={main} />
+</SiteLayout>

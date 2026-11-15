@@ -6,6 +6,16 @@ import head from '../content-html/manual.head.html?raw';
 import main from '../content-html/manual.main.html?raw';
 import { V } from '../data/release';
 ---
-<SiteLayout title={"User Manual | StarkLLM"} headExtra={head} path="/manual" getLabel={home.en.nav.getBtn}>
+<SiteLayout
+  title={"User Manual | StarkLLM"}
+  headExtra={head}
+  path="/manual"
+  getLabel={home.en.nav.getBtn}
+  alternates={[
+    { hreflang: 'en', href: 'https://www.starkllm.com/manual' },
+    { hreflang: 'de', href: 'https://www.starkllm.com/de/manual' },
+    { hreflang: 'x-default', href: 'https://www.starkllm.com/manual' },
+  ]}
+>
   <LegacyBody html={main.replaceAll('{{V}}', V)} />
 </SiteLayout>
