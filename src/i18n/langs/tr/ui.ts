@@ -1,0 +1,25 @@
+export default {
+  nav: { home: 'Ana sayfa', product: 'Ürün', manual: 'Kılavuz', download: 'İndir', about: 'StarkLLM hakkında', contact: 'İletişim', github: 'GitHub' },
+  menu: 'Menü',
+  skip: 'İçeriğe geç',
+  footer: {
+    tagline1: 'Ücretsiz, açık kaynaklı bir proje.',
+    tagline2: 'Windows Research Beta',
+    disclaimer: [
+      'Hiçbir türde garanti verilmeksizin, "olduğu gibi" sunulur.',
+      'Zarar, veri kaybı veya sonuçlar için sorumluluk kabul edilmez.',
+      'Kullanıcının donanımına, kurulumuna ve seçtiği yerel modellere bağlıdır.',
+      'Profesyonel muhakemenin yerini tutmaz.',
+    ],
+    help: 'Yardım ve sorun giderme',
+    related: 'İlgili projeler',
+    repo: 'GitHub deposu',
+    legal: 'Yasal bilgiler',
+    impressum: 'Yasal bildirim (Impressum, Almanca)',
+    privacy: 'Gizlilik politikası (Datenschutz, Almanca)',
+    contact: 'İletişim',
+    bottom: '© 2026 Christian Stark. Hiçbir garanti veya sorumluluk olmaksızın "olduğu gibi" sunulur.',
+    legalPage: 'Yasal bilgiler',
+    aiNote: { text: 'Bu sayfa yapay zekâ desteğiyle çevrildi. Hataları lütfen bildirin:', issues: 'GitHub Issues', contact: 'İletişim' },
+  },
+};
