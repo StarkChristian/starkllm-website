@@ -1,0 +1,14 @@
+---
+// "About Lucy" blurb for the About page (English and German).
+import LucySay from './LucySay.astro';
+import { lucy } from '../i18n/lucy';
+import type { Lang } from '../i18n/ui';
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = lucy[lang].about;
+---
+<section class="lucy-about" aria-labelledby="lucy-about-h">
+  <h2 id="lucy-about-h" style="font-size:1.45rem;max-width:none">{t.h}</h2>
+  <LucySay lang={lang} state="wave" size={110} uid="lucy-about" keep text={t.p1}>
+    <p style="margin-top:.6rem">{t.p2}</p>
+  </LucySay>
+</section>

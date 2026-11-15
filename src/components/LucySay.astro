@@ -1,0 +1,27 @@
+---
+// Lucy with a speech bubble, in the flow of the page (never floating over content).
+// The text is passed in by the page from src/i18n/lucy.ts; slot content (a button, a link) goes inside the bubble.
+import Lucy from './Lucy.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang?: Lang;
+  text: string;
+  state?: 'idle' | 'wave' | 'walk' | 'point' | 'talk' | 'celebrate';
+  size?: number;
+  /** "right": Lucy stands at the right of the bubble */
+  side?: 'left' | 'right';
+  uid: string;
+  /** Keep the text as a plain note when the visitor has hidden Lucy (use for information that matters). */
+  keep?: boolean;
+  class?: string;
+}
+const { lang = 'en', text, state = 'talk', size = 120, side = 'left', uid, keep = false, class: cls = '' } = Astro.props;
+---
+<div class:list={['lucy-say', side === 'right' && 'right', cls]} data-keep={keep ? '' : undefined}>
+  <div class="lucy-fig" style={`--lucy-w:${size}px`}><Lucy lang={lang} state={state} size={size} uid={uid} /></div>
+  <div class="lucy-bubble" role="status">
+    <p>{text}</p>
+    <slot />
+  </div>
+</div>

@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 import { shots, alt as shotAlt } from '../i18n/shots';
 import { home, SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
 import type { Lang } from '../i18n/ui';
+import LucySay from './LucySay.astro';
+import { lucy } from '../i18n/lucy';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const c = home[lang];
@@ -23,6 +25,9 @@ import { RELEASE } from '../data/release';
     <a class="btn ghost" href="#how">{c.hero.cta2}</a>
   </div>
   <p class="meta">{c.hero.meta}</p>
+  <LucySay class="lucy-hero" lang={lang} text={lucy[lang].hero.line} state="wave" size={150} uid="lucy-hero">
+    <div class="lucy-btns"><button type="button" class="lucy-btn lucy-tour-btn" data-lucy-tour>{lucy[lang].tour}</button></div>
+  </LucySay>
 </header>
 
 <ol class="pipe" id="how">

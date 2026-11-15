@@ -4,17 +4,23 @@ import { shots as allShots } from '../i18n/shots';
 import { tech, techLabels, techOrder, type TechSlug } from '../i18n/tech';
 import { SETUP_URL } from '../i18n/home';
 import { localePath, type Lang } from '../i18n/ui';
+import LucySay from './LucySay.astro';
+import { lucy } from '../i18n/lucy';
 
 const { lang = 'en', slug } = Astro.props as { lang?: Lang; slug: TechSlug };
 const t = tech[lang][slug];
 const l = techLabels[lang];
 const shots = allShots[lang];
+const lt = lucy[lang];
+const pointText = lt.shot[slug];
+const talkText = slug === 'tech-privacy' ? lt.privacy : slug === 'tech-local-models' ? lt.localModels : '';
 const others = techOrder.filter((s) => s !== slug);
 ---
 <header class="page-hero">
   <p class="eyebrow">{t.eyebrow}</p>
   <h1>{t.h1}</h1>
   <p class="lede">{t.lede}</p>
+  {talkText && <LucySay lang={lang} state="talk" size={110} uid="lucy-talk" keep text={talkText} />}
 </header>
 
 <section class="block tech-body">
@@ -28,9 +34,12 @@ const others = techOrder.filter((s) => s !== slug);
     ))}
   </div>
   {t.shot && (
-    <figure class="shot flat">
-      <Image src={shots[t.shot]} alt={t.shotAlt ?? ''} widths={[480, 720, 1120]} sizes="(max-width: 860px) 100vw, 560px" format="webp" loading="lazy" />
-    </figure>
+    <div class="tech-fig">
+      <figure class="shot flat">
+        <Image src={shots[t.shot]} alt={t.shotAlt ?? ''} widths={[480, 720, 1120]} sizes="(max-width: 860px) 100vw, 560px" format="webp" loading="lazy" />
+      </figure>
+      {pointText && <LucySay class="lucy-point" lang={lang} state="point" side="right" size={96} uid="lucy-shot" text={pointText} />}
+    </div>
   )}
 </section>
 
