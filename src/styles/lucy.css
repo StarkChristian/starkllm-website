@@ -189,6 +189,7 @@ html[data-lucy="off"] .lucy-say[data-keep] .lucy-bubble::after { display: none; 
 html[data-lucy="off"] .lucy-chip { display: block; }
 .lucy-chip:hover { border-color: var(--c-violet-soft); }
 .lucy-slot { aspect-ratio: 1080 / 1050; }
+@media (max-width: 1039px) { .lucy-hero .lucy-slot { display: none; } .lucy-hero .lucy-bubble::after { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .lucy-hero .lucy-slot { display: none; }
   .lucy-hero .lucy-bubble::after { display: none; }

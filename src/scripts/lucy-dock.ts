@@ -36,7 +36,8 @@ function init(dock: HTMLElement, btn: HTMLButtonElement) {
     const w = size();
     let pos = docked(w);
     p = 1;
-    if (slot && !reduce && slot.offsetParent) {
+    const hero0 = !!slot && !reduce && innerWidth >= 1040 && !!slot.offsetParent;   // narrow screens: she is docked from the start
+    if (hero0 && slot) {
       const D = Math.min(innerHeight * 0.55, 420);
       p = Math.min(1, Math.max(0, scrollY / D));
       if (p < 1) {
@@ -47,7 +48,7 @@ function init(dock: HTMLElement, btn: HTMLButtonElement) {
     dock.style.width = pos.w + 'px';
     dock.style.transform = `translate3d(${Math.round(pos.x)}px,${Math.round(pos.y)}px,0)`;
     setState(p >= 1 ? 'idle' : p > 0 ? 'walk' : 'wave');
-    if (hero) { hero.style.opacity = String(Math.max(0, 1 - p * 2)); hero.style.pointerEvents = p > 0.3 ? 'none' : ''; }
+    if (hero && hero0) { hero.style.opacity = String(Math.max(0, 1 - p * 2)); hero.style.pointerEvents = p > 0.3 ? 'none' : ''; }
     if (chip && footer) { const f = footer.getBoundingClientRect().top; chip.style.bottom = Math.max(M, innerHeight - f + 12) + 'px'; }
     if (open) chat?.place();
   }
