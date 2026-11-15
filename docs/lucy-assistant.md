@@ -39,9 +39,8 @@ Owner request: Lucy sits bottom-right on every page and answers visitors' questi
 
 ## Adding a language
 
-1. Add the UI language as usual (see README, "Adding a language").
-2. Add `src/data/lucy-faq/<lang>.json` (stop words, suffixes, FAQ) and the `chat` block in `src/i18n/lucy.ts`.
-3. Add `tests/lucy/questions.<lang>.json`; `npm run build` shows the hit rate.
+1. Add the site language as described in the README ("Adding a language"); Lucy's strings are `src/i18n/langs/<lang>/lucy.ts`.
+2. Add `src/data/lucy-faq/<lang>.json` (stop words, suffixes, FAQ: questions plus a phrase from the translated page) and `tests/lucy/questions.<lang>.json`; `npm run build` shows the hit rate and fails below 85 %.
 
 ## Open questions for the owner (not implemented)
 

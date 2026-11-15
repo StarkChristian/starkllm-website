@@ -71,22 +71,23 @@ Previews go to a **separate** repo (`StarkChristian/starkllm-website-preview`, G
 
 ## Languages
 
-English is the default language and lives at the site root; German lives under `/de/`. Nothing on a page may assume the reader is in Germany, except the legal pages (`impressum`, `datenschutz`), which are German legal text (their `<html lang>` is `de`).
+English is the default language and lives at the site root; every other language lives under its code: German `/de/`, Spanish `/es/`, French `/fr/`, Italian `/it/`, Turkish `/tr/`. Nothing on a page may assume the reader is in Germany, except the legal pages (`impressum`, `datenschutz`), which are German legal text (their `<html lang>` is `de`).
 
-Rules the build checks (`npm run check-i18n`): every page has one canonical URL (itself); a page that exists in several languages lists all of them plus `x-default` (the default language) as `hreflang` alternates, and every alternate lists the same set; a page that exists in one language has no hreflang tags and no language switcher; every page is in `sitemap.xml`.
+The legal texts are not translated into the new languages. `/privacy-policy` is the English courtesy translation of the privacy policy, `datenschutz` and `impressum` are the legally binding German originals, and the footer of `es`, `fr`, `it` and `tr` links to a short notice page (`/<lang>/legal`) that points to all three. The text of the new languages is AI-drafted: every page shows a small notice in the footer (`footer.aiNote`) and the native-speaker review list is `docs/translation-review.md`.
+
+Rules the build checks (`npm run check-i18n`): every page has one canonical URL (itself); a page that exists in several languages lists all of them plus `x-default` (the default language, or the first language of the page if the default has none) as `hreflang` alternates, and every alternate lists the same set; a page that exists in one language has no hreflang tags and no language switcher; every page is in `sitemap.xml`. `python3 tools/check_language_mix.py --root dist` checks that no page contains sentences of another language.
 
 ### Adding a language
 
-Example: French (`fr`).
+Example: Portuguese (`pt`). Nothing in the English or German files changes; everything for a language is in its own files, and the build fails with the list of missing keys if a file does not have every key (and the same list lengths) as the English one.
 
-1. `src/i18n/ui.ts`: add `fr: { name: 'Français', locale: 'fr_FR' }` to `languages`; add `fr: translated` (or a shorter list, see below) to `localizedPaths`; add an `fr` object next to `en` and `de` in `ui` (nav and footer strings).
-2. Translate the page copy: add an `fr` object next to `en` and `de` in `src/i18n/home.ts`, `product.ts`, `download.ts`, `help.ts` and `tech.ts` (same keys; the build fails with an error where the `fr` object is missing).
-3. Screenshots: take the same shots with the app set to that language (`tools/screenshots/`), run `tools/make_shots.py` for `--lang fr`, and add the images and alt texts for `fr` to `src/i18n/shots.ts`. If the app has no UI in that language yet, use the English shots for it (point `fr` at the `en` images) and say so in the alt text.
-4. Build: the routes (`/fr/`, `/fr/product`, ...), canonical URLs, hreflang tags, the language switcher and the sitemap entries appear by themselves. Run `npm run check-i18n` and `npm run check-links`.
+1. `src/i18n/ui.ts`: add `pt: { name: 'Português', locale: 'pt_PT' }` to `allLanguages`, add `pt` to `localizedPaths` (`[...translated, '/legal']`) and to `aiTranslated` (so it shows the AI notice and the English screenshots).
+2. Create `src/i18n/langs/pt/`: `ui.ts`, `home.ts`, `product.ts`, `download.ts`, `help.ts`, `tech.ts` (`{ labels, pages }`), `shots.ts` (alt texts), `pages.ts` (titles and the legal-notice text), `lucy.ts`. Each is a default export shaped like the `en` object of the file of the same name.
+3. Create `src/content-html/manual.main.pt.html`, `about.main.pt.html`, `contact.main.pt.html` (translations of the English ones; links go to `/pt/...`).
+4. Lucy: `src/data/lucy-faq/pt.json` (stop words, suffixes, FAQ questions with the phrase of the answer passage) and `tests/lucy/questions.pt.json` (40+ questions, unrelated and legal-advice questions). `npm run build` runs the quality gate.
+5. Build with `SITE_LANGS=en,pt npm run build` while working (only those languages are built), then `npm run build`, `npm run check-links`, `npm run check-i18n`.
 
-A new language may start with only some pages: list just those paths in `localizedPaths.fr`. Links to the other pages fall back to the default language, and those pages offer no `fr` switcher.
-
-Not translated yet and exist once: the manual (`/manual`, English), `about`, `contact`, and the German legal texts. To translate one of them, add it to `localizedPaths` and move it to a component like the others.
+If the app has an interface in that language, add its screenshots (`tools/screenshots/`, `tools/make_shots.py --lang pt`) and point `shots` at them in `src/i18n/shots.ts` instead of the English ones.
 
 ## Screenshots
 

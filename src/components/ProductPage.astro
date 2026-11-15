@@ -146,7 +146,7 @@ const sizes = '(max-width: 860px) 100vw, 560px';
           <b style={`background:linear-gradient(90deg,${t.g[0]},${t.g[1]})`}></b>
           <i style={`background:${t.card}`}></i>
         </div>
-        <div class="txt"><h3>{t.name}</h3><p>{t[lang]}</p></div>
+        <div class="txt"><h3>{t.name}</h3><p>{(c as any).themeTexts?.[t.name] ?? (t as any)[lang] ?? t.en}</p></div>
       </div>
     ))}
   </div>
