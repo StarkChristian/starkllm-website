@@ -39,9 +39,8 @@ Owner request: Lucy sits bottom-right on every page and answers visitors' questi
 
 ## Adding a language
 
-1. Add the UI language as usual (see README, "Adding a language").
-2. Add `src/data/lucy-faq/<lang>.json` (stop words, suffixes, FAQ) and the `chat` block in `src/i18n/lucy.ts`.
-3. Add `tests/lucy/questions.<lang>.json`; `npm run build` shows the hit rate.
+1. Add the site language as described in the README ("Adding a language"); Lucy's strings are `src/i18n/langs/<lang>/lucy.ts`.
+2. Add `src/data/lucy-faq/<lang>.json` (stop words, suffixes, FAQ: questions plus a phrase from the translated page) and `tests/lucy/questions.<lang>.json`; `npm run build` shows the hit rate and fails below 85 %.
 
 ## Open questions for the owner (not implemented)
 
@@ -60,3 +59,7 @@ Owner request: Lucy sits bottom-right on every page and answers visitors' questi
 | Lighthouse (local, mobile and desktop; home, download, imprint, tech-rag) | performance 99-100, accessibility 93-95, both equal to or better than before; layout shift unchanged |
 
 The tuned set is the build gate (85 % minimum). Because the FAQ question lists were extended while tuning on it, the held-out numbers are the honest estimate of how well she does on new questions.
+
+## Six languages (2026-11-15)
+
+Lucy works in English, German, Spanish, French, Italian and Turkish: UI strings and tour in `src/i18n/langs/<lang>/lucy.ts`, search data in `src/data/lucy-faq/<lang>.json`, one index per language (`index-<lang>.json`, 34-41 KB gzipped each, loaded on first open only). The quality gate runs for every language: 48-53 realistic questions per language, top-1 source 100 % (threshold 85 %), 0 answers that are not on the cited page, 0 of 12 unrelated questions answered, 3 of 3 legal-advice questions refused. Held-out questions (20 per language, not tuned on): English 85 %, German 70 %, Spanish 60 %, French 80 %, Italian 85 %, Turkish 85 %. The Spanish and German FAQ variants are the first to extend when a native speaker reviews the text. On the legal pages (German texts) Lucy speaks German and answers only from the page.

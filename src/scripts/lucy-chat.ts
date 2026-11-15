@@ -114,7 +114,11 @@ export function place() {
   if (!panel || panel.hidden) return;
   const r = ctx.btn.getBoundingClientRect();
   const left = r.left + r.width / 2 < innerWidth / 2;
-  panel.style.bottom = Math.max(8, innerHeight - r.top + 10) + 'px';
+  // above Lucy; if she is still up in the hero, above the corner where she will dock. Never taller than the window.
+  let bottom = r.top < innerHeight * 0.45 ? 100 : Math.max(8, innerHeight - r.top + 10);
+  panel.style.bottom = bottom + 'px';
+  bottom = Math.min(bottom, innerHeight - panel.offsetHeight - 8);
+  panel.style.bottom = Math.max(8, bottom) + 'px';
   panel.style.left = left ? '16px' : 'auto';
   panel.style.right = left ? 'auto' : '16px';
 }

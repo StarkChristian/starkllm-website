@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { shots } from '../i18n/shots';
 import { download, consoleStep, toolStep, GITHUB_URL } from '../i18n/download';
 import { SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
-import { localePath, type Lang } from '../i18n/ui';
+import { localePath, languages, type Lang } from '../i18n/ui';
 import LucySay from './LucySay.astro';
 import { lucy, fill } from '../i18n/lucy';
 
@@ -18,7 +18,7 @@ const lt = lucy[lang];
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{c.hero.h1}</h1>
   <p class="lede">{c.hero.lede}</p>
-  <LucySay class="lucy-news" lang={lang} state="celebrate" size={84} uid="lucy-news" text={`${fill(lt.download.news, { v: RELEASE.version })} ${fill(lt.download.newsDate, { d: RELEASE.published })}`} />
+  <LucySay class="lucy-news" lang={lang} state="celebrate" size={84} uid="lucy-news" text={`${fill(lt.download.news, { v: RELEASE.version })} ${fill(lt.download.newsDate, { d: new Date(RELEASE.published + 'T12:00:00Z').toLocaleDateString(languages[lang].locale.replace('_', '-'), { dateStyle: 'long', timeZone: 'UTC' }) })}`} />
 </header>
 
 <div class="callout" style="margin-top:0">

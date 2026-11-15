@@ -600,6 +600,21 @@
    ],
    "page": "/de/product",
    "match": "Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM läuft nach dem Schließen weiter",
+    "Warum läuft StarkLLM noch, nachdem ich es beendet habe?",
+    "Docker Desktop läuft weiter, obwohl ich StarkLLM geschlossen habe",
+    "Wie beende ich StarkLLM vollständig?",
+    "Docker läuft weiter, wenn ich die App schließe",
+    "Warum ist Docker noch aktiv, wenn ich die Anwendung schließe?",
+    "Läuft StarkLLM im Hintergrund weiter?",
+    "Wie stoppe ich die StarkLLM-Engine und ihre Container?"
+   ],
+   "page": "/de/manual",
+   "match": "damit der nächste Start nur etwa anderthalb Sekunden dauert"
   }
  ]
 }

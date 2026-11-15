@@ -9,7 +9,7 @@ const COVER_MIN = 0.55;    // share of the question's content words (idf-weighte
 const UNSEEN_MAX = 0.3;    // share of the question's words that appear nowhere on the site (then it is probably about something else)
 const SCORE_MIN = 3.2;     // minimum BM25 score of the best passage
 
-export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
+export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i');
 
 export function createEngine(data) {
   const stop = new Set((data.stop || []).map(fold));

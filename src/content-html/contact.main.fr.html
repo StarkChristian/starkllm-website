@@ -1,0 +1,68 @@
+<main class="container">
+        <div class="page-header text-center">
+            <h1><span class="text-gradient">Contact et communauté</span></h1>
+            <p>Échangez avec les mainteneurs, signalez des problèmes ou contribuez au développement d’une IA locale.</p>
+        </div>
+
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="feature-card">
+                <h3>Demandes directes par e-mail</h3>
+                <p>Pour les questions sur l’architecture logicielle, les collaborations de recherche, les possibilités de partenariat ou vos retours sur les performances de l’IA locale.</p>
+                <p><strong>E-mail :</strong> <a href="mailto:info@starkllm.com">info@starkllm.com</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Réponse en général sous 24 à 48 heures les jours ouvrés.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Dépôt open source</h3>
+                <p>StarkLLM est entièrement transparent et hébergé sur GitHub. Envoyez des rapports de bogue, demandez des fonctionnalités ou consultez le code source.</p>
+                <p><strong>Dépôt :</strong> <a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">github.com/StarkChristian/StarkLLM</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Le suivi des tickets et les forums de discussion sont ouverts à la participation de tous.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Adresse du mainteneur</h3>
+                <p>Maintenu par Christian Stark dans le cadre de l’initiative de recherche Homomorphic Privacy.</p>
+                <p>
+                    <strong>Adresse :</strong><br>
+                    Maxstr. 14<br>
+                    52070 Aachen<br>
+                    Allemagne (Deutschland)
+                </p>
+            </div>
+        </div>
+
+        <div class="content-block" style="max-width: 900px; margin: 0 auto 3rem auto;">
+            <h2>Comment obtenir de l’aide</h2>
+            <p>Selon l’aide dont vous avez besoin, voici les moyens les plus efficaces d’atteindre la bonne ressource :</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Problèmes d’installation ou de configuration :</strong> consultez d’abord notre <a href="/fr/manual">manuel d’utilisation</a> détaillé. Il couvre la configuration de Docker, la mise en place des modèles Ollama, l’accélération par GPU et le dépannage des conflits de ports.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Rapports de bogue :</strong> si vous avez rencontré un plantage de l’application ou une erreur inattendue lors de l’ingestion d’un document, ouvrez un ticket sur <a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">GitHub Issues</a> en indiquant les caractéristiques de votre système et les étapes pour reproduire le problème.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Signalement responsable de failles de sécurité :</strong> si vous avez découvert une faille locale potentielle, écrivez-nous directement à <a href="mailto:info@starkllm.com">info@starkllm.com</a> avec le préfixe <code>[Security]</code> dans l’objet, avant toute divulgation publique.
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>Matériel et taille des modèles :</strong> vous vous demandez si votre machine peut exécuter confortablement des modèles Qwen, Mistral ou Llama ? Consultez notre <a href="/fr/tech-local-models">guide des modèles locaux</a> ou posez la question dans les GitHub Discussions.
+                </li>
+            </ul>
+
+            <h2>Questions fréquentes</h2>
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLM est-il vraiment 100 % gratuit et open source ?</h4>
+                    <p style="font-size: 0.95rem;">Oui. StarkLLM est fourni sous une licence open source. Il n’y a ni abonnement, ni frais cachés de cloud, ni accès à l’API réservé aux payants.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLM transmet-il des données de requêtes à des serveurs externes ?</h4>
+                    <p style="font-size: 0.95rem;">Aucune. Toute la génération de jetons, les embeddings vectoriels, le découpage des documents et le stockage en base de données s’exécutent en local sur votre machine physique.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Où puis-je télécharger la dernière version ?</h4>
+                    <p style="font-size: 0.95rem;">Rendez-vous sur la <a href="/fr/download">page de téléchargement</a> pour obtenir l’installeur Windows officiel et vérifier les sommes de contrôle SHA-256.</p>
+                </div>
+            </div>
+        </div>
+    </main>

@@ -1,12 +1,12 @@
 // Feature pages (/tech-*), EN and DE. One template renders them all (src/components/TechPage.astro).
 // Keep every claim true for the current release; German needs a native review before larger changes.
-import type { Lang } from './ui';
+import { byLang, type Lang } from './ui';
 
 export type Shot = 'chat' | 'kb' | 'settings' | 'appearance';
 export type Section = { h: string; p?: string; list?: string[] };
 export type Tech = { title: string; eyebrow: string; h1: string; lede: string; shot?: Shot; shotAlt?: string; sections: Section[] };
 
-export const techLabels = {
+const techLabelsBase = {
   en: { what: 'What it is', why: 'Why it matters', how: 'How StarkLLM does it', example: 'Example', limits: 'Good to know', more: 'More features', cta: 'Download StarkLLM', manual: 'Read the manual' },
   de: { what: 'Was es ist', why: 'Warum es wichtig ist', how: 'Wie StarkLLM es umsetzt', example: 'Beispiel', limits: 'Gut zu wissen', more: 'Weitere Funktionen', cta: 'StarkLLM herunterladen', manual: 'Zum Handbuch' },
 } as const;
@@ -17,7 +17,7 @@ export const techOrder = [
 ] as const;
 export type TechSlug = (typeof techOrder)[number];
 
-type L = typeof techLabels.en;
+type L = typeof techLabelsBase.en;
 const s = (l: L, what: string, why: string, how: string | Section, example: string, limits?: string): Section[] => [
   { h: l.what, p: what },
   { h: l.why, p: why },
@@ -26,10 +26,10 @@ const s = (l: L, what: string, why: string, how: string | Section, example: stri
   ...(limits ? [{ h: l.limits, p: limits }] : []),
 ];
 
-const en = techLabels.en;
-const de = techLabels.de;
+const en = techLabelsBase.en;
+const de = techLabelsBase.de;
 
-export const tech: Record<Lang, Record<TechSlug, Tech>> = {
+const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
   en: {
     'tech-rag': {
       title: 'Answers from your documents (RAG) | StarkLLM', eyebrow: 'Retrieval-augmented generation',
@@ -283,3 +283,8 @@ export const tech: Record<Lang, Record<TechSlug, Tech>> = {
     },
   },
 };
+
+// Other languages: src/i18n/langs/<lang>/tech.ts, default export { labels, pages } (same shape as techLabelsBase.en and techBase.en).
+const techMore = byLang(import.meta.glob('./langs/*/tech.ts', { eager: true, import: 'default' }), { labels: techLabelsBase.en, pages: techBase.en }, 'tech') as Record<string, { labels: L; pages: Record<TechSlug, Tech> }>;
+export const techLabels = { ...techLabelsBase, ...Object.fromEntries(Object.entries(techMore).map(([l, v]) => [l, v.labels])) } as Record<Lang, L>;
+export const tech: Record<Lang, Record<TechSlug, Tech>> = { ...techBase, ...Object.fromEntries(Object.entries(techMore).map(([l, v]) => [l, v.pages])) } as Record<Lang, Record<TechSlug, Tech>>;
