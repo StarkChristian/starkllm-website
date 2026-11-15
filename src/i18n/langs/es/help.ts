@@ -101,5 +101,6 @@ export default {
       ['Velocidad', 'Los PC que solo usan la CPU son lentos; véase el problema 13.'],
     ],
   },
+  labels: { cause: 'Causa probable', fix: 'Qué hacer', jump: 'Ir a', toc: ['Lista de comprobación', 'Problemas', 'Obtener ayuda', 'Límites'] },
   cta: { h2: 'Volver a las guías', manual: 'Manual de usuario', download: 'Descarga', contact: 'Contacta con nosotros' },
 };

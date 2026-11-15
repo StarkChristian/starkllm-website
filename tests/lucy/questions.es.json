@@ -1,0 +1,449 @@
+{
+ "questions": [
+  {
+   "q": "¿Qué es exactamente StarkLLM?",
+   "pages": [
+    "/es/about",
+    "/es/",
+    "/es/manual",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿De verdad es gratis?",
+   "pages": [
+    "/es/download",
+    "/es/contact",
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Tengo que pagar algo?",
+   "pages": [
+    "/es/download",
+    "/es/contact",
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Con qué licencia se distribuye el programa?",
+   "pages": [
+    "/es/download",
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Mis datos se suben a algún sitio?",
+   "pages": [
+    "/es/tech-privacy",
+    "/es/",
+    "/es/contact",
+    "/es/download",
+    "/es/about",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Puede StarkLLM funcionar sin estar conectado a internet?",
+   "pages": [
+    "/es/tech-local-models",
+    "/es/tech-privacy",
+    "/es/",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cómo lo instalo en Windows?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/help",
+    "/es/"
+   ]
+  },
+  {
+   "q": "Windows muestra un aviso cuando abro el instalador, ¿qué hago?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Por qué Windows SmartScreen bloquea el instalador?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cómo puedo comprobar que el archivo del instalador no ha sido manipulado?",
+   "pages": [
+    "/es/download",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Cuánta memoria necesita mi ordenador?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Necesito una buena tarjeta gráfica?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/help",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Se puede usar en un Mac?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Es obligatorio tener Docker?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Cuánto dura el primer arranque?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿En qué idiomas puede leer cartas la bandeja de entrada?",
+   "pages": [
+    "/es/manual",
+    "/es/product",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Tiene interfaz en alemán?",
+   "pages": [
+    "/es/manual",
+    "/es/product",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Habrá soporte para el español?",
+   "pages": [
+    "/es/manual",
+    "/es/product",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Para qué sirve la bandeja de entrada?",
+   "pages": [
+    "/es/product",
+    "/es/",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Puedo añadir desde el móvil una foto de una carta?",
+   "pages": [
+    "/es/product",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Cómo detecta las cartas de estafa?",
+   "pages": [
+    "/es/product",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Qué modelos de IA ejecuta?",
+   "pages": [
+    "/es/tech-local-models",
+    "/es/manual",
+    "/es/help",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿Para qué sirve Ollama?",
+   "pages": [
+    "/es/tech-local-models",
+    "/es/help",
+    "/es/download",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Puedo usar modelos en línea como DeepSeek?",
+   "pages": [
+    "/es/tech-privacy",
+    "/es/manual",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Dónde veo de qué documento sale una respuesta?",
+   "pages": [
+    "/es/tech-rag",
+    "/es/product",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Qué es la generación aumentada por recuperación?",
+   "pages": [
+    "/es/tech-rag",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Qué es la base de conocimiento?",
+   "pages": [
+    "/es/tech-knowledge-base",
+    "/es/manual",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿En qué se diferencia un Workspace de la Knowledge Base?",
+   "pages": [
+    "/es/manual",
+    "/es/product",
+    "/es/tech-workspaces",
+    "/es/tech-knowledge-base"
+   ]
+  },
+  {
+   "q": "¿Qué formatos de archivo puedo subir?",
+   "pages": [
+    "/es/tech-multimodal",
+    "/es/download",
+    "/es/manual",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Puedo hablarle con la voz?",
+   "pages": [
+    "/es/tech-voice",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Cuántos temas de color hay?",
+   "pages": [
+    "/es/tech-themes",
+    "/es/",
+    "/es/manual",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿La IA ejecuta programas en mi ordenador sin preguntar?",
+   "pages": [
+    "/es/tech-local-tools",
+    "/es/manual",
+    "/es/product"
+   ]
+  },
+  {
+   "q": "¿Qué es la búsqueda híbrida?",
+   "pages": [
+    "/es/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "¿Qué es la fragmentación semántica?",
+   "pages": [
+    "/es/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "¿Cómo puedo escribiros por correo electrónico?",
+   "pages": [
+    "/es/contact",
+    "/es/about",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Quién ha desarrollado este software?",
+   "pages": [
+    "/es/about",
+    "/es/contact"
+   ]
+  },
+  {
+   "q": "¿Dónde encuentro el código en GitHub?",
+   "pages": [
+    "/es/about",
+    "/es/contact",
+    "/es/download",
+    "/es/help"
+   ]
+  },
+  {
+   "q": "He olvidado mi contraseña, ¿qué hago ahora?",
+   "pages": [
+    "/es/help"
+   ]
+  },
+  {
+   "q": "¿Cómo lo desinstalo?",
+   "pages": [
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿La página web usa cookies?",
+   "pages": [
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Por qué las respuestas son tan lentas?",
+   "pages": [
+    "/es/download",
+    "/es/help",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Qué datos guarda la web sobre los visitantes?",
+   "pages": [
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿StarkLLM envía telemetría?",
+   "pages": [
+    "/es/tech-privacy",
+    "/es/",
+    "/es/download",
+    "/es/contact",
+    "/es/manual",
+    "/es/about"
+   ]
+  },
+  {
+   "q": "¿Cuáles son los requisitos del sistema?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/"
+   ]
+  },
+  {
+   "q": "¿Qué hace la comprobación de actualizaciones?",
+   "pages": [
+    "/es/tech-privacy"
+   ]
+  },
+  {
+   "q": "¿Es de código abierto?",
+   "pages": [
+    "/es/about",
+    "/es/contact",
+    "/es/download"
+   ]
+  },
+  {
+   "q": "¿El programa puede borrar mis archivos?",
+   "pages": [
+    "/es/product",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Puedo usar StarkLLM con documentos confidenciales?",
+   "pages": [
+    "/es/tech-privacy",
+    "/es/",
+    "/es/about",
+    "/es/manual",
+    "/es/tech-local-models"
+   ]
+  },
+  {
+   "q": "¿Qué diferencia hay entre el chat normal y el chat con documentos?",
+   "pages": [
+    "/es/download",
+    "/es/manual",
+    "/es/tech-rag"
+   ]
+  },
+  {
+   "q": "¿Dónde se guardan mis datos y cómo hago una copia de seguridad?",
+   "pages": [
+    "/es/help",
+    "/es/tech-privacy",
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Qué pasa si Ollama no está en marcha?",
+   "pages": [
+    "/es/help",
+    "/es/manual",
+    "/es/download"
+   ]
+  },
+  {
+   "q": "¿Se pueden exportar las conversaciones?",
+   "pages": [
+    "/es/manual"
+   ]
+  },
+  {
+   "q": "¿Puedo cambiar el tema a modo oscuro?",
+   "pages": [
+    "/es/tech-themes",
+    "/es/",
+    "/es/manual",
+    "/es/product"
+   ]
+  }
+ ],
+ "unrelated": [
+  "¿Qué tiempo hace hoy en Madrid?",
+  "¿Quién ganó el último mundial de fútbol?",
+  "¿Cómo se hace una tortilla de patatas?",
+  "¿Cuál es la capital de Australia?",
+  "Escríbeme un poema sobre el mar",
+  "¿Puedes recomendarme una buena película?",
+  "¿Cuál es el mejor teléfono para comprar?",
+  "¿Cuánto mide el monte Everest?",
+  "Cuéntame un chiste",
+  "¿Cómo se aprende a tocar la guitarra?",
+  "Traduce buenos días al japonés",
+  "¿Quién es el presidente de Francia?"
+ ],
+ "advice": [
+  "¿Es legal usar esto en mi despacho de abogados?",
+  "¿Puedo demandaros si algo sale mal?",
+  "Necesito asesoramiento jurídico sobre mi contrato"
+ ]
+}
