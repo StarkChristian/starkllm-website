@@ -108,4 +108,20 @@ export default {
     lede: 'Découvrez l’architecture et les capacités de StarkLLM.',
   },
   cta: { h2: 'Envie d’essayer StarkLLM ?', text: 'Téléchargez la Windows Research Beta, gratuite et open source.', installer: `Télécharger l’installeur v${V}`, all: 'Tous les téléchargements', manual: 'Lire le manuel' },
+  // Descriptions des 13 thèmes, indexées par le nom exact du thème.
+  themeTexts: {
+    'Midnight Indigo': 'Une ardoise profonde et classique, avec un riche éclat d’indigo et de violet.',
+    'Cyberpunk Rose': 'Un rose et un rosé néon éclatants, avec une chaude lueur ambiante.',
+    'OLED Pitch Black': 'Un vrai noir pur #000000, pour un contraste maximal et une meilleure autonomie.',
+    'Liquid Glass': 'Un verre dépoli translucide, aux reflets irisés multicolores.',
+    'Matrix Emerald': 'Une matrice d’obsidienne avec des accents vert émeraude électrique.',
+    'Sunset Amber': 'Une ardoise volcanique avec des accents chauds d’ambre rougeoyant et de flammes.',
+    'Arctic Frost': 'Un bleu marine glacial avec un cyan cristallin et un bleu givré.',
+    'Daylight Minimal': 'Un look épuré de plein jour, avec des ombres douces et un contraste net.',
+    'Doodle Chat': 'Un papier chaleureux avec, en fond, de petites poupées, des cœurs, des lettres et des étoiles dessinés.',
+    'Doodle Night': 'Les mêmes dessins sur un fond de discussion sombre et apaisant.',
+    'Flower Meadow': 'De petites fleurs roses, lilas et pêche sur un rose pâle tout doux.',
+    'Matrix Code': 'Une pluie de code vert sur fond noir, dans une police à chasse fixe.',
+    'Starry Night': 'Un ciel nocturne paisible plein de petites étoiles, avec de chauds accents dorés.',
+  },
 };
