@@ -3,6 +3,7 @@
  "stop": [
   "a",
   "abbiamo",
+  "adesso",
   "agli",
   "ai",
   "al",
@@ -362,6 +363,7 @@
     "Chiama a casa?",
     "StarkLLM invia dati di utilizzo?",
     "Va bene per documenti riservati o sensibili?",
+    "Posso usarlo per documenti riservati?",
     "È sicuro per i miei documenti?"
    ],
    "page": "/it/tech-privacy",
@@ -452,7 +454,9 @@
     "Di che sistema operativo ho bisogno?",
     "Posso usarlo su un Mac?",
     "Esiste una versione per Linux?",
-    "Funziona con il mio sistema operativo?"
+    "Funziona con il mio sistema operativo?",
+    "Posso farlo girare su un Mac?",
+    "Funziona su macOS o su un computer Apple?"
    ],
    "page": "/it/download",
    "match": "Sistema operativo: Windows 10 o 11 con WSL2 attivato"
@@ -473,7 +477,9 @@
    "q": [
     "Quanto dura il primo avvio?",
     "Perché il primo avvio è così lungo?",
-    "Quanto è grande il download dei modelli?"
+    "Quanto è grande il download dei modelli?",
+    "Quanto tempo ci mette il primo avvio?",
+    "Cosa succede durante il primo avvio?"
    ],
    "page": "/it/download",
    "match": "Il primo avvio scarica il motore e i modelli di IA che ancora non hai"
@@ -529,7 +535,9 @@
     "Quali modelli di IA posso usare?",
     "Che cos'è Ollama?",
     "StarkLLM include un modello linguistico?",
-    "Quale modello devo scegliere?"
+    "Quale modello devo scegliere?",
+    "Quali modelli di IA esegue StarkLLM?",
+    "Che modelli usa?"
    ],
    "page": "/it/tech-local-models",
    "match": "Ollama è un programma gratuito che esegue modelli linguistici aperti"
@@ -632,6 +640,8 @@
     "Dove posso segnalare un bug?",
     "Come posso raggiungervi via e-mail?",
     "Come posso mettermi in contatto con voi?",
+    "Come posso scrivervi?",
+    "Posso scrivervi un'e-mail?",
     "Mi serve assistenza, a chi posso scrivere?",
     "Dove mando un commento o segnalo un problema?"
    ],
