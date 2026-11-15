@@ -53,6 +53,13 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/help"/>
   </url>
   <url>
+    <loc>https://www.starkllm.com/de/manual</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/manual"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/manual"/>
+  </url>
+  <url>
     <loc>https://www.starkllm.com/de/product</loc>
     <lastmod>2026-11-15</lastmod>
     <priority>0.6</priority>
@@ -159,6 +166,13 @@
     <loc>https://www.starkllm.com/manual</loc>
     <lastmod>2026-11-15</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/manual"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/manual"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/privacy-policy</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.starkllm.com/product</loc>
