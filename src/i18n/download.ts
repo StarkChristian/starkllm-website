@@ -1,5 +1,10 @@
 // Copy for the download page, EN and DE. German is a first draft and needs a native review before launch.
-import { V, SIZE_MB } from '../data/release';
+import { V, SIZE_MB, RELEASE } from '../data/release';
+
+// Sizes come from the release itself, so they cannot go stale (2.0.11 showed the 2.0.5 sizes).
+const mb = (b: number, locale: string) => (b / 1_000_000).toLocaleString(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const bytes = (b: number, locale: string) => b.toLocaleString(locale);
+const SETUP = RELEASE.setup.size, PORTABLE = RELEASE.portable.size;
 export const GITHUB_URL = 'https://github.com/StarkChristian/StarkLLM';
 
 export const consoleStep = `============================================
@@ -29,8 +34,8 @@ export const download = {
       facts: [
         ['Version', `v${V} (Native Desktop, starts its own engine)`],
         ['License', 'Apache 2.0 (open source)'],
-        ['Installer size', '199.1 MB (199,132,004 bytes, includes the engine)'],
-        ['Portable app size', '198.8 MB (198,811,759 bytes)'],
+        ['Installer size', `${mb(SETUP, 'en-US')} MB (${bytes(SETUP, 'en-US')} bytes)`],
+        ['Portable app size', `${mb(PORTABLE, 'en-US')} MB (${bytes(PORTABLE, 'en-US')} bytes)`],
       ],
       installer: `Download v${V} installer (.exe)`,
       portable: 'Portable (.exe)',
@@ -43,7 +48,7 @@ export const download = {
     },
     setup: {
       h2: 'Setup steps',
-      intro: 'Two programs are installed once, then StarkLLM does the rest. The first start downloads about 5 GB and builds the engine (10 to 20 minutes); later starts take seconds.',
+      intro: 'Two programs are installed once, then StarkLLM does the rest. The first start downloads the engine and the AI models you do not have yet (several GB, about 10 to 20 minutes); later starts take seconds.',
       steps: [
         { t: 'Install Docker Desktop', v: 'Install Docker Desktop (with WSL2) from docker.com, start it once and finish its setup. It may ask you to restart the PC.' },
         { t: 'Install Ollama', v: 'Install Ollama from ollama.com. You do not need to pull models by hand: StarkLLM downloads qwen2.5:7b and nomic-embed-text on its first start.' },
@@ -116,8 +121,8 @@ export const download = {
       facts: [
         ['Version', `v${V} (Native Desktop, startet seine Engine selbst)`],
         ['Lizenz', 'Apache 2.0 (Open Source)'],
-        ['Größe des Installers', '199,1 MB (199.132.004 Bytes, mit Engine)'],
-        ['Größe der portablen App', '198,8 MB (198.811.759 Bytes)'],
+        ['Größe des Installers', `${mb(SETUP, 'de-DE')} MB (${bytes(SETUP, 'de-DE')} Bytes)`],
+        ['Größe der portablen App', `${mb(PORTABLE, 'de-DE')} MB (${bytes(PORTABLE, 'de-DE')} Bytes)`],
       ],
       installer: `Installer v${V} herunterladen (.exe)`,
       portable: 'Portable (.exe)',
@@ -130,7 +135,7 @@ export const download = {
     },
     setup: {
       h2: 'Einrichtung',
-      intro: 'Zwei Programme installieren Sie einmal, den Rest erledigt StarkLLM. Der erste Start lädt etwa 5 GB und baut die Engine (10 bis 20 Minuten); spätere Starts dauern Sekunden.',
+      intro: 'Zwei Programme installieren Sie einmal, den Rest erledigt StarkLLM. Der erste Start lädt die Engine und die KI-Modelle, die noch fehlen (mehrere GB, etwa 10 bis 20 Minuten); spätere Starts dauern Sekunden.',
       steps: [
         { t: 'Docker Desktop installieren', v: 'Installieren Sie Docker Desktop (mit WSL2) von docker.com, starten Sie es einmal und schließen Sie die Einrichtung ab. Eventuell verlangt es einen Neustart.' },
         { t: 'Ollama installieren', v: 'Installieren Sie Ollama von ollama.com. Modelle müssen Sie nicht von Hand laden: StarkLLM lädt qwen2.5:7b und nomic-embed-text beim ersten Start.' },
