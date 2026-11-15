@@ -4,7 +4,7 @@ import '../styles/tokens.css';
 import '../styles/site.css';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import type { Lang } from '../i18n/ui';
+import { alternatesFor, absoluteUrl, languages, type Lang } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -12,25 +12,32 @@ interface Props {
   canonical?: string;
   /** Raw meta/link/JSON-LD tags (OG, Twitter, structured data). */
   headExtra?: string;
+  /** Language of the interface (navigation, footer). */
   lang?: Lang;
+  /** Language of the page text if it differs from the interface, e.g. the German legal pages in the English interface. */
+  contentLang?: string;
   /** Path of this page without locale prefix. */
   path?: string;
   getLabel: string;
   alternates?: { hreflang: string; href: string }[];
 }
-const { title, description, canonical, headExtra = '', lang = 'en', path = '/', getLabel, alternates = [] } = Astro.props;
+const { title, description, canonical, headExtra = '', lang = 'en', contentLang, path = '/', getLabel, alternates } = Astro.props;
+// Canonical and hreflang follow from lang + path unless the page gives its own (a page's raw head may already contain a canonical).
+const ownCanonical = headExtra.includes('rel="canonical"');
+const canonicalUrl = canonical ?? (ownCanonical ? undefined : absoluteUrl(lang, path));
+const hreflangs = alternates ?? alternatesFor(path);
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={contentLang ?? lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#07060b" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    {canonical && <link rel="canonical" href={canonical} />}
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <Fragment set:html={headExtra} />
-    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    {hreflangs.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     <link rel="icon" href="/favicon.ico?v=10" sizes="any" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=10" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10" />
