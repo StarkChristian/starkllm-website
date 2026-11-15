@@ -11,6 +11,8 @@
     <loc>https://www.starkllm.com/about</loc>
     <lastmod>2026-11-15</lastmod>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/about"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/contact</loc>
@@ -28,6 +30,13 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/"/>
+  </url>
+  <url>
+    <loc>https://www.starkllm.com/de/about</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.starkllm.com/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.starkllm.com/de/about"/>
   </url>
   <url>
     <loc>https://www.starkllm.com/de/download</loc>
