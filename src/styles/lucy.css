@@ -104,7 +104,7 @@
 
 /* ---- Lucy on the site ---------------------------------------------------- */
 /* Hidden by the visitor ("Hide Lucy"): html[data-lucy="off"] is set by a tiny script in <head> before the first paint, so nothing jumps. */
-html[data-lucy="off"] .lucy-fig, html[data-lucy="off"] .lucy-say:not([data-keep]), html[data-lucy="off"] .lucy-lost, html[data-lucy="off"] .lucy-tour-btn, html[data-lucy="off"] .lucy-on { display: none !important; }
+html[data-lucy="off"] .lucy-fig, html[data-lucy="off"] .lucy-say:not([data-keep]), html[data-lucy="off"] .lucy-lost, html[data-lucy="off"] .lucy-tour-btn, html[data-lucy="off"] .lucy-on, html[data-lucy="off"] .lucy-dock, html[data-lucy="off"] .lucy-panel { display: none !important; }
 html:not([data-lucy="off"]) .lucy-off { display: none !important; }
 
 .lucy-say { --lucy-w: 120px; display: flex; align-items: flex-end; gap: 1.1rem; margin-top: 2rem; max-width: 46rem; }
@@ -160,13 +160,9 @@ html[data-lucy="off"] .lucy-say[data-keep] .lucy-bubble::after { display: none; 
 .lucy-about { max-width: 78ch; margin-top: 1.5rem; }
 .lucy-about .lucy-fig { --lucy-w: 110px; }
 
-/* Strip at the end of the page: tour button and hide/show */
-.lucy-strip { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1rem; margin-top: 5rem; padding: .9rem 1.1rem; border: 1px solid var(--c-line); border-radius: 16px; background: var(--c-surface); font-size: .95rem; color: var(--c-muted); }
-.lucy-strip img { width: 36px; height: 36px; border-radius: 10px; }
-.lucy-strip .lucy-btns { margin-left: auto; }
 
 /* While the tour runs, the other Lucys on the page step aside (visibility keeps their space, so nothing moves) */
-.lucy-touring .lucy-fig, .lucy-touring .lucy-lost { visibility: hidden; }
+.lucy-touring .lucy-fig, .lucy-touring .lucy-lost, .lucy-touring .lucy-dock, .lucy-touring .lucy-panel { visibility: hidden; }
 
 /* The guided tour: Lucy walks along the bottom edge. The container ignores the mouse; only the bubble and its buttons take clicks. */
 .lucy-host { position: fixed; left: 0; bottom: 8px; z-index: 60; pointer-events: none; }
@@ -176,8 +172,57 @@ html[data-lucy="off"] .lucy-say[data-keep] .lucy-bubble::after { display: none; 
 .lucy-pop p { margin: 0 0 .75rem; }
 @media (max-width: 600px) {
   .lucy-pop { font-size: .9rem; padding: .75rem .9rem .85rem; max-height: 45vh; overflow: auto; }
-  .lucy-strip .lucy-btns { margin-left: 0; }
   .lucy-say { margin-top: 1.4rem; gap: .8rem; }
   .lucy-say .lucy-fig { --lucy-w: 84px !important; }
 }
-@media print { .lucy-say, .lucy-strip, .lucy-lost, .lucy-host { display: none !important; } }
+
+
+/* ---- The dock: Lucy in the bottom-right corner of every page ------------------------------------------------------- */
+.lucy-dock { position: fixed; left: 0; top: 0; z-index: 55; width: 72px; pointer-events: none; opacity: 0; will-change: transform; }
+.lucy-js .lucy-dock { opacity: 1; }
+.lucy-dock.lucy-shift { transition: transform .4s ease; }
+.lucy-dock-btn { pointer-events: auto; display: block; width: 100%; padding: 0; background: none; border: 0; border-radius: 16px; cursor: pointer; color: inherit; }
+.lucy-dock-btn .lucy { width: 100%; height: auto; }
+.lucy-dock-x { pointer-events: auto; position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; padding: 0; border-radius: 50%; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 400 16px/1 var(--font-body); cursor: pointer; }
+.lucy-dock-x:hover, .lucy-dock-btn:hover + .lucy-dock-x { border-color: var(--c-violet-soft); }
+.lucy-chip { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 55; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 600 .85rem var(--font-body); cursor: pointer; }
+html[data-lucy="off"] .lucy-chip { display: block; }
+.lucy-chip:hover { border-color: var(--c-violet-soft); }
+.lucy-slot { aspect-ratio: 1080 / 1050; }
+@media (prefers-reduced-motion: reduce) {
+  .lucy-hero .lucy-slot { display: none; }
+  .lucy-hero .lucy-bubble::after { display: none; }
+}
+
+/* ---- The chat panel: a non-modal dialog above her; a bottom sheet on phones ----------------------------------------- */
+.lucy-panel { position: fixed; z-index: 58; right: 16px; bottom: 100px; width: min(380px, calc(100vw - 32px)); max-height: min(560px, calc(100vh - 120px)); display: flex; flex-direction: column; gap: .6rem; padding: .9rem 1rem 1rem; background: var(--c-surface-2); border: 1px solid rgba(212, 175, 55, .6); border-radius: 18px; box-shadow: 0 24px 70px -20px rgba(0, 0, 0, .85); color: var(--c-fg); font-size: .95rem; line-height: 1.5; }
+.lucy-panel[hidden] { display: none; }
+.lucy-panel-head { display: flex; align-items: center; justify-content: space-between; font: 700 1.05rem var(--font-display); }
+.lucy-panel-x { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--c-line); background: transparent; color: var(--c-fg); font: 400 20px/1 var(--font-body); cursor: pointer; }
+.lucy-panel-x:hover { border-color: var(--c-violet-soft); }
+.lucy-panel-note { margin: 0; font-size: .8rem; line-height: 1.45; color: var(--c-muted); }
+.lucy-log { flex: 1 1 auto; min-height: 90px; overflow-y: auto; display: flex; flex-direction: column; gap: .6rem; padding: .2rem .1rem; overscroll-behavior: contain; }
+.lucy-msg { max-width: 92%; padding: .55rem .75rem; border-radius: 14px; background: var(--c-surface); border: 1px solid var(--c-line); }
+.lucy-msg-u { align-self: flex-end; background: rgba(140, 20, 252, .22); border-color: rgba(183, 119, 255, .45); }
+.lucy-msg p { margin: 0; color: inherit; }
+.lucy-msg p + p, .lucy-msg ul { margin-top: .4rem; }
+.lucy-src { font-size: .85rem; color: var(--c-muted); }
+.lucy-src a, .lucy-links a { color: var(--c-violet-soft); }
+.lucy-links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .9rem; }
+.lucy-wait { font-size: .85rem; color: var(--c-muted); }
+.lucy-sugg { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; font-size: .8rem; color: var(--c-muted); }
+.lucy-chipbtn { font: inherit; font-size: .82rem; color: var(--c-fg); background: transparent; border: 1px solid var(--c-line); border-radius: 999px; padding: .25rem .7rem; cursor: pointer; }
+.lucy-chipbtn:hover { border-color: var(--c-violet-soft); }
+.lucy-form { display: flex; gap: .5rem; }
+.lucy-form input { flex: 1 1 auto; min-width: 0; padding: .55rem .8rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-bg); color: var(--c-fg); font: inherit; }
+.lucy-form input::placeholder { color: var(--c-muted); }
+.lucy-panel-foot { display: flex; flex-wrap: wrap; gap: .4rem; }
+.lucy-panel-foot .lucy-btn { font-size: .8rem; padding: .3rem .75rem; }
+.lucy-sugg[hidden] { display: none; }
+.lucy-log { min-height: 150px; }
+.lucy-panel button:focus-visible, .lucy-panel input:focus-visible, .lucy-panel a:focus-visible, .lucy-dock button:focus-visible, .lucy-chip:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 2px; }
+@media (max-width: 600px) {
+  .lucy-panel { left: 0 !important; right: 0 !important; bottom: 0 !important; width: auto; max-height: 72vh; border-radius: 18px 18px 0 0; padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .lucy-chat-open .lucy-dock { visibility: hidden; }
+}
+@media print { .lucy-say, .lucy-lost, .lucy-host, .lucy-dock, .lucy-panel, .lucy-chip { display: none !important; } }

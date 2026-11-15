@@ -1,22 +1,12 @@
 // Lucy's tour: she walks along the bottom edge, stops under the part of the page she explains and says one sentence.
 // No dependencies, no words: texts come from #lucy-data (built from src/i18n/lucy.ts).
 // Not started by the page, only by a click on [data-lucy-tour]. Reduced motion: she does not walk, she just appears.
+import { root, reduce, setHidden, readData } from './lucy-common';
 type Step = { sel: string; text: string };
-type Data = { labels: Record<string, string>; steps: Step[] };
 
-const KEY = 'lucy-hidden';
-const root = document.documentElement;
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const SIZE = 96;
-
-const read = (): Data | null => {
-  try { return JSON.parse(document.getElementById('lucy-data')?.textContent || ''); } catch { return null; }
-};
-const data = read();
+const data = readData();
 const tpl = document.getElementById('lucy-tpl') as HTMLTemplateElement | null;
-
-const store = (v: boolean) => { try { localStorage.setItem(KEY, v ? '1' : '0'); } catch { /* storage blocked: the choice just lasts for this page */ } };
-const setHidden = (v: boolean) => { v ? root.setAttribute('data-lucy', 'off') : root.removeAttribute('data-lucy'); store(v); };
 
 // Nothing animates while the tab is hidden
 document.addEventListener('visibilitychange', () => root.classList.toggle('lucy-paused', document.hidden));
@@ -124,5 +114,5 @@ document.addEventListener('click', (e) => {
   const t = e.target as HTMLElement | null;
   const tour = t?.closest<HTMLElement>('[data-lucy-tour]');
   if (tour) { start(tour); return; }
-  if (t?.closest('[data-lucy-toggle]')) { stop?.(); setHidden(root.getAttribute('data-lucy') !== 'off'); }
+
 });

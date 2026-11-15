@@ -26,20 +26,27 @@ npm run check-links    # build first; checks every local href/src in dist/
 | `mockups/` | The three design directions (A was chosen). Not built. |
 | `downloads/` | Gitignored. Installers are on GitHub Releases, not on this site. |
 
-## Lucy (the mascot)
+## Lucy (the mascot and website assistant)
 
-Lucy is the StarkLLM robot. She appears on the home, product, download, feature (`tech-*`) and About pages and on the 404 page; Help and Manual get only the tour button at the end of the page. She never appears on legal pages (imprint, privacy policy and its English courtesy translation) or pages that ask for the visitor's full attention (the list is `lucyProfile()` in `src/i18n/lucy.ts`; a page not listed there gets no Lucy).
+Lucy is docked in the bottom-right corner of every page (home: she starts in the hero and walks down while you scroll). Click her and she answers questions about StarkLLM from this website's own pages, entirely in the browser: no LLM, no server, nothing is sent anywhere. The plan, the decisions and why are in `docs/lucy-assistant.md`.
 
 | Path | What |
 |---|---|
 | `src/components/Lucy.astro` | The figure as inline SVG. Props: `state` (idle, wave, walk, point, talk, celebrate), `pose` (static), `size`, `title`, `uid`. |
-| `src/components/LucySay.astro` | Lucy with a speech bubble, in the page flow. `keep` leaves the text visible as a plain note when she is hidden. |
-| `src/components/LucyGuide.astro` + `src/scripts/lucy-guide.ts` | The strip at the end of a page ("Show me around", "Hide Lucy") and the tour. The tour starts only on a click; she walks along the bottom edge. About 1.5 KB gzipped, no dependencies. |
-| `src/i18n/lucy.ts` | Every word she says (English, German) and the tour steps (CSS selector plus sentence per page type). The scripts contain no words. |
-| `src/styles/lucy.css` | Animations and layout. Reduced motion: static poses only, no walking. |
-| `public/assets/lucy/` | `lucy.svg` (animated, standalone), `png/` (poses), `lucy-face-{32,64,180}.png`, `og-lucy.png` (Open Graph, used by the home page). `tools/lucy/make_assets.py` makes the face and Open Graph images. |
+| `src/components/LucySay.astro` | Lucy with a speech bubble in the page flow (explanations next to screenshots, SmartScreen note, privacy note, About). |
+| `src/components/LucyGuide.astro` | The dock markup, the page data (JSON: labels, chat strings, tour steps) and the scripts. On every page. |
+| `src/scripts/lucy-dock.ts` | Always loaded (about 3 KB gzipped with the tour): position, descent on the home page, footer and link avoidance, hide. |
+| `src/scripts/lucy-chat.ts` + `lucy-engine.js` | The chat panel and the answer engine (BM25 + curated FAQ). Loaded on first click. |
+| `src/scripts/lucy-guide.ts` | The visitor-started "Show me around" tour (not on legal pages). |
+| `tools/build-lucy-index.mjs` | After `astro build`: reads `dist/**/*.html`, writes `dist/assets/lucy/index-<lang>.json`. |
+| `tools/test-lucy.mjs`, `tests/lucy/` | Quality gate in `npm run build`: questions with expected source pages, unrelated questions, legal-advice questions. `npm run test-lucy` lists every miss. |
+| `src/data/lucy-faq/<lang>.json` | Per language: stop words, suffixes, curated FAQ (questions plus a phrase that must exist on a page; the build fails if it does not). |
+| `src/i18n/lucy.ts` | Every word she says (English, German): chat, bubbles, tour steps. The scripts contain no words. |
+| `public/assets/lucy/` | `lucy.svg`, `png/` poses, `lucy-face-{32,64,180}.png`, `og-lucy.png` (Open Graph, home page only). `tools/lucy/make_assets.py` makes the face and Open Graph images. |
 
-Rules: no sound, no autoplay; she never covers links (inline figures sit in the page flow; the tour is started by the visitor); the choice "Hide Lucy" is kept in `localStorage` (key `lucy-hidden`, wrapped in try/catch) and applied before the first paint, so nothing jumps.
+Rules: no sound, no autoplay; `prefers-reduced-motion` means no walking and no looping animation; the dock moves aside when links, buttons or fields would be under her and stays above the footer; "Hide Lucy" is kept in `localStorage` (key `lucy-hidden`, try/catch) and applied before the first paint; the conversation lives in `sessionStorage` only; on imprint, privacy policy and code signing policy she never opens a bubble, gives no legal advice and answers only from the open page (in German, the language of those texts).
+
+Adding a language: add `src/data/lucy-faq/<lang>.json`, the `chat` block and tour steps in `src/i18n/lucy.ts`, and `tests/lucy/questions.<lang>.json`.
 
 ## Release data
 
