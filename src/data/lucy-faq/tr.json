@@ -2169,6 +2169,21 @@
    ],
    "page": "/tr/product",
    "match": "Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM’i kapattıktan sonra çalışmaya devam ediyor",
+    "StarkLLM’den çıktıktan sonra neden hâlâ çalışıyor?",
+    "StarkLLM’i kapattım ama Docker Desktop hâlâ açık",
+    "StarkLLM’i tamamen nasıl durdururum?",
+    "Uygulamayı kapatınca Docker çalışmaya devam ediyor",
+    "Uygulamayı kapattığımda Docker neden hâlâ etkin?",
+    "StarkLLM hâlâ arka planda çalışıyor mu?",
+    "StarkLLM motorunu ve kapsayıcılarını nasıl durdururum?"
+   ],
+   "page": "/tr/manual",
+   "match": "böylece bir sonraki açılış yalnızca yaklaşık bir buçuk saniye sürer"
   }
  ]
 }

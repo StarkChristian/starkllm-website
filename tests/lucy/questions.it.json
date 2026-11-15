@@ -386,6 +386,18 @@
     "/it/manual",
     "/it/tech-local-models"
    ]
+  },
+  {
+   "q": "È normale che StarkLLM continui a funzionare in background dopo la chiusura?",
+   "pages": [
+    "/it/manual"
+   ]
+  },
+  {
+   "q": "Come spengo il motore di StarkLLM e Docker dopo aver chiuso l’app?",
+   "pages": [
+    "/it/manual"
+   ]
   }
  ],
  "unrelated": [

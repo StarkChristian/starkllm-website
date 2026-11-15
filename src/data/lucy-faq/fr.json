@@ -696,6 +696,21 @@
    ],
    "page": "/fr/product",
    "match": "Il ne renomme, ne déplace et ne supprime jamais vos fichiers"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "StarkLLM continue de tourner après sa fermeture",
+    "Pourquoi StarkLLM tourne-t-il encore après que je l’ai quitté ?",
+    "Docker Desktop reste ouvert après la fermeture de StarkLLM",
+    "Comment arrêter complètement StarkLLM ?",
+    "Docker continue de tourner quand je ferme l’application",
+    "Pourquoi Docker reste-t-il actif quand je ferme l’application ?",
+    "StarkLLM tourne-t-il encore en arrière-plan ?",
+    "Comment arrêter le moteur StarkLLM et ses conteneurs ?"
+   ],
+   "page": "/fr/manual",
+   "match": "pour que le prochain démarrage ne prenne qu’environ une seconde et demie"
   }
  ]
 }
