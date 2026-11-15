@@ -4,6 +4,8 @@ import '../styles/tokens.css';
 import '../styles/site.css';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import LucyGuide from '../components/LucyGuide.astro';
+import { lucyProfile } from '../i18n/lucy';
 import type { Lang } from '../i18n/ui';
 
 interface Props {
@@ -19,6 +21,8 @@ interface Props {
   alternates?: { hreflang: string; href: string }[];
 }
 const { title, description, canonical, headExtra = '', lang = 'en', path = '/', getLabel, alternates = [] } = Astro.props;
+// Lucy (the mascot) appears only on pages that have a profile; legal pages never do (see src/i18n/lucy.ts).
+const lucyKind = lucyProfile(path);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -35,6 +39,7 @@ const { title, description, canonical, headExtra = '', lang = 'en', path = '/', 
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=10" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10" />
     <link rel="manifest" href="/site.webmanifest" />
+    {lucyKind && <script is:inline>try{if(localStorage.getItem('lucy-hidden')==='1')document.documentElement.setAttribute('data-lucy','off')}catch(e){}</script>}
     <script is:inline defer src="https://umami.homomorphicprivacy.com/script.js?v=9" data-website-id="42210010-d059-4616-bfe7-a7d12cde5f09"></script>
   </head>
   <body>
@@ -42,6 +47,7 @@ const { title, description, canonical, headExtra = '', lang = 'en', path = '/', 
     <div class="wrap">
       <SiteNav lang={lang} path={path} getLabel={getLabel} />
       <main id="main"><slot /></main>
+      {lucyKind && <LucyGuide lang={lang} profile={lucyKind} />}
       <SiteFooter lang={lang} />
     </div>
     <script>

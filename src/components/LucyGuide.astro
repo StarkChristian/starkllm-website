@@ -1,0 +1,29 @@
+---
+// The visitor-started tour. At the end of the page: a small strip with "Show me around" and "Hide Lucy".
+// Nothing starts by itself. The words come from src/i18n/lucy.ts and reach the script as JSON.
+import Lucy from './Lucy.astro';
+import { lucy, type LucyProfile } from '../i18n/lucy';
+import type { Lang } from '../i18n/ui';
+
+interface Props { lang?: Lang; profile: LucyProfile }
+const { lang = 'en', profile } = Astro.props;
+const t = lucy[lang];
+const steps = t.tours[profile];
+const data = {
+  labels: { next: t.next, finish: t.finish, stop: t.stop, hide: t.hide, step: t.step },
+  steps,
+};
+---
+<aside class="lucy-strip" aria-label={t.title}>
+    <img src="/assets/lucy/lucy-face-64.png" alt="" width="36" height="36" />
+    <span>{t.stripText}</span>
+    <div class="lucy-btns">
+      {steps.length > 0 && <button type="button" class="lucy-btn primary lucy-tour-btn" data-lucy-tour>{t.tour}</button>}
+      <button type="button" class="lucy-btn" data-lucy-toggle>
+        <span class="lucy-on">{t.hide}</span><span class="lucy-off">{t.show}</span>
+      </button>
+    </div>
+</aside>
+{steps.length > 0 && <template id="lucy-tpl"><Lucy lang={lang} state="point" size={96} uid="lucy-tour" /></template>}
+{steps.length > 0 && <script type="application/json" id="lucy-data" set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />}
+<script>import '../scripts/lucy-guide.ts';</script>

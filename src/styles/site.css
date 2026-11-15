@@ -253,8 +253,8 @@ pre { max-width: 100%; }
 .tech-sec h2 { font-size: 1.35rem; margin-bottom: .6rem; }
 .tech-sec p { color: var(--c-muted); max-width: 62ch; line-height: 1.7; }
 .tech-sec .check { margin-top: .9rem; }
-.tech-body figure { position: sticky; top: 2rem; }
-@media (max-width: 860px) { .tech-body { grid-template-columns: 1fr; } .tech-body figure { position: static; } }
+.tech-fig { position: sticky; top: 2rem; }
+@media (max-width: 860px) { .tech-body { grid-template-columns: 1fr; } .tech-fig { position: static; } }
 
 /* older content pages (about, contact, legal, manual, 404) inside the new layout */
 .legacy-body { --text-primary: var(--c-fg); --text-secondary: var(--c-muted); --accent: var(--c-violet-soft); --border: var(--c-line); padding-block: 3rem 5rem; }
