@@ -47,7 +47,7 @@ Lucy is docked in the bottom-right corner of every page (home: she starts in the
 | `src/i18n/lucy.ts` | Every word she says (English, German): chat, bubbles, tour steps. The scripts contain no words. |
 | `public/assets/lucy/` | `lucy.svg`, `png/` poses, `lucy-face-{32,64,180}.png`, `og-lucy.png` (Open Graph, home page only). `tools/lucy/make_assets.py` makes the face and Open Graph images. |
 
-Rules: no sound, no autoplay; `prefers-reduced-motion` means no walking and no looping animation; the dock moves aside when links, buttons or fields would be under her and stays above the footer; "Hide Lucy" is kept in `localStorage` (key `lucy-hidden`, try/catch) and applied before the first paint; the conversation lives in `sessionStorage` only; on imprint, privacy policy and code signing policy she never opens a bubble, gives no legal advice and answers only from the open page (in German, the language of those texts).
+Rules: no sound, no autoplay; `prefers-reduced-motion` means no walking and no looping animation; the dock moves aside when links, buttons or fields would be under her and stays above the footer; "Hide Lucy" is kept in `localStorage` (key `lucy-hidden`, try/catch) and applied before the first paint; the conversation lives in `sessionStorage` only; on imprint and privacy policy she never opens a bubble, gives no legal advice and answers only from the open page (in German, the language of those texts).
 
 Adding a language: add `src/data/lucy-faq/<lang>.json`, the `chat` block and tour steps in `src/i18n/lucy.ts`, and `tests/lucy/questions.<lang>.json`.
 

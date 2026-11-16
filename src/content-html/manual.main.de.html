@@ -112,7 +112,7 @@
 
             <section id="installation">
                 <h2>7. Installation im Überblick</h2>
-                <p>Zur Installation bereiten Sie zuerst Ihren Rechner vor und führen dann den Launcher aus:</p>
+                <p>Zur Installation bereiten Sie zuerst Ihren Rechner vor und führen dann den Installer aus:</p>
                 <ol>
                     <li>Stellen Sie sicher, dass Docker Desktop installiert ist und läuft.</li>
                     <li>Installieren Sie Ollama von <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.
@@ -124,7 +124,7 @@
                         </div>
                     </li>
                     <li>Installieren Sie <code>StarkLLM-v{{V}}-Setup.exe</code> (empfohlen). Beim ersten Start startet die App Docker Desktop und Ollama, lädt die Modelle herunter und baut ihre Engine; danach zeigt sie StarkLLM in einem eigenen Fenster.</li>
-<li>Entwickler können stattdessen das Projekt von GitHub herunterladen (<em>Code &rarr; Download ZIP</em>), es vollständig entpacken und die Dienste in diesem Ordner mit <code>start.exe</code>, <code>start.cmd</code> oder <code>docker compose up --build -d</code> starten.</li>
+<li>Entwickler können die Engine stattdessen aus dem Quellcode auf GitHub mit <code>docker compose up --build -d</code> starten (siehe Option 2 im nächsten Abschnitt).</li>
 </ol>
 <p>Zu jedem Schritt gibt es einen Test und eine Lösungsliste auf der Seite <a href="/de/help">Hilfe &amp; Problemlösung</a>.</p>
             </section>
@@ -141,35 +141,19 @@
                     Fehlt ein Teil, nennt das Fenster, welcher, und wie Sie ihn beheben (Protokoll: <code>%APPDATA%\StarkLLM\engine.log</code>).
                 </div>
 
-                <div class="alert warning">
-                    <h4>⚠️ Hinweis zu Windows SmartScreen / Ausführung</h4>
-                    <p>Dateien, die aus heruntergeladenen ZIP-Archiven entpackt wurden, tragen das Attribut <em>Mark of the Web (MOTW)</em>.
-                        Klicken Sie beim Ausführen von <code>start.exe</code> auf <strong>Weitere Informationen</strong> &rarr; <strong>Trotzdem
-                            ausführen</strong>, oder führen Sie <code>unblock.ps1</code> in PowerShell aus, um das Attribut
-                        lokal zu entfernen.</p>
+                <div class="alert info" id="signature">
+                    <h4>Signatur des Installers prüfen</h4>
+                    <p>Seit v2.1.0 sind der Installer, StarkLLM.exe und das Deinstallationsprogramm von „Open Source Developer Christian Stark“ signiert (Certum-Zertifikat mit Zeitstempel), damit Windows den Herausgeber überprüfen kann. So prüfen Sie es: Rechtsklick auf <code>StarkLLM-v{{V}}-Setup.exe</code>, <strong>Eigenschaften</strong>, Registerkarte <strong>Digitale Signaturen</strong>. Als Signaturgeber muss „Open Source Developer Christian Stark“ stehen, und unter <strong>Details</strong> muss „Diese digitale Signatur ist gültig.“ stehen. Vergleichen Sie außerdem die SHA-256-Prüfsumme mit der auf der <a href="/de/download">Download-Seite</a>.</p>
+                    <p>Warnt SmartScreen oder Smart App Control trotzdem, fahren Sie nur fort, wenn Name und Prüfsumme stimmen (bei SmartScreen: <strong>Weitere Informationen</strong> &rarr; <strong>Trotzdem ausführen</strong>). Andernfalls führen Sie die Datei nicht aus: Laden Sie sie erneut herunter und schreiben Sie uns an <a href="mailto:info@starkllm.com">info@starkllm.com</a>. Schalten Sie Smart App Control, SmartScreen oder andere Sicherheitseinstellungen nie ab, um StarkLLM zu installieren.</p>
                 </div>
 
                 <h3>Option 1 &mdash; Windows-Desktop-Installer (empfohlen)</h3>
                 <p>Führen Sie <code>StarkLLM-v{{V}}-Setup.exe</code> aus, um die native Windows-App zu installieren. Sie legt Verknüpfungen auf dem Desktop und im Startmenü an. Beim Start startet sie Docker Desktop und Ollama, lädt fehlende Modelle herunter, baut und startet die StarkLLM-Engine und zeigt StarkLLM dann in einem eigenen Fenster. Die Daten liegen in <code>%APPDATA%\StarkLLM\data</code>, der Ordner der Wissensdatenbank ist <code>Documents\StarkLLM Knowledge Base</code>. (v2.0.0 startete nichts und wartete nur auf &bdquo;Connecting to local engine&hellip;&ldquo;.)</p>
 
-                <h3>Option 2 &mdash; Launcher start.exe / start.cmd</h3>
-                <p>StarkLLM enthält einen eigenständigen Launcher <code>start.exe</code>, der automatisch den Status von Docker Desktop prüft, die Verfügbarkeit von Ollama prüft, Container startet und das native Desktop-Fenster öffnet.
-                </p>
-                <ol>
-                    <li>Öffnen Sie den entpackten Ordner im Datei-Explorer.</li>
-                    <li>Doppelklicken Sie auf <code>start.exe</code> oder führen Sie in der Eingabeaufforderung aus: <code>start.exe</code> (PowerShell: <code>.\start.exe</code>).</li>
-                </ol>
-
-                <h3>Option 3 &mdash; Docker Compose direkt</h3>
+                <h3>Option 2 &mdash; Docker Compose direkt</h3>
                 <p>Für Headless- oder Serverumgebungen starten Sie die Container direkt im Terminal:</p>
                 <p><code>docker compose up --build -d</code></p>
 
-                <h3>Option 4 &mdash; unblock.ps1 ausführen (wenn die Ausführung blockiert wird)</h3>
-                <p>Wenn Windows SmartScreen oder Ausführungsrichtlinien die Ausführung von Skripten verhindern, öffnen Sie PowerShell im entpackten Ordner und führen Sie aus:</p>
-                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
-                <p>Führen Sie nach <code>unblock.ps1</code> die Datei <code>start.exe</code> oder <code>start.cmd</code> (oder
-                    <code>start.bat</code>) aus.
-                </p>
             </section>
 
             <section id="first-week">
@@ -274,24 +258,7 @@
                 </div>
 
                 <h3>Einen Ordner der Wissensdatenbank hinzufügen</h3>
-                <p>Registrieren Sie einen Ordner über den Launcher in Ihrem Terminal:</p>
-                <ul>
-                    <li><strong>Interaktiv:</strong> Drücken Sie, nachdem <code>start.exe</code> den Start abgeschlossen hat,
-                        <code>[A]</code> in der Launcher-Konsole und fügen Sie auf Nachfrage den vollständigen Windows-Pfad ein (z. B.
-                        <code>C:\Users\me\research</code>).
-                    </li>
-                    <li><strong>CLI-Parameter:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code>
-                    </li>
-                </ul>
-
-                <div class="alert warning">
-                    <h4>⚠️ Fügen Sie keine Windows-Pfade in die Weboberfläche ein</h4>
-                    <p>Das browserbasierte Panel der Wissensdatenbank akzeptiert keine rohen Windows-Pfade wie
-                        <code>C:\Users\...</code>. Registrieren Sie Ordner immer über den Launcher (<code>[A]</code> oder
-                        <code>--add-folder</code>). Die Weboberfläche zeigt einen Fehler an, wenn ein Windows-Pfad
-                        direkt eingegeben wird.
-                    </p>
-                </div>
+                <p>Öffnen Sie in der App links <strong>Wissensdatenbank</strong>. Legen Sie Dokumente in Ihren Wissensordner (der Pfad steht unter <em>Ihr Wissensordner</em>; <strong>Pfad kopieren</strong> kopiert ihn), oder klicken Sie auf <strong>Ordner hinzufügen</strong>, um einen weiteren Ordner auf diesem PC aufzunehmen. StarkLLM liest neue und geänderte Dateien von selbst; <strong>Jetzt abgleichen</strong> erledigt das sofort. Ein Terminal brauchen Sie dafür nicht.</p>
 
                 <div class="alert info">
                     <h4>Hinweise zur Wissensdatenbank</h4>
@@ -528,8 +495,7 @@
                         Quellcode einsehen oder dazu beitragen?</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 0;">Besuchen Sie <a
                             href="https://github.com/StarkChristian/StarkLLM" target="_blank"
-                            rel="noopener">github.com/StarkChristian/StarkLLM</a>, um den Quellcode zu prüfen, die Launcher
-                        anzusehen und Issues zu eröffnen.</p>
+                            rel="noopener">github.com/StarkChristian/StarkLLM</a>, um den Quellcode zu prüfen und Issues zu eröffnen.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

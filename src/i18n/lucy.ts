@@ -15,12 +15,12 @@ export function lucyProfile(path: string): LucyProfile | null {
   if (p === '/about') return 'about';
   if (p === '/404') return 'lost';
   if (p.startsWith('/tech-')) return 'tech';
-  // Everything else (imprint, privacy policy and its translation, code signing policy, contact, ...) stays Lucy-free.
+  // Everything else (imprint, privacy policy and its translation, contact, ...) stays Lucy-free.
   return null;
 }
 
 /** The imprint and the privacy policy are German texts: Lucy speaks German there, whatever the interface language is. */
-export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz', '/code-signing'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
+export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
 
 export type Step = { sel: string; text: string };
 

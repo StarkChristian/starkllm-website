@@ -110,7 +110,7 @@
 
             <section id="installation">
                 <h2>7. Kuruluma genel bakış</h2>
-                <p>Kurulum, ana bilgisayarınızı hazırlamayı ve ardından başlatıcıyı çalıştırmayı içerir:</p>
+                <p>Kurulum, ana bilgisayarınızı hazırlamayı ve ardından yükleyiciyi çalıştırmayı içerir:</p>
                 <ol>
                     <li>Docker Desktop’ın kurulu ve çalışır durumda olduğundan emin olun.</li>
                     <li>Ollama’yı <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> adresinden kurun.
@@ -122,7 +122,7 @@
                         </div>
                     </li>
                     <li><code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını kurun (önerilir). Uygulama ilk başlatmada Docker Desktop’ı ve Ollama’yı başlatır, modelleri indirir ve motorunu derler; ardından StarkLLM’i kendi penceresinde gösterir.</li>
-<li>Geliştiriciler bunun yerine projeyi GitHub’dan indirebilir (<em>Code &rarr; Download ZIP</em>), tamamen çıkarabilir ve hizmetleri o klasörde <code>start.exe</code>, <code>start.cmd</code> veya <code>docker compose up --build -d</code> ile başlatabilir.</li>
+<li>Geliştiriciler bunun yerine motoru GitHub’daki kaynak koddan <code>docker compose up --build -d</code> ile çalıştırabilir (bir sonraki bölümdeki 2. seçeneğe bakın).</li>
 </ol>
 <p>Her adımın bir testi ve bir çözüm listesi <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır.</p>
             </section>
@@ -138,34 +138,19 @@
                     Bir parça eksikse pencere hangisi olduğunu ve nasıl giderileceğini söyler (günlük: <code>%APPDATA%\StarkLLM\engine.log</code>).
                 </div>
 
-                <div class="alert warning">
-                    <h4>⚠️ Windows SmartScreen / çalıştırma uyarısı</h4>
-                    <p>İndirilen zip arşivlerinden çıkarılan dosyalar bir <em>Mark of the Web (MOTW)</em> özniteliği taşır.
-                        <code>start.exe</code> çalıştırılırken <strong>Daha fazla bilgi</strong> (More info) &rarr; <strong>Yine de
-                            çalıştır</strong> (Run anyway) seçeneğine tıklayın veya özniteliği yerel olarak temizlemek için PowerShell’de <code>unblock.ps1</code> dosyasını çalıştırın.</p>
+                <div class="alert info" id="signature">
+                    <h4>Yükleyicinin imzasını kontrol edin</h4>
+                    <p>v2.1.0’dan itibaren yükleyici, StarkLLM.exe ve kaldırma programı “Open Source Developer Christian Stark” tarafından imzalanmıştır (zaman damgalı Certum sertifikası); böylece Windows yayımcıyı doğrulayabilir. Kontrol etmek için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasına sağ tıklayın, <strong>Özellikler</strong>’i (Properties) seçin ve <strong>Dijital İmzalar</strong> (Digital Signatures) sekmesini açın. İmzalayan “Open Source Developer Christian Stark” olmalı ve <strong>Ayrıntılar</strong>’da (Details) Windows imzanın geçerli olduğunu bildirmelidir (“This digital signature is OK”). Ayrıca SHA-256 sağlama toplamını <a href="/tr/download">indirme sayfasındakiyle</a> karşılaştırın.</p>
+                    <p>SmartScreen veya Smart App Control yine de uyarırsa yalnızca ad ve sağlama toplamı eşleşiyorsa devam edin (SmartScreen’de: <strong>Daha fazla bilgi</strong> (More info) &rarr; <strong>Yine de çalıştır</strong> (Run anyway)). Eşleşmiyorsa dosyayı çalıştırmayın: Yeniden indirin ve <a href="mailto:info@starkllm.com">info@starkllm.com</a> adresinden bize yazın. StarkLLM’i yüklemek için Smart App Control’ü, SmartScreen’i veya diğer güvenlik ayarlarını asla kapatmayın.</p>
                 </div>
 
                 <h3>Seçenek 1 &mdash; Windows masaüstü yükleyicisi (önerilir)</h3>
                 <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda Docker Desktop’ı ve Ollama’yı başlatır, eksik modelleri indirir, StarkLLM motorunu derleyip başlatır ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Knowledge Base klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. (v2.0.0 hiçbir şey başlatmıyor ve yalnızca &ldquo;Connecting to local engine&hellip;&rdquo; ekranında bekliyordu.)</p>
 
-                <h3>Seçenek 2 &mdash; start.exe / start.cmd başlatıcısı</h3>
-                <p>StarkLLM, Docker Desktop durumunu otomatik olarak denetleyen, Ollama’nın kullanılabilirliğini kontrol eden, kapsayıcıları başlatan ve yerel masaüstü penceresini açan bağımsız bir <code>start.exe</code> başlatıcısı içerir.
-                </p>
-                <ol>
-                    <li>Çıkardığınız klasörü Dosya Gezgini’nde açın.</li>
-                    <li><code>start.exe</code> dosyasına çift tıklayın veya Komut İstemi’nde <code>start.exe</code> yazın (PowerShell’de: <code>.\start.exe</code>).</li>
-                </ol>
-
-                <h3>Seçenek 3 &mdash; Doğrudan Docker Compose</h3>
+                <h3>Seçenek 2 &mdash; Doğrudan Docker Compose</h3>
                 <p>Başsız (headless) veya sunucu ortamları için kapsayıcıları doğrudan terminalden başlatın:</p>
                 <p><code>docker compose up --build -d</code></p>
 
-                <h3>Seçenek 4 &mdash; unblock.ps1’i çalıştırın (çalıştırma engellenirse)</h3>
-                <p>Windows SmartScreen veya yürütme ilkeleri betik çalıştırmayı engelliyorsa çıkardığınız klasörde PowerShell’i açın ve şunu çalıştırın:</p>
-                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
-                <p><code>unblock.ps1</code> çalıştırıldıktan sonra <code>start.exe</code> veya <code>start.cmd</code> (ya da
-                    <code>start.bat</code>) dosyasını çalıştırın.
-                </p>
             </section>
 
             <section id="first-week">
@@ -270,24 +255,7 @@
                 </div>
 
                 <h3>Knowledge Base klasörü nasıl eklenir?</h3>
-                <p>Terminalinizden başlatıcıyı kullanarak bir klasör kaydedin:</p>
-                <ul>
-                    <li><strong>Etkileşimli:</strong> <code>start.exe</code> açıldıktan sonra başlatıcı konsolunda
-                        <code>[A]</code> tuşuna basın ve istendiğinde Windows yolunun tamamını yapıştırın (örneğin
-                        <code>C:\Users\me\research</code>).
-                    </li>
-                    <li><strong>CLI bayrağı:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code>
-                    </li>
-                </ul>
-
-                <div class="alert warning">
-                    <h4>⚠️ Windows yollarını web arayüzüne yapıştırmayın</h4>
-                    <p>Tarayıcı tabanlı Knowledge Base paneli <code>C:\Users\...</code> gibi ham Windows yollarını
-                        kabul etmez. Klasörleri her zaman başlatıcı aracılığıyla kaydedin (<code>[A]</code> veya
-                        <code>--add-folder</code>). Bir Windows yolu doğrudan girilirse web arayüzü bir hata
-                        gösterir.
-                    </p>
-                </div>
+                <p>Uygulamada kenar çubuğundaki <strong>Knowledge Base</strong> bölümünü açın. Belgeleri Knowledge Base klasörünüze koyun (yol <em>Your knowledge base folder</em> altında gösterilir; <strong>Copy Path</strong> yolu kopyalar) veya bu bilgisayardaki başka bir klasörü eklemek için <strong>Add Folder</strong>’a (Klasör ekle) tıklayın. StarkLLM yeni ve değişen dosyaları kendiliğinden okur; <strong>Sync Now</strong> (Şimdi eşitle) bunu hemen yapar. Bunun için terminale gerek yoktur.</p>
 
                 <div class="alert info">
                     <h4>Knowledge Base rehberi</h4>
@@ -523,8 +491,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">3. Kaynak kodunu
                         nerede inceleyebilir veya katkıda bulunabilirim?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Kaynak kodu incelemek, başlatıcıları denetlemek
-                        ve issue açmak için <a
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Kaynak kodu incelemek ve issue açmak için <a
                             href="https://github.com/StarkChristian/StarkLLM" target="_blank"
                             rel="noopener">github.com/StarkChristian/StarkLLM</a> adresini ziyaret edin.</p>
                 </div>
