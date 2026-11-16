@@ -23,7 +23,7 @@ npm run check-i18n     # build first; checks <html lang>, canonical, hreflang, l
 | `src/i18n/shots.ts`, `src/assets/shots/` | Screenshots of the app per UI language, with alt texts. |
 | `src/pages/{manual,about,contact,impressum,datenschutz}.astro` | Pages that exist once (the manual is English, the legal pages are German). Body HTML is in `src/content-html/*.main.html`. They have no hreflang tags and no language switcher. |
 | `src/components/` | `SiteNav`/`SiteFooter`; the language switcher in the nav lists only the languages a page really exists in. |
-| `src/assets/fonts/` | Self-hosted Syne, Manrope, JetBrains Mono (latin subset, SIL OFL). |
+| `src/assets/fonts/` | Self-hosted Geist (latin and latin-ext, the second for Turkish ğ ş İ) and Geist Mono (latin), SIL OFL. Source and version: `src/styles/fonts.css`. |
 | `public/` | Copied as-is: `CNAME`, `.nojekyll`, `robots.txt`, `favicon.ico`, `assets/`. |
 | `legacy/` | The pre-redesign pages, kept for reference until Phase 3 is done. Not built. |
 | `mockups/` | The three design directions (A was chosen). Not built. |
