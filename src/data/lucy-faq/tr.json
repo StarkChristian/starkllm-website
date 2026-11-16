@@ -1811,10 +1811,14 @@
     "Yükleyici neden engelleniyor?",
     "Yükleyici kod imzalı mı?",
     "Windows yükleyiciyi çalıştırmama izin vermiyor",
-    "Yine de çalıştır düğmesi çıkıyor, güvenli mi?"
+    "Yine de çalıştır düğmesi çıkıyor, güvenli mi?",
+    "StarkLLM’in yayımcısı kim?",
+    "Dijital imzayı nasıl kontrol ederim?",
+    "Smart App Control yükleyiciyi engelliyor, ne yapmalıyım?",
+    "Smart App Control’ü kapatmalı mıyım?"
    ],
    "page": "/tr/download",
-   "match": "StarkLLM yükleyicisi kod imzalı değildir; bu yüzden Windows SmartScreen"
+   "match": "Windows yine de uyarırsa yayımcı adını kontrol edin"
   },
   {
    "id": "checksum",

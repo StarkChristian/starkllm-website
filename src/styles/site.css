@@ -205,6 +205,9 @@ pre.cmd { margin-top: .6rem; font: 400 .82rem/1.6 var(--font-mono); background: 
 .callout { border: 1px solid rgba(212, 175, 55, .4); background: rgba(212, 175, 55, .06); border-radius: 16px; padding: 1.3rem 1.5rem; margin-top: 2rem; }
 .callout h3 { color: var(--c-gold); font-size: 1.05rem; margin-bottom: .5rem; }
 .callout p { color: var(--c-muted); font-size: .96rem; }
+.callout h4 { font-size: .98rem; margin: 1rem 0 .4rem; }
+.callout ol { color: var(--c-muted); font-size: .96rem; margin: 0 0 .8rem 1.3rem; padding: 0; }
+.callout ol li { margin: .25rem 0; }
 .opts { display: grid; gap: 1rem; margin-top: 1.6rem; }
 .opts > div { background: var(--c-surface); border: 1px solid var(--c-line); border-radius: 16px; padding: 1.2rem 1.4rem; }
 .opts h3 { font-size: 1.05rem; }

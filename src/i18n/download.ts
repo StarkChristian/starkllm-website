@@ -8,15 +8,6 @@ const bytes = (b: number, locale: string) => b.toLocaleString(locale);
 const SETUP = RELEASE.setup.size, PORTABLE = RELEASE.portable?.size ?? 0;
 export const GITHUB_URL = 'https://github.com/StarkChristian/StarkLLM';
 
-export const consoleStep = `============================================
-          StarkLLM Control Panel
-          Windows Research Beta
-============================================
- 1.  Start StarkLLM
- 2.  Stop  StarkLLM
- 3.  Exit
-Enter choice [1/2/3]: 1`;
-
 export const toolStep = `tool_call: search_local_kb
 // Human approval gate
 {
@@ -71,37 +62,37 @@ const downloadBase = {
       ],
     },
     smart: {
-      h2: 'Windows SmartScreen and execution notice',
-      text: 'Files downloaded from the web carry a Mark of the Web (MOTW) flag, and the StarkLLM installer is not code-signed, so Windows SmartScreen may warn when you run them. Click More info, then Run anyway. For the launcher scripts you can also run unblock.ps1 in PowerShell to clear the flag locally.',
-      optsH: 'Alternative launch options',
-      optsLede: 'These apply to the portable folder or ZIP that includes the launcher scripts.',
-      opts: [
-        { t: 'Option A: run start.exe from a terminal', v: 'start.exe is a standalone launcher. It checks Docker Desktop and Ollama, builds containers and opens your browser.', ol: ['In File Explorer inside the extracted folder, click the address bar, type cmd and press Enter.', 'Type start.exe and press Enter. If SmartScreen warns you, click More info, then Run anyway.'] },
-        { t: 'Option B: run start.cmd', v: 'To run a command script directly, open a terminal in the extracted folder and run start.cmd (in PowerShell: .\\start.cmd).' },
-        { t: 'Option C: Docker Compose directly', v: 'To use the standard Docker CLI:', code: 'docker compose up --build -d' },
-        { t: 'Option D: run unblock.ps1', v: 'If execution policies block scripts, open PowerShell in the extracted folder and run:', code: 'powershell -ExecutionPolicy Bypass -File unblock.ps1', after: 'This removes SmartScreen flags only from files inside the current StarkLLM folder. It does not change your global Windows security settings. Afterwards, run start.exe or start.cmd.' },
+      h2: 'Code signing: how to check the installer',
+      text: 'Since v2.1.0 the installer, StarkLLM.exe and the uninstaller are signed with a Certum code signing certificate issued to "Open Source Developer Christian Stark", with a timestamp. The signature lets Windows verify the publisher and shows that the files were not changed after signing. The built-in updater only installs updates signed with this name.',
+      checkH: 'Check the signature yourself',
+      check: [
+        `Right-click the downloaded installer (StarkLLM-v${V}-Setup.exe) and choose Properties.`,
+        'Open the Digital Signatures tab. The signer must be "Open Source Developer Christian Stark".',
+        'Select the signature and click Details. Windows must say "This digital signature is OK".',
       ],
+      dlls: 'Some third-party Electron components inside the app (DLL files) are not signed by us. That is intended: the installer, StarkLLM.exe and the uninstaller are signed.',
+      warnH: 'Windows still shows a warning (SmartScreen or Smart App Control)?',
+      warn: 'The signature lets Windows verify the publisher, but Windows can still warn about a file it has not seen often. Check the publisher name as described above and compare the SHA-256 checksum. If both match, you can continue (in SmartScreen: More info, then Run anyway). If the name is different, the Digital Signatures tab is missing or the checksum does not match, do not run the file: download it again from this page and tell us at info@starkllm.com. Do not turn off Smart App Control, SmartScreen or any other security setting to install StarkLLM.',
     },
     notes: { h: 'Important notes', items: ['StarkLLM is free and open source (Apache 2.0).', 'Licensed under Apache 2.0, free for personal, research and commercial use.', 'Provided "as-is" without warranty or liability of any kind.'] },
     walk: {
       h2: 'Application walkthrough',
       lede: 'A step-by-step look at what to expect when you run StarkLLM on your machine.',
       steps: [
-        { t: 'Step 1: Start-up', v: 'StarkLLM starts Docker Desktop, Ollama and its engine and shows each step until the app opens. Developers can also start the engine from the project folder with start.exe or start.cmd (shown here).', kind: 'console' },
-        { t: 'Step 2: Knowledge Base and workspaces', v: 'Map local folders to index documents into a persistent Knowledge Base layer.', kind: 'kb', alt: 'StarkLLM knowledge base configuration' },
-        { t: 'Step 3: Document-grounded chat', v: 'Ask questions grounded in indexed documents, with source file indicators.', kind: 'chat', alt: 'StarkLLM document-grounded chat' },
-        { t: 'Step 4: Sources you can check', v: 'Click a source under an answer to read the passages it was based on, word for word, and open the document at that page.', kind: 'sources', alt: 'The passages an answer was based on, shown word for word with a link to the page' },
-        { t: 'Step 5: Safe local tools', v: 'Review, edit and approve in-process model tool calls directly in the chat.', kind: 'tool' },
-        { t: 'Step 6: Thirteen themes', v: 'Hot-swap between OLED Pitch Black, Cyberpunk Rose, Liquid Glass and more.', kind: 'appearance', alt: 'StarkLLM settings and theme gallery' },
+        { t: 'Step 1: Knowledge Base and workspaces', v: 'Map local folders to index documents into a persistent Knowledge Base layer.', kind: 'kb', alt: 'StarkLLM knowledge base configuration' },
+        { t: 'Step 2: Document-grounded chat', v: 'Ask questions grounded in indexed documents, with source file indicators.', kind: 'chat', alt: 'StarkLLM document-grounded chat' },
+        { t: 'Step 3: Sources you can check', v: 'Click a source under an answer to read the passages it was based on, word for word, and open the document at that page.', kind: 'sources', alt: 'The passages an answer was based on, shown word for word with a link to the page' },
+        { t: 'Step 4: Safe local tools', v: 'Review, edit and approve in-process model tool calls directly in the chat.', kind: 'tool' },
+        { t: 'Step 5: Thirteen themes', v: 'Hot-swap between OLED Pitch Black, Cyberpunk Rose, Liquid Glass and more.', kind: 'appearance', alt: 'StarkLLM settings and theme gallery' },
       ],
     },
     faq: {
       h2: 'Frequently asked questions',
       items: [
-        ['Does my data leave my computer?', 'StarkLLM is designed to keep your data on your machine. Documents are stored in a local ChromaDB container, and AI inference runs through Ollama on your host. During normal local operation, no data is transmitted externally.'],
+        ['Does my data leave my computer?', 'StarkLLM is designed to keep your data on your machine. Documents are stored in a local ChromaDB container, and AI inference runs through Ollama on your host. Nothing leaves your PC unless you turn on an optional online feature (web search, a cloud model provider, the update check).'],
         ['Is StarkLLM free?', 'Yes. It is free and open source under Apache 2.0 for personal, research and commercial use. No subscriptions, telemetry or hidden tiers. Provided "as is" with no warranty.'],
         ['Why can answers be slow?', 'Speed depends on your hardware. Without a dedicated GPU, Ollama falls back to CPU inference, which is much slower. A dedicated NVIDIA GPU with 8 GB+ VRAM generates much faster.'],
-        ['Why does Windows SmartScreen warn about downloaded launchers?', 'Windows attaches a Mark of the Web attribute to files downloaded from the internet. When you run start.exe, click More info, then Run anyway. Alternatively run start.cmd from a terminal, or run unblock.ps1 to remove the flag locally.'],
+        ['Is the installer signed? What if SmartScreen or Smart App Control warns me?', 'Yes. Since v2.1.0 the installer, StarkLLM.exe and the uninstaller are signed by "Open Source Developer Christian Stark", so Windows can verify the publisher. If Windows still warns, check the publisher name (right-click the installer, Properties, Digital Signatures) and compare the SHA-256 checksum on this page. Run the file only if both match. Do not turn off Smart App Control or any other security setting.'],
         ['What hardware do I need?', 'Minimum 8 GB RAM for 3B models, 16 GB RAM for 7B models. For power-user models (14B to 32B), 24 GB VRAM or 64 GB system RAM is recommended.'],
         ['What is the difference between normal chat and document chat?', 'Normal chat relies only on the model\'s pre-trained knowledge. Document chat uses RAG: it searches your uploaded documents first, feeds the relevant chunks to the model, and answers with verifiable citations.'],
         ['What is the difference between workspace documents and the Knowledge Base?', 'Workspace documents are isolated to one project. The Knowledge Base is a persistent, global folder on your machine that any chat can reference.'],
@@ -111,7 +102,7 @@ const downloadBase = {
         ['Where can I send feedback or contribute?', 'We welcome feedback. Email info@starkllm.com or open an issue on the GitHub repository.'],
       ],
     },
-    contribute: { h2: 'Contribute and suggest improvements', text: 'StarkLLM is an open, evolving project. If you hit a bug, have a feature idea or want to inspect the source:', repo: 'Browse the source, inspect the launchers and open issues.', mail: 'Email' },
+    contribute: { h2: 'Contribute and suggest improvements', text: 'StarkLLM is an open, evolving project. If you hit a bug, have a feature idea or want to inspect the source:', repo: 'Browse the source code and open issues.', mail: 'Email' },
   },
   de: {
     meta: { title: 'Download | StarkLLM', description: `StarkLLM v${V} für Windows herunterladen: Installer, SHA-256-Prüfsummen, Einrichtung, Voraussetzungen und FAQ.` },
@@ -158,37 +149,37 @@ const downloadBase = {
       ],
     },
     smart: {
-      h2: 'Windows SmartScreen und Ausführungshinweis',
-      text: 'Aus dem Web geladene Dateien tragen die Markierung „Mark of the Web“ (MOTW), und der StarkLLM-Installer ist nicht digital signiert, daher kann Windows SmartScreen beim Start warnen. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Bei den Start-Skripten können Sie zusätzlich unblock.ps1 in PowerShell ausführen, um die Markierung lokal zu entfernen.',
-      optsH: 'Alternative Startmöglichkeiten',
-      optsLede: 'Diese gelten für den portablen Ordner oder das ZIP mit den Start-Skripten.',
-      opts: [
-        { t: 'Variante A: start.exe im Terminal ausführen', v: 'start.exe ist ein eigenständiger Starter. Er prüft Docker Desktop und Ollama, baut Container und öffnet Ihren Browser.', ol: ['Klicken Sie im Explorer im entpackten Ordner in die Adressleiste, tippen Sie cmd und drücken Sie Enter.', 'Tippen Sie start.exe und drücken Sie Enter. Warnt SmartScreen, klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“.'] },
-        { t: 'Variante B: start.cmd ausführen', v: 'Um ein Befehlsskript direkt zu starten, öffnen Sie ein Terminal im entpackten Ordner und führen start.cmd aus (in PowerShell: .\\start.cmd).' },
-        { t: 'Variante C: Docker Compose direkt', v: 'Mit der Standard-Docker-CLI:', code: 'docker compose up --build -d' },
-        { t: 'Variante D: unblock.ps1 ausführen', v: 'Blockieren Ausführungsrichtlinien Skripte, öffnen Sie PowerShell im entpackten Ordner und führen aus:', code: 'powershell -ExecutionPolicy Bypass -File unblock.ps1', after: 'Das entfernt SmartScreen-Markierungen nur von Dateien im aktuellen StarkLLM-Ordner. Ihre globalen Windows-Sicherheitseinstellungen bleiben unverändert. Danach führen Sie start.exe oder start.cmd aus.' },
+      h2: 'Codesignatur: So prüfen Sie den Installer',
+      text: 'Seit v2.1.0 sind der Installer, StarkLLM.exe und das Deinstallationsprogramm mit einem Codesignatur-Zertifikat von Certum signiert, ausgestellt auf „Open Source Developer Christian Stark“, mit Zeitstempel. Mit der Signatur kann Windows den Herausgeber überprüfen, und sie zeigt, dass die Dateien nach dem Signieren nicht verändert wurden. Die eingebaute Update-Funktion installiert nur Updates, die mit diesem Namen signiert sind.',
+      checkH: 'Signatur selbst prüfen',
+      check: [
+        `Klicken Sie mit der rechten Maustaste auf den heruntergeladenen Installer (StarkLLM-v${V}-Setup.exe) und wählen Sie „Eigenschaften“.`,
+        'Öffnen Sie die Registerkarte „Digitale Signaturen“. Als Signaturgeber muss „Open Source Developer Christian Stark“ stehen.',
+        'Markieren Sie die Signatur und klicken Sie auf „Details“. Windows muss „Diese digitale Signatur ist gültig.“ anzeigen.',
       ],
+      dlls: 'Einige Electron-Komponenten von Drittanbietern in der App (DLL-Dateien) sind nicht von uns signiert. Das ist so beabsichtigt: Installer, StarkLLM.exe und Deinstallationsprogramm sind signiert.',
+      warnH: 'Windows warnt trotzdem (SmartScreen oder Smart App Control)?',
+      warn: 'Mit der Signatur kann Windows den Herausgeber überprüfen, kann aber trotzdem vor einer Datei warnen, die es noch selten gesehen hat. Prüfen Sie den Herausgebernamen wie oben beschrieben und vergleichen Sie die SHA-256-Prüfsumme. Stimmen beide, können Sie fortfahren (bei SmartScreen: „Weitere Informationen“, dann „Trotzdem ausführen“). Steht dort ein anderer Name, fehlt die Registerkarte „Digitale Signaturen“ oder stimmt die Prüfsumme nicht, führen Sie die Datei nicht aus: Laden Sie sie erneut von dieser Seite herunter und schreiben Sie uns an info@starkllm.com. Schalten Sie Smart App Control, SmartScreen oder andere Sicherheitseinstellungen nicht ab, um StarkLLM zu installieren.',
     },
     notes: { h: 'Wichtige Hinweise', items: ['StarkLLM ist kostenlos und quelloffen (Apache 2.0).', 'Lizenziert unter Apache 2.0, kostenlos für private, wissenschaftliche und kommerzielle Nutzung.', 'Bereitgestellt „wie besehen“ ohne jegliche Gewährleistung oder Haftung.'] },
     walk: {
       h2: 'Rundgang durch die Anwendung',
       lede: 'Ein Blick Schritt für Schritt darauf, was Sie beim Betrieb von StarkLLM auf Ihrem Rechner erwartet.',
       steps: [
-        { t: 'Schritt 1: Start', v: 'StarkLLM startet Docker Desktop, Ollama und seine Engine und zeigt jeden Schritt, bis sich die App öffnet. Entwickler können die Engine auch im Projektordner mit start.exe oder start.cmd starten (hier gezeigt).', kind: 'console' },
-        { t: 'Schritt 2: Wissensdatenbank und Workspaces', v: 'Binden Sie lokale Ordner ein, um Dokumente in eine dauerhafte Wissensdatenbank zu indexieren.', kind: 'kb', alt: 'StarkLLM-Konfiguration der Wissensdatenbank' },
-        { t: 'Schritt 3: Dokumentbasierter Chat', v: 'Stellen Sie Fragen zu indexierten Dokumenten, mit Hinweisen auf die Quelldateien.', kind: 'chat', alt: 'StarkLLM-Chat mit Dokumentbezug' },
-        { t: 'Schritt 4: Quellen zum Nachprüfen', v: 'Klicken Sie unter einer Antwort auf eine Quelle, um die Textstellen wörtlich zu lesen und das Dokument auf dieser Seite zu öffnen.', kind: 'sources', alt: 'Die Textstellen, auf denen eine Antwort beruht, wörtlich angezeigt, mit Link zur Seite' },
-        { t: 'Schritt 5: Sichere lokale Tools', v: 'Prüfen, ändern und bestätigen Sie Tool-Aufrufe des Modells direkt im Chat.', kind: 'tool' },
-        { t: 'Schritt 6: Dreizehn Themes', v: 'Wechseln Sie sofort zwischen OLED Pitch Black, Cyberpunk Rose, Liquid Glass und mehr.', kind: 'appearance', alt: 'StarkLLM-Einstellungen und Theme-Galerie' },
+        { t: 'Schritt 1: Wissensdatenbank und Workspaces', v: 'Binden Sie lokale Ordner ein, um Dokumente in eine dauerhafte Wissensdatenbank zu indexieren.', kind: 'kb', alt: 'StarkLLM-Konfiguration der Wissensdatenbank' },
+        { t: 'Schritt 2: Dokumentbasierter Chat', v: 'Stellen Sie Fragen zu indexierten Dokumenten, mit Hinweisen auf die Quelldateien.', kind: 'chat', alt: 'StarkLLM-Chat mit Dokumentbezug' },
+        { t: 'Schritt 3: Quellen zum Nachprüfen', v: 'Klicken Sie unter einer Antwort auf eine Quelle, um die Textstellen wörtlich zu lesen und das Dokument auf dieser Seite zu öffnen.', kind: 'sources', alt: 'Die Textstellen, auf denen eine Antwort beruht, wörtlich angezeigt, mit Link zur Seite' },
+        { t: 'Schritt 4: Sichere lokale Tools', v: 'Prüfen, ändern und bestätigen Sie Tool-Aufrufe des Modells direkt im Chat.', kind: 'tool' },
+        { t: 'Schritt 5: Dreizehn Themes', v: 'Wechseln Sie sofort zwischen OLED Pitch Black, Cyberpunk Rose, Liquid Glass und mehr.', kind: 'appearance', alt: 'StarkLLM-Einstellungen und Theme-Galerie' },
       ],
     },
     faq: {
       h2: 'Häufige Fragen',
       items: [
-        ['Verlassen meine Daten meinen Computer?', 'StarkLLM ist darauf ausgelegt, Ihre Daten auf Ihrem Rechner zu halten. Dokumente liegen in einem lokalen ChromaDB-Container, die KI-Inferenz läuft über Ollama auf Ihrem Host. Im normalen lokalen Betrieb werden keine Daten nach außen übertragen.'],
+        ['Verlassen meine Daten meinen Computer?', 'StarkLLM ist darauf ausgelegt, Ihre Daten auf Ihrem Rechner zu halten. Dokumente liegen in einem lokalen ChromaDB-Container, die KI-Inferenz läuft über Ollama auf Ihrem Host. Nichts verlässt Ihren PC, außer Sie schalten eine optionale Online-Funktion ein (Websuche, einen Cloud-Modellanbieter, die Update-Prüfung).'],
         ['Ist StarkLLM kostenlos?', 'Ja. Es ist kostenlos und quelloffen unter Apache 2.0 für private, wissenschaftliche und kommerzielle Nutzung. Keine Abos, keine Telemetrie, keine versteckten Stufen. Bereitgestellt „wie besehen“ ohne Gewährleistung.'],
         ['Warum können Antworten langsam sein?', 'Das Tempo hängt von Ihrer Hardware ab. Ohne dedizierte GPU nutzt Ollama die CPU, was deutlich langsamer ist. Eine dedizierte NVIDIA-GPU mit 8 GB+ VRAM erzeugt Text deutlich schneller.'],
-        ['Warum warnt Windows SmartScreen vor heruntergeladenen Startern?', 'Windows versieht aus dem Internet geladene Dateien mit der Markierung „Mark of the Web“. Beim Start von start.exe klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Alternativ führen Sie start.cmd im Terminal aus oder unblock.ps1, um die Markierung lokal zu entfernen.'],
+        ['Ist der Installer signiert? Was, wenn SmartScreen oder Smart App Control warnt?', 'Ja. Seit v2.1.0 sind der Installer, StarkLLM.exe und das Deinstallationsprogramm von „Open Source Developer Christian Stark“ signiert, damit Windows den Herausgeber überprüfen kann. Warnt Windows trotzdem, prüfen Sie den Herausgebernamen (Rechtsklick auf den Installer, Eigenschaften, Digitale Signaturen) und vergleichen Sie die SHA-256-Prüfsumme auf dieser Seite. Führen Sie die Datei nur aus, wenn beides stimmt. Schalten Sie Smart App Control und andere Sicherheitseinstellungen nicht ab.'],
         ['Welche Hardware brauche ich?', 'Mindestens 8 GB RAM für 3B-Modelle, 16 GB RAM für 7B-Modelle. Für große Modelle (14B bis 32B) werden 24 GB VRAM oder 64 GB Arbeitsspeicher empfohlen.'],
         ['Was ist der Unterschied zwischen normalem Chat und Dokument-Chat?', 'Der normale Chat nutzt nur das vortrainierte Wissen des Modells. Der Dokument-Chat nutzt RAG: Er durchsucht zuerst Ihre hochgeladenen Dokumente, gibt die relevanten Chunks an das Modell und antwortet mit überprüfbaren Quellenangaben.'],
         ['Was ist der Unterschied zwischen Workspace-Dokumenten und Wissensdatenbank?', 'Workspace-Dokumente sind auf ein Projekt beschränkt. Die Wissensdatenbank ist ein dauerhafter, globaler Ordner auf Ihrem Rechner, auf den jeder Chat zugreifen kann.'],
@@ -198,7 +189,7 @@ const downloadBase = {
         ['Wohin kann ich Feedback senden oder beitragen?', 'Wir freuen uns über Rückmeldungen. Schreiben Sie an info@starkllm.com oder eröffnen Sie ein Issue im GitHub-Repository.'],
       ],
     },
-    contribute: { h2: 'Mitwirken und Verbesserungen vorschlagen', text: 'StarkLLM ist ein offenes, sich ständig weiterentwickelndes Projekt. Wenn Sie einen Fehler finden, eine Idee haben oder den Quellcode einsehen möchten:', repo: 'Quellcode ansehen, Starter prüfen und Issues eröffnen.', mail: 'E-Mail' },
+    contribute: { h2: 'Mitwirken und Verbesserungen vorschlagen', text: 'StarkLLM ist ein offenes, sich ständig weiterentwickelndes Projekt. Wenn Sie einen Fehler finden, eine Idee haben oder den Quellcode einsehen möchten:', repo: 'Quellcode ansehen und Issues eröffnen.', mail: 'E-Mail' },
   },
 } as const;
 

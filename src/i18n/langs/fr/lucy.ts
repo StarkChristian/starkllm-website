@@ -15,7 +15,7 @@ export default {
     news: 'La version {v} est sortie !',
     newsDate: 'Publiée le {d}.',
     point:
-      'Le grand bouton violet télécharge l’installeur. Au lancement, Windows peut afficher « Windows a protégé votre ordinateur ». Cela arrive parce que l’installeur n’est pas signé numériquement, et non parce que Windows a trouvé un problème. Cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ». Si vous voulez d’abord en avoir le cœur net, comparez la somme de contrôle plus bas.',
+      'Le grand bouton violet télécharge l’installeur. Depuis la v2.1.0, il est signé par « Open Source Developer Christian Stark », afin que Windows puisse vérifier l’éditeur. Pour le vérifier vous-même : clic droit sur le fichier, « Propriétés », « Signatures numériques ». Si Windows affiche quand même un avertissement, vérifiez ce nom et comparez la somme de contrôle plus bas.',
   },
   privacy: 'Vos documents, votre index de recherche, vos discussions et vos modèles restent sur ce PC. Quelques fonctions supplémentaires peuvent se connecter à internet, mais seulement si vous les activez, et la discussion vous indique quand une question quitte votre PC.',
   localModels: 'Les modèles de langage tournent sur votre propre PC avec Ollama. Après le premier téléchargement, StarkLLM continue de fonctionner sans internet.',

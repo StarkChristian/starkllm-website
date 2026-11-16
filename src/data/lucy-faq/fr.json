@@ -350,10 +350,14 @@
     "L'avertissement SmartScreen de Windows est-il dangereux ?",
     "Pourquoi l'installeur est-il bloqué ?",
     "L'installeur est-il signé numériquement ?",
-    "Windows bloque l'installation, que faire ?"
+    "Windows bloque l'installation, que faire ?",
+    "Qui est l’éditeur de StarkLLM ?",
+    "Comment vérifier la signature numérique ?",
+    "Smart App Control bloque l’installeur. Que faire ?",
+    "Faut-il désactiver Smart App Control ?"
    ],
    "page": "/fr/download",
-   "match": "l’installeur de StarkLLM n’est pas signé numériquement"
+   "match": "Si Windows affiche quand même un avertissement, vérifiez le nom de l’éditeur"
   },
   {
    "id": "checksum",

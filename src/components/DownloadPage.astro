@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { shots } from '../i18n/shots';
-import { download, consoleStep, toolStep, GITHUB_URL } from '../i18n/download';
+import { download, toolStep, GITHUB_URL } from '../i18n/download';
 import { SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
 import { localePath, languages, type Lang } from '../i18n/ui';
 import LucySay from './LucySay.astro';
@@ -72,23 +72,17 @@ const lt = lucy[lang];
     {c.prereq.items.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}
   </ul>
 
-  <div class="callout">
+  <div class="callout" id="signature">
     <h3>{c.smart.h2}</h3>
     <p>{c.smart.text}</p>
+    <h4>{c.smart.checkH}</h4>
+    <ol>{c.smart.check.map((li) => <li>{li}</li>)}</ol>
+    <p>{c.smart.dlls}</p>
   </div>
 
-  <h3 style="margin-top:3rem;font-size:1.5rem">{c.smart.optsH}</h3>
-  <p class="sec-lede">{c.smart.optsLede}</p>
-  <div class="opts">
-    {c.smart.opts.map((o) => (
-      <div>
-        <h3>{o.t}</h3>
-        <p>{o.v}</p>
-        {'ol' in o && o.ol && <ol>{o.ol.map((li) => <li>{li}</li>)}</ol>}
-        {'code' in o && o.code && <pre class="cmd">{o.code}</pre>}
-        {'after' in o && o.after && <p>{o.after}</p>}
-      </div>
-    ))}
+  <div class="callout">
+    <h3>{c.smart.warnH}</h3>
+    <p>{c.smart.warn}</p>
   </div>
 
   <div class="notes" style="margin-top:2rem">
@@ -103,7 +97,6 @@ const lt = lucy[lang];
   <div class="walk">
     {c.walk.steps.map((s) => (
       <figure>
-        {s.kind === 'console' && <pre>{consoleStep}</pre>}
         {s.kind === 'tool' && <pre>{toolStep}</pre>}
         {s.kind in imgs && 'alt' in s && (
           <Image src={imgs[s.kind as Kind]} alt={s.alt} widths={[480, 720, 960]} sizes="(max-width: 860px) 100vw, 560px" format="webp" loading="lazy" />

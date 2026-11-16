@@ -170,9 +170,7 @@
  "legalPages": [
   "/impressum",
   "/datenschutz",
-  "/privacy-policy",
-  "/code-signing",
-  "/de/code-signing"
+  "/privacy-policy"
  ],
  "advice": [
   "rechtsberatung",
@@ -293,10 +291,14 @@
     "Der Computer wurde durch Windows geschützt. Was nun?",
     "Ist die SmartScreen-Warnung gefährlich?",
     "Warum wird der Installer blockiert?",
-    "Ist der Installer signiert?"
+    "Ist der Installer signiert?",
+    "Wer ist der Herausgeber von StarkLLM?",
+    "Wie prüfe ich die digitale Signatur?",
+    "Smart App Control blockiert den Installer. Was tun?",
+    "Soll ich Smart App Control ausschalten?"
    ],
    "page": "/de/download",
-   "match": "der StarkLLM-Installer ist nicht digital signiert, daher kann Windows SmartScreen beim Start warnen"
+   "match": "Warnt Windows trotzdem, prüfen Sie den Herausgebernamen"
   },
   {
    "id": "checksum",
