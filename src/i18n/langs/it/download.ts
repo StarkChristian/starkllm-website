@@ -12,7 +12,7 @@ export default {
   release: {
     h2: 'Pacchetto di rilascio',
     facts: [
-      ['Versione', `v${V} (desktop nativa, avvia da sola il proprio motore)`],
+      ['Versione', `v${V} (app desktop nativa, avvia da sola il proprio motore)`],
       ['Licenza', 'Apache 2.0 (open source)'],
       ['Dimensione dell\'installer', `${mb(SETUP, 'it-IT')} MB (${bytes(SETUP, 'it-IT')} byte)`],
       ...(PORTABLE ? [['Dimensione dell\'app portable', `${mb(PORTABLE, 'it-IT')} MB (${bytes(PORTABLE, 'it-IT')} byte)`]] : []),

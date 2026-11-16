@@ -98,7 +98,7 @@ export default {
       ['Non provato su ogni PC Windows', 'L\'app desktop che si avvia da sola è stata provata come app impacchettata su Linux e costruita per Windows; se un passaggio fallisce sul tuo PC, scrivici a info@starkllm.com.'],
       ['Servizi in background', 'Il motore continua a girare in Docker dopo che chiudi la finestra, così l\'avvio successivo è veloce. Fermalo in Docker Desktop se ti serve la memoria.'],
       ['Un amministratore per installazione', 'Il primo account può fare il backup dell\'intero database, compresi i documenti degli altri account. Condividi un\'installazione solo con persone di cui ti fidi.'],
-      ['Nessun ripristino della password, programmi non firmati', 'Vedi i problemi 1 e 22.'],
+      ['Nessun ripristino della password, programmi non firmati', 'Vedi i problemi 1 e 23.'],
       ['Velocità', 'I PC con la sola CPU sono lenti; vedi il problema 13.'],
     ],
   },

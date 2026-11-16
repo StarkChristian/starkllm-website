@@ -20,7 +20,7 @@ export default {
   privacy: 'Belgeleriniz, arama dizininiz, sohbetleriniz ve modelleriniz bu bilgisayarda kalır. Birkaç ek özellik çevrimiçi olabilir, ama yalnızca siz açarsanız; bir soru bilgisayarınızdan çıktığında da sohbet bunu size söyler.',
   localModels: 'Dil modelleri kendi bilgisayarınızda Ollama ile çalışır. İlk indirmeden sonra StarkLLM internet olmadan da çalışmayı sürdürür.',
   shot: {
-    product: 'Bu sohbet ekranı. Belgelerinizle ilgili soru sorun; yanıt nereden geldiğini gösterir.',
+    product: 'Bu, sohbet ekranı.Belgelerinizle ilgili soru sorun; yanıt nereden geldiğini gösterir.',
     'tech-rag': 'İşte uygulamada bir yanıt. Kaynaklar altında listelenir; böylece kontrol edebilirsiniz.',
     'tech-knowledge-base': 'Bu, dizinlenmiş bir klasörü olan Knowledge Base.',
     'tech-voice': 'Ses seçeneklerini ayarlarda bulursunuz.',
@@ -37,7 +37,7 @@ export default {
     open: 'Lucy’ye sorun',
     title: 'Lucy’ye sorun',
     close: 'Kapat',
-    note: 'Lucy bir kişi değil, otomatik bir asistandır. Yanıtları bu web sitesinin sayfalarından alıntılardır. Soruları tarayıcınızda kalır ve hiçbir yere gönderilmez. Bu, hukuki veya mali tavsiye değildir.',
+    note: 'Lucy bir kişi değil, otomatik bir asistandır. Yanıtları bu web sitesinin sayfalarından alıntılardır. Sorularınız tarayıcınızda kalır ve hiçbir yere gönderilmez. Bu, hukuki veya mali tavsiye değildir.',
     placeholder: 'StarkLLM hakkında sorun',
     label: 'Sorunuz',
     send: 'Gönder',

@@ -78,7 +78,7 @@ export default {
   faq: {
     h2: 'Preguntas frecuentes',
     items: [
-      ['¿Mis datos salen de mi ordenador?', 'StarkLLM está diseñado para mantener tus datos en tu equipo. Los documentos se guardan en un contenedor local de ChromaDB y la inferencia de IA se ejecuta con Ollama en tu host. Durante el funcionamiento local normal no se transmite ningún dato al exterior.'],
+      ['¿Mis datos salen de mi equipo?', 'StarkLLM está diseñado para mantener tus datos en tu equipo. Los documentos se guardan en un contenedor local de ChromaDB y la inferencia de IA se ejecuta con Ollama en tu host. Durante el funcionamiento local normal no se transmite ningún dato al exterior.'],
       ['¿StarkLLM es gratuito?', 'Sí. Es gratuito y de código abierto, con licencia Apache 2.0, para uso personal, de investigación y comercial. Sin suscripciones, sin telemetría y sin niveles ocultos. Se ofrece «tal cual», sin garantía.'],
       ['¿Por qué pueden ser lentas las respuestas?', 'La velocidad depende de tu hardware. Sin una GPU dedicada, Ollama recurre a la inferencia con la CPU, que es mucho más lenta. Una GPU NVIDIA dedicada con 8 GB o más de VRAM genera mucho más deprisa.'],
       ['¿Por qué Windows SmartScreen avisa de los lanzadores descargados?', 'Windows añade el atributo Mark of the Web a los archivos descargados de internet. Cuando ejecutes start.exe, haz clic en More info (Más información) y después en Run anyway (Ejecutar de todas formas). También puedes ejecutar start.cmd desde un terminal o ejecutar unblock.ps1 para quitar la marca de forma local.'],

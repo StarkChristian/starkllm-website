@@ -135,7 +135,7 @@ const lucyBase = {
   de: {
     title: 'Lucy, der StarkLLM-Roboter',
     hide: 'Lucy ausblenden',
-    ask: 'Frag mich',
+    ask: 'Fragen Sie mich',
     show: 'Lucy einblenden',
     tour: 'Zeig mir die Seite',
     next: 'Weiter',
@@ -155,7 +155,7 @@ const lucyBase = {
     shot: {
       product: 'Das ist der Chat. Fragen Sie zu Ihren Dokumenten, und die Antwort zeigt, woher sie stammt.',
       'tech-rag': 'Hier sehen Sie eine Antwort in der App. Die Quellen stehen darunter, damit Sie sie prüfen können.',
-      'tech-knowledge-base': 'Das ist die Knowledge Base mit einem Ordner, der indexiert wurde.',
+      'tech-knowledge-base': 'Das ist die Wissensdatenbank mit einem Ordner, der indexiert wurde.',
       'tech-voice': 'Die Sprachoptionen finden Sie in den Einstellungen.',
       'tech-themes': 'Das ist die Theme-Galerie unter Einstellungen, Darstellung. Ein Klick auf ein Theme, und es gilt sofort.',
     } as Record<string, string>,
@@ -208,7 +208,7 @@ const lucyBase = {
       ],
       product: [
         { sel: '#life-h', text: 'Von der Datei zur Antwort, Schritt für Schritt.' },
-        { sel: '#let-h', text: 'Der Posteingang für Briefe: ein Fall pro Absender.' },
+        { sel: '#let-h', text: 'Der Posteingang für Briefe: ein Vorgang pro Absender.' },
         { sel: '#dl-h', text: 'Fristen aus Ihren Briefen, auf der Startseite.' },
         { sel: '#thm-h', text: 'Die App hat dreizehn Themes.' },
         { sel: '#cta-h', text: 'Lust, es auszuprobieren? Der Download steht am Ende der Seite.' },
@@ -222,7 +222,7 @@ const lucyBase = {
         { sel: '#how-h', text: 'Diese Seite hilft, wenn StarkLLM nicht startet oder etwas schiefgeht. Zuerst: wie die Teile zusammenspielen.' },
         { sel: '#steps-h', text: 'Eine Checkliste mit einem Test für jeden Schritt. Gehen Sie sie von oben nach unten durch.' },
         { sel: '#problems-h', text: 'Häufige Probleme, jeweils mit der wahrscheinlichen Ursache und dem, was zu tun ist.' },
-        { sel: '#report-h', text: 'Immer noch hängen? Das schicken Sie uns.' },
+        { sel: '#report-h', text: 'Kommen Sie nicht weiter? Das schicken Sie uns.' },
         { sel: '#limits-h', text: 'Was StarkLLM noch nicht kann.' },
       ],
       manual: [
@@ -231,7 +231,7 @@ const lucyBase = {
         { sel: '#installation', text: 'So installieren und starten Sie StarkLLM.' },
         { sel: '#first-week', text: 'Ein Weg für Ihre erste Woche: was Sie in welcher Reihenfolge ausprobieren.' },
         { sel: '#inbox', text: 'Der Posteingang: Briefe, nach Vorgängen gruppiert, mit Fristen und Beträgen.' },
-        { sel: '#knowledge-base', text: 'Die Knowledge Base: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
+        { sel: '#knowledge-base', text: 'Die Wissensdatenbank: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
         { sel: '#troubleshooting', text: 'Wenn etwas nicht funktioniert, fangen Sie hier an.' },
         { sel: '#faq', text: 'Und die Fragen, die am häufigsten gestellt werden.' },
       ],

@@ -71,7 +71,7 @@ export default {
       { t: 'Étape 3 : discussion fondée sur vos documents', v: 'Posez des questions fondées sur les documents indexés, avec l’indication des fichiers sources.', kind: 'chat', alt: 'Discussion de StarkLLM fondée sur des documents (interface en anglais)' },
       { t: 'Étape 4 : des sources que vous pouvez vérifier', v: 'Cliquez sur une source sous une réponse pour lire, mot pour mot, les passages sur lesquels elle repose, et ouvrir le document à cette page.', kind: 'sources', alt: 'Les passages sur lesquels repose une réponse, affichés mot pour mot avec un lien vers la page (interface en anglais)' },
       { t: 'Étape 5 : des outils locaux sûrs', v: 'Examinez, modifiez et validez les appels d’outils du modèle directement dans la discussion.', kind: 'tool' },
-      { t: 'Étape 6 : treize thèmes', v: 'Passez instantanément de OLED Pitch Black à Cyberpunk Rose, Liquid Glass et d’autres.', kind: 'appearance', alt: 'Réglages de StarkLLM et galerie de thèmes (interface en anglais)' },
+      { t: 'Étape 6 : treize thèmes', v: 'Passez instantanément d’OLED Pitch Black à Cyberpunk Rose, Liquid Glass et d’autres.', kind: 'appearance', alt: 'Paramètres de StarkLLM et galerie de thèmes (interface en anglais)' },
     ],
   },
   faq: {

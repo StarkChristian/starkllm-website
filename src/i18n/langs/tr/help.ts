@@ -100,7 +100,7 @@ export default {
       ['Her Windows bilgisayarında test edilmedi', 'Kendi kendine başlayan masaüstü uygulaması, paketlenmiş uygulamayla Linux’ta test edildi ve Windows için derlendi; bilgisayarınızda bir adım başarısız olursa info@starkllm.com adresinden bize bildirin.'],
       ['Arka plan hizmetleri', 'Pencereyi kapattıktan sonra motor Docker’da çalışmaya devam eder; böylece sonraki başlatma hızlı olur. Belleğe ihtiyacınız varsa onu Docker Desktop’tan durdurun.'],
       ['Kurulum başına bir yönetici', 'İlk hesap, diğer hesapların belgeleri dahil tüm veritabanını yedekleyebilir. Bir kurulumu yalnızca güvendiğiniz kişilerle paylaşın.'],
-      ['Parola sıfırlama yok, imzasız programlar', '1. ve 22. sorunlara bakın.'],
+      ['Parola sıfırlama yok, imzasız programlar', '1. ve 23. sorunlara bakın.'],
       ['Hız', 'Yalnızca CPU’lu bilgisayarlar yavaştır; 13. soruna bakın.'],
     ],
   },

@@ -450,6 +450,17 @@
    "match": "Retrieval-Augmented Generation (RAG) bedeutet"
   },
   {
+   "id": "kb",
+   "q": [
+    "Was ist die Wissensdatenbank?",
+    "Was ist die Knowledge Base?",
+    "Wie füge ich der Wissensdatenbank einen Ordner hinzu?",
+    "Was ist der Unterschied zwischen einem Workspace und der Wissensdatenbank?"
+   ],
+   "page": "/de/tech-knowledge-base",
+   "match": "Die Wissensdatenbank ist ein Ordner auf Ihrem PC"
+  },
+  {
    "id": "formats",
    "q": [
     "Welche Dateitypen kann StarkLLM lesen?",

@@ -23,8 +23,8 @@ export default {
     product: 'Voici la discussion. Posez des questions sur vos documents, et la réponse montre d’où elle vient.',
     'tech-rag': 'Voici une réponse dans l’application. Les sources sont listées en dessous, pour que vous puissiez les vérifier.',
     'tech-knowledge-base': 'Voici la Knowledge Base (base de connaissances) avec un dossier qui a été indexé.',
-    'tech-voice': 'Vous trouverez les options vocales dans les réglages.',
-    'tech-themes': 'Voici la galerie de thèmes, dans Settings, Appearance (Réglages, Apparence). Cliquez sur un thème et il s’applique aussitôt.',
+    'tech-voice': 'Vous trouverez les options vocales dans les paramètres.',
+    'tech-themes': 'Voici la galerie de thèmes, dans Settings, Appearance (Paramètres, Apparence). Cliquez sur un thème et il s’applique aussitôt.',
   } as Record<string, string>,
   lost: { line: 'Hmm, où est passée cette page ? J’ai cherché partout, mais je ne la trouve pas.', back: 'Retour à la page d’accueil' },
   about: {

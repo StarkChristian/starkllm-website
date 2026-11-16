@@ -47,7 +47,7 @@ const altBase: Record<'en' | 'de', Record<ShotKey, string>> = {
     chat: 'StarkLLM-Chat: Die Frage zu einem Steuerbescheid wird mit Betrag, Datum sowie Quelldokument und Seite beantwortet',
     sources: 'Die Textstellen, auf denen eine Antwort beruht, wörtlich angezeigt, mit Link zur Seite im Dokument',
     warning: 'Eine rote Warnung über der Antwort: Der Brief verlangt Zahlung per Geschenkkarte und Link, typische Merkmale von Betrug',
-    kb: 'StarkLLM-Wissensdatenbank: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden, mit indizierten Dateien',
+    kb: 'StarkLLM-Wissensdatenbank: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden, mit indexierten Dateien',
     settings: 'StarkLLM-Einstellungen: Modell, Kontextfenster und Erzeugungsoptionen',
     appearance: 'StarkLLM-Einstellungen, Darstellung: die Theme-Galerie mit Farbmustern und der Schriftgröße',
     otherapps: 'StarkLLM-Einstellungen, Andere Programme: standardmäßig aus, Schlüssel, MCP-Server und Adresse der OpenAI-kompatiblen API',

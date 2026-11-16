@@ -175,7 +175,7 @@ const homeBase = {
         { title: 'Docker Desktop installieren', text: 'Von docker.com (mit WSL2). Einmal starten und die Einrichtung abschließen.' },
         { title: 'Ollama installieren', text: 'Von ollama.com. Kein Terminal nötig: StarkLLM lädt die Modelle selbst.' },
         { title: 'StarkLLM installieren und starten', text: `StarkLLM-v${V}-Setup.exe ausführen und auf die Verknüpfung klicken. Die App startet Docker und Ollama, lädt die Modelle, baut ihre Engine und zeigt den Fortschritt.` },
-        { title: 'Wenn etwas fehlt', text: 'Das Fenster sagt, was fehlt und wie Sie es beheben, mit einer Retry-Schaltfläche. Die Hilfe-Seite hat eine Checkliste.' },
+        { title: 'Wenn etwas fehlt', text: 'Das Fenster sagt, was fehlt und wie Sie es beheben, mit der Schaltfläche „Erneut versuchen“. Die Hilfe-Seite hat eine Checkliste.' },
       ],
       notesTitle: 'Wichtige Hinweise',
       notes: [
