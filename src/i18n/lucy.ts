@@ -15,12 +15,12 @@ export function lucyProfile(path: string): LucyProfile | null {
   if (p === '/about') return 'about';
   if (p === '/404') return 'lost';
   if (p.startsWith('/tech-')) return 'tech';
-  // Everything else (imprint, privacy policy and its translation, code signing policy, contact, ...) stays Lucy-free.
+  // Everything else (imprint, privacy policy and its translation, contact, ...) stays Lucy-free.
   return null;
 }
 
 /** The imprint and the privacy policy are German texts: Lucy speaks German there, whatever the interface language is. */
-export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz', '/code-signing'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
+export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
 
 export type Step = { sel: string; text: string };
 
@@ -41,7 +41,7 @@ const lucyBase = {
       news: 'Version {v} is out!',
       newsDate: 'Released {d}.',
       point:
-        'The big violet button downloads the installer. When you start it, Windows may say "Windows protected your PC". That happens because the installer is not code-signed, not because Windows found a problem. Click "More info", then "Run anyway". If you want to be sure first, compare the checksum below.',
+        'The big violet button downloads the installer. Since v2.1.2 it is signed by "Open Source Developer Christian Stark", so Windows can verify the publisher. To check it yourself: right-click the file, Properties, Digital Signatures. If Windows still warns, check that name and compare the checksum below.',
     },
     privacy: 'Your documents, your search index, your chats and your models stay on this PC. A few extra features can go online, but only when you switch them on, and the chat tells you when a question leaves your PC.',
     localModels: 'The language models run on your own PC with Ollama. After the first download, StarkLLM keeps working without internet.',
@@ -148,7 +148,7 @@ const lucyBase = {
       news: 'Version {v} ist da!',
       newsDate: 'Veröffentlicht am {d}.',
       point:
-        'Mit dem großen violetten Knopf laden Sie den Installer herunter. Beim Start meldet Windows eventuell „Der Computer wurde durch Windows geschützt“. Das liegt daran, dass der Installer nicht digital signiert ist, nicht daran, dass Windows ein Problem gefunden hat. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Wenn Sie vorher sicher sein möchten, vergleichen Sie die Prüfsumme weiter unten.',
+        'Mit dem großen violetten Knopf laden Sie den Installer herunter. Seit v2.1.2 ist er von „Open Source Developer Christian Stark“ signiert, damit Windows den Herausgeber überprüfen kann. Selbst prüfen: Rechtsklick auf die Datei, „Eigenschaften“, „Digitale Signaturen“. Warnt Windows trotzdem, prüfen Sie diesen Namen und vergleichen Sie die Prüfsumme weiter unten.',
     },
     privacy: 'Ihre Dokumente, Ihr Suchindex, Ihre Chats und Ihre Modelle bleiben auf diesem PC. Einige zusätzliche Funktionen können ins Internet gehen, aber nur, wenn Sie sie einschalten, und der Chat sagt Ihnen, wenn eine Frage Ihren PC verlässt.',
     localModels: 'Die Sprachmodelle laufen mit Ollama auf Ihrem eigenen PC. Nach dem ersten Download arbeitet StarkLLM auch ohne Internet weiter.',

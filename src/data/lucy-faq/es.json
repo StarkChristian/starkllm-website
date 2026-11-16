@@ -391,10 +391,14 @@
     "Windows protegió su PC. ¿Qué hago?",
     "¿Es peligroso el aviso de Windows SmartScreen?",
     "¿Por qué se bloquea el instalador?",
-    "¿El instalador está firmado digitalmente?"
+    "¿El instalador está firmado digitalmente?",
+    "¿Quién es el editor de StarkLLM?",
+    "¿Cómo compruebo la firma digital?",
+    "Smart App Control bloquea el instalador. ¿Qué hago?",
+    "¿Debo desactivar Smart App Control?"
    ],
    "page": "/es/download",
-   "match": "el instalador de StarkLLM no está firmado digitalmente, así que Windows SmartScreen puede mostrar un aviso"
+   "match": "Si Windows sigue avisando, comprueba el nombre del editor"
   },
   {
    "id": "checksum",

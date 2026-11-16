@@ -413,10 +413,14 @@
     "L'avviso di Windows SmartScreen è pericoloso?",
     "Perché l'installer viene bloccato?",
     "L'installer è firmato digitalmente?",
-    "Perché SmartScreen blocca il file?"
+    "Perché SmartScreen blocca il file?",
+    "Chi è l'editore di StarkLLM?",
+    "Come controllo la firma digitale?",
+    "Smart App Control blocca l'installer. Che cosa faccio?",
+    "Devo disattivare Smart App Control?"
    ],
    "page": "/it/download",
-   "match": "l'installer di StarkLLM non è firmato digitalmente (code signing), quindi Windows SmartScreen può mostrare un avviso"
+   "match": "Se Windows mostra comunque un avviso, controlla il nome dell'editore"
   },
   {
    "id": "checksum",

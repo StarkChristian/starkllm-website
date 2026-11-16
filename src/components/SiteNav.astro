@@ -1,6 +1,5 @@
 ---
 import { ui, languages, langsFor, localePath, type Lang } from '../i18n/ui';
-import { SETUP_URL } from '../i18n/home';
 const { lang = 'en', path = '/', getLabel } = Astro.props as { lang?: Lang; path?: string; getLabel: string };
 const t = ui[lang].nav;
 // Offer a language only where this page exists in it; pages that exist once (the legal texts) get no switcher.
@@ -32,6 +31,7 @@ const items = [
         </details>
       </li>
     )}
-    <li><a class="btn primary small" href={SETUP_URL}>{getLabel}</a></li>
+    {/* Goes to the download page, not to the .exe: requirements (Docker Desktop, Ollama, RAM) and the signature check come first. */}
+    <li><a class="btn primary small" href={localePath(lang, '/download')}>{getLabel}</a></li>
   </ul>
 </nav>

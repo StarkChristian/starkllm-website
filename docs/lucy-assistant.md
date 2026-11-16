@@ -8,7 +8,7 @@ Owner request: Lucy sits bottom-right on every page and answers visitors' questi
 2. **Home page**: Lucy starts in the hero (large, waving, with a greeting bubble). When the visitor scrolls down she leaves the hero and walks (walk state, legs moving) to the bottom-right corner; the movement is linked to the scroll position (scroll up and she walks back). Other pages: already docked. Reduced motion: no walking, no looping animation, she is simply docked.
 3. **Click, Enter or Space on her** opens a chat panel above her: a non-modal `role="dialog"` with a short transparency note, three suggested questions, a text field, the answers, a "Show me around" button (where the page has a tour) and "Hide Lucy". Escape closes it and returns the focus to Lucy. On phones the panel is a bottom sheet that exists only while open.
 4. **Answers** are short quotes from the site with a link ("Source: Page > Section"). If nothing fits: "I could not find that on this site", with links to Help, Manual, GitHub issues and Contact.
-5. **Legal pages** (imprint, privacy policy and its translation, code signing policy): Lucy is there, but never starts a bubble, never gives legal advice and answers only from the text of the open page, with a link to it. Legal-advice questions get a fixed refusal pointing to the page and the contact address.
+5. **Legal pages** (imprint, privacy policy and its translation): Lucy is there, but never starts a bubble, never gives legal advice and answers only from the text of the open page, with a link to it. Legal-advice questions get a fixed refusal pointing to the page and the contact address.
 
 ## Decisions (and why)
 
