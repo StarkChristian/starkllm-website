@@ -15,12 +15,12 @@ export default {
     news: 'Sürüm {v} yayımlandı!',
     newsDate: 'Yayım tarihi: {d}.',
     point:
-      'Büyük mor düğme yükleyiciyi indirir. Başlattığınızda Windows “Windows bilgisayarınızı korudu” (İngilizce: “Windows protected your PC”) diyebilir. Bunun nedeni yükleyicinin kod imzalı olmamasıdır; Windows’un bir sorun bulması değildir. “Daha fazla bilgi”ye (“More info”), ardından “Yine de çalıştır”a (“Run anyway”) tıklayın. Önce emin olmak isterseniz aşağıdaki sağlama toplamını karşılaştırın.',
+      'Büyük mor düğme yükleyiciyi indirir. v2.1.2’den itibaren yükleyici “Open Source Developer Christian Stark” tarafından imzalanmıştır; böylece Windows yayımcıyı doğrulayabilir. Kendiniz kontrol etmek için: Dosyaya sağ tıklayın, Özellikler, Dijital İmzalar. Windows yine de uyarırsa bu adı kontrol edin ve aşağıdaki sağlama toplamını karşılaştırın.',
   },
   privacy: 'Belgeleriniz, arama dizininiz, sohbetleriniz ve modelleriniz bu bilgisayarda kalır. Birkaç ek özellik çevrimiçi olabilir, ama yalnızca siz açarsanız; bir soru bilgisayarınızdan çıktığında da sohbet bunu size söyler.',
   localModels: 'Dil modelleri kendi bilgisayarınızda Ollama ile çalışır. İlk indirmeden sonra StarkLLM internet olmadan da çalışmayı sürdürür.',
   shot: {
-    product: 'Bu sohbet ekranı. Belgelerinizle ilgili soru sorun; yanıt nereden geldiğini gösterir.',
+    product: 'Bu, sohbet ekranı.Belgelerinizle ilgili soru sorun; yanıt nereden geldiğini gösterir.',
     'tech-rag': 'İşte uygulamada bir yanıt. Kaynaklar altında listelenir; böylece kontrol edebilirsiniz.',
     'tech-knowledge-base': 'Bu, dizinlenmiş bir klasörü olan Knowledge Base.',
     'tech-voice': 'Ses seçeneklerini ayarlarda bulursunuz.',
@@ -37,7 +37,7 @@ export default {
     open: 'Lucy’ye sorun',
     title: 'Lucy’ye sorun',
     close: 'Kapat',
-    note: 'Lucy bir kişi değil, otomatik bir asistandır. Yanıtları bu web sitesinin sayfalarından alıntılardır. Soruları tarayıcınızda kalır ve hiçbir yere gönderilmez. Bu, hukuki veya mali tavsiye değildir.',
+    note: 'Lucy bir kişi değil, otomatik bir asistandır. Yanıtları bu web sitesinin sayfalarından alıntılardır. Sorularınız tarayıcınızda kalır ve hiçbir yere gönderilmez. Bu, hukuki veya mali tavsiye değildir.',
     placeholder: 'StarkLLM hakkında sorun',
     label: 'Sorunuz',
     send: 'Gönder',

@@ -112,7 +112,7 @@
 
             <section id="installation">
                 <h2>7. Panoramica dell'installazione</h2>
-                <p>L'installazione consiste nel preparare il tuo computer e poi eseguire il programma di avvio:</p>
+                <p>L'installazione consiste nel preparare il tuo computer e poi eseguire l'installer:</p>
                 <ol>
                     <li>Assicurati che Docker Desktop sia installato e in esecuzione.</li>
                     <li>Installa Ollama da <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.
@@ -124,7 +124,7 @@
                         </div>
                     </li>
                     <li>Installa <code>StarkLLM-v{{V}}-Setup.exe</code> (consigliato). Al primo avvio l'app avvia Docker Desktop e Ollama, scarica i modelli e costruisce il proprio motore, poi mostra StarkLLM nella sua finestra.</li>
-<li>Gli sviluppatori possono invece scaricare il progetto da GitHub (<em>Code &rarr; Download ZIP</em>), estrarlo completamente e avviare i servizi in quella cartella con <code>start.exe</code>, <code>start.cmd</code> o <code>docker compose up --build -d</code>.</li>
+<li>Gli sviluppatori possono invece avviare il motore dal codice sorgente su GitHub con <code>docker compose up --build -d</code> (vedi l'opzione 2 nella sezione successiva).</li>
 </ol>
 <p>Ogni passaggio ha una prova e un elenco di soluzioni nella pagina <a href="/it/help">Aiuto e risoluzione dei problemi</a>.</p>
             </section>
@@ -140,35 +140,19 @@
                     Se manca una parte, la finestra dice quale e come rimediare (log: <code>%APPDATA%\StarkLLM\engine.log</code>).
                 </div>
 
-                <div class="alert warning">
-                    <h4>⚠️ Windows SmartScreen / avviso di esecuzione</h4>
-                    <p>I file estratti da archivi zip scaricati portano l'attributo <em>Mark of the Web (MOTW)</em>.
-                        Quando esegui <code>start.exe</code>, fai clic su <strong>More info</strong> (Ulteriori informazioni) &rarr; <strong>Run
-                            anyway</strong> (Esegui comunque), oppure esegui <code>unblock.ps1</code> in PowerShell per togliere l'attributo
-                        in locale.</p>
+                <div class="alert info" id="signature">
+                    <h4>Controlla la firma dell'installer</h4>
+                    <p>Dalla v2.1.2 l'installer, StarkLLM.exe e il programma di disinstallazione sono firmati da "Open Source Developer Christian Stark" (certificato Certum con marca temporale), così Windows può verificare l'editore. Per controllarlo: clic destro su <code>StarkLLM-v{{V}}-Setup.exe</code>, <strong>Properties</strong> (Proprietà), scheda <strong>Digital Signatures</strong> (Firme digitali). Il firmatario deve essere "Open Source Developer Christian Stark" e in <strong>Details</strong> (Dettagli) Windows deve indicare che la firma è valida ("This digital signature is OK"). Confronta anche il checksum SHA-256 con quello della <a href="/it/download">pagina di download</a>.</p>
+                    <p>Se SmartScreen o Smart App Control mostrano comunque un avviso, continua solo se il nome e il checksum corrispondono (in SmartScreen: <strong>More info</strong> (Ulteriori informazioni) &rarr; <strong>Run anyway</strong> (Esegui comunque)). Altrimenti non eseguire il file: scaricalo di nuovo e scrivici a <a href="mailto:info@starkllm.com">info@starkllm.com</a>. Non disattivare mai Smart App Control, SmartScreen o altre impostazioni di sicurezza per installare StarkLLM.</p>
                 </div>
 
                 <h3>Opzione 1 &mdash; Installer desktop per Windows (consigliata)</h3>
                 <p>Esegui <code>StarkLLM-v{{V}}-Setup.exe</code> per installare l'app nativa per Windows. Crea collegamenti sul desktop e nel menu Start. Quando la avvii, avvia Docker Desktop e Ollama, scarica i modelli mancanti, costruisce e avvia il motore di StarkLLM e poi mostra StarkLLM nella sua finestra. I dati sono archiviati in <code>%APPDATA%\StarkLLM\data</code>, la cartella della Knowledge Base è <code>Documents\StarkLLM Knowledge Base</code> (cioè Documenti). (La v2.0.0 non avviava nulla e restava in attesa su &ldquo;Connecting to local engine&hellip;&rdquo;.)</p>
 
-                <h3>Opzione 2 &mdash; programma di avvio start.exe / start.cmd</h3>
-                <p>StarkLLM include un programma di avvio autonomo, <code>start.exe</code>, che controlla automaticamente lo stato di Docker Desktop, verifica la disponibilità di Ollama, avvia i container e lancia la finestra desktop nativa.
-                </p>
-                <ol>
-                    <li>Apri la cartella estratta in Esplora file.</li>
-                    <li>Fai doppio clic su <code>start.exe</code>, oppure esegui nel Prompt dei comandi: <code>start.exe</code> (PowerShell: <code>.\start.exe</code>).</li>
-                </ol>
-
-                <h3>Opzione 3 &mdash; Docker Compose direttamente</h3>
+                <h3>Opzione 2 &mdash; Docker Compose direttamente</h3>
                 <p>Per ambienti headless o server, avvia i container direttamente dal terminale:</p>
                 <p><code>docker compose up --build -d</code></p>
 
-                <h3>Opzione 4 &mdash; esegui unblock.ps1 (se l'esecuzione è bloccata)</h3>
-                <p>Se Windows SmartScreen o i criteri di esecuzione impediscono l'esecuzione degli script, apri PowerShell nella cartella estratta ed esegui:</p>
-                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
-                <p>Dopo aver eseguito <code>unblock.ps1</code>, esegui <code>start.exe</code> o <code>start.cmd</code> (oppure
-                    <code>start.bat</code>).
-                </p>
             </section>
 
             <section id="first-week">
@@ -273,24 +257,7 @@
                 </div>
 
                 <h3>Come aggiungere una cartella alla Knowledge Base</h3>
-                <p>Registra una cartella usando il programma di avvio dal terminale:</p>
-                <ul>
-                    <li><strong>Interattivo:</strong> dopo che <code>start.exe</code> ha finito di avviarsi, premi
-                        <code>[A]</code> nella console del programma di avvio e incolla il percorso Windows completo quando richiesto (per esempio
-                        <code>C:\Users\me\research</code>).
-                    </li>
-                    <li><strong>Opzione da riga di comando:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code>
-                    </li>
-                </ul>
-
-                <div class="alert warning">
-                    <h4>⚠️ Non incollare percorsi Windows nell'interfaccia web</h4>
-                    <p>Il pannello della Knowledge Base nel browser non accetta percorsi Windows grezzi come
-                        <code>C:\Users\...</code>. Registra sempre le cartelle tramite il programma di avvio (<code>[A]</code> o
-                        <code>--add-folder</code>). L'interfaccia web mostrerà un errore se si inserisce direttamente
-                        un percorso Windows.
-                    </p>
-                </div>
+                <p>Nell'app apri <strong>Knowledge Base</strong> nella barra laterale. Metti i documenti nella tua cartella della Knowledge Base (il percorso è indicato in <em>Your knowledge base folder</em>; <strong>Copy Path</strong> lo copia) oppure fai clic su <strong>Add Folder</strong> (Aggiungi cartella) per aggiungere un'altra cartella di questo PC. StarkLLM legge da solo i file nuovi e modificati; <strong>Sync Now</strong> (Sincronizza ora) lo fa subito. Non ti serve un terminale.</p>
 
                 <div class="alert info">
                     <h4>Indicazioni per la Knowledge Base</h4>
@@ -527,8 +494,7 @@
                         esaminare il codice sorgente o contribuire?</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 0;">Visita <a
                             href="https://github.com/StarkChristian/StarkLLM" target="_blank"
-                            rel="noopener">github.com/StarkChristian/StarkLLM</a> per consultare il codice sorgente, esaminare
-                        gli script di avvio e aprire issue.</p>
+                            rel="noopener">github.com/StarkChristian/StarkLLM</a> per consultare il codice sorgente e aprire issue.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

@@ -14,7 +14,7 @@ export default {
     news: '¡Ya está aquí la versión {v}!',
     newsDate: 'Publicada el {d}.',
     point:
-      'El botón violeta grande descarga el instalador. Al abrirlo, Windows puede mostrar «Windows protegió su PC». Eso pasa porque el instalador no está firmado digitalmente, no porque Windows haya encontrado un problema. Haz clic en «Más información» y después en «Ejecutar de todas formas». Si antes quieres estar seguro, compara la suma de comprobación que aparece más abajo.',
+      'El botón violeta grande descarga el instalador. Desde la v2.1.2 está firmado por «Open Source Developer Christian Stark», para que Windows pueda verificar el editor. Para comprobarlo tú mismo: clic derecho en el archivo, Propiedades, Firmas digitales. Si Windows sigue avisando, comprueba ese nombre y compara la suma de comprobación que aparece más abajo.',
   },
   privacy: 'Tus documentos, tu índice de búsqueda, tus chats y tus modelos se quedan en este PC. Algunas funciones adicionales pueden conectarse a internet, pero solo cuando tú las activas, y el chat te avisa cuando una pregunta sale de tu PC.',
   localModels: 'Los modelos de lenguaje se ejecutan en tu propio PC con Ollama. Después de la primera descarga, StarkLLM sigue funcionando sin internet.',

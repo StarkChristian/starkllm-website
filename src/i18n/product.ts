@@ -3,12 +3,12 @@ import { byLang, type Lang } from './ui';
 // Theme names, colors and descriptions mirror frontend/src/utils/themes.js in the app repo.
 import { V, SIZE_MB } from '../data/release';
 export const themes = [
-  { name: 'Midnight Indigo', bg: '#05070a', card: '#121622', g: ['#6366f1', '#8b5cf6'], en: 'Classic deep slate with rich indigo and violet radiance.', de: 'Klassisches tiefes Schiefer mit kräftigem Indigo und Violett.' },
+  { name: 'Midnight Indigo', bg: '#05070a', card: '#121622', g: ['#6366f1', '#8b5cf6'], en: 'Classic deep slate with rich indigo and violet radiance.', de: 'Klassisches tiefes Schiefergrau mit kräftigem Indigo und Violett.' },
   { name: 'Cyberpunk Rose', bg: '#0a040b', card: '#220f28', g: ['#ec4899', '#f43f5e'], en: 'Vibrant neon pink and rose with a warm ambient glow.', de: 'Leuchtendes Neonpink und Rosé mit warmem Schimmer.' },
   { name: 'OLED Pitch Black', bg: '#000000', card: '#101010', g: ['#0284c7', '#38bdf8'], en: 'Pure #000000 true black for maximum contrast and battery life.', de: 'Reines #000000-Schwarz für maximalen Kontrast und Akkulaufzeit.' },
   { name: 'Liquid Glass', bg: '#070b16', card: '#192442', g: ['#a855f7', '#38bdf8'], en: 'Translucent frosted glass with iridescent multi-color radiance.', de: 'Durchscheinendes Milchglas mit schillernden Farbverläufen.' },
   { name: 'Matrix Emerald', bg: '#030c08', card: '#0d281e', g: ['#10b981', '#06b6d4'], en: 'Obsidian matrix with electric emerald green accents.', de: 'Obsidian-Matrix mit elektrisch smaragdgrünen Akzenten.' },
-  { name: 'Sunset Amber', bg: '#0b0602', card: '#26190b', g: ['#f59e0b', '#ea580c'], en: 'Volcanic slate with warm glowing amber and flame accents.', de: 'Vulkanisches Schiefer mit warmen Bernstein- und Flammenakzenten.' },
+  { name: 'Sunset Amber', bg: '#0b0602', card: '#26190b', g: ['#f59e0b', '#ea580c'], en: 'Volcanic slate with warm glowing amber and flame accents.', de: 'Vulkanisches Schiefergrau mit warmen Bernstein- und Flammenakzenten.' },
   { name: 'Arctic Frost', bg: '#060f18', card: '#152c43', g: ['#06b6d4', '#3b82f6'], en: 'Sub-zero navy with crystalline cyan and blue frost.', de: 'Eisiges Marineblau mit kristallinem Cyan und Frostblau.' },
   { name: 'Daylight Minimal', bg: '#f0f2f8', card: '#ffffff', g: ['#ffffff', '#e0e7ff'], en: 'Clean daylight look with soft shadows and crisp contrast.', de: 'Klarer Tageslicht-Look mit weichen Schatten und scharfem Kontrast.' },
   { name: 'Doodle Chat', bg: '#efe6dc', card: '#fffdf9', g: ['#0d9488', '#14b8a6'], en: 'Warm paper with little dolls, hearts, letters and stars drawn in the background.', de: 'Warmes Papier mit kleinen Puppen, Herzen, Briefen und Sternen im Hintergrund.' },
@@ -168,14 +168,14 @@ const productBase = {
       lede: 'Sprachmodelle können unbelegte Behauptungen erzeugen, wenn sie nur aus dem Gedächtnis antworten. StarkLLM begegnet dem mit Retrieval-Augmented Generation (RAG).',
       items: [
         { k: 'Antworten mit Quellenbezug', v: 'Die KI ruft Textpassagen aus Ihren Dokumenten ab, bevor sie eine Antwort formuliert.' },
-        { k: 'Textstellen zum Nachlesen', v: 'Antworten nennen Dateiname sowie Seite oder Abschnitt. Ein Klick auf eine Quelle unter der Antwort zeigt die Textstellen, auf denen sie beruht, wörtlich, und öffnet das Dokument auf dieser Seite.' },
+        { k: 'Textstellen zum Nachlesen', v: 'Antworten nennen den Dateinamen sowie Seite oder Abschnitt. Ein Klick auf eine Quelle unter der Antwort zeigt die Textstellen, auf denen sie beruht, wörtlich, und öffnet das Dokument auf dieser Seite.' },
         { k: 'Warnungen vor gefälschten Briefen', v: 'Ein rotes Feld über der Antwort erscheint, wenn ein Brief Zahlung auf ein ausländisches Konto, per Gutschein oder über einen Link verlangt, Text an KI-Assistenten enthält oder ein Absender plötzlich ein anderes Konto nennt.' },
       ],
     },
     library: {
       tag: 'Dauerhafte Bibliothek',
       h2: 'Eine Wissensdatenbank, die aktuell bleibt',
-      lede: 'Workspace-Uploads eignen sich für abgeschlossene Projekte. Die globale Wissensdatenbank ist Ihre dauerhafte Referenzbibliothek, aus jedem Chat erreichbar.',
+      lede: 'Workspace-Uploads eignen sich für abgegrenzte Projekte. Die globale Wissensdatenbank ist Ihre dauerhafte Referenzbibliothek, aus jedem Chat erreichbar.',
       items: [
         { k: 'Indexierung lokaler Ordner', v: 'Binden Sie beliebige Ordner Ihres Windows-Rechners ein. StarkLLM indexiert unterstützte Dateien rekursiv in eine globale Vektorsammlung.' },
         { k: 'Zugriff von überall', v: 'Fragen Sie die Wissensdatenbank aus jedem Chat ab, unabhängig vom aktuellen Workspace.' },

@@ -15,7 +15,7 @@ export default {
     news: 'La version {v} est sortie !',
     newsDate: 'Publiée le {d}.',
     point:
-      'Le grand bouton violet télécharge l’installeur. Au lancement, Windows peut afficher « Windows a protégé votre ordinateur ». Cela arrive parce que l’installeur n’est pas signé numériquement, et non parce que Windows a trouvé un problème. Cliquez sur « Informations complémentaires », puis sur « Exécuter quand même ». Si vous voulez d’abord en avoir le cœur net, comparez la somme de contrôle plus bas.',
+      'Le grand bouton violet télécharge l’installeur. Depuis la v2.1.2, il est signé par « Open Source Developer Christian Stark », afin que Windows puisse vérifier l’éditeur. Pour le vérifier vous-même : clic droit sur le fichier, « Propriétés », « Signatures numériques ». Si Windows affiche quand même un avertissement, vérifiez ce nom et comparez la somme de contrôle plus bas.',
   },
   privacy: 'Vos documents, votre index de recherche, vos discussions et vos modèles restent sur ce PC. Quelques fonctions supplémentaires peuvent se connecter à internet, mais seulement si vous les activez, et la discussion vous indique quand une question quitte votre PC.',
   localModels: 'Les modèles de langage tournent sur votre propre PC avec Ollama. Après le premier téléchargement, StarkLLM continue de fonctionner sans internet.',
@@ -23,8 +23,8 @@ export default {
     product: 'Voici la discussion. Posez des questions sur vos documents, et la réponse montre d’où elle vient.',
     'tech-rag': 'Voici une réponse dans l’application. Les sources sont listées en dessous, pour que vous puissiez les vérifier.',
     'tech-knowledge-base': 'Voici la Knowledge Base (base de connaissances) avec un dossier qui a été indexé.',
-    'tech-voice': 'Vous trouverez les options vocales dans les réglages.',
-    'tech-themes': 'Voici la galerie de thèmes, dans Settings, Appearance (Réglages, Apparence). Cliquez sur un thème et il s’applique aussitôt.',
+    'tech-voice': 'Vous trouverez les options vocales dans les paramètres.',
+    'tech-themes': 'Voici la galerie de thèmes, dans Settings, Appearance (Paramètres, Apparence). Cliquez sur un thème et il s’applique aussitôt.',
   } as Record<string, string>,
   lost: { line: 'Hmm, où est passée cette page ? J’ai cherché partout, mais je ne la trouve pas.', back: 'Retour à la page d’accueil' },
   about: {

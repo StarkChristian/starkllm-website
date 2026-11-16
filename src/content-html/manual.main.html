@@ -112,7 +112,7 @@
 
             <section id="installation">
                 <h2>7. Installation overview</h2>
-                <p>Installation involves preparing your host machine and then running the launcher:</p>
+                <p>Installation involves preparing your host machine and then running the installer:</p>
                 <ol>
                     <li>Ensure Docker Desktop is installed and running.</li>
                     <li>Install Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a>.
@@ -124,7 +124,7 @@
                         </div>
                     </li>
                     <li>Install <code>StarkLLM-v{{V}}-Setup.exe</code> (recommended). On its first start the app starts Docker Desktop and Ollama, downloads the models and builds its engine, then shows StarkLLM in its own window.</li>
-<li>Developers can instead download the project from GitHub (<em>Code &rarr; Download ZIP</em>), extract it completely and start the services in that folder with <code>start.exe</code>, <code>start.cmd</code> or <code>docker compose up --build -d</code>.</li>
+<li>Developers can run the engine from the source code on GitHub instead, with <code>docker compose up --build -d</code> (see Option 2 in the next section).</li>
 </ol>
 <p>Each step has a test and a fix list on the <a href="/help">Help &amp; Troubleshooting</a> page.</p>
             </section>
@@ -140,35 +140,19 @@
                     If a part is missing, the window says which one and how to fix it (log: <code>%APPDATA%\StarkLLM\engine.log</code>).
                 </div>
 
-                <div class="alert warning">
-                    <h4>⚠️ Windows SmartScreen / Execution Notice</h4>
-                    <p>Files extracted from downloaded zip archives carry a <em>Mark of the Web (MOTW)</em> attribute.
-                        When running <code>start.exe</code>, click <strong>More info</strong> &rarr; <strong>Run
-                            anyway</strong>, or run <code>unblock.ps1</code> in PowerShell to clear the attribute
-                        locally.</p>
+                <div class="alert info" id="signature">
+                    <h4>Check the installer&rsquo;s signature</h4>
+                    <p>Since v2.1.2 the installer, StarkLLM.exe and the uninstaller are signed by &ldquo;Open Source Developer Christian Stark&rdquo; (Certum certificate with timestamp), so Windows can verify the publisher. To check it: right-click <code>StarkLLM-v{{V}}-Setup.exe</code>, choose <strong>Properties</strong> and open <strong>Digital Signatures</strong>. The signer must be &ldquo;Open Source Developer Christian Stark&rdquo;, and <strong>Details</strong> must say &ldquo;This digital signature is OK&rdquo;. Also compare the SHA-256 checksum with the one on the <a href="/download">download page</a>.</p>
+                    <p>If SmartScreen or Smart App Control still warns, continue only if the name and the checksum match (in SmartScreen: <strong>More info</strong> &rarr; <strong>Run anyway</strong>). Otherwise do not run the file: download it again and tell us at <a href="mailto:info@starkllm.com">info@starkllm.com</a>. Never turn off Smart App Control, SmartScreen or other security settings to install StarkLLM.</p>
                 </div>
 
                 <h3>Option 1 &mdash; Windows Desktop Installer (Recommended)</h3>
                 <p>Run <code>StarkLLM-v{{V}}-Setup.exe</code> to install the native Windows app. It creates desktop and start menu shortcuts. When you start it, it starts Docker Desktop and Ollama, downloads missing models, builds and starts the StarkLLM engine and then shows StarkLLM in its own window. Data is stored in <code>%APPDATA%\StarkLLM\data</code>, the Knowledge Base folder is <code>Documents\StarkLLM Knowledge Base</code>. (v2.0.0 started nothing and only waited on &ldquo;Connecting to local engine&hellip;&rdquo;.)</p>
 
-                <h3>Option 2 &mdash; start.exe / start.cmd Launcher</h3>
-                <p>StarkLLM includes a standalone <code>start.exe</code> launcher that automatically checks Docker Desktop status, checks Ollama availability, starts containers, and launches the native desktop window.
-                </p>
-                <ol>
-                    <li>Open the extracted folder in File Explorer.</li>
-                    <li>Double-click <code>start.exe</code>, or run in Command Prompt: <code>start.exe</code> (PowerShell: <code>.\start.exe</code>).</li>
-                </ol>
-
-                <h3>Option 3 &mdash; Direct Docker Compose</h3>
+                <h3>Option 2 &mdash; Direct Docker Compose</h3>
                 <p>For headless or server environments, start containers directly from terminal:</p>
                 <p><code>docker compose up --build -d</code></p>
 
-                <h3>Option 4 &mdash; Run unblock.ps1 (If Execution Blocked)</h3>
-                <p>If Windows SmartScreen or execution policies prevent script execution, open PowerShell in the extracted folder and run:</p>
-                <p><code>powershell -ExecutionPolicy Bypass -File unblock.ps1</code></p>
-                <p>After running <code>unblock.ps1</code>, run <code>start.exe</code> or <code>start.cmd</code> (or
-                    <code>start.bat</code>).
-                </p>
             </section>
 
             <section id="first-week">
@@ -273,24 +257,7 @@
                 </div>
 
                 <h3>How to add a Knowledge Base folder</h3>
-                <p>Register a folder using the launcher from your terminal:</p>
-                <ul>
-                    <li><strong>Interactive:</strong> After <code>start.exe</code> finishes launching, press
-                        <code>[A]</code> in the launcher console and paste the full Windows path when prompted (e.g.
-                        <code>C:\Users\me\research</code>).
-                    </li>
-                    <li><strong>CLI flag:</strong> <code>start.exe --add-folder --folder="C:\Users\me\research"</code>
-                    </li>
-                </ul>
-
-                <div class="alert warning">
-                    <h4>⚠️ Do not paste Windows paths into the web UI</h4>
-                    <p>The browser-based Knowledge Base panel does not accept raw Windows paths like
-                        <code>C:\Users\...</code>. Always register folders through the launcher (<code>[A]</code> or
-                        <code>--add-folder</code>). The web UI will display an error if a Windows path is entered
-                        directly.
-                    </p>
-                </div>
+                <p>In the app, open <strong>Knowledge Base</strong> in the sidebar. Put documents into your knowledge base folder (its path is shown under <em>Your knowledge base folder</em>; <strong>Copy Path</strong> copies it), or click <strong>Add Folder</strong> to add another folder on this PC. StarkLLM reads new and changed files on its own; <strong>Sync Now</strong> does it immediately. You do not need a terminal for this.</p>
 
                 <div class="alert info">
                     <h4>Knowledge Base Guidance</h4>
@@ -528,8 +495,7 @@
                         inspect or contribute to the source code?</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 0;">Visit <a
                             href="https://github.com/StarkChristian/StarkLLM" target="_blank"
-                            rel="noopener">github.com/StarkChristian/StarkLLM</a> to review source code, inspect
-                        launchers, and open issues.</p>
+                            rel="noopener">github.com/StarkChristian/StarkLLM</a> to review the source code and open issues.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

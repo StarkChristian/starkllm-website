@@ -121,7 +121,7 @@ const pages = {
   'tech-voice': {
     title: 'Entrée et sortie vocales | StarkLLM', eyebrow: 'Voix',
     h1: 'Entrée et sortie vocales', lede: 'Posez vos questions à voix haute et écoutez la réponse, le tout traité sur votre PC.',
-    shot: 'settings', shotAlt: 'Les réglages de StarkLLM (interface en anglais)',
+    shot: 'settings', shotAlt: 'Les paramètres de StarkLLM (interface en anglais)',
     sections: s(fr,
       'La reconnaissance vocale transforme votre question en texte ; la synthèse vocale lit la réponse à voix haute.',
       'Parler va plus vite que taper pour de longues questions, et écouter aide quand vos mains ou vos yeux sont occupés.',
@@ -131,12 +131,12 @@ const pages = {
   },
   'tech-themes': {
     title: 'Thèmes | StarkLLM', eyebrow: 'Apparence',
-    shot: 'appearance', shotAlt: 'Les réglages de StarkLLM, Appearance : la galerie de thèmes (interface en anglais)',
+    shot: 'appearance', shotAlt: 'Les paramètres de StarkLLM, Appearance : la galerie de thèmes (interface en anglais)',
     h1: 'Thèmes', lede: 'Treize thèmes de couleurs, du noir pur pour les écrans OLED aux thèmes clairs et aux thèmes à motifs.',
     sections: [
       { h: fr.what, p: 'StarkLLM propose treize thèmes : Midnight Indigo (par défaut), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Amber, Arctic Frost et Daylight Minimal, plus cinq thèmes à motifs : Doodle Chat, Doodle Night, Flower Meadow, Matrix Code et Starry Night.' },
       { h: fr.why, p: 'Les longues séances fatiguent moins les yeux quand le contraste et la luminosité conviennent à votre écran et à votre pièce.' },
-      { h: fr.how, p: 'Changez de thème avec le bouton de palette en bas de la barre latérale, ou dans Settings, Appearance (Réglages, Apparence). Votre choix est enregistré et appliqué immédiatement.' },
+      { h: fr.how, p: 'Changez de thème avec le bouton de palette en bas de la barre latérale, ou dans Settings, Appearance (Paramètres, Apparence). Votre choix est enregistré et appliqué immédiatement.' },
     ],
   },
 };

@@ -20,7 +20,7 @@ export default {
     items: [
       { k: 'Qué lee', v: 'El tipo de carta (factura, reclamación de pago, notificación de Hacienda, contrato, multa y más), el remitente, la fecha de la carta, los números de referencia como el de cliente, de contrato o fiscal, los importes, las cuentas bancarias y los plazos, en cartas en inglés y alemán.' },
       { k: 'Cada valor tiene su fuente', v: 'Cada valor se encuentra literalmente en una página. Haz clic en él y la carta se abre en esa página con la línea marcada.' },
-      { k: 'Expedientes por remitente', v: 'Las cartas de un mismo remitente se agrupan, con el expediente del plazo más cercano en primer lugar. Se marca la misma carta como foto y como PDF, y también una carta sustituida y una posible estafa.' },
+      { k: 'Expedientes por remitente', v: 'Las cartas de un mismo remitente se agrupan, con el expediente del plazo más cercano en primer lugar. Se marca cuando una misma carta está como foto y como PDF, y también se marcan una carta sustituida y una posible estafa.' },
       { k: 'Tú decides', v: 'Marca una carta como resuelta o ponle tu propio título. El número de cartas nuevas aparece junto a «Inbox» (la bandeja de entrada).' },
     ],
   },

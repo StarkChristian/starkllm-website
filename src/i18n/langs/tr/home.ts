@@ -35,10 +35,10 @@ export default {
   features: {
     h2: 'Belgelerini yükleyemeyenler için tasarlandı.',
     items: [
-      { tag: 'Gelen kutusu', title: 'Her gönderen için bir dosya içeren gelen kutusu', text: 'Her mektup için: türü (fatura, hatırlatma, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, tarih, referans numaraları, tutarlar, banka hesapları ve son tarihler; hepsi bir sayfada kelimesi kelimesine bulunur. Bir mektupla ilgilendiğinizde onu tamamlandı olarak işaretleyin. Diskinizde hiçbir şeyin adı değiştirilmez, hiçbir şey taşınmaz.', wide: true },
+      { tag: 'Gelen kutusu', title: 'Her gönderen için bir dosya içeren gelen kutusu', text: 'Her mektup için: türü (fatura, ödeme hatırlatması, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, tarih, referans numaraları, tutarlar, banka hesapları ve son tarihler; hepsi bir sayfada kelimesi kelimesine bulunur. Bir mektupla ilgilendiğinizde onu tamamlandı olarak işaretleyin. Diskinizde hiçbir şeyin adı değiştirilmez, hiçbir şey taşınmaz.', wide: true },
       { tag: 'Son tarihler', title: 'Ana sayfada son tarihler', text: 'Mektuplarınızdaki son tarihler, randevular ve ödeme tarihleri; tutar ve sayfa bilgisiyle. “Takvime ekle” bunları bir takvim dosyası olarak kaydeder.' },
       { tag: 'Taramalar', title: 'Fotoğraflar ve taramalar bilgisayarınızda okunur', text: 'Bir fotoğraf veya taranmış sayfa İngilizce ya da Almanca metin olarak okunur, gerekirse dik konuma getirilir; diğer belgeler gibi aranabilir ve kaynak gösterilebilir.' },
-      { tag: 'Güvenlik', title: 'Sahte mektuplara karşı uyarılar', text: 'Bir mektup yurt dışındaki bir hesaba, hediye çeki ile veya bir bağlantı üzerinden ödeme istiyorsa, yapay zekâ asistanlarına hitap eden bir metin içeriyorsa ya da bir gönderen birden farklı bir hesap bildiriyorsa kırmızı bir kutu görünür.' },
+      { tag: 'Güvenlik', title: 'Sahte mektuplara karşı uyarılar', text: 'Bir mektup yurt dışındaki bir hesaba, hediye çeki ile veya bir bağlantı üzerinden ödeme istiyorsa, yapay zekâ asistanlarına hitap eden bir metin içeriyorsa ya da bir gönderen birdenbire farklı bir hesap bildiriyorsa kırmızı bir kutu görünür.' },
       { tag: 'Bilgi', title: 'Workspace’ler ve genel bilgi tabanı', text: 'Windows klasörlerini bağlayın, projeleri birbirinden ayrı tutun ve ortak bilgi tabanını (Knowledge Base) her sohbetten sorgulayın.' },
       { tag: 'Erişim', title: 'Çapraz kodlayıcı (cross-encoder) yeniden sıralayıcılı hibrit RAG', text: 'Anahtar kelime ve anlamsal arama birlikte çalışır; ardından bir TinyBERT çapraz kodlayıcı, soruyu gerçekten yanıtlayan pasajları yeniden sıralar.', wide: true, art: 'bars' },
       { tag: 'Masaüstü', title: 'Gerçek bir uygulama penceresi', text: 'Açılış ekranı ve tepsi menüsü olan kendi penceresi. Tarayıcı sekmesi yok.' },
@@ -49,7 +49,7 @@ export default {
     ],
   },
   compare: {
-    h2: 'StarkLLM nasıl karşılaştırılır?',
+    h2: 'StarkLLM ve diğer araçlar: karşılaştırma',
     lede: 'StarkLLM’in, diğer popüler açık çözümlerin yanında yerel yapay zekâ ortamındaki yerine dürüst bir bakış.',
     note: 'Ekim 2026 itibarıyla, her aracın herkese açık belgelerine dayanır. Özellikler hızla değişir; lütfen güncel sürümleri kontrol edin. StarkLLM’in yanıtları da küçük bir yerel modelden gelir: önemli olan her şey için gösterilen kaynağı kontrol edin.',
     cols: ['Araç', 'Güçlü yanları ve sınırları', 'En uygun olduğu kullanım'],
@@ -57,7 +57,7 @@ export default {
       { kind: 'Çıkarım arayüzü', name: 'LM Studio', text: 'Hugging Face’ten GGUF indirmek ve GPU katman aktarımını ayarlamak için çok iyidir. “Chat with Documents” özelliği dosyaları bir konuşmaya ekler (kısa dosyalar bütün olarak yapıştırılır, uzunlar erişim (retrieval) üzerinden geçer); belgelerine ve üçüncü taraf kılavuzlara göre kalıcı workspace’leri veya paylaşılan bilgi tabanları yoktur.', best: 'Modelleri denemek; bir sohbete ara sıra belge eklemek.' },
       { kind: 'Temel RAG uygulaması', name: 'AnythingLLM', text: 'Belgelerinizle workspace’ler içinde sohbet etmek için popüler bir uygulama. Yeniden sıralama gibi erişim seçenekleri, sürüme ve seçtiğiniz vektör veritabanına bağlıdır; bu yüzden kendi belgelerinizle karşılaştırın.', best: 'Hazır bir workspace uygulaması istediğiniz belge sohbetleri.' },
       { kind: 'Minimalist sohbet', name: 'Jan.ai', text: 'Verileri cihazda tutan, hafif, açık kaynaklı, ChatGPT tarzı bir uygulama. Belge erişimi, belgelerinin deneysel olarak nitelendirdiği isteğe bağlı bir ayar olarak bulunur; odak noktası belge iş akışları değil, sohbettir.', best: 'Temiz bir arayüzle basit yerel sohbet.' },
-      { kind: 'Bu proje', name: `StarkLLM v${V}`, text: 'Mektuplar için gelen kutusu (son tarihler, tutarlar, gönderen başına dosyalar, sahte mektup uyarıları), TinyBERT çapraz kodlayıcı ile yeniden sıralamalı hibrit RAG, isteğe bağlı yerel MCP sunucusu ve OpenAI uyumlu API (varsayılan olarak kapalı) ve varsayılan olarak yerel çalışan gizlilik sunan yerel Windows masaüstü uygulaması.', best: 'Mektuplarını ve belgelerini gizli tutmak ve kontrol edebileceği kaynaklarla yanıt almak isteyen herkes: evlerden geliştiricilere ve araştırmacılara kadar.', us: true },
+      { kind: 'Bu proje', name: `StarkLLM v${V}`, text: 'Mektuplar için gelen kutusu (son tarihler, tutarlar, gönderen başına dosyalar, sahte mektup uyarıları), TinyBERT çapraz kodlayıcı ile yeniden sıralamalı hibrit RAG, isteğe bağlı yerel MCP sunucusu ve OpenAI uyumlu API (varsayılan olarak kapalı) içeren ve verileri varsayılan olarak yerelde tutan yerel Windows masaüstü uygulaması.', best: 'Mektuplarını ve belgelerini gizli tutmak ve kontrol edebileceği kaynaklarla yanıt almak isteyen herkes: evlerden geliştiricilere ve araştırmacılara kadar.', us: true },
     ],
   },
   setup: {

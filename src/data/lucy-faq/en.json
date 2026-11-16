@@ -141,7 +141,6 @@
  "extraPages": [],
  "legalPages": [
   "/privacy-policy",
-  "/code-signing",
   "/impressum",
   "/datenschutz"
  ],
@@ -264,10 +263,14 @@
     "Windows protected your PC. What now?",
     "Is the Windows SmartScreen warning dangerous?",
     "Why is the installer blocked?",
-    "Is the installer code signed?"
+    "Is the installer code signed?",
+    "Who is the publisher of StarkLLM?",
+    "How do I check the digital signature?",
+    "Smart App Control blocks the installer. What now?",
+    "Should I turn off Smart App Control?"
    ],
    "page": "/download",
-   "match": "the StarkLLM installer is not code-signed, so Windows SmartScreen may warn"
+   "match": "If Windows still warns, check the publisher name"
   },
   {
    "id": "checksum",

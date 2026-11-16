@@ -19,7 +19,7 @@ export default {
     h2: 'Her mektup okunur ve dosyalanır',
     lede: 'Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin. StarkLLM bunu bilgisayarınızda okur ve neye ihtiyacınız olduğunu önerir. Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez.',
     items: [
-      { k: 'Neleri okur', v: 'Mektubun türü (fatura, hatırlatma, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, mektup tarihi, müşteri, sözleşme veya vergi numarası gibi referans numaraları, tutarlar, banka hesapları ve son tarihler; İngilizce ve Almanca mektuplarda.' },
+      { k: 'Neleri okur', v: 'Mektubun türü (fatura, ödeme hatırlatması, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, mektup tarihi, müşteri, sözleşme veya vergi numarası gibi referans numaraları, tutarlar, banka hesapları ve son tarihler; İngilizce ve Almanca mektuplarda.' },
       { k: 'Her değerin bir kaynağı var', v: 'Her değer bir sayfada kelimesi kelimesine bulunur. Üzerine tıklayın; mektup o sayfada, ilgili satır işaretlenmiş olarak açılır.' },
       { k: 'Gönderen başına dosya', v: 'Aynı göndericinin mektupları bir araya getirilir; en yakın son tarihli dosya en üstte yer alır. Aynı mektubun fotoğraf ve PDF olarak iki kez eklenmesi, değiştirilmiş bir mektup ve olası bir dolandırıcılık da işaretlenir.' },
       { k: 'Karar sizin', v: 'Bir mektubu tamamlandı olarak işaretleyin veya ona kendi başlığınızı verin. Yeni mektupların sayısı “Inbox” (gelen kutusu) yanında gösterilir.' },
@@ -43,7 +43,7 @@ export default {
     items: [
       { k: 'Kaynağa dayalı yanıtlar', v: 'Yapay zekâ, bir yanıt oluşturmadan önce metin pasajlarını doğrudan sizin belgelerinizden getirir.' },
       { k: 'Okuyabileceğiniz pasajlar', v: 'Yanıtlar kaynak dosya adını ve bir sayfa veya bölüm konumunu belirtir. Bir yanıtın altındaki kaynağa tıklayın; dayandığı pasajları kelimesi kelimesine görün ve belgeyi o sayfada açın.' },
-      { k: 'Sahte mektuplara karşı uyarılar', v: 'Bir mektup yurt dışındaki bir hesaba, hediye çeki ile veya bir bağlantı üzerinden ödeme istiyorsa, yapay zekâ asistanlarına hitap eden bir metin içeriyorsa ya da bir gönderen birden farklı bir hesap bildiriyorsa yanıtın üstünde kırmızı bir kutu görünür.' },
+      { k: 'Sahte mektuplara karşı uyarılar', v: 'Bir mektup yurt dışındaki bir hesaba, hediye çeki ile veya bir bağlantı üzerinden ödeme istiyorsa, yapay zekâ asistanlarına hitap eden bir metin içeriyorsa ya da bir gönderen birdenbire farklı bir hesap bildiriyorsa yanıtın üstünde kırmızı bir kutu görünür.' },
     ],
   },
   library: {

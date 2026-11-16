@@ -15,12 +15,12 @@ export function lucyProfile(path: string): LucyProfile | null {
   if (p === '/about') return 'about';
   if (p === '/404') return 'lost';
   if (p.startsWith('/tech-')) return 'tech';
-  // Everything else (imprint, privacy policy and its translation, code signing policy, contact, ...) stays Lucy-free.
+  // Everything else (imprint, privacy policy and its translation, contact, ...) stays Lucy-free.
   return null;
 }
 
 /** The imprint and the privacy policy are German texts: Lucy speaks German there, whatever the interface language is. */
-export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz', '/code-signing'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
+export const lucyLangFor = (path: string, lang: Lang): Lang => (['/impressum', '/datenschutz'].includes(path.replace(/\.html$/, '')) ? 'de' : lang);
 
 export type Step = { sel: string; text: string };
 
@@ -41,7 +41,7 @@ const lucyBase = {
       news: 'Version {v} is out!',
       newsDate: 'Released {d}.',
       point:
-        'The big violet button downloads the installer. When you start it, Windows may say "Windows protected your PC". That happens because the installer is not code-signed, not because Windows found a problem. Click "More info", then "Run anyway". If you want to be sure first, compare the checksum below.',
+        'The big violet button downloads the installer. Since v2.1.2 it is signed by "Open Source Developer Christian Stark", so Windows can verify the publisher. To check it yourself: right-click the file, Properties, Digital Signatures. If Windows still warns, check that name and compare the checksum below.',
     },
     privacy: 'Your documents, your search index, your chats and your models stay on this PC. A few extra features can go online, but only when you switch them on, and the chat tells you when a question leaves your PC.',
     localModels: 'The language models run on your own PC with Ollama. After the first download, StarkLLM keeps working without internet.',
@@ -135,7 +135,7 @@ const lucyBase = {
   de: {
     title: 'Lucy, der StarkLLM-Roboter',
     hide: 'Lucy ausblenden',
-    ask: 'Frag mich',
+    ask: 'Fragen Sie mich',
     show: 'Lucy einblenden',
     tour: 'Zeig mir die Seite',
     next: 'Weiter',
@@ -148,14 +148,14 @@ const lucyBase = {
       news: 'Version {v} ist da!',
       newsDate: 'Veröffentlicht am {d}.',
       point:
-        'Mit dem großen violetten Knopf laden Sie den Installer herunter. Beim Start meldet Windows eventuell „Der Computer wurde durch Windows geschützt“. Das liegt daran, dass der Installer nicht digital signiert ist, nicht daran, dass Windows ein Problem gefunden hat. Klicken Sie auf „Weitere Informationen“ und dann auf „Trotzdem ausführen“. Wenn Sie vorher sicher sein möchten, vergleichen Sie die Prüfsumme weiter unten.',
+        'Mit dem großen violetten Knopf laden Sie den Installer herunter. Seit v2.1.2 ist er von „Open Source Developer Christian Stark“ signiert, damit Windows den Herausgeber überprüfen kann. Selbst prüfen: Rechtsklick auf die Datei, „Eigenschaften“, „Digitale Signaturen“. Warnt Windows trotzdem, prüfen Sie diesen Namen und vergleichen Sie die Prüfsumme weiter unten.',
     },
     privacy: 'Ihre Dokumente, Ihr Suchindex, Ihre Chats und Ihre Modelle bleiben auf diesem PC. Einige zusätzliche Funktionen können ins Internet gehen, aber nur, wenn Sie sie einschalten, und der Chat sagt Ihnen, wenn eine Frage Ihren PC verlässt.',
     localModels: 'Die Sprachmodelle laufen mit Ollama auf Ihrem eigenen PC. Nach dem ersten Download arbeitet StarkLLM auch ohne Internet weiter.',
     shot: {
       product: 'Das ist der Chat. Fragen Sie zu Ihren Dokumenten, und die Antwort zeigt, woher sie stammt.',
       'tech-rag': 'Hier sehen Sie eine Antwort in der App. Die Quellen stehen darunter, damit Sie sie prüfen können.',
-      'tech-knowledge-base': 'Das ist die Knowledge Base mit einem Ordner, der indexiert wurde.',
+      'tech-knowledge-base': 'Das ist die Wissensdatenbank mit einem Ordner, der indexiert wurde.',
       'tech-voice': 'Die Sprachoptionen finden Sie in den Einstellungen.',
       'tech-themes': 'Das ist die Theme-Galerie unter Einstellungen, Darstellung. Ein Klick auf ein Theme, und es gilt sofort.',
     } as Record<string, string>,
@@ -208,7 +208,7 @@ const lucyBase = {
       ],
       product: [
         { sel: '#life-h', text: 'Von der Datei zur Antwort, Schritt für Schritt.' },
-        { sel: '#let-h', text: 'Der Posteingang für Briefe: ein Fall pro Absender.' },
+        { sel: '#let-h', text: 'Der Posteingang für Briefe: ein Vorgang pro Absender.' },
         { sel: '#dl-h', text: 'Fristen aus Ihren Briefen, auf der Startseite.' },
         { sel: '#thm-h', text: 'Die App hat dreizehn Themes.' },
         { sel: '#cta-h', text: 'Lust, es auszuprobieren? Der Download steht am Ende der Seite.' },
@@ -222,7 +222,7 @@ const lucyBase = {
         { sel: '#how-h', text: 'Diese Seite hilft, wenn StarkLLM nicht startet oder etwas schiefgeht. Zuerst: wie die Teile zusammenspielen.' },
         { sel: '#steps-h', text: 'Eine Checkliste mit einem Test für jeden Schritt. Gehen Sie sie von oben nach unten durch.' },
         { sel: '#problems-h', text: 'Häufige Probleme, jeweils mit der wahrscheinlichen Ursache und dem, was zu tun ist.' },
-        { sel: '#report-h', text: 'Immer noch hängen? Das schicken Sie uns.' },
+        { sel: '#report-h', text: 'Kommen Sie nicht weiter? Das schicken Sie uns.' },
         { sel: '#limits-h', text: 'Was StarkLLM noch nicht kann.' },
       ],
       manual: [
@@ -231,7 +231,7 @@ const lucyBase = {
         { sel: '#installation', text: 'So installieren und starten Sie StarkLLM.' },
         { sel: '#first-week', text: 'Ein Weg für Ihre erste Woche: was Sie in welcher Reihenfolge ausprobieren.' },
         { sel: '#inbox', text: 'Der Posteingang: Briefe, nach Vorgängen gruppiert, mit Fristen und Beträgen.' },
-        { sel: '#knowledge-base', text: 'Die Knowledge Base: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
+        { sel: '#knowledge-base', text: 'Die Wissensdatenbank: Ordner auf diesem PC, die gelesen und durchsuchbar gehalten werden.' },
         { sel: '#troubleshooting', text: 'Wenn etwas nicht funktioniert, fangen Sie hier an.' },
         { sel: '#faq', text: 'Und die Fragen, die am häufigsten gestellt werden.' },
       ],

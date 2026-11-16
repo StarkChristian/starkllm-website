@@ -110,7 +110,7 @@ export default {
   // Descriptions of the 13 themes (the `themes` list in src/i18n/product.ts has no Italian field yet; see the report).
   themeTexts: {
     'Midnight Indigo': 'Il classico ardesia scuro con intensi riflessi indaco e viola.',
-    'Cyberpunk Rose': 'Rosa e rosa acceso al neon, vivaci, con un caldo bagliore ambientale.',
+    'Cyberpunk Rose': 'Vivaci tonalità di rosa neon e rosa antico, con un caldo bagliore ambientale.',
     'OLED Pitch Black': 'Nero assoluto #000000 per il massimo contrasto e la massima autonomia della batteria.',
     'Liquid Glass': 'Vetro smerigliato traslucido con riflessi cangianti e multicolore.',
     'Matrix Emerald': 'Matrice di ossidiana con accenti di un verde smeraldo elettrico.',

@@ -67,7 +67,7 @@ const pages = {
     title: 'Desteklenen dosyalar ve görüntüler | StarkLLM', eyebrow: 'Dosyalar',
     h1: 'Dosyalar, taramalar ve görüntüler', lede: 'Taranmış PDF’ler ve fotoğraflar dahil 14 dosya türü.',
     sections: s(en,
-      'StarkLLM; PDF, Word (DOCX), Excel (XLSX), CSV, Markdown, metin, HTML, JSON, XML ve günlük dosyalarını ile görüntüleri (PNG, JPG) okur. Bunları ataş simgesiyle ya da pencerenin üzerine bırakarak eklersiniz.',
+      'StarkLLM; PDF, Word (DOCX), Excel (XLSX), CSV, Markdown, metin, HTML, JSON, XML ve günlük dosyalarının yanı sıra görüntüleri (PNG, JPG) de okur. Bunları ataş simgesiyle ya da pencerenin üzerine bırakarak eklersiniz.',
       'Gerçek belgeler çoğu zaman seçilebilir metin değil, tarama veya fotoğraftır. Düz bir metin çıkarıcı bunlarda hiçbir şey bulamaz.',
       { p: 'Her türün kendi okuyucusu vardır:', list: [
         'Metin içeren PDF sayfaları doğrudan okunur; taranmış sayfalar yerel OCR’dan (Tesseract) geçer, bu çok az şey bulursa yerel bir görüntü modelinden geçer.',
@@ -89,7 +89,7 @@ const pages = {
   },
   'tech-privacy': {
     title: 'Gizlilik | StarkLLM', eyebrow: 'Gizlilik',
-    h1: 'Bilgisayarınızda ne kalır?', lede: 'Belgeler, dizin, sohbetler ve modeller bilgisayarınızda kalır. İsteğe bağlı birkaç özellik çevrimiçi olur ve yalnızca onları kullandığınızda.',
+    h1: 'Bilgisayarınızda ne kalır?', lede: 'Belgeler, dizin, sohbetler ve modeller bilgisayarınızda kalır. İsteğe bağlı birkaç özellik çevrimiçi olur; o da yalnızca onları kullandığınızda.',
     sections: [
       { h: en.what, p: 'StarkLLM veritabanını, arama dizinini ve web arayüzünü bilgisayarınızda (Docker içinde), dil modelini ise yine bilgisayarınızdaki Ollama’da çalıştırır. Telemetrisi yoktur ve bir sunucuda hesabı yoktur.' },
       { h: en.why, p: 'Sözleşmeler, hasta dosyaları veya araştırma verileri, yalnızca onlar hakkında bir soru sormak için bir bulut hizmetine gönderilmemelidir.' },
