@@ -32,7 +32,7 @@ export default {
       { k: 'Con importo e pagina', v: 'Ogni data è accompagnata dalla sua frase, dall\'importo, se c\'è, e dalla pagina da cui è stata letta.' },
       { k: 'Aggiungi al calendario', v: '"Add to calendar" (aggiungi al calendario) salva le date come file di calendario, se lo chiedi.' },
       { k: 'Ricavate con regole, su questo PC', v: 'Date, importi e mittenti vengono trovati con regole fisse applicate al testo delle tue lettere, non indovinati da un modello, quindi ognuno è presente nel documento. Controlla la lettera prima di agire.' },
-      { k: 'Lingue', v: 'Le lettere in inglese e in tedesco vengono comprese. Foto e scansioni vengono lette come testo inglese o tedesco. Le lettere in altre lingue vengono archiviate e si possono cercare, ma senza scadenze e importi. In arrivo con le prossime versioni (in lavorazione, non ancora rilasciato): regole per le lettere in francese, spagnolo, italiano e turco, e interfaccia in spagnolo, francese, italiano e turco.' },
+      { k: 'Lingue', v: 'Le lettere in inglese, tedesco, francese, spagnolo, italiano e turco vengono comprese, con scadenze e importi. Foto e scansioni vengono lette come testo inglese o tedesco; altre lingue per il riconoscimento del testo si possono aggiungere nelle Impostazioni. Le lettere in altre lingue vengono archiviate e si possono cercare, ma senza scadenze e importi. L\'interfaccia parla le stesse sei lingue.' },
     ],
   },
   verify: {

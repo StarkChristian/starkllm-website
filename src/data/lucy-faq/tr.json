@@ -1897,12 +1897,13 @@
     "StarkLLM hangi dilleri destekliyor?",
     "Türkçe çalışıyor mu?",
     "İspanyolca veya Fransızca sürümü var mı?",
+  "İspanyolca desteği var mı?",
     "Hangi dillerdeki mektupları okuyabilir?",
     "Türkçe arayüz ne zaman gelecek?",
     "Türkçe mektuplardaki son tarihleri bulur mu?"
    ],
    "page": "/tr/manual",
-   "match": "Mektuplar: gelen kutusu İngilizce ve Almanca mektupları anlar"
+   "match": "Mektuplar: gelen kutusu İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektupları anlar"
   },
   {
    "id": "inbox",

@@ -29,7 +29,7 @@ export default {
     lede: 'Aggiungi un PDF, una scansione o una foto dal telefono. StarkLLM la legge sul tuo PC, raggruppa in una pratica le lettere dello stesso mittente e mette ogni scadenza nella pagina iniziale. Ogni valore rimanda alla pagina e alla riga da cui è stato letto.',
     dashCaption: 'Pagina iniziale: scadenze e date di pagamento trovate nelle tue lettere, con importo e pagina.',
     inboxCaption: 'Inbox: una pratica per mittente, la scadenza più vicina in alto, un segnale su una possibile truffa.',
-    note: 'Le lettere e l\'interfaccia funzionano in inglese e tedesco. Il riconoscimento del testo (OCR) per foto e scansioni legge inglese e tedesco. Le altre lingue vengono archiviate come normali documenti, senza scadenze e importi. In arrivo con le prossime versioni (in lavorazione, non ancora rilasciato): regole per le lettere in francese, spagnolo, italiano e turco, e interfaccia in spagnolo, francese, italiano e turco. Documenti di esempio con nomi e numeri inventati.',
+    note: 'Le lettere vengono lette in inglese, tedesco, francese, spagnolo, italiano e turco, con scadenze e importi, e l\'interfaccia parla le stesse sei lingue. Il riconoscimento del testo (OCR) per foto e scansioni legge inglese e tedesco di serie; altre lingue si possono aggiungere nelle Impostazioni. Le lettere in altre lingue vengono archiviate come normali documenti, senza scadenze e importi. Documenti di esempio con nomi e numeri inventati.',
   },
   features: {
     h2: 'Pensato per chi non può caricare i propri documenti online.',

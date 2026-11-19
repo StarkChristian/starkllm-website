@@ -32,7 +32,7 @@ export default {
       { k: 'Con importe y página', v: 'Cada fecha viene con su frase, con el importe si lo hay y con la página de la que se leyó.' },
       { k: 'Add to calendar', v: '«Add to calendar» (añadir al calendario) guarda las fechas como archivo de calendario cuando lo pides.' },
       { k: 'Hecho con reglas en este PC', v: 'Las fechas, los importes y los remitentes se encuentran con reglas fijas sobre el texto de tus cartas, no los adivina un modelo, así que cada uno consta en el documento. Revisa la carta antes de actuar.' },
-      { k: 'Idiomas', v: 'Se entienden las cartas en inglés y alemán. Las fotos y los escaneos se leen como texto en inglés o alemán. Las cartas en otros idiomas se archivan y se pueden buscar, pero sin plazos ni importes. Llegarán con las próximas versiones (en preparación, aún no publicadas): las reglas de cartas para francés, español, italiano y turco, y la interfaz en español, francés, italiano y turco.' },
+      { k: 'Idiomas', v: 'Se entienden las cartas en inglés, alemán, francés, español, italiano y turco, con sus plazos e importes. Las fotos y los escaneos se leen como texto en inglés o alemán; en Ajustes se pueden añadir más idiomas de reconocimiento de texto. Las cartas en otros idiomas se archivan y se pueden buscar, pero sin plazos ni importes. La interfaz habla esos mismos seis idiomas.' },
     ],
   },
   verify: {

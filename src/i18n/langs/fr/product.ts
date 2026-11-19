@@ -33,7 +33,7 @@ export default {
       { k: 'Avec le montant et la page', v: 'Chaque date est accompagnée de sa phrase, du montant s’il y en a un et de la page où elle a été lue.' },
       { k: 'Ajouter au calendrier', v: '« Ajouter au calendrier » enregistre les dates dans un fichier de calendrier, à votre demande.' },
       { k: 'Établi par des règles, sur ce PC', v: 'Les dates, les montants et les expéditeurs sont trouvés par des règles fixes appliquées au texte de vos courriers, et non devinés par un modèle : chaque valeur figure donc bien dans le document. Vérifiez le courrier avant d’agir.' },
-      { k: 'Langues', v: 'Les courriers en anglais et en allemand sont compris. Les photos et les scans sont lus comme du texte anglais ou allemand. Les courriers dans d’autres langues sont classés et peuvent être recherchés, mais sans échéances ni montants. Prévu pour les prochaines versions (en cours de développement, pas encore publié) : les règles de courrier pour le français, l’espagnol, l’italien et le turc, ainsi que l’interface en espagnol, en français, en italien et en turc.' },
+      { k: 'Langues', v: 'Les courriers en anglais, allemand, français, espagnol, italien et turc sont compris, avec leurs échéances et montants. Les photos et les scans sont lus comme du texte anglais ou allemand ; d’autres langues de reconnaissance de texte peuvent être ajoutées dans les Paramètres. Les courriers dans d’autres langues sont classés et peuvent être recherchés, mais sans échéances ni montants. L’interface parle ces mêmes six langues.' },
     ],
   },
   verify: {

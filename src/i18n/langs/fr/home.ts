@@ -30,7 +30,7 @@ export default {
     lede: 'Ajoutez un PDF, un scan ou une photo prise avec votre téléphone. StarkLLM le lit sur votre PC, regroupe les courriers d’un même expéditeur en un dossier et affiche chaque échéance sur la page d’accueil. Chaque valeur renvoie à la page et à la ligne où elle a été lue.',
     dashCaption: 'Page d’accueil : les échéances et les dates de paiement trouvées dans vos courriers, avec le montant et la page.',
     inboxCaption: 'Boîte de réception : un dossier par expéditeur, l’échéance la plus proche en premier, une alerte en cas d’arnaque possible.',
-    note: 'Les courriers et l’interface fonctionnent en anglais et en allemand. La reconnaissance de texte (OCR) des photos et des scans lit l’anglais et l’allemand. Les autres langues sont classées comme des documents ordinaires, sans échéances ni montants. Prévu pour les prochaines versions (en cours de développement, pas encore publié) : les règles de courrier pour le français, l’espagnol, l’italien et le turc, ainsi que l’interface en espagnol, en français, en italien et en turc. Documents de démonstration avec des noms et des chiffres inventés.',
+    note: 'Les courriers sont lus en anglais, allemand, français, espagnol, italien et turc, avec leurs échéances et montants, et l’interface parle ces mêmes six langues. La reconnaissance de texte (OCR) des photos et des scans lit l’anglais et l’allemand d’origine ; d’autres langues peuvent être ajoutées dans les Paramètres. Les courriers dans d’autres langues sont classés comme des documents ordinaires, sans échéances ni montants. Documents de démonstration avec des noms et des chiffres inventés.',
   },
   features: {
     h2: 'Conçu pour ceux qui ne peuvent pas envoyer leurs documents en ligne.',

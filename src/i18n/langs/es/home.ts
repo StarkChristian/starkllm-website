@@ -29,7 +29,7 @@ export default {
     lede: 'Añade un PDF, un escaneo o una foto hecha con el móvil. StarkLLM lo lee en tu PC, agrupa en un expediente las cartas de un mismo remitente y pone cada plazo en la página de inicio. Cada valor enlaza con la página y la línea de las que se leyó.',
     dashCaption: 'Página de inicio: plazos y fechas de pago encontrados en tus cartas, con el importe y la página.',
     inboxCaption: 'Bandeja de entrada: un expediente por remitente, primero el plazo más cercano, con una marca ante una posible estafa.',
-    note: 'Las cartas y la interfaz funcionan en inglés y alemán. El reconocimiento de texto (OCR) de fotos y escaneos lee inglés y alemán. Los demás idiomas se archivan como documentos normales, sin plazos ni importes. Llegarán con las próximas versiones (en preparación, aún no publicadas): las reglas de cartas para francés, español, italiano y turco, y la interfaz en español, francés, italiano y turco. Documentos de demostración con nombres y cifras inventados.',
+    note: 'Las cartas se leen en inglés, alemán, francés, español, italiano y turco, con sus plazos e importes, y la interfaz habla esos mismos seis idiomas. El reconocimiento de texto (OCR) de fotos y escaneos lee inglés y alemán de serie; en Ajustes se pueden añadir más idiomas. Las cartas en otros idiomas se archivan como documentos normales, sin plazos ni importes. Documentos de demostración con nombres y cifras inventados.',
   },
   features: {
     h2: 'Pensado para quienes no pueden subir sus documentos a ningún sitio.',

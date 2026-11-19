@@ -30,7 +30,7 @@ export default {
     lede: 'Bir PDF, bir tarama veya telefonunuzdan bir fotoğraf ekleyin. StarkLLM bunu bilgisayarınızda okur, aynı göndericinin mektuplarını tek bir dosyada toplar ve her son tarihi ana sayfaya koyar. Her değer, okunduğu sayfaya ve satıra bağlanır.',
     dashCaption: 'Ana sayfa: mektuplarınızda bulunan son tarihler ve ödeme tarihleri, tutar ve sayfa bilgisiyle.',
     inboxCaption: 'Gelen kutusu: her gönderen için bir dosya, en yakın son tarih en üstte, olası bir dolandırıcılık için işaret.',
-    note: 'Mektuplar ve arayüz İngilizce ve Almanca çalışır. Fotoğraflar ve taramalar için metin tanıma (OCR) İngilizce ve Almanca okur. Diğer diller sıradan belge olarak kaydedilir; son tarih ve tutar çıkarılmaz. Sonraki sürümlerle gelecekler (çalışmalar sürüyor, henüz yayımlanmadı): Fransızca, İspanyolca, İtalyanca ve Türkçe için mektup kuralları ile İspanyolca, Fransızca, İtalyanca ve Türkçe arayüz. Uydurma adlar ve sayılar içeren demo belgeler.',
+    note: 'Mektuplar İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe okunur, son tarihleri ve tutarlarıyla birlikte; arayüz de aynı altı dili konuşur. Fotoğraflar ve taramalar için metin tanıma (OCR) varsayılan olarak İngilizce ve Almanca okur; diğer diller Ayarlar’dan eklenebilir. Diğer dillerdeki mektuplar sıradan belge olarak kaydedilir; son tarih ve tutar çıkarılmaz. Uydurma adlar ve sayılar içeren demo belgeler.',
   },
   features: {
     h2: 'Belgelerini yükleyemeyenler için tasarlandı.',

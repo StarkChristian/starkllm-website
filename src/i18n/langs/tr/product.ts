@@ -33,7 +33,7 @@ export default {
       { k: 'Tutar ve sayfa ile', v: 'Her tarih, cümlesiyle, varsa tutarıyla ve okunduğu sayfayla birlikte gelir.' },
       { k: 'Takvime ekle', v: '“Takvime ekle”, isterseniz tarihleri bir takvim dosyası olarak kaydeder.' },
       { k: 'Bu bilgisayarda kurallarla üretilir', v: 'Tarihler, tutarlar ve göndericiler, mektuplarınızın metni üzerinde sabit kurallarla bulunur; bir model tarafından tahmin edilmez, bu yüzden her biri belgede yer alır. Harekete geçmeden önce mektubu kontrol edin.' },
-      { k: 'Diller', v: 'İngilizce ve Almanca mektuplar anlaşılır. Fotoğraflar ve taramalar İngilizce veya Almanca metin olarak okunur. Diğer dillerdeki mektuplar kaydedilir ve aranabilir, ancak son tarih ve tutar çıkarılmaz. Sonraki sürümlerle gelecekler (çalışmalar sürüyor, henüz yayımlanmadı): Fransızca, İspanyolca, İtalyanca ve Türkçe için mektup kuralları ile İspanyolca, Fransızca, İtalyanca ve Türkçe arayüz.' },
+      { k: 'Diller', v: 'İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektuplar son tarihleri ve tutarlarıyla birlikte anlaşılır. Fotoğraflar ve taramalar İngilizce veya Almanca metin olarak okunur; metin tanıma için diğer diller Ayarlar’dan eklenebilir. Diğer dillerdeki mektuplar kaydedilir ve aranabilir, ancak son tarih ve tutar çıkarılmaz. Arayüz de aynı altı dili konuşur.' },
     ],
   },
   verify: {

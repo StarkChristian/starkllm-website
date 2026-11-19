@@ -344,7 +344,7 @@
     "Will Spanish be supported?"
    ],
    "page": "/manual",
-   "match": "Letters: the inbox understands letters in English and German"
+   "match": "Letters: the inbox understands letters in English, German, French, Spanish, Italian and Turkish"
   },
   {
    "id": "inbox",
