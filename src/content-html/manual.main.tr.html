@@ -54,7 +54,7 @@
                 <h2>3. Ne için değildir?</h2>
                 <p>StarkLLM bir bulut sohbet robotu (ChatGPT veya Claude gibi) <strong>değildir</strong>. Uzak
                     sunucu çiftliklerine dayanmaz. Ayrıca sıfır yapılandırmayla çalışan bir tüketici uygulaması da değildir; ilk kurulum,
-                    Docker ve Ollama gibi temel bağımlılıkların kurulmasını gerektirir. Anında, az çaba gerektiren bir yapay zekâ istiyorsanız ve
+                    birkaç GB’lık yapay zekâ modellerinin ve bunları çalıştırmak için Ollama’nın indirilmesini gerektirir (StarkLLM onu sizin için kurabilir). Anında, az çaba gerektiren bir yapay zekâ istiyorsanız ve
                     verilerin buluta aktarılmasında sakınca görmüyorsanız bir bulut aboneliği daha kolay ve hızlı olacaktır.</p>
             </section>
 
@@ -74,20 +74,20 @@
                         14B modeller bu kademede daha fazla VRAM gerektirir veya yavaş çalışır.</li>
                     <li><strong>İleri düzey kademe:</strong> Intel i9 / Ryzen 9, 32–64 GB RAM, NVIDIA RTX 3090 / 4090
                         (16–24 GB VRAM). Geniş bağlam pencereleriyle daha büyük 14B–32B modelleri çalıştırmayı sağlar.</li>
-                    <li><strong>Depolama:</strong> Docker kapsayıcıları ve yerel model ağırlıkları için en az 30–50 GB boş alanı olan hızlı bir NVMe veya SATA SSD.</li>
+                    <li><strong>Depolama:</strong> Uygulama, motoru ve varsayılan modeller için en az 15 GB boş alanı olan hızlı bir NVMe veya SATA SSD; birkaç büyük modeli saklamak istiyorsanız 30–50 GB planlayın.</li>
                 </ul>
             </section>
 
             <section id="software">
                 <h2>5. Gerekli yazılım</h2>
-                <p>StarkLLM tamamen yerel çalıştığı için standart kapsayıcılaştırma ve çıkarım motorlarına dayanır:
-                </p>
+                <p>StarkLLM tamamen yerel çalıştığı için kendisi dışında yalnızca bir programa daha ihtiyaç duyar:</p>
                 <ul>
-                    <li><strong>Windows 10 veya 11</strong>, WSL2 (Linux için Windows Alt Sistemi) etkin olarak.</li>
-                    <li><strong>Docker Desktop:</strong> Vektör veritabanını, arka uç API’sini ve ön yüz arayüzünü
-                        yönetmek için kullanılır.</li>
-                    <li><strong>Ollama:</strong> LLM modellerini ana bilgisayarınızda yerel olarak çalıştırmaktan sorumlu
-                        çıkarım motoru.</li>
+                    <li><strong>Windows 10 veya 11</strong> (64 bit).</li>
+                    <li><strong>Ollama:</strong> LLM modellerini bilgisayarınızda yerel olarak çalıştırmaktan sorumlu
+                        çıkarım motoru. StarkLLM “Ollama’yı benim için kur” seçeneğini sunar ve resmî, imzalı sürümü kurar; ya da onu <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> adresinden indirebilirsiniz.</li>
+                    <li><strong>v2.2’den beri gerekmez:</strong> Docker Desktop ve WSL2. StarkLLM motoru (vektör veritabanı, arka uç API’si ve
+                        web arayüzü) yükleyicinin bir parçasıdır ve doğrudan Windows üzerinde çalışır. İleri düzey kullanıcılar onu hâlâ Docker Desktop’ta çalıştırabilir
+                        (tepsi menüsü: “Motor için Docker Desktop kullan (ileri düzey)”).</li>
                 </ul>
             </section>
 
@@ -110,19 +110,17 @@
 
             <section id="installation">
                 <h2>7. Kuruluma genel bakış</h2>
-                <p>Kurulum, ana bilgisayarınızı hazırlamayı ve ardından yükleyiciyi çalıştırmayı içerir:</p>
+                <p>Kurulum üç adımdan oluşur; önceden hiçbir şey hazırlamanız gerekmez:</p>
                 <ol>
-                    <li>Docker Desktop’ın kurulu ve çalışır durumda olduğundan emin olun.</li>
-                    <li>Ollama’yı <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> adresinden kurun.
-                    </li>
-                    <li>İsteğe bağlı (masaüstü uygulaması modelleri sizin için indirir): varsayılan modelleri terminalinizde çekin:
+                    <li><code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını kurun (önerilir). Motor yükleyicinin bir parçasıdır; Docker Desktop ve WSL2 gerekmez.</li>
+                    <li>StarkLLM’i başlatın. Ollama eksikse “Ollama’yı benim için kur” seçeneğini seçin ya da onu <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a> adresinden kendiniz kurun.</li>
+                    <li>Uygulama ilk başlatmada yapay zekâ modellerini (yaklaşık 5 GB) indirir, ilerlemeyi gösterir ve ardından StarkLLM’i kendi penceresinde gösterir. İsteğe bağlı: Varsayılan modelleri bir terminalde kendiniz çekin:
                         <div class="code-block">
                             ollama pull qwen2.5:7b<br>
                             ollama pull nomic-embed-text
                         </div>
                     </li>
-                    <li><code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını kurun (önerilir). Uygulama ilk başlatmada Docker Desktop’ı ve Ollama’yı başlatır, modelleri indirir ve motorunu derler; ardından StarkLLM’i kendi penceresinde gösterir.</li>
-<li>Geliştiriciler bunun yerine motoru GitHub’daki kaynak koddan <code>docker compose up --build -d</code> ile çalıştırabilir (bir sonraki bölümdeki 2. seçeneğe bakın).</li>
+<li>Geliştiriciler bunun yerine motoru GitHub’daki kaynak koddan <code>docker compose up --build -d</code> ile çalıştırabilir (Docker Desktop gerekir; bir sonraki bölümdeki 2. seçeneğe bakın).</li>
 </ol>
 <p>Her adımın bir testi ve bir çözüm listesi <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır.</p>
             </section>
@@ -132,10 +130,9 @@
                 <p>StarkLLM v{{V}}, bağımsız, kendi başına bir masaüstü uygulama penceresi olarak çalışır (Cursor ve Claude Desktop’a benzer). Tercih ettiğiniz başlatma seçeneğini seçin. 2.0.13’ten beri taşınabilir sürüm yoktur; lütfen yükleyiciyi kullanın:</p>
 
                 <div class="alert info" style="margin-bottom: 1rem;">
-                    <strong>İlk başlatma notu:</strong> Docker Desktop ve Ollama’yı bir kez kurun. Masaüstü uygulaması ilk
-                    başlatmada ikisini de başlatır, yapay zekâ modellerini (yaklaşık 5 GB) indirir ve motorunu derler; bu
-                    <strong>10&ndash;20 dakika</strong> sürer, açılış ekranı her adımı gösterir. Sonraki başlatmalar saniyeler sürer.
-                    Bir parça eksikse pencere hangisi olduğunu ve nasıl giderileceğini söyler (günlük: <code>%APPDATA%\StarkLLM\engine.log</code>).
+                    <strong>İlk başlatma notu:</strong> Masaüstü uygulaması ilk başlatmada yerleşik motorunu ve Ollama’yı başlatır
+                    (Ollama’yı sizin için kurabilir) ve yapay zekâ modellerini (yaklaşık 5 GB) indirir; açılış ekranı her adımı gösterir. Sonraki başlatmalar saniyeler sürer.
+                    Bir parça eksikse pencere hangisi olduğunu ve nasıl giderileceğini söyler (günlükler: <code>%APPDATA%\StarkLLM\engine.log</code> ve <code>engine-native.log</code>).
                 </div>
 
                 <div class="alert info" id="signature">
@@ -145,10 +142,10 @@
                 </div>
 
                 <h3>Seçenek 1 &mdash; Windows masaüstü yükleyicisi (önerilir)</h3>
-                <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda Docker Desktop’ı ve Ollama’yı başlatır, eksik modelleri indirir, StarkLLM motorunu derleyip başlatır ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Knowledge Base klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. (v2.0.0 hiçbir şey başlatmıyor ve yalnızca &ldquo;Connecting to local engine&hellip;&rdquo; ekranında bekliyordu.)</p>
+                <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda yerleşik motorunu ve Ollama’yı başlatır, eksik modelleri indirir ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Knowledge Base klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. StarkLLM’den çıktığınızda motor da durur.</p>
 
-                <h3>Seçenek 2 &mdash; Doğrudan Docker Compose</h3>
-                <p>Başsız (headless) veya sunucu ortamları için kapsayıcıları doğrudan terminalden başlatın:</p>
+                <h3>Seçenek 2 &mdash; Kaynaktan Docker Compose ile (geliştiriciler)</h3>
+                <p>Geliştirme, başsız (headless) veya sunucu ortamları için motoru GitHub’daki kaynak koddan kapsayıcılarda başlatın (Docker gerekir):</p>
                 <p><code>docker compose up --build -d</code></p>
 
             </section>
@@ -245,7 +242,7 @@
             <section id="knowledge-base">
                 <h2>15. Knowledge Base kullanımı ve en iyi uygulamalar</h2>
                 <p>Knowledge Base özelliği, Windows ana bilgisayarınızdaki yerel bir klasörü bağlamanıza olanak tanır. StarkLLM,
-                    desteklenen dosyaları (PDF, DOCX, TXT, MD, HTML ve görüntüler) kapsayıcıya tek yönlü kopyalar ve
+                    desteklenen dosyaları (PDF, DOCX, TXT, MD, HTML ve görüntüler) oradan okur (tek yönlü: dosyalar asla değiştirilmez) ve
                     genel bir vektör koleksiyonuna dizinler. Workspace’e özgü belgelerden farklı olarak Knowledge
                     Base, her sohbet oturumundan sorgulayabileceğiniz genel bir başvuru kütüphanesi işlevi görür. Sistem,
                     bağlanan klasörü yaklaşık dakikada bir yoklar ve yeni veya değiştirilmiş dosyaları otomatik olarak yeniden dizinler.
@@ -439,16 +436,15 @@
 
             <section id="troubleshooting">
                 <h2>27. Sorun giderme</h2>
-<p>Bir kurulum kontrol listesi ile 24 sorun ve çözümü içeren tam rehber <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır. En yaygın olanlar:</p>
+<p>Bir kurulum kontrol listesi ile 25 sorun ve çözümü içeren tam rehber <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır. En yaygın olanlar:</p>
 <ul>
-                    <li><strong>“Cannot connect to Ollama”:</strong> Ollama’nın Windows sistem tepsinizde çalıştığından emin olun.
-                        Ollama ana bilgisayarda yerel olarak çalışır ve Docker kapsayıcısı
-                        <code>host.docker.internal:11434</code> üzerinden iletişim kurar. Gerekli modeli
+                    <li><strong>“Cannot connect to Ollama”:</strong> Ollama’nın çalıştığından emin olun (Windows sistem tepsisindeki simgesi).
+                        StarkLLM ona <code>127.0.0.1:11434</code> adresinden ulaşır. Gerekli modeli
                         çektiğinizi doğrulayın (<code>ollama pull qwen2.5:7b</code>).
                     </li>
-                    <li><strong>Docker başlamıyor:</strong> Docker Desktop’ın WSL2 entegrasyonuyla çalıştığından emin olun.
-                        Kapsayıcılar başarısız olursa önce <code>docker compose down</code>, ardından
-                        <code>docker compose up --build -d</code> komutunu çalıştırmayı deneyin.
+                    <li><strong>“StarkLLM başlatılamadı”:</strong> Pencere eksik parçayı adlandırır (Ollama, meşgul bir port, Windows’un engellediği bir
+                        program dosyası ya da bir motor hatası) ve bir “Yeniden dene” düğmesi sunar. Motor günlüğü <code>%APPDATA%\StarkLLM\engine-native.log</code> dosyasıdır.
+                        Docker Desktop motorunu (ileri düzey) seçtiyseniz Docker Desktop’ın WSL2 ile çalışıyor olması gerekir.
                     </li>
                     <li><strong>Yavaş yanıtlar:</strong> Ollama’nın CPU çıkarımına varsayılan olarak dönmek yerine ayrı NVIDIA
                         GPU’nuzu kullandığından emin olun.</li>
@@ -458,11 +454,11 @@
             <section id="limitations">
                 <h2>28. Sınırlamalar</h2>
                 <ul>
-                    <li>İlk kurulum, Docker Desktop ve Ollama’nın kurulmasını gerektirir.</li>
+                    <li>İlk kurulum, Ollama’yı (StarkLLM onu sizin için kurabilir) ve yaklaşık 5 GB’lık yapay zekâ modeli indirmeyi gerektirir.</li>
                     <li>Yanıt hızı ve verimlilik, yerel donanımınıza bağlıdır.</li>
                     <li>Belge erişim kalitesi, girdi metninin biçimine ve netliğine bağlıdır. Belgeden farklı bir dildeki sorular, noktalama işareti olmayan çok uzun dosyalar (günlükler) ve bir belgenin eski ve yeni sürümlerinin karışması, kaçırılan bilgilerin olağan nedenleridir.</li>
 <li>Varsayılan 7B model benzer değerleri karıştırabilir, yanlış hesaplayabilir veya bir bilgiyi kaçırabilir. Önemli kararlar için alıntılanan kaynağı kontrol edin.</li>
-<li>Masaüstü uygulamasının ilk başlatması 10&ndash;20 dakika sürer (modeller ve motor indirilir ve derlenir). İlk hesap yöneticidir ve diğer hesapların belgeleri dahil tüm veritabanını yedekleyebilir.</li>
+<li>Masaüstü uygulamasının ilk başlatması yaklaşık 5 GB yapay zekâ modeli indirir; bu, yavaş bir bağlantıda biraz zaman alır. İlk hesap yöneticidir ve diğer hesapların belgeleri dahil tüm veritabanını yedekleyebilir.</li>
 <li>Nedenler ve çözümler için <a href="/tr/help">Yardım ve sorun giderme</a> sayfasına bakın.</li>
                     <li>StarkLLM, Apache 2.0 altında açık kaynaklı bir Research Beta olarak “olduğu gibi” sunulur.</li>
                 </ul>
@@ -475,7 +471,7 @@
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Verilerim
                         bilgisayarımdan çıkıyor mu?</h4>
                     <p style="color: var(--text-secondary); margin-bottom: 0;">Hayır. StarkLLM, verileri kesinlikle
-                        makinenizde tutacak şekilde tasarlanmıştır. Belgeler yerel ChromaDB kapsayıcılarında saklanır ve çıkarım,
+                        makinenizde tutacak şekilde tasarlanmıştır. Belgeler yerel bir ChromaDB veritabanında saklanır ve çıkarım,
                         bilgisayarınızdaki Ollama ile çalışır.</p>
                 </div>
 
@@ -497,8 +493,8 @@
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">
-                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM’i kapattıktan sonra çalışmaya devam ediyor. Bu normal mi?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Evet, bu bilerek böyle yapılmıştır. StarkLLM’den çıktığınızda motor kapsayıcıları (arka uç) ve Docker Desktop çalışmaya devam eder; böylece bir sonraki açılış yalnızca yaklaşık bir buçuk saniye sürer. Boştayken arka uç yaklaşık 400 MB bellek kullanır. Hiçbir yere hiçbir şey gönderilmez. Tamamen durdurmak için Docker Desktop’tan görev çubuğu simgesiyle çıkın ya da Docker Desktop içinde iki StarkLLM kapsayıcısını durdurun.</p>
+                    <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM’i kapattıktan sonra çalışmaya devam ediyor mu?</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur. Ollama, kendi tepsi simgesi olan ayrı bir programdır ve siz oradan çıkana kadar çalışmaya devam eder; hiçbir yere hiçbir şey gönderilmez. Docker Desktop motorunu (ileri düzey, tepsi menüsü) seçtiyseniz motor kapsayıcıları ve Docker Desktop, bir sonraki başlatma daha hızlı olsun diye siz çıktıktan sonra da çalışmaya devam eder; bunları durdurmak için Docker Desktop’tan tepsi simgesiyle çıkın ya da Docker Desktop içinde iki StarkLLM kapsayıcısını durdurun.</p>
                 </div>
             </section>
         </article>

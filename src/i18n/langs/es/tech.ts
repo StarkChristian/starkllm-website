@@ -89,7 +89,7 @@ const pages = {
     title: 'Privacidad | StarkLLM', eyebrow: 'Privacidad',
     h1: 'Lo que se queda en tu PC', lede: 'Los documentos, el índice, los chats y los modelos se quedan en tu equipo. Algunas funciones opcionales se conectan a internet, y solo cuando las usas.',
     sections: [
-      { h: es.what, p: 'StarkLLM ejecuta su base de datos, su índice de búsqueda y su interfaz web en tu PC (en Docker) y el modelo de lenguaje en Ollama, también en tu PC. No tiene telemetría ni una cuenta en ningún servidor.' },
+      { h: es.what, p: 'StarkLLM ejecuta su base de datos, su índice de búsqueda y su interfaz web en tu PC (en su propio motor, sin Docker desde la v2.2) y el modelo de lenguaje en Ollama, también en tu PC. No tiene telemetría ni una cuenta en ningún servidor.' },
       { h: es.why, p: 'Los contratos, las historias clínicas o los datos de investigación no deberían enviarse a un servicio en la nube solo para hacerles una pregunta.' },
       { h: 'Funciones en línea opcionales', p: 'Estas se conectan a internet solo cuando las activas o las inicias. El chat avisa cuando una pregunta sale de tu PC.', list: [
         'Búsqueda web (interruptor en el chat): tu pregunta va a DuckDuckGo.',

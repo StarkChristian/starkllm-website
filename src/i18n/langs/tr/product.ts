@@ -10,7 +10,7 @@ export default {
     steps: [
       { k: 'Ayrıştırma', v: 'Yerel ayrıştırıcılar ham metni çıkarır. Taranmış PDF’ler ve görüntüler, parçalara ayrılmadan önce yerel OCR’dan veya görüntü modelinden geçer.' },
       { k: 'Parçalama', v: 'Anlamsal bir parçalama algoritması metni mantıksal, birbiriyle örtüşen bloklara böler.' },
-      { k: 'Gömme', v: 'Yerel bir gömme (embedding) modeli her bloğu bir vektöre dönüştürür; vektör, size ait ChromaDB kapsayıcısında saklanır.' },
+      { k: 'Gömme', v: 'Yerel bir gömme (embedding) modeli her bloğu bir vektöre dönüştürür; vektör, bilgisayarınızdaki size ait ChromaDB veritabanında saklanır.' },
       { k: 'Yanıt', v: 'Bir soru sorduğunuzda en ilgili pasajlar, seçtiğiniz Ollama modelinin bağlam penceresine eklenir; böylece yanıt kaynaklarınıza dayanır.' },
     ],
   },
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Model seçimi', v: 'Sohbet arayüzünden, Ollama ile indirdiğiniz herhangi bir model (örneğin Qwen 2.5, Llama 3.2, Mistral) arasında geçiş yapın.' },
       { k: 'Çalışma zamanı yapılandırması', v: 'Hız ile akıl yürütme derinliği arasında denge kurmak için bağlam penceresi boyutunu, sıcaklığı (temperature) ve gelişmiş parametreleri ayarlayın.' },
-      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği localhost Docker ve ana bilgisayar portlarında akar; verileriniz makinenizde kalır.' },
+      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır.' },
     ],
   },
   tools: {

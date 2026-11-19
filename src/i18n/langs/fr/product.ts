@@ -10,7 +10,7 @@ export default {
     steps: [
       { k: 'Lecture', v: 'Des analyseurs locaux extraient le texte brut. Les PDF numérisés et les images passent par une reconnaissance de texte (OCR) ou une analyse d’image locale avant le découpage.' },
       { k: 'Découpage', v: 'Un algorithme de découpage sémantique répartit le texte en blocs logiques qui se chevauchent.' },
-      { k: 'Vectorisation', v: 'Un modèle d’embedding local transforme chaque bloc en vecteur, stocké dans votre conteneur ChromaDB privé.' },
+      { k: 'Vectorisation', v: 'Un modèle d’embedding local transforme chaque bloc en vecteur, stocké dans votre base de données ChromaDB privée sur votre PC.' },
       { k: 'Réponse', v: 'Quand vous posez une question, les passages les plus pertinents sont injectés dans la fenêtre de contexte du modèle Ollama que vous avez choisi : la réponse s’appuie ainsi sur vos sources.' },
     ],
   },
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Choix du modèle', v: 'Passez de l’un à l’autre des modèles que vous avez téléchargés via Ollama (par exemple Qwen 2.5, Llama 3.2, Mistral) depuis l’interface de discussion.' },
       { k: 'Configuration à l’exécution', v: 'Ajustez la taille de la fenêtre de contexte, la température et d’autres paramètres avancés pour trouver le bon équilibre entre vitesse et profondeur de raisonnement.' },
-      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe par des ports localhost de Docker et de l’hôte : vos données restent sur votre ordinateur.' },
+      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur.' },
     ],
   },
   tools: {

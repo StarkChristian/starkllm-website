@@ -92,7 +92,7 @@ const pages = {
     title: 'Confidentialité | StarkLLM', eyebrow: 'Confidentialité',
     h1: 'Ce qui reste sur votre PC', lede: 'Les documents, l’index, les discussions et les modèles restent sur votre ordinateur. Quelques fonctions facultatives se connectent à internet, et seulement quand vous les utilisez.',
     sections: [
-      { h: fr.what, p: 'StarkLLM fait tourner sa base de données, son index de recherche et son interface web sur votre PC (dans Docker), et le modèle de langage dans Ollama, lui aussi sur votre PC. Il n’a ni télémétrie ni compte sur un serveur.' },
+      { h: fr.what, p: 'StarkLLM fait tourner sa base de données, son index de recherche et son interface web sur votre PC (dans son propre moteur, sans Docker depuis la v2.2), et le modèle de langage dans Ollama, lui aussi sur votre PC. Il n’a ni télémétrie ni compte sur un serveur.' },
       { h: fr.why, p: 'Des contrats, des dossiers de patients ou des données de recherche ne devraient pas être envoyés à un service cloud juste pour poser une question à leur sujet.' },
       { h: 'Fonctions en ligne facultatives', p: 'Elles ne se connectent à internet que lorsque vous les activez ou les lancez. La discussion indique quand une question quitte votre PC.', list: [
         'Recherche web (interrupteur dans la discussion) : votre question est envoyée à DuckDuckGo.',

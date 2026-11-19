@@ -403,7 +403,7 @@
     "Come faccio a installarlo?"
    ],
    "page": "/it/download",
-   "match": "Due programmi si installano una volta sola, poi al resto pensa StarkLLM"
+   "match": "StarkLLM porta con sé il proprio motore; Docker Desktop e WSL2 non servono"
   },
   {
    "id": "smartscreen",
@@ -463,7 +463,7 @@
     "Funziona su macOS o su un computer Apple?"
    ],
    "page": "/it/download",
-   "match": "Sistema operativo: Windows 10 o 11 con WSL2 attivato"
+   "match": "Sistema operativo: Windows 10 o 11 (64 bit)"
   },
   {
    "id": "docker",
@@ -474,7 +474,7 @@
     "Quali sono i prerequisiti?"
    ],
    "page": "/it/download",
-   "match": "Docker Desktop: Installato una volta (StarkLLM lo avvia)"
+   "match": "Solo Ollama, per i modelli di IA. StarkLLM può installare per te la versione ufficiale"
   },
   {
    "id": "firststart",
@@ -486,7 +486,7 @@
     "Cosa succede durante il primo avvio?"
    ],
    "page": "/it/download",
-   "match": "Il primo avvio scarica il motore e i modelli di IA che ancora non hai"
+   "match": "Il primo avvio scarica i modelli di IA che ancora non hai"
   },
   {
    "id": "languages",
@@ -706,7 +706,7 @@
     "Quali dati salva questo sito sui visitatori?"
    ],
    "page": "/it/about",
-   "match": "usa Umami, un servizio di statistiche ospitato in proprio, senza cookie"
+   "match": "nemmeno questo sito pubblico (starkllm.com) usa strumenti di analisi, tracciamento o cookie"
   },
   {
    "id": "slow",
@@ -751,7 +751,7 @@
     "Come fermo il motore di StarkLLM e i suoi container?"
    ],
    "page": "/it/manual",
-   "match": "così il prossimo avvio richiede solo circa un secondo e mezzo"
+   "match": "Dalla v2.2 no: quando chiudi o esci da StarkLLM, si ferma anche il suo motore"
   }
  ]
 }

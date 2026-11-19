@@ -9,7 +9,7 @@ export default {
     steps: [
       { k: 'Analisi', v: 'Parser locali estraggono il testo grezzo. I PDF scansionati e le immagini passano per l\'OCR o per la visione locale prima della divisione in chunk.' },
       { k: 'Chunk', v: 'Un algoritmo di chunking semantico divide il testo in blocchi logici che si sovrappongono.' },
-      { k: 'Embedding', v: 'Un modello di embedding locale trasforma ogni blocco in un vettore, conservato nel tuo container ChromaDB privato.' },
+      { k: 'Embedding', v: 'Un modello di embedding locale trasforma ogni blocco in un vettore, conservato nel tuo database ChromaDB privato sul tuo PC.' },
       { k: 'Risposta', v: 'Quando fai una domanda, i passaggi più pertinenti vengono inseriti nella finestra di contesto del modello Ollama che hai scelto, così la risposta si basa sulle tue fonti.' },
     ],
   },
@@ -68,7 +68,7 @@ export default {
     items: [
       { k: 'Scelta del modello', v: 'Passa da un modello all\'altro, tra quelli scaricati con Ollama (per esempio Qwen 2.5, Llama 3.2, Mistral), direttamente dall\'interfaccia della chat.' },
       { k: 'Configurazione dell\'esecuzione', v: 'Regola la dimensione della finestra di contesto, la temperatura e i parametri avanzati per bilanciare velocità e profondità di ragionamento.' },
-      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa per le porte di Docker e dell\'host su localhost, così i tuoi dati restano sul tuo computer.' },
+      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer.' },
     ],
   },
   tools: {
