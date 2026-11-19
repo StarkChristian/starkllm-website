@@ -254,7 +254,7 @@
     "How do I set it up?"
    ],
    "page": "/download",
-   "match": "Two programs are installed once, then StarkLLM does the rest"
+   "match": "StarkLLM brings its own engine; Docker Desktop and WSL2 are not needed"
   },
   {
    "id": "smartscreen",
@@ -332,7 +332,7 @@
     "How big is the download of the models?"
    ],
    "page": "/download",
-   "match": "The first start downloads the engine and the AI models you do not have yet"
+   "match": "The first start downloads the AI models you do not have yet"
   },
   {
    "id": "languages",

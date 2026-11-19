@@ -282,7 +282,7 @@
     "Wie richte ich es ein?"
    ],
    "page": "/de/download",
-   "match": "Zwei Programme installieren Sie einmal, den Rest erledigt StarkLLM"
+   "match": "StarkLLM bringt seine eigene Engine mit; Docker Desktop und WSL2 sind nicht nötig"
   },
   {
    "id": "smartscreen",
@@ -360,7 +360,7 @@
     "Wie groß ist der Download der Modelle?"
    ],
    "page": "/de/download",
-   "match": "Der erste Start lädt die Engine und die KI-Modelle, die noch fehlen"
+   "match": "Der erste Start lädt die KI-Modelle, die noch fehlen"
   },
   {
    "id": "languages",
