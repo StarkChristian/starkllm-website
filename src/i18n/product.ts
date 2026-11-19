@@ -28,7 +28,7 @@ const productBase = {
       steps: [
         { k: 'Parse', v: 'Local parsers extract the raw text. Scanned PDFs and images go through local OCR or vision before chunking.' },
         { k: 'Chunk', v: 'A semantic chunking algorithm splits the text into logical, overlapping blocks.' },
-        { k: 'Embed', v: 'A local embedding model turns each block into a vector, stored in your private ChromaDB container.' },
+        { k: 'Embed', v: 'A local embedding model turns each block into a vector, stored in your private ChromaDB database on your PC.' },
         { k: 'Answer', v: 'When you ask a question, the most relevant passages are injected into the context window of your chosen Ollama model, so the response is grounded in your sources.' },
       ],
     },
@@ -87,7 +87,7 @@ const productBase = {
       items: [
         { k: 'Model selection', v: 'Switch between any model you downloaded via Ollama (for example Qwen 2.5, Llama 3.2, Mistral) from the chat interface.' },
         { k: 'Runtime configuration', v: 'Adjust context window size, temperature and advanced parameters to balance speed and reasoning depth.' },
-        { k: 'Strict localhost routing', v: 'Internal API traffic runs on localhost Docker and host ports, keeping your data on your machine.' },
+        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine.' },
       ],
     },
     tools: {
@@ -136,7 +136,7 @@ const productBase = {
       steps: [
         { k: 'Einlesen', v: 'Lokale Parser extrahieren den Rohtext. Gescannte PDFs und Bilder durchlaufen vor dem Chunking lokale OCR oder Bildanalyse.' },
         { k: 'Zerlegen', v: 'Ein semantischer Chunking-Algorithmus teilt den Text in logische, überlappende Blöcke.' },
-        { k: 'Einbetten', v: 'Ein lokales Embedding-Modell wandelt jeden Block in einen Vektor um, gespeichert in Ihrem privaten ChromaDB-Container.' },
+        { k: 'Einbetten', v: 'Ein lokales Embedding-Modell wandelt jeden Block in einen Vektor um, gespeichert in Ihrer privaten ChromaDB-Datenbank auf Ihrem PC.' },
         { k: 'Antworten', v: 'Bei einer Frage werden die relevantesten Passagen in das Kontextfenster Ihres gewählten Ollama-Modells eingefügt, sodass die Antwort auf Ihren Quellen beruht.' },
       ],
     },
@@ -195,7 +195,7 @@ const productBase = {
       items: [
         { k: 'Modellauswahl', v: 'Wechseln Sie im Chat zwischen allen über Ollama geladenen Modellen (zum Beispiel Qwen 2.5, Llama 3.2, Mistral).' },
         { k: 'Laufzeit-Konfiguration', v: 'Passen Sie Kontextfenster, Temperatur und weitere Parameter an, um Tempo und Denktiefe abzuwägen.' },
-        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft über Localhost-Ports von Docker und Host, Ihre Daten bleiben auf Ihrem Rechner.' },
+        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner.' },
       ],
     },
     tools: {

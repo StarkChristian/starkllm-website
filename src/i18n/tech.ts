@@ -108,7 +108,7 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
       title: 'Privacy | StarkLLM', eyebrow: 'Privacy',
       h1: 'What stays on your PC', lede: 'Documents, index, chats and models stay on your computer. A few optional features go online, and only when you use them.',
       sections: [
-        { h: en.what, p: 'StarkLLM runs its database, search index and web interface on your PC (in Docker) and the language model in Ollama, also on your PC. It has no telemetry and no account on a server.' },
+        { h: en.what, p: 'StarkLLM runs its database, search index and web interface on your PC (in its own engine, without Docker since v2.2) and the language model in Ollama, also on your PC. It has no telemetry and no account on a server.' },
         { h: en.why, p: 'Contracts, patient files or research data should not be sent to a cloud service just to ask a question about them.' },
         { h: 'Optional online features', p: 'These connect to the internet only when you switch them on or start them. The chat says when a question leaves your PC.', list: [
           'Web search (switch in the chat): your question goes to DuckDuckGo.',
@@ -234,7 +234,7 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
       title: 'Datenschutz | StarkLLM', eyebrow: 'Datenschutz',
       h1: 'Was auf Ihrem PC bleibt', lede: 'Dokumente, Index, Chats und Modelle bleiben auf Ihrem Computer. Einige optionale Funktionen gehen online, und zwar nur, wenn Sie sie nutzen.',
       sections: [
-        { h: de.what, p: 'StarkLLM betreibt Datenbank, Suchindex und Weboberfläche auf Ihrem PC (in Docker) und das Sprachmodell in Ollama, ebenfalls auf Ihrem PC. Es gibt keine Telemetrie und kein Konto auf einem Server.' },
+        { h: de.what, p: 'StarkLLM betreibt Datenbank, Suchindex und Weboberfläche auf Ihrem PC (in seiner eigenen Engine, seit v2.2 ohne Docker) und das Sprachmodell in Ollama, ebenfalls auf Ihrem PC. Es gibt keine Telemetrie und kein Konto auf einem Server.' },
         { h: de.why, p: 'Verträge, Patientenakten oder Forschungsdaten sollten nicht an einen Clouddienst gehen, nur um eine Frage dazu zu stellen.' },
         { h: 'Optionale Online-Funktionen', p: 'Diese verbinden sich nur mit dem Internet, wenn Sie sie einschalten oder starten. Der Chat zeigt an, wenn eine Frage Ihren PC verlässt.', list: [
           'Websuche (Schalter im Chat): Ihre Frage geht an DuckDuckGo.',

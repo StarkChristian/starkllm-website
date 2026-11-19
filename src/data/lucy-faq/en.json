@@ -311,7 +311,7 @@
     "Does it run on my operating system?"
    ],
    "page": "/download",
-   "match": "OS: Windows 10 or 11 with WSL2 enabled"
+   "match": "OS: Windows 10 or 11 (64-bit)"
   },
   {
    "id": "docker",
@@ -322,7 +322,7 @@
     "What are the prerequisites?"
    ],
    "page": "/download",
-   "match": "Docker Desktop: Installed once (StarkLLM starts it)"
+   "match": "Only Ollama, for the AI models. StarkLLM can install the official version for you"
   },
   {
    "id": "firststart",
@@ -547,7 +547,7 @@
     "Which data does this website store about visitors?"
    ],
    "page": "/privacy-policy",
-   "match": "Umami does not set cookies"
+   "match": "This website uses no web analytics and no tracking tools, and it sets no cookies"
   },
   {
    "id": "slow",
@@ -592,7 +592,7 @@
     "How do I stop the StarkLLM engine and its containers?"
    ],
    "page": "/manual",
-   "match": "keep running, so that the next start takes only about a second and a half"
+   "match": "Since v2.2, no: when you close or quit StarkLLM, its engine stops too"
   }
  ]
 }
