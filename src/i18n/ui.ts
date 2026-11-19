@@ -101,7 +101,7 @@ export const ui = { ...uiBase, ...uiMore } as unknown as Record<Lang, typeof uiB
 
 // Pages that are translated (the same page file renders every language, see src/pages/[...page].astro). The imprint, the privacy
 // policy and its English translation exist once, and links from other languages go to that single page.
-const translated = ['/', '/product', '/download', '/help', '/manual', '/about', '/contact', '/android',
+const translated = ['/', '/product', '/download', '/help', '/manual', '/about', '/contact', '/android', '/tour',
   '/tech-rag', '/tech-hybrid-search', '/tech-semantic-chunking', '/tech-knowledge-base', '/tech-workspaces', '/tech-multimodal',
   '/tech-local-models', '/tech-privacy', '/tech-local-tools', '/tech-voice', '/tech-themes'];
 /** Pages that exist in each language. A new language may start with fewer pages: missing ones fall back to the default language. */

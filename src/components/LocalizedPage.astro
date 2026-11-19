@@ -7,6 +7,7 @@ import DownloadPage from './DownloadPage.astro';
 import HelpPage from './HelpPage.astro';
 import TechPage from './TechPage.astro';
 import AndroidPage from './AndroidPage.astro';
+import TourPage from './TourPage.astro';
 import LegacyBody from './LegacyBody.astro';
 import LucyAbout from './LucyAbout.astro';
 import { pageMeta } from '../i18n/meta';
@@ -16,6 +17,7 @@ import { download } from '../i18n/download';
 import { help } from '../i18n/help';
 import { tech } from '../i18n/tech';
 import { android } from '../i18n/android';
+import { tour } from '../i18n/tour';
 import { pages } from '../i18n/pages';
 import { absoluteUrl, defaultLang, languages, type Lang } from '../i18n/ui';
 import { RELEASE, V } from '../data/release';
@@ -54,6 +56,7 @@ if (def.kind === 'product') { ({ title, description } = product[lang].meta as { 
 if (def.kind === 'download') { ({ title, description } = download[lang].meta as { title: string; description?: string }); }
 if (def.kind === 'help') { ({ title, description } = help[lang].meta as { title: string; description?: string }); }
 if (def.kind === 'android') { ({ title, description } = android[lang].meta as { title: string; description?: string }); }
+if (def.kind === 'tour') { ({ title, description } = tour[lang].meta as { title: string; description?: string }); }
 if (def.kind === 'tech') { const t = tech[lang][def.slug!]; title = t.title; description = t.lede; headExtra = og(t.title, t.lede, 'article'); }
 if (def.kind === 'manual' || def.kind === 'about' || def.kind === 'contact') {
   ({ title, description } = pageMeta[lang][def.kind] as { title: string; description?: string });
@@ -62,7 +65,7 @@ if (def.kind === 'manual' || def.kind === 'about' || def.kind === 'contact') {
 }
 if (def.kind === 'legal') { const L = pageMeta[lang].legal!; title = L.title; description = L.description; headExtra = og(title, description); }
 if (raw) { headExtra = raw; description = undefined; }
-else if (['home', 'product', 'download', 'help', 'android'].includes(def.kind)) headExtra = og(title, description);
+else if (['home', 'product', 'download', 'help', 'android', 'tour'].includes(def.kind)) headExtra = og(title, description);
 ---
 <SiteLayout title={title} description={description} headExtra={headExtra} lang={lang} path={path} getLabel={home[lang].nav.getBtn}>
   {def.kind === 'home' && <Home lang={lang} />}
@@ -70,6 +73,7 @@ else if (['home', 'product', 'download', 'help', 'android'].includes(def.kind)) 
   {def.kind === 'download' && <DownloadPage lang={lang} />}
   {def.kind === 'help' && <HelpPage lang={lang} />}
   {def.kind === 'android' && <AndroidPage lang={lang} />}
+  {def.kind === 'tour' && <TourPage lang={lang} />}
   {def.kind === 'tech' && <TechPage lang={lang} slug={def.slug!} />}
   {def.kind === 'manual' && <LegacyBody html={file('manual', 'main').replaceAll('{{V}}', V)} />}
   {def.kind === 'about' && <LegacyBody html={file('about', 'main')} />}

@@ -726,6 +726,17 @@
    ],
    "page": "/fr/manual",
    "match": "quand vous fermez ou quittez StarkLLM, son moteur s’arrête aussi"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Peux-tu me montrer un exemple ?",
+    "Montre-moi avec un exemple comment ça marche",
+    "Y a-t-il une visite guidée ou une démo ?",
+    "Comment StarkLLM fonctionne-t-il en pratique ?"
+   ],
+   "page": "/fr/tour",
+   "match": "Voici comment StarkLLM l’aide, étape par étape"
   }
  ]
 }

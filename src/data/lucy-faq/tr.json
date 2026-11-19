@@ -1897,7 +1897,7 @@
     "StarkLLM hangi dilleri destekliyor?",
     "Türkçe çalışıyor mu?",
     "İspanyolca veya Fransızca sürümü var mı?",
-  "İspanyolca desteği var mı?",
+    "İspanyolca desteği var mı?",
     "Hangi dillerdeki mektupları okuyabilir?",
     "Türkçe arayüz ne zaman gelecek?",
     "Türkçe mektuplardaki son tarihleri bulur mu?"
@@ -2199,6 +2199,17 @@
    ],
    "page": "/tr/manual",
    "match": "v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Bana bir örnek gösterebilir misin?",
+    "Nasıl çalıştığını bir örnekle göster",
+    "Bir tur ya da demo var mı?",
+    "StarkLLM pratikte nasıl çalışır?"
+   ],
+   "page": "/tr/tour",
+   "match": "StarkLLM ona adım adım, bilgisayarda ve telefonda böyle yardım ediyor"
   }
  ]
 }

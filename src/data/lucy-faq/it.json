@@ -763,6 +763,17 @@
    ],
    "page": "/it/manual",
    "match": "Dalla v2.2 no: quando chiudi o esci da StarkLLM, si ferma anche il suo motore"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Puoi mostrarmi un esempio?",
+    "Mostrami con un esempio come funziona",
+    "C’è un tour o una demo?",
+    "Come funziona StarkLLM in pratica?"
+   ],
+   "page": "/it/tour",
+   "match": "Ecco come la aiuta StarkLLM, passo dopo passo"
   }
  ]
 }

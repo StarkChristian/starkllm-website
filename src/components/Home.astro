@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import { shots, alt as shotAlt } from '../i18n/shots';
 import { home, SETUP_URL, PORTABLE_URL, SETUP_SHA, PORTABLE_SHA } from '../i18n/home';
-import type { Lang } from '../i18n/ui';
+import { localePath, type Lang } from '../i18n/ui';
+import { tour } from '../i18n/tour';
 import { lucy } from '../i18n/lucy';
 
 const { lang = 'en' } = Astro.props as { lang?: Lang };
@@ -21,7 +22,7 @@ import { RELEASE } from '../data/release';
   <p class="lede">{c.hero.lede}</p>
   <div class="cta">
     <a class="btn primary" href="#download">{c.hero.cta1}</a>
-    <a class="btn ghost" href="#how">{c.hero.cta2}</a>
+    <a class="btn ghost" href={localePath(lang, '/tour')} title={tour[lang].links.home}>{c.hero.cta2}</a>
   </div>
   <p class="meta">{c.hero.meta}</p>
   <div class="lucy-say lucy-hero">

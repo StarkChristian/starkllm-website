@@ -604,6 +604,17 @@
    ],
    "page": "/manual",
    "match": "Since v2.2, no: when you close or quit StarkLLM, its engine stops too"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Can you show me an example?",
+    "Show me how it works with an example",
+    "Is there a tour or a demo?",
+    "How does StarkLLM work in practice?"
+   ],
+   "page": "/tour",
+   "match": "Here is how StarkLLM helps her with them, step by step"
   }
  ]
 }

@@ -14,6 +14,7 @@ const S = shots[lang];
 const A = shotAlt[lang];
 const sizes = '(max-width: 860px) 100vw, 560px';
 import { android } from '../i18n/android';
+import { tour } from '../i18n/tour';
 ---
 <header class="page-hero">
   <p class="eyebrow">{c.hero.eyebrow}</p>
@@ -163,6 +164,7 @@ import { android } from '../i18n/android';
 </section>
 
 <section class="block" aria-label="Android">
+  <div class="callout" style="margin-top:0;margin-bottom:1rem"><p>{tour[lang].links.product} <a href={localePath(lang, '/tour')}>{tour[lang].links.productLink}</a></p></div>
   <div class="callout" style="margin-top:0"><p>{android[lang].productLink.text} <a href={localePath(lang, '/android')}>{android[lang].productLink.link}</a></p></div>
 </section>
 

@@ -1,0 +1,105 @@
+---
+// The tour: one evening with five (invented) letters, in nine steps, with the screenshots of the page's language.
+// Copy: src/i18n/tour.ts. Pictures: src/assets/tour/<lang>-<id>.webp (tools/tour-shots.mjs). A picture that is missing in
+// a language is shown in English with a note, and the build prints a warning; drop the retaken picture in and rebuild.
+// Lucy knows only the hero of this page ("show me an example" -> the tour): the steps carry `lucy-skip`, so questions about
+// features keep their answers from the product, manual and tech pages instead of Emma's story.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { tour, type ShotId } from '../i18n/tour';
+import { localePath, type Lang } from '../i18n/ui';
+import { SETUP_URL } from '../i18n/home';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = tour[lang];
+
+const files = import.meta.glob<ImageMetadata>('../assets/tour/*.webp', { eager: true, import: 'default' });
+const pic = (l: string, id: ShotId) => files[`../assets/tour/${l}-${id}.webp`];
+
+// Which pictures belong to which step (the same in every language).
+const STEPS: ShotId[][] = [
+  ['phone-5-add'],
+  ['pc-1-home', 'phone-1-home'],
+  ['pc-2-inbox'],
+  ['pc-3-chat'],
+  ['pc-4-source'],
+  ['pc-5-scam'],
+  ['pc-6-deadlines', 'phone-3-deadlines'],
+  ['pc-8-phone', 'phone-2-chat', 'phone-4-pc'],
+  ['pc-7-privacy'],
+];
+const ANDROID_STEP = 7;
+
+const shotsOf = (ids: ShotId[]) => ids.map((id) => {
+  let img = pic(lang, id);
+  let fallback = false;
+  if (!img) {
+    img = pic('en', id);
+    fallback = true;
+    console.warn(`[tour] ${lang}-${id}.webp is missing: the ${lang} tour shows the English picture (run tools/tour-shots.mjs after the retake)`);
+  }
+  if (!img) throw new Error(`[tour] no picture for ${id}`);
+  const phone = id.startsWith('phone-');
+  const widths = (phone ? [240, 360, 480, 720] : [480, 720, 1080, 1440, 2160]).filter((w) => w <= img!.width);
+  return { id, img, fallback, phone, widths, ...c.shots[id] };
+});
+const steps = c.steps.map((s, i) => ({ ...s, n: i + 1, shots: shotsOf(STEPS[i]) }));
+---
+<header class="page-hero">
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1}</h1>
+  <p class="lede">{c.hero.lede}</p>
+  <p class="tour-note">{c.note}</p>
+</header>
+
+{steps.map((s) => (
+  <section class="block tour-step lucy-skip" id={`step-${s.n}`} aria-labelledby={`step-${s.n}-h`}>
+    <div class="tour-text">
+      <p class="eyebrow">{c.step} {s.n}</p>
+      <h2 id={`step-${s.n}-h`}>{s.h}</h2>
+      <p>{s.p}</p>
+      {s.n - 1 === ANDROID_STEP && <p>{c.android.text} <a href={localePath(lang, '/android')}>{c.android.link}</a></p>}
+    </div>
+    <div class="tour-shots">
+      {s.shots.map((p) => (
+        <figure class={p.phone ? 'tour-phone' : 'tour-pc'}>
+          <div class="frame">
+            {!p.phone && <span class="bar" aria-hidden="true"><i></i><i></i><i></i></span>}
+            <Image src={p.img} alt={p.alt} widths={p.widths} sizes={p.phone ? '(max-width: 640px) 60vw, 260px' : '(max-width: 960px) 100vw, 900px'} format="webp" loading="lazy" decoding="async" />
+          </div>
+          <figcaption>{p.cap}{p.fallback && <span class="tour-fallback"> {c.fallback}</span>}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+))}
+
+<section class="cta-band lucy-skip" aria-labelledby="cta-h">
+  <h2 id="cta-h">{c.cta.h2}</h2>
+  <p class="sec-lede">{c.cta.text}</p>
+  <div class="cta">
+    <a class="btn primary" href={SETUP_URL}>{c.cta.download}</a>
+    <a class="btn ghost" href={localePath(lang, '/product')}>{c.cta.product}</a>
+  </div>
+</section>
+
+<style>
+  .tour-note { color: var(--c-muted); font-size: .88rem; margin-top: .8rem; }
+  .tour-step { display: grid; gap: 1.6rem; }
+  .tour-text { max-width: 46rem; }
+  .tour-text p { color: var(--c-muted); }
+  .tour-shots { display: flex; flex-wrap: wrap; gap: 1.6rem; align-items: flex-start; }
+  figure { margin: 0; }
+  figcaption { color: var(--c-muted); font-size: .88rem; margin-top: .6rem; max-width: 46rem; }
+  .tour-fallback { font-style: italic; }
+  .frame img { display: block; width: 100%; height: auto; }
+  /* PC picture: a plain window frame */
+  .tour-pc { flex: 1 1 560px; max-width: 900px; }
+  .tour-pc .frame { border: 1px solid var(--c-line); border-radius: 12px; overflow: hidden; background: var(--c-surface); box-shadow: 0 18px 50px rgba(0, 0, 0, .35); }
+  .tour-pc .bar { display: flex; gap: .4rem; padding: .55rem .7rem; border-bottom: 1px solid var(--c-line); }
+  .tour-pc .bar i { width: .65rem; height: .65rem; border-radius: 50%; background: var(--c-line); }
+  /* Phone picture: a plain phone frame */
+  .tour-phone { flex: 0 1 260px; max-width: 260px; }
+  .tour-phone .frame { border: 10px solid #15151d; border-radius: 34px; overflow: hidden; background: #000; box-shadow: 0 0 0 1px var(--c-line), 0 18px 50px rgba(0, 0, 0, .35); }
+  @media (max-width: 640px) { .tour-phone { flex-basis: 70%; max-width: 70%; margin-inline: auto; } }
+</style>

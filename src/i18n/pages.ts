@@ -3,7 +3,7 @@
 // src/pages/[...page].astro (default language) and src/pages/[lang]/[...page].astro (all others).
 import { techOrder, type TechSlug } from './tech';
 
-export type PageKind = 'home' | 'product' | 'download' | 'help' | 'tech' | 'manual' | 'about' | 'contact' | 'legal' | 'android';
+export type PageKind = 'home' | 'product' | 'download' | 'help' | 'tech' | 'manual' | 'about' | 'contact' | 'legal' | 'android' | 'tour';
 export type PageDef = { kind: PageKind; slug?: TechSlug };
 
 export const pages: Record<string, PageDef> = {
@@ -15,6 +15,7 @@ export const pages: Record<string, PageDef> = {
   '/about': { kind: 'about' },
   '/contact': { kind: 'contact' },
   '/android': { kind: 'android' },
+  '/tour': { kind: 'tour' },
   '/legal': { kind: 'legal' },
   ...Object.fromEntries(techOrder.map((slug) => [`/${slug}`, { kind: 'tech' as const, slug }])),
 };
