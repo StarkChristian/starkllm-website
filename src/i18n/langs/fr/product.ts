@@ -10,7 +10,7 @@ export default {
     steps: [
       { k: 'Lecture', v: 'Des analyseurs locaux extraient le texte brut. Les PDF numérisés et les images passent par une reconnaissance de texte (OCR) ou une analyse d’image locale avant le découpage.' },
       { k: 'Découpage', v: 'Un algorithme de découpage sémantique répartit le texte en blocs logiques qui se chevauchent.' },
-      { k: 'Vectorisation', v: 'Un modèle d’embedding local transforme chaque bloc en vecteur, stocké dans votre conteneur ChromaDB privé.' },
+      { k: 'Vectorisation', v: 'Un modèle d’embedding local transforme chaque bloc en vecteur, stocké dans votre base de données ChromaDB privée sur votre PC.' },
       { k: 'Réponse', v: 'Quand vous posez une question, les passages les plus pertinents sont injectés dans la fenêtre de contexte du modèle Ollama que vous avez choisi : la réponse s’appuie ainsi sur vos sources.' },
     ],
   },
@@ -33,7 +33,7 @@ export default {
       { k: 'Avec le montant et la page', v: 'Chaque date est accompagnée de sa phrase, du montant s’il y en a un et de la page où elle a été lue.' },
       { k: 'Ajouter au calendrier', v: '« Ajouter au calendrier » enregistre les dates dans un fichier de calendrier, à votre demande.' },
       { k: 'Établi par des règles, sur ce PC', v: 'Les dates, les montants et les expéditeurs sont trouvés par des règles fixes appliquées au texte de vos courriers, et non devinés par un modèle : chaque valeur figure donc bien dans le document. Vérifiez le courrier avant d’agir.' },
-      { k: 'Langues', v: 'Les courriers en anglais et en allemand sont compris. Les photos et les scans sont lus comme du texte anglais ou allemand. Les courriers dans d’autres langues sont classés et peuvent être recherchés, mais sans échéances ni montants. Prévu pour les prochaines versions (en cours de développement, pas encore publié) : les règles de courrier pour le français, l’espagnol, l’italien et le turc, ainsi que l’interface en espagnol, en français, en italien et en turc.' },
+      { k: 'Langues', v: 'Les courriers en anglais, allemand, français, espagnol, italien et turc sont compris, avec leurs échéances et montants. Les photos et les scans sont lus comme du texte anglais ou allemand ; d’autres langues de reconnaissance de texte peuvent être ajoutées dans les Paramètres. Les courriers dans d’autres langues sont classés et peuvent être recherchés, mais sans échéances ni montants. L’interface parle ces mêmes six langues.' },
     ],
   },
   verify: {
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Choix du modèle', v: 'Passez de l’un à l’autre des modèles que vous avez téléchargés via Ollama (par exemple Qwen 2.5, Llama 3.2, Mistral) depuis l’interface de discussion.' },
       { k: 'Configuration à l’exécution', v: 'Ajustez la taille de la fenêtre de contexte, la température et d’autres paramètres avancés pour trouver le bon équilibre entre vitesse et profondeur de raisonnement.' },
-      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe par des ports localhost de Docker et de l’hôte : vos données restent sur votre ordinateur.' },
+      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur.' },
     ],
   },
   tools: {

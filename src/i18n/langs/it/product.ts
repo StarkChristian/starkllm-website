@@ -9,7 +9,7 @@ export default {
     steps: [
       { k: 'Analisi', v: 'Parser locali estraggono il testo grezzo. I PDF scansionati e le immagini passano per l\'OCR o per la visione locale prima della divisione in chunk.' },
       { k: 'Chunk', v: 'Un algoritmo di chunking semantico divide il testo in blocchi logici che si sovrappongono.' },
-      { k: 'Embedding', v: 'Un modello di embedding locale trasforma ogni blocco in un vettore, conservato nel tuo container ChromaDB privato.' },
+      { k: 'Embedding', v: 'Un modello di embedding locale trasforma ogni blocco in un vettore, conservato nel tuo database ChromaDB privato sul tuo PC.' },
       { k: 'Risposta', v: 'Quando fai una domanda, i passaggi più pertinenti vengono inseriti nella finestra di contesto del modello Ollama che hai scelto, così la risposta si basa sulle tue fonti.' },
     ],
   },
@@ -32,7 +32,7 @@ export default {
       { k: 'Con importo e pagina', v: 'Ogni data è accompagnata dalla sua frase, dall\'importo, se c\'è, e dalla pagina da cui è stata letta.' },
       { k: 'Aggiungi al calendario', v: '"Add to calendar" (aggiungi al calendario) salva le date come file di calendario, se lo chiedi.' },
       { k: 'Ricavate con regole, su questo PC', v: 'Date, importi e mittenti vengono trovati con regole fisse applicate al testo delle tue lettere, non indovinati da un modello, quindi ognuno è presente nel documento. Controlla la lettera prima di agire.' },
-      { k: 'Lingue', v: 'Le lettere in inglese e in tedesco vengono comprese. Foto e scansioni vengono lette come testo inglese o tedesco. Le lettere in altre lingue vengono archiviate e si possono cercare, ma senza scadenze e importi. In arrivo con le prossime versioni (in lavorazione, non ancora rilasciato): regole per le lettere in francese, spagnolo, italiano e turco, e interfaccia in spagnolo, francese, italiano e turco.' },
+      { k: 'Lingue', v: 'Le lettere in inglese, tedesco, francese, spagnolo, italiano e turco vengono comprese, con scadenze e importi. Foto e scansioni vengono lette come testo inglese o tedesco; altre lingue per il riconoscimento del testo si possono aggiungere nelle Impostazioni. Le lettere in altre lingue vengono archiviate e si possono cercare, ma senza scadenze e importi. L\'interfaccia parla le stesse sei lingue.' },
     ],
   },
   verify: {
@@ -68,7 +68,7 @@ export default {
     items: [
       { k: 'Scelta del modello', v: 'Passa da un modello all\'altro, tra quelli scaricati con Ollama (per esempio Qwen 2.5, Llama 3.2, Mistral), direttamente dall\'interfaccia della chat.' },
       { k: 'Configurazione dell\'esecuzione', v: 'Regola la dimensione della finestra di contesto, la temperatura e i parametri avanzati per bilanciare velocità e profondità di ragionamento.' },
-      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa per le porte di Docker e dell\'host su localhost, così i tuoi dati restano sul tuo computer.' },
+      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer.' },
     ],
   },
   tools: {

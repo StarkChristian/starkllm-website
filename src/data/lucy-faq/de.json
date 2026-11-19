@@ -282,7 +282,7 @@
     "Wie richte ich es ein?"
    ],
    "page": "/de/download",
-   "match": "Zwei Programme installieren Sie einmal, den Rest erledigt StarkLLM"
+   "match": "StarkLLM bringt seine eigene Engine mit; Docker Desktop und WSL2 sind nicht nötig"
   },
   {
    "id": "smartscreen",
@@ -339,7 +339,7 @@
     "Läuft es auf meinem Betriebssystem?"
    ],
    "page": "/de/download",
-   "match": "Betriebssystem: Windows 10 oder 11 mit aktiviertem WSL2"
+   "match": "Betriebssystem: Windows 10 oder 11 (64 Bit)"
   },
   {
    "id": "docker",
@@ -350,7 +350,7 @@
     "Was sind die Voraussetzungen?"
    ],
    "page": "/de/download",
-   "match": "Docker Desktop: Einmal installiert (StarkLLM startet es)"
+   "match": "Nur Ollama, für die KI-Modelle. StarkLLM kann die offizielle Version für Sie installieren"
   },
   {
    "id": "firststart",
@@ -360,7 +360,7 @@
     "Wie groß ist der Download der Modelle?"
    ],
    "page": "/de/download",
-   "match": "Der erste Start lädt die Engine und die KI-Modelle, die noch fehlen"
+   "match": "Der erste Start lädt die KI-Modelle, die noch fehlen"
   },
   {
    "id": "languages",
@@ -372,7 +372,7 @@
     "Wird Spanisch unterstützt werden?"
    ],
    "page": "/de/manual",
-   "match": "Briefe: Der Posteingang versteht Briefe auf Englisch und Deutsch"
+   "match": "Briefe: Der Posteingang versteht Briefe auf Englisch, Deutsch, Französisch, Spanisch, Italienisch und Türkisch"
   },
   {
    "id": "inbox",
@@ -582,7 +582,7 @@
     "Welche Daten speichert diese Website über Besucher?"
    ],
    "page": "/datenschutz",
-   "match": "Umami setzt keine Cookies"
+   "match": "Diese Website verwendet keine Webanalyse- und keine Tracking-Werkzeuge und setzt keine Cookies"
   },
   {
    "id": "slow",
@@ -627,7 +627,7 @@
     "Wie stoppe ich die StarkLLM-Engine und ihre Container?"
    ],
    "page": "/de/manual",
-   "match": "damit der nächste Start nur etwa anderthalb Sekunden dauert"
+   "match": "Wenn Sie StarkLLM schließen oder beenden, stoppt auch seine Engine"
   }
  ]
 }

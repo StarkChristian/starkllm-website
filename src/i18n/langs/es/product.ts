@@ -9,7 +9,7 @@ export default {
     steps: [
       { k: 'Analizar', v: 'Analizadores locales extraen el texto en bruto. Los PDF escaneados y las imágenes pasan por OCR o visión local antes de dividirse en fragmentos.' },
       { k: 'Fragmentar', v: 'Un algoritmo de fragmentación semántica divide el texto en bloques lógicos que se solapan.' },
-      { k: 'Incrustar', v: 'Un modelo de embeddings local convierte cada bloque en un vector, que se guarda en tu contenedor privado de ChromaDB.' },
+      { k: 'Incrustar', v: 'Un modelo de embeddings local convierte cada bloque en un vector, que se guarda en tu base de datos privada de ChromaDB en tu PC.' },
       { k: 'Responder', v: 'Cuando haces una pregunta, los pasajes más relevantes se insertan en la ventana de contexto del modelo de Ollama que hayas elegido, de modo que la respuesta se apoya en tus fuentes.' },
     ],
   },
@@ -32,7 +32,7 @@ export default {
       { k: 'Con importe y página', v: 'Cada fecha viene con su frase, con el importe si lo hay y con la página de la que se leyó.' },
       { k: 'Add to calendar', v: '«Add to calendar» (añadir al calendario) guarda las fechas como archivo de calendario cuando lo pides.' },
       { k: 'Hecho con reglas en este PC', v: 'Las fechas, los importes y los remitentes se encuentran con reglas fijas sobre el texto de tus cartas, no los adivina un modelo, así que cada uno consta en el documento. Revisa la carta antes de actuar.' },
-      { k: 'Idiomas', v: 'Se entienden las cartas en inglés y alemán. Las fotos y los escaneos se leen como texto en inglés o alemán. Las cartas en otros idiomas se archivan y se pueden buscar, pero sin plazos ni importes. Llegarán con las próximas versiones (en preparación, aún no publicadas): las reglas de cartas para francés, español, italiano y turco, y la interfaz en español, francés, italiano y turco.' },
+      { k: 'Idiomas', v: 'Se entienden las cartas en inglés, alemán, francés, español, italiano y turco, con sus plazos e importes. Las fotos y los escaneos se leen como texto en inglés o alemán; en Ajustes se pueden añadir más idiomas de reconocimiento de texto. Las cartas en otros idiomas se archivan y se pueden buscar, pero sin plazos ni importes. La interfaz habla esos mismos seis idiomas.' },
     ],
   },
   verify: {
@@ -68,7 +68,7 @@ export default {
     items: [
       { k: 'Elección del modelo', v: 'Cambia entre cualquier modelo que hayas descargado con Ollama (por ejemplo Qwen 2.5, Llama 3.2, Mistral) desde la interfaz del chat.' },
       { k: 'Configuración del entorno de ejecución', v: 'Ajusta el tamaño de la ventana de contexto, la temperatura y otros parámetros avanzados para equilibrar la velocidad y la profundidad del razonamiento.' },
-      { k: 'Enrutamiento estricto a localhost', v: 'El tráfico interno de la API circula por los puertos de Docker y del host en localhost, de modo que tus datos se quedan en tu equipo.' },
+      { k: 'Enrutamiento estricto a localhost', v: 'El tráfico interno de la API circula solo por puertos localhost de tu PC (127.0.0.1), de modo que tus datos se quedan en tu equipo.' },
     ],
   },
   tools: {

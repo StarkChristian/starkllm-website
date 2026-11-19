@@ -10,7 +10,7 @@ export default {
     steps: [
       { k: 'Ayrıştırma', v: 'Yerel ayrıştırıcılar ham metni çıkarır. Taranmış PDF’ler ve görüntüler, parçalara ayrılmadan önce yerel OCR’dan veya görüntü modelinden geçer.' },
       { k: 'Parçalama', v: 'Anlamsal bir parçalama algoritması metni mantıksal, birbiriyle örtüşen bloklara böler.' },
-      { k: 'Gömme', v: 'Yerel bir gömme (embedding) modeli her bloğu bir vektöre dönüştürür; vektör, size ait ChromaDB kapsayıcısında saklanır.' },
+      { k: 'Gömme', v: 'Yerel bir gömme (embedding) modeli her bloğu bir vektöre dönüştürür; vektör, bilgisayarınızdaki size ait ChromaDB veritabanında saklanır.' },
       { k: 'Yanıt', v: 'Bir soru sorduğunuzda en ilgili pasajlar, seçtiğiniz Ollama modelinin bağlam penceresine eklenir; böylece yanıt kaynaklarınıza dayanır.' },
     ],
   },
@@ -33,7 +33,7 @@ export default {
       { k: 'Tutar ve sayfa ile', v: 'Her tarih, cümlesiyle, varsa tutarıyla ve okunduğu sayfayla birlikte gelir.' },
       { k: 'Takvime ekle', v: '“Takvime ekle”, isterseniz tarihleri bir takvim dosyası olarak kaydeder.' },
       { k: 'Bu bilgisayarda kurallarla üretilir', v: 'Tarihler, tutarlar ve göndericiler, mektuplarınızın metni üzerinde sabit kurallarla bulunur; bir model tarafından tahmin edilmez, bu yüzden her biri belgede yer alır. Harekete geçmeden önce mektubu kontrol edin.' },
-      { k: 'Diller', v: 'İngilizce ve Almanca mektuplar anlaşılır. Fotoğraflar ve taramalar İngilizce veya Almanca metin olarak okunur. Diğer dillerdeki mektuplar kaydedilir ve aranabilir, ancak son tarih ve tutar çıkarılmaz. Sonraki sürümlerle gelecekler (çalışmalar sürüyor, henüz yayımlanmadı): Fransızca, İspanyolca, İtalyanca ve Türkçe için mektup kuralları ile İspanyolca, Fransızca, İtalyanca ve Türkçe arayüz.' },
+      { k: 'Diller', v: 'İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektuplar son tarihleri ve tutarlarıyla birlikte anlaşılır. Fotoğraflar ve taramalar İngilizce veya Almanca metin olarak okunur; metin tanıma için diğer diller Ayarlar’dan eklenebilir. Diğer dillerdeki mektuplar kaydedilir ve aranabilir, ancak son tarih ve tutar çıkarılmaz. Arayüz de aynı altı dili konuşur.' },
     ],
   },
   verify: {
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Model seçimi', v: 'Sohbet arayüzünden, Ollama ile indirdiğiniz herhangi bir model (örneğin Qwen 2.5, Llama 3.2, Mistral) arasında geçiş yapın.' },
       { k: 'Çalışma zamanı yapılandırması', v: 'Hız ile akıl yürütme derinliği arasında denge kurmak için bağlam penceresi boyutunu, sıcaklığı (temperature) ve gelişmiş parametreleri ayarlayın.' },
-      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği localhost Docker ve ana bilgisayar portlarında akar; verileriniz makinenizde kalır.' },
+      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır.' },
     ],
   },
   tools: {

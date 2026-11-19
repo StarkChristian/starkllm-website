@@ -9,11 +9,11 @@ const L = 'es-ES';
 export default {
   meta: { title: 'Descarga | StarkLLM' },
   hero: { eyebrow: 'Descarga', h1: 'Descargar StarkLLM', lede: 'Empieza con la Windows Research Beta.' },
-  helpCallout: { h: '¿La instalación no funciona?', text: 'StarkLLM necesita Docker Desktop y Ollama en tu PC; desde la v2.0.1 la aplicación inicia ambos y su motor por sí sola. La página de ayuda tiene una lista de comprobación con una prueba para cada paso y soluciones para los 24 problemas más habituales.', link: 'Abrir Ayuda y solución de problemas' },
+  helpCallout: { h: '¿La instalación no funciona?', text: 'StarkLLM trae su propio motor; el único otro programa que necesita es Ollama para los modelos de IA, y también puede instalarlo por ti. La página de ayuda tiene una lista de comprobación con una prueba para cada paso y soluciones para los problemas más habituales.', link: 'Abrir Ayuda y solución de problemas' },
   release: {
     h2: 'Paquete de la versión',
     facts: [
-      ['Versión', `v${V} (escritorio nativo, inicia su propio motor)`],
+      ['Versión', `v${V} (escritorio nativo, motor incluido, sin necesidad de Docker)`],
       ['Licencia', 'Apache 2.0 (código abierto)'],
       ['Tamaño del instalador', `${mb(SETUP, L)} MB (${bytes(SETUP, L)} bytes)`],
       ...(PORTABLE ? [['Tamaño de la aplicación portable', `${mb(PORTABLE, L)} MB (${bytes(PORTABLE, L)} bytes)`]] : []),
@@ -29,12 +29,12 @@ export default {
   },
   setup: {
     h2: 'Pasos de instalación',
-    intro: 'Se instalan dos programas una sola vez y después StarkLLM hace el resto. El primer arranque descarga el motor y los modelos de IA que aún no tengas (varios GB, de 10 a 20 minutos); los siguientes arranques tardan segundos.',
+    intro: 'StarkLLM trae su propio motor; no necesitas Docker Desktop ni WSL2. El primer arranque descarga los modelos de IA que aún no tengas (unos 5 GB) y, si lo permites, Ollama; los siguientes arranques tardan segundos.',
     steps: [
-      { t: 'Instala Docker Desktop', v: 'Instala Docker Desktop (con WSL2) desde docker.com, ábrelo una vez y termina su configuración. Puede pedirte que reinicies el PC.' },
-      { t: 'Instala Ollama', v: 'Instala Ollama desde ollama.com. No necesitas descargar los modelos a mano: StarkLLM descarga qwen2.5:7b y nomic-embed-text en su primer arranque.' },
-      { t: 'Ejecuta el instalador de StarkLLM', v: `Descarga y ejecuta StarkLLM-v${V}-Setup.exe. El instalador crea accesos directos en el escritorio.` },
-      { t: 'Abre StarkLLM y espera al primer arranque', v: 'Haz clic en el acceso directo de StarkLLM. La aplicación inicia Docker Desktop y Ollama, descarga los modelos, construye su motor y muestra el progreso; después abre StarkLLM en su propia ventana. Si falta algo, la ventana indica qué y cómo solucionarlo (registro: %APPDATA%\\StarkLLM\\engine.log).' },
+      { t: 'Ejecuta el instalador de StarkLLM', v: `Descarga y ejecuta StarkLLM-v${V}-Setup.exe. El instalador contiene el motor y crea accesos directos en el escritorio.` },
+      { t: 'Abre StarkLLM', v: 'Haz clic en el acceso directo de StarkLLM. La aplicación inicia su motor y comprueba Ollama.' },
+      { t: 'Instala Ollama si falta', v: 'Si Ollama no está instalado, la ventana ofrece «Instalar Ollama por mí»: StarkLLM descarga el instalador oficial desde ollama.com (unos 2 GB), comprueba su firma y lo instala; no hacen falta derechos de administrador. También puedes instalar Ollama tú mismo desde ollama.com.' },
+      { t: 'Espera al primer arranque', v: 'StarkLLM descarga los modelos de IA (por defecto qwen2.5:7b y nomic-embed-text, unos 5 GB; si ya tienes en Ollama modelos adecuados, se usan esos), muestra el progreso y después se abre en su propia ventana. Si falta algo, la ventana indica qué y cómo solucionarlo (registros: %APPDATA%\\StarkLLM\\engine.log y engine-native.log).' },
       { t: 'Crea tu cuenta', v: 'Registra la primera cuenta; es la administradora de esta instalación (copia de seguridad y restauración). Después crea un Workspace y sube un documento.' },
     ],
   },
@@ -42,12 +42,11 @@ export default {
     h2: 'Lista de requisitos previos',
     lede: 'Antes de abrir StarkLLM, confirma que tienes todo lo siguiente:',
     items: [
-      ['Sistema operativo', 'Windows 10 u 11 con WSL2 activado.'],
-      ['Docker Desktop', 'Se instala una sola vez (StarkLLM lo inicia). Sin él, el motor no puede funcionar.'],
-      ['Ollama', 'Instalado de forma nativa en Windows (StarkLLM lo inicia). Descárgalo desde ollama.com.'],
+      ['Sistema operativo', 'Windows 10 u 11 (64 bits).'],
+      ['Software', 'Solo Ollama, para los modelos de IA. StarkLLM puede instalar la versión oficial por ti («Instalar Ollama por mí»), o puedes descargarlo desde ollama.com. Desde la v2.2 ya no hacen falta Docker Desktop ni WSL2.'],
       ['Modelos y disco', 'Se descargan automáticamente en el primer arranque (unos 5 GB). Mantén al menos 15 GB de espacio libre en disco.'],
-      ['Hardware', 'Mínimo 8 GB de RAM (modelos de 3B), 16 GB recomendados (modelos de 7B). Se recomienda encarecidamente una GPU NVIDIA con 8 GB o más de VRAM. El manual incluye una guía por niveles de hardware.'],
-      ['Formatos compatibles', 'PDF, DOCX (con tablas), TXT, Markdown, CSV, XLSX, JSON, XML, registros, HTML e imágenes (PNG, JPG con OCR).'],
+      ['Hardware', 'Mínimo 8 GB de RAM (modelos de 3B), 16 GB recomendados (modelos de 7B). Se recomienda encarecidamente una GPU NVIDIA con 8 GB o más de VRAM; desde la v2.3, StarkLLM también permite que Ollama use la gráfica integrada AMD Radeon e Intel Arc/Iris. El manual incluye una guía por niveles de hardware.'],
+      ['Formatos compatibles', 'PDF, DOCX (con tablas), PowerPoint (PPTX), libros electrónicos EPUB, TXT, Markdown, CSV, XLSX, JSON, XML, registros, HTML e imágenes (PNG, JPG con OCR).'],
     ],
   },
   smart: {
@@ -78,15 +77,15 @@ export default {
   faq: {
     h2: 'Preguntas frecuentes',
     items: [
-      ['¿Mis datos salen de mi equipo?', 'StarkLLM está diseñado para mantener tus datos en tu equipo. Los documentos se guardan en un contenedor local de ChromaDB y la inferencia de IA se ejecuta con Ollama en tu host. Nada sale de tu equipo salvo que actives una función en línea opcional (búsqueda web, un proveedor de modelos en la nube, la comprobación de actualizaciones).'],
+      ['¿Mis datos salen de mi equipo?', 'StarkLLM está diseñado para mantener tus datos en tu equipo. Los documentos se guardan en una base de datos local de ChromaDB en tu PC y la inferencia de IA se ejecuta con Ollama en tu PC. Nada sale de tu equipo salvo que actives una función en línea opcional (búsqueda web, un proveedor de modelos en la nube, la comprobación de actualizaciones).'],
       ['¿StarkLLM es gratuito?', 'Sí. Es gratuito y de código abierto, con licencia Apache 2.0, para uso personal, de investigación y comercial. Sin suscripciones, sin telemetría y sin niveles ocultos. Se ofrece «tal cual», sin garantía.'],
       ['¿Por qué pueden ser lentas las respuestas?', 'La velocidad depende de tu hardware. Sin una GPU dedicada, Ollama recurre a la inferencia con la CPU, que es mucho más lenta. Una GPU NVIDIA dedicada con 8 GB o más de VRAM genera mucho más deprisa.'],
       ['¿El instalador está firmado? ¿Qué hago si SmartScreen o Smart App Control me avisan?', 'Sí. Desde la v2.1.2, el instalador, StarkLLM.exe y el desinstalador están firmados por «Open Source Developer Christian Stark», para que Windows pueda verificar el editor. Si Windows sigue avisando, comprueba el nombre del editor (clic derecho en el instalador, Propiedades, Firmas digitales) y compara la suma de comprobación SHA-256 de esta página. Ejecuta el archivo solo si ambos coinciden. No desactives Smart App Control ni ningún otro ajuste de seguridad.'],
       ['¿Qué hardware necesito?', 'Mínimo 8 GB de RAM para modelos de 3B y 16 GB de RAM para modelos de 7B. Para modelos de usuario avanzado (de 14B a 32B) se recomiendan 24 GB de VRAM o 64 GB de RAM del sistema.'],
       ['¿Qué diferencia hay entre el chat normal y el chat con documentos?', 'El chat normal se apoya solo en el conocimiento preentrenado del modelo. El chat con documentos usa RAG: primero busca en los documentos que has subido, pasa los fragmentos relevantes al modelo y responde con citas verificables.'],
       ['¿Qué diferencia hay entre los documentos del Workspace y la Knowledge Base?', 'Los documentos del Workspace están aislados en un único proyecto. La Knowledge Base es una carpeta permanente y global de tu equipo a la que puede hacer referencia cualquier chat.'],
-      ['La ventana dice «StarkLLM could not start». ¿Qué hago?', 'Desde la v2.0.1 la aplicación inicia por sí sola Docker Desktop, Ollama y su motor. Cuando un paso falla, la ventana enumera lo que falta (por ejemplo Docker Desktop sin instalar, un puerto ocupado o un error del motor con las últimas líneas del registro) y tiene un botón Retry (reintentar). El registro completo está en %APPDATA%\\StarkLLM\\engine.log. En la v2.0.0 la ventana solo esperaba en «Connecting to local engine…»; instala la v2.0.1.'],
-      ['¿Y si la aplicación se abre pero el chat no se conecta?', 'El chat necesita Ollama. Si la ventana decía «StarkLLM is running without its AI runtime», instala o inicia Ollama y pulsa Retry (reintentar); entonces StarkLLM descarga los modelos (qwen2.5:7b y nomic-embed-text). El motor habla con Ollama en tu PC a través de host.docker.internal:11434.'],
+      ['La ventana dice «StarkLLM no pudo iniciarse». ¿Qué hago?', 'StarkLLM inicia su propio motor y Ollama. Cuando un paso falla, la ventana enumera lo que falta (por ejemplo Ollama sin instalar, un puerto ocupado, un archivo de programa que Windows ha bloqueado o un error del motor con las últimas líneas del registro) y tiene un botón «Reintentar». Los registros están en %APPDATA%\\StarkLLM (engine.log y, para el motor, engine-native.log). La página de ayuda indica las soluciones.'],
+      ['¿Y si la aplicación se abre pero el chat no se conecta?', 'El chat necesita Ollama. Si la ventana decía «StarkLLM se está ejecutando sin su entorno de IA», instala o inicia Ollama y pulsa «Reintentar»; entonces StarkLLM descarga los modelos (qwen2.5:7b y nomic-embed-text). El motor habla con Ollama en tu PC en 127.0.0.1:11434.'],
       ['¿Puedo inspeccionar el código fuente?', 'Sí. StarkLLM es totalmente de código abierto en GitHub, en StarkChristian/StarkLLM, con licencia Apache 2.0.'],
       ['¿Dónde puedo enviar comentarios o colaborar?', 'Agradecemos tus comentarios. Escribe a info@starkllm.com o abre una incidencia (issue) en el repositorio de GitHub.'],
     ],

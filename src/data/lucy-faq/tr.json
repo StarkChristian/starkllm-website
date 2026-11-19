@@ -1800,7 +1800,7 @@
     "Bilgisayarıma nasıl yüklerim?"
    ],
    "page": "/tr/download",
-   "match": "İki program bir kez kurulur, gerisini StarkLLM yapar"
+   "match": "StarkLLM kendi motorunu beraberinde getirir; Docker Desktop ve WSL2 gerekmez"
   },
   {
    "id": "smartscreen",
@@ -1863,7 +1863,7 @@
     "İşletim sistemimde çalışır mı?"
    ],
    "page": "/tr/download",
-   "match": "İşletim sistemi: WSL2 etkinleştirilmiş Windows 10 veya 11"
+   "match": "İşletim sistemi: Windows 10 veya 11 (64 bit)"
   },
   {
    "id": "docker",
@@ -1875,7 +1875,7 @@
     "Kurulumdan önce neler gerekli?"
    ],
    "page": "/tr/download",
-   "match": "Docker Desktop: Bir kez kurulur (StarkLLM onu başlatır)"
+   "match": "Yalnızca yapay zekâ modelleri için Ollama. StarkLLM resmî sürümü sizin için kurabilir"
   },
   {
    "id": "firststart",
@@ -1889,7 +1889,7 @@
     "İlk kez açınca ne olur?"
    ],
    "page": "/tr/download",
-   "match": "İlk başlatma, motoru ve henüz sahip olmadığınız yapay zekâ modellerini indirir"
+   "match": "İlk başlatma, henüz sahip olmadığınız yapay zekâ modellerini (yaklaşık 5 GB)"
   },
   {
    "id": "languages",
@@ -1897,12 +1897,13 @@
     "StarkLLM hangi dilleri destekliyor?",
     "Türkçe çalışıyor mu?",
     "İspanyolca veya Fransızca sürümü var mı?",
+  "İspanyolca desteği var mı?",
     "Hangi dillerdeki mektupları okuyabilir?",
     "Türkçe arayüz ne zaman gelecek?",
     "Türkçe mektuplardaki son tarihleri bulur mu?"
    ],
    "page": "/tr/manual",
-   "match": "Mektuplar: gelen kutusu İngilizce ve Almanca mektupları anlar"
+   "match": "Mektuplar: gelen kutusu İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektupları anlar"
   },
   {
    "id": "inbox",
@@ -2139,7 +2140,7 @@
     "Siteyi gezerken takip ediliyor muyum?"
    ],
    "page": "/tr/about",
-   "match": "kendi sunucumuzda barındırılan, çerezsiz ve GDPR’a uygun Umami analitiğini kullanır"
+   "match": "de web analitiği, izleme ve çerez kullanmaz"
   },
   {
    "id": "slow",
@@ -2187,7 +2188,7 @@
     "StarkLLM motorunu ve kapsayıcılarını nasıl durdururum?"
    ],
    "page": "/tr/manual",
-   "match": "böylece bir sonraki açılış yalnızca yaklaşık bir buçuk saniye sürer"
+   "match": "v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur"
   }
  ]
 }

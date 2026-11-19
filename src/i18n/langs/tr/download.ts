@@ -9,11 +9,11 @@ const SETUP = RELEASE.setup.size, PORTABLE = RELEASE.portable?.size ?? 0;
 export default {
   meta: { title: 'İndir | StarkLLM' },
   hero: { eyebrow: 'İndir', h1: 'StarkLLM’i indirin', lede: 'Windows Research Beta ile başlayın.' },
-  helpCallout: { h: 'Kurulum çalışmıyor mu?', text: 'StarkLLM, bilgisayarınızda Docker Desktop ve Ollama gerektirir; v2.0.1’den beri uygulama ikisini de, ayrıca kendi motorunu da kendisi başlatır. Yardım sayfasında her adım için bir testin yer aldığı bir kontrol listesi ve en sık görülen 24 sorunun çözümü bulunur.', link: 'Yardım ve sorun gidermeyi açın' },
+  helpCallout: { h: 'Kurulum çalışmıyor mu?', text: 'StarkLLM kendi motorunu beraberinde getirir; ihtiyaç duyduğu tek diğer program yapay zekâ modelleri için Ollama’dır ve StarkLLM, Ollama’yı da sizin için kurabilir. Yardım sayfasında her adım için bir testin yer aldığı bir kontrol listesi ve en sık görülen sorunların çözümleri bulunur.', link: 'Yardım ve sorun gidermeyi açın' },
   release: {
     h2: 'Sürüm paketi',
     facts: [
-      ['Sürüm', `v${V} (yerel masaüstü, kendi motorunu kendisi başlatır)`],
+      ['Sürüm', `v${V} (yerel masaüstü, motor dahil, Docker gerekmez)`],
       ['Lisans', 'Apache 2.0 (açık kaynak)'],
       ['Yükleyici boyutu', `${mb(SETUP, 'tr-TR')} MB (${bytes(SETUP, 'tr-TR')} bayt)`],
       ...(PORTABLE ? [['Taşınabilir uygulama boyutu', `${mb(PORTABLE, 'tr-TR')} MB (${bytes(PORTABLE, 'tr-TR')} bayt)`]] : []),
@@ -29,12 +29,12 @@ export default {
   },
   setup: {
     h2: 'Kurulum adımları',
-    intro: 'İki program bir kez kurulur, gerisini StarkLLM yapar. İlk başlatma, motoru ve henüz sahip olmadığınız yapay zekâ modellerini indirir (birkaç GB, yaklaşık 10 ila 20 dakika); sonraki başlatmalar saniyeler sürer.',
+    intro: 'StarkLLM kendi motorunu beraberinde getirir; Docker Desktop ve WSL2 gerekmez. İlk başlatma, henüz sahip olmadığınız yapay zekâ modellerini (yaklaşık 5 GB) ve izin verirseniz Ollama’yı indirir; sonraki başlatmalar saniyeler sürer.',
     steps: [
-      { t: 'Docker Desktop’ı kurun', v: 'docker.com adresinden Docker Desktop’ı (WSL2 ile birlikte) kurun, bir kez başlatın ve kurulumunu bitirin. Bilgisayarı yeniden başlatmanızı isteyebilir.' },
-      { t: 'Ollama’yı kurun', v: 'ollama.com adresinden Ollama’yı kurun. Modelleri elle çekmeniz gerekmez: StarkLLM ilk başlatmada qwen2.5:7b ve nomic-embed-text modellerini indirir.' },
-      { t: 'StarkLLM yükleyicisini çalıştırın', v: `StarkLLM-v${V}-Setup.exe dosyasını indirin ve çalıştırın. Yükleyici masaüstü kısayolları oluşturur.` },
-      { t: 'StarkLLM’i başlatın ve ilk başlatmayı bekleyin', v: 'StarkLLM kısayoluna tıklayın. Uygulama Docker Desktop’ı ve Ollama’yı başlatır, modelleri indirir, motorunu derler ve ilerlemeyi gösterir; ardından StarkLLM’i kendi penceresinde açar. Bir şey eksikse pencere neyin eksik olduğunu ve nasıl giderileceğini söyler (günlük: %APPDATA%\\StarkLLM\\engine.log).' },
+      { t: 'StarkLLM yükleyicisini çalıştırın', v: `StarkLLM-v${V}-Setup.exe dosyasını indirin ve çalıştırın. Yükleyici motoru içerir ve masaüstü kısayolları oluşturur.` },
+      { t: 'StarkLLM’i başlatın', v: 'StarkLLM kısayoluna tıklayın. Uygulama motorunu başlatır ve Ollama’yı denetler.' },
+      { t: 'Eksikse Ollama’yı kurun', v: 'Ollama kurulu değilse pencere “Ollama’yı benim için kur” seçeneğini sunar: StarkLLM resmî yükleyiciyi ollama.com adresinden indirir (yaklaşık 2 GB), imzasını denetler ve kurar; yönetici hakları gerekmez. Ollama’yı ollama.com adresinden kendiniz de kurabilirsiniz.' },
+      { t: 'İlk başlatmayı bekleyin', v: 'StarkLLM yapay zekâ modellerini indirir (varsayılan olarak qwen2.5:7b ve nomic-embed-text, yaklaşık 5 GB; Ollama’da zaten bulunan uygun modeller kullanılır), ilerlemeyi gösterir ve ardından kendi penceresinde açılır. Bir şey eksikse pencere neyin eksik olduğunu ve nasıl giderileceğini söyler (günlükler: %APPDATA%\\StarkLLM\\engine.log ve engine-native.log).' },
       { t: 'Hesabınızı oluşturun', v: 'İlk hesabı kaydedin; bu hesap, bu kurulumun yöneticisidir (yedekleme ve geri yükleme). Ardından bir workspace oluşturun ve bir belge yükleyin.' },
     ],
   },
@@ -42,12 +42,11 @@ export default {
     h2: 'Ön koşullar kontrol listesi',
     lede: 'StarkLLM’i başlatmadan önce aşağıdakilerin hepsinin hazır olduğundan emin olun:',
     items: [
-      ['İşletim sistemi', 'WSL2 etkinleştirilmiş Windows 10 veya 11.'],
-      ['Docker Desktop', 'Bir kez kurulur (StarkLLM onu başlatır). Onsuz motor çalışamaz.'],
-      ['Ollama', 'Windows’a yerel olarak kurulur (StarkLLM onu başlatır). ollama.com adresinden indirin.'],
+      ['İşletim sistemi', 'Windows 10 veya 11 (64 bit).'],
+      ['Yazılım', 'Yalnızca yapay zekâ modelleri için Ollama. StarkLLM resmî sürümü sizin için kurabilir (“Ollama’yı benim için kur”) ya da onu ollama.com adresinden indirebilirsiniz. Docker Desktop ve WSL2, v2.2’den beri gerekmez.'],
       ['Modeller ve disk', 'İlk başlatmada otomatik olarak indirilir (yaklaşık 5 GB). En az 15 GB boş disk alanı bırakın.'],
-      ['Donanım', 'En az 8 GB RAM (3B modeller için), 16 GB önerilir (7B modeller için). 8 GB+ VRAM’li bir NVIDIA GPU şiddetle önerilir. Kılavuzda donanım kademeleriyle ilgili öneriler bulunur.'],
-      ['Desteklenen biçimler', 'PDF, DOCX (tablolarla), TXT, Markdown, CSV, XLSX, JSON, XML, günlükler, HTML ve görüntüler (OCR’lı PNG, JPG).'],
+      ['Donanım', 'En az 8 GB RAM (3B modeller için), 16 GB önerilir (7B modeller için). 8 GB+ VRAM’li bir NVIDIA GPU şiddetle önerilir; v2.3’ten beri StarkLLM, Ollama’nın tümleşik AMD Radeon ve Intel Arc/Iris grafiklerini de kullanmasına izin verir. Kılavuzda donanım kademeleriyle ilgili öneriler bulunur.'],
+      ['Desteklenen biçimler', 'PDF, DOCX (tablolarla), PowerPoint (PPTX), EPUB e-kitapları, TXT, Markdown, CSV, XLSX, JSON, XML, günlükler, HTML ve görüntüler (OCR’lı PNG, JPG).'],
     ],
   },
   smart: {
@@ -78,15 +77,15 @@ export default {
   faq: {
     h2: 'Sık sorulan sorular',
     items: [
-      ['Verilerim bilgisayarımdan çıkıyor mu?', 'StarkLLM, verilerinizi makinenizde tutacak şekilde tasarlanmıştır. Belgeler yerel bir ChromaDB kapsayıcısında saklanır ve yapay zekâ çıkarımı ana bilgisayarınızda Ollama ile çalışır. Web araması, bir bulut model sağlayıcısı veya güncelleme denetimi gibi isteğe bağlı bir çevrimiçi özelliği siz açmadığınız sürece hiçbir şey bilgisayarınızdan çıkmaz.'],
+      ['Verilerim bilgisayarımdan çıkıyor mu?', 'StarkLLM, verilerinizi makinenizde tutacak şekilde tasarlanmıştır. Belgeler bilgisayarınızdaki yerel bir ChromaDB veritabanında saklanır ve yapay zekâ çıkarımı bilgisayarınızda Ollama ile çalışır. Web araması, bir bulut model sağlayıcısı veya güncelleme denetimi gibi isteğe bağlı bir çevrimiçi özelliği siz açmadığınız sürece hiçbir şey bilgisayarınızdan çıkmaz.'],
       ['StarkLLM ücretsiz mi?', 'Evet. Kişisel, araştırma ve ticari kullanım için Apache 2.0 altında ücretsiz ve açık kaynaklıdır. Abonelik, telemetri veya gizli kademe yoktur. Garanti verilmeksizin “olduğu gibi” sunulur.'],
       ['Yanıtlar neden yavaş olabilir?', 'Hız donanımınıza bağlıdır. Ayrı bir GPU yoksa Ollama CPU çıkarımına geçer; bu çok daha yavaştır. 8 GB+ VRAM’li ayrı bir NVIDIA GPU çok daha hızlı üretir.'],
       ['Yükleyici imzalı mı? SmartScreen veya Smart App Control uyarı verirse ne yapmalıyım?', 'Evet. v2.1.2’den itibaren yükleyici, StarkLLM.exe ve kaldırma programı “Open Source Developer Christian Stark” tarafından imzalanmıştır; böylece Windows yayımcıyı doğrulayabilir. Windows yine de uyarırsa yayımcı adını kontrol edin (yükleyiciye sağ tıklayın, Özellikler, Dijital İmzalar) ve bu sayfadaki SHA-256 sağlama toplamını karşılaştırın. Dosyayı yalnızca ikisi de eşleşiyorsa çalıştırın. Smart App Control’ü veya başka bir güvenlik ayarını kapatmayın.'],
       ['Nasıl bir donanıma ihtiyacım var?', '3B modeller için en az 8 GB RAM, 7B modeller için 16 GB RAM. İleri düzey modeller (14B ila 32B) için 24 GB VRAM veya 64 GB sistem RAM’i önerilir.'],
       ['Normal sohbet ile belge sohbeti arasındaki fark nedir?', 'Normal sohbet yalnızca modelin önceden eğitilmiş bilgisine dayanır. Belge sohbeti RAG kullanır: önce yüklediğiniz belgelerde arama yapar, ilgili parçaları modele verir ve doğrulanabilir kaynaklarla yanıt verir.'],
       ['Workspace belgeleri ile Knowledge Base arasındaki fark nedir?', 'Workspace belgeleri tek bir projeye yalıtılmıştır. Knowledge Base ise makinenizde, her sohbetin başvurabileceği kalıcı, genel bir klasördür.'],
-      ['Pencere “StarkLLM could not start” diyor. Şimdi ne yapmalı?', 'v2.0.1’den beri uygulama Docker Desktop’ı, Ollama’yı ve motorunu kendisi başlatır. Bir adım başarısız olduğunda pencere neyin eksik olduğunu listeler (örneğin Docker Desktop kurulu değil, meşgul bir port ya da son günlük satırlarıyla bir motor hatası) ve bir “Retry” (Yeniden dene) düğmesi sunar. Günlüğün tamamı %APPDATA%\\StarkLLM\\engine.log dosyasındadır. v2.0.0’da pencere yalnızca “Connecting to local engine…” ekranında bekliyordu; lütfen v2.0.1’i kurun.'],
-      ['Uygulama açılıyor ama sohbet bağlanmıyorsa ne olur?', 'Sohbet Ollama’ya ihtiyaç duyar. Pencere “StarkLLM is running without its AI runtime” dediyse Ollama’yı kurun veya başlatın ve “Retry” (Yeniden dene) düğmesine basın; StarkLLM ardından modelleri (qwen2.5:7b ve nomic-embed-text) indirir. Motor, bilgisayarınızdaki Ollama ile host.docker.internal:11434 üzerinden konuşur.'],
+      ['Pencere “StarkLLM başlatılamadı” diyor. Şimdi ne yapmalı?', 'StarkLLM kendi motorunu ve Ollama’yı kendisi başlatır. Bir adım başarısız olduğunda pencere neyin eksik olduğunu listeler (örneğin Ollama kurulu değil, meşgul bir port, Windows’un engellediği bir program dosyası ya da son günlük satırlarıyla bir motor hatası) ve bir “Yeniden dene” düğmesi sunar. Günlükler %APPDATA%\\StarkLLM klasöründedir (engine.log ve motor için engine-native.log). Yardım sayfası çözümleri listeler.'],
+      ['Uygulama açılıyor ama sohbet bağlanmıyorsa ne olur?', 'Sohbet Ollama’ya ihtiyaç duyar. Pencere “StarkLLM is running without its AI runtime” dediyse Ollama’yı kurun veya başlatın ve “Yeniden dene” düğmesine basın; StarkLLM ardından modelleri (qwen2.5:7b ve nomic-embed-text) indirir. Motor, bilgisayarınızdaki Ollama ile 127.0.0.1:11434 adresinde konuşur.'],
       ['Kaynak kodunu inceleyebilir miyim?', 'Evet. StarkLLM, GitHub’da StarkChristian/StarkLLM adresinde Apache 2.0 lisansıyla tamamen açık kaynaklıdır.'],
       ['Geri bildirimi nereye gönderebilirim veya nasıl katkıda bulunabilirim?', 'Geri bildirimden memnuniyet duyarız. info@starkllm.com adresine e-posta gönderin veya GitHub deposunda bir issue açın.'],
     ],

@@ -26,11 +26,15 @@ for f in sorted(root.rglob("*.html")):
         file=f, lang=(re.search(r'<html lang="([^"]+)"', h) or [None, None])[1],
         canonical=re.findall(r'<link rel="canonical" href="([^"]+)"', h),
         alts=dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', h)),
-        switcher=re.findall(r'<li class="lang">(.*?)</li>', h, re.S))
+        switcher=re.findall(r'<li class="lang">(.*?)</li>', h, re.S),
+        redirect='http-equiv="refresh"' in h)
 
 for url, p in pages.items():
     if url == "/404":
         if p["canonical"]: errors.append(f"{url}: the 404 page must have no canonical")
+        continue
+    if p["redirect"]:  # a moved page (public/*.html): noindex, canonical = the target, not in the sitemap
+        if len(p["canonical"]) != 1 or not file_of(p["canonical"][0]).exists(): errors.append(f"{url}: redirect page needs one canonical to an existing page")
         continue
     if not p["lang"]: errors.append(f"{url}: no <html lang>")
     if len(p["canonical"]) != 1: errors.append(f"{url}: expected one canonical, found {len(p['canonical'])}")
@@ -54,7 +58,7 @@ for url, p in pages.items():
 
 sm = (root / "sitemap.xml").read_text(encoding="utf-8")
 for url, p in pages.items():
-    if url != "/404" and f"<loc>{SITE}{url}</loc>" not in sm: errors.append(f"{url}: missing from sitemap.xml")
+    if url != "/404" and not p["redirect"] and f"<loc>{SITE}{url}</loc>" not in sm: errors.append(f"{url}: missing from sitemap.xml")
 if errors:
     print("\n".join(errors)); print(f"{len(errors)} problem(s)"); sys.exit(1)
 print(f"{len(pages)} pages checked, language setup OK")

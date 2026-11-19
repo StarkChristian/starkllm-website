@@ -340,7 +340,7 @@
     "Comment l'installer sur Windows ?"
    ],
    "page": "/fr/download",
-   "match": "Deux programmes s’installent une seule fois, puis StarkLLM s’occupe du reste"
+   "match": "L’installeur contient le moteur et crée des raccourcis sur le bureau"
   },
   {
    "id": "smartscreen",
@@ -401,7 +401,7 @@
     "Fonctionne-t-il sous Windows 10 ?"
    ],
    "page": "/fr/download",
-   "match": "Système : Windows 10 ou 11 avec WSL2 activé"
+   "match": "Système : Windows 10 ou 11 (64 bits)"
   },
   {
    "id": "docker",
@@ -416,7 +416,7 @@
     "Docker ou Ollama sont-ils indispensables ?"
    ],
    "page": "/fr/download",
-   "match": "Docker Desktop : Installé une fois (StarkLLM le démarre)"
+   "match": "Seulement Ollama, pour les modèles d’IA. StarkLLM peut installer la version officielle pour vous"
   },
   {
    "id": "firststart",
@@ -426,7 +426,7 @@
     "Quelle est la taille du téléchargement des modèles ?"
    ],
    "page": "/fr/download",
-   "match": "Le premier démarrage télécharge le moteur et les modèles d’IA que vous n’avez pas encore"
+   "match": "Le premier démarrage télécharge les modèles d’IA que vous n’avez pas encore"
   },
   {
    "id": "languages",
@@ -439,7 +439,7 @@
     "Y a-t-il une interface en français ?"
    ],
    "page": "/fr/manual",
-   "match": "Courriers : la boîte de réception comprend les courriers en anglais et en allemand"
+   "match": "Courriers : la boîte de réception comprend les courriers en anglais, allemand, français, espagnol, italien et turc"
   },
   {
    "id": "inbox",
@@ -667,7 +667,7 @@
     "Y a-t-il des traceurs sur ce site ?"
    ],
    "page": "/fr/about",
-   "match": "utilise Umami, hébergé par nos soins, sans cookies"
+   "match": "n’utilise pas non plus d’outil d’analyse d’audience ni de traçage, et il ne dépose aucun cookie"
   },
   {
    "id": "slow",
@@ -714,7 +714,7 @@
     "Comment arrêter le moteur StarkLLM et ses conteneurs ?"
    ],
    "page": "/fr/manual",
-   "match": "pour que le prochain démarrage ne prenne qu’environ une seconde et demie"
+   "match": "quand vous fermez ou quittez StarkLLM, son moteur s’arrête aussi"
   }
  ]
 }

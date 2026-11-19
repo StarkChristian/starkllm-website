@@ -382,7 +382,7 @@
     "¿Cómo lo configuro?"
    ],
    "page": "/es/download",
-   "match": "Se instalan dos programas una sola vez y después StarkLLM hace el resto"
+   "match": "StarkLLM trae su propio motor; no necesitas Docker Desktop ni WSL2"
   },
   {
    "id": "smartscreen",
@@ -438,7 +438,7 @@
     "¿Hay una versión para Linux?"
    ],
    "page": "/es/download",
-   "match": "Windows 10 u 11 con WSL2 activado"
+   "match": "Windows 10 u 11 (64 bits)"
   },
   {
    "id": "docker",
@@ -453,7 +453,7 @@
     "¿Qué función tiene Docker?"
    ],
    "page": "/es/download",
-   "match": "Docker Desktop: Se instala una sola vez (StarkLLM lo inicia)"
+   "match": "Solo Ollama, para los modelos de IA. StarkLLM puede instalar la versión oficial por ti"
   },
   {
    "id": "firststart",
@@ -465,7 +465,7 @@
     "¿Cuánto tiempo tarda la primera vez?"
    ],
    "page": "/es/download",
-   "match": "El primer arranque descarga el motor y los modelos de IA que aún no tengas"
+   "match": "El primer arranque descarga los modelos de IA que aún no tengas"
   },
   {
    "id": "languages",
@@ -478,7 +478,7 @@
     "¿Habrá soporte para español?"
    ],
    "page": "/es/manual",
-   "match": "Cartas: la bandeja de entrada entiende cartas en inglés y alemán"
+   "match": "Cartas: la bandeja de entrada entiende cartas en inglés, alemán, francés, español, italiano y turco"
   },
   {
    "id": "inbox",
@@ -691,7 +691,7 @@
     "¿Qué datos guarda este sitio web sobre los visitantes?"
    ],
    "page": "/es/about",
-   "match": "usa Umami, un servicio de analítica alojado por nosotros mismos, sin cookies"
+   "match": "tampoco usa analítica, seguimiento ni cookies"
   },
   {
    "id": "slow",
@@ -738,7 +738,7 @@
     "Quiero apagar el motor de StarkLLM y Docker del todo"
    ],
    "page": "/es/manual",
-   "match": "para que el siguiente inicio tarde solo un segundo y medio"
+   "match": "Desde la v2.2, no: cuando cierras o sales de StarkLLM, su motor también se detiene"
   }
  ]
 }

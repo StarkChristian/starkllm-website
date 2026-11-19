@@ -41,8 +41,10 @@ let title = '';
 let description: string | undefined;
 let headExtra = '';
 // The default language keeps its hand-written head files (description, Open Graph, Twitter card, structured data).
+// Their SoftwareApplication item is the same on all three pages; version and installer URL come from the release.
+const fillHead = (s: string) => s.replaceAll('{{V}}', V).replaceAll('{{SETUP_URL}}', RELEASE.setup.url);
 const raw = lang === defaultLang
-  ? ({ home: indexHead.replaceAll('{{V}}', V), product: productHead, download: downloadHead.replaceAll('{{SETUP_URL}}', RELEASE.setup.url) } as Record<string, string>)[def.kind]
+  ? ({ home: fillHead(indexHead), product: fillHead(productHead), download: fillHead(downloadHead) } as Record<string, string>)[def.kind]
   : undefined;
 
 if (def.kind === 'home') { ({ title, description } = home[lang].meta as { title: string; description?: string }); }

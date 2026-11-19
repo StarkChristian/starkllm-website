@@ -28,7 +28,7 @@ const productBase = {
       steps: [
         { k: 'Parse', v: 'Local parsers extract the raw text. Scanned PDFs and images go through local OCR or vision before chunking.' },
         { k: 'Chunk', v: 'A semantic chunking algorithm splits the text into logical, overlapping blocks.' },
-        { k: 'Embed', v: 'A local embedding model turns each block into a vector, stored in your private ChromaDB container.' },
+        { k: 'Embed', v: 'A local embedding model turns each block into a vector, stored in your private ChromaDB database on your PC.' },
         { k: 'Answer', v: 'When you ask a question, the most relevant passages are injected into the context window of your chosen Ollama model, so the response is grounded in your sources.' },
       ],
     },
@@ -51,7 +51,7 @@ const productBase = {
         { k: 'With amount and page', v: 'Every date comes with its sentence, the amount if there is one and the page it was read from.' },
         { k: 'Add to calendar', v: '"Add to calendar" saves the dates as a calendar file on request.' },
         { k: 'Made by rules on this PC', v: 'Dates, amounts and senders are found by fixed rules over the text of your letters, not guessed by a model, so each one is in the document. Check the letter before you act on it.' },
-        { k: 'Languages', v: 'Letters in English and German are understood. Photos and scans are read as English or German text. Letters in other languages are filed and can be searched, but without deadlines and amounts. Coming with the next versions (in progress, not released yet): letter rules for French, Spanish, Italian and Turkish, and the interface in Spanish, French, Italian and Turkish.' },
+        { k: 'Languages', v: 'Letters in English, German, French, Spanish, Italian and Turkish are understood, with their deadlines and amounts. Photos and scans are read as English or German text; more text-recognition languages can be added in Settings. Letters in other languages are filed and can be searched, but without deadlines and amounts. The interface speaks the same six languages.' },
       ],
     },
     verify: {
@@ -87,7 +87,7 @@ const productBase = {
       items: [
         { k: 'Model selection', v: 'Switch between any model you downloaded via Ollama (for example Qwen 2.5, Llama 3.2, Mistral) from the chat interface.' },
         { k: 'Runtime configuration', v: 'Adjust context window size, temperature and advanced parameters to balance speed and reasoning depth.' },
-        { k: 'Strict localhost routing', v: 'Internal API traffic runs on localhost Docker and host ports, keeping your data on your machine.' },
+        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine.' },
       ],
     },
     tools: {
@@ -136,7 +136,7 @@ const productBase = {
       steps: [
         { k: 'Einlesen', v: 'Lokale Parser extrahieren den Rohtext. Gescannte PDFs und Bilder durchlaufen vor dem Chunking lokale OCR oder Bildanalyse.' },
         { k: 'Zerlegen', v: 'Ein semantischer Chunking-Algorithmus teilt den Text in logische, überlappende Blöcke.' },
-        { k: 'Einbetten', v: 'Ein lokales Embedding-Modell wandelt jeden Block in einen Vektor um, gespeichert in Ihrem privaten ChromaDB-Container.' },
+        { k: 'Einbetten', v: 'Ein lokales Embedding-Modell wandelt jeden Block in einen Vektor um, gespeichert in Ihrer privaten ChromaDB-Datenbank auf Ihrem PC.' },
         { k: 'Antworten', v: 'Bei einer Frage werden die relevantesten Passagen in das Kontextfenster Ihres gewählten Ollama-Modells eingefügt, sodass die Antwort auf Ihren Quellen beruht.' },
       ],
     },
@@ -159,7 +159,7 @@ const productBase = {
         { k: 'Mit Betrag und Seite', v: 'Zu jedem Datum gehören der Satz, der Betrag, falls es einen gibt, und die Seite, aus der es gelesen wurde.' },
         { k: 'Zum Kalender', v: '„Zum Kalender“ speichert die Termine auf Wunsch als Kalenderdatei.' },
         { k: 'Nach festen Regeln auf diesem PC', v: 'Daten, Beträge und Absender werden nach festen Regeln im Text Ihrer Briefe gefunden und nicht von einem Modell geraten, jeder Wert steht also im Dokument. Prüfen Sie den Brief, bevor Sie handeln.' },
-        { k: 'Sprachen', v: 'Briefe auf Englisch und Deutsch werden verstanden. Fotos und Scans werden als englischer oder deutscher Text gelesen. Briefe in anderen Sprachen werden abgelegt und lassen sich durchsuchen, aber ohne Fristen und Beträge. Mit den nächsten Versionen kommen (in Arbeit, noch nicht veröffentlicht): Briefregeln für Französisch, Spanisch, Italienisch und Türkisch sowie die Oberfläche auf Spanisch, Französisch, Italienisch und Türkisch.' },
+        { k: 'Sprachen', v: 'Briefe auf Englisch, Deutsch, Französisch, Spanisch, Italienisch und Türkisch werden verstanden, mit ihren Fristen und Beträgen. Fotos und Scans werden als englischer oder deutscher Text gelesen; weitere Sprachen für die Texterkennung lassen sich in den Einstellungen hinzufügen. Briefe in anderen Sprachen werden abgelegt und lassen sich durchsuchen, aber ohne Fristen und Beträge. Die Oberfläche spricht dieselben sechs Sprachen.' },
       ],
     },
     verify: {
@@ -195,7 +195,7 @@ const productBase = {
       items: [
         { k: 'Modellauswahl', v: 'Wechseln Sie im Chat zwischen allen über Ollama geladenen Modellen (zum Beispiel Qwen 2.5, Llama 3.2, Mistral).' },
         { k: 'Laufzeit-Konfiguration', v: 'Passen Sie Kontextfenster, Temperatur und weitere Parameter an, um Tempo und Denktiefe abzuwägen.' },
-        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft über Localhost-Ports von Docker und Host, Ihre Daten bleiben auf Ihrem Rechner.' },
+        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner.' },
       ],
     },
     tools: {
