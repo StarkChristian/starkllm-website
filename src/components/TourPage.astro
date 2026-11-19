@@ -87,7 +87,9 @@ const steps = c.steps.map((s, i) => ({ ...s, n: i + 1, shots: shotsOf(STEPS[i]) 
   .tour-note { color: var(--c-muted); font-size: .88rem; margin-top: .8rem; }
   .tour-step { display: grid; gap: 1.6rem; }
   .tour-text { max-width: 46rem; }
+  .tour-text h2 { margin-bottom: .7rem; }
   .tour-text p { color: var(--c-muted); }
+  .tour-text p + p { margin-top: .6rem; }
   .tour-shots { display: flex; flex-wrap: wrap; gap: 1.6rem; align-items: flex-start; }
   figure { margin: 0; }
   figcaption { color: var(--c-muted); font-size: .88rem; margin-top: .6rem; max-width: 46rem; }
@@ -95,6 +97,8 @@ const steps = c.steps.map((s, i) => ({ ...s, n: i + 1, shots: shotsOf(STEPS[i]) 
   .frame img { display: block; width: 100%; height: auto; }
   /* PC picture: a plain window frame */
   .tour-pc { flex: 1 1 560px; max-width: 900px; }
+  /* next to two phones a PC picture would shrink until its text is unreadable: give it its own row */
+  .tour-shots:has(.tour-phone + .tour-phone) .tour-pc { flex-basis: 100%; }
   .tour-pc .frame { border: 1px solid var(--c-line); border-radius: 12px; overflow: hidden; background: var(--c-surface); box-shadow: 0 18px 50px rgba(0, 0, 0, .35); }
   .tour-pc .bar { display: flex; gap: .4rem; padding: .55rem .7rem; border-bottom: 1px solid var(--c-line); }
   .tour-pc .bar i { width: .65rem; height: .65rem; border-radius: 50%; background: var(--c-line); }
