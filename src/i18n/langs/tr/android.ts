@@ -13,6 +13,8 @@ export default {
     ],
     mail: 'info@starkllm.com adresine yazın',
     download: 'İndirme sayfası',
+    iosH: 'iPhone',
+    ios: 'iPhone (iOS) için henüz bir StarkLLM uygulaması yok; yalnızca Android uygulaması kapalı testte.',
   },
   how: {
     h2: 'Nasıl çalışır',

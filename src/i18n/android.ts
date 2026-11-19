@@ -17,6 +17,8 @@ const androidBase = {
       ],
       mail: 'Write to info@starkllm.com',
       download: 'Download page',
+      iosH: 'iPhone',
+      ios: 'There is no StarkLLM app for iPhone (iOS) yet; only the Android app is in a closed test.',
     },
     how: {
       h2: 'How it works',
@@ -71,6 +73,8 @@ const androidBase = {
       ],
       mail: 'An info@starkllm.com schreiben',
       download: 'Download-Seite',
+      iosH: 'iPhone',
+      ios: 'Für das iPhone (iOS) gibt es noch keine StarkLLM-App; nur die Android-App ist im geschlossenen Test.',
     },
     how: {
       h2: 'So funktioniert es',

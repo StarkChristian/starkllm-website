@@ -517,10 +517,21 @@
    "q": [
     "Posso usarlo sul telefono?",
     "Esiste un'app per il cellulare?",
-    "C'è un'app per Android o iPhone?"
+    "C'è un'app per Android?"
    ],
    "page": "/it/android",
    "match": "L’app è in un test chiuso su Google Play prima che tutti possano scaricarla"
+  },
+  {
+   "id": "iphone",
+   "q": [
+    "C'è un'app per iPhone?",
+    "Esiste una versione per iOS?",
+    "StarkLLM funziona sul mio iPhone?",
+    "C'è una versione per iPad?"
+   ],
+   "page": "/it/android",
+   "match": "Non esiste ancora un’app StarkLLM per iPhone (iOS); solo l’app per Android è in test chiuso"
   },
   {
    "id": "scam",

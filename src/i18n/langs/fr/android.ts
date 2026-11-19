@@ -13,6 +13,8 @@ export default {
     ],
     mail: 'Écrire à info@starkllm.com',
     download: 'Page de téléchargement',
+    iosH: 'iPhone',
+    ios: 'Il n’existe pas encore d’application StarkLLM pour iPhone (iOS) ; seule l’application Android est en test fermé.',
   },
   how: {
     h2: 'Comment ça marche',
