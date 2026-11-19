@@ -459,8 +459,8 @@
     "Existe-t-il une application mobile ?",
     "Y a-t-il une application Android ou iPhone ?"
    ],
-   "page": "/fr/product",
-   "match": "Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone"
+   "page": "/fr/android",
+   "match": "L’application est en test fermé sur Google Play avant que tout le monde puisse la télécharger"
   },
   {
    "id": "scam",

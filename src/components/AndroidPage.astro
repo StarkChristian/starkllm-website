@@ -1,0 +1,62 @@
+---
+// StarkLLM for Android: a preview page (closed test on Google Play). Copy in src/i18n/android.ts.
+import { android } from '../i18n/android';
+import { localePath, type Lang } from '../i18n/ui';
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const c = android[lang];
+const mail = 'mailto:info@starkllm.com?subject=StarkLLM%20for%20Android%20test';
+// Lucy answers "Is there an Android app?" from the status box. The detail sections carry `lucy-skip` (any lucy-* class is left out
+// of her index, see tools/build-lucy-index.mjs), so general questions (Windows 10, languages, photos of letters) keep their answers
+// from the Windows pages instead of an app that is not released yet.
+---
+<header class="page-hero">
+  <p class="eyebrow">{c.hero.eyebrow}</p>
+  <h1>{c.hero.h1}</h1>
+  <p class="lede">{c.hero.lede}</p>
+</header>
+
+<section class="block" aria-labelledby="status-h">
+  <div class="callout" id="test" style="margin-top:0">
+    <h3 id="status-h">{c.status.h2}</h3>
+    <p>{c.status.text}</p>
+    <h4>{c.status.howH}</h4>
+    <ol>{c.status.how.map((li) => <li>{li}</li>)}</ol>
+    <p><a href={mail}>{c.status.mail}</a> · <a href={localePath(lang, '/download')}>{c.status.download}</a></p>
+  </div>
+</section>
+
+<section class="block lucy-skip" aria-labelledby="how-h">
+  <h2 id="how-h">{c.how.h2}</h2>
+  <div class="two">
+    {c.how.items.map((i) => (<div class="tile auto"><h3>{i.t}</h3><p>{i.v}</p></div>))}
+  </div>
+</section>
+
+<section class="block lucy-skip" aria-labelledby="feat-h">
+  <h2 id="feat-h">{c.features.h2}</h2>
+  <div class="two">
+    {c.features.items.map((i) => (<div class="tile auto"><h3>{i.t}</h3><p>{i.v}</p></div>))}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="priv-h">
+  <h2 id="priv-h">{c.privacy.h2}</h2>
+  <ul class="check">{c.privacy.items.map((i) => <li>{i}</li>)}</ul>
+</section>
+
+<section class="block lucy-skip" aria-labelledby="req-h">
+  <h2 id="req-h">{c.req.h2}</h2>
+  <ul class="check">{c.req.items.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}</ul>
+  <p class="sec-lede" style="margin-top:1.2rem">{c.req.not}</p>
+</section>
+
+<section class="cta-band lucy-skip" aria-labelledby="cta-h">
+  <h2 id="cta-h">{c.cta.h2}</h2>
+  <p class="sec-lede">{c.cta.text}</p>
+  <div class="cta">
+    <a class="btn primary" href={mail}>{c.cta.mail}</a>
+    <a class="btn ghost" href={localePath(lang, '/download')}>{c.cta.download}</a>
+    <a class="btn ghost" href={localePath(lang, '/product')}>{c.cta.product}</a>
+  </div>
+</section>

@@ -519,8 +519,8 @@
     "Esiste un'app per il cellulare?",
     "C'è un'app per Android o iPhone?"
    ],
-   "page": "/it/product",
-   "match": "Aggiungi una lettera come PDF, scansione o foto dal telefono"
+   "page": "/it/android",
+   "match": "L’app è in un test chiuso su Google Play prima che tutti possano scaricarla"
   },
   {
    "id": "scam",

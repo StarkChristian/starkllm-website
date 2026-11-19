@@ -13,6 +13,7 @@ const c = product[lang];
 const S = shots[lang];
 const A = shotAlt[lang];
 const sizes = '(max-width: 860px) 100vw, 560px';
+import { android } from '../i18n/android';
 ---
 <header class="page-hero">
   <p class="eyebrow">{c.hero.eyebrow}</p>
@@ -159,6 +160,10 @@ const sizes = '(max-width: 860px) 100vw, 560px';
   <div class="two">
     {c.superior.items.map((i) => (<div class="tile auto"><h3>{i.k}</h3><p>{i.v}</p></div>))}
   </div>
+</section>
+
+<section class="block" aria-label="Android">
+  <div class="callout" style="margin-top:0"><p>{android[lang].productLink.text} <a href={localePath(lang, '/android')}>{android[lang].productLink.link}</a></p></div>
 </section>
 
 <section class="block" aria-labelledby="tech-h">

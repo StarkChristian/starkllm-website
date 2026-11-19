@@ -499,8 +499,8 @@
     "¿Hay una aplicación para Android o iPhone?",
     "¿Hay una versión para móvil o tableta?"
    ],
-   "page": "/es/product",
-   "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
+   "page": "/es/android",
+   "match": "La aplicación está en una prueba cerrada en Google Play antes de que todo el mundo pueda descargarla"
   },
   {
    "id": "scam",

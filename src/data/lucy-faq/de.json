@@ -392,8 +392,8 @@
     "Gibt es eine App fürs Smartphone?",
     "Gibt es eine Android- oder iPhone-App?"
    ],
-   "page": "/de/product",
-   "match": "Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu"
+   "page": "/de/android",
+   "match": "Die App ist im geschlossenen Test bei Google Play, bevor alle sie herunterladen können"
   },
   {
    "id": "scam",

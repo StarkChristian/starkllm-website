@@ -364,8 +364,8 @@
     "Is there a mobile app?",
     "Is there an Android or iPhone app?"
    ],
-   "page": "/product",
-   "match": "Add a letter as a PDF, a scan or a photo from your phone"
+   "page": "/android",
+   "match": "The app is in a closed test on Google Play before everyone can download it"
   },
   {
    "id": "scam",

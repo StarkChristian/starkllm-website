@@ -1922,11 +1922,10 @@
    "q": [
     "Telefonumda kullanabilir miyim?",
     "Mobil uygulaması var mı?",
-    "Android veya iPhone uygulaması var mı?",
-    "Telefonla çektiğim fotoğrafı ekleyebilir miyim?"
+    "Android veya iPhone uygulaması var mı?"
    ],
-   "page": "/tr/product",
-   "match": "Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin"
+   "page": "/tr/android",
+   "match": "Uygulama, herkes indirebilmeden önce Google Play’de kapalı testte"
   },
   {
    "id": "scam",

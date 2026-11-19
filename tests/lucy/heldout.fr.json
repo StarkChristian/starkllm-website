@@ -1,6 +1,7 @@
 {
  "questions": [
-  {"q": "Existe-t-il une version pour iPhone ?", "pages": ["/fr/product", "/fr/manual", "/fr/download", "/fr/"]},
+  {"q": "Existe-t-il une version pour iPhone ?", "pages": ["/fr/product", "/fr/manual", "/fr/download", "/fr/",
+    "/fr/android"]},
   {"q": "Faut-il un compte pour utiliser StarkLLM ?", "pages": ["/fr/download", "/fr/help", "/fr/manual", "/fr/tech-privacy"]},
   {"q": "Que se passe-t-il au premier démarrage ?", "pages": ["/fr/download", "/fr/help", "/fr/manual", "/fr/"]},
   {"q": "Peut-il lire des courriers manuscrits ?", "pages": ["/fr/tech-multimodal", "/fr/product", "/fr/manual", "/fr/"]},
