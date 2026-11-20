@@ -53,6 +53,17 @@ const mail = 'mailto:info@starkllm.com?subject=StarkLLM%20for%20Android%20test';
   <p class="sec-lede" style="margin-top:1.2rem">{c.req.not}</p>
 </section>
 
+<section class="block lucy-skip android-privacy" id="privacy" aria-labelledby="privacy-h">
+  <h2 id="privacy-h">{c.privacyPolicy.h2}</h2>
+  <p class="sec-lede">{c.privacyPolicy.intro}</p>
+  {c.privacyPolicy.sections.map((s, i) => (<div class="pp"><h3>{i + 1}. {s.h}</h3><p>{s.p}</p></div>))}
+  <ul class="check">
+    <li><a href={localePath(lang, '/tech-privacy')}>{c.privacyPolicy.links.tech}</a></li>
+    <li><a href={lang === 'de' ? '/datenschutz' : '/privacy-policy'}>{c.privacyPolicy.links.site}</a></li>
+    <li><a href="/impressum">{c.privacyPolicy.links.imprint}</a></li>
+  </ul>
+</section>
+
 <section class="cta-band lucy-skip" aria-labelledby="cta-h">
   <h2 id="cta-h">{c.cta.h2}</h2>
   <p class="sec-lede">{c.cta.text}</p>
@@ -62,3 +73,9 @@ const mail = 'mailto:info@starkllm.com?subject=StarkLLM%20for%20Android%20test';
     <a class="btn ghost" href={localePath(lang, '/product')}>{c.cta.product}</a>
   </div>
 </section>
+
+<style>
+  .android-privacy .pp { margin-top: 1.4rem; max-width: 52rem; }
+  .android-privacy h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+  .android-privacy p { color: var(--c-muted); }
+</style>

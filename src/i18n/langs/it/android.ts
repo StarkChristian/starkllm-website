@@ -53,5 +53,21 @@ export default {
     not: 'Non ancora in questa prima versione: l’accesso fuori casa, un’app per iPhone e l’accesso dal telefono quando StarkLLM sul PC ha più account.',
   },
   cta: { h2: 'Provala in anticipo', text: 'Scrivici per partecipare al test chiuso. Nel frattempo StarkLLM per Windows si scarica gratis.', mail: 'Partecipa al test', download: 'StarkLLM per Windows', product: 'Torna al prodotto' },
+  privacyPolicy: {
+    h2: 'Informativa sulla privacy dell’app',
+    intro: 'Questa è l’informativa sulla privacy dell’app «StarkLLM per Android» (aggiornata al 20 novembre 2026). Fa fede la versione tedesca; le altre lingue sono traduzioni a scopo informativo.',
+    sections: [
+      { h: 'Titolare del trattamento', p: 'Christian Stark, Maxstr. 14, 52070 Aquisgrana, Germania. E-mail: info@starkllm.com. Altri dati nelle note legali (Impressum).' },
+      { h: 'Nessun dato a noi', p: 'L’app non invia dati né a noi né ad altre aziende. Nessun account presso di noi, nessuna analisi, nessuna pubblicità, nessun report sugli arresti anomali e nessuna libreria di terzi che trasmetta dati (né servizi Google Play né Firebase).' },
+      { h: 'Solo il tuo PC', p: 'L’app si collega solo a StarkLLM sui PC che hai abbinato tu, e solo nella tua rete di casa (indirizzi di rete privati). La connessione è cifrata (TLS) con il certificato del PC, che l’app memorizza e verifica dall’abbinamento. Le tue domande, le foto e i documenti che scegli e le tue registrazioni di dettatura vanno solo a quel PC e vengono elaborate lì. Noi non riceviamo nulla.' },
+      { h: 'Cosa resta sul telefono', p: 'Per ogni PC abbinato: nome, indirizzi di rete, porta, impronta del certificato e un token del dispositivo cifrato con una chiave dell’Android Keystore. Inoltre le tue impostazioni (per esempio tema, blocco dell’app, promemoria, spazio di lavoro e modello scelti) e una breve copia delle prossime scadenze per il widget e i promemoria. Foto e registrazioni di dettatura restano solo nella memoria temporanea dell’app e vengono cancellate dopo l’invio. I dati dell’app sono esclusi dai backup di Android e dal trasferimento a un nuovo dispositivo.' },
+      { h: 'Autorizzazioni e perché', p: 'Fotocamera: per scansionare il codice QR del PC e fotografare lettere, solo dopo un tuo tocco. Microfono: per la dettatura, solo mentre tieni premuto il pulsante; la registrazione diventa testo sul tuo PC. Notifiche: per i promemoria facoltativi delle scadenze e mentre arriva una risposta. Biometria: per il blocco facoltativo dell’app e per confermare azioni sul PC; Android verifica la tua impronta, l’app non la riceve mai. Internet e rete: per raggiungere il tuo PC nella rete di casa.' },
+      { h: 'Cancellazione', p: 'Disinstallando l’app si cancellano tutti i suoi dati dal telefono. «Dissocia questo telefono» cancella dal telefono l’abbinamento con quel PC; rimuovi anche il telefono sul PC in Impostazioni > Telefono.' },
+      { h: 'Dati sul tuo PC', p: 'Ciò che StarkLLM salva e fa sul tuo PC dipende dall’app desktop di StarkLLM; vedi sotto «Come StarkLLM protegge la tua privacy».' },
+      { h: 'Google Play', p: 'Se installi l’app da Google Play, Google tratta i dati necessari secondo la propria informativa sulla privacy. Google può fornirci statistiche aggregate (per esempio il numero di installazioni e, dagli utenti che l’hanno consentito in Android, report sugli arresti anomali); da esse non sappiamo chi sei.' },
+      { h: 'I tuoi diritti', p: 'Tramite l’app non trattiamo noi alcun dato personale che ti riguardi. Se ci scrivi vale l’informativa sulla privacy di questo sito, che descrive anche i tuoi diritti secondo il GDPR (accesso, rettifica, cancellazione, limitazione, opposizione, portabilità e reclamo a un’autorità di controllo).' },
+    ],
+    links: { tech: 'Come StarkLLM protegge la tua privacy', site: 'Informativa sulla privacy di questo sito', imprint: 'Note legali (Impressum)' },
+  },
   productLink: { text: 'Novità: con StarkLLM per Android interroghi i tuoi documenti dal telefono, nella tua rete domestica. L’app è in test chiuso su Google Play.', link: 'Informazioni sull’app Android' },
 };

@@ -53,5 +53,21 @@ export default {
     not: 'Bu ilk sürümde henüz yok: evin dışından erişim, iPhone uygulaması ve bilgisayardaki StarkLLM’de birden çok hesap varken telefondan oturum açma.',
   },
   cta: { h2: 'Erkenden deneyin', text: 'Kapalı teste katılmak için bize yazın. O zamana kadar Windows için StarkLLM’i ücretsiz indirebilirsiniz.', mail: 'Teste katılın', download: 'Windows için StarkLLM', product: 'Ürüne dön' },
+  privacyPolicy: {
+    h2: 'Uygulamanın gizlilik politikası',
+    intro: 'Bu, “Android için StarkLLM” uygulamasının gizlilik politikasıdır (20 Kasım 2026 itibarıyla). Hukuken bağlayıcı olan Almanca sürümdür; diğer diller bilgi amaçlı çevirilerdir.',
+    sections: [
+      { h: 'Veri sorumlusu', p: 'Christian Stark, Maxstr. 14, 52070 Aachen, Almanya. E-posta: info@starkllm.com. Diğer bilgiler yasal bildirimdedir (Impressum).' },
+      { h: 'Bize hiçbir veri gelmez', p: 'Uygulama ne bize ne de başka şirketlere veri gönderir. Bizde hesap yok, analiz yok, reklam yok, çökme raporu yok ve veri aktaran üçüncü taraf kütüphane yok (Google Play hizmetleri ve Firebase yok).' },
+      { h: 'Yalnızca kendi bilgisayarınız', p: 'Uygulama yalnızca kendi eşleştirdiğiniz bilgisayarlardaki StarkLLM’e ve yalnızca ev ağınızda (özel ağ adresleri) bağlanır. Bağlantı, uygulamanın eşleştirmede sabitlediği bilgisayarın kendi sertifikasıyla TLS üzerinden şifrelenir. Sorularınız, seçtiğiniz fotoğraf ve belgeler ve dikte kayıtlarınız yalnızca o bilgisayara gider ve orada işlenir. Biz hiçbirini almayız.' },
+      { h: 'Telefonda saklananlar', p: 'Eşleştirilen her bilgisayar için: adı, ağ adresleri, bağlantı noktası, sertifikasının parmak izi ve Android Keystore’daki bir anahtarla şifrelenmiş bir cihaz belirteci. Ayrıca ayarlarınız (örneğin tema, uygulama kilidi, hatırlatıcılar, seçilen çalışma alanı ve model) ve widget ile hatırlatıcılar için yaklaşan son tarihlerin kısa bir kopyası. Fotoğraflar ve dikte kayıtları yalnızca uygulamanın geçici belleğinde tutulur ve gönderildikten sonra silinir. Uygulama verileri Android yedeklerinin ve yeni cihaza aktarımın dışında tutulur.' },
+      { h: 'İzinler ve nedenleri', p: 'Kamera: bilgisayarınızın QR kodunu taramak ve mektupları fotoğraflamak için, yalnızca siz dokunduktan sonra. Mikrofon: dikte için, yalnızca düğmeyi basılı tuttuğunuz sürece; kayıt bilgisayarınızda metne çevrilir. Bildirimler: isteğe bağlı son tarih hatırlatıcıları ve bir yanıt gelirken. Biyometri: isteğe bağlı uygulama kilidi ve bilgisayardaki işlemleri onaylamak için; parmak izinizi Android denetler, uygulama onu asla almaz. İnternet ve ağ: ev ağındaki bilgisayarınıza ulaşmak için.' },
+      { h: 'Silme', p: 'Uygulamayı kaldırmak tüm verilerini telefondan siler. “Bu telefonun eşlemesini kaldır”, o bilgisayarla eşleşmeyi telefondan siler; telefonu bilgisayarda da Ayarlar > Telefon altında kaldırın.' },
+      { h: 'Bilgisayarınızdaki veriler', p: 'StarkLLM’in bilgisayarınızda sakladıkları ve yaptıkları StarkLLM masaüstü uygulamasına tabidir; aşağıdaki “StarkLLM gizliliğinizi nasıl korur” bölümüne bakın.' },
+      { h: 'Google Play', p: 'Uygulamayı Google Play’den kurarsanız Google bunun için verileri kendi gizlilik politikasına göre işler. Google bize özet istatistikler verebilir (örneğin kurulum sayısı ve Android’de buna izin veren kullanıcılardan çökme raporları); bunlardan kim olduğunuzu öğrenmeyiz.' },
+      { h: 'Haklarınız', p: 'Uygulama aracılığıyla sizinle ilgili hiçbir kişisel veriyi kendimiz işlemeyiz. Bize yazarsanız bu web sitesinin gizlilik politikası geçerlidir; orada GDPR kapsamındaki haklarınız da açıklanır (erişim, düzeltme, silme, kısıtlama, itiraz, taşınabilirlik ve bir denetim makamına şikâyet).' },
+    ],
+    links: { tech: 'StarkLLM gizliliğinizi nasıl korur', site: 'Bu web sitesinin gizlilik politikası', imprint: 'Yasal bildirim (Impressum)' },
+  },
   productLink: { text: 'Yeni: Android için StarkLLM ile belgelerinizi ev ağınızda telefonunuzdan sorarsınız. Uygulama Google Play’de kapalı testte.', link: 'Android uygulaması hakkında' },
 };
