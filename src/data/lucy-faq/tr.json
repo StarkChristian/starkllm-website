@@ -1897,7 +1897,7 @@
     "StarkLLM hangi dilleri destekliyor?",
     "Türkçe çalışıyor mu?",
     "İspanyolca veya Fransızca sürümü var mı?",
-  "İspanyolca desteği var mı?",
+    "İspanyolca desteği var mı?",
     "Hangi dillerdeki mektupları okuyabilir?",
     "Türkçe arayüz ne zaman gelecek?",
     "Türkçe mektuplardaki son tarihleri bulur mu?"
@@ -1922,11 +1922,21 @@
    "q": [
     "Telefonumda kullanabilir miyim?",
     "Mobil uygulaması var mı?",
-    "Android veya iPhone uygulaması var mı?",
-    "Telefonla çektiğim fotoğrafı ekleyebilir miyim?"
+    "Android uygulaması var mı?"
    ],
-   "page": "/tr/product",
-   "match": "Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin"
+   "page": "/tr/android",
+   "match": "Uygulama, herkes indirebilmeden önce Google Play’de kapalı testte"
+  },
+  {
+   "id": "iphone",
+   "q": [
+    "iPhone uygulaması var mı?",
+    "iOS için bir sürüm var mı?",
+    "StarkLLM iPhone’umda çalışır mı?",
+    "iPad için bir sürüm var mı?"
+   ],
+   "page": "/tr/android",
+   "match": "iPhone (iOS) için henüz bir StarkLLM uygulaması yok; yalnızca Android uygulaması kapalı testte"
   },
   {
    "id": "scam",
@@ -2189,6 +2199,17 @@
    ],
    "page": "/tr/manual",
    "match": "v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Bana bir örnek gösterebilir misin?",
+    "Nasıl çalıştığını bir örnekle göster",
+    "Bir tur ya da demo var mı?",
+    "StarkLLM pratikte nasıl çalışır?"
+   ],
+   "page": "/tr/tour",
+   "match": "StarkLLM ona adım adım, bilgisayarda ve telefonda böyle yardım ediyor"
   }
  ]
 }

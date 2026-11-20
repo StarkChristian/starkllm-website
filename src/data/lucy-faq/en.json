@@ -362,10 +362,21 @@
    "q": [
     "Can I use it on my phone?",
     "Is there a mobile app?",
-    "Is there an Android or iPhone app?"
+    "Is there an Android app?"
    ],
-   "page": "/product",
-   "match": "Add a letter as a PDF, a scan or a photo from your phone"
+   "page": "/android",
+   "match": "The app is in a closed test on Google Play before everyone can download it"
+  },
+  {
+   "id": "iphone",
+   "q": [
+    "Is there an iPhone app?",
+    "Is there an app for iOS?",
+    "Does StarkLLM work on my iPhone?",
+    "Is there a version for iPad?"
+   ],
+   "page": "/android",
+   "match": "There is no StarkLLM app for iPhone (iOS) yet; only the Android app is in a closed test"
   },
   {
    "id": "scam",
@@ -593,6 +604,17 @@
    ],
    "page": "/manual",
    "match": "Since v2.2, no: when you close or quit StarkLLM, its engine stops too"
+  },
+  {
+   "id": "tour",
+   "q": [
+    "Can you show me an example?",
+    "Show me how it works with an example",
+    "Is there a tour or a demo?",
+    "How does StarkLLM work in practice?"
+   ],
+   "page": "/tour",
+   "match": "Here is how StarkLLM helps her with them, step by step"
   }
  ]
 }
