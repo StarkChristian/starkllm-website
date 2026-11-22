@@ -21,7 +21,7 @@ export const themes = [
 const productBase = {
   en: {
     meta: { title: 'Product | StarkLLM' },
-    hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'An end-to-end local pipeline designed with data privacy in mind.' },
+    hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'A local pipeline built for privacy: it reads your documents and answers with sources on your own PC. Since 2.5.0 it also does tasks for you, on the web, in a project folder and from your phone.' },
     lifecycle: {
       h2: 'The document lifecycle',
       lede: 'When you add a PDF or text file, processing stays on your PC.',
@@ -117,7 +117,7 @@ const productBase = {
       items: [
         { k: 'Hybrid RAG with a cross-encoder', v: 'Most desktop RAG tools rely on vector embeddings alone and can miss exact keywords. StarkLLM merges BM25 keyword frequency with dense vector search, then re-ranks chunks with a local TinyBERT cross-encoder.' },
         { k: 'Native standalone window', v: 'No browser tabs or address bar. A standalone desktop app with a frameless title bar, splash screen, system tray integration and a Windows NSIS installer.' },
-        { k: 'Python code runner', v: 'Run Python calculations, data analysis and formula work on your own machine, with code checks, memory caps and time limits. These are convenience limits, not a security boundary: only run code you trust.' },
+        { k: 'Python code runner', v: 'Run Python calculations, data analysis and formula work on your own machine, with code checks, memory caps and time limits. Available with the Docker Desktop engine (advanced); off in the built-in engine until StarkLLM has its own sandbox. These are convenience limits, not a security boundary: only run code you trust.' },
         { k: 'Local OpenAI-compatible API', v: 'A local gateway exposing /v1/chat/completions and /v1/models. Connect IDEs like Cursor, tools like Claude Code, Obsidian plugins or your own Python scripts to your local models.' },
       ],
     },
@@ -129,7 +129,7 @@ const productBase = {
   },
   de: {
     meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und dreizehn Themes. Alles auf Ihrem Windows-PC.' },
-    hero: { eyebrow: 'Produkt', h1: 'So funktioniert StarkLLM', lede: 'Eine durchgängig lokale Pipeline, entwickelt mit Blick auf den Datenschutz.' },
+    hero: { eyebrow: 'Produkt', h1: 'So funktioniert StarkLLM', lede: 'Eine lokale Pipeline, gebaut für den Datenschutz: Sie liest Ihre Dokumente und antwortet mit Quellen auf Ihrem eigenen PC. Seit 2.5.0 erledigt sie auch Aufgaben für Sie, im Web, in einem Projektordner und vom Handy aus.' },
     lifecycle: {
       h2: 'Der Weg eines Dokuments',
       lede: 'Wenn Sie eine PDF- oder Textdatei hinzufügen, bleibt die Verarbeitung auf Ihrem PC.',
@@ -225,7 +225,7 @@ const productBase = {
       items: [
         { k: 'Hybrides RAG mit Cross-Encoder', v: 'Die meisten Desktop-RAG-Tools nutzen nur Vektor-Embeddings und können exakte Stichwörter verpassen. StarkLLM verbindet BM25-Stichwortgewichtung mit dichter Vektorsuche und sortiert die Chunks mit einem lokalen TinyBERT-Cross-Encoder neu.' },
         { k: 'Natives, eigenständiges Fenster', v: 'Keine Browser-Tabs, keine Adressleiste. Eine eigenständige Desktop-App mit rahmenloser Titelleiste, Startbildschirm, Tray-Integration und Windows-NSIS-Installer.' },
-        { k: 'Python-Code-Ausführung', v: 'Führen Sie Python-Berechnungen, Datenanalysen und Formelarbeit auf Ihrem Rechner aus, mit Code-Prüfung, Speichergrenzen und Zeitlimit. Das sind Komfortgrenzen, keine Sicherheitsgrenze: führen Sie nur Code aus, dem Sie vertrauen.' },
+        { k: 'Python-Code-Ausführung', v: 'Führen Sie Python-Berechnungen, Datenanalysen und Formelarbeit auf Ihrem Rechner aus, mit Code-Prüfung, Speichergrenzen und Zeitlimit. Verfügbar mit der Docker-Desktop-Engine (für Fortgeschrittene); in der eingebauten Engine aus, bis StarkLLM eine eigene Sandbox hat. Das sind Komfortgrenzen, keine Sicherheitsgrenze: führen Sie nur Code aus, dem Sie vertrauen.' },
         { k: 'Lokale OpenAI-kompatible API', v: 'Ein lokales Gateway mit /v1/chat/completions und /v1/models. Verbinden Sie IDEs wie Cursor, Werkzeuge wie Claude Code, Obsidian-Plugins oder eigene Python-Skripte mit Ihren lokalen Modellen.' },
       ],
     },

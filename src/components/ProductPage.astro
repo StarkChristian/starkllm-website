@@ -13,12 +13,77 @@ const c = product[lang];
 const S = shots[lang];
 const A = shotAlt[lang];
 const sizes = '(max-width: 860px) 100vw, 560px';
+import Icon from './Icon.astro';
+import { rel250 } from '../i18n/release250';
+// 2.5.0 sections only in the languages that have them translated (src/i18n/release250.ts).
+const r = rel250[lang];
+const more = r ? r.product.more.icons.map((ic) => r.news.items.find((it) => it.icon === ic)!).filter(Boolean) : [];
 ---
 <header class="page-hero">
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{c.hero.h1}</h1>
   <p class="lede">{c.hero.lede}</p>
+  {r && (
+    <ul class="chips jump">
+      <li><a href="#tasks"><Icon name="web" size={15} />{r.product.tasks.h2}</a></li>
+      <li><a href="#phone"><Icon name="phone" size={15} />{r.product.phone.h2}</a></li>
+      <li><a href="#life-h"><Icon name="export" size={15} />{c.lifecycle.h2}</a></li>
+    </ul>
+  )}
 </header>
+
+{r && (
+  <section class="block" id="tasks" aria-labelledby="tasks-h">
+    <span class="tag">{r.product.tasks.tag}</span>
+    <h2 id="tasks-h">{r.product.tasks.h2}</h2>
+    <p class="sec-lede">{r.product.tasks.lede}</p>
+    <div class="duo">
+      {[['web', r.product.tasks.web], ['terminal', r.product.tasks.terminal]].map(([ic, part]: any) => (
+        <div class="duo-card">
+          <div class="duo-head"><span class="fico"><Icon name={ic} /></span><h3>{part.h3}</h3></div>
+          <ul class="kv">{part.items.map((i: { k: string; v: string }) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+        </div>
+      ))}
+    </div>
+    <p class="fnote">{r.product.tasks.note}</p>
+  </section>
+)}
+
+{r && (
+  <section class="block" aria-labelledby="more-h">
+    <span class="tag">{r.product.more.tag}</span>
+    <h2 id="more-h">{r.product.more.h2}</h2>
+    <ul class="fgrid">
+      {more.map((it) => (
+        <li class="fcard">
+          <span class="fico"><Icon name={it.icon} /></span>
+          <h3>{it.title}</h3>
+          <p>{it.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+{r && (
+  <section class="block" id="phone" aria-labelledby="phone-h">
+    <div class="split phone">
+      <div>
+        <span class="tag">{r.product.phone.tag}</span>
+        <h2 id="phone-h">{r.product.phone.h2}</h2>
+        <p class="sec-lede">{r.product.phone.lede}</p>
+        <ul class="kv">{r.product.phone.items.map((i) => (<li><b>{i.k}</b><span>{i.v}</span></li>))}</ul>
+      </div>
+      <div class="levels">
+        <h3><Icon name="phone" />{r.product.phone.levelsH}</h3>
+        <ol>
+          {r.product.phone.levels.map((l) => (<li><b>{l.k}</b><span>{l.v}</span></li>))}
+        </ol>
+        <p class="fnote">{r.product.phone.note}</p>
+      </div>
+    </div>
+  </section>
+)}
 
 <section class="block" aria-labelledby="life-h">
   <h2 id="life-h">{c.lifecycle.h2}</h2>

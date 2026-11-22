@@ -13,11 +13,19 @@ const imgs = shots[lang];
 type Kind = keyof typeof imgs;
 import { RELEASE } from '../data/release';
 const lt = lucy[lang];
+import Icon from './Icon.astro';
+import { rel250 } from '../i18n/release250';
+const r = rel250[lang];
+// Point to the 2.5.0 features only once the release offered here is 2.5.0 or newer.
+const [maj, min] = RELEASE.version.split('.').map(Number);
+const has250 = maj > 2 || (maj === 2 && min >= 5);
 ---
 <header class="page-hero">
+  {r && has250 && <a class="news-pill" href={localePath(lang, '/product') + '#tasks'}><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{c.hero.h1}</h1>
   <p class="lede">{c.hero.lede}</p>
+  {r && <ul class="chips">{r.hero.chips.map((t) => <li><Icon name="check" size={15} />{t}</li>)}</ul>}
   <LucySay class="lucy-news" lang={lang} state="celebrate" size={84} uid="lucy-news" text={`${fill(lt.download.news, { v: RELEASE.version })} ${fill(lt.download.newsDate, { d: new Date(RELEASE.published + 'T12:00:00Z').toLocaleDateString(languages[lang].locale.replace('_', '-'), { dateStyle: 'long', timeZone: 'UTC' }) })}`} />
 </header>
 

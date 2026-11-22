@@ -16,8 +16,8 @@ const homeBase = {
     nav: { getBtn: `Get v${V}` },
     hero: {
       eyebrow: 'Local-first AI for Windows · Research Beta',
-      h1: ['Ask your files.', 'Nothing', 'leaves your PC.'],
-      lede: 'StarkLLM reads your letters and documents on your own machine, finds the deadlines and amounts in them and answers your questions with the page each answer comes from, using Ollama models you run yourself.',
+      h1: ['Your documents stay', 'on your PC.', 'The work gets done.'],
+      lede: 'StarkLLM reads your letters and documents on your Windows PC, finds the deadlines and amounts in them and answers with the page each answer comes from. Now it also does tasks for you, on websites and in a project folder, and asks before every step that matters. The AI models run on your PC through Ollama.',
       cta1: 'Download for Windows',
       cta2: 'See how it works',
       meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · free`,
@@ -63,7 +63,7 @@ const homeBase = {
         { kind: 'Inference GUI', name: 'LM Studio', text: 'Superb for downloading GGUFs from Hugging Face and tuning GPU layer offloading. Its "Chat with Documents" attaches files to a conversation (short files are pasted in whole, long ones go through retrieval); per its documentation and third-party guides it has no persistent workspaces or shared knowledge bases.', best: 'Trying out models, with occasional documents attached to a chat.' },
         { kind: 'Basic RAG app', name: 'AnythingLLM', text: 'A popular app for chatting with your documents in workspaces. Retrieval options such as reranking depend on the version and the vector database you choose, so compare it on your own documents.', best: 'Document chats where you want a ready-made workspace app.' },
         { kind: 'Minimalist chat', name: 'Jan.ai', text: 'A lightweight, open-source ChatGPT-style app that keeps data on the device. Document retrieval exists as an optional setting that its documentation calls experimental; the focus is chat rather than document workflows.', best: 'Simple local chat with a clean interface.' },
-        { kind: 'This project', name: `StarkLLM v${V}`, text: 'Native Windows desktop app with an inbox for letters (deadlines, amounts, cases per sender, warnings for fake letters), hybrid RAG with TinyBERT cross-encoder reranking, an optional local MCP server and OpenAI-compatible API (off by default) and local-by-default privacy.', best: 'Anyone who wants to keep their letters and documents private and get answers with sources they can check, from households to developers and researchers.', us: true },
+        { kind: 'This project', name: `StarkLLM v${V}`, text: 'Native Windows desktop app with an inbox for letters (deadlines, amounts, cases per sender, warnings for fake letters), web tasks and help with code that ask before every important step, hybrid RAG with TinyBERT cross-encoder reranking, an optional local MCP server and OpenAI-compatible API (off by default) and local-by-default privacy.', best: 'Anyone who wants to keep their letters and documents private and get answers with sources they can check, from households to developers and researchers.', us: true },
       ],
     },
     setup: {
@@ -83,13 +83,13 @@ const homeBase = {
       ],
     },
     privacy: {
-      h2: 'The architecture of privacy',
-      lede: 'StarkLLM is an offline alternative to cloud AI services. Your documents, legal briefs and research stay on your machine.',
+      h2: 'Privacy you can check',
+      lede: 'StarkLLM is built so that your documents never need a cloud. What goes online is your choice, and you can see it.',
       items: [
-        { title: 'Local inference', text: 'Powered by Ollama, language models run on your own CPU or GPU. Designed to work fully offline once models are downloaded.' },
-        { title: 'Local storage', text: 'Documents are chunked and embedded into a local ChromaDB vector store on your own disk.' },
-        { title: 'Zero telemetry', text: 'The Windows app has no telemetry and no analytics SDK. This website uses no analytics and sets no cookies either; see the privacy policy.' },
-        { title: 'Online only when you choose it', text: 'Web search, cloud model providers, YouTube and GitHub import, market prices and the update check are off until you turn them on. The chat shows when a request leaves your PC.' },
+        { title: 'Documents and model stay on your PC', text: 'Your documents, chats and search index are stored on your own disk, and the language models run on your own CPU or GPU through Ollama. The phone app talks to your PC, not to a server of ours.' },
+        { title: 'No telemetry', text: 'The Windows app has no telemetry and no analytics SDK. This website uses no analytics and sets no cookies either; see the privacy policy.' },
+        { title: 'Every connection listed', text: 'Web search, web tasks, cloud model providers, YouTube and GitHub import, market prices and the update check run only when you turn them on or start them. Settings › Privacy & network lists every connection, and the chat shows when a question leaves your PC.' },
+        { title: 'Fully offline switch', text: 'One switch takes StarkLLM fully offline: every online feature is refused and the link to your phone is closed. Your documents, the inbox and the local models keep working.' },
       ],
     },
     download: {
@@ -118,8 +118,8 @@ const homeBase = {
     nav: { getBtn: `v${V} laden` },
     hero: {
       eyebrow: 'Lokale KI für Windows · Research Beta',
-      h1: ['Fragen Sie Ihre Dateien.', 'Nichts', 'verlässt Ihren PC.'],
-      lede: 'StarkLLM liest Ihre Briefe und Dokumente auf Ihrem eigenen Rechner, findet die Fristen und Beträge darin und beantwortet Ihre Fragen mit der Seite, aus der jede Antwort stammt, mit Ollama-Modellen, die Sie selbst betreiben.',
+      h1: ['Ihre Dokumente bleiben', 'auf Ihrem PC.', 'Die Arbeit wird erledigt.'],
+      lede: 'StarkLLM liest Ihre Briefe und Dokumente auf Ihrem Windows-PC, findet die Fristen und Beträge darin und antwortet mit der Seite, aus der jede Antwort stammt. Jetzt erledigt es auch Aufgaben für Sie, auf Websites und in einem Projektordner, und fragt vor jedem wichtigen Schritt nach. Die KI-Modelle laufen über Ollama auf Ihrem PC.',
       cta1: 'Für Windows herunterladen',
       cta2: 'So funktioniert es',
       meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · kostenlos`,
@@ -165,7 +165,7 @@ const homeBase = {
         { kind: 'Inferenz-GUI', name: 'LM Studio', text: 'Hervorragend zum Laden von GGUFs von Hugging Face und zum Feinjustieren der GPU-Auslagerung. „Chat with Documents“ hängt Dateien an eine Unterhaltung an (kurze Dateien werden ganz eingefügt, lange laufen über Retrieval); laut Dokumentation und Drittanleitungen gibt es keine dauerhaften Workspaces oder gemeinsamen Wissensdatenbanken.', best: 'Modelle ausprobieren, gelegentlich mit Dokumenten im Chat.' },
         { kind: 'Einfache RAG-App', name: 'AnythingLLM', text: 'Eine beliebte App, um in Workspaces mit den eigenen Dokumenten zu chatten. Retrieval-Optionen wie Reranking hängen von Version und gewählter Vektordatenbank ab; vergleichen Sie sie an Ihren eigenen Dokumenten.', best: 'Dokument-Chats mit einer fertigen Workspace-App.' },
         { kind: 'Minimaler Chat', name: 'Jan.ai', text: 'Eine leichte Open-Source-App im ChatGPT-Stil, die Daten auf dem Gerät hält. Dokument-Retrieval gibt es als optionale Einstellung, die ihre Dokumentation als experimentell bezeichnet; der Schwerpunkt liegt auf Chat statt auf Dokument-Workflows.', best: 'Einfacher lokaler Chat mit klarer Oberfläche.' },
-        { kind: 'Dieses Projekt', name: `StarkLLM v${V}`, text: 'Native Windows-Desktop-App mit Posteingang für Briefe (Fristen, Beträge, Vorgänge je Absender, Warnungen vor gefälschten Briefen), Hybrid-RAG mit TinyBERT-Cross-Encoder-Reranking, optionalem lokalem MCP-Server und OpenAI-kompatibler API (standardmäßig aus) und standardmäßig lokalem Datenschutz.', best: 'Alle, die ihre Briefe und Dokumente privat halten und Antworten mit nachprüfbaren Quellen wollen, von Haushalten bis zu Entwicklern und Forschenden.', us: true },
+        { kind: 'Dieses Projekt', name: `StarkLLM v${V}`, text: 'Native Windows-Desktop-App mit Posteingang für Briefe (Fristen, Beträge, Vorgänge je Absender, Warnungen vor gefälschten Briefen), Web-Aufgaben und Hilfe beim Code, die vor jedem wichtigen Schritt nachfragen, Hybrid-RAG mit TinyBERT-Cross-Encoder-Reranking, optionalem lokalem MCP-Server und OpenAI-kompatibler API (standardmäßig aus) und standardmäßig lokalem Datenschutz.', best: 'Alle, die ihre Briefe und Dokumente privat halten und Antworten mit nachprüfbaren Quellen wollen, von Haushalten bis zu Entwicklern und Forschenden.', us: true },
       ],
     },
     setup: {
@@ -185,13 +185,13 @@ const homeBase = {
       ],
     },
     privacy: {
-      h2: 'Die Architektur der Privatsphäre',
-      lede: 'StarkLLM ist eine Offline-Alternative zu Cloud-KI-Diensten. Ihre Dokumente, Schriftsätze und Recherchen bleiben auf Ihrem Rechner.',
+      h2: 'Datenschutz, den Sie prüfen können',
+      lede: 'StarkLLM ist so gebaut, dass Ihre Dokumente keine Cloud brauchen. Was online geht, entscheiden Sie, und Sie können es sehen.',
       items: [
-        { title: 'Lokale Inferenz', text: 'Mit Ollama laufen Sprachmodelle auf Ihrer eigenen CPU oder GPU. Nach dem Download der Modelle ist der Betrieb vollständig offline möglich.' },
-        { title: 'Lokaler Speicher', text: 'Dokumente werden in Chunks zerlegt und in einen lokalen ChromaDB-Vektorspeicher auf Ihrer eigenen Festplatte eingebettet.' },
+        { title: 'Dokumente und Modell bleiben auf Ihrem PC', text: 'Ihre Dokumente, Chats und der Suchindex liegen auf Ihrer eigenen Festplatte, und die Sprachmodelle laufen über Ollama auf Ihrer eigenen CPU oder GPU. Die Handy-App spricht mit Ihrem PC, nicht mit einem Server von uns.' },
         { title: 'Keine Telemetrie', text: 'Die Windows-App enthält weder Telemetrie noch ein Analyse-SDK. Auch diese Website nutzt keine Webanalyse und setzt keine Cookies; siehe Datenschutzerklärung.' },
-        { title: 'Online nur, wenn Sie es wählen', text: 'Websuche, Cloud-Modellanbieter, YouTube- und GitHub-Import, Marktpreise und die Update-Prüfung sind aus, bis Sie sie einschalten. Der Chat zeigt an, wenn eine Anfrage Ihren PC verlässt.' },
+        { title: 'Jede Verbindung aufgelistet', text: 'Websuche, Web-Aufgaben, Cloud-Modellanbieter, YouTube- und GitHub-Import, Marktpreise und die Update-Prüfung laufen nur, wenn Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, und der Chat zeigt an, wenn eine Frage Ihren PC verlässt.' },
+        { title: 'Schalter „Vollständig offline“', text: 'Ein Schalter nimmt StarkLLM vollständig vom Netz: Jede Online-Funktion wird abgelehnt und die Verbindung zu Ihrem Handy geschlossen. Ihre Dokumente, der Posteingang und die lokalen Modelle arbeiten weiter.' },
       ],
     },
     download: {

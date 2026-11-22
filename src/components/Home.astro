@@ -13,9 +13,17 @@ import { themes } from '../i18n/product';
 const swatches = themes.map((t) => `linear-gradient(135deg, ${t.g[0]}, ${t.g[1]})`);
 const bars = [30, 55, 90, 42, 68, 36, 78, 48];
 import { RELEASE } from '../data/release';
+import Icon from './Icon.astro';
+import { rel250 } from '../i18n/release250';
+import { localePath } from '../i18n/ui';
+// 2.5.0 sections exist in the languages that have them translated (src/i18n/release250.ts); the others keep the page as it was.
+const r = rel250[lang];
+// The privacy items of EN/DE follow the 2.5.0 promises; the other languages still have the older four items.
+const privIcons = r ? ['pc', 'eyeoff', 'list', 'offline'] : ['pc', 'shield', 'eyeoff', 'list'];
 ---
 <header class="hero">
   <canvas id="graph" aria-hidden="true"></canvas>
+  {r && <a class="news-pill" href="#new"><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{c.hero.h1[0]} <em>{c.hero.h1[1]}</em> {c.hero.h1[2]}</h1>
   <p class="lede">{c.hero.lede}</p>
@@ -23,6 +31,7 @@ import { RELEASE } from '../data/release';
     <a class="btn primary" href="#download">{c.hero.cta1}</a>
     <a class="btn ghost" href="#how">{c.hero.cta2}</a>
   </div>
+  {r && <ul class="chips">{r.hero.chips.map((t) => <li><Icon name="check" size={15} />{t}</li>)}</ul>}
   <p class="meta">{c.hero.meta}</p>
   <div class="lucy-say lucy-hero">
     <div class="lucy-fig lucy-slot" data-lucy-slot aria-hidden="true"></div>
@@ -44,6 +53,24 @@ import { RELEASE } from '../data/release';
   <Image src={S.chat} alt={c.shot.alt} widths={[640, 960, 1180]} sizes="(max-width: 1180px) 100vw, 1180px" format="webp" loading="lazy" />
   <figcaption>{c.shot.caption}</figcaption>
 </figure>
+
+{r && (
+  <section class="block" id="new" aria-labelledby="new-h">
+    <span class="tag">{r.news.tag}</span>
+    <h2 id="new-h">{r.news.h2}</h2>
+    <p class="sec-lede">{r.news.lede}</p>
+    <ul class="fgrid">
+      {r.news.items.map((it) => (
+        <li class="fcard">
+          <span class="fico"><Icon name={it.icon} /></span>
+          <h3>{it.title}{it.badge && <span class="pill">{it.badge}</span>}</h3>
+          <p>{it.text}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="fnote">{r.news.note} <a href={localePath(lang, '/product') + '#tasks'}>{r.news.more} <Icon name="arrow" size={15} /></a></p>
+  </section>
+)}
 
 <section class="block" aria-labelledby="letters-h">
   <span class="tag">{c.letters.tag}</span>
@@ -117,11 +144,14 @@ import { RELEASE } from '../data/release';
   </div>
 </section>
 
-<section class="block" aria-labelledby="priv-h">
-  <h2 id="priv-h">{c.privacy.h2}</h2>
-  <p class="sec-lede">{c.privacy.lede}</p>
-  <div class="priv">
-    {c.privacy.items.map((it) => (<div class="tile" style="grid-column:auto"><h3>{it.title}</h3><p>{it.text}</p></div>))}
+<section class="block privacy" aria-labelledby="priv-h">
+  <div class="privacy-panel">
+    <span class="privacy-mark" aria-hidden="true"><Icon name="shield" size={30} /></span>
+    <h2 id="priv-h">{c.privacy.h2}</h2>
+    <p class="sec-lede">{c.privacy.lede}</p>
+    <ul class="promises">
+      {c.privacy.items.map((it, i) => (<li><span class="fico"><Icon name={privIcons[i] ?? 'check'} /></span><div><h3>{it.title}</h3><p>{it.text}</p></div></li>))}
+    </ul>
   </div>
 </section>
 
