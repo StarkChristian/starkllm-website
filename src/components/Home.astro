@@ -20,13 +20,16 @@ import { localePath } from '../i18n/ui';
 const r = rel250[lang];
 // The privacy items of EN/DE follow the 2.5.0 promises; the other languages still have the older four items.
 const privIcons = r ? ['pc', 'eyeoff', 'list', 'offline'] : ['pc', 'shield', 'eyeoff', 'list'];
+// Languages whose home.ts predates 2.5.0 bring the new headline, text and privacy promises in release250.ts.
+const hero = { ...c.hero, ...(r?.heroText ?? {}) };
+const priv = r?.privacy ?? c.privacy;
 ---
 <header class="hero">
   <canvas id="graph" aria-hidden="true"></canvas>
   {r && <a class="news-pill" href="#new"><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
   <p class="eyebrow">{c.hero.eyebrow}</p>
-  <h1>{c.hero.h1[0]} <em>{c.hero.h1[1]}</em> {c.hero.h1[2]}</h1>
-  <p class="lede">{c.hero.lede}</p>
+  <h1>{hero.h1[0]} <em>{hero.h1[1]}</em> {hero.h1[2]}</h1>
+  <p class="lede">{hero.lede}</p>
   <div class="cta">
     <a class="btn primary" href="#download">{c.hero.cta1}</a>
     <a class="btn ghost" href="#how">{c.hero.cta2}</a>
@@ -147,10 +150,10 @@ const privIcons = r ? ['pc', 'eyeoff', 'list', 'offline'] : ['pc', 'shield', 'ey
 <section class="block privacy" aria-labelledby="priv-h">
   <div class="privacy-panel">
     <span class="privacy-mark" aria-hidden="true"><Icon name="shield" size={30} /></span>
-    <h2 id="priv-h">{c.privacy.h2}</h2>
-    <p class="sec-lede">{c.privacy.lede}</p>
+    <h2 id="priv-h">{priv.h2}</h2>
+    <p class="sec-lede">{priv.lede}</p>
     <ul class="promises">
-      {c.privacy.items.map((it, i) => (<li><span class="fico"><Icon name={privIcons[i] ?? 'check'} /></span><div><h3>{it.title}</h3><p>{it.text}</p></div></li>))}
+      {priv.items.map((it, i) => (<li><span class="fico"><Icon name={privIcons[i] ?? 'check'} /></span><div><h3>{it.title}</h3><p>{it.text}</p></div></li>))}
     </ul>
   </div>
 </section>

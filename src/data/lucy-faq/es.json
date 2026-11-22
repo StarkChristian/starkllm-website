@@ -542,7 +542,8 @@
     "¿Las respuestas llevan citas?",
     "¿Puedo comprobar las fuentes de una respuesta?",
     "¿De qué documento salió la respuesta?",
-    "¿Puedo ver de dónde viene una respuesta?"
+    "¿Puedo ver de dónde viene una respuesta?",
+    "¿Dónde veo de qué documento sale una respuesta?"
    ],
    "page": "/es/tech-rag",
    "match": "Cada respuesta enumera sus fuentes con el nombre del archivo y la página o la sección"

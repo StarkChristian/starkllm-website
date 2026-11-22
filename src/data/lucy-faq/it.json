@@ -315,7 +315,8 @@
     "Cosa fa StarkLLM?",
     "Di che cosa si tratta?",
     "Parlami di StarkLLM",
-    "A cosa serve StarkLLM?"
+    "A cosa serve StarkLLM?",
+    "Che cos'è esattamente StarkLLM?"
    ],
    "page": "/it/about",
    "match": "StarkLLM è un assistente IA privato e locale per Windows"
