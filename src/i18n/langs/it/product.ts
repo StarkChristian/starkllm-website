@@ -2,7 +2,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Prodotto | StarkLLM' },
-  hero: { eyebrow: 'Prodotto', h1: 'Come funziona StarkLLM', lede: 'Una pipeline locale completa, pensata con la privacy dei dati in primo piano.' },
+  hero: { eyebrow: 'Prodotto', h1: 'Come funziona StarkLLM', lede: 'Una pipeline locale pensata per la privacy: legge i Suoi documenti e risponde con le fonti sul Suo PC. Dalla 2.5.0 svolge anche attività per Lei, sul web, in una cartella di progetto e dal Suo telefono.' },
   lifecycle: {
     h2: 'Il ciclo di vita di un documento',
     lede: 'Quando aggiungi un PDF o un file di testo, l\'elaborazione resta sul tuo PC.',
@@ -16,9 +16,9 @@ export default {
   letters: {
     tag: 'Inbox dei documenti',
     h2: 'Ogni lettera, letta e archiviata',
-    lede: 'Aggiungi una lettera come PDF, scansione o foto dal telefono. StarkLLM la legge sul tuo PC e ti suggerisce ciò che ti serve. Non rinomina, non sposta e non elimina mai i tuoi file.',
+    lede: 'Aggiungi una lettera come PDF, scansione o foto dal telefono. StarkLLM la legge sul tuo PC e ti suggerisce ciò che ti serve. Non rinomina, non sposta e non elimina mai i tuoi file. Solo il Terminale modifica i file, e solo in una cartella di progetto scelta da Lei, dopo aver mostrato ogni modifica; «Annulla le modifiche ai file» li ripristina.',
     items: [
-      { k: 'Che cosa legge', v: 'Il tipo di lettera (fattura, sollecito, avviso fiscale, contratto, multa e altro), il mittente, la data della lettera, numeri di riferimento come numero cliente, di contratto o codice fiscale, importi, conti bancari e scadenze, nelle lettere in inglese e in tedesco.' },
+      { k: 'Che cosa legge', v: 'Il tipo di lettera (fattura, sollecito, avviso fiscale, contratto, multa e altro), il mittente, la data della lettera, numeri di riferimento come numero cliente, di contratto o codice fiscale, importi, conti bancari e scadenze, nelle lettere in inglese, tedesco, francese, spagnolo, italiano e turco.' },
       { k: 'Ogni valore ha una fonte', v: 'Ogni valore si trova parola per parola in una pagina. Fai clic e la lettera si apre a quella pagina, con la riga evidenziata.' },
       { k: 'Pratiche per mittente', v: 'Le lettere dello stesso mittente vengono raggruppate, con in alto la pratica che ha la scadenza più vicina. Vengono segnalate la stessa lettera presente come foto e come PDF, una lettera sostituita e una possibile truffa.' },
       { k: 'Decidi tu', v: 'Segna una lettera come fatta o dalle un titolo tutto tuo. Il numero di lettere nuove compare accanto a "Inbox".' },
@@ -52,7 +52,7 @@ export default {
     items: [
       { k: 'Indicizzazione di cartelle locali', v: 'Collega una cartella qualsiasi del tuo computer Windows. StarkLLM indicizza in modo ricorsivo i file supportati in una collezione vettoriale globale.' },
       { k: 'Accesso universale', v: 'Interroga la Knowledge Base da qualsiasi chat, in qualunque workspace ti trovi.' },
-      { k: 'Sincronizzazione a intervalli', v: 'Circa una volta al minuto la Knowledge Base controlla la cartella collegata e reindicizza i file nuovi o modificati.' },
+      { k: 'Sincronizzazione a intervalli', v: 'Ogni 30 secondi la Knowledge Base controlla la cartella collegata e reindicizza i file nuovi o modificati.' },
     ],
     compareH3: 'Documenti del Workspace o Knowledge Base?',
     compareLede: 'StarkLLM offre due modi per dare contesto all\'IA. Conoscere la differenza ti aiuta a tenere in ordine il materiale.',
@@ -68,7 +68,7 @@ export default {
     items: [
       { k: 'Scelta del modello', v: 'Passa da un modello all\'altro, tra quelli scaricati con Ollama (per esempio Qwen 2.5, Llama 3.2, Mistral), direttamente dall\'interfaccia della chat.' },
       { k: 'Configurazione dell\'esecuzione', v: 'Regola la dimensione della finestra di contesto, la temperatura e i parametri avanzati per bilanciare velocità e profondità di ragionamento.' },
-      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer.' },
+      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer. Solo se Lei attiva Impostazioni › Telefono, un telefono abbinato nella Sua rete di casa può raggiungere l’app.' },
     ],
   },
   tools: {
@@ -114,7 +114,7 @@ export default {
     'OLED Pitch Black': 'Nero assoluto #000000 per il massimo contrasto e la massima autonomia della batteria.',
     'Liquid Glass': 'Vetro smerigliato traslucido con riflessi cangianti e multicolore.',
     'Matrix Emerald': 'Matrice di ossidiana con accenti di un verde smeraldo elettrico.',
-    'Sunset Amber': 'Ardesia vulcanica con caldi accenti ambra e color fiamma.',
+    'Sunset Volcano': 'Ardesia vulcanica con caldi accenti ambra e color fiamma.',
     'Arctic Frost': 'Blu marino sotto zero con brina cristallina azzurro ciano e blu.',
     'Daylight Minimal': 'Aspetto pulito, da luce del giorno, con ombre morbide e contrasto nitido.',
     'Doodle Chat': 'Carta calda con piccole bambole, cuori, lettere e stelle disegnate sullo sfondo.',

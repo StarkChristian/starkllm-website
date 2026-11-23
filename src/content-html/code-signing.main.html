@@ -1,0 +1,21 @@
+<main class="container">
+        <div class="page-header">
+            <h1><span class="text-gradient">Code signing policy</span></h1>
+            <p>How StarkLLM for Windows is signed</p>
+        </div>
+
+        <div class="content-block" style="max-width: 900px;">
+            <p>Releases are signed with a Certum Open Source Code Signing certificate issued to &ldquo;Open Source Developer Christian Stark&rdquo; (the key is in Certum&rsquo;s cloud, SimplySign; every signing session is confirmed on the owner&rsquo;s phone).</p>
+            <ul>
+                <li><strong>What is signed:</strong> <code>StarkLLM.exe</code>, its uninstaller and the Windows installer. The app is built by GitHub Actions (<a href="https://github.com/StarkChristian/StarkLLM/blob/main/.github/workflows/desktop-release.yml" target="_blank" rel="noopener">desktop-release.yml</a>) from a tagged commit of the <code>main</code> branch; the signatures are added on the owner&rsquo;s PC (<a href="https://github.com/StarkChristian/StarkLLM/blob/main/docs/signing-on-owner-pc.md" target="_blank" rel="noopener">docs/signing-on-owner-pc.md</a>), and the app checks that every update carries the same publisher name. Files of other open source projects that the app ships unchanged (Electron and Chromium libraries, NSIS installer plugins) keep their authors&rsquo; signature, or none.</li>
+                <li><strong>Committers and reviewers:</strong> <a href="https://github.com/StarkChristian" target="_blank" rel="noopener">Christian Stark (StarkChristian)</a>. Changes from other contributors are reviewed by a committer before they are merged.</li>
+                <li><strong>Approvers:</strong> <a href="https://github.com/StarkChristian" target="_blank" rel="noopener">Christian Stark (StarkChristian)</a>. Every release is approved by hand before it is signed.</li>
+                <li>Everyone in these roles uses multi-factor authentication for GitHub and Certum SimplySign.</li>
+                <li><strong>Privacy:</strong> This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. The optional online features and the one-time downloads on the first start are listed on the <a href="/tech-privacy">privacy page</a>. The program has no telemetry.</li>
+            </ul>
+
+            <h2>Check the signature yourself</h2>
+            <p>How to check the signature of the installer, and what to do if Windows still shows a warning: <a href="/download#signature">Download page, section &ldquo;Code signing&rdquo;</a>.</p>
+            <p>Details: <a href="https://github.com/StarkChristian/StarkLLM/blob/main/docs/code-signing.md" target="_blank" rel="noopener">docs/code-signing.md</a> in the source code.</p>
+        </div>
+    </main>

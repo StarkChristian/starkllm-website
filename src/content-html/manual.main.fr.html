@@ -1,6 +1,7 @@
 <main class="container manual-container">
         <aside class="manual-nav">
             <ul>
+                <li><a href="#new-250">Nouveautés de la 2.5.0</a></li>
                 <li><a href="#what-it-is">1. Ce qu’est StarkLLM</a></li>
                 <li><a href="#who-it-is-for">2. À qui il s’adresse</a></li>
                 <li><a href="#what-it-is-not">3. À quoi il ne sert pas</a></li>
@@ -34,9 +35,25 @@
         </aside>
 
         <article class="manual-content">
+            <section id="new-250">
+                <h2>Nouveautés de la 2.5.0</h2>
+                <p>StarkLLM 2.5.0 peut aussi faire des tâches pour vous. Il montre chaque étape et demande avant tout ce qui compte. Chaque fonction en ligne reste désactivée tant que vous ne l’utilisez pas, et <strong>Entièrement hors ligne</strong> (Paramètres › Confidentialité et réseau) les refuse toutes.</p>
+                <ul>
+                    <li><strong>Tâches web :</strong> activez <em>Tâche web</em> dans la discussion et décrivez la tâche. StarkLLM ouvre sa propre fenêtre de navigateur et travaille sur des sites web ; vous voyez chaque étape. Il demande avant tout ce qui achète, réserve, paie, envoie ou supprime ; les connexions, les paiements et les vérifications « êtes-vous un robot ? » restent toujours entre vos mains.</li>
+                    <li><strong>Terminal :</strong> choisissez un dossier de projet avec <em>Terminal</em>. StarkLLM y lit et modifie des fichiers et exécute des commandes PowerShell. Chaque modification est d’abord affichée, chaque commande qui peut modifier quelque chose ne s’exécute qu’après votre oui, et <em>Annuler les modifications des fichiers</em> remet les fichiers en place.</li>
+                    <li><strong>Questions sur une image :</strong> collez une capture d’écran ou choisissez une photo ; un modèle de vision sur ce PC répond. L’image est réduite, ses données cachées (lieu, appareil photo) sont supprimées, et elle n’est pas conservée.</li>
+                    <li><strong>Enregistrements :</strong> les réunions, cours et mémos vocaux (MP3, M4A, WAV, le son des vidéos et d’autres) sont transcrits sur ce PC avec les horodatages par Whisper large-v3-turbo (téléchargé une seule fois au premier enregistrement, environ 1,6 Go). Vous les interrogez ensuite comme n’importe quel document.</li>
+                    <li><strong>Comparer des modèles :</strong> <em>Comparer des modèles</em> pose la même question à un second modèle local ; vous gardez la meilleure réponse.</li>
+                    <li><strong>Word et PDF :</strong> enregistrez une discussion entière ou une seule réponse en document Word ou en PDF, avec ses sources.</li>
+                    <li><strong>Vos propres serveurs d’outils (MCP) :</strong> dans Paramètres › Outils locaux, vous ajoutez des serveurs MCP qui tournent sur ce PC. Chaque outil reste désactivé jusqu’à ce que vous l’activiez, et chaque appel attend votre oui.</li>
+                    <li><strong>Votre téléphone Android (aperçu) :</strong> Paramètres › Téléphone associe l’application StarkLLM pour Android par code QR. Le téléphone pose des questions sur vos documents, envoie des photos de courriers et affiche vos échéances, uniquement via votre réseau domestique.</li>
+                </ul>
+                <p>Les tâches web et le Terminal fonctionnent le mieux avec un modèle local de 14B ou plus (par exemple <code>qwen3:14b</code>) ; les petits modèles 7B s’arrêtent sans risque, mais terminent peu de tâches.</p>
+            </section>
+
             <section id="what-it-is">
                 <h2>1. Ce qu’est StarkLLM</h2>
-                <p>StarkLLM est un assistant IA privé et local, conçu pour Windows. Il offre une interface sécurisée pour discuter avec des grands modèles de langage (LLM) à poids ouverts, qui tournent directement sur votre ordinateur. Il sert aussi de boîte de réception privée pour vos courriers : il lit les factures, les avis d’imposition, les contrats et d’autres courriers, y trouve l’expéditeur, les montants et les échéances, et classe ensemble les courriers d’un même expéditeur. Grâce à la génération augmentée par la recherche (Retrieval-Augmented Generation, RAG), il vous permet d’ajouter des documents (PDF, DOCX, TXT, Markdown (.md), CSV, JSON, HTML et images (PNG, JPG, avec reconnaissance de texte (OCR) locale pour les scans et les images)) et de les stocker dans une base de données vectorielle locale, afin d’obtenir des réponses fondées sur les sources pour vos
+                <p>StarkLLM est un assistant IA privé et local, conçu pour Windows. Il offre une interface sécurisée pour discuter avec des grands modèles de langage (LLM) à poids ouverts, qui tournent directement sur votre ordinateur. Il sert aussi de boîte de réception privée pour vos courriers : il lit les factures, les avis d’imposition, les contrats et d’autres courriers, y trouve l’expéditeur, les montants et les échéances, et classe ensemble les courriers d’un même expéditeur. Grâce à la génération augmentée par la recherche (Retrieval-Augmented Generation, RAG), il vous permet d’ajouter des documents (PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, journaux et images (PNG, JPG, WEBP, TIFF, avec reconnaissance de texte (OCR) locale pour les scans et les images), jusqu’à 100 Mo ; enregistrements jusqu’à 500 Mo) et de les stocker dans une base de données vectorielle locale, afin d’obtenir des réponses fondées sur les sources pour vos
                     questions.</p>
             </section>
 
@@ -79,7 +96,7 @@
 
             <section id="software">
                 <h2>5. Logiciels requis</h2>
-                <p>Comme StarkLLM fonctionne entièrement en local, il n’a besoin que d’un seul autre programme en plus de lui-même :</p>
+                <p>Comme StarkLLM fonctionne en local, il n’a besoin que d’un seul autre programme en plus de lui-même :</p>
                 <ul>
                     <li><strong>Windows 10 ou 11</strong> (64 bits).</li>
                     <li><strong>Ollama :</strong> le moteur d’inférence chargé de faire tourner les modèles LLM en local sur votre
@@ -178,8 +195,7 @@
 
             <section id="documents">
                 <h2>11. Ajouter des documents et bonnes pratiques</h2>
-                <p>Dans un Workspace, cliquez sur le bouton « Upload Document » (Ajouter un document) ou glissez-déposez des fichiers pris en charge (PDF, DOCX,
-                    TXT, MD, HTML et images) dans la zone prévue. StarkLLM traite le document en
+                <p>Dans un Workspace, cliquez sur le bouton « Upload Document » (Ajouter un document) ou glissez-déposez des fichiers pris en charge (documents comme PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, journaux et images jusqu’à 100 Mo, et enregistrements comme MP3, M4A, WAV ou le son d’une vidéo jusqu’à 500 Mo) dans la zone prévue. StarkLLM traite le document en
                     arrière-plan : il extrait le texte, génère des segments sémantiques et enregistre les vecteurs d’embedding dans ChromaDB en local.
                 </p>
 
@@ -206,7 +222,7 @@
                 </div>
                 <div class="alert info">
                     <h4>Trouvé par des règles, pas deviné</h4>
-                    <p>Les expéditeurs, les dates, les montants et les comptes bancaires sont trouvés par des règles fixes appliquées au texte sur ce PC : chacun figure donc bien dans le courrier. Les règles connaissent les courriers en anglais et en allemand ; un courrier dans une autre langue est classé sans informations extraites. Vérifiez le courrier avant d’agir. StarkLLM explique ce que dit un courrier et où ; il ne donne pas de conseil juridique.</p>
+                    <p>Les expéditeurs, les dates, les montants et les comptes bancaires sont trouvés par des règles fixes appliquées au texte sur ce PC : chacun figure donc bien dans le courrier. Les règles connaissent les courriers en anglais, allemand, français, espagnol, italien et turc ; un courrier dans une autre langue est classé sans informations extraites. Vérifiez le courrier avant d’agir. StarkLLM explique ce que dit un courrier et où ; il ne donne pas de conseil juridique.</p>
                 </div>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-dashboard.webp?v=10" alt="Page d’accueil de StarkLLM avec les prochaines échéances et dates de paiement trouvées dans des courriers, et les documents les plus récents (interface en anglais)" class="showcase-img zoomable-img">
@@ -242,10 +258,10 @@
             <section id="knowledge-base">
                 <h2>15. Utiliser la Knowledge Base et bonnes pratiques</h2>
                 <p>La fonction Knowledge Base (base de connaissances) vous permet de relier un dossier local de votre hôte Windows. StarkLLM lit
-                    les fichiers pris en charge (PDF, DOCX, TXT, MD, HTML et images) de ce dossier (à sens unique : les fichiers ne sont jamais modifiés) et
+                    les documents pris en charge (PDF, Word, Excel, PowerPoint, EPUB, texte, Markdown, HTML, journaux et images ; pas les enregistrements) de ce dossier (à sens unique : les fichiers ne sont jamais modifiés) et
                     les indexe dans une collection vectorielle globale. À la différence des documents propres à un Workspace, la Knowledge
                     Base joue le rôle d’une bibliothèque de référence globale que vous pouvez interroger depuis n’importe quelle discussion. Le système examine
-                    le dossier relié environ une fois par minute et réindexe automatiquement les fichiers nouveaux ou modifiés.
+                    le dossier relié toutes les 30 secondes et réindexe automatiquement les fichiers nouveaux ou modifiés.
                     Les fichiers sources de votre hôte ne sont jamais supprimés ni modifiés.</p>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-kb.webp?v=10" alt="La Knowledge Base de StarkLLM : des dossiers de ce PC, lus et gardés consultables, avec les fichiers indexés (interface en anglais)" class="showcase-img zoomable-img">
@@ -316,7 +332,7 @@
             <section id="voice">
                 <h2>18. Fonctions vocales</h2>
                 <p>StarkLLM prend en charge la reconnaissance vocale locale (Speech-to-Text, STT) pour dicter des messages et la synthèse vocale (Text-to-Speech, TTS) pour
-                    lire les réponses à voix haute. Vérifiez que les autorisations de microphone du navigateur sont activées. Le traitement de la voix se
+                    lire les réponses à voix haute. Dans l’application de bureau, Windows doit autoriser l’accès au microphone (Paramètres Windows › Confidentialité et sécurité › Microphone). Le traitement de la voix se
                     fait en local, sans envoyer le son vers des clouds externes.</p>
             </section>
 
@@ -339,8 +355,11 @@
 
                 <div class="alert info">
                     <h4>Architecture de sécurité</h4>
-                    <p>Les appels d’outils s’exécutent via <code>POST /api/v1/mcp/execute</code>, avec des jetons de validation côté serveur à usage unique. Les appels directs non enregistrés sont rejetés avec une erreur HTTP 403 Forbidden. Les motifs <code>```tool_call```</code> délimités qui se trouvent dans les segments de documents récupérés sont automatiquement retirés avant l’injection dans le prompt, ce qui élimine les vecteurs d’exécution malveillante par le RAG.</p>
+                    <p>Les appels d’outils s’exécutent via <code>POST /api/v1/mcp/execute</code>, avec des jetons de validation côté serveur à usage unique. Les appels directs non enregistrés sont rejetés avec une erreur HTTP 403 Forbidden. Les motifs <code>```tool_call```</code> délimités qui se trouvent dans les segments de documents récupérés sont automatiquement retirés avant l’injection dans le prompt, ce qui rend plus difficile l’injection de prompt par des documents (aucune technique ne supprime complètement ce risque).</p>
                 </div>
+
+                <h3>Serveurs d’outils que vous ajoutez</h3>
+                <p>Depuis la 2.5.0, vous pouvez aussi ajouter vos propres serveurs d’outils MCP dans <strong>Paramètres › Outils locaux</strong>. Ils tournent sur ce PC comme des programmes de votre choix, avec vos droits. Chaque outil reste désactivé jusqu’à ce que vous l’activiez, et chaque appel attend votre oui dans la discussion. StarkLLM ne contrôle pas à quoi un tel programme se connecte, et ces connexions ne figurent pas dans Paramètres › Confidentialité et réseau.</p>
             </section>
 
             <section id="other-apps">
@@ -364,8 +383,8 @@
                     <li><strong>OLED Pitch Black :</strong> des fonds d’un noir absolu #000000, optimisés pour les écrans OLED.</li>
                     <li><strong>Liquid Glass :</strong> un effet de verre translucide, avec des couches de flou dépoli et des bordures lumineuses.</li>
                     <li><strong>Matrix Emerald :</strong> un vert émeraude cyberpunk inspiré des terminaux.</li>
-                    <li><strong>Sunset Amber :</strong> des accents dégradés chauds d’ambre volcanique et d’orange.</li>
-                    <li><strong>Nordic Frost :</strong> des tons minimalistes de cyan frais et de bleu arctique.</li>
+                    <li><strong>Sunset Volcano :</strong> des accents dégradés chauds d’ambre volcanique et d’orange.</li>
+                    <li><strong>Arctic Frost :</strong> des tons minimalistes de cyan frais et de bleu arctique.</li>
                     <li><strong>Midnight Indigo :</strong> un violet cosmique profond et du violet (par défaut).</li>
                     <li><strong>Daylight Minimal :</strong> un mode clair net et épuré, au fort contraste de plein jour.</li>
                 </ul>
@@ -405,8 +424,9 @@
 
             <section id="export">
                 <h2>24. Export des conversations dans plusieurs formats</h2>
-                <p>Ne perdez jamais vos découvertes. StarkLLM propose un export en un clic dans quatre formats standardisés, directement depuis l’en-tête de la discussion :</p>
+                <p>Ne perdez jamais vos découvertes. StarkLLM propose un export en un clic, directement depuis l’en-tête de la discussion :</p>
                 <ul>
+                    <li><strong>Word (.docx) et PDF (depuis la 2.5.0) :</strong> une discussion entière ou une seule réponse, avec les sources sur lesquelles elle repose.</li>
                     <li><strong>Markdown (.md) :</strong> mis en forme avec tous les titres, les blocs de code, les citations de sources, les horodatages, les badges de nombre de mots et les statistiques de vitesse de génération.</li>
                     <li><strong>JSON propre (.json) :</strong> un export structuré, lisible par machine, qui comprend les métadonnées des messages, les paramètres du prompt, les citations et les détails du modèle, pour les chaînes de traitement de données.</li>
                     <li><strong>HTML autonome (.html) :</strong> un document indépendant mis en forme, avec une esthétique en mode sombre intégrée, parfait pour le partage ou pour un « Imprimer en PDF » depuis le navigateur.</li>
@@ -436,7 +456,7 @@
 
             <section id="troubleshooting">
                 <h2>27. Dépannage</h2>
-<p>Le guide complet, avec une liste de contrôle d’installation et 25 problèmes accompagnés de leurs solutions, se trouve sur la page <a href="/fr/help">Aide et dépannage</a>. Les plus courants :</p>
+<p>Le guide complet, avec une liste de contrôle d’installation et 27 problèmes accompagnés de leurs solutions, se trouve sur la page <a href="/fr/help">Aide et dépannage</a>. Les plus courants :</p>
 <ul>
                     <li><strong>« Cannot connect to Ollama » :</strong> vérifiez qu’Ollama fonctionne (son icône dans la zone de notification de
                         Windows). StarkLLM le joint à l’adresse <code>127.0.0.1:11434</code>. Vérifiez que vous avez récupéré le modèle nécessaire
@@ -470,9 +490,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Mes données
                         quittent-elles mon ordinateur ?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Non. StarkLLM est conçu pour garder les données
-                        strictement sur votre machine. Les documents sont stockés dans une base de données ChromaDB locale et l’inférence s’exécute
-                        via Ollama sur votre PC.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Seulement si vous activez une fonction en ligne facultative, comme la recherche web, une tâche web ou un modèle dans le cloud. Vos documents, l’index et les modèles locaux restent sur votre PC ; Paramètres › Confidentialité et réseau liste chaque connexion.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">
@@ -494,7 +512,7 @@
 
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM continue-t-il de tourner après sa fermeture ?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Depuis la v2.2, non : quand vous fermez ou quittez StarkLLM, son moteur s’arrête aussi. Ollama est un programme distinct, avec sa propre icône dans la zone de notification, et continue de tourner jusqu’à ce que vous le quittiez à cet endroit ; rien n’est envoyé nulle part. Si vous avez choisi le moteur Docker Desktop (avancé, menu de la zone de notification), les conteneurs du moteur et Docker Desktop continuent de tourner après la fermeture, pour que le prochain démarrage soit plus rapide ; pour les arrêter, quittez Docker Desktop depuis son icône de la zone de notification ou arrêtez les deux conteneurs StarkLLM dans Docker Desktop.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Depuis la v2.2, non : quand vous fermez ou quittez StarkLLM, son moteur s’arrête aussi. Ollama est un programme distinct, avec sa propre icône dans la zone de notification, et continue de tourner jusqu’à ce que vous le quittiez à cet endroit. Vos documents et vos questions restent sur votre PC ; Ollama lui-même ne se connecte à internet que pour télécharger des modèles et pour sa propre vérification des mises à jour. Si vous avez choisi le moteur Docker Desktop (avancé, menu de la zone de notification), les conteneurs du moteur et Docker Desktop continuent de tourner après la fermeture, pour que le prochain démarrage soit plus rapide ; pour les arrêter, quittez Docker Desktop depuis son icône de la zone de notification ou arrêtez les deux conteneurs StarkLLM dans Docker Desktop.</p>
                 </div>
             </section>
         </article>

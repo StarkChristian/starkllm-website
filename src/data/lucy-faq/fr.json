@@ -460,7 +460,7 @@
     "Y a-t-il une application Android ou iPhone ?"
    ],
    "page": "/fr/product",
-   "match": "Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone"
+   "match": "L’application StarkLLM pour Android travaille avec votre PC"
   },
   {
    "id": "scam",
@@ -543,7 +543,7 @@
     "Quels documents puis-je ajouter ?"
    ],
    "page": "/fr/tech-multimodal",
-   "match": "14 types de fichiers, y compris les PDF numérisés et les photos"
+   "match": "StarkLLM lit les documents : PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -636,7 +636,9 @@
    "q": [
     "J'ai oublié mon mot de passe",
     "Puis-je réinitialiser mon mot de passe ?",
-    "Comment créer un compte ?"
+    "Comment créer un compte ?",
+    "Ai-je besoin d’un compte ?",
+    "Dois-je m’inscrire ?"
    ],
    "page": "/fr/help",
    "match": "StarkLLM n’a pas encore de réinitialisation du mot de passe"
@@ -700,6 +702,56 @@
    ],
    "page": "/fr/product",
    "match": "Il ne renomme, ne déplace et ne supprime jamais vos fichiers"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "Qu’est-ce qu’une tâche web ?",
+    "StarkLLM peut-il faire des choses sur des sites web pour moi ?",
+    "Peut-il chercher un vol ou remplir un formulaire sur un site ?"
+   ],
+   "page": "/fr/product",
+   "match": "StarkLLM ouvre une fenêtre de navigateur distincte et vous suivez chaque étape"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "À quoi sert le Terminal ?",
+    "StarkLLM peut-il aider à coder ?",
+    "Peut-il exécuter des commandes ou modifier des fichiers de mon projet ?"
+   ],
+   "page": "/fr/product",
+   "match": "Il ne quitte jamais ce dossier et ne lit jamais de clés"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "StarkLLM peut-il transcrire un enregistrement ?",
+    "Puis-je ajouter l’enregistrement d’une réunion ou un MP3 ?",
+    "Peut-il transcrire des fichiers audio ou vidéo ?"
+   ],
+   "page": "/fr/product",
+   "match": "Réunions, cours et mémos vocaux sont transcrits sur votre PC avec les horodatages"
+  },
+  {
+   "id": "images",
+   "q": [
+    "Puis-je poser des questions sur une image ?",
+    "Puis-je coller une capture d’écran et poser une question dessus ?",
+    "Peut-il décrire une image ?"
+   ],
+   "page": "/fr/product",
+   "match": "Collez une capture d’écran ou choisissez une photo, et un modèle de vision sur votre PC répond"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "Comment associer mon téléphone ?",
+    "Comment connecter l’application Android à mon PC ?",
+    "Comment fonctionne l’association par code QR ?"
+   ],
+   "page": "/fr/product",
+   "match": "Paramètres › Téléphone affiche un code QR"
   },
   {
    "id": "keepsrunning",

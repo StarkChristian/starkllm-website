@@ -3,7 +3,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Produit | StarkLLM', description: 'Comment fonctionne StarkLLM : traitement local des documents, RAG hybride avec sources citées, Knowledge Base, outils locaux et treize thèmes. Tout se passe sur votre PC Windows.' },
-  hero: { eyebrow: 'Produit', h1: 'Comment fonctionne StarkLLM', lede: 'Une chaîne de traitement entièrement locale, conçue dans le souci de la confidentialité des données.' },
+  hero: { eyebrow: 'Produit', h1: 'Comment fonctionne StarkLLM', lede: 'Une chaîne locale conçue pour la confidentialité : elle lit vos documents et répond avec des sources sur votre propre PC. Depuis la 2.5.0, elle fait aussi des tâches pour vous, sur le web, dans un dossier de projet et depuis votre téléphone.' },
   lifecycle: {
     h2: 'Le cycle de vie d’un document',
     lede: 'Quand vous ajoutez un PDF ou un fichier texte, le traitement reste sur votre PC.',
@@ -17,9 +17,9 @@ export default {
   letters: {
     tag: 'Boîte de réception des documents',
     h2: 'Chaque courrier lu et classé',
-    lede: 'Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone. StarkLLM le lit sur votre PC et vous suggère ce dont vous avez besoin. Il ne renomme, ne déplace et ne supprime jamais vos fichiers.',
+    lede: 'Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone. StarkLLM le lit sur votre PC et vous suggère ce dont vous avez besoin. Il ne renomme, ne déplace et ne supprime jamais vos fichiers. Seul le Terminal modifie des fichiers, uniquement dans un dossier de projet que vous choisissez, après avoir affiché chaque modification ; « Annuler les modifications des fichiers » les remet en place.',
     items: [
-      { k: 'Ce qui est lu', v: 'Le type de courrier (facture, rappel, avis d’imposition, contrat, amende et autres), l’expéditeur, la date du courrier, les numéros de référence comme le numéro de client, de contrat ou d’impôt, les montants, les comptes bancaires et les échéances, dans les courriers en anglais et en allemand.' },
+      { k: 'Ce qui est lu', v: 'Le type de courrier (facture, rappel, avis d’imposition, contrat, amende et autres), l’expéditeur, la date du courrier, les numéros de référence comme le numéro de client, de contrat ou d’impôt, les montants, les comptes bancaires et les échéances, dans les courriers en anglais, allemand, français, espagnol, italien et turc.' },
       { k: 'Chaque valeur a une source', v: 'Chaque valeur est retrouvée mot pour mot sur une page. Cliquez dessus : le courrier s’ouvre à cette page, avec la ligne surlignée.' },
       { k: 'Un dossier par expéditeur', v: 'Les courriers d’un même expéditeur sont regroupés, le dossier dont l’échéance est la plus proche en premier. Le même courrier en photo et en PDF est signalé, tout comme un courrier remplacé et une arnaque possible.' },
       { k: 'Vous décidez', v: 'Marquez un courrier comme traité ou donnez-lui votre propre titre. Le nombre de nouveaux courriers s’affiche à côté de « Inbox » (la boîte de réception).' },
@@ -53,7 +53,7 @@ export default {
     items: [
       { k: 'Indexation de dossiers locaux', v: 'Reliez n’importe quel dossier de votre ordinateur Windows. StarkLLM indexe de façon récursive les fichiers pris en charge dans une collection vectorielle globale.' },
       { k: 'Accès universel', v: 'Interrogez la Knowledge Base depuis n’importe quelle discussion, quel que soit le Workspace dans lequel vous vous trouvez.' },
-      { k: 'Synchronisation à intervalles réguliers', v: 'Environ une fois par minute, la Knowledge Base examine le dossier relié et réindexe les fichiers nouveaux ou modifiés.' },
+      { k: 'Synchronisation à intervalles réguliers', v: 'Toutes les 30 secondes, la Knowledge Base examine le dossier relié et réindexe les fichiers nouveaux ou modifiés.' },
     ],
     compareH3: 'Documents d’un Workspace ou Knowledge Base ?',
     compareLede: 'StarkLLM propose deux façons de donner du contexte à l’IA. Connaître la différence permet de garder vos documents bien rangés.',
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Choix du modèle', v: 'Passez de l’un à l’autre des modèles que vous avez téléchargés via Ollama (par exemple Qwen 2.5, Llama 3.2, Mistral) depuis l’interface de discussion.' },
       { k: 'Configuration à l’exécution', v: 'Ajustez la taille de la fenêtre de contexte, la température et d’autres paramètres avancés pour trouver le bon équilibre entre vitesse et profondeur de raisonnement.' },
-      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur.' },
+      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur. Ce n’est que si vous activez Paramètres › Téléphone qu’un téléphone associé sur votre réseau domestique peut joindre l’application.' },
     ],
   },
   tools: {
@@ -115,7 +115,7 @@ export default {
     'OLED Pitch Black': 'Un vrai noir pur #000000, pour un contraste maximal et une meilleure autonomie.',
     'Liquid Glass': 'Un verre dépoli translucide, aux reflets irisés multicolores.',
     'Matrix Emerald': 'Une matrice d’obsidienne avec des accents vert émeraude électrique.',
-    'Sunset Amber': 'Une ardoise volcanique avec des accents chauds d’ambre rougeoyant et de flammes.',
+    'Sunset Volcano': 'Une ardoise volcanique avec des accents chauds d’ambre rougeoyant et de flammes.',
     'Arctic Frost': 'Un bleu marine glacial avec un cyan cristallin et un bleu givré.',
     'Daylight Minimal': 'Un look épuré de plein jour, avec des ombres douces et un contraste net.',
     'Doodle Chat': 'Un papier chaleureux avec, en fond, de petites poupées, des cœurs, des lettres et des étoiles dessinés.',

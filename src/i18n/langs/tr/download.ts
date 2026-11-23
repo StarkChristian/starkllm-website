@@ -29,13 +29,13 @@ export default {
   },
   setup: {
     h2: 'Kurulum adımları',
-    intro: 'StarkLLM kendi motorunu beraberinde getirir; Docker Desktop ve WSL2 gerekmez. İlk başlatma, henüz sahip olmadığınız yapay zekâ modellerini (yaklaşık 5 GB) ve izin verirseniz Ollama’yı indirir; sonraki başlatmalar saniyeler sürer.',
+    intro: 'StarkLLM kendi motorunu beraberinde getirir; Docker Desktop ve WSL2 gerekmez. İlk başlatma, henüz sahip olmadığınız yapay zekâ modellerini (yaklaşık 5 GB) ve izin verirseniz Ollama’yı indirir; sonraki başlatmalar saniyeler sürer. Zaten kurulu mu (2.0.7 veya sonrası)? Ayarlar › StarkLLM Hakkında › Güncellemeleri denetle › İndir ve kur.',
     steps: [
       { t: 'StarkLLM yükleyicisini çalıştırın', v: `StarkLLM-v${V}-Setup.exe dosyasını indirin ve çalıştırın. Yükleyici motoru içerir ve masaüstü kısayolları oluşturur.` },
       { t: 'StarkLLM’i başlatın', v: 'StarkLLM kısayoluna tıklayın. Uygulama motorunu başlatır ve Ollama’yı denetler.' },
       { t: 'Eksikse Ollama’yı kurun', v: 'Ollama kurulu değilse pencere “Ollama’yı benim için kur” seçeneğini sunar: StarkLLM resmî yükleyiciyi ollama.com adresinden indirir (yaklaşık 2 GB), imzasını denetler ve kurar; yönetici hakları gerekmez. Ollama’yı ollama.com adresinden kendiniz de kurabilirsiniz.' },
       { t: 'İlk başlatmayı bekleyin', v: 'StarkLLM yapay zekâ modellerini indirir (varsayılan olarak qwen2.5:7b ve nomic-embed-text, yaklaşık 5 GB; Ollama’da zaten bulunan uygun modeller kullanılır), ilerlemeyi gösterir ve ardından kendi penceresinde açılır. Bir şey eksikse pencere neyin eksik olduğunu ve nasıl giderileceğini söyler (günlükler: %APPDATA%\\StarkLLM\\engine.log ve engine-native.log).' },
-      { t: 'Hesabınızı oluşturun', v: 'İlk hesabı kaydedin; bu hesap, bu kurulumun yöneticisidir (yedekleme ve geri yükleme). Ardından bir workspace oluşturun ve bir belge yükleyin.' },
+      { t: 'Bir workspace oluşturun ve bir belge ekleyin', v: 'StarkLLM sizi bu bilgisayarın kullanıcısı olarak oturum açtırır; hesap oluşturmanız gerekmez. Bir workspace oluşturun, bir belge ekleyin ve onunla ilgili bir soru sorun.' },
     ],
   },
   prereq: {
@@ -46,7 +46,7 @@ export default {
       ['Yazılım', 'Yalnızca yapay zekâ modelleri için Ollama. StarkLLM resmî sürümü sizin için kurabilir (“Ollama’yı benim için kur”) ya da onu ollama.com adresinden indirebilirsiniz. Docker Desktop ve WSL2, v2.2’den beri gerekmez.'],
       ['Modeller ve disk', 'İlk başlatmada otomatik olarak indirilir (yaklaşık 5 GB). En az 15 GB boş disk alanı bırakın.'],
       ['Donanım', 'En az 8 GB RAM (3B modeller için), 16 GB önerilir (7B modeller için). 8 GB+ VRAM’li bir NVIDIA GPU şiddetle önerilir; v2.3’ten beri StarkLLM, Ollama’nın tümleşik AMD Radeon ve Intel Arc/Iris grafiklerini de kullanmasına izin verir. Kılavuzda donanım kademeleriyle ilgili öneriler bulunur.'],
-      ['Desteklenen biçimler', 'PDF, DOCX (tablolarla), PowerPoint (PPTX), EPUB e-kitapları, TXT, Markdown, CSV, XLSX, JSON, XML, günlükler, HTML ve görüntüler (OCR’lı PNG, JPG).'],
+      ['Desteklenen biçimler', 'Belgeler: PDF, Word (DOCX, tablolarla), Excel (XLSX), PowerPoint (PPTX), EPUB, TXT, Markdown, CSV, JSON, XML, HTML, günlükler ve görüntüler (OCR’lı PNG, JPG, WEBP, TIFF), en fazla 100 MB. Kayıtlar: MP3, M4A, WAV, OGG, FLAC, MP4, MOV ve MKV videolarının sesi ve daha fazlası, en fazla 500 MB.'],
     ],
   },
   smart: {
@@ -77,7 +77,7 @@ export default {
   faq: {
     h2: 'Sık sorulan sorular',
     items: [
-      ['Verilerim bilgisayarımdan çıkıyor mu?', 'StarkLLM, verilerinizi makinenizde tutacak şekilde tasarlanmıştır. Belgeler bilgisayarınızdaki yerel bir ChromaDB veritabanında saklanır ve yapay zekâ çıkarımı bilgisayarınızda Ollama ile çalışır. Web araması, bir bulut model sağlayıcısı veya güncelleme denetimi gibi isteğe bağlı bir çevrimiçi özelliği siz açmadığınız sürece hiçbir şey bilgisayarınızdan çıkmaz.'],
+      ['Verilerim bilgisayarımdan çıkıyor mu?', 'StarkLLM, verilerinizi makinenizde tutacak şekilde tasarlanmıştır. Belgeler bilgisayarınızdaki yerel bir ChromaDB veritabanında saklanır ve yapay zekâ çıkarımı bilgisayarınızda Ollama ile çalışır. Web araması, bir web görevi, bir bulut model sağlayıcısı, web’den içe aktarma, piyasa fiyatları veya güncelleme denetimi gibi isteğe bağlı bir çevrimiçi özelliği siz açmadığınız sürece hiçbir şey bilgisayarınızdan çıkmaz. Ayarlar › Gizlilik ve ağ, StarkLLM’in kurduğu her bağlantıyı listeler ve “Tamamen çevrimdışı” hepsini reddeder. Terminal’de izin verdiğiniz komutlar ve eklediğiniz araç sunucuları sizin kendi programlarınız olarak çalışır ve listede yer almaz.'],
       ['StarkLLM ücretsiz mi?', 'Evet. Kişisel, araştırma ve ticari kullanım için Apache 2.0 altında ücretsiz ve açık kaynaklıdır. Abonelik, telemetri veya gizli kademe yoktur. Garanti verilmeksizin “olduğu gibi” sunulur.'],
       ['Yanıtlar neden yavaş olabilir?', 'Hız donanımınıza bağlıdır. Ayrı bir GPU yoksa Ollama CPU çıkarımına geçer; bu çok daha yavaştır. 8 GB+ VRAM’li ayrı bir NVIDIA GPU çok daha hızlı üretir.'],
       ['Yükleyici imzalı mı? SmartScreen veya Smart App Control uyarı verirse ne yapmalıyım?', 'Evet. v2.1.2’den itibaren yükleyici, StarkLLM.exe ve kaldırma programı “Open Source Developer Christian Stark” tarafından imzalanmıştır; böylece Windows yayımcıyı doğrulayabilir. Windows yine de uyarırsa yayımcı adını kontrol edin (yükleyiciye sağ tıklayın, Özellikler, Dijital İmzalar) ve bu sayfadaki SHA-256 sağlama toplamını karşılaştırın. Dosyayı yalnızca ikisi de eşleşiyorsa çalıştırın. Smart App Control’ü veya başka bir güvenlik ayarını kapatmayın.'],

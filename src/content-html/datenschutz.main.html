@@ -59,14 +59,18 @@
             </ul>
             <p>Folgende Funktionen stellen nur dann eine Verbindung ins Internet her, wenn Sie sie selbst einschalten oder auslösen:</p>
             <ul>
-                <li><strong>Websuche</strong> (Schalter im Chat): Ihre Frage wird an DuckDuckGo gesendet.</li>
+                <li><strong>Websuche</strong> (Schalter im Chat): Ihre Frage wird an DuckDuckGo gesendet. Nur wenn DuckDuckGo nicht antwortet, geht sie an Mullvad Leta und danach an Mojeek, jeweils an nur einen Anbieter.</li>
+                <li><strong>Web-Aufgaben</strong> (Schalter „Web-Aufgabe“ im Chat): StarkLLM öffnet die Websites der Aufgabe in einem eigenen Fenster. Die Betreiber dieser Websites erhalten Ihre IP-Adresse und das, was bei der Aufgabe dort eingegeben wird.</li>
                 <li><strong>Cloud-Modellanbieter</strong> (Einstellungen, z. B. DeepSeek, OpenRouter, Groq): Ihre Frage und die gefundenen Dokumentabschnitte werden an den gewählten Anbieter gesendet.</li>
-                <li><strong>YouTube- und GitHub-Import</strong>: Die App lädt das angegebene Video-Transkript bzw. Repository herunter.</li>
-                <li><strong>Marktpreise</strong> (Widget, standardmäßig aus): Abruf bei Yahoo Finance.</li>
+                <li><strong>Cloud-Modelle von Ollama</strong> (Modelle, deren Name auf „:cloud“ endet): Ihre Frage und die gefundenen Dokumentabschnitte werden über Ollama an die Server von Ollama gesendet.</li>
+                <li><strong>Import aus dem Web</strong> (Webseite, YouTube, GitHub): Die App lädt die angegebene Webseite, das Video-Transkript bzw. das Repository herunter.</li>
+                <li><strong>OCR-Sprachpakete</strong> (Einstellungen › Fotos und Scans lesen): Die gewählte Sprachdatei wird von GitHub geladen.</li>
+                <li><strong>Marktpreise</strong> (Widget, standardmäßig aus): Abruf bei Yahoo Finance und CoinGecko.</li>
                 <li><strong>Update-Prüfung</strong> (beim ersten Start gefragt, jederzeit abschaltbar): Abfrage der neuesten Version bei GitHub, ohne Nutzungsdaten.</li>
             </ul>
-            <p>Für diese Verbindungen gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
-            <p><strong>Einmalige Downloads ohne Ihre Daten:</strong> Die von Ihnen gewählten KI-Modelle (über Ollama), das Re-Ranking-Modell (TinyBERT, bei der ersten Suche) und das Spracherkennungsmodell (Whisper, bei der ersten Spracheingabe) werden einmalig aus dem Internet geladen. Dabei werden keine Dokumente, Fragen oder Nutzungsdaten übertragen. Ohne Internet funktioniert die Suche ohne Re-Ranking.</p>
+            <p>Für diese Verbindungen gelten die Datenschutzbestimmungen des jeweiligen Anbieters. Einstellungen › Datenschutz &amp; Netzwerk listet alle Verbindungen der App, und der Schalter „Vollständig offline“ verhindert sie alle. Befehle, die Sie im Terminal erlauben, und Werkzeug-Server (MCP), die Sie selbst hinzufügen, laufen als Ihre eigenen Programme; ihre Verbindungen stehen nicht in dieser Liste.</p>
+            <p><strong>Telefon-Verbindung im Heimnetz:</strong> Nur wenn Sie unter Einstellungen › Telefon die Verbindung einschalten und ein Telefon koppeln, kann dieses gekoppelte Telefon die App über Ihr Heimnetz erreichen. Dabei werden keine Daten ins Internet übertragen.</p>
+            <p><strong>Einmalige Downloads ohne Ihre Daten:</strong> Die von Ihnen gewählten KI-Modelle (über Ollama), das Bildmodell (über Ollama, bei der ersten Frage zu einem Bild), das Spracherkennungsmodell Whisper base (bei der ersten Spracheingabe) und Whisper large-v3-turbo (etwa 1,6 GB, bei der ersten Aufnahme) werden einmalig aus dem Internet geladen. Dabei werden keine Dokumente, Fragen oder Nutzungsdaten übertragen. Das Re-Ranking-Modell der Suche ist Teil der App und funktioniert auch ohne Internet.</p>
 
             <h2>5. Ihre Rechte</h2>
             <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf:</p>

@@ -497,7 +497,8 @@
     "Esiste una versione in spagnolo o francese?",
     "In quali lingue può leggere le lettere?",
     "L'italiano sarà supportato?",
-    "Posso usarlo in italiano?"
+    "Posso usarlo in italiano?",
+    "È disponibile anche in spagnolo?"
    ],
    "page": "/it/manual",
    "match": "Lettere: l'inbox comprende le lettere in inglese, tedesco, francese, spagnolo, italiano e turco"
@@ -521,7 +522,7 @@
     "C'è un'app per Android o iPhone?"
    ],
    "page": "/it/product",
-   "match": "Aggiungi una lettera come PDF, scansione o foto dal telefono"
+   "match": "app StarkLLM per Android lavora insieme al Suo PC"
   },
   {
    "id": "scam",
@@ -600,7 +601,7 @@
     "Che documenti posso aggiungere?"
    ],
    "page": "/it/tech-multimodal",
-   "match": "14 tipi di file, comprese le scansioni in PDF e le foto"
+   "match": "StarkLLM legge documenti: PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -678,11 +679,24 @@
    "match": "StarkLLM è open source con licenza Apache 2.0"
   },
   {
+   "id": "otherapps",
+   "q": [
+    "Altri programmi possono usare StarkLLM?",
+    "Posso usare StarkLLM da VS Code o Cursor?",
+    "C’è un’API o un server MCP?",
+    "I miei script possono usare StarkLLM?"
+   ],
+   "page": "/it/manual",
+   "match": "puoi permettere ai programmi di questo PC di usare StarkLLM"
+  },
+  {
    "id": "password",
    "q": [
     "Ho dimenticato la password",
     "Posso reimpostare la password?",
-    "Come creo un account?"
+    "Come creo un account?",
+    "Mi serve un account?",
+    "Devo registrarmi?"
    ],
    "page": "/it/help",
    "match": "StarkLLM non ha ancora un ripristino della password"
@@ -738,6 +752,56 @@
    ],
    "page": "/it/product",
    "match": "Non rinomina, non sposta e non elimina mai i tuoi file"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "Che cos’è un’attività web?",
+    "StarkLLM può fare cose sui siti web per me?",
+    "Può cercare un volo o compilare un modulo su un sito?"
+   ],
+   "page": "/it/product",
+   "match": "StarkLLM apre una finestra del browser separata e Lei segue ogni passaggio"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "Che cosa fa il Terminale?",
+    "StarkLLM può aiutare con il codice?",
+    "Può eseguire comandi o modificare file del mio progetto?"
+   ],
+   "page": "/it/product",
+   "match": "Non esce mai da quella cartella e non legge mai chiavi"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "StarkLLM può trascrivere una registrazione?",
+    "Posso caricare la registrazione di una riunione o un MP3?",
+    "Può trascrivere file audio o video?"
+   ],
+   "page": "/it/product",
+   "match": "Riunioni, lezioni e memo vocali vengono trascritti sul Suo PC con i tempi"
+  },
+  {
+   "id": "images",
+   "q": [
+    "Posso fare domande su un’immagine?",
+    "Posso incollare uno screenshot e fare domande?",
+    "Può descrivere un’immagine?"
+   ],
+   "page": "/it/product",
+   "match": "Incolli uno screenshot o scelga una foto, e risponde un modello visivo sul Suo PC"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "Come abbino il mio telefono?",
+    "Come collego l’app Android al mio PC?",
+    "Come funziona l’abbinamento con il codice QR?"
+   ],
+   "page": "/it/product",
+   "match": "Impostazioni › Telefono mostra un codice QR"
   },
   {
    "id": "keepsrunning",

@@ -109,7 +109,7 @@ const translated = ['/', '/product', '/download', '/help', '/manual', '/about', 
 export const localizedPaths: Record<Lang, string[]> = { en: translated, de: translated, es: [...translated, '/legal'], fr: [...translated, '/legal'], it: [...translated, '/legal'], tr: [...translated, '/legal'] };
 
 /** Pages that exist once, in one language (German legal texts, the English manual). They get no hreflang tags and no language switcher. */
-export const singlePages = ['/impressum', '/datenschutz', '/privacy-policy'];
+export const singlePages = ['/impressum', '/datenschutz', '/privacy-policy', '/code-signing'];
 
 const key = (path: string) => (path.replace(/\.html$/, '').replace(/\/$/, '') || '/');
 export const prefix = (lang: Lang) => (lang === defaultLang ? '' : `/${lang}`);

@@ -23,7 +23,7 @@ const homeBase = {
       meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · free`,
     },
     pipeline: [
-      { k: 'Files', v: 'PDF, Word, text, scans, photos' },
+      { k: 'Files', v: 'PDF, Word, PowerPoint, EPUB, scans, photos, recordings' },
       { k: 'Chunks', v: 'Split by meaning, not length' },
       { k: 'Hybrid search', v: 'BM25 + vector embeddings' },
       { k: 'Local model', v: 'Ollama on your GPU' },
@@ -67,7 +67,7 @@ const homeBase = {
       ],
     },
     setup: {
-      h2: 'Set up in three steps',
+      h2: 'Set up in four steps',
       intro: 'StarkLLM brings its own engine: no Docker Desktop, no WSL2. The first start downloads the AI models (about 5 GB) and, if you let it, Ollama; later starts take seconds.',
       steps: [
         { title: 'Install StarkLLM', text: `Run StarkLLM-v${V}-Setup.exe and click the shortcut. The installer is signed by "Open Source Developer Christian Stark" and contains the engine.` },
@@ -88,7 +88,7 @@ const homeBase = {
       items: [
         { title: 'Documents and model stay on your PC', text: 'Your documents, chats and search index are stored on your own disk, and the language models run on your own CPU or GPU through Ollama. The phone app talks to your PC, not to a server of ours.' },
         { title: 'No telemetry', text: 'The Windows app has no telemetry and no analytics SDK. This website uses no analytics and sets no cookies either; see the privacy policy.' },
-        { title: 'Every connection listed', text: 'Web search, web tasks, cloud model providers, YouTube and GitHub import, market prices and the update check run only when you turn them on or start them. Settings › Privacy & network lists every connection, and the chat shows when a question leaves your PC.' },
+        { title: 'Every connection listed', text: 'Web search, web tasks, cloud model providers, imports from the web (web pages, YouTube, GitHub), market prices and the update check run only when you turn them on or start them. Settings › Privacy & network lists every connection StarkLLM makes; commands you allow in Terminal and tool servers you add run as your own programs and are not listed. The chat shows when a question leaves your PC.' },
         { title: 'Fully offline switch', text: 'One switch takes StarkLLM fully offline: every online feature is refused and the link to your phone is closed. Your documents, the inbox and the local models keep working.' },
       ],
     },
@@ -125,7 +125,7 @@ const homeBase = {
       meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · kostenlos`,
     },
     pipeline: [
-      { k: 'Dateien', v: 'PDF, Word, Text, Scans, Fotos' },
+      { k: 'Dateien', v: 'PDF, Word, PowerPoint, EPUB, Scans, Fotos, Aufnahmen' },
       { k: 'Chunks', v: 'Nach Bedeutung geteilt, nicht nach Länge' },
       { k: 'Hybridsuche', v: 'BM25 + Vektor-Embeddings' },
       { k: 'Lokales Modell', v: 'Ollama auf Ihrer GPU' },
@@ -169,7 +169,7 @@ const homeBase = {
       ],
     },
     setup: {
-      h2: 'In drei Schritten eingerichtet',
+      h2: 'In vier Schritten eingerichtet',
       intro: 'StarkLLM bringt seine eigene Engine mit: kein Docker Desktop, kein WSL2. Der erste Start lädt die KI-Modelle (etwa 5 GB) und, wenn Sie es erlauben, Ollama; spätere Starts dauern Sekunden.',
       steps: [
         { title: 'StarkLLM installieren', text: `StarkLLM-v${V}-Setup.exe ausführen und auf die Verknüpfung klicken. Der Installer ist von „Open Source Developer Christian Stark“ signiert und enthält die Engine.` },
@@ -190,7 +190,7 @@ const homeBase = {
       items: [
         { title: 'Dokumente und Modell bleiben auf Ihrem PC', text: 'Ihre Dokumente, Chats und der Suchindex liegen auf Ihrer eigenen Festplatte, und die Sprachmodelle laufen über Ollama auf Ihrer eigenen CPU oder GPU. Die Handy-App spricht mit Ihrem PC, nicht mit einem Server von uns.' },
         { title: 'Keine Telemetrie', text: 'Die Windows-App enthält weder Telemetrie noch ein Analyse-SDK. Auch diese Website nutzt keine Webanalyse und setzt keine Cookies; siehe Datenschutzerklärung.' },
-        { title: 'Jede Verbindung aufgelistet', text: 'Websuche, Web-Aufgaben, Cloud-Modellanbieter, YouTube- und GitHub-Import, Marktpreise und die Update-Prüfung laufen nur, wenn Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, und der Chat zeigt an, wenn eine Frage Ihren PC verlässt.' },
+        { title: 'Jede Verbindung aufgelistet', text: 'Websuche, Web-Aufgaben, Cloud-Modellanbieter, Importe aus dem Web (Webseiten, YouTube, GitHub), Marktpreise und die Update-Prüfung laufen nur, wenn Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, die StarkLLM herstellt; Befehle, die Sie im Terminal erlauben, und Werkzeug-Server, die Sie hinzufügen, laufen als Ihre eigenen Programme und stehen nicht in der Liste. Der Chat zeigt an, wenn eine Frage Ihren PC verlässt.' },
         { title: 'Schalter „Vollständig offline“', text: 'Ein Schalter nimmt StarkLLM vollständig vom Netz: Jede Online-Funktion wird abgelehnt und die Verbindung zu Ihrem Handy geschlossen. Ihre Dokumente, der Posteingang und die lokalen Modelle arbeiten weiter.' },
       ],
     },

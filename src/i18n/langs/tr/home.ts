@@ -17,7 +17,7 @@ export default {
     meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · ücretsiz`,
   },
   pipeline: [
-    { k: 'Dosyalar', v: 'PDF, Word, metin, taramalar, fotoğraflar' },
+    { k: 'Dosyalar', v: 'PDF, Word, PowerPoint, EPUB, taramalar, fotoğraflar, kayıtlar' },
     { k: 'Parçalar (chunk)', v: 'Uzunluğa göre değil, anlama göre bölünür' },
     { k: 'Hibrit arama', v: 'BM25 + vektör gömmeleri (embedding)' },
     { k: 'Yerel model', v: 'GPU’nuzda Ollama' },
@@ -57,11 +57,11 @@ export default {
       { kind: 'Çıkarım arayüzü', name: 'LM Studio', text: 'Hugging Face’ten GGUF indirmek ve GPU katman aktarımını ayarlamak için çok iyidir. “Chat with Documents” özelliği dosyaları bir konuşmaya ekler (kısa dosyalar bütün olarak yapıştırılır, uzunlar erişim (retrieval) üzerinden geçer); belgelerine ve üçüncü taraf kılavuzlara göre kalıcı workspace’leri veya paylaşılan bilgi tabanları yoktur.', best: 'Modelleri denemek; bir sohbete ara sıra belge eklemek.' },
       { kind: 'Temel RAG uygulaması', name: 'AnythingLLM', text: 'Belgelerinizle workspace’ler içinde sohbet etmek için popüler bir uygulama. Yeniden sıralama gibi erişim seçenekleri, sürüme ve seçtiğiniz vektör veritabanına bağlıdır; bu yüzden kendi belgelerinizle karşılaştırın.', best: 'Hazır bir workspace uygulaması istediğiniz belge sohbetleri.' },
       { kind: 'Minimalist sohbet', name: 'Jan.ai', text: 'Verileri cihazda tutan, hafif, açık kaynaklı, ChatGPT tarzı bir uygulama. Belge erişimi, belgelerinin deneysel olarak nitelendirdiği isteğe bağlı bir ayar olarak bulunur; odak noktası belge iş akışları değil, sohbettir.', best: 'Temiz bir arayüzle basit yerel sohbet.' },
-      { kind: 'Bu proje', name: `StarkLLM v${V}`, text: 'Mektuplar için gelen kutusu (son tarihler, tutarlar, gönderen başına dosyalar, sahte mektup uyarıları), TinyBERT çapraz kodlayıcı ile yeniden sıralamalı hibrit RAG, isteğe bağlı yerel MCP sunucusu ve OpenAI uyumlu API (varsayılan olarak kapalı) içeren ve verileri varsayılan olarak yerelde tutan yerel Windows masaüstü uygulaması.', best: 'Mektuplarını ve belgelerini gizli tutmak ve kontrol edebileceği kaynaklarla yanıt almak isteyen herkes: evlerden geliştiricilere ve araştırmacılara kadar.', us: true },
+      { kind: 'Bu proje', name: `StarkLLM v${V}`, text: 'Mektuplar için gelen kutusu (son tarihler, tutarlar, gönderen başına dosyalar, sahte mektup uyarıları), her önemli adımdan önce soran web görevleri ve kod yardımı, TinyBERT çapraz kodlayıcı ile yeniden sıralamalı hibrit RAG, isteğe bağlı yerel MCP sunucusu ve OpenAI uyumlu API (varsayılan olarak kapalı) içeren ve verileri varsayılan olarak yerelde tutan yerel Windows masaüstü uygulaması.', best: 'Mektuplarını ve belgelerini gizli tutmak ve kontrol edebileceği kaynaklarla yanıt almak isteyen herkes: evlerden geliştiricilere ve araştırmacılara kadar.', us: true },
     ],
   },
   setup: {
-    h2: 'Üç adımda kurulum',
+    h2: 'Dört adımda kurulum',
     intro: 'StarkLLM kendi motorunu beraberinde getirir: Docker Desktop yok, WSL2 yok. İlk başlatma yapay zekâ modellerini (yaklaşık 5 GB) ve izin verirseniz Ollama’yı indirir; sonraki başlatmalar saniyeler sürer.',
     steps: [
       { title: 'StarkLLM’i kurun', text: `StarkLLM-v${V}-Setup.exe dosyasını çalıştırın ve kısayola tıklayın. Yükleyici “Open Source Developer Christian Stark” tarafından imzalanmıştır ve motoru içerir.` },

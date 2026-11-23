@@ -28,13 +28,13 @@ export default {
   },
   setup: {
     h2: 'Étapes d’installation',
-    intro: 'StarkLLM apporte son propre moteur ; Docker Desktop et WSL2 ne sont pas nécessaires. Le premier démarrage télécharge les modèles d’IA que vous n’avez pas encore (environ 5 Go) et, si vous l’acceptez, Ollama ; les démarrages suivants ne prennent que quelques secondes.',
+    intro: 'StarkLLM apporte son propre moteur ; Docker Desktop et WSL2 ne sont pas nécessaires. Le premier démarrage télécharge les modèles d’IA que vous n’avez pas encore (environ 5 Go) et, si vous l’acceptez, Ollama ; les démarrages suivants ne prennent que quelques secondes. Déjà installé (2.0.7 ou plus récent) ? Paramètres › À propos de StarkLLM › Rechercher des mises à jour › Télécharger et installer.',
     steps: [
       { t: 'Exécuter l’installeur de StarkLLM', v: `Téléchargez et exécutez StarkLLM-v${V}-Setup.exe. L’installeur contient le moteur et crée des raccourcis sur le bureau.` },
       { t: 'Lancer StarkLLM', v: 'Cliquez sur le raccourci StarkLLM. L’application démarre son moteur et vérifie Ollama.' },
       { t: 'Installer Ollama s’il manque', v: 'Si Ollama n’est pas installé, la fenêtre propose « Installer Ollama pour moi » : StarkLLM télécharge l’installeur officiel depuis ollama.com (environ 2 Go), vérifie sa signature et l’installe ; aucun droit d’administrateur n’est nécessaire. Vous pouvez aussi installer Ollama vous-même depuis ollama.com.' },
       { t: 'Attendre la fin du premier démarrage', v: 'StarkLLM télécharge les modèles d’IA (par défaut qwen2.5:7b et nomic-embed-text, environ 5 Go ; les modèles adaptés que vous avez déjà dans Ollama sont utilisés), affiche la progression, puis s’ouvre dans sa propre fenêtre. S’il manque quelque chose, la fenêtre indique quoi et comment y remédier (journaux : %APPDATA%\\StarkLLM\\engine.log et engine-native.log).' },
-      { t: 'Créer votre compte', v: 'Créez le premier compte ; c’est l’administrateur de cette installation (sauvegarde et restauration). Créez ensuite un Workspace (espace de travail) et ajoutez un document.' },
+      { t: 'Créer un Workspace et ajouter un document', v: 'StarkLLM vous connecte en tant qu’utilisateur de ce PC ; aucun compte n’est à créer. Créez un Workspace (espace de travail), ajoutez un document et posez une question à son sujet.' },
     ],
   },
   prereq: {
@@ -45,7 +45,7 @@ export default {
       ['Logiciels', 'Seulement Ollama, pour les modèles d’IA. StarkLLM peut installer la version officielle pour vous (« Installer Ollama pour moi »), ou vous le téléchargez sur ollama.com. Docker Desktop et WSL2 ne sont plus nécessaires depuis la v2.2.'],
       ['Modèles et disque', 'Téléchargés automatiquement au premier démarrage (environ 5 Go). Gardez au moins 15 Go d’espace disque libre.'],
       ['Matériel', 'Au minimum 8 Go de RAM (modèles 3B), 16 Go recommandés (modèles 7B). Un GPU NVIDIA avec 8 Go ou plus de VRAM est fortement recommandé ; depuis la v2.3, StarkLLM permet aussi à Ollama d’utiliser les cartes graphiques intégrées AMD Radeon et Intel Arc/Iris. Le manuel donne des repères par niveau de matériel.'],
-      ['Formats pris en charge', 'PDF, DOCX (avec tableaux), PowerPoint (PPTX), livres numériques EPUB, TXT, Markdown, CSV, XLSX, JSON, XML, journaux, HTML et images (PNG, JPG avec OCR).'],
+      ['Formats pris en charge', 'Documents : PDF, Word (DOCX, avec tableaux), Excel (XLSX), PowerPoint (PPTX), EPUB, TXT, Markdown, CSV, JSON, XML, HTML, journaux et images (PNG, JPG, WEBP, TIFF, avec OCR), jusqu’à 100 Mo. Enregistrements : MP3, M4A, WAV, OGG, FLAC, le son des vidéos MP4, MOV et MKV et d’autres, jusqu’à 500 Mo.'],
     ],
   },
   smart: {
@@ -76,7 +76,7 @@ export default {
   faq: {
     h2: 'Questions fréquentes',
     items: [
-      ['Mes données quittent-elles mon ordinateur ?', 'StarkLLM est conçu pour garder vos données sur votre machine. Les documents sont stockés dans une base de données ChromaDB locale sur votre PC, et l’inférence de l’IA passe par Ollama sur votre PC. Rien ne quitte votre PC, sauf si vous activez une fonction en ligne facultative (recherche web, fournisseur de modèles dans le cloud, vérification des mises à jour).'],
+      ['Mes données quittent-elles mon ordinateur ?', 'StarkLLM est conçu pour garder vos données sur votre machine. Les documents sont stockés dans une base de données ChromaDB locale sur votre PC, et l’inférence de l’IA passe par Ollama sur votre PC. Rien ne quitte votre PC, sauf si vous activez une fonction en ligne facultative : la recherche web, une tâche web, un fournisseur de modèles dans le cloud, un import depuis le web, les cours du marché ou la vérification des mises à jour. Paramètres › Confidentialité et réseau liste chaque connexion établie par StarkLLM, et « Entièrement hors ligne » les refuse toutes. Les commandes que vous autorisez dans le Terminal et les serveurs d’outils que vous ajoutez s’exécutent comme vos propres programmes et ne figurent pas dans la liste.'],
       ['StarkLLM est-il gratuit ?', 'Oui. Il est gratuit et open source sous licence Apache 2.0, pour un usage personnel, de recherche et commercial. Pas d’abonnement, pas de télémétrie, pas d’offre cachée. Fourni « en l’état », sans garantie.'],
       ['Pourquoi les réponses peuvent-elles être lentes ?', 'La vitesse dépend de votre matériel. Sans GPU dédié, Ollama se rabat sur le processeur, ce qui est beaucoup plus lent. Un GPU NVIDIA dédié avec 8 Go ou plus de VRAM génère le texte bien plus vite.'],
       ['L’installeur est-il signé ? Que faire si SmartScreen ou Smart App Control affiche un avertissement ?', 'Oui. Depuis la v2.1.2, l’installeur, StarkLLM.exe et le programme de désinstallation sont signés par « Open Source Developer Christian Stark », afin que Windows puisse vérifier l’éditeur. Si Windows affiche quand même un avertissement, vérifiez le nom de l’éditeur (clic droit sur l’installeur, Propriétés, Signatures numériques) et comparez la somme de contrôle SHA-256 indiquée sur cette page. N’exécutez le fichier que si les deux correspondent. Ne désactivez pas Smart App Control ni aucun autre réglage de sécurité.'],

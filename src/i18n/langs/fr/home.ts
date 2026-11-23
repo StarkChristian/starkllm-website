@@ -17,7 +17,7 @@ export default {
     meta: `v${V} · ${SIZE_MB} Mo · Apache 2.0 · gratuit`,
   },
   pipeline: [
-    { k: 'Fichiers', v: 'PDF, Word, texte, scans, photos' },
+    { k: 'Fichiers', v: 'PDF, Word, PowerPoint, EPUB, scans, photos, enregistrements' },
     { k: 'Segments', v: 'Découpés par sens, pas par longueur' },
     { k: 'Recherche hybride', v: 'BM25 + embeddings vectoriels' },
     { k: 'Modèle local', v: 'Ollama sur votre GPU' },
@@ -57,11 +57,11 @@ export default {
       { kind: 'Interface d’inférence', name: 'LM Studio', text: 'Excellent pour télécharger des GGUF depuis Hugging Face et régler finement le déchargement des couches sur le GPU. Sa fonction « Chat with Documents » joint des fichiers à une conversation (les fichiers courts sont collés en entier, les longs passent par une recherche) ; d’après sa documentation et des guides tiers, il n’offre ni espaces de travail persistants ni bases de connaissances partagées.', best: 'Essayer des modèles, avec de temps en temps des documents joints à une discussion.' },
       { kind: 'Application RAG de base', name: 'AnythingLLM', text: 'Une application populaire pour discuter avec ses documents dans des espaces de travail. Les options de recherche, comme le reclassement, dépendent de la version et de la base vectorielle choisie : comparez-la sur vos propres documents.', best: 'Les discussions autour de documents, avec une application d’espaces de travail toute prête.' },
       { kind: 'Chat minimaliste', name: 'Jan.ai', text: 'Une application open source légère, de type ChatGPT, qui garde les données sur l’appareil. La recherche dans les documents existe comme réglage facultatif que sa documentation qualifie d’expérimental ; l’accent est mis sur le chat plutôt que sur le travail sur documents.', best: 'Un chat local simple avec une interface claire.' },
-      { kind: 'Ce projet', name: `StarkLLM v${V}`, text: 'Application de bureau native pour Windows, avec une boîte de réception pour les courriers (échéances, montants, dossiers par expéditeur, alertes contre les faux courriers), un RAG hybride avec reclassement par cross-encoder TinyBERT, un serveur MCP local et une API compatible OpenAI facultatifs (désactivés par défaut) et une confidentialité locale par défaut.', best: 'Tous ceux qui veulent garder leurs courriers et leurs documents privés et obtenir des réponses avec des sources vérifiables, des foyers aux développeurs et aux chercheurs.', us: true },
+      { kind: 'Ce projet', name: `StarkLLM v${V}`, text: 'Application de bureau native pour Windows, avec une boîte de réception pour les courriers (échéances, montants, dossiers par expéditeur, alertes contre les faux courriers), des tâches web et de l’aide pour le code qui demandent avant chaque étape importante, un RAG hybride avec reclassement par cross-encoder TinyBERT, un serveur MCP local et une API compatible OpenAI facultatifs (désactivés par défaut) et une confidentialité locale par défaut.', best: 'Tous ceux qui veulent garder leurs courriers et leurs documents privés et obtenir des réponses avec des sources vérifiables, des foyers aux développeurs et aux chercheurs.', us: true },
     ],
   },
   setup: {
-    h2: 'Installation en trois étapes',
+    h2: 'Installation en quatre étapes',
     intro: 'StarkLLM apporte son propre moteur : ni Docker Desktop, ni WSL2. Le premier démarrage télécharge les modèles d’IA (environ 5 Go) et, si vous l’acceptez, Ollama ; les démarrages suivants ne prennent que quelques secondes.',
     steps: [
       { title: 'Installer StarkLLM', text: `Exécutez StarkLLM-v${V}-Setup.exe et cliquez sur le raccourci. L’installeur est signé par « Open Source Developer Christian Stark » et contient le moteur.` },

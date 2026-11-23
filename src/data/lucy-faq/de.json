@@ -393,7 +393,7 @@
     "Gibt es eine Android- oder iPhone-App?"
    ],
    "page": "/de/product",
-   "match": "Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu"
+   "match": "Die StarkLLM-App für Android arbeitet mit Ihrem PC zusammen"
   },
   {
    "id": "scam",
@@ -473,7 +473,7 @@
     "Welche Dokumente kann ich hinzufügen?"
    ],
    "page": "/de/tech-multimodal",
-   "match": "14 Dateitypen"
+   "match": "StarkLLM liest Dokumente: PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -553,11 +553,24 @@
    "match": "StarkLLM ist Open Source unter der Apache-2.0-Lizenz"
   },
   {
+   "id": "otherapps",
+   "q": [
+    "Können andere Programme StarkLLM nutzen?",
+    "Kann ich StarkLLM aus VS Code oder Cursor nutzen?",
+    "Gibt es eine API oder einen MCP-Server?",
+    "Können meine eigenen Skripte StarkLLM nutzen?"
+   ],
+   "page": "/de/manual",
+   "match": "können Sie Programme auf diesem PC StarkLLM nutzen lassen"
+  },
+  {
    "id": "password",
    "q": [
     "Ich habe mein Passwort vergessen",
     "Kann ich mein Passwort zurücksetzen?",
-    "Wie lege ich ein Konto an?"
+    "Wie lege ich ein Konto an?",
+    "Brauche ich ein Konto?",
+    "Muss ich mich registrieren?"
    ],
    "page": "/de/help",
    "match": "StarkLLM hat noch keine Passwort-Zurücksetzung"
@@ -613,6 +626,56 @@
    ],
    "page": "/de/product",
    "match": "Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "Was ist eine Web-Aufgabe?",
+    "Kann StarkLLM für mich Dinge auf Websites erledigen?",
+    "Kann es einen Flug suchen oder ein Formular auf einer Website ausfüllen?"
+   ],
+   "page": "/de/product",
+   "match": "StarkLLM öffnet ein separates Browserfenster, und Sie sehen jeden Schritt"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "Was macht das Terminal?",
+    "Kann StarkLLM beim Programmieren helfen?",
+    "Kann es Befehle ausführen oder Dateien in meinem Projekt ändern?"
+   ],
+   "page": "/de/product",
+   "match": "Es verlässt diesen Ordner nie und liest keine Schlüssel"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "Kann StarkLLM eine Aufnahme abschreiben?",
+    "Kann ich eine Besprechungsaufnahme oder eine MP3 hochladen?",
+    "Kann es Audio- oder Videodateien in Text umwandeln?"
+   ],
+   "page": "/de/product",
+   "match": "Besprechungen, Vorlesungen und Sprachmemos werden auf Ihrem PC mit Zeitangaben aufgeschrieben"
+  },
+  {
+   "id": "images",
+   "q": [
+    "Kann ich Fragen zu einem Bild stellen?",
+    "Kann ich einen Screenshot einfügen und dazu fragen?",
+    "Kann es ein Bild beschreiben?"
+   ],
+   "page": "/de/product",
+   "match": "Fügen Sie einen Screenshot ein oder wählen Sie ein Foto, und ein Bildmodell auf Ihrem PC antwortet"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "Wie kopple ich mein Handy?",
+    "Wie verbinde ich die Android-App mit meinem PC?",
+    "Wie funktioniert das Koppeln per QR-Code?"
+   ],
+   "page": "/de/product",
+   "match": "Einstellungen › Telefon zeigt einen QR-Code"
   },
   {
    "id": "keepsrunning",

@@ -497,10 +497,11 @@
     "¿Puedo usarlo en el móvil?",
     "¿Hay una aplicación para móvil?",
     "¿Hay una aplicación para Android o iPhone?",
-    "¿Hay una versión para móvil o tableta?"
+    "¿Hay una versión para móvil o tableta?",
+    "¿Hay una versión para iPhone?"
    ],
    "page": "/es/product",
-   "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
+   "match": "La app StarkLLM para Android trabaja junto con su PC"
   },
   {
    "id": "scam",
@@ -582,7 +583,7 @@
     "¿Puede leer escritura a mano?"
    ],
    "page": "/es/tech-multimodal",
-   "match": "14 tipos de archivo, incluidos PDF escaneados y fotos"
+   "match": "StarkLLM lee documentos: PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -645,7 +646,8 @@
     "¿Quién lo ha creado?",
     "¿Quién es el autor?",
     "¿Quién mantiene el proyecto?",
-    "¿Quién es el responsable de esta web?"
+    "¿Quién es el responsable de esta web?",
+    "¿De quién es esta página web?"
    ],
    "page": "/es/about",
    "match": "Christian Stark. Maxstr. 14, 52070 Aachen, Alemania"
@@ -659,6 +661,17 @@
    ],
    "page": "/es/about",
    "match": "StarkLLM es de código abierto, con licencia Apache 2.0"
+  },
+  {
+   "id": "otherapps",
+   "q": [
+    "¿Pueden otros programas usar StarkLLM?",
+    "¿Puedo usar StarkLLM desde VS Code o Cursor?",
+    "¿Hay una API o un servidor MCP?",
+    "¿Pueden mis propios scripts usar StarkLLM?"
+   ],
+   "page": "/es/manual",
+   "match": "puedes dejar que programas de este PC usen StarkLLM"
   },
   {
    "id": "password",
@@ -723,6 +736,56 @@
    ],
    "page": "/es/product",
    "match": "Nunca cambia el nombre de tus archivos, ni los mueve, ni los borra"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "¿Qué hace la Tarea web?",
+    "¿Puede StarkLLM hacer cosas en sitios web por mí?",
+    "¿Puede buscar un vuelo o rellenar un formulario en un sitio web?"
+   ],
+   "page": "/es/product",
+   "match": "StarkLLM abre una ventana de navegador aparte y usted ve cada paso"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "¿Qué hace el Terminal?",
+    "¿Puede StarkLLM ayudar con código?",
+    "¿Puede ejecutar comandos o cambiar archivos de mi proyecto?"
+   ],
+   "page": "/es/product",
+   "match": "Nunca sale de esa carpeta y nunca lee claves"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "¿Puede StarkLLM transcribir una grabación?",
+    "¿Puedo subir la grabación de una reunión o un MP3?",
+    "¿Puede pasar a texto archivos de audio o vídeo?"
+   ],
+   "page": "/es/product",
+   "match": "Reuniones, clases y notas de voz se transcriben en su PC con marcas de tiempo"
+  },
+  {
+   "id": "images",
+   "q": [
+    "¿Puedo hacer preguntas sobre una imagen?",
+    "¿Puedo pegar una captura de pantalla y preguntar por ella?",
+    "¿Puede describir una imagen?"
+   ],
+   "page": "/es/product",
+   "match": "Pegue una captura de pantalla o elija una foto, y responde un modelo de visión en su PC"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "¿Cómo vinculo mi teléfono?",
+    "¿Cómo conecto la app de Android con mi PC?",
+    "¿Cómo funciona la vinculación con código QR?"
+   ],
+   "page": "/es/product",
+   "match": "Ajustes › Teléfono muestra un código QR"
   },
   {
    "id": "keepsrunning",

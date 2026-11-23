@@ -16,7 +16,7 @@ export default {
     meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · gratuito`,
   },
   pipeline: [
-    { k: 'Archivos', v: 'PDF, Word, texto, escaneos, fotos' },
+    { k: 'Archivos', v: 'PDF, Word, PowerPoint, EPUB, escaneos, fotos, grabaciones' },
     { k: 'Fragmentos', v: 'Divididos por significado, no por longitud' },
     { k: 'Búsqueda híbrida', v: 'BM25 + embeddings vectoriales' },
     { k: 'Modelo local', v: 'Ollama en tu GPU' },
@@ -56,11 +56,11 @@ export default {
       { kind: 'Interfaz de inferencia', name: 'LM Studio', text: 'Excelente para descargar GGUF de Hugging Face y ajustar la descarga de capas a la GPU. Su «Chat with Documents» adjunta archivos a una conversación (los archivos cortos se pegan enteros y los largos pasan por recuperación); según su documentación y guías de terceros, no tiene workspaces persistentes ni bases de conocimiento compartidas.', best: 'Probar modelos, con algún documento adjunto de vez en cuando a un chat.' },
       { kind: 'App de RAG básica', name: 'AnythingLLM', text: 'Una aplicación popular para chatear con tus documentos en workspaces. Las opciones de recuperación, como el reordenamiento, dependen de la versión y de la base de datos vectorial que elijas, así que compárala con tus propios documentos.', best: 'Chats con documentos, si quieres una aplicación de workspaces ya preparada.' },
       { kind: 'Chat minimalista', name: 'Jan.ai', text: 'Una aplicación ligera y de código abierto, al estilo de ChatGPT, que conserva los datos en el dispositivo. La recuperación de documentos existe como ajuste opcional que su documentación califica de experimental; el foco está en el chat más que en los flujos de trabajo con documentos.', best: 'Un chat local sencillo con una interfaz limpia.' },
-      { kind: 'Este proyecto', name: `StarkLLM v${V}`, text: 'Aplicación nativa de escritorio para Windows con una bandeja de entrada para cartas (plazos, importes, expedientes por remitente, avisos de cartas falsas), RAG híbrido con reordenamiento cross-encoder TinyBERT, un servidor MCP local opcional y una API compatible con OpenAI (desactivados por defecto) y privacidad local por defecto.', best: 'Cualquiera que quiera mantener privadas sus cartas y documentos y obtener respuestas con fuentes que pueda comprobar, desde hogares hasta desarrolladores e investigadores.', us: true },
+      { kind: 'Este proyecto', name: `StarkLLM v${V}`, text: 'Aplicación nativa de escritorio para Windows con una bandeja de entrada para cartas (plazos, importes, expedientes por remitente, avisos de cartas falsas), tareas web y ayuda con código que preguntan antes de cada paso importante, RAG híbrido con reordenamiento cross-encoder TinyBERT, un servidor MCP local opcional y una API compatible con OpenAI (desactivados por defecto) y privacidad local por defecto.', best: 'Cualquiera que quiera mantener privadas sus cartas y documentos y obtener respuestas con fuentes que pueda comprobar, desde hogares hasta desarrolladores e investigadores.', us: true },
     ],
   },
   setup: {
-    h2: 'Instalación en tres pasos',
+    h2: 'Instalación en cuatro pasos',
     intro: 'StarkLLM trae su propio motor: sin Docker Desktop ni WSL2. El primer arranque descarga los modelos de IA (unos 5 GB) y, si lo permites, Ollama; los siguientes arranques tardan segundos.',
     steps: [
       { title: 'Instala StarkLLM', text: `Ejecuta StarkLLM-v${V}-Setup.exe y haz clic en el acceso directo. El instalador está firmado por «Open Source Developer Christian Stark» y contiene el motor.` },

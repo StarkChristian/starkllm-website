@@ -3,7 +3,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Ürün | StarkLLM', description: 'StarkLLM nasıl çalışır: yerel belge işleme, kaynak gösteren hibrit RAG, bilgi tabanı, yerel araçlar ve on üç tema. Hepsi Windows bilgisayarınızda.' },
-  hero: { eyebrow: 'Ürün', h1: 'StarkLLM nasıl çalışır?', lede: 'Veri gizliliği düşünülerek tasarlanmış, baştan sona yerel bir işlem hattı.' },
+  hero: { eyebrow: 'Ürün', h1: 'StarkLLM nasıl çalışır?', lede: 'Gizlilik için kurulmuş yerel bir işlem hattı: belgelerinizi okur ve kendi bilgisayarınızda kaynaklarla yanıt verir. 2.5.0’dan beri sizin için web’de, bir proje klasöründe ve telefonunuzdan görevler de yapar.' },
   lifecycle: {
     h2: 'Bir belgenin yolculuğu',
     lede: 'Bir PDF veya metin dosyası eklediğinizde işleme bilgisayarınızda kalır.',
@@ -17,9 +17,9 @@ export default {
   letters: {
     tag: 'Belge gelen kutusu',
     h2: 'Her mektup okunur ve dosyalanır',
-    lede: 'Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin. StarkLLM bunu bilgisayarınızda okur ve neye ihtiyacınız olduğunu önerir. Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez.',
+    lede: 'Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin. StarkLLM bunu bilgisayarınızda okur ve neye ihtiyacınız olduğunu önerir. Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez. Dosyaları yalnızca Terminal değiştirir; o da yalnızca sizin seçtiğiniz bir proje klasöründe ve her değişikliği önce göstererek; “Dosya değişikliklerini geri al” onları geri getirir.',
     items: [
-      { k: 'Neleri okur', v: 'Mektubun türü (fatura, ödeme hatırlatması, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, mektup tarihi, müşteri, sözleşme veya vergi numarası gibi referans numaraları, tutarlar, banka hesapları ve son tarihler; İngilizce ve Almanca mektuplarda.' },
+      { k: 'Neleri okur', v: 'Mektubun türü (fatura, ödeme hatırlatması, vergi bildirimi, sözleşme, para cezası ve daha fazlası), gönderen, mektup tarihi, müşteri, sözleşme veya vergi numarası gibi referans numaraları, tutarlar, banka hesapları ve son tarihler; İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektuplarda.' },
       { k: 'Her değerin bir kaynağı var', v: 'Her değer bir sayfada kelimesi kelimesine bulunur. Üzerine tıklayın; mektup o sayfada, ilgili satır işaretlenmiş olarak açılır.' },
       { k: 'Gönderen başına dosya', v: 'Aynı göndericinin mektupları bir araya getirilir; en yakın son tarihli dosya en üstte yer alır. Aynı mektubun fotoğraf ve PDF olarak iki kez eklenmesi, değiştirilmiş bir mektup ve olası bir dolandırıcılık da işaretlenir.' },
       { k: 'Karar sizin', v: 'Bir mektubu tamamlandı olarak işaretleyin veya ona kendi başlığınızı verin. Yeni mektupların sayısı “Inbox” (gelen kutusu) yanında gösterilir.' },
@@ -53,7 +53,7 @@ export default {
     items: [
       { k: 'Yerel klasör dizinleme', v: 'Windows bilgisayarınızdaki herhangi bir klasörü bağlayın. StarkLLM desteklenen dosyaları özyinelemeli olarak genel bir vektör koleksiyonuna dizinler.' },
       { k: 'Her yerden erişim', v: 'Hangi workspace’te olursanız olun, Knowledge Base’i her sohbetten sorgulayın.' },
-      { k: 'Aralıklı eşzamanlama', v: 'Knowledge Base yaklaşık dakikada bir bağlanan klasörü denetler ve yeni veya değiştirilmiş dosyaları yeniden dizinler.' },
+      { k: 'Aralıklı eşzamanlama', v: 'Knowledge Base her 30 saniyede bir bağlanan klasörü denetler ve yeni veya değiştirilmiş dosyaları yeniden dizinler.' },
     ],
     compareH3: 'Workspace belgeleri mi, Knowledge Base mi?',
     compareLede: 'StarkLLM, yapay zekâya bağlam vermenin iki yolunu sunar. Aradaki farkı bilmek materyalinizi düzenli tutar.',
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Model seçimi', v: 'Sohbet arayüzünden, Ollama ile indirdiğiniz herhangi bir model (örneğin Qwen 2.5, Llama 3.2, Mistral) arasında geçiş yapın.' },
       { k: 'Çalışma zamanı yapılandırması', v: 'Hız ile akıl yürütme derinliği arasında denge kurmak için bağlam penceresi boyutunu, sıcaklığı (temperature) ve gelişmiş parametreleri ayarlayın.' },
-      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır.' },
+      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır. Yalnızca Ayarlar › Telefon’u açtığınızda, ev ağınızdaki eşleştirilmiş bir telefon uygulamaya ulaşabilir.' },
     ],
   },
   tools: {
@@ -115,7 +115,7 @@ export default {
     'OLED Pitch Black': 'Azami kontrast ve pil ömrü için saf #000000 gerçek siyah.',
     'Liquid Glass': 'Sedef yansımalı, çok renkli parıltıya sahip yarı saydam buzlu cam.',
     'Matrix Emerald': 'Elektrik zümrüt yeşili vurgulu obsidyen matris.',
-    'Sunset Amber': 'Sıcak, parlayan kehribar ve alev vurgulu volkanik arduvaz.',
+    'Sunset Volcano': 'Sıcak, parlayan kehribar ve alev vurgulu volkanik arduvaz.',
     'Arctic Frost': 'Billur gibi camgöbeği ve mavi bir kırağıyla dondurucu lacivert.',
     'Daylight Minimal': 'Yumuşak gölgeler ve net kontrastla sade gün ışığı görünümü.',
     'Doodle Chat': 'Arka planda çizilmiş küçük oyuncak bebekler, kalpler, mektuplar ve yıldızlarla sıcak kâğıt.',

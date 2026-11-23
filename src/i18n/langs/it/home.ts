@@ -16,7 +16,7 @@ export default {
     meta: `v${V} · ${SIZE_MB} MB · Apache 2.0 · gratis`,
   },
   pipeline: [
-    { k: 'File', v: 'PDF, Word, testo, scansioni, foto' },
+    { k: 'File', v: 'PDF, Word, PowerPoint, EPUB, scansioni, foto, registrazioni' },
     { k: 'Chunk', v: 'Divisi per significato, non per lunghezza' },
     { k: 'Ricerca ibrida', v: 'BM25 + embedding vettoriali' },
     { k: 'Modello locale', v: 'Ollama sulla tua GPU' },
@@ -56,11 +56,11 @@ export default {
       { kind: 'GUI per l\'inferenza', name: 'LM Studio', text: 'Ottimo per scaricare GGUF da Hugging Face e regolare lo scaricamento dei livelli sulla GPU. La sua "Chat with Documents" allega file a una conversazione (i file brevi vengono incollati per intero, quelli lunghi passano per il retrieval); secondo la documentazione e le guide di terzi non ha workspace persistenti né knowledge base condivise.', best: 'Provare modelli, con qualche documento allegato di tanto in tanto a una chat.' },
       { kind: 'App RAG di base', name: 'AnythingLLM', text: 'Un\'app molto diffusa per chattare con i tuoi documenti in workspace. Le opzioni di retrieval, come il reranking, dipendono dalla versione e dal database vettoriale che scegli, quindi confrontala sui tuoi documenti.', best: 'Chat sui documenti con un\'app di workspace già pronta.' },
       { kind: 'Chat minimalista', name: 'Jan.ai', text: 'Un\'app open source leggera, in stile ChatGPT, che tiene i dati sul dispositivo. Il retrieval dei documenti c\'è come impostazione facoltativa, che la sua documentazione definisce sperimentale; l\'attenzione è sulla chat più che sui flussi di lavoro con i documenti.', best: 'Una semplice chat locale con un\'interfaccia pulita.' },
-      { kind: 'Questo progetto', name: `StarkLLM v${V}`, text: 'App desktop nativa per Windows con una inbox per le lettere (scadenze, importi, pratiche per mittente, avvisi per le lettere false), RAG ibrido con reranking cross-encoder TinyBERT, un server MCP locale facoltativo e un\'API compatibile con OpenAI (disattivati di default) e privacy locale per impostazione predefinita.', best: 'Chiunque voglia tenere private le proprie lettere e i propri documenti e ottenere risposte con fonti verificabili, dalle famiglie agli sviluppatori e ai ricercatori.', us: true },
+      { kind: 'Questo progetto', name: `StarkLLM v${V}`, text: 'App desktop nativa per Windows con una inbox per le lettere (scadenze, importi, pratiche per mittente, avvisi per le lettere false), attività web e aiuto con il codice che chiedono prima di ogni passaggio importante, RAG ibrido con reranking cross-encoder TinyBERT, un server MCP locale facoltativo e un\'API compatibile con OpenAI (disattivati di default) e privacy locale per impostazione predefinita.', best: 'Chiunque voglia tenere private le proprie lettere e i propri documenti e ottenere risposte con fonti verificabili, dalle famiglie agli sviluppatori e ai ricercatori.', us: true },
     ],
   },
   setup: {
-    h2: 'Si configura in tre passaggi',
+    h2: 'Si configura in quattro passaggi',
     intro: 'StarkLLM porta con sé il proprio motore: niente Docker Desktop, niente WSL2. Il primo avvio scarica i modelli di IA (circa 5 GB) e, se lo permetti, Ollama; gli avvii successivi richiedono pochi secondi.',
     steps: [
       { title: 'Installa StarkLLM', text: `Esegui StarkLLM-v${V}-Setup.exe e fai clic sul collegamento. L'installer è firmato da "Open Source Developer Christian Stark" e contiene il motore.` },

@@ -365,7 +365,7 @@
     "Is there an Android or iPhone app?"
    ],
    "page": "/product",
-   "match": "Add a letter as a PDF, a scan or a photo from your phone"
+   "match": "The StarkLLM app for Android works together with your PC"
   },
   {
    "id": "scam",
@@ -442,7 +442,7 @@
     "What documents can I add?"
    ],
    "page": "/tech-multimodal",
-   "match": "14 file types, including scanned PDFs and photos"
+   "match": "StarkLLM reads documents: PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -518,11 +518,24 @@
    "match": "StarkLLM is open source under the Apache 2.0 license"
   },
   {
+   "id": "otherapps",
+   "q": [
+    "Can other programs use StarkLLM?",
+    "Can I use StarkLLM from VS Code or Cursor?",
+    "Is there an API or an MCP server?",
+    "Can my own scripts use StarkLLM?"
+   ],
+   "page": "/manual",
+   "match": "you can let programs on this PC use StarkLLM"
+  },
+  {
    "id": "password",
    "q": [
     "I forgot my password",
     "Can I reset my password?",
-    "How do I create an account?"
+    "How do I create an account?",
+    "Do I need an account?",
+    "Do I need to register?"
    ],
    "page": "/help",
    "match": "StarkLLM has no password reset yet"
@@ -578,6 +591,56 @@
    ],
    "page": "/product",
    "match": "It never renames, moves or deletes your files"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "What is a web task?",
+    "Can StarkLLM do things on websites for me?",
+    "Can it book a flight or fill in a form on a website?"
+   ],
+   "page": "/product",
+   "match": "StarkLLM opens a separate browser window and you watch every step"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "What does the Terminal do?",
+    "Can StarkLLM help with code?",
+    "Can it run commands or change files in my project?"
+   ],
+   "page": "/product",
+   "match": "It never leaves that folder and never reads keys or .env files"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "Can StarkLLM transcribe a recording?",
+    "Can I upload a meeting recording or an MP3?",
+    "Can it write down audio or video files?"
+   ],
+   "page": "/product",
+   "match": "Meetings, lectures and voice memos are written down on your PC with times"
+  },
+  {
+   "id": "images",
+   "q": [
+    "Can I ask a question about an image?",
+    "Can I paste a screenshot and ask about it?",
+    "Can it describe a picture?"
+   ],
+   "page": "/product",
+   "match": "Paste a screenshot or choose a photo, and a vision model on your PC answers"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "How do I pair my phone?",
+    "How do I connect the Android app to my PC?",
+    "How does the QR code pairing work?"
+   ],
+   "page": "/product",
+   "match": "Settings › Phone shows a QR code"
   },
   {
    "id": "keepsrunning",

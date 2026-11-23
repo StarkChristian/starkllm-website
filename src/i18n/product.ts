@@ -8,7 +8,7 @@ export const themes = [
   { name: 'OLED Pitch Black', bg: '#000000', card: '#101010', g: ['#0284c7', '#38bdf8'], en: 'Pure #000000 true black for maximum contrast and battery life.', de: 'Reines #000000-Schwarz für maximalen Kontrast und Akkulaufzeit.' },
   { name: 'Liquid Glass', bg: '#070b16', card: '#192442', g: ['#a855f7', '#38bdf8'], en: 'Translucent frosted glass with iridescent multi-color radiance.', de: 'Durchscheinendes Milchglas mit schillernden Farbverläufen.' },
   { name: 'Matrix Emerald', bg: '#030c08', card: '#0d281e', g: ['#10b981', '#06b6d4'], en: 'Obsidian matrix with electric emerald green accents.', de: 'Obsidian-Matrix mit elektrisch smaragdgrünen Akzenten.' },
-  { name: 'Sunset Amber', bg: '#0b0602', card: '#26190b', g: ['#f59e0b', '#ea580c'], en: 'Volcanic slate with warm glowing amber and flame accents.', de: 'Vulkanisches Schiefergrau mit warmen Bernstein- und Flammenakzenten.' },
+  { name: 'Sunset Volcano', bg: '#0b0602', card: '#26190b', g: ['#f59e0b', '#ea580c'], en: 'Volcanic slate with warm glowing amber and flame accents.', de: 'Vulkanisches Schiefergrau mit warmen Bernstein- und Flammenakzenten.' },
   { name: 'Arctic Frost', bg: '#060f18', card: '#152c43', g: ['#06b6d4', '#3b82f6'], en: 'Sub-zero navy with crystalline cyan and blue frost.', de: 'Eisiges Marineblau mit kristallinem Cyan und Frostblau.' },
   { name: 'Daylight Minimal', bg: '#f0f2f8', card: '#ffffff', g: ['#ffffff', '#e0e7ff'], en: 'Clean daylight look with soft shadows and crisp contrast.', de: 'Klarer Tageslicht-Look mit weichen Schatten und scharfem Kontrast.' },
   { name: 'Doodle Chat', bg: '#efe6dc', card: '#fffdf9', g: ['#0d9488', '#14b8a6'], en: 'Warm paper with little dolls, hearts, letters and stars drawn in the background.', de: 'Warmes Papier mit kleinen Puppen, Herzen, Briefen und Sternen im Hintergrund.' },
@@ -35,9 +35,9 @@ const productBase = {
     letters: {
       tag: 'Document inbox',
       h2: 'Every letter, read and filed',
-      lede: 'Add a letter as a PDF, a scan or a photo from your phone. StarkLLM reads it on your PC and suggests what you need. It never renames, moves or deletes your files.',
+      lede: 'Add a letter as a PDF, a scan or a photo from your phone. StarkLLM reads it on your PC and suggests what you need. It never renames, moves or deletes your files. Only Terminal changes files, and only in a project folder you choose, after showing each change; "Undo the file changes" puts them back.',
       items: [
-        { k: 'What it reads', v: 'The kind of letter (bill, reminder, tax notice, contract, fine and more), sender, letter date, reference numbers such as customer, contract or tax number, amounts, bank accounts and deadlines, in English and German letters.' },
+        { k: 'What it reads', v: 'The kind of letter (bill, reminder, tax notice, contract, fine and more), sender, letter date, reference numbers such as customer, contract or tax number, amounts, bank accounts and deadlines, in letters in English, German, French, Spanish, Italian and Turkish.' },
         { k: 'Every value has a source', v: 'Each value is found word for word on a page. Click it and the letter opens at that page with the line marked.' },
         { k: 'Cases per sender', v: 'Letters of one sender are put together, the case with the nearest deadline first. The same letter as a photo and as a PDF is marked, and so are a replaced letter and a possible scam.' },
         { k: 'You decide', v: 'Mark a letter done or give it your own title. The number of new letters is shown next to "Inbox".' },
@@ -71,7 +71,7 @@ const productBase = {
       items: [
         { k: 'Local folder indexing', v: 'Map any folder on your Windows machine. StarkLLM recursively indexes supported files into a global vector collection.' },
         { k: 'Universal access', v: 'Query the Knowledge Base from any chat, whatever workspace you are in.' },
-        { k: 'Interval synchronization', v: 'About once a minute, the Knowledge Base checks the mapped folder and re-indexes new or modified files.' },
+        { k: 'Interval synchronization', v: 'Every 30 seconds, the Knowledge Base checks the mapped folder and re-indexes new or modified files.' },
       ],
       compareH3: 'Workspace documents or Knowledge Base?',
       compareLede: 'StarkLLM offers two ways to give the AI context. Knowing the difference keeps your material organized.',
@@ -87,7 +87,7 @@ const productBase = {
       items: [
         { k: 'Model selection', v: 'Switch between any model you downloaded via Ollama (for example Qwen 2.5, Llama 3.2, Mistral) from the chat interface.' },
         { k: 'Runtime configuration', v: 'Adjust context window size, temperature and advanced parameters to balance speed and reasoning depth.' },
-        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine.' },
+        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine. Only when you turn on Settings › Phone can a paired phone on your home network reach the app.' },
       ],
     },
     tools: {
@@ -143,9 +143,9 @@ const productBase = {
     letters: {
       tag: 'Posteingang',
       h2: 'Jeder Brief gelesen und abgelegt',
-      lede: 'Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu. StarkLLM liest ihn auf Ihrem PC und macht Vorschläge. Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht.',
+      lede: 'Fügen Sie einen Brief als PDF, Scan oder Foto vom Handy hinzu. StarkLLM liest ihn auf Ihrem PC und macht Vorschläge. Es benennt Ihre Dateien nie um, verschiebt oder löscht sie nicht. Nur das Terminal ändert Dateien, und nur in einem Projektordner, den Sie wählen, nachdem es jede Änderung gezeigt hat; „Dateiänderungen rückgängig machen“ stellt sie wieder her.',
       items: [
-        { k: 'Was gelesen wird', v: 'Die Art des Briefs (Rechnung, Mahnung, Bescheid, Vertrag, Bußgeld und mehr), Absender, Briefdatum, Nummern wie Kunden-, Vertrags- oder Steuernummer, Beträge, Bankkonten und Fristen, bei englischen und deutschen Briefen.' },
+        { k: 'Was gelesen wird', v: 'Die Art des Briefs (Rechnung, Mahnung, Bescheid, Vertrag, Bußgeld und mehr), Absender, Briefdatum, Nummern wie Kunden-, Vertrags- oder Steuernummer, Beträge, Bankkonten und Fristen, bei Briefen auf Englisch, Deutsch, Französisch, Spanisch, Italienisch und Türkisch.' },
         { k: 'Jeder Wert hat eine Quelle', v: 'Jeder Wert wird wörtlich auf einer Seite gefunden. Ein Klick öffnet den Brief auf dieser Seite, die Zeile ist markiert.' },
         { k: 'Vorgänge je Absender', v: 'Briefe eines Absenders werden zusammengefasst, der Vorgang mit der nächsten Frist zuerst. Derselbe Brief als Foto und als PDF wird markiert, ebenso ein ersetzter Brief und ein möglicher Betrug.' },
         { k: 'Sie entscheiden', v: 'Haken Sie einen Brief ab oder geben Sie ihm einen eigenen Titel. Die Zahl der neuen Briefe steht neben „Posteingang“.' },
@@ -179,7 +179,7 @@ const productBase = {
       items: [
         { k: 'Indexierung lokaler Ordner', v: 'Binden Sie beliebige Ordner Ihres Windows-Rechners ein. StarkLLM indexiert unterstützte Dateien rekursiv in eine globale Vektorsammlung.' },
         { k: 'Zugriff von überall', v: 'Fragen Sie die Wissensdatenbank aus jedem Chat ab, unabhängig vom aktuellen Workspace.' },
-        { k: 'Regelmäßiger Abgleich', v: 'Etwa einmal pro Minute prüft die Wissensdatenbank den eingebundenen Ordner und indexiert neue oder geänderte Dateien neu.' },
+        { k: 'Regelmäßiger Abgleich', v: 'Alle 30 Sekunden prüft die Wissensdatenbank den eingebundenen Ordner und indexiert neue oder geänderte Dateien neu.' },
       ],
       compareH3: 'Workspace-Dokumente oder Wissensdatenbank?',
       compareLede: 'StarkLLM bietet zwei Wege, der KI Kontext zu geben. Wer den Unterschied kennt, hält sein Material geordnet.',
@@ -195,7 +195,7 @@ const productBase = {
       items: [
         { k: 'Modellauswahl', v: 'Wechseln Sie im Chat zwischen allen über Ollama geladenen Modellen (zum Beispiel Qwen 2.5, Llama 3.2, Mistral).' },
         { k: 'Laufzeit-Konfiguration', v: 'Passen Sie Kontextfenster, Temperatur und weitere Parameter an, um Tempo und Denktiefe abzuwägen.' },
-        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner.' },
+        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner. Nur wenn Sie Einstellungen › Telefon einschalten, kann ein gekoppeltes Handy in Ihrem Heimnetz die App erreichen.' },
       ],
     },
     tools: {
@@ -233,7 +233,7 @@ const productBase = {
       h2: 'Kerntechnologien',
       lede: 'Die Architektur und Fähigkeiten hinter StarkLLM.',
     },
-    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: `Installer v${V} herunterladen`, all: 'Alle Downloads', manual: 'Handbuch lesen (EN)' },
+    cta: { h2: 'Bereit, StarkLLM auszuprobieren?', text: 'Laden Sie die kostenlose, quelloffene Windows Research Beta herunter.', installer: `Installer v${V} herunterladen`, all: 'Alle Downloads', manual: 'Handbuch lesen' },
   },
 } as const;
 

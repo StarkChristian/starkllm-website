@@ -1897,7 +1897,7 @@
     "StarkLLM hangi dilleri destekliyor?",
     "Türkçe çalışıyor mu?",
     "İspanyolca veya Fransızca sürümü var mı?",
-  "İspanyolca desteği var mı?",
+    "İspanyolca desteği var mı?",
     "Hangi dillerdeki mektupları okuyabilir?",
     "Türkçe arayüz ne zaman gelecek?",
     "Türkçe mektuplardaki son tarihleri bulur mu?"
@@ -1926,7 +1926,7 @@
     "Telefonla çektiğim fotoğrafı ekleyebilir miyim?"
    ],
    "page": "/tr/product",
-   "match": "Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin"
+   "match": "Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır"
   },
   {
    "id": "scam",
@@ -2023,7 +2023,7 @@
     "Fotoğraftaki yazıyı okur mu?"
    ],
    "page": "/tr/tech-multimodal",
-   "match": "Taranmış PDF’ler ve fotoğraflar dahil 14 dosya türü"
+   "match": "StarkLLM belgeleri okur: PDF, Word (DOCX)"
   },
   {
    "id": "voice",
@@ -2106,6 +2106,17 @@
    "match": "StarkLLM, Apache 2.0 lisansı altında açık kaynaklıdır"
   },
   {
+   "id": "otherapps",
+   "q": [
+    "Başka programlar StarkLLM’i kullanabilir mi?",
+    "StarkLLM’i VS Code veya Cursor’dan kullanabilir miyim?",
+    "Bir API veya MCP sunucusu var mı?",
+    "Kendi betiklerim StarkLLM’i kullanabilir mi?"
+   ],
+   "page": "/tr/manual",
+   "match": "bu bilgisayardaki programların StarkLLM’i kullanmasına izin verebilirsiniz"
+  },
+  {
    "id": "password",
    "q": [
     "Parolamı unuttum",
@@ -2174,6 +2185,56 @@
    ],
    "page": "/tr/product",
    "match": "Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "Web görevi nedir?",
+    "StarkLLM benim için web sitelerinde iş yapabilir mi?",
+    "Bir web sitesinde uçuş arayabilir veya form doldurabilir mi?"
+   ],
+   "page": "/tr/product",
+   "match": "StarkLLM ayrı bir tarayıcı penceresi açar ve her adımı izlersiniz"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "Terminal ne işe yarar?",
+    "StarkLLM kod konusunda yardım edebilir mi?",
+    "Projemde komut çalıştırabilir veya dosya değiştirebilir mi?"
+   ],
+   "page": "/tr/product",
+   "match": "O klasörün dışına asla çıkmaz"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "StarkLLM bir kaydı yazıya dökebilir mi?",
+    "Bir toplantı kaydı veya MP3 yükleyebilir miyim?",
+    "Ses veya video dosyalarını metne çevirebilir mi?"
+   ],
+   "page": "/tr/product",
+   "match": "Toplantılar, dersler ve sesli notlar, Whisper large-v3-turbo ile"
+  },
+  {
+   "id": "images",
+   "q": [
+    "Bir görsel hakkında soru sorabilir miyim?",
+    "Ekran görüntüsü yapıştırıp onu sorabilir miyim?",
+    "Bir resmi tarif edebilir mi?"
+   ],
+   "page": "/tr/product",
+   "match": "Bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bilgisayarınızdaki bir görü modeli yanıt verir"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "Telefonumu nasıl eşleştiririm?",
+    "Android uygulamasını bilgisayarıma nasıl bağlarım?",
+    "QR koduyla eşleştirme nasıl çalışır?"
+   ],
+   "page": "/tr/product",
+   "match": "Ayarlar › Telefon bir QR kodu gösterir"
   },
   {
    "id": "keepsrunning",

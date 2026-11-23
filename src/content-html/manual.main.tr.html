@@ -1,6 +1,7 @@
 <main class="container manual-container">
         <aside class="manual-nav">
             <ul>
+                <li><a href="#new-250">2.5.0’daki yenilikler</a></li>
                 <li><a href="#what-it-is">1. StarkLLM nedir?</a></li>
                 <li><a href="#who-it-is-for">2. Kimler için?</a></li>
                 <li><a href="#what-it-is-not">3. Ne için değildir?</a></li>
@@ -34,11 +35,27 @@
         </aside>
 
         <article class="manual-content">
+            <section id="new-250">
+                <h2>2.5.0’daki yenilikler</h2>
+                <p>StarkLLM 2.5.0 sizin için görevler de yapabilir. Her adımı gösterir ve önemli olan her şeyden önce sorar. Her çevrimiçi özellik siz kullanana kadar kapalıdır ve <strong>Tamamen çevrimdışı</strong> (Ayarlar › Gizlilik ve ağ) hepsini reddeder.</p>
+                <ul>
+                    <li><strong>Web görevleri:</strong> sohbette <em>Web görevi</em> anahtarını açın ve görevi anlatın. StarkLLM kendi tarayıcı penceresini açar ve web sitelerinde çalışır; her adımı görürsünüz. Satın alan, rezervasyon yapan, ödeme yapan, gönderen veya silen her işlemden önce sorar; oturum açma, ödemeler ve “robot musunuz?” denetimleri her zaman size aittir.</li>
+                    <li><strong>Terminal:</strong> <em>Terminal</em> ile bir proje klasörü seçin. StarkLLM oradaki dosyaları okur ve değiştirir, PowerShell komutları çalıştırır. Her değişiklik önce gösterilir, bir şeyi değiştirebilecek her komut ancak onayınızdan sonra çalışır ve <em>Dosya değişikliklerini geri al</em> dosyaları eski hâline getirir.</li>
+                    <li><strong>Bir görüntü hakkında sorular:</strong> bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bu bilgisayardaki bir görüntü modeli yanıt verir. Görüntü küçültülür, gizli verileri (konum, kamera) kaldırılır ve saklanmaz.</li>
+                    <li><strong>Kayıtlar:</strong> toplantılar, dersler ve sesli notlar (MP3, M4A, WAV, videoların sesi ve daha fazlası) bu bilgisayarda Whisper large-v3-turbo ile zaman bilgileriyle yazıya dökülür (ilk kayıtta bir kez indirilir, yaklaşık 1,6 GB). Ardından onlar hakkında her belge gibi soru sorarsınız.</li>
+                    <li><strong>Modelleri karşılaştır:</strong> <em>Modelleri karşılaştır</em> aynı soruyu ikinci bir yerel modele sorar; daha iyi yanıtı siz seçersiniz.</li>
+                    <li><strong>Word ve PDF:</strong> bütün bir sohbeti veya tek bir yanıtı kaynaklarıyla birlikte Word belgesi ya da PDF olarak kaydedin.</li>
+                    <li><strong>Kendi araç sunucularınız (MCP):</strong> Ayarlar › Yerel Araçlar bölümünde bu bilgisayarda çalışan MCP sunucuları eklersiniz. Her araç siz açana kadar kapalıdır ve her çağrı onayınızı bekler.</li>
+                    <li><strong>Android telefonunuz (önizleme):</strong> Ayarlar › Telefon, Android için StarkLLM uygulamasını QR koduyla eşleştirir. Telefon belgeleriniz hakkında soru sorar, mektupların fotoğraflarını gönderir ve son tarihlerinizi gösterir; yalnızca ev ağınız üzerinden.</li>
+                </ul>
+                <p>Web görevleri ve Terminal en iyi 14B veya daha büyük bir yerel modelle çalışır (örneğin <code>qwen3:14b</code>); küçük 7B modeller güvenle durur ama az görevi bitirir.</p>
+            </section>
+
             <section id="what-it-is">
                 <h2>1. StarkLLM nedir?</h2>
                 <p>StarkLLM, Windows için tasarlanmış, özel ve yerel öncelikli bir yapay zekâ asistanıdır. Doğrudan makinenizde çalışan
                     açık ağırlıklı büyük dil modelleriyle (LLM) sohbet etmek için güvenli bir arayüz sunar. Aynı zamanda mektuplar için özel bir gelen kutusu görevi görür: faturaları, vergi bildirimlerini, sözleşmeleri ve diğer mektupları okur, içlerindeki göndericiyi, tutarları ve son tarihleri bulur ve aynı göndericinin mektuplarını bir arada dosyalar.
-                    Retrieval-Augmented Generation (RAG, erişimle zenginleştirilmiş üretim) sayesinde belge yüklemenize (PDF, DOCX, TXT, Markdown (.md), CSV, JSON, HTML ve görüntüler (PNG, JPG; taramalar ve görüntüler için yerel OCR ile)) ve bunları yerel bir vektör veritabanında saklayarak sorularınıza kaynağa dayalı
+                    Retrieval-Augmented Generation (RAG, erişimle zenginleştirilmiş üretim) sayesinde belge yüklemenize (PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, günlükler ve görüntüler (PNG, JPG, WEBP, TIFF; taramalar ve görüntüler için yerel OCR ile), en fazla 100 MB; kayıtlar en fazla 500 MB) ve bunları yerel bir vektör veritabanında saklayarak sorularınıza kaynağa dayalı
                     yanıtlar almanıza olanak tanır.</p>
             </section>
 
@@ -80,7 +97,7 @@
 
             <section id="software">
                 <h2>5. Gerekli yazılım</h2>
-                <p>StarkLLM tamamen yerel çalıştığı için kendisi dışında yalnızca bir programa daha ihtiyaç duyar:</p>
+                <p>StarkLLM yerel çalıştığı için kendisi dışında yalnızca bir programa daha ihtiyaç duyar:</p>
                 <ul>
                     <li><strong>Windows 10 veya 11</strong> (64 bit).</li>
                     <li><strong>Ollama:</strong> LLM modellerini bilgisayarınızda yerel olarak çalıştırmaktan sorumlu
@@ -178,8 +195,7 @@
 
             <section id="documents">
                 <h2>11. Belge yükleme ve en iyi uygulamalar</h2>
-                <p>Bir workspace’in içinde “Upload Document” (belge yükle) düğmesine tıklayın veya desteklenen dosyaları (PDF, DOCX,
-                    TXT, MD, HTML ve görüntüler) belirlenen alana sürükleyip bırakın. StarkLLM belgeyi arka planda
+                <p>Bir workspace’in içinde “Upload Document” (belge yükle) düğmesine tıklayın veya desteklenen dosyaları (100 MB’a kadar PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, günlükler ve görüntüler gibi belgeleri ve 500 MB’a kadar MP3, M4A, WAV veya bir videonun sesi gibi kayıtları) belirlenen alana sürükleyip bırakın. StarkLLM belgeyi arka planda
                     işler: metni çıkarır, anlamsal parçalar üretir ve vektörleri yerel ChromaDB’ye gömer.
                 </p>
 
@@ -206,7 +222,7 @@
                 </div>
                 <div class="alert info">
                     <h4>Tahmin edilmez, kurallarla bulunur</h4>
-                    <p>Göndericiler, tarihler, tutarlar ve banka hesapları, bu bilgisayardaki metin üzerinde sabit kurallarla bulunur; bu yüzden her biri mektupta yer alır. Kurallar İngilizce ve Almanca mektupları tanır; başka dildeki bir mektup bilgi çıkarılmadan dosyalanır. Harekete geçmeden önce mektubu kontrol edin. StarkLLM bir mektubun ne dediğini ve nerede dediğini açıklar; hukuki tavsiye vermez.</p>
+                    <p>Göndericiler, tarihler, tutarlar ve banka hesapları, bu bilgisayardaki metin üzerinde sabit kurallarla bulunur; bu yüzden her biri mektupta yer alır. Kurallar İngilizce, Almanca, Fransızca, İspanyolca, İtalyanca ve Türkçe mektupları tanır; başka dildeki bir mektup bilgi çıkarılmadan dosyalanır. Harekete geçmeden önce mektubu kontrol edin. StarkLLM bir mektubun ne dediğini ve nerede dediğini açıklar; hukuki tavsiye vermez.</p>
                 </div>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-dashboard.webp?v=10" alt="StarkLLM ana sayfası: mektuplarda bulunan yaklaşan son tarihler ve ödeme tarihleri ile en yeni belgeler (arayüz İngilizce)" class="showcase-img zoomable-img">
@@ -242,10 +258,10 @@
             <section id="knowledge-base">
                 <h2>15. Knowledge Base kullanımı ve en iyi uygulamalar</h2>
                 <p>Knowledge Base özelliği, Windows ana bilgisayarınızdaki yerel bir klasörü bağlamanıza olanak tanır. StarkLLM,
-                    desteklenen dosyaları (PDF, DOCX, TXT, MD, HTML ve görüntüler) oradan okur (tek yönlü: dosyalar asla değiştirilmez) ve
+                    desteklenen belgeleri (PDF, Word, Excel, PowerPoint, EPUB, metin, Markdown, HTML, günlükler ve görüntüler; kayıtlar hariç) oradan okur (tek yönlü: dosyalar asla değiştirilmez) ve
                     genel bir vektör koleksiyonuna dizinler. Workspace’e özgü belgelerden farklı olarak Knowledge
                     Base, her sohbet oturumundan sorgulayabileceğiniz genel bir başvuru kütüphanesi işlevi görür. Sistem,
-                    bağlanan klasörü yaklaşık dakikada bir yoklar ve yeni veya değiştirilmiş dosyaları otomatik olarak yeniden dizinler.
+                    bağlanan klasörü 30 saniyede bir yoklar ve yeni veya değiştirilmiş dosyaları otomatik olarak yeniden dizinler.
                     Ana bilgisayarınızdaki kaynak dosyalar asla silinmez veya değiştirilmez.</p>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-kb.webp?v=10" alt="StarkLLM Knowledge Base: bu bilgisayarda okunan ve aranabilir tutulan klasörler, dizinlenmiş dosyalarla (arayüz İngilizce)" class="showcase-img zoomable-img">
@@ -316,7 +332,7 @@
             <section id="voice">
                 <h2>18. Ses özellikleri</h2>
                 <p>StarkLLM, mesajları dikte etmek için yerel Speech-to-Text (STT, konuşmadan metne) ve yanıtları sesli okumak için Text-to-Speech (TTS, metinden konuşmaya)
-                    özelliğini destekler. Tarayıcı mikrofon izinlerinin etkin olduğundan emin olun. Ses işleme
+                    özelliğini destekler. Masaüstü uygulamasında Windows’un mikrofon erişimine izin vermesi gerekir (Windows Ayarları › Gizlilik ve güvenlik › Mikrofon). Ses işleme
                     yerel olarak yapılır; ses harici bulutlara gönderilmez.</p>
             </section>
 
@@ -339,8 +355,11 @@
 
                 <div class="alert info">
                     <h4>Güvenlik mimarisi</h4>
-                    <p>Araç çağrıları, tek kullanımlık sunucu tarafı doğrulama belirteçleriyle <code>POST /api/v1/mcp/execute</code> üzerinden yürütülür. Kayıtsız doğrudan çağrılar HTTP 403 Forbidden ile reddedilir. Getirilen belge parçalarının içindeki çitli <code>```tool_call```</code> kalıpları, istem enjeksiyonundan önce otomatik olarak ayıklanır; bu da kötü amaçlı RAG yürütme vektörlerini ortadan kaldırır.</p>
+                    <p>Araç çağrıları, tek kullanımlık sunucu tarafı doğrulama belirteçleriyle <code>POST /api/v1/mcp/execute</code> üzerinden yürütülür. Kayıtsız doğrudan çağrılar HTTP 403 Forbidden ile reddedilir. Getirilen belge parçalarının içindeki çitli <code>```tool_call```</code> kalıpları, isteme ulaşmadan önce otomatik olarak ayıklanır; bu da belgeler üzerinden istem enjeksiyonunu (prompt injection) zorlaştırır (hiçbir teknik bu riski tamamen ortadan kaldırmaz).</p>
                 </div>
+
+                <h3>Eklediğiniz araç sunucuları</h3>
+                <p>2.5.0’dan beri <strong>Ayarlar › Yerel Araçlar</strong> bölümünde kendi MCP araç sunucularınızı da ekleyebilirsiniz. Bunlar bu bilgisayarda, seçtiğiniz programlar olarak sizin haklarınızla çalışır. Her araç siz açana kadar kapalıdır ve her çağrı sohbette onayınızı bekler. Böyle bir programın nereye bağlandığını StarkLLM denetlemez ve bu bağlantılar Ayarlar › Gizlilik ve ağ listesinde yer almaz.</p>
             </section>
 
             <section id="other-apps">
@@ -364,8 +383,8 @@
                     <li><strong>OLED Pitch Black:</strong> OLED ekranlar için optimize edilmiş mutlak #000000 gerçek siyah arka planlar.</li>
                     <li><strong>Liquid Glass:</strong> Buzlu bulanıklık katmanları ve parlayan kenarlıklarla yarı saydam glassmorphism.</li>
                     <li><strong>Matrix Emerald:</strong> Terminalden ilham alan siberpunk zümrüt yeşili.</li>
-                    <li><strong>Sunset Amber:</strong> Sıcak volkanik kehribar ve turuncu gradyan vurgular.</li>
-                    <li><strong>Nordic Frost:</strong> Serin camgöbeği ve kutup mavisi minimal tonlar.</li>
+                    <li><strong>Sunset Volcano:</strong> Sıcak volkanik kehribar ve turuncu gradyan vurgular.</li>
+                    <li><strong>Arctic Frost:</strong> Serin camgöbeği ve kutup mavisi minimal tonlar.</li>
                     <li><strong>Midnight Indigo:</strong> Derin kozmik mor ve menekşe (varsayılan).</li>
                     <li><strong>Daylight Minimal:</strong> Yüksek gün ışığı kontrastına sahip temiz, net açık mod.</li>
                 </ul>
@@ -405,8 +424,9 @@
 
             <section id="export">
                 <h2>24. Çok biçimli konuşma dışa aktarma</h2>
-                <p>İçgörülerinizi asla kaybetmeyin. StarkLLM, sohbet başlığından tek tıklamayla dört standart biçimde dışa aktarma sunar:</p>
+                <p>İçgörülerinizi asla kaybetmeyin. StarkLLM, sohbet başlığından tek tıklamayla dışa aktarma sunar:</p>
                 <ul>
+                    <li><strong>Word (.docx) ve PDF (2.5.0’dan beri):</strong> bütün bir sohbet veya tek bir yanıt, dayandığı kaynaklarla birlikte.</li>
                     <li><strong>Markdown (.md):</strong> Tam başlıklar, kod çitleri, kaynak gösterimleri, zaman damgaları, sözcük sayısı rozetleri ve üretim hızı istatistikleriyle biçimlendirilir.</li>
                     <li><strong>Temiz JSON (.json):</strong> Veri işlem hatları için ileti üst verilerini, istem parametrelerini, kaynak gösterimlerini ve model ayrıntılarını içeren, makine tarafından okunabilir yapılandırılmış dışa aktarma.</li>
                     <li><strong>Kendi içinde tam HTML (.html):</strong> Gömülü karanlık mod estetiğine sahip bağımsız, biçimlendirilmiş belge; paylaşmak veya tarayıcıdan “PDF olarak yazdır” için mükemmel.</li>
@@ -436,7 +456,7 @@
 
             <section id="troubleshooting">
                 <h2>27. Sorun giderme</h2>
-<p>Bir kurulum kontrol listesi ile 25 sorun ve çözümü içeren tam rehber <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır. En yaygın olanlar:</p>
+<p>Bir kurulum kontrol listesi ile 27 sorun ve çözümü içeren tam rehber <a href="/tr/help">Yardım ve sorun giderme</a> sayfasındadır. En yaygın olanlar:</p>
 <ul>
                     <li><strong>“Cannot connect to Ollama”:</strong> Ollama’nın çalıştığından emin olun (Windows sistem tepsisindeki simgesi).
                         StarkLLM ona <code>127.0.0.1:11434</code> adresinden ulaşır. Gerekli modeli
@@ -470,9 +490,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Verilerim
                         bilgisayarımdan çıkıyor mu?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Hayır. StarkLLM, verileri kesinlikle
-                        makinenizde tutacak şekilde tasarlanmıştır. Belgeler yerel bir ChromaDB veritabanında saklanır ve çıkarım,
-                        bilgisayarınızdaki Ollama ile çalışır.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Yalnızca web araması, bir web görevi veya bir bulut modeli gibi isteğe bağlı bir çevrimiçi özelliği açarsanız. Belgeleriniz, dizin ve yerel modeller bilgisayarınızda kalır; Ayarlar › Gizlilik ve ağ her bağlantıyı listeler.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">
@@ -494,7 +512,7 @@
 
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">4. StarkLLM’i kapattıktan sonra çalışmaya devam ediyor mu?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur. Ollama, kendi tepsi simgesi olan ayrı bir programdır ve siz oradan çıkana kadar çalışmaya devam eder; hiçbir yere hiçbir şey gönderilmez. Docker Desktop motorunu (ileri düzey, tepsi menüsü) seçtiyseniz motor kapsayıcıları ve Docker Desktop, bir sonraki başlatma daha hızlı olsun diye siz çıktıktan sonra da çalışmaya devam eder; bunları durdurmak için Docker Desktop’tan tepsi simgesiyle çıkın ya da Docker Desktop içinde iki StarkLLM kapsayıcısını durdurun.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur. Ollama, kendi tepsi simgesi olan ayrı bir programdır ve siz oradan çıkana kadar çalışmaya devam eder. Belgeleriniz ve sorularınız bilgisayarınızda kalır; Ollama yalnızca model indirmeleri ve kendi güncelleme denetimi için çevrimiçi olur. Docker Desktop motorunu (ileri düzey, tepsi menüsü) seçtiyseniz motor kapsayıcıları ve Docker Desktop, bir sonraki başlatma daha hızlı olsun diye siz çıktıktan sonra da çalışmaya devam eder; bunları durdurmak için Docker Desktop’tan tepsi simgesiyle çıkın ya da Docker Desktop içinde iki StarkLLM kapsayıcısını durdurun.</p>
                 </div>
             </section>
         </article>

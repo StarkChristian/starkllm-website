@@ -18,12 +18,12 @@ const en = {
     lede: 'On websites, in a project folder and from your phone. You see every step, and it asks before anything that matters. Your documents and the AI model stay on your PC.',
     items: [
       { icon: 'web', title: 'Web tasks in its own browser window', text: 'StarkLLM opens its own browser window and works on websites, for example to find the cheapest flight on a day. You see every step. It asks before anything that buys, books, pays, sends or deletes. Sign-ins, payments and "are you a robot" checks always stay with you. A task can be repeated daily or weekly.' },
-      { icon: 'terminal', title: 'Help with code in a project folder', text: 'Choose a folder with "Terminal": StarkLLM reads and changes files there and runs PowerShell commands. Every change is shown first, every command runs only after your yes, and "Undo the file changes" puts the files back.' },
+      { icon: 'terminal', title: 'Help with code in a project folder', text: 'Choose a folder with "Terminal": StarkLLM reads and changes files there and runs PowerShell commands. Every change is shown first, every command that can change something runs only after your yes, and "Undo the file changes" puts the files back.' },
       { icon: 'image', title: 'Questions about an image', text: 'Paste a screenshot or choose a photo, and a vision model on your PC answers. The image is made smaller, its hidden data (place, camera) is removed, and it is not stored.' },
       { icon: 'audio', title: 'Recordings become documents', text: 'Meetings, lectures and voice memos are written down on your PC with times, by Whisper large-v3-turbo (downloaded once, about 1.6 GB). Then you ask about them like about any document.' },
       { icon: 'compare', title: 'Two models side by side', text: '"Compare models" asks a second local model the same question. You keep the better answer.' },
       { icon: 'export', title: 'Word and PDF, with sources', text: 'Save a whole chat or a single answer as a Word document or a PDF, with the sources it is based on.' },
-      { icon: 'plug', title: 'Your own tool servers (MCP)', text: 'Add MCP servers that run on your PC in Settings › Tools. Every tool is off until you turn it on, and every call waits for your yes.' },
+      { icon: 'plug', title: 'Your own tool servers (MCP)', text: 'Add MCP servers that run on your PC in Settings › Local Tools. Every tool is off until you turn it on, and every call waits for your yes.' },
       { icon: 'phone', title: 'Your Android phone', badge: 'Preview', text: 'Pair the StarkLLM app for Android by QR code, then ask about your documents, send photos of letters and see your deadlines. Home network only, encrypted with a certificate the phone checks. Per phone you choose: ask only, also send documents, or also manage this PC.' },
       { icon: 'search', title: 'Web search with fallback engines', text: 'When you turn on web search, your question goes to DuckDuckGo. Only if it does not answer, StarkLLM tries Mullvad Leta, then Mojeek: one engine at a time, never several at once.' },
     ] as Item[],
@@ -48,7 +48,7 @@ const en = {
         h3: 'Terminal: help with code',
         items: [
           { k: 'One project folder', v: 'Choose a folder with "Terminal". StarkLLM reads and changes files there and runs PowerShell commands. It never leaves that folder and never reads keys or .env files.' },
-          { k: 'Your yes for every step', v: 'Every file change is shown before it is made, and every command runs only after your yes. Commands that change Windows or its security are refused.' },
+          { k: 'Your yes for every step', v: 'Every change is shown first, and every command that can change something runs only after your yes. Commands that change Windows or its security are refused.' },
           { k: 'Undo', v: '"Undo the file changes" puts the files back as they were.' },
         ] as KV[],
       },
@@ -62,7 +62,7 @@ const en = {
     phone: {
       tag: 'Android · preview',
       h2: 'Your phone joins in',
-      lede: 'The StarkLLM app for Android works together with your PC. The documents and the AI model stay on the PC; the phone asks, sends photos of letters and shows your deadlines.',
+      lede: 'The StarkLLM app for Android works together with your PC. The documents and the AI model stay on the PC; the phone asks, sends photos of letters and shows your deadlines. There is no iPhone app; the Android app is a preview and works on your home network only.',
       items: [
         { k: 'Paired by QR code', v: 'Settings › Phone shows a QR code. A phone reaches your PC only after it was paired, and it stays paired until you remove it, or until its account signs out or changes its password.' },
         { k: 'Home network only, encrypted', v: 'The phone connects over your home network only. The connection is encrypted, and the phone accepts only your PC\'s own certificate, fixed at pairing, so no other device in the Wi-Fi can pose as your PC.' },
@@ -71,7 +71,7 @@ const en = {
       ] as KV[],
       levelsH: 'Per phone, you choose what it may do',
       levels: [
-        { k: 'Ask only', v: 'Reads workspaces, chats, the inbox and deadlines, and asks questions. Changes nothing.' },
+        { k: 'Ask only', v: 'Reads workspaces, chats, the inbox and deadlines, and asks questions. It does not send documents or change deadlines.' },
         { k: 'Ask and send documents', v: 'Also sends photos and documents, deletes chats and marks deadlines as done.' },
         { k: 'Ask, send and manage this PC', v: 'Also starts a backup and can switch StarkLLM fully offline. The phone asks for your fingerprint first.' },
       ] as KV[],
@@ -91,12 +91,12 @@ const de: typeof en = {
     lede: 'Auf Websites, in einem Projektordner und vom Handy aus. Sie sehen jeden Schritt, und vor allem Wichtigen fragt StarkLLM nach. Ihre Dokumente und das KI-Modell bleiben auf Ihrem PC.',
     items: [
       { icon: 'web', title: 'Web-Aufgaben im eigenen Browserfenster', text: 'StarkLLM öffnet ein eigenes Browserfenster und arbeitet auf Websites, zum Beispiel um den günstigsten Flug an einem Tag zu finden. Sie sehen jeden Schritt. Bevor etwas gekauft, gebucht, bezahlt, gesendet oder gelöscht wird, fragt StarkLLM nach. Anmeldungen, Zahlungen und „Sind Sie ein Roboter?“-Prüfungen bleiben immer bei Ihnen. Eine Aufgabe lässt sich täglich oder wöchentlich wiederholen.' },
-      { icon: 'terminal', title: 'Hilfe beim Code in einem Projektordner', text: 'Wählen Sie mit „Terminal“ einen Ordner: StarkLLM liest und ändert dort Dateien und führt PowerShell-Befehle aus. Jede Änderung wird zuerst gezeigt, jeder Befehl läuft erst nach Ihrem Ja, und „Dateiänderungen rückgängig machen“ stellt die Dateien wieder her.' },
+      { icon: 'terminal', title: 'Hilfe beim Code in einem Projektordner', text: 'Wählen Sie mit „Terminal“ einen Ordner: StarkLLM liest und ändert dort Dateien und führt PowerShell-Befehle aus. Jede Änderung wird zuerst gezeigt, jeder Befehl, der etwas verändern kann, läuft erst nach Ihrem Ja, und „Dateiänderungen rückgängig machen“ stellt die Dateien wieder her.' },
       { icon: 'image', title: 'Fragen zu einem Bild', text: 'Fügen Sie einen Screenshot ein oder wählen Sie ein Foto, und ein Bildmodell auf Ihrem PC antwortet. Das Bild wird verkleinert, seine versteckten Daten (Ort, Kamera) werden entfernt, und es wird nicht gespeichert.' },
       { icon: 'audio', title: 'Aufnahmen werden zu Dokumenten', text: 'Besprechungen, Vorlesungen und Sprachmemos werden auf Ihrem PC mit Zeitangaben aufgeschrieben, von Whisper large-v3-turbo (einmalig geladen, etwa 1,6 GB). Danach fragen Sie dazu wie zu jedem anderen Dokument.' },
       { icon: 'compare', title: 'Zwei Modelle nebeneinander', text: '„Modelle vergleichen“ stellt einem zweiten lokalen Modell dieselbe Frage. Sie behalten die bessere Antwort.' },
       { icon: 'export', title: 'Word und PDF, mit Quellen', text: 'Speichern Sie einen ganzen Chat oder eine einzelne Antwort als Word-Dokument oder PDF, mit den Quellen, auf denen sie beruht.' },
-      { icon: 'plug', title: 'Eigene Tool-Server (MCP)', text: 'Fügen Sie in den Einstellungen MCP-Server hinzu, die auf Ihrem PC laufen. Jedes Werkzeug ist aus, bis Sie es einschalten, und jeder Aufruf wartet auf Ihr Ja.' },
+      { icon: 'plug', title: 'Eigene Tool-Server (MCP)', text: 'Fügen Sie unter Einstellungen › Lokale Werkzeuge MCP-Server hinzu, die auf Ihrem PC laufen. Jedes Werkzeug ist aus, bis Sie es einschalten, und jeder Aufruf wartet auf Ihr Ja.' },
       { icon: 'phone', title: 'Ihr Android-Handy', badge: 'Vorschau', text: 'Koppeln Sie die StarkLLM-App für Android per QR-Code, dann fragen Sie zu Ihren Dokumenten, senden Fotos von Briefen und sehen Ihre Fristen. Nur im Heimnetz, verschlüsselt mit einem Zertifikat, das das Handy prüft. Je Handy wählen Sie: nur fragen, auch Dokumente senden oder auch diesen PC verwalten.' },
       { icon: 'search', title: 'Websuche mit Ersatz-Suchmaschinen', text: 'Wenn Sie die Websuche einschalten, geht Ihre Frage an DuckDuckGo. Nur wenn dort keine Antwort kommt, versucht StarkLLM Mullvad Leta, dann Mojeek: immer nur eine Suchmaschine, nie mehrere zugleich.' },
     ],
@@ -121,7 +121,7 @@ const de: typeof en = {
         h3: 'Terminal: Hilfe beim Code',
         items: [
           { k: 'Ein Projektordner', v: 'Wählen Sie mit „Terminal“ einen Ordner. StarkLLM liest und ändert dort Dateien und führt PowerShell-Befehle aus. Es verlässt diesen Ordner nie und liest keine Schlüssel und keine .env-Dateien.' },
-          { k: 'Ihr Ja für jeden Schritt', v: 'Jede Dateiänderung wird gezeigt, bevor sie geschieht, und jeder Befehl läuft erst nach Ihrem Ja. Befehle, die Windows oder seine Sicherheit verändern, werden abgelehnt.' },
+          { k: 'Ihr Ja für jeden Schritt', v: 'Jede Änderung wird zuerst gezeigt, und jeder Befehl, der etwas verändern kann, läuft erst nach Ihrem Ja. Befehle, die Windows oder seine Sicherheit verändern, werden abgelehnt.' },
           { k: 'Rückgängig', v: '„Dateiänderungen rückgängig machen“ stellt die Dateien so wieder her, wie sie waren.' },
         ],
       },
@@ -135,7 +135,7 @@ const de: typeof en = {
     phone: {
       tag: 'Android · Vorschau',
       h2: 'Ihr Handy macht mit',
-      lede: 'Die StarkLLM-App für Android arbeitet mit Ihrem PC zusammen. Die Dokumente und das KI-Modell bleiben auf dem PC; das Handy fragt, sendet Fotos von Briefen und zeigt Ihre Fristen.',
+      lede: 'Die StarkLLM-App für Android arbeitet mit Ihrem PC zusammen. Die Dokumente und das KI-Modell bleiben auf dem PC; das Handy fragt, sendet Fotos von Briefen und zeigt Ihre Fristen. Eine iPhone-App gibt es nicht; die Android-App ist eine Vorschau und funktioniert nur in Ihrem Heimnetz.',
       items: [
         { k: 'Gekoppelt per QR-Code', v: 'Einstellungen › Telefon zeigt einen QR-Code. Ein Handy erreicht Ihren PC erst, wenn es gekoppelt wurde, und bleibt gekoppelt, bis Sie es entfernen oder bis sich sein Konto abmeldet oder sein Passwort ändert.' },
         { k: 'Nur im Heimnetz, verschlüsselt', v: 'Das Handy verbindet sich nur über Ihr Heimnetz. Die Verbindung ist verschlüsselt, und das Handy akzeptiert nur das eigene Zertifikat Ihres PCs, das beim Koppeln festgelegt wird. So kann sich kein anderes Gerät im WLAN als Ihr PC ausgeben.' },
@@ -144,7 +144,7 @@ const de: typeof en = {
       ],
       levelsH: 'Je Handy wählen Sie, was es darf',
       levels: [
-        { k: 'Nur fragen', v: 'Liest Arbeitsbereiche, Chats, Posteingang und Fristen und stellt Fragen. Ändert nichts.' },
+        { k: 'Nur fragen', v: 'Liest Arbeitsbereiche, Chats, Posteingang und Fristen und stellt Fragen. Sendet keine Dokumente und ändert keine Fristen.' },
         { k: 'Fragen und Dokumente senden', v: 'Sendet außerdem Fotos und Dokumente, löscht Chats und markiert Fristen als erledigt.' },
         { k: 'Fragen, senden und diesen PC verwalten', v: 'Startet außerdem eine Sicherung und kann StarkLLM vollständig offline schalten. Das Handy fragt vorher nach Ihrem Fingerabdruck.' },
       ],
@@ -178,12 +178,12 @@ const es: Rel = {
     lede: 'En sitios web, en una carpeta de proyecto y desde su teléfono. Usted ve cada paso, y antes de todo lo importante StarkLLM le pregunta. Sus documentos y el modelo de IA se quedan en su PC.',
     items: [
       { icon: 'web', title: 'Tareas web en su propia ventana de navegador', text: 'StarkLLM abre su propia ventana de navegador y trabaja en sitios web, por ejemplo para encontrar el vuelo más barato de un día. Usted ve cada paso. Pregunta antes de cualquier cosa que compre, reserve, pague, envíe o borre. Los inicios de sesión, los pagos y las comprobaciones «¿es usted un robot?» siempre quedan en sus manos. Una tarea puede repetirse a diario o cada semana.' },
-      { icon: 'terminal', title: 'Ayuda con código en una carpeta de proyecto', text: 'Elija una carpeta con «Terminal»: StarkLLM lee y cambia archivos allí y ejecuta comandos de PowerShell. Cada cambio se muestra primero, cada comando se ejecuta solo después de su sí, y «Deshacer los cambios de archivos» devuelve los archivos a su estado anterior.' },
+      { icon: 'terminal', title: 'Ayuda con código en una carpeta de proyecto', text: 'Elija una carpeta con «Terminal»: StarkLLM lee y cambia archivos allí y ejecuta comandos de PowerShell. Cada cambio se muestra primero, cada comando que puede cambiar algo se ejecuta solo después de su sí, y «Deshacer los cambios de archivos» devuelve los archivos a su estado anterior.' },
       { icon: 'image', title: 'Preguntas sobre una imagen', text: 'Pegue una captura de pantalla o elija una foto, y responde un modelo de visión en su PC. La imagen se reduce, se eliminan sus datos ocultos (lugar, cámara) y no se guarda.' },
       { icon: 'audio', title: 'Las grabaciones se convierten en documentos', text: 'Reuniones, clases y notas de voz se transcriben en su PC con marcas de tiempo, mediante Whisper large-v3-turbo (se descarga una vez, unos 1,6 GB). Después puede preguntar sobre ellas como sobre cualquier documento.' },
       { icon: 'compare', title: 'Dos modelos lado a lado', text: '«Comparar modelos» hace la misma pregunta a un segundo modelo local. Usted se queda con la mejor respuesta.' },
       { icon: 'export', title: 'Word y PDF, con fuentes', text: 'Guarde un chat completo o una sola respuesta como documento de Word o PDF, con las fuentes en las que se basa.' },
-      { icon: 'plug', title: 'Sus propios servidores de herramientas (MCP)', text: 'En Ajustes puede añadir servidores MCP que se ejecutan en su PC. Cada herramienta está desactivada hasta que usted la activa, y cada llamada espera su sí.' },
+      { icon: 'plug', title: 'Sus propios servidores de herramientas (MCP)', text: 'En Ajustes › Herramientas locales puede añadir servidores MCP que se ejecutan en su PC. Cada herramienta está desactivada hasta que usted la activa, y cada llamada espera su sí.' },
       { icon: 'phone', title: 'Su teléfono Android', badge: 'Vista previa', text: 'Vincule la app StarkLLM para Android con un código QR y luego pregunte sobre sus documentos, envíe fotos de cartas y vea sus plazos. Solo en la red de su casa, cifrado con un certificado que el teléfono comprueba. Para cada teléfono usted elige: solo preguntar, también enviar documentos o también gestionar este PC.' },
       { icon: 'search', title: 'Búsqueda web con buscadores de reserva', text: 'Cuando usted activa la búsqueda web, su pregunta va a DuckDuckGo. Solo si no responde, StarkLLM prueba Mullvad Leta y después Mojeek: un buscador cada vez, nunca varios a la vez.' },
     ],
@@ -208,7 +208,7 @@ const es: Rel = {
         h3: 'Terminal: ayuda con código',
         items: [
           { k: 'Una carpeta de proyecto', v: 'Elija una carpeta con «Terminal». StarkLLM lee y cambia archivos allí y ejecuta comandos de PowerShell. Nunca sale de esa carpeta y nunca lee claves ni archivos .env.' },
-          { k: 'Su sí para cada paso', v: 'Cada cambio de archivo se muestra antes de hacerse, y cada comando se ejecuta solo después de su sí. Los comandos que cambian Windows o su seguridad se rechazan.' },
+          { k: 'Su sí para cada paso', v: 'Cada cambio se muestra primero, y cada comando que puede cambiar algo se ejecuta solo después de su sí. Los comandos que cambian Windows o su seguridad se rechazan.' },
           { k: 'Deshacer', v: '«Deshacer los cambios de archivos» deja los archivos como estaban.' },
         ],
       },
@@ -218,7 +218,7 @@ const es: Rel = {
     phone: {
       tag: 'Android · vista previa',
       h2: 'Su teléfono se suma',
-      lede: 'La app StarkLLM para Android trabaja junto con su PC. Los documentos y el modelo de IA se quedan en el PC; el teléfono pregunta, envía fotos de cartas y muestra sus plazos.',
+      lede: 'La app StarkLLM para Android trabaja junto con su PC. Los documentos y el modelo de IA se quedan en el PC; el teléfono pregunta, envía fotos de cartas y muestra sus plazos. No hay app para iPhone; la app para Android es una vista previa y funciona solo en la red de su casa.',
       items: [
         { k: 'Vinculado con un código QR', v: 'Ajustes › Teléfono muestra un código QR. Un teléfono solo llega a su PC después de vincularlo, y sigue vinculado hasta que usted lo quite, o hasta que su cuenta cierre la sesión o cambie su contraseña.' },
         { k: 'Solo en la red de su casa, cifrado', v: 'El teléfono se conecta solo a través de la red de su casa. La conexión está cifrada, y el teléfono solo acepta el certificado propio de su PC, fijado al vincularlo, así que ningún otro dispositivo de la wifi puede hacerse pasar por su PC.' },
@@ -227,7 +227,7 @@ const es: Rel = {
       ],
       levelsH: 'Para cada teléfono, usted elige qué puede hacer',
       levels: [
-        { k: 'Solo preguntar', v: 'Lee espacios de trabajo, chats, la bandeja de entrada y los plazos, y hace preguntas. No cambia nada.' },
+        { k: 'Solo preguntar', v: 'Lee espacios de trabajo, chats, la bandeja de entrada y los plazos, y hace preguntas. No envía documentos ni cambia plazos.' },
         { k: 'Preguntar y enviar documentos', v: 'Además envía fotos y documentos, elimina chats y marca plazos como hechos.' },
         { k: 'Preguntar, enviar y gestionar este PC', v: 'Además inicia una copia de seguridad y puede poner StarkLLM totalmente sin conexión. El teléfono pide antes su huella.' },
       ],
@@ -240,7 +240,7 @@ const es: Rel = {
     items: [
       { title: 'Los documentos y el modelo se quedan en su PC', text: 'Sus documentos, chats y el índice de búsqueda se guardan en su propio disco, y los modelos de lenguaje se ejecutan en su propia CPU o GPU mediante Ollama. La app del teléfono habla con su PC, no con un servidor nuestro.' },
       { title: 'Sin telemetría', text: 'La app de Windows no tiene telemetría ni ningún SDK de analítica. Este sitio web tampoco usa analítica ni cookies; consulte la política de privacidad.' },
-      { title: 'Cada conexión, en una lista', text: 'La búsqueda web, las tareas web, los proveedores de modelos en la nube, la importación de YouTube y GitHub, los precios de mercado y la comprobación de actualizaciones solo funcionan cuando usted los activa o los inicia. Ajustes › Privacidad y red enumera cada conexión, y el chat muestra cuándo una pregunta sale de su PC.' },
+      { title: 'Cada conexión, en una lista', text: 'La búsqueda web, las tareas web, los proveedores de modelos en la nube, las importaciones desde la web (páginas web, YouTube, GitHub), los precios de mercado y la comprobación de actualizaciones solo funcionan cuando usted los activa o los inicia. Ajustes › Privacidad y red enumera cada conexión que hace StarkLLM; los comandos que usted permite en el Terminal y los servidores de herramientas que añade se ejecutan como sus propios programas y no aparecen en la lista. El chat muestra cuándo una pregunta sale de su PC.' },
       { title: 'Interruptor «Totalmente sin conexión»', text: 'Un interruptor deja StarkLLM totalmente sin conexión: se rechaza toda función en línea y se cierra el enlace con su teléfono. Sus documentos, la bandeja de entrada y los modelos locales siguen funcionando.' },
     ],
   },
@@ -261,12 +261,12 @@ const fr: Rel = {
     lede: 'Sur des sites web, dans un dossier de projet et depuis votre téléphone. Vous voyez chaque étape, et StarkLLM vous demande avant tout ce qui compte. Vos documents et le modèle d’IA restent sur votre PC.',
     items: [
       { icon: 'web', title: 'Des tâches web dans sa propre fenêtre de navigateur', text: 'StarkLLM ouvre sa propre fenêtre de navigateur et travaille sur des sites web, par exemple pour trouver le vol le moins cher un jour donné. Vous voyez chaque étape. Il demande avant tout ce qui achète, réserve, paie, envoie ou supprime. Les connexions, les paiements et les vérifications « Êtes-vous un robot ? » restent toujours entre vos mains. Une tâche peut être répétée chaque jour ou chaque semaine.' },
-      { icon: 'terminal', title: 'De l’aide pour le code dans un dossier de projet', text: 'Choisissez un dossier avec « Terminal » : StarkLLM y lit et modifie des fichiers et exécute des commandes PowerShell. Chaque modification est d’abord affichée, chaque commande ne s’exécute qu’après votre oui, et « Annuler les modifications des fichiers » remet les fichiers en place.' },
+      { icon: 'terminal', title: 'De l’aide pour le code dans un dossier de projet', text: 'Choisissez un dossier avec « Terminal » : StarkLLM y lit et modifie des fichiers et exécute des commandes PowerShell. Chaque modification est d’abord affichée, chaque commande qui peut modifier quelque chose ne s’exécute qu’après votre oui, et « Annuler les modifications des fichiers » remet les fichiers en place.' },
       { icon: 'image', title: 'Des questions sur une image', text: 'Collez une capture d’écran ou choisissez une photo, et un modèle de vision sur votre PC répond. L’image est réduite, ses données cachées (lieu, appareil photo) sont supprimées, et elle n’est pas enregistrée.' },
       { icon: 'audio', title: 'Les enregistrements deviennent des documents', text: 'Réunions, cours et mémos vocaux sont transcrits sur votre PC avec les horodatages, par Whisper large-v3-turbo (téléchargé une fois, environ 1,6 Go). Ensuite, vous les interrogez comme n’importe quel document.' },
       { icon: 'compare', title: 'Deux modèles côte à côte', text: '« Comparer des modèles » pose la même question à un second modèle local. Vous gardez la meilleure réponse.' },
       { icon: 'export', title: 'Word et PDF, avec les sources', text: 'Enregistrez une discussion entière ou une seule réponse en document Word ou en PDF, avec les sources sur lesquelles elle s’appuie.' },
-      { icon: 'plug', title: 'Vos propres serveurs d’outils (MCP)', text: 'Dans les Paramètres, ajoutez des serveurs MCP qui tournent sur votre PC. Chaque outil reste désactivé jusqu’à ce que vous l’activiez, et chaque appel attend votre oui.' },
+      { icon: 'plug', title: 'Vos propres serveurs d’outils (MCP)', text: 'Dans Paramètres › Outils locaux, ajoutez des serveurs MCP qui tournent sur votre PC. Chaque outil reste désactivé jusqu’à ce que vous l’activiez, et chaque appel attend votre oui.' },
       { icon: 'phone', title: 'Votre téléphone Android', badge: 'Aperçu', text: 'Associez l’application StarkLLM pour Android par code QR, puis posez des questions sur vos documents, envoyez des photos de courriers et consultez vos échéances. Uniquement sur votre réseau domestique, chiffré avec un certificat que le téléphone vérifie. Pour chaque téléphone, vous choisissez : seulement poser des questions, aussi envoyer des documents, ou aussi gérer ce PC.' },
       { icon: 'search', title: 'Recherche web avec moteurs de secours', text: 'Quand vous activez la recherche web, votre question part vers DuckDuckGo. Seulement s’il ne répond pas, StarkLLM essaie Mullvad Leta, puis Mojeek : un seul moteur à la fois, jamais plusieurs en même temps.' },
     ],
@@ -291,7 +291,7 @@ const fr: Rel = {
         h3: 'Terminal : aide pour le code',
         items: [
           { k: 'Un dossier de projet', v: 'Choisissez un dossier avec « Terminal ». StarkLLM y lit et modifie des fichiers et exécute des commandes PowerShell. Il ne quitte jamais ce dossier et ne lit jamais de clés ni de fichiers .env.' },
-          { k: 'Votre oui à chaque étape', v: 'Chaque modification de fichier est affichée avant d’être faite, et chaque commande ne s’exécute qu’après votre oui. Les commandes qui modifient Windows ou sa sécurité sont refusées.' },
+          { k: 'Votre oui à chaque étape', v: 'Chaque modification est d’abord affichée, et chaque commande qui peut modifier quelque chose ne s’exécute qu’après votre oui. Les commandes qui modifient Windows ou sa sécurité sont refusées.' },
           { k: 'Annuler', v: '« Annuler les modifications des fichiers » remet les fichiers tels qu’ils étaient.' },
         ],
       },
@@ -301,7 +301,7 @@ const fr: Rel = {
     phone: {
       tag: 'Android · aperçu',
       h2: 'Votre téléphone s’y met aussi',
-      lede: 'L’application StarkLLM pour Android travaille avec votre PC. Les documents et le modèle d’IA restent sur le PC ; le téléphone pose les questions, envoie des photos de courriers et affiche vos échéances.',
+      lede: 'L’application StarkLLM pour Android travaille avec votre PC. Les documents et le modèle d’IA restent sur le PC ; le téléphone pose les questions, envoie des photos de courriers et affiche vos échéances. Il n’existe pas d’application pour iPhone ; l’application Android est un aperçu et ne fonctionne que sur votre réseau domestique.',
       items: [
         { k: 'Associé par code QR', v: 'Paramètres › Téléphone affiche un code QR. Un téléphone n’accède à votre PC qu’après avoir été associé, et il le reste jusqu’à ce que vous le retiriez, ou jusqu’à ce que son compte se déconnecte ou change de mot de passe.' },
         { k: 'Réseau domestique uniquement, chiffré', v: 'Le téléphone se connecte uniquement par votre réseau domestique. La connexion est chiffrée, et le téléphone n’accepte que le certificat propre à votre PC, fixé lors de l’association : aucun autre appareil du Wi-Fi ne peut se faire passer pour votre PC.' },
@@ -310,7 +310,7 @@ const fr: Rel = {
       ],
       levelsH: 'Pour chaque téléphone, vous choisissez ce qu’il peut faire',
       levels: [
-        { k: 'Seulement poser des questions', v: 'Lit les espaces de travail, les chats, la boîte de réception et les échéances, et pose des questions. Ne modifie rien.' },
+        { k: 'Seulement poser des questions', v: 'Lit les espaces de travail, les chats, la boîte de réception et les échéances, et pose des questions. N’envoie pas de documents et ne modifie pas les échéances.' },
         { k: 'Poser des questions et envoyer des documents', v: 'Envoie aussi des photos et des documents, supprime des chats et marque des échéances comme faites.' },
         { k: 'Poser des questions, envoyer et gérer ce PC', v: 'Lance aussi une sauvegarde et peut passer StarkLLM entièrement hors ligne. Le téléphone demande d’abord votre empreinte.' },
       ],
@@ -323,7 +323,7 @@ const fr: Rel = {
     items: [
       { title: 'Les documents et le modèle restent sur votre PC', text: 'Vos documents, vos discussions et l’index de recherche sont stockés sur votre propre disque, et les modèles de langage tournent sur votre propre CPU ou GPU grâce à Ollama. L’application du téléphone parle à votre PC, pas à un serveur à nous.' },
       { title: 'Aucune télémétrie', text: 'L’application Windows n’a ni télémétrie ni SDK d’analyse. Ce site web n’utilise pas non plus d’outil d’analyse et ne dépose aucun cookie ; voir la politique de confidentialité.' },
-      { title: 'Chaque connexion est listée', text: 'La recherche web, les tâches web, les fournisseurs de modèles cloud, l’import depuis YouTube et GitHub, les cours du marché et la vérification des mises à jour ne fonctionnent que si vous les activez ou les lancez. Paramètres › Confidentialité et réseau liste chaque connexion, et la discussion indique quand une question quitte votre PC.' },
+      { title: 'Chaque connexion est listée', text: 'La recherche web, les tâches web, les fournisseurs de modèles cloud, les imports depuis le web (pages web, YouTube, GitHub), les cours du marché et la vérification des mises à jour ne fonctionnent que si vous les activez ou les lancez. Paramètres › Confidentialité et réseau liste chaque connexion établie par StarkLLM ; les commandes que vous autorisez dans le Terminal et les serveurs d’outils que vous ajoutez s’exécutent comme vos propres programmes et ne figurent pas dans la liste. La discussion indique quand une question quitte votre PC.' },
       { title: 'Le bouton « Entièrement hors ligne »', text: 'Un seul bouton met StarkLLM entièrement hors ligne : toute fonction en ligne est refusée et la liaison avec votre téléphone est fermée. Vos documents, la boîte de réception et les modèles locaux continuent de fonctionner.' },
     ],
   },
@@ -344,12 +344,12 @@ const it: Rel = {
     lede: 'Sui siti web, in una cartella di progetto e dal Suo telefono. Lei vede ogni passaggio, e prima di tutto ciò che conta StarkLLM chiede. I Suoi documenti e il modello di IA restano sul Suo PC.',
     items: [
       { icon: 'web', title: 'Attività web in una propria finestra del browser', text: "StarkLLM apre una propria finestra del browser e lavora sui siti web, per esempio per trovare il volo più economico in un certo giorno. Lei vede ogni passaggio. Chiede prima di qualsiasi cosa che acquisti, prenoti, paghi, invii o elimini. Accessi, pagamenti e verifiche «Non sono un robot» restano sempre a Lei. Un'attività può essere ripetuta ogni giorno o ogni settimana." },
-      { icon: 'terminal', title: 'Aiuto con il codice in una cartella di progetto', text: 'Scelga una cartella con «Terminale»: StarkLLM legge e modifica i file lì dentro ed esegue comandi PowerShell. Ogni modifica viene mostrata prima, ogni comando parte solo dopo il Suo sì, e «Annulla le modifiche ai file» rimette a posto i file.' },
+      { icon: 'terminal', title: 'Aiuto con il codice in una cartella di progetto', text: 'Scelga una cartella con «Terminale»: StarkLLM legge e modifica i file lì dentro ed esegue comandi PowerShell. Ogni modifica viene mostrata prima, ogni comando che può cambiare qualcosa parte solo dopo il Suo sì, e «Annulla le modifiche ai file» rimette a posto i file.' },
       { icon: 'image', title: "Domande su un'immagine", text: "Incolli uno screenshot o scelga una foto, e risponde un modello visivo sul Suo PC. L'immagine viene rimpicciolita, i suoi dati nascosti (luogo, fotocamera) vengono rimossi e non viene salvata." },
       { icon: 'audio', title: 'Le registrazioni diventano documenti', text: 'Riunioni, lezioni e memo vocali vengono trascritti sul Suo PC con i tempi, da Whisper large-v3-turbo (scaricato una volta, circa 1,6 GB). Poi Lei può fare domande su di essi come su qualsiasi documento.' },
       { icon: 'compare', title: 'Due modelli fianco a fianco', text: '«Confronta modelli» pone la stessa domanda a un secondo modello locale. Lei tiene la risposta migliore.' },
       { icon: 'export', title: 'Word e PDF, con le fonti', text: "Salvi un'intera chat o una singola risposta come documento Word o PDF, con le fonti su cui si basa." },
-      { icon: 'plug', title: 'I Suoi server di strumenti (MCP)', text: 'Nelle Impostazioni aggiunga server MCP che girano sul Suo PC. Ogni strumento resta spento finché Lei non lo attiva, e ogni chiamata attende il Suo sì.' },
+      { icon: 'plug', title: 'I Suoi server di strumenti (MCP)', text: 'In Impostazioni › Strumenti locali aggiunga server MCP che girano sul Suo PC. Ogni strumento resta spento finché Lei non lo attiva, e ogni chiamata attende il Suo sì.' },
       { icon: 'phone', title: 'Il Suo telefono Android', badge: 'Anteprima', text: "Abbini l'app StarkLLM per Android con un codice QR, poi faccia domande sui Suoi documenti, invii foto di lettere e veda le Sue scadenze. Solo nella rete di casa, cifrato con un certificato che il telefono verifica. Per ogni telefono Lei sceglie: solo fare domande, anche inviare documenti o anche gestire questo PC." },
       { icon: 'search', title: 'Ricerca web con motori di riserva', text: 'Quando Lei attiva la ricerca web, la domanda va a DuckDuckGo. Solo se non risponde, StarkLLM prova Mullvad Leta, poi Mojeek: un motore alla volta, mai più di uno insieme.' },
     ],
@@ -374,7 +374,7 @@ const it: Rel = {
         h3: 'Terminale: aiuto con il codice',
         items: [
           { k: 'Una cartella di progetto', v: 'Scelga una cartella con «Terminale». StarkLLM legge e modifica i file lì dentro ed esegue comandi PowerShell. Non esce mai da quella cartella e non legge mai chiavi né file .env.' },
-          { k: 'Il Suo sì per ogni passaggio', v: 'Ogni modifica a un file viene mostrata prima di essere fatta, e ogni comando parte solo dopo il Suo sì. I comandi che modificano Windows o la sua sicurezza vengono rifiutati.' },
+          { k: 'Il Suo sì per ogni passaggio', v: 'Ogni modifica viene mostrata prima, e ogni comando che può cambiare qualcosa parte solo dopo il Suo sì. I comandi che modificano Windows o la sua sicurezza vengono rifiutati.' },
           { k: 'Annulla', v: "«Annulla le modifiche ai file» riporta i file com'erano." },
         ],
       },
@@ -384,7 +384,7 @@ const it: Rel = {
     phone: {
       tag: 'Android · anteprima',
       h2: 'Anche il Suo telefono partecipa',
-      lede: "L'app StarkLLM per Android lavora insieme al Suo PC. I documenti e il modello di IA restano sul PC; il telefono fa domande, invia foto di lettere e mostra le Sue scadenze.",
+      lede: "L'app StarkLLM per Android lavora insieme al Suo PC. I documenti e il modello di IA restano sul PC; il telefono fa domande, invia foto di lettere e mostra le Sue scadenze. Non esiste un’app per iPhone; l’app Android è un’anteprima e funziona solo nella Sua rete di casa.",
       items: [
         { k: 'Abbinato con un codice QR', v: "Impostazioni › Telefono mostra un codice QR. Un telefono raggiunge il Suo PC solo dopo l'abbinamento, e resta abbinato finché Lei non lo rimuove, o finché il suo account non si disconnette o cambia la password." },
         { k: 'Solo nella rete di casa, cifrato', v: "Il telefono si collega solo attraverso la Sua rete di casa. La connessione è cifrata, e il telefono accetta solo il certificato del Suo PC, fissato all'abbinamento: nessun altro dispositivo nella rete Wi-Fi può spacciarsi per il Suo PC." },
@@ -393,7 +393,7 @@ const it: Rel = {
       ],
       levelsH: 'Per ogni telefono, Lei sceglie che cosa può fare',
       levels: [
-        { k: 'Solo fare domande', v: 'Legge aree di lavoro, chat, posta in arrivo e scadenze e fa domande. Non cambia nulla.' },
+        { k: 'Solo fare domande', v: 'Legge aree di lavoro, chat, posta in arrivo e scadenze e fa domande. Non invia documenti e non cambia le scadenze.' },
         { k: 'Fare domande e inviare documenti', v: 'Invia anche foto e documenti, elimina chat e segna le scadenze come fatte.' },
         { k: 'Fare domande, inviare e gestire questo PC', v: 'Avvia anche un backup e può mettere StarkLLM completamente offline. Il telefono chiede prima la Sua impronta.' },
       ],
@@ -406,7 +406,7 @@ const it: Rel = {
     items: [
       { title: 'Documenti e modello restano sul Suo PC', text: "I Suoi documenti, le chat e l'indice di ricerca sono salvati sul Suo disco, e i modelli linguistici girano sulla Sua CPU o GPU tramite Ollama. L'app del telefono parla con il Suo PC, non con un nostro server." },
       { title: 'Nessuna telemetria', text: "L'app per Windows non ha telemetria né SDK di analisi. Anche questo sito non usa strumenti di analisi e non imposta cookie; veda l'informativa sulla privacy." },
-      { title: 'Ogni connessione in elenco', text: 'Ricerca web, attività web, fornitori di modelli cloud, importazione da YouTube e GitHub, prezzi di mercato e controllo degli aggiornamenti funzionano solo quando Lei li attiva o li avvia. Impostazioni › Privacy e rete elenca ogni connessione, e la chat mostra quando una domanda lascia il Suo PC.' },
+      { title: 'Ogni connessione in elenco', text: 'Ricerca web, attività web, fornitori di modelli cloud, importazioni dal web (pagine web, YouTube, GitHub), prezzi di mercato e controllo degli aggiornamenti funzionano solo quando Lei li attiva o li avvia. Impostazioni › Privacy e rete elenca ogni connessione di StarkLLM; i comandi che Lei consente nel Terminale e i server di strumenti che aggiunge girano come Suoi programmi e non sono nell’elenco. La chat mostra quando una domanda lascia il Suo PC.' },
       { title: "L'interruttore «Completamente offline»", text: 'Un solo interruttore porta StarkLLM completamente offline: ogni funzione online viene rifiutata e il collegamento con il Suo telefono viene chiuso. I Suoi documenti, la posta in arrivo e i modelli locali continuano a funzionare.' },
     ],
   },
@@ -427,12 +427,12 @@ const tr: Rel = {
     lede: 'Web sitelerinde, bir proje klasöründe ve telefonunuzdan. Her adımı görürsünüz; önemli olan her şeyden önce StarkLLM size sorar. Belgeleriniz ve yapay zekâ modeli bilgisayarınızda kalır.',
     items: [
       { icon: 'web', title: 'Kendi tarayıcı penceresinde web görevleri', text: 'StarkLLM kendi tarayıcı penceresini açar ve web sitelerinde çalışır; örneğin belirli bir gündeki en ucuz uçuşu bulmak için. Her adımı görürsünüz. Satın alan, rezervasyon yapan, ödeme yapan, gönderen veya silen her işlemden önce size sorar. Oturum açma, ödemeler ve “Robot musunuz?” doğrulamaları her zaman sizde kalır. Bir görev her gün veya her hafta tekrarlanabilir.' },
-      { icon: 'terminal', title: 'Bir proje klasöründe kod yardımı', text: '“Terminal” ile bir klasör seçin: StarkLLM oradaki dosyaları okur ve değiştirir, PowerShell komutları çalıştırır. Her değişiklik önce gösterilir, her komut ancak onayınızdan sonra çalışır ve “Dosya değişikliklerini geri al” dosyaları eski hâline getirir.' },
+      { icon: 'terminal', title: 'Bir proje klasöründe kod yardımı', text: '“Terminal” ile bir klasör seçin: StarkLLM oradaki dosyaları okur ve değiştirir, PowerShell komutları çalıştırır. Her değişiklik önce gösterilir, bir şeyi değiştirebilecek her komut ancak onayınızdan sonra çalışır ve “Dosya değişikliklerini geri al” dosyaları eski hâline getirir.' },
       { icon: 'image', title: 'Bir görsel hakkında sorular', text: 'Bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bilgisayarınızdaki bir görü modeli yanıt verir. Görsel küçültülür, gizli verileri (konum, kamera) silinir ve kaydedilmez.' },
       { icon: 'audio', title: 'Kayıtlar belgeye dönüşür', text: 'Toplantılar, dersler ve sesli notlar, Whisper large-v3-turbo ile (bir kez indirilir, yaklaşık 1,6 GB) bilgisayarınızda zaman bilgileriyle yazıya dökülür. Ardından onlar hakkında da her belgede olduğu gibi soru sorarsınız.' },
       { icon: 'compare', title: 'Yan yana iki model', text: '“Modelleri karşılaştır” aynı soruyu ikinci bir yerel modele sorar. Daha iyi yanıtı siz seçersiniz.' },
       { icon: 'export', title: 'Kaynaklarıyla Word ve PDF', text: 'Bir sohbetin tamamını veya tek bir yanıtı, dayandığı kaynaklarla birlikte Word belgesi ya da PDF olarak kaydedin.' },
-      { icon: 'plug', title: 'Kendi araç sunucularınız (MCP)', text: 'Ayarlar’da bilgisayarınızda çalışan MCP sunucuları ekleyin. Her araç siz açana kadar kapalıdır ve her çağrı onayınızı bekler.' },
+      { icon: 'plug', title: 'Kendi araç sunucularınız (MCP)', text: 'Ayarlar › Yerel Araçlar bölümünde bilgisayarınızda çalışan MCP sunucuları ekleyin. Her araç siz açana kadar kapalıdır ve her çağrı onayınızı bekler.' },
       { icon: 'phone', title: 'Android telefonunuz', badge: 'Önizleme', text: 'Android için StarkLLM uygulamasını QR koduyla eşleştirin; ardından belgeleriniz hakkında soru sorun, mektupların fotoğraflarını gönderin ve son tarihlerinizi görün. Yalnızca ev ağınızda, telefonun doğruladığı bir sertifikayla şifreli. Her telefon için siz seçersiniz: yalnızca soru sormak, belge de göndermek veya bu bilgisayarı da yönetmek.' },
       { icon: 'search', title: 'Yedek arama motorlu web araması', text: 'Web aramasını açtığınızda sorunuz DuckDuckGo’ya gider. Yalnızca oradan yanıt gelmezse StarkLLM önce Mullvad Leta’yı, sonra Mojeek’i dener: her seferinde tek bir arama motoru, asla aynı anda birkaçı değil.' },
     ],
@@ -457,7 +457,7 @@ const tr: Rel = {
         h3: 'Terminal: kod yardımı',
         items: [
           { k: 'Tek bir proje klasörü', v: '“Terminal” ile bir klasör seçin. StarkLLM oradaki dosyaları okur ve değiştirir, PowerShell komutları çalıştırır. O klasörün dışına asla çıkmaz, anahtarları ve .env dosyalarını asla okumaz.' },
-          { k: 'Her adım için onayınız', v: 'Her dosya değişikliği yapılmadan önce gösterilir ve her komut ancak onayınızdan sonra çalışır. Windows’u veya güvenliğini değiştiren komutlar reddedilir.' },
+          { k: 'Her adım için onayınız', v: 'Her değişiklik önce gösterilir ve bir şeyi değiştirebilecek her komut ancak onayınızdan sonra çalışır. Windows’u veya güvenliğini değiştiren komutlar reddedilir.' },
           { k: 'Geri al', v: '“Dosya değişikliklerini geri al” dosyaları eski hâline getirir.' },
         ],
       },
@@ -467,7 +467,7 @@ const tr: Rel = {
     phone: {
       tag: 'Android · önizleme',
       h2: 'Telefonunuz da işin içinde',
-      lede: 'Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır. Belgeler ve yapay zekâ modeli bilgisayarda kalır; telefon soru sorar, mektup fotoğrafları gönderir ve son tarihlerinizi gösterir.',
+      lede: 'Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır. Belgeler ve yapay zekâ modeli bilgisayarda kalır; telefon soru sorar, mektup fotoğrafları gönderir ve son tarihlerinizi gösterir. iPhone uygulaması yok; Android uygulaması bir önizlemedir ve yalnızca ev ağınızda çalışır.',
       items: [
         { k: 'QR koduyla eşleştirme', v: 'Ayarlar › Telefon bir QR kodu gösterir. Bir telefon bilgisayarınıza ancak eşleştirildikten sonra ulaşır ve siz onu kaldırana kadar ya da hesabı oturumu kapatana veya parolasını değiştirene kadar eşleşmiş kalır.' },
         { k: 'Yalnızca ev ağında, şifreli', v: 'Telefon yalnızca ev ağınız üzerinden bağlanır. Bağlantı şifrelidir ve telefon yalnızca bilgisayarınızın eşleştirme sırasında sabitlenen kendi sertifikasını kabul eder; böylece Wi-Fi’daki başka hiçbir cihaz kendini bilgisayarınız gibi gösteremez.' },
@@ -476,7 +476,7 @@ const tr: Rel = {
       ],
       levelsH: 'Her telefonun neler yapabileceğini siz seçersiniz',
       levels: [
-        { k: 'Yalnızca soru sormak', v: 'Çalışma alanlarını, sohbetleri, gelen kutusunu ve son tarihleri okur, soru sorar. Hiçbir şeyi değiştirmez.' },
+        { k: 'Yalnızca soru sormak', v: 'Çalışma alanlarını, sohbetleri, gelen kutusunu ve son tarihleri okur, soru sorar. Belge göndermez ve son tarihleri değiştirmez.' },
         { k: 'Soru sormak ve belge göndermek', v: 'Ayrıca fotoğraf ve belge gönderir, sohbetleri siler ve son tarihleri tamamlandı olarak işaretler.' },
         { k: 'Soru sormak, göndermek ve bu bilgisayarı yönetmek', v: 'Ayrıca bir yedekleme başlatır ve StarkLLM’i tamamen çevrimdışı yapabilir. Telefon önce parmak izinizi ister.' },
       ],
@@ -489,7 +489,7 @@ const tr: Rel = {
     items: [
       { title: 'Belgeler ve model bilgisayarınızda kalır', text: 'Belgeleriniz, sohbetleriniz ve arama dizini kendi diskinizde saklanır; dil modelleri Ollama aracılığıyla kendi CPU veya GPU’nuzda çalışır. Telefon uygulaması bizim bir sunucumuzla değil, bilgisayarınızla konuşur.' },
       { title: 'Telemetri yok', text: 'Windows uygulaması telemetri göndermez ve analiz SDK’sı içermez. Bu web sitesi de analiz aracı kullanmaz ve çerez yerleştirmez; gizlilik politikasına bakın.' },
-      { title: 'Her bağlantı listelenir', text: 'Web araması, web görevleri, bulut model sağlayıcıları, YouTube ve GitHub içe aktarma, piyasa fiyatları ve güncelleme denetimi yalnızca siz açtığınızda veya başlattığınızda çalışır. Ayarlar › Gizlilik ve ağ her bağlantıyı listeler; sohbet de bir soru bilgisayarınızdan çıktığında bunu gösterir.' },
+      { title: 'Her bağlantı listelenir', text: 'Web araması, web görevleri, bulut model sağlayıcıları, web’den içe aktarma (web sayfaları, YouTube, GitHub), piyasa fiyatları ve güncelleme denetimi yalnızca siz açtığınızda veya başlattığınızda çalışır. Ayarlar › Gizlilik ve ağ, StarkLLM’in kurduğu her bağlantıyı listeler; Terminal’de izin verdiğiniz komutlar ve eklediğiniz araç sunucuları sizin kendi programlarınız olarak çalışır ve listede yer almaz. Sohbet de bir soru bilgisayarınızdan çıktığında bunu gösterir.' },
       { title: '“Tamamen çevrimdışı” anahtarı', text: 'Tek bir anahtar StarkLLM’i tamamen çevrimdışı yapar: her çevrimiçi özellik reddedilir ve telefonunuzla bağlantı kapatılır. Belgeleriniz, gelen kutusu ve yerel modeller çalışmaya devam eder.' },
     ],
   },

@@ -59,14 +59,18 @@
             </ul>
             <p>The following functions connect to the internet only if you switch them on or trigger them yourself:</p>
             <ul>
-                <li><strong>Web search</strong> (switch in the chat): your question is sent to DuckDuckGo.</li>
+                <li><strong>Web search</strong> (switch in the chat): your question is sent to DuckDuckGo. Only if DuckDuckGo does not answer is it sent to Mullvad Leta, and then to Mojeek, to one provider at a time.</li>
+                <li><strong>Web tasks</strong> (the "Web task" switch in the chat): StarkLLM opens the task's websites in its own window. The operators of those websites receive your IP address and what the task enters there.</li>
                 <li><strong>Cloud model providers</strong> (settings, e.g. DeepSeek, OpenRouter, Groq): your question and the document passages found are sent to the provider you have chosen.</li>
-                <li><strong>YouTube and GitHub import</strong>: the app downloads the video transcript or repository you specify.</li>
-                <li><strong>Market prices</strong> (widget, off by default): retrieved from Yahoo Finance.</li>
+                <li><strong>Ollama cloud models</strong> (models whose name ends in ":cloud"): your question and the document passages found are sent through Ollama to Ollama's servers.</li>
+                <li><strong>Import from the web</strong> (web page, YouTube, GitHub): the app downloads the web page, video transcript or repository you specify.</li>
+                <li><strong>OCR language packs</strong> (Settings › Reading photos and scans): the language file you choose is downloaded from GitHub.</li>
+                <li><strong>Market prices</strong> (widget, off by default): retrieved from Yahoo Finance and CoinGecko.</li>
                 <li><strong>Update check</strong> (asked on first start, can be switched off at any time): queries GitHub for the latest version, without usage data.</li>
             </ul>
-            <p>The privacy policies of the respective provider apply to these connections.</p>
-            <p><strong>One-time downloads without your data:</strong> The AI models you choose (through Ollama), the re-ranking model (TinyBERT, on the first search) and the speech recognition model (Whisper, on the first voice input) are downloaded from the internet once. No documents, questions or usage data are transmitted in the process. Without internet, search works without re-ranking.</p>
+            <p>The privacy policies of the respective provider apply to these connections. Settings › Privacy &amp; network lists every connection the app makes, and the "Fully offline" switch refuses all of them. Commands you allow in Terminal and tool servers (MCP) you add yourself run as your own programs; their connections are not in that list.</p>
+            <p><strong>Phone link on your home network:</strong> Only if you turn on the link in Settings › Phone and pair a phone can that paired phone reach the app over your home network. No data is sent to the internet in the process.</p>
+            <p><strong>One-time downloads without your data:</strong> The AI models you choose (through Ollama), the image model (through Ollama, at the first question about an image), the speech recognition model Whisper base (at the first voice input) and Whisper large-v3-turbo (about 1.6 GB, at the first recording) are downloaded from the internet once. No documents, questions or usage data are transmitted in the process. The search's re-ranking model is part of the app and also works without internet.</p>
 
             <h2>5. Your rights</h2>
             <p>Within the framework of the applicable statutory provisions, you have the right at any time to:</p>
