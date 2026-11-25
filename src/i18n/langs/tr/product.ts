@@ -3,7 +3,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Ürün | StarkLLM', description: 'StarkLLM nasıl çalışır: yerel belge işleme, kaynak gösteren hibrit RAG, bilgi tabanı, yerel araçlar ve on üç tema. Hepsi Windows bilgisayarınızda.' },
-  hero: { eyebrow: 'Ürün', h1: 'StarkLLM nasıl çalışır?', lede: 'Gizlilik için kurulmuş yerel bir işlem hattı: belgelerinizi okur ve kendi bilgisayarınızda kaynaklarla yanıt verir. 2.5.0’dan beri sizin için web’de, bir proje klasöründe ve telefonunuzdan görevler de yapar.' },
+  hero: { eyebrow: 'Ürün', h1: 'StarkLLM nasıl çalışır?', lede: 'Gizlilik için kurulmuş yerel bir işlem hattı: belgelerinizi okur ve kendi bilgisayarınızda kaynaklarla yanıt verir. Sizin için web’de, bir proje klasöründe ve telefonunuzdan, evde ya da izin verirseniz evden uzakta da görevler yapar.' },
   lifecycle: {
     h2: 'Bir belgenin yolculuğu',
     lede: 'Bir PDF veya metin dosyası eklediğinizde işleme bilgisayarınızda kalır.',
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Model seçimi', v: 'Sohbet arayüzünden, Ollama ile indirdiğiniz herhangi bir model (örneğin Qwen 2.5, Llama 3.2, Mistral) arasında geçiş yapın.' },
       { k: 'Çalışma zamanı yapılandırması', v: 'Hız ile akıl yürütme derinliği arasında denge kurmak için bağlam penceresi boyutunu, sıcaklığı (temperature) ve gelişmiş parametreleri ayarlayın.' },
-      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır. Yalnızca Ayarlar › Telefon’u açtığınızda, ev ağınızdaki eşleştirilmiş bir telefon uygulamaya ulaşabilir.' },
+      { k: 'Kesin localhost yönlendirmesi', v: 'Dahili API trafiği yalnızca bilgisayarınızın localhost portlarında (127.0.0.1) akar; verileriniz makinenizde kalır. Yalnızca Ayarlar › Telefon’u açtığınızda, ev ağınızdaki eşleştirilmiş bir telefon uygulamaya ulaşabilir; evden uzakta ise yalnızca izin verdiğiniz bir telefon, StarkLLM aktarıcısı üzerinden, telefondan bilgisayara kadar şifreli olarak.' },
     ],
   },
   tools: {

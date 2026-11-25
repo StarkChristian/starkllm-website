@@ -15,10 +15,12 @@ const bars = [30, 55, 90, 42, 68, 36, 78, 48];
 import { RELEASE } from '../data/release';
 import Icon from './Icon.astro';
 import { rel250 } from '../i18n/release250';
+import { rel260 } from '../i18n/release260';
 import { localePath } from '../i18n/ui';
-// 2.5.0 sections exist in the languages that have them translated (src/i18n/release250.ts); the others keep the page as it was.
+// Release sections exist in the languages that have them translated (src/i18n/release260.ts, release250.ts); the others keep the page as it was.
 const r = rel250[lang];
-// The privacy items of EN/DE follow the 2.5.0 promises; the other languages still have the older four items.
+const n = rel260[lang];
+// The privacy items follow the promises in release250.ts (EN/DE: home.ts); without them, the older four items.
 const privIcons = r ? ['pc', 'eyeoff', 'list', 'offline'] : ['pc', 'shield', 'eyeoff', 'list'];
 // Languages whose home.ts predates 2.5.0 bring the new headline, text and privacy promises in release250.ts.
 const hero = { ...c.hero, ...(r?.heroText ?? {}) };
@@ -26,7 +28,8 @@ const priv = r?.privacy ?? c.privacy;
 ---
 <header class="hero">
   <canvas id="graph" aria-hidden="true"></canvas>
-  {r && <a class="news-pill" href="#new"><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
+  {n ? <a class="news-pill" href="#new"><span>{n.tag}</span>{n.pill}<Icon name="arrow" size={16} /></a>
+     : r && <a class="news-pill" href="#tasks-new"><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{hero.h1[0]} <em>{hero.h1[1]}</em> {hero.h1[2]}</h1>
   <p class="lede">{hero.lede}</p>
@@ -57,8 +60,26 @@ const priv = r?.privacy ?? c.privacy;
   <figcaption>{c.shot.caption}</figcaption>
 </figure>
 
+{n && (
+  <section class="block" id="new" aria-labelledby="new260-h">
+    <span class="tag">{n.tag}</span>
+    <h2 id="new260-h">{n.h2}</h2>
+    <p class="sec-lede">{n.lede}</p>
+    <ul class="fgrid">
+      {n.items.map((it) => (
+        <li class="fcard">
+          <span class="fico"><Icon name={it.icon} /></span>
+          <h3>{it.title}</h3>
+          <p>{it.text}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="fnote">{n.note} <a href={localePath(lang, '/product') + '#phone'}>{n.more} <Icon name="arrow" size={15} /></a></p>
+  </section>
+)}
+
 {r && (
-  <section class="block" id="new" aria-labelledby="new-h">
+  <section class="block" id="tasks-new" aria-labelledby="new-h">
     <span class="tag">{r.news.tag}</span>
     <h2 id="new-h">{r.news.h2}</h2>
     <p class="sec-lede">{r.news.lede}</p>

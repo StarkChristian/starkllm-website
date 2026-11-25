@@ -86,9 +86,9 @@ const homeBase = {
       h2: 'Privacy you can check',
       lede: 'StarkLLM is built so that your documents never need a cloud. What goes online is your choice, and you can see it.',
       items: [
-        { title: 'Documents and model stay on your PC', text: 'Your documents, chats and search index are stored on your own disk, and the language models run on your own CPU or GPU through Ollama. The phone app talks to your PC, not to a server of ours.' },
+        { title: 'Documents and model stay on your PC', text: 'Your documents, chats and search index are stored on your own disk, and the language models run on your own CPU or GPU through Ollama. The phone app talks to your PC; away from home, only if you allow it, through the StarkLLM relay, which passes on encrypted data only and cannot read it.' },
         { title: 'No telemetry', text: 'The Windows app has no telemetry and no analytics SDK. This website uses no analytics and sets no cookies either; see the privacy policy.' },
-        { title: 'Every connection listed', text: 'Web search, web tasks, cloud model providers, imports from the web (web pages, YouTube, GitHub), market prices and the update check run only when you turn them on or start them. Settings › Privacy & network lists every connection StarkLLM makes; commands you allow in Terminal and tool servers you add run as your own programs and are not listed. The chat shows when a question leaves your PC.' },
+        { title: 'Every connection listed', text: 'Web search, web tasks, cloud model providers, imports from the web (web pages, YouTube, GitHub), market prices, the phone away from home (relay) and the update check run only when you turn them on or start them. Settings › Privacy & network lists every connection StarkLLM makes; commands you allow in Terminal and tool servers you add run as your own programs and are not listed. The chat shows when a question leaves your PC.' },
         { title: 'Fully offline switch', text: 'One switch takes StarkLLM fully offline: every online feature is refused and the link to your phone is closed. Your documents, the inbox and the local models keep working.' },
       ],
     },
@@ -188,9 +188,9 @@ const homeBase = {
       h2: 'Datenschutz, den Sie prüfen können',
       lede: 'StarkLLM ist so gebaut, dass Ihre Dokumente keine Cloud brauchen. Was online geht, entscheiden Sie, und Sie können es sehen.',
       items: [
-        { title: 'Dokumente und Modell bleiben auf Ihrem PC', text: 'Ihre Dokumente, Chats und der Suchindex liegen auf Ihrer eigenen Festplatte, und die Sprachmodelle laufen über Ollama auf Ihrer eigenen CPU oder GPU. Die Handy-App spricht mit Ihrem PC, nicht mit einem Server von uns.' },
+        { title: 'Dokumente und Modell bleiben auf Ihrem PC', text: 'Ihre Dokumente, Chats und der Suchindex liegen auf Ihrer eigenen Festplatte, und die Sprachmodelle laufen über Ollama auf Ihrer eigenen CPU oder GPU. Die Handy-App spricht mit Ihrem PC; unterwegs nur, wenn Sie es erlauben, über das StarkLLM-Relay, das nur verschlüsselte Daten weiterleitet und sie nicht lesen kann.' },
         { title: 'Keine Telemetrie', text: 'Die Windows-App enthält weder Telemetrie noch ein Analyse-SDK. Auch diese Website nutzt keine Webanalyse und setzt keine Cookies; siehe Datenschutzerklärung.' },
-        { title: 'Jede Verbindung aufgelistet', text: 'Websuche, Web-Aufgaben, Cloud-Modellanbieter, Importe aus dem Web (Webseiten, YouTube, GitHub), Marktpreise und die Update-Prüfung laufen nur, wenn Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, die StarkLLM herstellt; Befehle, die Sie im Terminal erlauben, und Werkzeug-Server, die Sie hinzufügen, laufen als Ihre eigenen Programme und stehen nicht in der Liste. Der Chat zeigt an, wenn eine Frage Ihren PC verlässt.' },
+        { title: 'Jede Verbindung aufgelistet', text: 'Websuche, Web-Aufgaben, Cloud-Modellanbieter, Importe aus dem Web (Webseiten, YouTube, GitHub), Marktpreise, das Handy unterwegs (Relay) und die Update-Prüfung laufen nur, wenn Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, die StarkLLM herstellt; Befehle, die Sie im Terminal erlauben, und Werkzeug-Server, die Sie hinzufügen, laufen als Ihre eigenen Programme und stehen nicht in der Liste. Der Chat zeigt an, wenn eine Frage Ihren PC verlässt.' },
         { title: 'Schalter „Vollständig offline“', text: 'Ein Schalter nimmt StarkLLM vollständig vom Netz: Jede Online-Funktion wird abgelehnt und die Verbindung zu Ihrem Handy geschlossen. Ihre Dokumente, der Posteingang und die lokalen Modelle arbeiten weiter.' },
       ],
     },

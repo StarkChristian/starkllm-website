@@ -15,8 +15,10 @@ const A = shotAlt[lang];
 const sizes = '(max-width: 860px) 100vw, 560px';
 import Icon from './Icon.astro';
 import { rel250 } from '../i18n/release250';
-// 2.5.0 sections only in the languages that have them translated (src/i18n/release250.ts).
+import { rel260 } from '../i18n/release260';
+// Release sections only in the languages that have them translated (src/i18n/release260.ts, release250.ts).
 const r = rel250[lang];
+const n = rel260[lang];
 const more = r ? r.product.more.icons.map((ic) => r.news.items.find((it) => it.icon === ic)!).filter(Boolean) : [];
 ---
 <header class="page-hero">
@@ -25,12 +27,31 @@ const more = r ? r.product.more.icons.map((ic) => r.news.items.find((it) => it.i
   <p class="lede">{c.hero.lede}</p>
   {r && (
     <ul class="chips jump">
+      {n && <li><a href="#new"><Icon name="phone" size={15} />{n.tag}</a></li>}
       <li><a href="#tasks"><Icon name="web" size={15} />{r.product.tasks.h2}</a></li>
       <li><a href="#phone"><Icon name="phone" size={15} />{r.product.phone.h2}</a></li>
       <li><a href="#life-h"><Icon name="export" size={15} />{c.lifecycle.h2}</a></li>
     </ul>
   )}
 </header>
+
+{n && (
+  <section class="block" id="new" aria-labelledby="new260-h">
+    <span class="tag">{n.tag}</span>
+    <h2 id="new260-h">{n.h2}</h2>
+    <p class="sec-lede">{n.lede}</p>
+    <ul class="fgrid">
+      {n.items.map((it) => (
+        <li class="fcard">
+          <span class="fico"><Icon name={it.icon} /></span>
+          <h3>{it.title}</h3>
+          <p>{it.text}</p>
+        </li>
+      ))}
+    </ul>
+    <p class="fnote">{n.note} <a href="#phone">{n.more} <Icon name="arrow" size={15} /></a></p>
+  </section>
+)}
 
 {r && (
   <section class="block" id="tasks" aria-labelledby="tasks-h">

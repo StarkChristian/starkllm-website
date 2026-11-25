@@ -3,7 +3,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Produit | StarkLLM', description: 'Comment fonctionne StarkLLM : traitement local des documents, RAG hybride avec sources citées, Knowledge Base, outils locaux et treize thèmes. Tout se passe sur votre PC Windows.' },
-  hero: { eyebrow: 'Produit', h1: 'Comment fonctionne StarkLLM', lede: 'Une chaîne locale conçue pour la confidentialité : elle lit vos documents et répond avec des sources sur votre propre PC. Depuis la 2.5.0, elle fait aussi des tâches pour vous, sur le web, dans un dossier de projet et depuis votre téléphone.' },
+  hero: { eyebrow: 'Produit', h1: 'Comment fonctionne StarkLLM', lede: 'Une chaîne locale conçue pour la confidentialité : elle lit vos documents et répond avec des sources sur votre propre PC. Elle fait aussi des tâches pour vous, sur le web, dans un dossier de projet et depuis votre téléphone, à la maison ou, si vous l’autorisez, hors de chez vous.' },
   lifecycle: {
     h2: 'Le cycle de vie d’un document',
     lede: 'Quand vous ajoutez un PDF ou un fichier texte, le traitement reste sur votre PC.',
@@ -69,7 +69,7 @@ export default {
     items: [
       { k: 'Choix du modèle', v: 'Passez de l’un à l’autre des modèles que vous avez téléchargés via Ollama (par exemple Qwen 2.5, Llama 3.2, Mistral) depuis l’interface de discussion.' },
       { k: 'Configuration à l’exécution', v: 'Ajustez la taille de la fenêtre de contexte, la température et d’autres paramètres avancés pour trouver le bon équilibre entre vitesse et profondeur de raisonnement.' },
-      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur. Ce n’est que si vous activez Paramètres › Téléphone qu’un téléphone associé sur votre réseau domestique peut joindre l’application.' },
+      { k: 'Acheminement strictement local', v: 'Le trafic interne de l’API passe uniquement par des ports localhost de votre PC (127.0.0.1) : vos données restent sur votre ordinateur. Ce n’est que si vous activez Paramètres › Téléphone qu’un téléphone associé sur votre réseau domestique peut joindre l’application, et hors de chez vous seulement un téléphone que vous avez autorisé, via le relais StarkLLM, chiffré du téléphone jusqu’au PC.' },
     ],
   },
   tools: {

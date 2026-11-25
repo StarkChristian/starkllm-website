@@ -2,7 +2,7 @@ import { V } from '../../../data/release';
 
 export default {
   meta: { title: 'Prodotto | StarkLLM' },
-  hero: { eyebrow: 'Prodotto', h1: 'Come funziona StarkLLM', lede: 'Una pipeline locale pensata per la privacy: legge i Suoi documenti e risponde con le fonti sul Suo PC. Dalla 2.5.0 svolge anche attività per Lei, sul web, in una cartella di progetto e dal Suo telefono.' },
+  hero: { eyebrow: 'Prodotto', h1: 'Come funziona StarkLLM', lede: 'Una pipeline locale pensata per la privacy: legge i Suoi documenti e risponde con le fonti sul Suo PC. Svolge anche attività per Lei, sul web, in una cartella di progetto e dal Suo telefono, a casa o, se Lei lo consente, fuori casa.' },
   lifecycle: {
     h2: 'Il ciclo di vita di un documento',
     lede: 'Quando aggiungi un PDF o un file di testo, l\'elaborazione resta sul tuo PC.',
@@ -68,7 +68,7 @@ export default {
     items: [
       { k: 'Scelta del modello', v: 'Passa da un modello all\'altro, tra quelli scaricati con Ollama (per esempio Qwen 2.5, Llama 3.2, Mistral), direttamente dall\'interfaccia della chat.' },
       { k: 'Configurazione dell\'esecuzione', v: 'Regola la dimensione della finestra di contesto, la temperatura e i parametri avanzati per bilanciare velocità e profondità di ragionamento.' },
-      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer. Solo se Lei attiva Impostazioni › Telefono, un telefono abbinato nella Sua rete di casa può raggiungere l’app.' },
+      { k: 'Instradamento rigorosamente su localhost', v: 'Il traffico API interno passa solo per le porte localhost del tuo PC (127.0.0.1), così i tuoi dati restano sul tuo computer. Solo se Lei attiva Impostazioni › Telefono, un telefono abbinato nella Sua rete di casa può raggiungere l’app, e fuori casa solo un telefono che Lei ha consentito, tramite il relay di StarkLLM, cifrato dal telefono al PC.' },
     ],
   },
   tools: {

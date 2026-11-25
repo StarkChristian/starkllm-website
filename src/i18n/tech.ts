@@ -111,7 +111,8 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
         { h: en.what, p: 'StarkLLM runs its database, search index and web interface on your PC (in its own engine, without Docker since v2.2) and the language model in Ollama, also on your PC. It has no telemetry and no account on a server.' },
         { h: en.why, p: 'Contracts, patient files or research data should not be sent to a cloud service just to ask a question about them.' },
         { h: 'Optional online features', p: 'These connect to the internet only when you switch them on or start them. The chat says when a question leaves your PC. Settings › Privacy & network lists every connection, and "Fully offline" refuses all of them.', list: [
-          'Web search (switch in the chat): your question goes to DuckDuckGo; only if it does not answer, to Mullvad Leta, then Mojeek.',
+          'Web search (switch in the chat): your question goes to DuckDuckGo; only if it does not answer, to Startpage, then Mojeek, and as the last resort to Wikipedia’s public search. One at a time.',
+          'Phone away from home (Settings › Phone, per phone, off by default): the PC keeps a connection to the StarkLLM relay (relay.starkllm.com). The relay passes on encrypted bytes only; questions, answers and documents stay encrypted from the phone to the PC.',
           'Web tasks (the "Web task" switch in the chat): StarkLLM opens the websites of the task in its own window; those sites get your IP address and what the task enters there.',
           'Cloud model providers (Settings, e.g. DeepSeek, OpenRouter, Groq): your question and the found passages go to that provider.',
           'Import from the web (web page, YouTube, GitHub): the app downloads the page, transcript or repository you entered.',
@@ -241,7 +242,8 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
         { h: de.what, p: 'StarkLLM betreibt Datenbank, Suchindex und Weboberfläche auf Ihrem PC (in seiner eigenen Engine, seit v2.2 ohne Docker) und das Sprachmodell in Ollama, ebenfalls auf Ihrem PC. Es gibt keine Telemetrie und kein Konto auf einem Server.' },
         { h: de.why, p: 'Verträge, Patientenakten oder Forschungsdaten sollten nicht an einen Clouddienst gehen, nur um eine Frage dazu zu stellen.' },
         { h: 'Optionale Online-Funktionen', p: 'Diese verbinden sich nur mit dem Internet, wenn Sie sie einschalten oder starten. Der Chat zeigt an, wenn eine Frage Ihren PC verlässt. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, und „Vollständig offline“ lehnt sie alle ab.', list: [
-          'Websuche (Schalter im Chat): Ihre Frage geht an DuckDuckGo; nur wenn dort keine Antwort kommt, an Mullvad Leta, dann an Mojeek.',
+          'Websuche (Schalter im Chat): Ihre Frage geht an DuckDuckGo; nur wenn dort keine Antwort kommt, an Startpage, dann an Mojeek und als letzte Möglichkeit an die öffentliche Suche von Wikipedia. Immer nur eine.',
+          'Handy unterwegs (Einstellungen › Telefon, je Handy, standardmäßig aus): Der PC hält eine Verbindung zum StarkLLM-Relay (relay.starkllm.com). Das Relay leitet nur verschlüsselte Daten weiter; Fragen, Antworten und Dokumente bleiben vom Handy bis zum PC verschlüsselt.',
           'Web-Aufgaben (Schalter „Web-Aufgabe“ im Chat): StarkLLM öffnet die Websites der Aufgabe in einem eigenen Fenster; diese Websites erhalten Ihre IP-Adresse und das, was die Aufgabe dort eingibt.',
           'Cloud-Modellanbieter (Einstellungen, z. B. DeepSeek, OpenRouter, Groq): Ihre Frage und die gefundenen Textstellen gehen an diesen Anbieter.',
           'Import aus dem Web (Webseite, YouTube, GitHub): Die App lädt die angegebene Seite, das Transkript oder das Repository herunter.',

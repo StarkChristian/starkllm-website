@@ -94,7 +94,8 @@ const pages = {
       { h: en.what, p: 'StarkLLM veritabanını, arama dizinini ve web arayüzünü bilgisayarınızda (kendi motorunda, v2.2’den beri Docker olmadan), dil modelini ise yine bilgisayarınızdaki Ollama’da çalıştırır. Telemetrisi yoktur ve bir sunucuda hesabı yoktur.' },
       { h: en.why, p: 'Sözleşmeler, hasta dosyaları veya araştırma verileri, yalnızca onlar hakkında bir soru sormak için bir bulut hizmetine gönderilmemelidir.' },
       { h: 'İsteğe bağlı çevrimiçi özellikler', p: 'Bunlar yalnızca siz açtığınızda veya başlattığınızda internete bağlanır. Bir soru bilgisayarınızdan çıktığında sohbet bunu söyler. Ayarlar › Gizlilik ve ağ her bağlantıyı listeler ve “Tamamen çevrimdışı” hepsini reddeder.', list: [
-        'Web araması (sohbetteki anahtar): sorunuz DuckDuckGo’ya gider; yalnızca o yanıt vermezse Mullvad Leta’ya, ardından Mojeek’e.',
+        'Web araması (sohbetteki anahtar): sorunuz DuckDuckGo’ya gider; yalnızca o yanıt vermezse Startpage’e, ardından Mojeek’e ve son çare olarak Wikipedia’nın herkese açık aramasına. Her seferinde yalnızca biri.',
+        'Evden uzaktaki telefon (Ayarlar › Telefon, telefon başına, varsayılan olarak kapalı): bilgisayar StarkLLM aktarıcısıyla (relay.starkllm.com) bir bağlantı tutar. Aktarıcı yalnızca şifreli baytları iletir; sorular, yanıtlar ve belgeler telefondan bilgisayara kadar şifreli kalır.',
         'Web görevleri (sohbetteki “Web görevi” anahtarı): StarkLLM görevin web sitelerini kendi penceresinde açar; bu siteler IP adresinizi ve görevin oraya girdiklerini alır.',
         'Bulut model sağlayıcıları (Settings, örneğin DeepSeek, OpenRouter, Groq): sorunuz ve bulunan pasajlar o sağlayıcıya gider.',
         'Web’den içe aktarma (web sayfası, YouTube, GitHub): uygulama, girdiğiniz sayfayı, transkripti veya depoyu indirir.',

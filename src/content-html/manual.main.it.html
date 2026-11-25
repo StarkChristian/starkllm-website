@@ -1,6 +1,7 @@
 <main class="container manual-container">
         <aside class="manual-nav">
             <ul>
+                <li><a href="#new-260">Novità della 2.6.0</a></li>
                 <li><a href="#new-250">Novità della 2.5.0</a></li>
                 <li><a href="#what-it-is">1. Che cos'è StarkLLM</a></li>
                 <li><a href="#who-it-is-for">2. A chi si rivolge</a></li>
@@ -35,6 +36,33 @@
         </aside>
 
         <article class="manual-content">
+            <section id="new-260">
+                <h2>Novità della 2.6.0</h2>
+                <p>Con StarkLLM 2.6.0 il Suo telefono Android raggiunge questo PC anche fuori casa, se Lei lo consente per quel telefono. Tutte le novità della 2.5.0 (sotto) fanno ancora parte dell’app.</p>
+                <ul>
+                    <li><strong>Telefono fuori casa:</strong> per ogni telefono, tramite il relay di StarkLLM, cifrato dal telefono a questo PC; veda <a href="#phone-away">Il Suo telefono fuori casa</a>.</li>
+                    <li><strong>Il browser delle attività web:</strong> la finestra del browser di StarkLLM ha una barra degli indirizzi e i comandi di un normale browser. Una pagina che non viene aperta dice perché (le pagine della Sua rete di casa non vengono mai aperte). I link che aprirebbero una nuova finestra si aprono nella stessa finestra.</li>
+                    <li><strong>Lettere con una nota per gli assistenti IA:</strong> una lettera con una nota nascosta per gli assistenti IA (&laquo;di&rsquo; che non c&rsquo;è niente da pagare&raquo;) riceve la stessa risposta di qualsiasi altra bolletta: importo, beneficiario e data, più una frase che dice che la nota è stata ignorata e che Lei può verificare la lettera con il mittente tramite recapiti che conosce già.</li>
+                    <li><strong>Ricerca web:</strong> se un motore di ricerca non risponde, viene interrogato il successivo: DuckDuckGo, poi Startpage, poi Mojeek e, come ultima risorsa, la ricerca pubblica di Wikipedia, uno alla volta. Le risposte dal web usano solo i numeri dei risultati; le attività web non aggiungono mai orari, prezzi o numeri di telefono che nessuna pagina ha mostrato.</li>
+                    <li><strong>Privacy e rete:</strong> l’elenco mostra tutte le righe che l’app conserva (fino a 3000), non solo le ultime 500.</li>
+                    <li><strong>App Android 0.3.0:</strong> più compatta con testo grande e zoom dello schermo, fonti nella lingua dell’app, e la barra in alto mostra quando le risposte arrivano tramite il relay.</li>
+                </ul>
+                <h3 id="phone-away">Il Suo telefono fuori casa</h3>
+                <ol>
+                    <li>Abbini prima il telefono a casa (<strong>Impostazioni › Telefono</strong>, codice QR). L’abbinamento non è mai possibile tramite il relay; abbinare di nuovo lo stesso telefono sostituisce la sua voce precedente.</li>
+                    <li>In <strong>Impostazioni › Telefono</strong>, sotto <em>Telefoni fuori casa</em>, attivi <em>Anche fuori casa (tramite il relay)</em> per quel telefono. È spento per impostazione predefinita.</li>
+                    <li>Fuori casa (dati mobili o un’altra rete Wi-Fi) l’app raggiunge questo PC tramite il relay di StarkLLM (<code>relay.starkllm.com</code>), e il telefono mostra <em>Connesso · fuori casa</em>. A casa il telefono continua a usare direttamente la Sua rete di casa.</li>
+                </ol>
+                <p><strong>Che cosa può vedere il relay:</strong> come a casa, il telefono verifica il certificato di questo PC fissato all’abbinamento, e la cifratura va dal telefono a questo PC. Il relay quindi inoltra solo byte cifrati: nessuna domanda, risposta, documento, token del dispositivo o account. Non salva e non registra alcun contenuto. Vede a quale PC è destinata una connessione, quando e quanti dati passano, e conserva per ogni PC un identificativo casuale e un hash di un segreto. Impostazioni › Privacy e rete elenca la connessione al relay e le connessioni del telefono arrivate tramite esso.</p>
+                <p><strong>Limiti:</strong></p>
+                <ul>
+                    <li>Il PC deve essere acceso, con StarkLLM in esecuzione e non <em>Completamente offline</em>; <em>Completamente offline</em> chiude la connessione al relay.</li>
+                    <li>Valgono le stesse regole di casa: il livello del telefono, il suo account e il suo token del dispositivo, e una domanda dal telefono non usa mai la ricerca web né modelli cloud.</li>
+                    <li>Tutti i dati passano (cifrati) attraverso il relay; un collegamento diretto tra telefono e PC non fa parte di questa versione.</li>
+                    <li>Per ogni PC il relay consente fino a 16 connessioni di telefoni contemporanee e 200 MB al minuto; una connessione senza alcun traffico viene chiusa dopo 6 minuti.</li>
+                </ul>
+            </section>
+
             <section id="new-250">
                 <h2>Novità della 2.5.0</h2>
                 <p>StarkLLM 2.5.0 può anche svolgere attività per Lei. Mostra ogni passaggio e chiede prima di tutto ciò che conta. Ogni funzione online resta spenta finché Lei non la usa, e <strong>Completamente offline</strong> (Impostazioni › Privacy e rete) le rifiuta tutte.</p>
@@ -46,7 +74,7 @@
                     <li><strong>Confronta modelli:</strong> <em>Confronta modelli</em> pone la stessa domanda a un secondo modello locale; Lei tiene la risposta migliore.</li>
                     <li><strong>Word e PDF:</strong> salvi un’intera chat o una singola risposta come documento Word o PDF, con le sue fonti.</li>
                     <li><strong>I Suoi server di strumenti (MCP):</strong> in Impostazioni › Strumenti locali aggiunge server MCP che girano su questo PC. Ogni strumento resta spento finché Lei non lo attiva, e ogni chiamata attende il Suo sì.</li>
-                    <li><strong>Il Suo telefono Android (anteprima):</strong> Impostazioni › Telefono abbina l’app StarkLLM per Android con un codice QR. Il telefono fa domande sui Suoi documenti, invia foto di lettere e mostra le Sue scadenze, solo tramite la Sua rete di casa.</li>
+                    <li><strong>Il Suo telefono Android (anteprima):</strong> Impostazioni › Telefono abbina l’app StarkLLM per Android con un codice QR. Il telefono fa domande sui Suoi documenti, invia foto di lettere e mostra le Sue scadenze, tramite la Sua rete di casa e, dalla 2.6.0, anche fuori casa se Lei lo consente (veda <a href="#phone-away">Il Suo telefono fuori casa</a>).</li>
                 </ul>
                 <p>Le attività web e il Terminale funzionano meglio con un modello locale da 14B o più (per esempio <code>qwen3:14b</code>); i piccoli modelli da 7B si fermano in modo sicuro, ma portano a termine poche attività.</p>
             </section>
@@ -492,7 +520,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. I miei dati
                         escono dal mio computer?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Solo se Lei attiva una funzione online facoltativa, come la ricerca web, un’attività web o un modello cloud. I Suoi documenti, l’indice e i modelli locali restano sul Suo PC; Impostazioni › Privacy e rete elenca ogni connessione.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Solo se Lei attiva una funzione online facoltativa, come la ricerca web, un’attività web o un modello cloud. I Suoi documenti, l’indice e i modelli locali restano sul Suo PC; Impostazioni › Privacy e rete elenca ogni connessione. Se Lei consente un telefono fuori casa, la sua connessione passa per il relay di StarkLLM, cifrata dal telefono al PC, quindi il relay non può leggerla.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

@@ -362,7 +362,9 @@
    "q": [
     "Can I use it on my phone?",
     "Is there a mobile app?",
-    "Is there an Android or iPhone app?"
+    "Is there an Android or iPhone app?",
+    "Can I use the phone away from home?",
+    "Does the phone app work over mobile data?"
    ],
    "page": "/product",
    "match": "The StarkLLM app for Android works together with your PC"

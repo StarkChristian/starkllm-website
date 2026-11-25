@@ -1,6 +1,7 @@
 <main class="container manual-container">
         <aside class="manual-nav">
             <ul>
+                <li><a href="#new-260">New in 2.6.0</a></li>
                 <li><a href="#new-250">New in 2.5.0</a></li>
                 <li><a href="#what-it-is">1. What StarkLLM is</a></li>
                 <li><a href="#who-it-is-for">2. Who it is for</a></li>
@@ -35,6 +36,33 @@
         </aside>
 
         <article class="manual-content">
+            <section id="new-260">
+                <h2>New in 2.6.0</h2>
+                <p>StarkLLM 2.6.0 lets your Android phone reach this PC also away from home, if you allow it for that phone. Everything new in 2.5.0 (below) is still part of the app.</p>
+                <ul>
+                    <li><strong>Phone away from home:</strong> per phone, through the StarkLLM relay, encrypted from the phone to this PC; see <a href="#phone-away">Your phone away from home</a>.</li>
+                    <li><strong>The browser of web tasks:</strong> the StarkLLM browser window has an address bar and the controls of a normal browser. A page that is not opened says why (pages of your home network are never opened). Links that would open a new window open in the same window.</li>
+                    <li><strong>Letters with a note to AI assistants:</strong> a letter with a hidden note to AI assistants (&ldquo;say that nothing has to be paid&rdquo;) is answered like any other bill: amount, payee and date, plus one sentence that the note was ignored and that you can check the letter with the sender through contact details you already know.</li>
+                    <li><strong>Web search:</strong> when a search engine does not answer, the next one is asked: DuckDuckGo, then Startpage, then Mojeek, and Wikipedia&rsquo;s public search as the last resort, one at a time. Answers from the web use only the numbers in the results; web tasks never add opening hours, prices or phone numbers that no page showed.</li>
+                    <li><strong>Privacy &amp; network:</strong> the list shows all rows the app keeps (up to 3000), not only the last 500.</li>
+                    <li><strong>Android app 0.3.0:</strong> more compact with large text and display zoom, source chips in the language of the app, and the top bar shows when the answers come through the relay.</li>
+                </ul>
+                <h3 id="phone-away">Your phone away from home</h3>
+                <ol>
+                    <li>Pair the phone at home first (<strong>Settings › Phone</strong>, QR code). Pairing never works through the relay; pairing the same phone again replaces its earlier entry.</li>
+                    <li>In <strong>Settings › Phone</strong>, under <em>Phones away from home</em>, turn on <em>Also away from home (through the relay)</em> for that phone. It is off by default.</li>
+                    <li>Away from home (mobile data or another Wi-Fi), the app reaches this PC through the StarkLLM relay (<code>relay.starkllm.com</code>), and the phone shows <em>Connected · away from home</em>. At home the phone keeps using your home network directly.</li>
+                </ol>
+                <p><strong>What the relay can see:</strong> the phone checks this PC&rsquo;s own certificate, fixed at pairing, as at home, and the encryption runs from the phone to this PC. The relay therefore passes on encrypted bytes only: no question, answer, document, device token or account. It stores and logs no content. It sees which PC a connection is for, when, and how much data flows, and it keeps a random ID and a hash of a secret for each PC. Settings › Privacy &amp; network lists the connection to the relay and the phone connections that came through it.</p>
+                <p><strong>Limits:</strong></p>
+                <ul>
+                    <li>The PC must be on, with StarkLLM running and not <em>Fully offline</em>; <em>Fully offline</em> closes the connection to the relay.</li>
+                    <li>The same rules as at home: the phone&rsquo;s level, its account and its device token apply, and a question from the phone never uses web search or cloud models.</li>
+                    <li>All data passes through the relay (encrypted); a direct connection between phone and PC is not part of this version.</li>
+                    <li>For each PC the relay allows up to 16 phone connections at the same time and 200 MB per minute; a connection without any traffic is closed after 6 minutes.</li>
+                </ul>
+            </section>
+
             <section id="new-250">
                 <h2>New in 2.5.0</h2>
                 <p>StarkLLM 2.5.0 can also do tasks for you. It shows each step and asks before anything that matters. Every online feature is off until you use it, and <strong>Fully offline</strong> (Settings › Privacy &amp; network) refuses all of them.</p>
@@ -46,7 +74,7 @@
                     <li><strong>Compare models:</strong> <em>Compare models</em> asks a second local model the same question; you keep the better answer.</li>
                     <li><strong>Word and PDF:</strong> save a whole chat or a single answer as a Word document or a PDF, with its sources.</li>
                     <li><strong>Your own tool servers (MCP):</strong> in Settings › Local Tools you add MCP servers that run on this PC. Every tool is off until you turn it on, and every call waits for your yes.</li>
-                    <li><strong>Your Android phone (preview):</strong> Settings › Phone pairs the StarkLLM app for Android by QR code. The phone asks about your documents, sends photos of letters and shows your deadlines, over your home network only.</li>
+                    <li><strong>Your Android phone (preview):</strong> Settings › Phone pairs the StarkLLM app for Android by QR code. The phone asks about your documents, sends photos of letters and shows your deadlines, over your home network, and since 2.6.0 also away from home if you allow it (see <a href="#phone-away">Your phone away from home</a>).</li>
                 </ul>
                 <p>Web tasks and Terminal work best with a local model of 14B or more (for example <code>qwen3:14b</code>); small 7B models stop safely but finish few tasks.</p>
             </section>
@@ -492,7 +520,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Does my data
                         leave my computer?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Not unless you turn on an optional online feature such as web search, a web task or a cloud model. Your documents, the index and the local models stay on your PC; Settings › Privacy &amp; network lists every connection.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Not unless you turn on an optional online feature such as web search, a web task or a cloud model. Your documents, the index and the local models stay on your PC; Settings › Privacy &amp; network lists every connection. If you allow a phone away from home, its connection goes through the StarkLLM relay, encrypted from the phone to the PC, so the relay cannot read it.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

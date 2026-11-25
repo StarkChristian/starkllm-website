@@ -1923,7 +1923,9 @@
     "Telefonumda kullanabilir miyim?",
     "Mobil uygulaması var mı?",
     "Android veya iPhone uygulaması var mı?",
-    "Telefonla çektiğim fotoğrafı ekleyebilir miyim?"
+    "Telefonla çektiğim fotoğrafı ekleyebilir miyim?",
+    "Telefonu evden uzaktayken de kullanabilir miyim?",
+    "Telefon uygulaması mobil veriyle çalışır mı?"
    ],
    "page": "/tr/product",
    "match": "Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır"

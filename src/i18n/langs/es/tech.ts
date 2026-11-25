@@ -92,7 +92,8 @@ const pages = {
       { h: es.what, p: 'StarkLLM ejecuta su base de datos, su índice de búsqueda y su interfaz web en tu PC (en su propio motor, sin Docker desde la v2.2) y el modelo de lenguaje en Ollama, también en tu PC. No tiene telemetría ni una cuenta en ningún servidor.' },
       { h: es.why, p: 'Los contratos, las historias clínicas o los datos de investigación no deberían enviarse a un servicio en la nube solo para hacerles una pregunta.' },
       { h: 'Funciones en línea opcionales', p: 'Estas se conectan a internet solo cuando las activas o las inicias. El chat avisa cuando una pregunta sale de tu PC. Ajustes › Privacidad y red enumera cada conexión, y «Totalmente sin conexión» las rechaza todas.', list: [
-        'Búsqueda web (interruptor en el chat): su pregunta va a DuckDuckGo; solo si no responde, a Mullvad Leta y después a Mojeek.',
+        'Búsqueda web (interruptor en el chat): su pregunta va a DuckDuckGo; solo si no responde, a Startpage, después a Mojeek y, como último recurso, a la búsqueda pública de Wikipedia. De uno en uno.',
+        'Teléfono fuera de casa (Ajustes › Teléfono, por teléfono, desactivado por defecto): el PC mantiene una conexión con el relé de StarkLLM (relay.starkllm.com). El relé solo pasa bytes cifrados; las preguntas, respuestas y documentos siguen cifrados del teléfono al PC.',
         'Tareas web (interruptor «Tarea web» en el chat): StarkLLM abre los sitios web de la tarea en su propia ventana; esos sitios reciben su dirección IP y lo que la tarea introduce en ellos.',
         'Proveedores de modelos en la nube (Settings, p. ej. DeepSeek, OpenRouter, Groq): tu pregunta y los pasajes encontrados van a ese proveedor.',
         'Importación desde la web (página web, YouTube, GitHub): la aplicación descarga la página, la transcripción o el repositorio indicado.',

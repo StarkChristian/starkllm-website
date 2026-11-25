@@ -1,6 +1,7 @@
 <main class="container manual-container">
         <aside class="manual-nav">
             <ul>
+                <li><a href="#new-260">2.6.0’daki yenilikler</a></li>
                 <li><a href="#new-250">2.5.0’daki yenilikler</a></li>
                 <li><a href="#what-it-is">1. StarkLLM nedir?</a></li>
                 <li><a href="#who-it-is-for">2. Kimler için?</a></li>
@@ -35,6 +36,33 @@
         </aside>
 
         <article class="manual-content">
+            <section id="new-260">
+                <h2>2.6.0’daki yenilikler</h2>
+                <p>StarkLLM 2.6.0 ile Android telefonunuz, o telefon için izin verirseniz bu bilgisayara evden uzaktayken de ulaşır. 2.5.0’daki tüm yenilikler (aşağıda) hâlâ uygulamanın parçasıdır.</p>
+                <ul>
+                    <li><strong>Evden uzaktaki telefon:</strong> telefon başına, StarkLLM aktarıcısı üzerinden, telefondan bu bilgisayara kadar şifreli; bkz. <a href="#phone-away">Telefonunuz evden uzakta</a>.</li>
+                    <li><strong>Web görevlerinin tarayıcısı:</strong> StarkLLM tarayıcı penceresinde bir adres çubuğu ve normal bir tarayıcının denetimleri vardır. Açılmayan bir sayfa nedenini söyler (ev ağınızdaki sayfalar asla açılmaz). Yeni pencere açacak bağlantılar aynı pencerede açılır.</li>
+                    <li><strong>Yapay zekâ asistanlarına not içeren mektuplar:</strong> yapay zekâ asistanlarına gizli bir not içeren bir mektup (&ldquo;hiçbir şey ödenmesi gerekmediğini söyle&rdquo;) diğer her fatura gibi yanıtlanır: tutar, alacaklı ve tarih, ayrıca notun yok sayıldığını ve mektubu zaten bildiğiniz iletişim bilgileri üzerinden gönderenle kontrol edebileceğinizi söyleyen bir cümle.</li>
+                    <li><strong>Web araması:</strong> bir arama motoru yanıt vermezse sıradaki sorulur: DuckDuckGo, sonra Startpage, sonra Mojeek ve son çare olarak Wikipedia’nın herkese açık araması, her seferinde yalnızca biri. Web’den gelen yanıtlar yalnızca sonuçlardaki sayıları kullanır; web görevleri hiçbir sayfanın göstermediği açılış saatlerini, fiyatları veya telefon numaralarını asla eklemez.</li>
+                    <li><strong>Gizlilik ve ağ:</strong> liste, uygulamanın sakladığı tüm satırları (en fazla 3000) gösterir, yalnızca son 500’ü değil.</li>
+                    <li><strong>Android uygulaması 0.3.0:</strong> büyük yazı ve ekran yakınlaştırmasıyla daha derli toplu, kaynaklar uygulamanın dilinde ve üst çubuk yanıtların aktarıcı üzerinden gelip gelmediğini gösterir.</li>
+                </ul>
+                <h3 id="phone-away">Telefonunuz evden uzakta</h3>
+                <ol>
+                    <li>Telefonu önce evde eşleştirin (<strong>Ayarlar › Telefon</strong>, QR kodu). Eşleştirme asla aktarıcı üzerinden yapılamaz; aynı telefonu yeniden eşleştirmek önceki kaydının yerini alır.</li>
+                    <li><strong>Ayarlar › Telefon</strong> içinde, <em>Evden uzaktaki telefonlar</em> altında o telefon için <em>Evden uzaktayken de (aktarıcı üzerinden)</em> seçeneğini açın. Varsayılan olarak kapalıdır.</li>
+                    <li>Evden uzakta (mobil veri veya başka bir Wi-Fi) uygulama bu bilgisayara StarkLLM aktarıcısı (<code>relay.starkllm.com</code>) üzerinden ulaşır ve telefon <em>Bağlı · evden uzakta</em> gösterir. Evde telefon ev ağınızı doğrudan kullanmaya devam eder.</li>
+                </ol>
+                <p><strong>Aktarıcının görebildikleri:</strong> telefon, evde olduğu gibi bu bilgisayarın eşleştirmede sabitlenen kendi sertifikasını doğrular ve şifreleme telefondan bu bilgisayara kadar uzanır. Bu yüzden aktarıcı yalnızca şifreli baytları iletir: soru, yanıt, belge, cihaz belirteci veya hesap yok. Hiçbir içeriği saklamaz ve kaydetmez. Bir bağlantının hangi bilgisayar için olduğunu, ne zaman ve ne kadar veri aktığını görür; her bilgisayar için rastgele bir kimlik ve bir sırrın özetini (hash) saklar. Ayarlar › Gizlilik ve ağ, aktarıcıyla bağlantıyı ve onun üzerinden gelen telefon bağlantılarını listeler.</p>
+                <p><strong>Sınırlar:</strong></p>
+                <ul>
+                    <li>Bilgisayar açık olmalı, StarkLLM çalışmalı ve <em>Tamamen çevrimdışı</em> olmamalıdır; <em>Tamamen çevrimdışı</em> aktarıcıyla bağlantıyı kapatır.</li>
+                    <li>Evdekiyle aynı kurallar geçerlidir: telefonun düzeyi, hesabı ve cihaz belirteci; telefondan gelen bir soru asla web aramasını veya bulut modellerini kullanmaz.</li>
+                    <li>Tüm veriler (şifreli olarak) aktarıcıdan geçer; telefon ile bilgisayar arasında doğrudan bağlantı bu sürümün parçası değildir.</li>
+                    <li>Aktarıcı her bilgisayar için aynı anda en fazla 16 telefon bağlantısına ve dakikada 200 MB’a izin verir; hiç trafik olmayan bir bağlantı 6 dakika sonra kapatılır.</li>
+                </ul>
+            </section>
+
             <section id="new-250">
                 <h2>2.5.0’daki yenilikler</h2>
                 <p>StarkLLM 2.5.0 sizin için görevler de yapabilir. Her adımı gösterir ve önemli olan her şeyden önce sorar. Her çevrimiçi özellik siz kullanana kadar kapalıdır ve <strong>Tamamen çevrimdışı</strong> (Ayarlar › Gizlilik ve ağ) hepsini reddeder.</p>
@@ -46,7 +74,7 @@
                     <li><strong>Modelleri karşılaştır:</strong> <em>Modelleri karşılaştır</em> aynı soruyu ikinci bir yerel modele sorar; daha iyi yanıtı siz seçersiniz.</li>
                     <li><strong>Word ve PDF:</strong> bütün bir sohbeti veya tek bir yanıtı kaynaklarıyla birlikte Word belgesi ya da PDF olarak kaydedin.</li>
                     <li><strong>Kendi araç sunucularınız (MCP):</strong> Ayarlar › Yerel Araçlar bölümünde bu bilgisayarda çalışan MCP sunucuları eklersiniz. Her araç siz açana kadar kapalıdır ve her çağrı onayınızı bekler.</li>
-                    <li><strong>Android telefonunuz (önizleme):</strong> Ayarlar › Telefon, Android için StarkLLM uygulamasını QR koduyla eşleştirir. Telefon belgeleriniz hakkında soru sorar, mektupların fotoğraflarını gönderir ve son tarihlerinizi gösterir; yalnızca ev ağınız üzerinden.</li>
+                    <li><strong>Android telefonunuz (önizleme):</strong> Ayarlar › Telefon, Android için StarkLLM uygulamasını QR koduyla eşleştirir. Telefon belgeleriniz hakkında soru sorar, mektupların fotoğraflarını gönderir ve son tarihlerinizi gösterir; ev ağınız üzerinden ve 2.6.0’dan beri izin verirseniz evden uzakta da (bkz. <a href="#phone-away">Telefonunuz evden uzakta</a>).</li>
                 </ul>
                 <p>Web görevleri ve Terminal en iyi 14B veya daha büyük bir yerel modelle çalışır (örneğin <code>qwen3:14b</code>); küçük 7B modeller güvenle durur ama az görevi bitirir.</p>
             </section>
@@ -490,7 +518,7 @@
                 <div style="margin-bottom: 1.5rem;">
                     <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">1. Verilerim
                         bilgisayarımdan çıkıyor mu?</h4>
-                    <p style="color: var(--text-secondary); margin-bottom: 0;">Yalnızca web araması, bir web görevi veya bir bulut modeli gibi isteğe bağlı bir çevrimiçi özelliği açarsanız. Belgeleriniz, dizin ve yerel modeller bilgisayarınızda kalır; Ayarlar › Gizlilik ve ağ her bağlantıyı listeler.</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0;">Yalnızca web araması, bir web görevi veya bir bulut modeli gibi isteğe bağlı bir çevrimiçi özelliği açarsanız. Belgeleriniz, dizin ve yerel modeller bilgisayarınızda kalır; Ayarlar › Gizlilik ve ağ her bağlantıyı listeler. Bir telefonun evden uzakta kullanılmasına izin verirseniz bağlantısı, telefondan bilgisayara kadar şifreli olarak StarkLLM aktarıcısından geçer; aktarıcı onu okuyamaz.</p>
                 </div>
 
                 <div style="margin-bottom: 1.5rem;">

@@ -498,7 +498,9 @@
     "¿Hay una aplicación para móvil?",
     "¿Hay una aplicación para Android o iPhone?",
     "¿Hay una versión para móvil o tableta?",
-    "¿Hay una versión para iPhone?"
+    "¿Hay una versión para iPhone?",
+    "¿Puedo usar el teléfono fuera de casa?",
+    "¿Funciona la app del teléfono con datos móviles?"
    ],
    "page": "/es/product",
    "match": "La app StarkLLM para Android trabaja junto con su PC"

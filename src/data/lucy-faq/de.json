@@ -390,7 +390,9 @@
    "q": [
     "Kann ich es auf dem Handy nutzen?",
     "Gibt es eine App fürs Smartphone?",
-    "Gibt es eine Android- oder iPhone-App?"
+    "Gibt es eine Android- oder iPhone-App?",
+    "Kann ich das Handy auch unterwegs nutzen?",
+    "Funktioniert die Handy-App über mobile Daten?"
    ],
    "page": "/de/product",
    "match": "Die StarkLLM-App für Android arbeitet mit Ihrem PC zusammen"

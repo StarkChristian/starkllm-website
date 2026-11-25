@@ -21,7 +21,7 @@ export const themes = [
 const productBase = {
   en: {
     meta: { title: 'Product | StarkLLM' },
-    hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'A local pipeline built for privacy: it reads your documents and answers with sources on your own PC. Since 2.5.0 it also does tasks for you, on the web, in a project folder and from your phone.' },
+    hero: { eyebrow: 'Product', h1: 'How StarkLLM works', lede: 'A local pipeline built for privacy: it reads your documents and answers with sources on your own PC. It also does tasks for you, on the web, in a project folder and from your phone, at home or, if you allow it, away from home.' },
     lifecycle: {
       h2: 'The document lifecycle',
       lede: 'When you add a PDF or text file, processing stays on your PC.',
@@ -87,7 +87,7 @@ const productBase = {
       items: [
         { k: 'Model selection', v: 'Switch between any model you downloaded via Ollama (for example Qwen 2.5, Llama 3.2, Mistral) from the chat interface.' },
         { k: 'Runtime configuration', v: 'Adjust context window size, temperature and advanced parameters to balance speed and reasoning depth.' },
-        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine. Only when you turn on Settings › Phone can a paired phone on your home network reach the app.' },
+        { k: 'Strict localhost routing', v: 'Internal API traffic runs only on localhost ports of your PC (127.0.0.1), keeping your data on your machine. Only when you turn on Settings › Phone can a paired phone on your home network reach the app, and away from home only a phone you allowed, through the StarkLLM relay, encrypted from the phone to the PC.' },
       ],
     },
     tools: {
@@ -129,7 +129,7 @@ const productBase = {
   },
   de: {
     meta: { title: 'Produkt | StarkLLM', description: 'So funktioniert StarkLLM: lokale Dokumentverarbeitung, hybrides RAG mit Quellenangaben, Wissensdatenbank, lokale Tools und dreizehn Themes. Alles auf Ihrem Windows-PC.' },
-    hero: { eyebrow: 'Produkt', h1: 'So funktioniert StarkLLM', lede: 'Eine lokale Pipeline, gebaut für den Datenschutz: Sie liest Ihre Dokumente und antwortet mit Quellen auf Ihrem eigenen PC. Seit 2.5.0 erledigt sie auch Aufgaben für Sie, im Web, in einem Projektordner und vom Handy aus.' },
+    hero: { eyebrow: 'Produkt', h1: 'So funktioniert StarkLLM', lede: 'Eine lokale Pipeline, gebaut für den Datenschutz: Sie liest Ihre Dokumente und antwortet mit Quellen auf Ihrem eigenen PC. Sie erledigt auch Aufgaben für Sie, im Web, in einem Projektordner und vom Handy aus, zu Hause oder, wenn Sie es erlauben, unterwegs.' },
     lifecycle: {
       h2: 'Der Weg eines Dokuments',
       lede: 'Wenn Sie eine PDF- oder Textdatei hinzufügen, bleibt die Verarbeitung auf Ihrem PC.',
@@ -195,7 +195,7 @@ const productBase = {
       items: [
         { k: 'Modellauswahl', v: 'Wechseln Sie im Chat zwischen allen über Ollama geladenen Modellen (zum Beispiel Qwen 2.5, Llama 3.2, Mistral).' },
         { k: 'Laufzeit-Konfiguration', v: 'Passen Sie Kontextfenster, Temperatur und weitere Parameter an, um Tempo und Denktiefe abzuwägen.' },
-        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner. Nur wenn Sie Einstellungen › Telefon einschalten, kann ein gekoppeltes Handy in Ihrem Heimnetz die App erreichen.' },
+        { k: 'Strikt lokales Routing', v: 'Interner API-Verkehr läuft nur über Localhost-Ports Ihres PCs (127.0.0.1), Ihre Daten bleiben auf Ihrem Rechner. Nur wenn Sie Einstellungen › Telefon einschalten, kann ein gekoppeltes Handy in Ihrem Heimnetz die App erreichen, und unterwegs nur ein Handy, das Sie erlaubt haben, über das StarkLLM-Relay, verschlüsselt vom Handy bis zum PC.' },
       ],
     },
     tools: {

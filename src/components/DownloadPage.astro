@@ -15,13 +15,18 @@ import { RELEASE } from '../data/release';
 const lt = lucy[lang];
 import Icon from './Icon.astro';
 import { rel250 } from '../i18n/release250';
+import { rel260 } from '../i18n/release260';
 const r = rel250[lang];
-// Point to the 2.5.0 features only once the release offered here is 2.5.0 or newer.
+const n = rel260[lang];
+// Point to the news of a release only once the release offered here is that version or newer.
 const [maj, min] = RELEASE.version.split('.').map(Number);
-const has250 = maj > 2 || (maj === 2 && min >= 5);
+const atLeast = (m: number) => maj > 2 || (maj === 2 && min >= m);
+const has250 = atLeast(5);
+const has260 = atLeast(6);
 ---
 <header class="page-hero">
-  {r && has250 && <a class="news-pill" href={localePath(lang, '/product') + '#tasks'}><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
+  {n && has260 ? <a class="news-pill" href={localePath(lang, '/product') + '#new'}><span>{n.tag}</span>{n.pill}<Icon name="arrow" size={16} /></a>
+     : r && has250 && <a class="news-pill" href={localePath(lang, '/product') + '#tasks'}><span>{r.news.tag}</span>{r.hero.news.replace(/^[^:]*:\s*/, '')}<Icon name="arrow" size={16} /></a>}
   <p class="eyebrow">{c.hero.eyebrow}</p>
   <h1>{c.hero.h1}</h1>
   <p class="lede">{c.hero.lede}</p>

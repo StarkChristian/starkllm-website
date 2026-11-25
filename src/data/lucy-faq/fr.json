@@ -457,7 +457,9 @@
    "q": [
     "Puis-je l'utiliser sur mon téléphone ?",
     "Existe-t-il une application mobile ?",
-    "Y a-t-il une application Android ou iPhone ?"
+    "Y a-t-il une application Android ou iPhone ?",
+    "Puis-je utiliser le téléphone hors de chez moi ?",
+    "L’application du téléphone fonctionne-t-elle avec les données mobiles ?"
    ],
    "page": "/fr/product",
    "match": "L’application StarkLLM pour Android travaille avec votre PC"
