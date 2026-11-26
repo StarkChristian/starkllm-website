@@ -670,8 +670,8 @@
     "Le site m'espionne-t-il ?",
     "Y a-t-il des traceurs sur ce site ?"
    ],
-   "page": "/fr/about",
-   "match": "n’utilise pas non plus d’outil d’analyse d’audience ni de traçage, et il ne dépose aucun cookie"
+   "page": "/fr/privacy",
+   "match": "Il ne dépose aucun cookie, n’utilise aucun outil d’analyse et ne charge ni polices, ni scripts, ni vidéos depuis d’autres serveurs"
   },
   {
    "id": "slow",

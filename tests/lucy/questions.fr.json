@@ -349,7 +349,8 @@
   {
    "q": "Le site web utilise-t-il des cookies ?",
    "pages": [
-    "/fr/about"
+    "/fr/about",
+    "/fr/privacy"
    ]
   },
   {
@@ -363,7 +364,8 @@
   {
    "q": "Quelles données le site conserve-t-il sur ses visiteurs ?",
    "pages": [
-    "/fr/about"
+    "/fr/about",
+    "/fr/privacy"
    ]
   },
   {
