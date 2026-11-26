@@ -70,7 +70,7 @@ export default {
       { t: 'Passo 2: chat basata sui documenti', v: 'Faccia domande basate sui documenti indicizzati, con l\'indicazione dei file di origine.', kind: 'chat', alt: 'Chat di StarkLLM basata sui documenti (interfaccia in inglese)' },
       { t: 'Passo 3: fonti che può controllare', v: 'Faccia clic su una fonte sotto una risposta per leggere, parola per parola, i passaggi su cui si è basata e aprire il documento a quella pagina.', kind: 'sources', alt: 'I passaggi su cui si è basata una risposta, mostrati parola per parola con un link alla pagina (interfaccia in inglese)' },
       { t: 'Passo 4: strumenti locali sicuri', v: 'Controlli, modifichi e approvi direttamente nella chat le chiamate agli strumenti fatte dal modello nello stesso processo.', kind: 'tool' },
-      { t: 'Passo 5: tredici temi', v: 'Passi subito da OLED Pitch Black a Cyberpunk Rose, Liquid Glass e altri.', kind: 'appearance', alt: 'Impostazioni di StarkLLM e galleria dei temi (interfaccia in inglese)' },
+      { t: 'Passo 5: tredici temi', v: 'Passi subito da Nero assoluto OLED a Rosa cyberpunk, Vetro liquido e altri.', kind: 'appearance', alt: 'Impostazioni di StarkLLM e galleria dei temi (interfaccia in inglese)' },
     ],
   },
   faq: {

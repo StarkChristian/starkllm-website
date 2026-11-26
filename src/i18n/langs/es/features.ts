@@ -169,7 +169,7 @@ export default {
     {
       id: 'themes', icon: 'palette', tag: 'Apariencia', shot: '14-themes',
       h2: 'Trece temas',
-      lede: 'Claros y oscuros, sobrios y divertidos: de Midnight Indigo y el negro OLED a Daylight Minimal, además de temas con dibujos como Doodle Chat y Starry Night.',
+      lede: 'Claros y oscuros, sobrios y divertidos: de Índigo medianoche y Negro puro OLED a Luz de día minimalista, además de temas con dibujos como Chat de garabatos y Noche estrellada.',
       points: [
         { k: 'Cambio al instante', v: 'Haga clic en el icono de la paleta en la barra lateral y el tema cambia sin reiniciar.' },
         { k: 'Seis idiomas', v: 'La interfaz habla inglés, alemán, español, francés, italiano y turco.' },

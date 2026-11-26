@@ -377,8 +377,8 @@
                 <p>StarkLLM exige une confirmation manuelle pour chaque exécution d’outil. Quand le modèle invoque un outil :</p>
                 <ol>
                     <li>Une carte de confirmation apparaît dans le fil de la discussion, avec le nom de l’outil et ses arguments.</li>
-                    <li>Vous pouvez examiner les arguments, cliquer dans les champs de paramètres pour ajuster des valeurs (par exemple préciser une requête de recherche ou augmenter <code>top_k</code>), puis cliquer sur <strong>Approve &amp; Execute</strong> (Approuver et exécuter).</li>
-                    <li>Si vous préférez que le modèle poursuive sans exécuter l’outil, cliquez sur <strong>Reject</strong> (Refuser). Le jeton de l’appel en attente est annulé, et votre discussion se poursuit sans interruption.</li>
+                    <li>Vous pouvez examiner les arguments, cliquer dans les champs de paramètres pour ajuster des valeurs (par exemple préciser une requête de recherche ou augmenter <code>top_k</code>), puis cliquer sur <strong>Confirmer et exécuter</strong>.</li>
+                    <li>Si vous préférez que le modèle poursuive sans exécuter l’outil, cliquez sur <strong>Annuler</strong>. Le jeton de l’appel en attente est annulé, et votre discussion se poursuit sans interruption.</li>
                 </ol>
 
                 <div class="alert info">
@@ -486,7 +486,7 @@
                 <h2>27. Dépannage</h2>
 <p>Le guide complet, avec une liste de contrôle d’installation et 27 problèmes accompagnés de leurs solutions, se trouve sur la page <a href="/fr/help">Aide et dépannage</a>. Les plus courants :</p>
 <ul>
-                    <li><strong>« Cannot connect to Ollama » :</strong> vérifiez qu’Ollama fonctionne (son icône dans la zone de notification de
+                    <li><strong>« Ollama est hors ligne. » :</strong> vérifiez qu’Ollama fonctionne (son icône dans la zone de notification de
                         Windows). StarkLLM le joint à l’adresse <code>127.0.0.1:11434</code>. Vérifiez que vous avez récupéré le modèle nécessaire
                         (<code>ollama pull qwen2.5:7b</code>).
                     </li>

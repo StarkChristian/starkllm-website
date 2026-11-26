@@ -379,8 +379,8 @@
                 <p>StarkLLM requires manual confirmation for every tool execution. When the model invokes a tool:</p>
                 <ol>
                     <li>A styled confirmation card appears in the chat stream showing the tool name and arguments.</li>
-                    <li>You can review the arguments, click into parameter fields to adjust values (e.g. refining a search query or increasing <code>top_k</code>), and click <strong>Approve &amp; Execute</strong>.</li>
-                    <li>If you prefer the model to proceed without running the tool, click <strong>Reject</strong>. The pending call token is cancelled, and your chat session continues uninterrupted.</li>
+                    <li>You can review the arguments, click into parameter fields to adjust values (e.g. refining a search query or increasing <code>top_k</code>), and click <strong>Confirm and run</strong>.</li>
+                    <li>If you prefer the model to proceed without running the tool, click <strong>Cancel</strong>. The pending call token is cancelled, and your chat session continues uninterrupted.</li>
                 </ol>
 
                 <div class="alert info">
@@ -423,7 +423,7 @@
                 <h3>How to Change Themes</h3>
                 <p>You can switch themes in two ways:</p>
                 <ul>
-                    <li><strong>Quick Switcher:</strong> Click the Palette icon (&#127912;) at the bottom of the left sidebar. A popover opens immediately; click any theme to apply it instantly.</li>
+                    <li><strong>From the sidebar:</strong> Click the palette icon (&#127912;) at the bottom of the left sidebar. A popover opens immediately; click any theme to apply it instantly.</li>
                     <li><strong>Settings Gallery:</strong> Open Settings from the sidebar, navigate to <strong>Appearance</strong>, and browse all theme cards with live swatch dots, gradient bars, and descriptions.</li>
                 </ul>
                 <p>Your active theme is automatically remembered across browser tabs and system restarts via client-side storage.</p>
@@ -488,7 +488,7 @@
                 <h2>27. Troubleshooting</h2>
 <p>The full guide, with an install checklist and 27 problems and fixes, is on the <a href="/help">Help &amp; Troubleshooting</a> page. The most common ones:</p>
 <ul>
-                    <li><strong>"Cannot connect to Ollama":</strong> Ensure Ollama is running (its icon in the Windows system
+                    <li><strong>"Ollama is offline.":</strong> Ensure Ollama is running (its icon in the Windows system
                         tray). StarkLLM reaches it at <code>127.0.0.1:11434</code>. Verify you pulled the required model
                         (<code>ollama pull qwen2.5:7b</code>).
                     </li>

@@ -172,7 +172,7 @@ export default {
     {
       id: 'themes', icon: 'palette', tag: 'Aspetto', shot: '14-themes',
       h2: 'Tredici temi',
-      lede: 'Chiari e scuri, sobri e giocosi: da «Indaco mezzanotte» e «Nero OLED» a «Luce diurna minimale», più temi con motivi come «Chat scarabocchi» e «Notte stellata».',
+      lede: 'Chiari e scuri, sobri e giocosi: da «Indaco mezzanotte» e «Nero assoluto OLED» a «Luce diurna minimale», più temi con motivi come «Chat scarabocchi» e «Notte stellata».',
       points: [
         { k: 'Cambio immediato', v: 'Clicchi sull’icona della tavolozza nella barra laterale e il tema cambia senza riavviare.' },
         { k: 'Sei lingue', v: 'L’interfaccia parla inglese, tedesco, spagnolo, francese, italiano e turco.' },

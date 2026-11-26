@@ -169,7 +169,7 @@ export default {
     {
       id: 'themes', icon: 'palette', tag: 'Darstellung', shot: '14-themes',
       h2: 'Dreizehn Themes',
-      lede: 'Hell und dunkel, ruhig und verspielt: von Midnight Indigo und OLED-Schwarz bis Daylight Minimal, dazu Muster-Themes wie Doodle Chat und Starry Night.',
+      lede: 'Hell und dunkel, ruhig und verspielt: von Mitternachtsindigo und OLED-Tiefschwarz bis Tageslicht minimal, dazu Muster-Themes wie Kritzel-Chat und Sternennacht.',
       points: [
         { k: 'Sofort umgeschaltet', v: 'Ein Klick auf das Paletten-Symbol in der Seitenleiste wechselt das Theme ohne Neustart.' },
         { k: 'Sechs Sprachen', v: 'Die Oberfläche spricht Englisch, Deutsch, Spanisch, Französisch, Italienisch und Türkisch.' },

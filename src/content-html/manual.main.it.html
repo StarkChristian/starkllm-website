@@ -379,8 +379,8 @@
                 <p>StarkLLM richiede una conferma manuale per ogni esecuzione di uno strumento. Quando il modello invoca uno strumento:</p>
                 <ol>
                     <li>Nel flusso della chat compare una scheda di conferma, con il nome dello strumento e gli argomenti.</li>
-                    <li>Può controllare gli argomenti, fare clic nei campi dei parametri per modificare i valori (per esempio affinando una query di ricerca o aumentando <code>top_k</code>) e fare clic su <strong>Approve &amp; Execute</strong> (approva ed esegui).</li>
-                    <li>Se preferisce che il modello proceda senza eseguire lo strumento, faccia clic su <strong>Reject</strong> (rifiuta). Il token della chiamata in sospeso viene annullato e la sessione di chat continua senza interruzioni.</li>
+                    <li>Può controllare gli argomenti, fare clic nei campi dei parametri per modificare i valori (per esempio affinando una query di ricerca o aumentando <code>top_k</code>) e fare clic su <strong>Conferma ed esegui</strong>.</li>
+                    <li>Se preferisce che il modello proceda senza eseguire lo strumento, faccia clic su <strong>Annulla</strong>. Il token della chiamata in sospeso viene annullato e la sessione di chat continua senza interruzioni.</li>
                 </ol>
 
                 <div class="alert info">
@@ -409,16 +409,16 @@
                 <h2>21. Personalizzare temi e aspetto</h2>
                 <p>StarkLLM include tredici temi di colore pensati per stare comodi nelle sessioni di giorno e di notte. Questi sono gli otto classici:</p>
                 <ul>
-                    <li><strong>Cyberpunk Rose:</strong> evidenziazioni al neon in rosa, rosa acceso e magenta, piene di energia.</li>
-                    <li><strong>OLED Pitch Black:</strong> sfondi nero assoluto #000000, ottimizzati per gli schermi OLED.</li>
-                    <li><strong>Liquid Glass:</strong> glassmorphism traslucido, con livelli di sfocatura smerigliata e bordi luminosi.</li>
-                    <li><strong>Matrix Emerald:</strong> verde smeraldo cyberpunk, ispirato al terminale.</li>
-                    <li><strong>Sunset Volcano:</strong> caldi accenti sfumati in ambra vulcanica e arancione.</li>
-                    <li><strong>Arctic Frost:</strong> toni minimali freddi, ciano e blu artico.</li>
-                    <li><strong>Midnight Indigo:</strong> viola e violetto cosmici e profondi (predefinito).</li>
-                    <li><strong>Daylight Minimal:</strong> modalità chiara, pulita e nitida, con l'alto contrasto della luce del giorno.</li>
+                    <li><strong>Rosa cyberpunk:</strong> evidenziazioni al neon in rosa, rosa acceso e magenta, piene di energia.</li>
+                    <li><strong>Nero assoluto OLED:</strong> sfondi nero assoluto #000000, ottimizzati per gli schermi OLED.</li>
+                    <li><strong>Vetro liquido:</strong> glassmorphism traslucido, con livelli di sfocatura smerigliata e bordi luminosi.</li>
+                    <li><strong>Smeraldo Matrix:</strong> verde smeraldo cyberpunk, ispirato al terminale.</li>
+                    <li><strong>Vulcano al tramonto:</strong> caldi accenti sfumati in ambra vulcanica e arancione.</li>
+                    <li><strong>Gelo artico:</strong> toni minimali freddi, ciano e blu artico.</li>
+                    <li><strong>Indaco mezzanotte:</strong> viola e violetto cosmici e profondi (predefinito).</li>
+                    <li><strong>Luce diurna minimale:</strong> modalità chiara, pulita e nitida, con l'alto contrasto della luce del giorno.</li>
                 </ul>
-                <p>Cinque temi con motivi aggiungono uno sfondo disegnato: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code e Starry Night.</p>
+                <p>Cinque temi con motivi aggiungono uno sfondo disegnato: Chat scarabocchi, Scarabocchi notturni, Prato fiorito, Codice Matrix e Notte stellata.</p>
 
                 <h3>Come cambiare tema</h3>
                 <p>Può cambiare tema in due modi:</p>
@@ -488,7 +488,7 @@
                 <h2>27. Risoluzione dei problemi</h2>
 <p>La guida completa, con una lista di controllo per l'installazione e 27 problemi con le relative soluzioni, è nella pagina <a href="/it/help">Aiuto e risoluzione dei problemi</a>. I più comuni:</p>
 <ul>
-                    <li><strong>"Cannot connect to Ollama" (impossibile collegarsi a Ollama):</strong> si assicuri che Ollama sia in esecuzione (la sua icona nell'area di notifica di Windows). StarkLLM lo raggiunge all'indirizzo
+                    <li><strong>"Ollama è offline.":</strong> si assicuri che Ollama sia in esecuzione (la sua icona nell'area di notifica di Windows). StarkLLM lo raggiunge all'indirizzo
                         <code>127.0.0.1:11434</code>. Verifichi di aver scaricato il modello necessario
                         (<code>ollama pull qwen2.5:7b</code>).
                     </li>

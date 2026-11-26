@@ -286,7 +286,7 @@ const techBase: Record<'en' | 'de', Record<TechSlug, Tech>> = {
       shot: 'appearance', shotAlt: 'StarkLLM-Einstellungen, Darstellung: die Theme-Galerie',
       h1: 'Farbthemen', lede: 'Dreizehn Farbthemen, von reinem Schwarz für OLED-Bildschirme über helle Themen bis zu Mustern.',
       sections: [
-        { h: de.what, p: 'StarkLLM hat dreizehn Themen: Midnight Indigo (Standard), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Volcano, Arctic Frost und Daylight Minimal, dazu fünf Muster-Themen: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code und Starry Night.' },
+        { h: de.what, p: 'StarkLLM hat dreizehn Themen: Mitternachtsindigo (Standard), OLED-Tiefschwarz, Flüssigglas, Cyberpunk-Rosé, Matrix-Smaragd, Vulkan im Abendrot, Arktischer Frost und Tageslicht minimal, dazu fünf Muster-Themen: Kritzel-Chat, Kritzel-Nacht, Blumenwiese, Matrix-Code und Sternennacht.' },
         { h: de.why, p: 'Lange Sitzungen schonen die Augen, wenn Kontrast und Helligkeit zu Bildschirm und Raum passen.' },
         { h: de.how, p: 'Wechseln Sie das Farbthema mit der Paletten-Schaltfläche unten in der Seitenleiste oder unter Einstellungen, Darstellung. Die Wahl wird gespeichert und sofort übernommen.' },
       ],

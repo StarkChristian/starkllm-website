@@ -136,7 +136,7 @@ const pages = {
     shot: 'appearance', shotAlt: 'Ajustes de StarkLLM, Apariencia: la galería de temas (interfaz en inglés)',
     h1: 'Temas', lede: 'Trece temas de color, desde el negro puro para pantallas OLED hasta temas claros y temas con motivos.',
     sections: [
-      { h: es.what, p: 'StarkLLM tiene trece temas: Midnight Indigo (el predeterminado), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Volcano, Arctic Frost y Daylight Minimal, más cinco temas con motivos: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code y Starry Night.' },
+      { h: es.what, p: 'StarkLLM tiene trece temas: Índigo medianoche (el predeterminado), Negro puro OLED, Cristal líquido, Rosa ciberpunk, Esmeralda Matrix, Volcán al atardecer, Escarcha ártica y Luz de día minimalista, más cinco temas con motivos: Chat de garabatos, Noche de garabatos, Prado de flores, Código Matrix y Noche estrellada.' },
       { h: es.why, p: 'Las sesiones largas cansan menos la vista cuando el contraste y el brillo se adaptan a su pantalla y a su habitación.' },
       { h: es.how, p: 'Cambie el tema con el botón de la paleta, al final de la barra lateral, o en Ajustes › Apariencia. La elección se guarda y se aplica de inmediato.' },
     ],
