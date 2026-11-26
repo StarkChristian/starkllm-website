@@ -63,7 +63,7 @@ export default {
         { k: 'Weitere Sprachen', v: 'Weitere Sprachen der Texterkennung fügen Sie in den Einstellungen unter „Fotos und Scans lesen“ hinzu; jede ist eine kleine Datei, einmal geladen.' },
         { k: 'Vom Handy', v: 'Fotografieren Sie einen Brief mit der Android-App; Ihr PC liest ihn, und das Foto wird nach dem Senden auf dem Handy gelöscht.' },
       ],
-      limits: 'Handschrift und unscharfe Fotos werden schlecht gelesen. Prüfen Sie Beträge aus einem fotografierten Brief am Papier.',
+      limits: 'Handschrift (auch handgeschriebene Briefe) und unscharfe Fotos werden schlecht gelesen. Prüfen Sie Beträge aus einem fotografierten Brief am Papier.',
     },
     {
       id: 'images', icon: 'image', tag: 'Bilder', shot: '07-image-question',

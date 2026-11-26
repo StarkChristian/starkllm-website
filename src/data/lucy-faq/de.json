@@ -149,7 +149,18 @@
   "irgendwohin",
   "irgendetwas",
   "bitte",
-  "mal"
+  "mal",
+  "wozu",
+  "wem",
+  "wen",
+  "wessen",
+  "wofur",
+  "woher",
+  "wohin",
+  "womit",
+  "worin",
+  "woran",
+  "wovon"
  ],
  "suffixes": [
   "ungen",
@@ -539,7 +550,8 @@
     "Wer hat diese Software entwickelt?",
     "Wer hat es gebaut?",
     "Wer ist der Autor?",
-    "Wer ist der Betreiber?"
+    "Wer ist der Betreiber?",
+    "Wem gehört diese Website und StarkLLM?"
    ],
    "page": "/de/about",
    "match": "Christian Stark. Maxstr. 14, 52070 Aachen, Deutschland"
@@ -594,7 +606,8 @@
     "Nutzt die Website Cookies oder Analytics?",
     "Wie sieht es mit Webanalyse auf dieser Seite aus?",
     "Welche Daten speichert ihr über Website-Besucher?",
-    "Welche Daten speichert diese Website über Besucher?"
+    "Welche Daten speichert diese Website über Besucher?",
+    "Werde ich auf dieser Website verfolgt?"
    ],
    "page": "/datenschutz",
    "match": "Diese Website verwendet keine Webanalyse- und keine Tracking-Werkzeuge und setzt keine Cookies"
@@ -618,6 +631,17 @@
    ],
    "page": "/de/tech-privacy",
    "match": "Update-Prüfung"
+  },
+  {
+   "id": "export",
+   "q": [
+    "Wie exportiere ich einen Chat?",
+    "Kann ich eine Unterhaltung als PDF oder Word speichern?",
+    "Wie speichere ich ein Gespräch als Datei?",
+    "Lassen sich Gespräche exportieren?"
+   ],
+   "page": "/de/manual",
+   "match": "StarkLLM bietet den Export mit einem Klick direkt aus der Chat-Kopfzeile"
   },
   {
    "id": "delete",
