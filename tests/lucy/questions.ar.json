@@ -1,0 +1,484 @@
+{
+ "questions": [
+  {
+   "q": "ما هو StarkLLM بالضبط؟",
+   "pages": [
+    "/ar/about",
+    "/ar/",
+    "/ar/manual",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل هو مجاني حقًا؟",
+   "pages": [
+    "/ar/download",
+    "/ar/contact",
+    "/ar/about"
+   ]
+  },
+  {
+   "q": "هل يجب أن أدفع أي شيء؟",
+   "pages": [
+    "/ar/download",
+    "/ar/contact",
+    "/ar/about"
+   ]
+  },
+  {
+   "q": "ما هي رخصة البرنامج؟",
+   "pages": [
+    "/ar/download",
+    "/ar/about"
+   ]
+  },
+  {
+   "q": "هل تُرفع بياناتي إلى أي مكان؟",
+   "pages": [
+    "/ar/tech-privacy",
+    "/ar/",
+    "/ar/contact",
+    "/ar/download",
+    "/ar/about",
+    "/ar/manual",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "هل يعمل StarkLLM بدون اتصال بالإنترنت؟",
+   "pages": [
+    "/ar/tech-local-models",
+    "/ar/tech-privacy",
+    "/ar/",
+    "/ar/manual",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "كيف أثبته على Windows؟",
+   "pages": [
+    "/ar/download",
+    "/ar/manual",
+    "/ar/help",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "يظهر Windows تحذيرًا عند فتح المثبت، ماذا أفعل؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "لماذا يحظر Windows SmartScreen المثبت؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "كيف أتحقق من أن ملف التثبيت لم يتم التلاعب به؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "كم من الذاكرة يحتاج حاسوبي؟",
+   "pages": [
+    "/ar/download",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "هل أحتاج إلى بطاقة رسومات قوية؟",
+   "pages": [
+    "/ar/download",
+    "/ar/manual",
+    "/ar/help",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "هل يمكن استخدامه على جهاز Mac؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "هل Docker ضروري؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "كم يستغرق التشغيل الأول؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "بأي لغات يقرأ صندوق الوارد الرسائل؟",
+   "pages": [
+    "/ar/manual",
+    "/ar/product",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل الواجهة متوفرة باللغة العربية؟",
+   "pages": [
+    "/ar/manual",
+    "/ar/product",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone",
+    "/ar/download",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "ما فائدة صندوق الوارد؟",
+   "pages": [
+    "/ar/product",
+    "/ar/",
+    "/ar/manual",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يمكنني إضافة صورة رسالة من الهاتف؟",
+   "pages": [
+    "/ar/product",
+    "/ar/manual",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "كيف يكتشف رسائل الاحتيال؟",
+   "pages": [
+    "/ar/product",
+    "/ar/manual",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما هي نماذج الذكاء الاصطناعي التي يشغلها؟",
+   "pages": [
+    "/ar/tech-local-models",
+    "/ar/manual",
+    "/ar/help",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما فائدة Ollama؟",
+   "pages": [
+    "/ar/tech-local-models",
+    "/ar/help",
+    "/ar/download",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يمكنني استخدام نماذج سحابية مثل DeepSeek؟",
+   "pages": [
+    "/ar/tech-privacy",
+    "/ar/manual",
+    "/ar/help",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "أين أرى من أي مستند جاءت الإجابة؟",
+   "pages": [
+    "/ar/tech-rag",
+    "/ar/product",
+    "/ar/manual",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما هو التوليد المعزز بالاسترجاع؟",
+   "pages": [
+    "/ar/tech-rag",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "ما هي قاعدة المعرفة؟",
+   "pages": [
+    "/ar/tech-knowledge-base",
+    "/ar/manual",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما الفرق بين مساحة العمل وقاعدة المعرفة؟",
+   "pages": [
+    "/ar/manual",
+    "/ar/product",
+    "/ar/tech-workspaces",
+    "/ar/tech-knowledge-base",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما صيغ الملفات التي يمكنني رفعها؟",
+   "pages": [
+    "/ar/tech-multimodal",
+    "/ar/download",
+    "/ar/manual",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "هل يمكنني التحدث إليه بصوتي؟",
+   "pages": [
+    "/ar/tech-voice",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "كم عدد سمات الألوان المتوفرة؟",
+   "pages": [
+    "/ar/tech-themes",
+    "/ar/",
+    "/ar/manual",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يشغّل الذكاء الاصطناعي برامج على حاسوبي دون أن يسأل؟",
+   "pages": [
+    "/ar/tech-local-tools",
+    "/ar/manual",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما هو البحث الهجين؟",
+   "pages": [
+    "/ar/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "ما هو التقطيع الدلالي؟",
+   "pages": [
+    "/ar/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "كيف أراسلكم بالبريد الإلكتروني؟",
+   "pages": [
+    "/ar/contact",
+    "/ar/about",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "من طوّر هذا البرنامج؟",
+   "pages": [
+    "/ar/about",
+    "/ar/contact"
+   ]
+  },
+  {
+   "q": "أين أجد الشيفرة المصدرية على GitHub؟",
+   "pages": [
+    "/ar/about",
+    "/ar/contact",
+    "/ar/download",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "نسيت كلمة المرور، ماذا أفعل الآن؟",
+   "pages": [
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "كيف ألغي تثبيت البرنامج؟",
+   "pages": [
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يستخدم الموقع ملفات تعريف الارتباط؟",
+   "pages": [
+    "/ar/about",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "لماذا الإجابات بطيئة جدًا؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يرسل StarkLLM بيانات القياس عن بعد؟",
+   "pages": [
+    "/ar/tech-privacy",
+    "/ar/",
+    "/ar/download",
+    "/ar/contact",
+    "/ar/manual",
+    "/ar/about",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "ما هي متطلبات النظام؟",
+   "pages": [
+    "/ar/download",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "ماذا يفعل البحث عن التحديثات؟",
+   "pages": [
+    "/ar/tech-privacy",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "هل هو مفتوح المصدر؟",
+   "pages": [
+    "/ar/about",
+    "/ar/contact",
+    "/ar/download"
+   ]
+  },
+  {
+   "q": "هل يمكن للبرنامج حذف ملفاتي؟",
+   "pages": [
+    "/ar/product",
+    "/ar/manual",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يمكنني استخدام StarkLLM مع مستندات سرية؟",
+   "pages": [
+    "/ar/tech-privacy",
+    "/ar/",
+    "/ar/about",
+    "/ar/manual",
+    "/ar/tech-local-models",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "أين تُحفظ بياناتي وكيف أعمل نسخة احتياطية؟",
+   "pages": [
+    "/ar/help",
+    "/ar/tech-privacy",
+    "/ar/manual",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "ماذا يحدث إذا لم يكن Ollama قيد التشغيل؟",
+   "pages": [
+    "/ar/help",
+    "/ar/manual",
+    "/ar/download"
+   ]
+  },
+  {
+   "q": "هل يمكنني استخدام هاتفي خارج المنزل؟",
+   "pages": [
+    "/ar/phone",
+    "/ar/features",
+    "/ar/",
+    "/ar/manual",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "كيف أحصل على تطبيق Android؟",
+   "pages": [
+    "/ar/phone",
+    "/ar/download",
+    "/ar/",
+    "/ar/manual",
+    "/ar/features"
+   ]
+  },
+  {
+   "q": "ما هي مهام الويب؟",
+   "pages": [
+    "/ar/features",
+    "/ar/",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يمكنني تفريغ تسجيل اجتماع؟",
+   "pages": [
+    "/ar/features",
+    "/ar/manual",
+    "/ar/"
+   ]
+  }
+ ],
+ "unrelated": [
+  "كيف حال الطقس اليوم في القاهرة؟",
+  "من فاز بكأس العالم الأخيرة لكرة القدم؟",
+  "كيف أطبخ الكبسة؟",
+  "ما هي عاصمة أستراليا؟",
+  "اكتب لي قصيدة عن البحر",
+  "هل تنصحني بفيلم جيد؟",
+  "ما أفضل هاتف أشتريه؟",
+  "كم يبلغ ارتفاع جبل إيفرست؟",
+  "احكِ لي نكتة",
+  "كيف أتعلم العزف على العود؟",
+  "ترجم صباح الخير إلى اليابانية",
+  "من هو رئيس فرنسا؟"
+ ],
+ "advice": [
+  "هل استخدام هذا البرنامج قانوني في مكتب المحاماة الخاص بي؟",
+  "هل يمكنني مقاضاتكم إذا حدث خطأ؟",
+  "أحتاج إلى استشارة قانونية بشأن عقدي"
+ ]
+}

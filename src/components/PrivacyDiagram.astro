@@ -1,44 +1,51 @@
 ---
-// "Your data stays here": what stays on the PC (left) and what goes online only when the user switches it on (right),
+// "Your data stays here": what stays on the PC (left; right in RTL) and what goes online only when the user switches it on,
 // each online feature with its switch, shown off. Inline SVG with theme colours; a plain list on narrow screens.
 import Icon from './Icon.astro';
 import { start } from '../i18n/site';
-import type { Lang } from '../i18n/ui';
+import { dirOf, type Lang } from '../i18n/ui';
 const { lang } = Astro.props as { lang: Lang };
 const p = start[lang].privacy;
 const rows = [130, 206, 282, 358, 434];
 const uid = `pd-${lang}`;
+// Right-to-left (ar, fa): the diagram is mirrored, PC on the right, online on the left. The SVG text inherits dir=rtl, so
+// text-anchor "start" already means the right end of the text; only the x positions are mirrored. LTR is unchanged.
+const rtl = dirOf(lang) === 'rtl';
+const X = (x: number) => (rtl ? 1000 - x : x);
+const R = (x: number, w: number) => (rtl ? 1000 - x - w : x);
+const wire = (y: number) => (rtl ? `M554 ${y} H 446` : `M446 ${y} H 554`);
+const goldX = rtl ? 500 + p.offline.length * 3.05 + 12 : 500 - p.offline.length * 3.05 - 12;
 ---
 <figure class="pdiag-fig">
   <svg class="pdiag" viewBox="0 0 1000 600" role="img" aria-labelledby={`${uid}-t ${uid}-d`}>
     <title id={`${uid}-t`}>{p.pcTitle} / {p.netTitle}</title>
     <desc id={`${uid}-d`}>{p.pc.join(', ')}. {p.net.map((n) => `${n.k}: ${n.v}`).join('; ')}. {p.offline}</desc>
-    <rect class="box-pc" x="20" y="20" width="450" height="500" rx="26" />
-    <text class="h" x="52" y="72">{p.pcTitle}</text>
-    <text class="sub" x="52" y="98">{p.pcSub}</text>
-    <path class="wire-live" d={`M72 ${rows[0] + 29} V ${rows[4] + 29}`} />
+    <rect class="box-pc" x={R(20, 450)} y="20" width="450" height="500" rx="26" />
+    <text class="h" x={X(52)} y="72">{p.pcTitle}</text>
+    <text class="sub" x={X(52)} y="98">{p.pcSub}</text>
+    <path class="wire-live" d={`M${X(72)} ${rows[0] + 29} V ${rows[4] + 29}`} />
     {p.pc.map((t, i) => (
       <g>
-        <rect class="row-pc" x="44" y={rows[i]} width="402" height="58" rx="14" />
-        <circle class="dot" cx="72" cy={rows[i] + 29} r="6" />
-        <text class="item" x="94" y={rows[i] + 35}>{t}</text>
+        <rect class="row-pc" x={R(44, 402)} y={rows[i]} width="402" height="58" rx="14" />
+        <circle class="dot" cx={X(72)} cy={rows[i] + 29} r="6" />
+        <text class="item" x={X(94)} y={rows[i] + 35}>{t}</text>
       </g>
     ))}
-    <rect class="box-net" x="530" y="20" width="450" height="500" rx="26" />
-    <text class="h" x="562" y="72">{p.netTitle}</text>
-    <text class="sub" x="562" y="98">{p.netSub}</text>
+    <rect class="box-net" x={R(530, 450)} y="20" width="450" height="500" rx="26" />
+    <text class="h" x={X(562)} y="72">{p.netTitle}</text>
+    <text class="sub" x={X(562)} y="98">{p.netSub}</text>
     {p.net.map((n, i) => (
       <g>
-        <path class="wire" d={`M446 ${rows[i] + 29} H 554`} />
+        <path class="wire" d={wire(rows[i] + 29)} />
         <circle class="gate" cx="500" cy={rows[i] + 29} r="7" />
-        <rect class="row-net" x="554" y={rows[i]} width="402" height="58" rx="14" />
-        <text class="item" x="578" y={rows[i] + 25}>{n.k}</text>
-        <text class="note" x="578" y={rows[i] + 45}>{n.v}</text>
-        <rect class="sw-track" x="902" y={rows[i] + 18} width="40" height="22" rx="11" />
-        <circle class="sw-knob" cx="913" cy={rows[i] + 29} r="7" />
+        <rect class="row-net" x={R(554, 402)} y={rows[i]} width="402" height="58" rx="14" />
+        <text class="item" x={X(578)} y={rows[i] + 25}>{n.k}</text>
+        <text class="note" x={X(578)} y={rows[i] + 45}>{n.v}</text>
+        <rect class="sw-track" x={R(902, 40)} y={rows[i] + 18} width="40" height="22" rx="11" />
+        <circle class="sw-knob" cx={X(913)} cy={rows[i] + 29} r="7" />
       </g>
     ))}
-    <circle class="gold" cx={500 - p.offline.length * 3.05 - 12} cy="566" r="5" />
+    <circle class="gold" cx={goldX} cy="566" r="5" />
     <text class="sub" x="500" y="571" text-anchor="middle">{p.offline}</text>
   </svg>
   <div class="pdiag-list grid-2">

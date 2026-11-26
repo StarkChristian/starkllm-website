@@ -390,3 +390,5 @@ a.card:hover { border-color: var(--accent-line); translate: 0 -2px; box-shadow: 
 [dir='rtl'] pre { text-align: left; }
 [dir='rtl'] :is(.window, .phone, .shot, picture, video) { direction: ltr; }
 [dir='rtl'] :is(.window, .phone) :is(figcaption, .ph-label) { direction: rtl; }
+/* the names of Arabic and Persian in the language menu of every page */
+.lang-menu a:is(:lang(ar), :lang(fa)) { font-family: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif; }

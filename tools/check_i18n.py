@@ -7,6 +7,8 @@ SITE = "https://www.starkllm.com"
 ap = argparse.ArgumentParser(); ap.add_argument("--root", default="dist"); ap.add_argument("--default-lang", default="en")
 a = ap.parse_args(); root = pathlib.Path(a.root)
 errors = []
+RTL = {"ar", "fa"}   # right-to-left languages: <html dir="rtl">; every other page dir="ltr"
+LANG_DIRS = {"de", "es", "fr", "it", "tr", "ar", "fa"}
 
 def url_of(file):  # dist/de/index.html -> /de/ ; dist/tech-rag.html -> /tech-rag
     rel = file.relative_to(root).as_posix()
@@ -24,6 +26,7 @@ for f in sorted(root.rglob("*.html")):
     h = f.read_text(encoding="utf-8")
     pages[url_of(f)] = dict(
         file=f, lang=(re.search(r'<html lang="([^"]+)"', h) or [None, None])[1],
+        dir=(re.search(r'<html lang="[^"]+" dir="([^"]+)"', h) or [None, None])[1],
         canonical=re.findall(r'<link rel="canonical" href="([^"]+)"', h),
         alts=dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', h)),
         switcher=re.findall(r'<li class="lang">(.*?)</li>', h, re.S),
@@ -37,6 +40,9 @@ for url, p in pages.items():
         if len(p["canonical"]) != 1 or not file_of(p["canonical"][0]).exists(): errors.append(f"{url}: redirect page needs one canonical to an existing page")
         continue
     if not p["lang"]: errors.append(f"{url}: no <html lang>")
+    elif p["dir"] != ("rtl" if p["lang"] in RTL else "ltr"): errors.append(f"{url}: <html lang=\"{p['lang']}\"> needs dir=\"{'rtl' if p['lang'] in RTL else 'ltr'}\", found {p['dir']}")
+    prefix = url.split("/")[1] if url.count("/") > 1 else ""
+    if prefix in LANG_DIRS and p["lang"] != prefix: errors.append(f"{url}: page under /{prefix}/ has <html lang=\"{p['lang']}\">")
     if len(p["canonical"]) != 1: errors.append(f"{url}: expected one canonical, found {len(p['canonical'])}")
     elif not file_of(p["canonical"][0]).exists(): errors.append(f"{url}: canonical {p['canonical'][0]} does not exist")
     elif p["canonical"][0] != SITE + url: errors.append(f"{url}: canonical {p['canonical'][0]} is not the page itself")

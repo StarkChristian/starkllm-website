@@ -15,7 +15,7 @@ Going live needs the owner's OK. Until then the new site is a preview.
    - Every page exists in every language: home, product, features, phone, privacy, download, manual, help, technology pages and about.
    - The legal pages stay in German and English.
    - The texts are written for each language, not word-for-word translations, always in the formal address.
-   - Persian is not offered.
+   - Arabic and Persian (right-to-left) were added on 26 Nov 2026 at the owner's request; the app's interface is not in them, the site says so. See README.md, "Right-to-left languages".
 3. **Private like the app.** No trackers, no cookies, no fonts or scripts from other servers. Videos are hosted on the site itself, so there is no YouTube.
 4. **Fast.** The HTML of the home page is small. Images are AVIF/WebP in the needed sizes. Videos load only when they come into view.
    - Target: Lighthouse 100 for performance, accessibility, best practices and SEO.

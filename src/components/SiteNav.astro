@@ -2,7 +2,7 @@
 // The top bar. On narrow screens the links live in a popover (no JavaScript: popover + popovertarget).
 // The language switch offers only the languages this page exists in; pages that exist once get none.
 import Icon from './Icon.astro';
-import { languages, langsFor, localePath, type Lang } from '../i18n/ui';
+import { languages, langsFor, localePath, dirOf, type Lang } from '../i18n/ui';
 import { common } from '../i18n/site';
 const { lang = 'en', path = '/' } = Astro.props as { lang?: Lang; path?: string };
 const t = common[lang].nav;
@@ -30,7 +30,7 @@ const here = path.replace(/\.html$/, '');
     </div>
     <ul class="nav-tools" role="list">
       {switchTo.length > 0 && (
-        <li class="lang"><details><summary aria-label={`${t.language}: ${languages[lang].name}`}><Icon name="globe" size={17} />{lang.toUpperCase()}</summary><div class="lang-menu">{switchTo.map((l) => <a href={localePath(l, path)} hreflang={l} lang={l}>{languages[l].name}</a>)}</div></details></li>
+        <li class="lang"><details><summary aria-label={`${t.language}: ${languages[lang].name}`}><Icon name="globe" size={17} />{lang.toUpperCase()}</summary><div class="lang-menu">{switchTo.map((l) => <a href={localePath(l, path)} hreflang={l} lang={l} dir={dirOf(l) === "rtl" ? "rtl" : undefined}>{languages[l].name}</a>)}</div></details></li>
       )}
       <li><button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label={t.theme} title={t.theme}><Icon name="moon" size={19} class="ico-moon" /><Icon name="sun" size={19} class="ico-sun" /></button></li>
       <li><a class="icon-btn" href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener" aria-label={t.github} title={t.github}><Icon name="github" size={19} /></a></li>

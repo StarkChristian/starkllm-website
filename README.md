@@ -75,11 +75,21 @@ Previews go to a **separate** repo (`StarkChristian/starkllm-website-preview`, G
 
 ## Languages
 
-English is the default language and lives at the site root; every other language lives under its code: German `/de/`, Spanish `/es/`, French `/fr/`, Italian `/it/`, Turkish `/tr/`. Nothing on a page may assume the reader is in Germany, except the legal pages (`impressum`, `datenschutz`), which are German legal text (their `<html lang>` is `de`).
+English is the default language and lives at the site root; every other language lives under its code: German `/de/`, Spanish `/es/`, French `/fr/`, Italian `/it/`, Turkish `/tr/`, Arabic `/ar/`, Persian `/fa/` (the last two right-to-left). Nothing on a page may assume the reader is in Germany, except the legal pages (`impressum`, `datenschutz`), which are German legal text (their `<html lang>` is `de`).
 
 The legal texts are not translated into the new languages. `/privacy-policy` is the English courtesy translation of the privacy policy, `datenschutz` and `impressum` are the legally binding German originals, and the footer of `es`, `fr`, `it` and `tr` links to a short notice page (`/<lang>/legal`) that points to all three. The text of the new languages is AI-drafted: every page shows a small notice in the footer (`footer.aiNote`) and the native-speaker review list is `docs/translation-review.md`.
 
 Rules the build checks (`npm run check-i18n`): every page has one canonical URL (itself); a page that exists in several languages lists all of them plus `x-default` (the default language, or the first language of the page if the default has none) as `hreflang` alternates, and every alternate lists the same set; a page that exists in one language has no hreflang tags and no language switcher; every page is in `sitemap.xml`. `python3 tools/check_language_mix.py --root dist` checks that no page contains sentences of another language.
+
+### Right-to-left languages (ar, fa)
+
+- `dir: 'rtl'` in `allLanguages` (`src/i18n/ui.ts`) makes `SiteLayout` write `<html lang="ar" dir="rtl">`; `dirOf(lang)` gives the direction anywhere. `npm run check-i18n` checks that every ar/fa page has `dir="rtl"` and every other page `dir="ltr"`.
+- The CSS uses logical properties (`padding-inline-start`, `inset-inline-end`, `text-align: start`, ...), so LTR is unchanged and RTL mirrors by itself. Mirrored on purpose: direction icons (`Icon` adds `ico-dir`, e.g. `arrow`), the hero glow, the privacy diagram (`PrivacyDiagram.astro`), Lucy's dock (bottom-left, `lucy-dock.ts`), her bubbles and the pointing Lucy. Never mirrored: logos, screenshots, videos, the app-window and phone frames, code.
+- Text: page strings are plain text, so English labels, paths, versions, URLs, SHA-256 and e-mail addresses inside ar/fa text are wrapped in Unicode isolates with `L()` (`\u2066…\u2069`, the plain-text form of `<bdi dir="ltr">`) at the top of each `src/i18n/langs/{ar,fa}/*.ts`; the HTML pages (manual, contact) use `<bdi>` and `dir="ltr"`. The changelog notes keep `lang="en" dir="ltr"`.
+- Persian: Persian digits in prose (Latin in versions, SHA-256, technical tables, URLs), Persian ی/ک only, ZWNJ (می‌شود). Arabic: Western digits.
+- Font: Vazirmatn v33.003 (SIL OFL), subset to Arabic + Latin as one variable woff2 (`src/assets/fonts/`, `src/styles/fonts.css`), loaded only on ar/fa pages (`tokens.css`); fallback Segoe UI, Tahoma. No negative letter-spacing on Arabic script.
+- Lucy: `fold()` in `src/scripts/lucy-engine.js` normalises Arabic script (alef forms, ي/ى→ی, ك→ک, ة→ه, diacritics, tatweel, ZWNJ, bidi controls, Arabic-Indic and Persian digits); the FAQ json may list `prefixes` (Arabic article), stripped before the suffixes.
+- The app has no Arabic or Persian interface (en, de, es, fr, it, tr); the pages say so and name buttons by their English label with a translation in brackets.
 
 ### Adding a language
 

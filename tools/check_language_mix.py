@@ -13,6 +13,9 @@ STOP = {
  "fr": "le la les des du de et un une pour avec par sur est sont pas vous votre plus mais aussi quand peut cette ce dans que qui".split(),
  "it": "il lo la gli le dei del della di e un una per con su è sono non più come ma anche quando può questo questa tuo nel che".split(),
  "tr": "ve bir bu için ile de da çok daha ama gibi olarak olan en mi mı değil var yok ne nasıl veya sizin".split(),
+ # Arabic and Persian: words that exist in both with another meaning (ما من هم به) are left out on purpose.
+ "ar": "في على إلى عن هذا هذه التي الذي أن لا هل كيف أو ثم قد يمكن عند بين كل ذلك".split(),
+ "fa": "در از که این را با است برای شما یا اگر نمی شود کنید می‌شود می‌توانید".split(),
 }
 # Words that belong to more than one language's list (shared function words) are dropped: only words of exactly one language count
 _all = {w for l in STOP.values() for w in l}
@@ -20,7 +23,7 @@ _count = {w: sum(w in l for l in STOP.values()) for w in _all}
 STOP = {k: [w for w in v if _count[w] == 1] for k, v in STOP.items()}
 ap = argparse.ArgumentParser(); ap.add_argument("--root", default="dist"); ap.add_argument("--max", type=float, default=0.025)
 a = ap.parse_args(); root = pathlib.Path(a.root)
-LANGS = {"de", "es", "fr", "it", "tr"}
+LANGS = {"de", "es", "fr", "it", "tr", "ar", "fa"}
 SINGLE = {"impressum": "de", "datenschutz": "de", "privacy-policy": "en", "404": "en"}
 
 def visible(h):

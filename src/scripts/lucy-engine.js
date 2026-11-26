@@ -9,14 +9,26 @@ const COVER_MIN = 0.55;    // share of the question's content words (idf-weighte
 const UNSEEN_MAX = 0.3;    // share of the question's words that appear nowhere on the site (then it is probably about something else)
 const SCORE_MIN = 3.2;     // minimum BM25 score of the best passage
 
-export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i');
+// Arabic script (ar, fa): NFKD splits the hamza and madda off the alef forms (أ إ آ -> ا), ؤ -> و, ئ -> ي, ۀ -> ه;
+// then the diacritics (harakat, superscript alef, Quranic marks) and the tatweel go, Arabic ي/ى and Persian ی become one
+// letter, ك/ک too, ة -> ه, Arabic-Indic and Persian digits -> 0-9. The zero-width non-joiner (می‌شود) joins the word
+// (people type it joined, with ZWNJ or with a space), and the bidi controls the pages use around English labels are dropped.
+const arabicMarks = /[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\u0640]/g;
+const arabicMap = { 'ي': 'ی', 'ى': 'ی', 'ك': 'ک', 'ة': 'ه' };
+export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i')
+  .replace(arabicMarks, '').replace(/[يىكة]/g, (c) => arabicMap[c])
+  .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660)).replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x6F0))
+  .replace(/\u200C/g, '').replace(/[\u200B\u200D-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, '');
 
 export function createEngine(data) {
   const stop = new Set((data.stop || []).map(fold));
-  const suf = [...(data.suf || [])].sort((a, b) => b.length - a.length);
+  const suf = [...(data.suf || [])].map(fold).sort((a, b) => b.length - a.length);
+  // prefixes (Arabic: the article and the clitics و ب ل ف ك), stripped before the suffixes; empty for most languages
+  const pre = [...(data.pre || [])].map(fold).sort((a, b) => b.length - a.length);
   const advice = (data.advice || []).map(fold);
 
   const stem = (t) => {
+    for (const p of pre) if (t.length - p.length >= 3 && t.startsWith(p)) { t = t.slice(p.length); break; }
     for (const s of suf) if (t.length - s.length >= 3 && t.endsWith(s)) return t.slice(0, -s.length);
     return t;
   };
@@ -85,7 +97,7 @@ export function createEngine(data) {
   function quote(d, q) {
     const t = d.t;
     if (t.length <= 360) return t;
-    const sents = t.split(/(?<=[.!?…])\s+/);
+    const sents = t.split(/(?<=[.!?…؟])\s+/);
     const sc = sents.map((s) => { const tk = new Set(tokens(s)); return q.reduce((a, w) => a + (tk.has(w) ? idf(w) : 0), 0); });
     let bi = 0; for (let i = 1; i < sc.length; i++) if (sc[i] > sc[bi]) bi = i;
     let from = bi, to = bi, out = sents[bi].trim();

@@ -16,7 +16,9 @@ function init(dock: HTMLElement, btn: HTMLButtonElement) {
   const data = readData();
   const ASPECT = 1050 / 1080, M = 16;
   const BLOCK = 'a,button,input,select,textarea,summary,label,[role=button],[role=link]';
-  let side = 1, lift = 0, state = '', raf = 0, idle = 0, p = 1;
+  // right-to-left pages (ar, fa): her corner is the bottom-left one, and she steps aside to the right
+  const home = document.documentElement.dir === 'rtl' ? -1 : 1;
+  let side = home, lift = 0, state = '', raf = 0, idle = 0, p = 1;
   let chat: typeof import('./lucy-chat') | null = null, open = false;
 
   const size = () => (innerWidth < 600 ? 56 : 72);
@@ -65,7 +67,7 @@ function init(dock: HTMLElement, btn: HTMLButtonElement) {
   }
   function settle() {
     if (open || p < 1 || document.hidden) return;
-    const options: [number, number][] = [[1, 0], [1, 80], [1, 160], [-1, 0], [-1, 80]];
+    const options: [number, number][] = [[home, 0], [home, 80], [home, 160], [-home, 0], [-home, 80]];
     const pick = options.find(([s, l]) => free(s, l)) || options[0];
     if (pick[0] === side && pick[1] === lift) return;
     side = pick[0]; lift = pick[1];

@@ -6,11 +6,11 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createEngine } from '../src/scripts/lucy-engine.js';
+import { createEngine, fold } from '../src/scripts/lucy-engine.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MIN_RATE = 0.85;
-const flat = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]+/gu, '');
+const flat = (s) => fold(s).replace(/[^\p{L}\p{N}]+/gu, '');
 const verbose = process.argv.includes('--verbose');
 let failed = false;
 const summary = [];

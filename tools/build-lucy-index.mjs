@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, readdirSync, statSync, mkdirSync, existsSy
 import { join, relative, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gzipSync } from 'node:zlib';
+import { fold } from "../src/scripts/lucy-engine.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
@@ -70,7 +71,7 @@ export function extractPage(html) {
   return { title, lang, blocks };
 }
 
-const sentenceEnd = (t) => /[.!?:;…)"”»]$/.test(t);
+const sentenceEnd = (t) => /[.!?:;…)"”»؟؛]$/.test(t);
 /** Merge consecutive blocks of one heading into passages of about 450 characters. */
 export function chunk(blocks) {
   const out = [];
@@ -79,7 +80,7 @@ export function chunk(blocks) {
   for (const b of blocks) {
     if (b.heading) { push(); continue; }
     let t = b.t; if (!sentenceEnd(t)) t += '.';
-    const sentences = t.length > 700 ? t.split(/(?<=[.!?…])\s+/) : [t];
+    const sentences = t.length > 700 ? t.split(/(?<=[.!?…؟])\s+/) : [t];
     if (b.sum) push();
     for (const s of sentences) {
       if (cur && (cur.h !== b.h || cur.id !== b.id || (!cur.open && cur.t.length + s.length > 520))) push();
@@ -92,7 +93,8 @@ export function chunk(blocks) {
   return out;
 }
 
-const norm = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '');
+// FAQ phrase lookup: the engine's fold (also Arabic script), then letters and digits only.
+const norm = (s) => fold(s).replace(/[^\p{L}\p{N}]+/gu, '');
 
 function walk(dir, out = []) {
   for (const n of readdirSync(dir)) { const p = join(dir, n); statSync(p).isDirectory() ? walk(p, out) : n.endsWith('.html') && out.push(p); }
@@ -137,7 +139,7 @@ export function build() {
       faq.push({ id: e.id, q: e.q, ci, m: e.match });
     }
     if (bad.length) { console.error(bad.join('\n')); process.exitCode = 1; continue; }
-    const data = { lang: L.lang, pages, c: chunks, faq, stop: L.stop, suf: L.suffixes, advice: L.advice || [], legal: L.legalPages || [], links: L.links || {} };
+    const data = { lang: L.lang, pages, c: chunks, faq, stop: L.stop, suf: L.suffixes, pre: L.prefixes || [], advice: L.advice || [], legal: L.legalPages || [], links: L.links || {} };
     const json = JSON.stringify(data);
     writeFileSync(join(OUT, `index-${L.lang}.json`), json);
     report.push(`${L.lang}: ${pages.length} pages, ${chunks.length} passages, ${faq.length} FAQ, ${(json.length / 1024).toFixed(0)} KB (${(gzipSync(json).length / 1024).toFixed(0)} KB gzipped)`);

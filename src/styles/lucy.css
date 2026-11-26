@@ -238,3 +238,5 @@ html[data-lucy="off"] .lucy-chip { display: block; }
   [dir='rtl'] .lucy-hero .lucy-fig { margin-right: 0; margin-left: 8px; }
 }
 [dir='rtl'] .lucy-news .lucy-bubble::after { bottom: auto; }
+/* the screenshot pointer stands at the left in RTL: she is mirrored there so that she points at the content */
+[dir='rtl'] .lucy-point .lucy-fig { scale: -1 1; }

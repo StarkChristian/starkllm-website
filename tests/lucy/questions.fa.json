@@ -1,0 +1,506 @@
+{
+ "questions": [
+  {
+   "q": "StarkLLM دقیقاً چیست؟",
+   "pages": [
+    "/fa/about",
+    "/fa/",
+    "/fa/manual",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "واقعاً رایگان است؟",
+   "pages": [
+    "/fa/download",
+    "/fa/contact",
+    "/fa/about"
+   ]
+  },
+  {
+   "q": "باید پولی پرداخت کنم؟",
+   "pages": [
+    "/fa/download",
+    "/fa/contact",
+    "/fa/about"
+   ]
+  },
+  {
+   "q": "برنامه با چه مجوزی منتشر می‌شود؟",
+   "pages": [
+    "/fa/download",
+    "/fa/about"
+   ]
+  },
+  {
+   "q": "داده‌هایم جایی بارگذاری می‌شوند؟",
+   "pages": [
+    "/fa/tech-privacy",
+    "/fa/",
+    "/fa/contact",
+    "/fa/download",
+    "/fa/about",
+    "/fa/manual",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "StarkLLM بدون اتصال به اینترنت کار می‌کند؟",
+   "pages": [
+    "/fa/tech-local-models",
+    "/fa/tech-privacy",
+    "/fa/",
+    "/fa/manual",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "چطور آن را روی ویندوز نصب کنم؟",
+   "pages": [
+    "/fa/download",
+    "/fa/manual",
+    "/fa/help",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "وقتی نصب‌کننده را باز می‌کنم ویندوز هشدار می‌دهد، چه کنم؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "چرا SmartScreen ویندوز نصب‌کننده را مسدود می‌کند؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "چطور مطمئن شوم فایل نصب‌کننده دستکاری نشده است؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "رایانه‌ام چقدر حافظه لازم دارد؟",
+   "pages": [
+    "/fa/download",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "به کارت گرافیک قوی نیاز دارم؟",
+   "pages": [
+    "/fa/download",
+    "/fa/manual",
+    "/fa/help",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "روی مک هم می‌شود استفاده کرد؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "نصب Docker اجباری است؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "نخستین اجرا چقدر طول می‌کشد؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "صندوق نامه‌ها نامه‌ها را به چه زبان‌هایی می‌خواند؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/product",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "رابط برنامه به آلمانی هم هست؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/product",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "رابط فارسی اضافه خواهد شد؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/product",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "صندوق نامه‌ها به چه کاری می‌آید؟",
+   "pages": [
+    "/fa/product",
+    "/fa/",
+    "/fa/manual",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "می‌توانم عکس یک نامه را با گوشی اضافه کنم؟",
+   "pages": [
+    "/fa/product",
+    "/fa/manual",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "نامه‌های کلاهبرداری را چطور تشخیص می‌دهد؟",
+   "pages": [
+    "/fa/product",
+    "/fa/manual",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "چه مدل‌های هوش مصنوعی‌ای را اجرا می‌کند؟",
+   "pages": [
+    "/fa/tech-local-models",
+    "/fa/manual",
+    "/fa/help",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "Ollama به چه کاری می‌آید؟",
+   "pages": [
+    "/fa/tech-local-models",
+    "/fa/help",
+    "/fa/download",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "می‌توانم از مدل‌های آنلاین مثل DeepSeek استفاده کنم؟",
+   "pages": [
+    "/fa/tech-privacy",
+    "/fa/manual",
+    "/fa/help",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "کجا ببینم پاسخ از کدام سند آمده است؟",
+   "pages": [
+    "/fa/tech-rag",
+    "/fa/product",
+    "/fa/manual",
+    "/fa/",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "تولید تقویت‌شده با بازیابی چیست؟",
+   "pages": [
+    "/fa/tech-rag",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "پایگاه دانش چیست؟",
+   "pages": [
+    "/fa/tech-knowledge-base",
+    "/fa/manual",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "فرق فضای کاری با پایگاه دانش چیست؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/product",
+    "/fa/tech-workspaces",
+    "/fa/tech-knowledge-base",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "چه قالب‌های فایلی را می‌توانم بارگذاری کنم؟",
+   "pages": [
+    "/fa/tech-multimodal",
+    "/fa/download",
+    "/fa/manual",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "می‌توانم با صدایم با آن صحبت کنم؟",
+   "pages": [
+    "/fa/tech-voice",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "چند پوستهٔ رنگی وجود دارد؟",
+   "pages": [
+    "/fa/tech-themes",
+    "/fa/",
+    "/fa/manual",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "هوش مصنوعی بدون پرسیدن روی رایانه‌ام برنامه اجرا می‌کند؟",
+   "pages": [
+    "/fa/tech-local-tools",
+    "/fa/manual",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "جست‌وجوی ترکیبی چیست؟",
+   "pages": [
+    "/fa/tech-hybrid-search"
+   ]
+  },
+  {
+   "q": "تکه‌بندی معنایی چیست؟",
+   "pages": [
+    "/fa/tech-semantic-chunking"
+   ]
+  },
+  {
+   "q": "چطور به شما ایمیل بزنم؟",
+   "pages": [
+    "/fa/contact",
+    "/fa/about",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "چه کسی این نرم‌افزار را توسعه داده است؟",
+   "pages": [
+    "/fa/about",
+    "/fa/contact"
+   ]
+  },
+  {
+   "q": "کد را در GitHub کجا پیدا کنم؟",
+   "pages": [
+    "/fa/about",
+    "/fa/contact",
+    "/fa/download",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "رمز عبورم را فراموش کرده‌ام، حالا چه کنم؟",
+   "pages": [
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "چطور آن را حذف نصب کنم؟",
+   "pages": [
+    "/fa/help",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "وب‌سایت از کوکی استفاده می‌کند؟",
+   "pages": [
+    "/fa/about",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "چرا پاسخ‌ها این‌قدر کند هستند؟",
+   "pages": [
+    "/fa/download",
+    "/fa/help",
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "StarkLLM تله‌متری می‌فرستد؟",
+   "pages": [
+    "/fa/tech-privacy",
+    "/fa/",
+    "/fa/download",
+    "/fa/contact",
+    "/fa/manual",
+    "/fa/about",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "پیش‌نیازهای سیستم چیست؟",
+   "pages": [
+    "/fa/download",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "بررسی به‌روزرسانی چه کار می‌کند؟",
+   "pages": [
+    "/fa/tech-privacy",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "متن‌باز است؟",
+   "pages": [
+    "/fa/about",
+    "/fa/contact",
+    "/fa/download"
+   ]
+  },
+  {
+   "q": "برنامه می‌تواند فایل‌هایم را پاک کند؟",
+   "pages": [
+    "/fa/product",
+    "/fa/manual",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "می‌توانم StarkLLM را برای اسناد محرمانه به کار ببرم؟",
+   "pages": [
+    "/fa/tech-privacy",
+    "/fa/",
+    "/fa/about",
+    "/fa/manual",
+    "/fa/tech-local-models",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "اگر Ollama در حال اجرا نباشد چه می‌شود؟",
+   "pages": [
+    "/fa/help",
+    "/fa/manual",
+    "/fa/download"
+   ]
+  },
+  {
+   "q": "برنامهٔ اندروید را چطور از گوگل پلی بگیرم؟",
+   "pages": [
+    "/fa/phone",
+    "/fa/download",
+    "/fa/manual",
+    "/fa/"
+   ]
+  },
+  {
+   "q": "گوشی بیرون از خانه هم به رایانه وصل می‌شود؟",
+   "pages": [
+    "/fa/phone",
+    "/fa/",
+    "/fa/features",
+    "/fa/manual",
+    "/fa/privacy"
+   ]
+  },
+  {
+   "q": "آیا StarkLLM بعد از خروج همچنان در پس‌زمینه اجرا می‌شود؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "آیا می‌شود گفت‌وگوها را صادر کرد؟",
+   "pages": [
+    "/fa/manual"
+   ]
+  },
+  {
+   "q": "چطور موتور StarkLLM و Docker را پس از بستن برنامه خاموش کنم؟",
+   "pages": [
+    "/fa/manual",
+    "/fa/help"
+   ]
+  },
+  {
+   "q": "می‌توانم پوسته را به حالت تیره تغییر دهم؟",
+   "pages": [
+    "/fa/tech-themes",
+    "/fa/",
+    "/fa/manual",
+    "/fa/product",
+    "/fa/features",
+    "/fa/phone"
+   ]
+  },
+  {
+   "q": "داده‌هایم کجا ذخیره می‌شوند و چطور پشتیبان بگیرم؟",
+   "pages": [
+    "/fa/help",
+    "/fa/tech-privacy",
+    "/fa/manual",
+    "/fa/privacy"
+   ]
+  }
+ ],
+ "unrelated": [
+  "هوای امروز تهران چطور است؟",
+  "چه کسی جام جهانی فوتبال را برد؟",
+  "طرز تهیهٔ قورمه‌سبزی چیست؟",
+  "پایتخت استرالیا کجاست؟",
+  "یک شعر دربارهٔ دریا بنویس",
+  "یک فیلم خوب پیشنهاد می‌کنی؟",
+  "بهترین گوشی برای خرید کدام است؟",
+  "ارتفاع قلهٔ دماوند چقدر است؟",
+  "یک لطیفه بگو",
+  "چطور گیتار زدن یاد بگیرم؟",
+  "صبح بخیر را به ژاپنی ترجمه کن",
+  "رئیس‌جمهور فرانسه کیست؟"
+ ],
+ "advice": [
+  "استفاده از این برنامه در دفتر وکالتم قانونی است؟",
+  "اگر مشکلی پیش بیاید می‌توانم از شما شکایت کنم؟",
+  "دربارهٔ قراردادم به مشاورهٔ حقوقی نیاز دارم"
+ ]
+}

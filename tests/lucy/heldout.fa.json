@@ -1,0 +1,26 @@
+{
+ "questions": [
+  { "q": "نسخه‌ای برای آیفون هم هست؟", "pages": ["/fa/product", "/fa/manual", "/fa/download", "/fa/", "/fa/features", "/fa/phone"] },
+  { "q": "برای استفاده از StarkLLM باید حساب کاربری بسازم؟", "pages": ["/fa/download", "/fa/help", "/fa/manual", "/fa/tech-privacy", "/fa/privacy"] },
+  { "q": "هنگام نخستین اجرا چه اتفاقی می‌افتد؟", "pages": ["/fa/download", "/fa/help", "/fa/manual", "/fa/"] },
+  { "q": "می‌تواند نامه‌های دست‌نویس را بخواند؟", "pages": ["/fa/tech-multimodal", "/fa/product", "/fa/manual", "/fa/", "/fa/features", "/fa/phone"] },
+  { "q": "آیا StarkLLM پاسخ‌ها را از خودش درمی‌آورد؟", "pages": ["/fa/tech-rag", "/fa/product", "/fa/manual", "/fa/", "/fa/help", "/fa/features", "/fa/phone"] },
+  { "q": "می‌توانم یک گفت‌وگو را خروجی بگیرم؟", "pages": ["/fa/manual"] },
+  { "q": "چطور یک پوشه با سندهایم اضافه کنم؟", "pages": ["/fa/manual", "/fa/tech-knowledge-base", "/fa/tech-workspaces", "/fa/download"] },
+  { "q": "این سایت مرا زیر نظر دارد؟", "pages": ["/fa/about", "/fa/privacy"] },
+  { "q": "چه کارت گرافیکی لازم دارم؟", "pages": ["/fa/download", "/fa/manual", "/fa/", "/fa/help"] },
+  { "q": "می‌توانم مدل زبانی دیگری انتخاب کنم؟", "pages": ["/fa/tech-local-models", "/fa/manual", "/fa/help", "/fa/"] },
+  { "q": "خطا را کجا گزارش بدهم؟", "pages": ["/fa/contact", "/fa/about", "/fa/help", "/fa/download"] },
+  { "q": "با ویندوز ۱۰ کار می‌کند؟", "pages": ["/fa/download", "/fa/", "/fa/help", "/fa/manual"] },
+  { "q": "محیط امن پایتون چیست؟", "pages": ["/fa/", "/fa/product", "/fa/manual", "/fa/features", "/fa/phone"] },
+  { "q": "نرم‌افزارهای دیگر به StarkLLM دسترسی دارند؟", "pages": ["/fa/", "/fa/product", "/fa/manual", "/fa/features", "/fa/phone"] },
+  { "q": "Docker در StarkLLM چه نقشی دارد؟", "pages": ["/fa/help", "/fa/download", "/fa/manual"] },
+  { "q": "چطور StarkLLM را خاموش کنم؟", "pages": ["/fa/help", "/fa/manual"] },
+  { "q": "مهلت‌های نامه‌هایم را پیدا می‌کند؟", "pages": ["/fa/product", "/fa/", "/fa/manual", "/fa/features", "/fa/phone"] },
+  { "q": "پوستهٔ تیره هم دارد؟", "pages": ["/fa/tech-themes", "/fa/", "/fa/manual", "/fa/product", "/fa/features", "/fa/phone"] },
+  { "q": "این وب‌سایت متعلق به کیست؟", "pages": ["/fa/about", "/fa/contact"] },
+  { "q": "کد منبع در دسترس همه است؟", "pages": ["/fa/about", "/fa/contact", "/fa/download", "/fa/", "/fa/manual"] }
+ ],
+ "unrelated": [],
+ "advice": []
+}

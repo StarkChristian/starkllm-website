@@ -1,0 +1,190 @@
+{
+ "questions": [
+  {
+   "q": "هل توجد نسخة لجهاز iPhone؟",
+   "pages": [
+    "/ar/product",
+    "/ar/manual",
+    "/ar/download",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل أحتاج إلى حساب لاستخدام StarkLLM؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual",
+    "/ar/tech-privacy",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "ماذا يحدث في التشغيل الأول؟",
+   "pages": [
+    "/ar/download",
+    "/ar/help",
+    "/ar/manual",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "هل يستطيع قراءة الرسائل المكتوبة بخط اليد؟",
+   "pages": [
+    "/ar/tech-multimodal",
+    "/ar/product",
+    "/ar/manual",
+    "/ar/",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يخترع StarkLLM الإجابات؟",
+   "pages": [
+    "/ar/tech-rag",
+    "/ar/product",
+    "/ar/manual",
+    "/ar/",
+    "/ar/help",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يمكنني تصدير محادثة؟",
+   "pages": [
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "كيف أضيف مجلدًا فيه مستندات؟",
+   "pages": [
+    "/ar/manual",
+    "/ar/tech-knowledge-base",
+    "/ar/tech-workspaces",
+    "/ar/download"
+   ]
+  },
+  {
+   "q": "هل يتتبعني الموقع؟",
+   "pages": [
+    "/ar/about",
+    "/ar/privacy"
+   ]
+  },
+  {
+   "q": "ما معالج الرسومات الذي أحتاجه؟",
+   "pages": [
+    "/ar/download",
+    "/ar/manual",
+    "/ar/",
+    "/ar/help"
+   ]
+  },
+  {
+   "q": "هل يمكنني اختيار نموذج لغوي آخر؟",
+   "pages": [
+    "/ar/tech-local-models",
+    "/ar/manual",
+    "/ar/help",
+    "/ar/"
+   ]
+  },
+  {
+   "q": "أين أبلّغ عن خطأ في البرنامج؟",
+   "pages": [
+    "/ar/contact",
+    "/ar/about",
+    "/ar/help",
+    "/ar/download"
+   ]
+  },
+  {
+   "q": "هل يعمل على Windows 10؟",
+   "pages": [
+    "/ar/download",
+    "/ar/",
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل تستطيع البرامج الأخرى استخدام StarkLLM؟",
+   "pages": [
+    "/ar/",
+    "/ar/product",
+    "/ar/manual",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "ما دور Docker في StarkLLM؟",
+   "pages": [
+    "/ar/help",
+    "/ar/download",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "كيف أوقف StarkLLM؟",
+   "pages": [
+    "/ar/help",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يجد المواعيد النهائية في رسائلي؟",
+   "pages": [
+    "/ar/product",
+    "/ar/",
+    "/ar/manual",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "هل يوجد وضع داكن؟",
+   "pages": [
+    "/ar/tech-themes",
+    "/ar/",
+    "/ar/manual",
+    "/ar/product",
+    "/ar/features",
+    "/ar/phone"
+   ]
+  },
+  {
+   "q": "لمن هذا الموقع؟",
+   "pages": [
+    "/ar/about",
+    "/ar/contact"
+   ]
+  },
+  {
+   "q": "هل الشيفرة المصدرية متاحة للجميع؟",
+   "pages": [
+    "/ar/about",
+    "/ar/contact",
+    "/ar/download",
+    "/ar/",
+    "/ar/manual"
+   ]
+  },
+  {
+   "q": "هل يمر الاتصال من الهاتف عبر خادم يقرأ أسئلتي؟",
+   "pages": [
+    "/ar/phone",
+    "/ar/privacy",
+    "/ar/features",
+    "/ar/",
+    "/ar/manual"
+   ]
+  }
+ ],
+ "unrelated": [],
+ "advice": []
+}
