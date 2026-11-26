@@ -73,10 +73,10 @@ export default {
       { sel: '#faq-h', text: 'Preguntas que suele hacer la gente, incluido el aviso de Windows.' },
     ],
     product: [
-      { sel: '#life-h', text: 'De un archivo a una respuesta, paso a paso.' },
-      { sel: '#let-h', text: 'La bandeja de entrada para cartas: un expediente por remitente.' },
-      { sel: '#dl-h', text: 'Los plazos de tus cartas, en la página de inicio.' },
-      { sel: '#thm-h', text: 'La aplicación tiene trece temas.' },
+      { sel: '#documents-h', text: 'De un archivo a una respuesta, paso a paso.' },
+      { sel: '#inbox-h', text: 'La bandeja de entrada para cartas: un expediente por remitente.' },
+      { sel: '#inbox .points', text: 'Los plazos de tus cartas, en la página de inicio.' },
+      { sel: '#themes-h', text: 'La aplicación tiene trece temas.' },
       { sel: '#cta-h', text: '¿Listo para probarla? La descarga está al final de la página.' },
     ],
     tech: [

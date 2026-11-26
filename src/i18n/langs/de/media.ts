@@ -1,0 +1,27 @@
+export default {
+  shots: {
+    '01-home': 'StarkLLM-Startseite: die nächsten Fristen und Zahlungstermine aus Briefen, jeweils mit Betrag und Seite, und die neuesten Dokumente',
+    '02-inbox': 'StarkLLM-Posteingang: Briefe als ein Vorgang je Absender, die nächste Frist zuerst, ein Brief als möglicher Betrug markiert',
+    '03-chat-sources': 'StarkLLM-Chat: Die Frage zu einem Brief wird mit Betrag und Fälligkeit beantwortet, mit Quellen-Chips unter der Antwort',
+    '04-source-page': 'Eine Quelle, geöffnet an ihrer Seite, mit der markierten Textstelle, auf der die Antwort beruht',
+    '05-scam-warning': 'Eine rote Warnung über einer Antwort: Der Brief verlangt Zahlung per Gutschein und Link und enthält einen versteckten Hinweis an KI-Assistenten',
+    '06-book-summary': 'Eine Antwort zu einem ganzen Buch, aus Kapitelzusammenfassungen, mit den Seiten, die sie abdeckt',
+    '07-image-question': 'Eine Frage zu einem eingefügten Screenshot, beantwortet von einem Bildmodell auf dem PC',
+    '08-recording': 'Eine Besprechungsaufnahme als Dokument mit Zeitangaben und eine Frage dazu',
+    '09-web-task': 'Eine Web-Aufgabe im StarkLLM-Browserfenster mit Adressleiste, die Schritte neben der Seite',
+    '10-terminal': 'Terminal in einem Projektordner: eine Dateiänderung, gezeigt bevor sie gemacht wird, mit Schaltflächen zum Erlauben oder Ablehnen',
+    '11-compare-models': 'Modelle vergleichen: dieselbe Frage, beantwortet von zwei lokalen Modellen nebeneinander',
+    '12-settings-phone': 'Einstellungen, Telefon: ein gekoppeltes Android-Handy mit dem Schalter „Auch unterwegs (über das Relay)“',
+    '13-privacy-network': 'Einstellungen, Datenschutz & Netzwerk: die Liste jeder Verbindung mit Zeit, Host und Zweck und der Schalter „Vollständig offline“',
+    '14-themes': 'Einstellungen, Darstellung: die Theme-Galerie, ein helles und ein dunkles Theme',
+    '15-settings-models': 'Einstellungen, Modelle: Chatmodell, Embedding-Modell und Bildmodell auf diesem PC',
+    'phone-01-chat': 'Die StarkLLM-App für Android: eine Antwort vom PC mit Quellen-Chips',
+  },
+  videos: {
+    'v1-letter-answer': { title: 'Ein Brief, eine Frage, eine Antwort mit Quelle', caption: 'Ein Brief wird hinzugefügt. Die Antwort nennt Betrag und Datum, und ein Klick auf die Quelle öffnet die Seite.' },
+    'v2-web-task': { title: 'Eine Web-Aufgabe', caption: 'StarkLLM öffnet eine Website im eigenen Browserfenster, klickt sich durch und antwortet mit dem Link.' },
+    'v3-terminal': { title: 'Terminal: Hilfe beim Code', caption: 'Eine Änderung wird zuerst gezeigt, läuft nach einem Ja, und „Dateiänderungen rückgängig machen“ stellt sie zurück.' },
+    'v4-inbox': { title: 'Der Posteingang', caption: 'Briefe werden zu Vorgängen je Absender, mit Fristen, Beträgen und der Seite, aus der jeder Wert stammt.' },
+    'v5-privacy': { title: 'Datenschutz & Netzwerk', caption: 'Jede Verbindung steht in der Liste, und ein Schalter nimmt StarkLLM vollständig vom Netz.' },
+  },
+};

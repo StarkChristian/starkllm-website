@@ -74,10 +74,10 @@ export default {
       { sel: '#faq-h', text: 'Les questions que l’on pose souvent, y compris sur l’avertissement de Windows.' },
     ],
     product: [
-      { sel: '#life-h', text: 'D’un fichier à une réponse, étape par étape.' },
-      { sel: '#let-h', text: 'La boîte de réception des courriers : un dossier par expéditeur.' },
-      { sel: '#dl-h', text: 'Les échéances de vos courriers, sur la page d’accueil.' },
-      { sel: '#thm-h', text: 'L’application propose treize thèmes.' },
+      { sel: '#documents-h', text: 'D’un fichier à une réponse, étape par étape.' },
+      { sel: '#inbox-h', text: 'La boîte de réception des courriers : un dossier par expéditeur.' },
+      { sel: '#inbox .points', text: 'Les échéances de vos courriers, sur la page d’accueil.' },
+      { sel: '#themes-h', text: 'L’application propose treize thèmes.' },
       { sel: '#cta-h', text: 'Envie de l’essayer ? Le téléchargement se trouve à la fin de la page.' },
     ],
     tech: [

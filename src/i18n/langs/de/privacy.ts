@@ -1,0 +1,85 @@
+export default {
+  meta: {
+    title: 'Datenschutz: was auf Ihrem PC bleibt | StarkLLM',
+    description: 'Was Ihren PC nie verlässt, jede Verbindung, die StarkLLM herstellen kann, und wann, Schutz im Ruhezustand, signierte Builds, eine Stückliste der Software und wie Sie alles selbst prüfen.',
+  },
+  hero: {
+    eyebrow: 'Datenschutz',
+    h1: 'Privat gebaut. Von Ihnen prüfbar.',
+    lede: 'StarkLLM ist so gebaut, dass Ihre Dokumente keine Cloud brauchen. Was online geht, entscheiden Sie, Sie sehen jede Verbindung, und Sie müssen uns nicht beim Wort nehmen.',
+  },
+  stays: {
+    h2: 'Was Ihren PC nie verlässt',
+    lede: 'Das bleibt auf Ihrer eigenen Festplatte und Ihrem eigenen Prozessor oder Ihrer Grafikkarte, egal, was Sie einschalten.',
+    items: [
+      { icon: 'doc', title: 'Ihre Dokumente', text: 'Briefe, Verträge, Bücher, Scans, Fotos und Aufnahmen und der daraus gelesene Text.' },
+      { icon: 'chat', title: 'Ihre Chats', text: 'Fragen, Antworten und ihre Quellen, solange Sie nicht selbst ein Cloud-Modell wählen.' },
+      { icon: 'search', title: 'Der Suchindex', text: 'Die Textstellen und Vektoren jedes Dokuments und die Zusammenfassungen großer Dokumente.' },
+      { icon: 'pc', title: 'Die KI-Modelle', text: 'Sie laufen über Ollama auf Ihrem PC. Nach dem ersten Download arbeitet StarkLLM ohne Internet.' },
+      { icon: 'inbox', title: 'Posteingang und Fristen', text: 'Absender, Beträge, Konten und Termine findet ein Regelwerk auf Ihrem PC.' },
+      { icon: 'eyeoff', title: 'Nichts über Sie', text: 'Keine Telemetrie, keine Absturzberichte, keine Nutzungsstatistik, keine Werbung, kein Konto auf einem Server.' },
+    ],
+  },
+  online: {
+    h2: 'Was online geht, und wann',
+    lede: 'Jede Verbindung, die StarkLLM herstellen kann, wie in Einstellungen › Datenschutz & Netzwerk. Jede ist aus, bis Sie sie einschalten oder starten, oder geschieht einmal für einen Download, um den Sie gebeten haben.',
+    cols: ['Verbindung', 'Geht an', 'Wann', 'Bei neuer Installation'],
+    rows: [
+      { what: 'Update-Prüfung', host: 'api.github.com', when: 'Beim Start, wenn Sie beim ersten Start zugestimmt haben', def: 'Aus, bis Sie zustimmen' },
+      { what: 'Update-Download', host: 'github.com', when: 'Nur nach „Herunterladen und installieren“', def: 'Aus' },
+      { what: 'KI-Modelle', host: 'registry.ollama.ai (über Ollama)', when: 'Erster Start, für fehlende Modelle', def: 'Bei Bedarf' },
+      { what: 'Ollama-Installer', host: 'ollama.com', when: 'Nur nach „Ollama für mich installieren“', def: 'Aus' },
+      { what: 'Websuche', host: 'DuckDuckGo; antwortet es nicht: Startpage, Mojeek, Wikipedia', when: 'Je Frage, mit eingeschalteter Websuche', def: 'Aus' },
+      { what: 'Web-Aufgaben', host: 'Die Websites der Aufgabe, die Sie eingeben', when: 'Nur für eine Web-Aufgabe, die Sie starten', def: 'Aus' },
+      { what: 'Importe aus dem Web', host: 'Die Adresse, die Sie eingeben, YouTube, GitHub', when: 'Nur nach „+ Webseite“, „+ YouTube-Video“ oder „+ GitHub-Repository“', def: 'Aus' },
+      { what: 'Cloud-Modellanbieter', host: 'Der Anbieter, den Sie eintragen (zum Beispiel OpenAI, DeepSeek, OpenRouter, Groq)', when: 'Jeder Chat, solange ein solcher Anbieter gewählt ist; der Chat zeigt ein Abzeichen', def: 'Aus' },
+      { what: 'Ollama-Cloud-Modelle', host: 'ollama.com (über Ollama)', when: 'Nur, wenn Sie ein Modell wählen, dessen Name auf „cloud“ endet', def: 'Aus' },
+      { what: 'Marktpreise', host: 'Yahoo Finance, CoinGecko', when: 'Nur, nachdem Sie das Widget eingeschaltet haben', def: 'Aus' },
+      { what: 'Sprachmodelle', host: 'huggingface.co', when: 'Erste Nutzung der Spracheingabe oder einer Aufnahme', def: 'Aus bis zur Nutzung' },
+      { what: 'Sprachen der Texterkennung', host: 'github.com', when: 'Nur nach „Herunterladen“ in den Einstellungen', def: 'Aus' },
+      { what: 'Handy zu Hause', host: 'Eingehend, von einem gekoppelten Handy in Ihrem Heimnetz', when: 'Nachdem Sie die Handy-Verbindung eingeschaltet und ein Handy gekoppelt haben', def: 'Aus' },
+      { what: 'Handy unterwegs', host: 'relay.starkllm.com (verschlüsselt vom Handy bis zu Ihrem PC)', when: 'Nur für Handys, die Sie für unterwegs freigegeben haben', def: 'Aus' },
+    ],
+    note: 'Befehle, die Sie im Terminal erlauben, und Werkzeug-Server, die Sie hinzufügen, laufen als Ihre eigenen Programme: Sie stehen nicht in der Liste, und womit sie sich verbinden, entscheiden sie selbst. Ollama und Windows haben eigene Update-Prüfungen, die StarkLLM nicht steuert.',
+  },
+  offline: {
+    h2: 'Ein Schalter: vollständig offline',
+    text: '„Vollständig offline“ unter Einstellungen › Datenschutz & Netzwerk lehnt jede Online-Funktion ab, trennt die Verbindung zu Ihrem Handy und zum Relay und lädt nie etwas herunter, auch kein Update. Ihre Dokumente, der Posteingang und die lokalen Modelle arbeiten weiter. Der erste Start fragt einmal, ob StarkLLM online bleiben oder vollständig offline gehen soll.',
+  },
+  atRest: {
+    h2: 'Schutz im Ruhezustand',
+    lede: 'Optional, unter Einstellungen › Schutz: für ein verlorenes Notebook, einen anderen Benutzer am selben PC oder eine Sicherung in einem Cloud-Ordner.',
+    items: [
+      { k: 'Verschlüsselt auf der Festplatte', v: 'Dokumente, Chats, Namen und Titel werden auf der Festplatte verschlüsselt, und auch der Suchindex lässt sich sperren. Der Schlüssel ist an Ihr Windows-Konto gebunden.' },
+      { k: 'Passphrase beim Start', v: 'Eine optionale Passphrase mit Wiederherstellungsschlüssel. Die Passphrase wird nie gespeichert.' },
+      { k: 'Verschlüsselte Sicherung', v: 'Eine Sicherungsdatei, die Sie überall aufbewahren können, auch in einem Cloud-Ordner; ohne Passphrase ist sie Rauschen. Eine automatische wöchentliche Sicherung bewahrt mehrere Kopien auf.' },
+    ],
+    limits: 'Er schützt nicht vor Schadsoftware, die als Sie läuft, während StarkLLM geöffnet ist. BitLocker bleibt empfohlen: Es schützt auch die Programme und die Modelle.',
+  },
+  signed: {
+    h2: 'Signierte Builds',
+    text: 'Seit 2.1.2 sind der Installer, StarkLLM.exe, das Deinstallationsprogramm und die Programmdateien der Engine mit einem Certum-Zertifikat signiert, ausgestellt auf „Open Source Developer Christian Stark“. Das eingebaute Update installiert nur Updates, die mit diesem Namen signiert sind.',
+    link: 'Richtlinie zur Code-Signatur (Englisch)',
+  },
+  sbom: {
+    h2: 'Eine Stückliste zu jeder Version',
+    text: 'Jede Version auf GitHub kommt mit einer Software-Stückliste (SBOM, CycloneDX) für die App und für die Engine: die Liste jeder enthaltenen Bibliothek mit ihrer Version.',
+    link: 'Versionen auf GitHub',
+  },
+  check: {
+    h2: 'Prüfen Sie es selbst',
+    lede: 'Sie müssen den Anzeigen von StarkLLM nicht vertrauen. Schalten Sie „Vollständig offline“ ein, nutzen Sie die App und sehen Sie nach.',
+    steps: [
+      { t: 'Ressourcenmonitor', v: 'Win + R, „resmon“, Reiter Netzwerk. Mit vollständig offline sollten StarkLLM.exe, python.exe und ollama.exe nur mit 127.0.0.1 sprechen.' },
+      { t: 'PowerShell', v: 'Listet jede offene Verbindung, die nicht zu diesem PC geht, mit dem Programm, das sie hergestellt hat:' },
+      { t: 'Wireshark', v: 'Die stärkste Prüfung: Mitschnitt am Netzwerkadapter, lokaler Verkehr ausgefiltert. Schalten Sie danach die Websuche ein und sehen Sie DuckDuckGo erscheinen, dann wissen Sie, dass die Prüfung greift.' },
+    ],
+    code: "Get-NetTCPConnection -State Established |\n  Where-Object { $_.RemoteAddress -notin '127.0.0.1','::1' } |\n  ForEach-Object { $p = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue\n    [pscustomobject]@{ Process = $p.ProcessName; Remote = \"$($_.RemoteAddress):$($_.RemotePort)\" } } |\n  Sort-Object Process, Remote | Format-Table -AutoSize",
+    link: 'Die vollständige Anleitung auf GitHub (Englisch)',
+  },
+  site: {
+    h2: 'Und diese Website?',
+    text: 'Sie setzt keine Cookies, nutzt keine Webanalyse und lädt keine Schriften, Skripte oder Videos von fremden Servern. Lucy, die Assistentin auf diesen Seiten, antwortet in Ihrem Browser; Ihre Fragen werden nirgendwohin gesendet.',
+    link: 'Datenschutzerklärung dieser Website',
+  },
+};

@@ -1,0 +1,102 @@
+// Home page (2026). {v} = version, {mb} = installer size in MB; both come from the GitHub release at build time.
+// Every claim is checked against RELEASE_NOTES.md and the docs of v2.6.0 (app repo).
+export default {
+  meta: {
+    title: 'StarkLLM · Private AI for your documents, on your Windows PC',
+    description: 'StarkLLM reads your letters and documents on your own Windows PC and answers with the page it found the answer on. Free and open source, no telemetry. Online features only when you switch them on.',
+  },
+  hero: {
+    news: 'New in 2.6.0',
+    newsText: 'Your phone, also away from home',
+    h1: ['Ask your documents.', 'Keep them on your PC.'],
+    lede: 'StarkLLM reads your letters, contracts and books on your Windows PC, finds deadlines and amounts, and answers with the page it found them on. The AI models run on your PC through Ollama. Nothing goes online unless you switch it on.',
+    cta1: 'Download for Windows',
+    cta2: 'Watch it work',
+    meta: 'Version {v} · {mb} MB · Windows 10 and 11 · Free, Apache 2.0',
+  },
+  promises: {
+    h2: 'Three promises, kept in the code.',
+    items: [
+      { k: 'Local', title: 'It runs on your PC.', text: 'Documents, chats, the search index and the AI models stay on your own disk and your own graphics card. No account on a server, no telemetry.' },
+      { k: 'With sources', title: 'Every answer shows its source.', text: 'Answers about your documents name the file and the page. One click opens the page with the passage marked, so you can check before you act.' },
+      { k: 'Asks first', title: 'It asks before it acts.', text: 'Web tasks and the terminal show each step first and wait for your yes before anything that buys, sends, deletes or changes a file.' },
+    ],
+  },
+  bento: {
+    h2: 'What it does for you.',
+    lede: 'Nine of the things StarkLLM does, every one of them on your PC unless it says otherwise.',
+    items: [
+      { tag: 'Inbox', title: 'Letters, read and filed', text: 'Bills, reminders, tax notices and contracts in six languages: sender, amounts, accounts and deadlines, each found word for word on a page. One case per sender, the nearest deadline first.', shot: '02-inbox', size: 'w4' },
+      { tag: 'Sources', title: 'Sources you can open', text: 'Click a source under an answer and the document opens at that page, with the passage marked.', shot: '04-source-page', size: 'w2' },
+      { tag: 'Safety', title: 'Warnings for fake letters', text: 'A red box when a letter wants payment by voucher, through a link or to a new account, or hides a note to AI assistants.', shot: '05-scam-warning', size: 'w2' },
+      { tag: 'Books', title: 'Whole books', text: 'Large documents get chapter summaries in the background, so "How does it end?" gets an answer, with the pages.', shot: '06-book-summary', size: 'w2' },
+      { tag: 'Images', title: 'Photos, scans and screenshots', text: 'Text in photos and scans is read on your PC. Paste a screenshot and a vision model on your PC answers.', shot: '07-image-question', size: 'w2' },
+      { tag: 'Recordings', title: 'Meetings as documents', text: 'Recordings are written down with times on your PC. Then you ask about them like about any document.', shot: '08-recording', size: 'w3' },
+      { tag: 'Web tasks', title: 'Web tasks you can watch', text: 'StarkLLM works on websites in its own browser window. You see every step; sign-ins and payments stay yours.', shot: '09-web-task', size: 'w3' },
+      { tag: 'Terminal', title: 'Help with code', text: 'In one project folder you choose: every change shown first, every command after your yes, and Undo.', shot: '10-terminal', size: 'w3' },
+      { tag: 'Models', title: 'Two models, side by side', text: 'Ask a second local model the same question and keep the better answer.', shot: '11-compare-models', size: 'w3' },
+    ],
+    more: 'All features and their limits',
+  },
+  tour: {
+    h2: 'Watch it work.',
+    lede: 'Short silent clips from StarkLLM 2.6.0, with captions. Demo data only.',
+  },
+  privacy: {
+    h2: 'Your data stays here.',
+    lede: 'Everything on the left happens on your PC. The right side goes online only when you switch it on, and Settings › Privacy & network lists every connection.',
+    pcTitle: 'On your PC',
+    pcSub: 'always, also fully offline',
+    pc: ['Documents, scans and photos', 'Chats and the search index', 'AI models (Ollama)', 'Inbox, deadlines and amounts', 'Recordings and their text'],
+    netTitle: 'Online only when you switch it on',
+    netSub: 'off until you turn it on or start it',
+    net: [
+      { k: 'Web search', v: 'DuckDuckGo, then Startpage, Mojeek, Wikipedia' },
+      { k: 'Web task', v: 'only the sites of your task' },
+      { k: 'Update check', v: 'asked once at the first start' },
+      { k: 'Phone relay', v: 'end-to-end encrypted, per phone' },
+      { k: 'Cloud models', v: 'only a provider you choose' },
+    ],
+    offline: '"Fully offline": one switch refuses all of them.',
+    more: 'How privacy works in StarkLLM',
+  },
+  phone: {
+    h2: 'Your phone asks. Your PC answers.',
+    lede: 'The StarkLLM app for Android sends your questions and photos of letters to your PC and shows the answers with their sources. The documents and the AI model stay on the PC.',
+    home: { title: 'At home, directly', text: 'Over your home network, encrypted, to the PC whose certificate the phone checked at pairing.' },
+    away: { title: 'Away from home, through the relay', text: 'Only for a phone you allowed. Encrypted from the phone to your PC: the relay passes on bytes it cannot read.' },
+    badge: 'Android · preview',
+    more: 'About the phone app',
+  },
+  audience: {
+    h2: 'Made for people with paperwork.',
+    items: [
+      { title: 'Households', text: 'Bills, reminders and tax letters of the family in one place, with the next deadline on the start page.' },
+      { title: 'Freelancers', text: 'Contracts, invoices and notices: amounts and dates with the page they come from, nothing uploaded.' },
+      { title: 'Students and researchers', text: 'Whole books, papers and lecture recordings, with answers that cite the page.' },
+      { title: 'Small offices', text: 'Several accounts on one PC, protection at rest and encrypted backups. Nothing needs a cloud.' },
+    ],
+  },
+  download: {
+    h2: 'Free. Open source. Yours.',
+    lede: 'One installer with everything it needs. StarkLLM can install Ollama for you, then downloads the AI models once (about 5 GB).',
+    req: 'Windows 10 or 11 (64-bit) · 16 GB RAM recommended · 15 GB free disk space',
+    btn: 'Download StarkLLM {v}',
+    all: 'Checksums and install steps',
+    size: 'Installer',
+    version: 'Version',
+    released: 'Released',
+    sha: 'SHA-256',
+  },
+  faq: {
+    h2: 'Questions, answered.',
+    items: [
+      ['Is StarkLLM free?', 'Yes. StarkLLM is free and open source under the Apache 2.0 license, for personal, research and commercial use. There is no account, no subscription and no paid tier.'],
+      ['Does anything leave my PC?', 'Not unless you switch it on. Web search, web tasks, cloud models, imports from the web, market prices, the phone relay and the update check are off until you turn them on or start them. Settings › Privacy & network lists every connection, and "Fully offline" refuses all of them.'],
+      ['What does my PC need?', 'Windows 10 or 11 (64-bit), 16 GB of RAM (8 GB at least), 15 GB of free disk space and Ollama, which StarkLLM can install for you. An NVIDIA graphics card with 8 GB of video memory makes answers much faster; integrated AMD Radeon and Intel Arc or Iris graphics are used too.'],
+      ['Do I need Docker?', 'No. Since version 2.2 StarkLLM brings its own engine inside the installer. Docker Desktop is an option for advanced users, nothing more.'],
+      ['Is there a phone app?', 'Yes, for Android, as a preview in a closed test on Google Play. It works together with your PC: the documents and the AI model stay on the PC. There is no iPhone app.'],
+      ['Can I trust the answers?', 'Check them. The AI models are small local models and can be wrong. That is why every answer about your documents names its source, and a quotation that is not in your documents is flagged under the answer.'],
+    ],
+  },
+};

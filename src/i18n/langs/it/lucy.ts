@@ -73,10 +73,10 @@ export default {
       { sel: '#faq-h', text: 'Le domande che le persone fanno, compreso l\'avviso di Windows.' },
     ],
     product: [
-      { sel: '#life-h', text: 'Da un file a una risposta, passo dopo passo.' },
-      { sel: '#let-h', text: 'L\'inbox per le lettere: una pratica per mittente.' },
-      { sel: '#dl-h', text: 'Le scadenze delle tue lettere, nella pagina iniziale.' },
-      { sel: '#thm-h', text: 'L\'app ha tredici temi.' },
+      { sel: '#documents-h', text: 'Da un file a una risposta, passo dopo passo.' },
+      { sel: '#inbox-h', text: 'L\'inbox per le lettere: una pratica per mittente.' },
+      { sel: '#inbox .points', text: 'Le scadenze delle tue lettere, nella pagina iniziale.' },
+      { sel: '#themes-h', text: 'L\'app ha tredici temi.' },
       { sel: '#cta-h', text: 'Pronto a provarlo? Il download è in fondo alla pagina.' },
     ],
     tech: [

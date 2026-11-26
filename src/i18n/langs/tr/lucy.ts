@@ -74,10 +74,10 @@ export default {
       { sel: '#faq-h', text: 'İnsanların sorduğu sorular; Windows uyarısı da dahil.' },
     ],
     product: [
-      { sel: '#life-h', text: 'Bir dosyadan bir yanıta, adım adım.' },
-      { sel: '#let-h', text: 'Mektuplar için gelen kutusu: her gönderen için bir dosya.' },
-      { sel: '#dl-h', text: 'Mektuplarınızdaki son tarihler, ana sayfada.' },
-      { sel: '#thm-h', text: 'Uygulamada on üç tema var.' },
+      { sel: '#documents-h', text: 'Bir dosyadan bir yanıta, adım adım.' },
+      { sel: '#inbox-h', text: 'Mektuplar için gelen kutusu: her gönderen için bir dosya.' },
+      { sel: '#inbox .points', text: 'Mektuplarınızdaki son tarihler, ana sayfada.' },
+      { sel: '#themes-h', text: 'Uygulamada on üç tema var.' },
       { sel: '#cta-h', text: 'Denemeye hazır mısınız? İndirme sayfanın sonunda.' },
     ],
     tech: [
