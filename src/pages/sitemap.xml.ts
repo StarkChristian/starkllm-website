@@ -3,7 +3,7 @@
 import type { APIRoute } from 'astro';
 import { SITE, langList, langsFor, localizedPaths, singlePages, localePath, alternatesFor } from '../i18n/ui';
 
-const priority: Record<string, string> = { '/': '1.0', '/product': '0.9', '/download': '0.9', '/manual': '0.8', '/help': '0.8' };
+const priority: Record<string, string> = { '/': '1.0', '/features': '0.9', '/phone': '0.8', '/privacy': '0.8', '/download': '0.9', '/manual': '0.8', '/help': '0.8' };
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().slice(0, 10);

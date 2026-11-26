@@ -1,87 +1,82 @@
 ---
-// One template for every translated page: picks the body component, title, description and head tags for (lang, path).
+// One template for every translated page: picks the body component, title, description and structured data for (lang, path).
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Home from './Home.astro';
-import ProductPage from './ProductPage.astro';
+import FeaturesPage from './FeaturesPage.astro';
+import PhonePage from './PhonePage.astro';
+import PrivacyPage from './PrivacyPage.astro';
+import ChangelogPage from './ChangelogPage.astro';
+import AboutPage from './AboutPage.astro';
 import DownloadPage from './DownloadPage.astro';
 import HelpPage from './HelpPage.astro';
 import TechPage from './TechPage.astro';
 import LegacyBody from './LegacyBody.astro';
-import LucyAbout from './LucyAbout.astro';
 import { pageMeta } from '../i18n/meta';
-import { home } from '../i18n/home';
-import { product } from '../i18n/product';
-import { download } from '../i18n/download';
-import { help } from '../i18n/help';
-import { tech } from '../i18n/tech';
 import { pages } from '../i18n/pages';
-import { absoluteUrl, defaultLang, languages, type Lang } from '../i18n/ui';
+import { help } from '../i18n/help';
+import { absoluteUrl, defaultLang, type Lang } from '../i18n/ui';
+import { metaOf } from '../lib/pagemeta';
 import { RELEASE, V } from '../data/release';
-import indexHead from '../content-html/index.head.html?raw';
-import productHead from '../content-html/product.head.html?raw';
-import downloadHead from '../content-html/download.head.html?raw';
 
 const { lang, path } = Astro.props as { lang: Lang; path: string };
-// Plain-HTML pages (manual, about, contact): src/content-html/<name>.main[.<lang>].html and <name>.head[.<lang>].html (English has no suffix).
-const files = import.meta.glob('../content-html/*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+// Plain-HTML pages (manual, contact): src/content-html/<name>.main[.<lang>].html (English has no suffix).
+const files = import.meta.glob('../content-html/*.main*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 const suffix = lang === defaultLang ? '' : `.${lang}`;
-const file = (name: string, part: 'main' | 'head') => files[`../content-html/${name}.${part}${suffix}.html`];
+const file = (name: string) => files[`../content-html/${name}.main${suffix}.html`];
 const def = pages[path];
-const url = absoluteUrl(lang, path);
-const esc = (s: string) => s.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
-// Open Graph tags for pages without a hand-written head (every language except the default one, and the feature pages).
-const og = (title: string, description: string | undefined, type = 'website') =>
-  `<meta property="og:title" content="${esc(title)}">` +
-  (description ? `<meta property="og:description" content="${esc(description)}">` : '') +
-  `<meta property="og:url" content="${url}"><meta property="og:type" content="${type}">` +
-  `<meta property="og:image" content="https://www.starkllm.com/assets/logo.png"><meta property="og:locale" content="${languages[lang].locale}">` +
-  `<meta name="robots" content="index, follow">`;
+const { title, description } = metaOf(lang, path);
 
-let title = '';
-let description: string | undefined;
-let headExtra = '';
-// The default language keeps its hand-written head files (description, Open Graph, Twitter card, structured data).
-// Their SoftwareApplication item is the same on all three pages; version and installer URL come from the release.
-const fillHead = (s: string) => s.replaceAll('{{V}}', V).replaceAll('{{SETUP_URL}}', RELEASE.setup.url);
-const raw = lang === defaultLang
-  ? ({ home: fillHead(indexHead), product: fillHead(productHead), download: fillHead(downloadHead) } as Record<string, string>)[def.kind]
-  : undefined;
-
-if (def.kind === 'home') { ({ title, description } = home[lang].meta as { title: string; description?: string }); }
-if (def.kind === 'product') { ({ title, description } = product[lang].meta as { title: string; description?: string }); }
-if (def.kind === 'download') { ({ title, description } = download[lang].meta as { title: string; description?: string }); }
-if (def.kind === 'help') { ({ title, description } = help[lang].meta as { title: string; description?: string }); }
-if (def.kind === 'tech') { const t = tech[lang][def.slug!]; title = t.title; description = t.lede; headExtra = og(t.title, t.lede, 'article'); }
-if (def.kind === 'manual' || def.kind === 'about' || def.kind === 'contact') {
-  ({ title, description } = pageMeta[lang][def.kind] as { title: string; description?: string });
-  const h = file(def.kind, 'head');
-  if (h) { headExtra = h; description = undefined; } else headExtra = og(title, description);
-}
-if (def.kind === 'legal') { const L = pageMeta[lang].legal!; title = L.title; description = L.description; headExtra = og(title, description); }
-if (raw) { headExtra = raw; description = undefined; }
-else if (['home', 'product', 'download', 'help'].includes(def.kind)) headExtra = og(title, description);
+// Structured data: the app itself on home and download, the help page's questions as an FAQPage.
+const app = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'StarkLLM',
+  operatingSystem: 'Windows 10, Windows 11',
+  applicationCategory: 'ProductivityApplication',
+  softwareVersion: V,
+  datePublished: RELEASE.published,
+  fileSize: `${Math.round(RELEASE.setup.size / 1_000_000)} MB`,
+  downloadUrl: RELEASE.setup.url,
+  url: absoluteUrl(lang, '/'),
+  license: 'https://www.apache.org/licenses/LICENSE-2.0',
+  isAccessibleForFree: true,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  author: { '@type': 'Person', name: 'Christian Stark' },
+  inLanguage: lang,
+};
+const faqPage = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: lang,
+  mainEntity: help[lang].problems.groups.flatMap((g) => g.items.map((p) => ({
+    '@type': 'Question',
+    name: p.q.replace(/^\d+\.\s*/, ''),
+    acceptedAnswer: { '@type': 'Answer', text: `${p.cause} ${p.fix.join(' ')}` },
+  }))),
+});
+const jsonLd = def.kind === 'home' || def.kind === 'download' ? app : def.kind === 'help' ? faqPage() : undefined;
 ---
-<SiteLayout title={title} description={description} headExtra={headExtra} lang={lang} path={path} getLabel={home[lang].nav.getBtn}>
+<SiteLayout title={title} description={description} lang={lang} path={path} jsonLd={jsonLd} ogType={def.kind === 'tech' ? 'article' : 'website'}>
   {def.kind === 'home' && <Home lang={lang} />}
-  {def.kind === 'product' && <ProductPage lang={lang} />}
+  {def.kind === 'features' && <FeaturesPage lang={lang} />}
+  {def.kind === 'phone' && <PhonePage lang={lang} />}
+  {def.kind === 'privacy' && <PrivacyPage lang={lang} />}
+  {def.kind === 'changelog' && <ChangelogPage lang={lang} />}
+  {def.kind === 'about' && <AboutPage lang={lang} />}
   {def.kind === 'download' && <DownloadPage lang={lang} />}
   {def.kind === 'help' && <HelpPage lang={lang} />}
   {def.kind === 'tech' && <TechPage lang={lang} slug={def.slug!} />}
-  {def.kind === 'manual' && <LegacyBody html={file('manual', 'main').replaceAll('{{V}}', V)} />}
-  {def.kind === 'about' && <LegacyBody html={file('about', 'main')} />}
-  {def.kind === 'about' && <LucyAbout lang={lang} />}
-  {def.kind === 'contact' && <LegacyBody html={file('contact', 'main')} />}
+  {def.kind === 'manual' && <div class="wrap-wide prose"><LegacyBody html={file('manual').replaceAll('{{V}}', V)} /></div>}
+  {def.kind === 'contact' && <div class="wrap prose"><LegacyBody html={file('contact')} /></div>}
   {def.kind === 'legal' && (
-    <>
+    <div class="wrap">
       <header class="page-hero"><h1>{pageMeta[lang].legal!.h1}</h1><p class="lede">{pageMeta[lang].legal!.lede}</p></header>
-      <section class="block">
-        <div class="callout" style="margin-top:0"><p>{pageMeta[lang].legal!.notice}</p></div>
-        <ul class="check" style="margin-top:1.5rem">
-          <li><a href="/privacy-policy" hreflang="en" lang="en">{pageMeta[lang].legal!.privacyEn}</a></li>
-          <li><a href="/datenschutz" hreflang="de" lang="de">{pageMeta[lang].legal!.privacyDe}</a></li>
-          <li><a href="/impressum" hreflang="de" lang="de">{pageMeta[lang].legal!.imprintDe}</a></li>
-        </ul>
-      </section>
-    </>
+      <div class="callout"><p>{pageMeta[lang].legal!.notice}</p></div>
+      <ul class="check-list" style="margin-top:var(--space-l)">
+        <li><a href="/privacy-policy" hreflang="en" lang="en">{pageMeta[lang].legal!.privacyEn}</a></li>
+        <li><a href="/datenschutz" hreflang="de" lang="de">{pageMeta[lang].legal!.privacyDe}</a></li>
+        <li><a href="/impressum" hreflang="de" lang="de">{pageMeta[lang].legal!.imprintDe}</a></li>
+      </ul>
+    </div>
   )}
 </SiteLayout>

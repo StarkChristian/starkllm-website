@@ -5,7 +5,9 @@
    "pages": [
     "/tr/product",
     "/tr/manual",
-    "/tr/download"
+    "/tr/download",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -29,7 +31,9 @@
    "pages": [
     "/tr/tech-multimodal",
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -37,7 +41,9 @@
    "pages": [
     "/tr/tech-rag",
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -98,7 +104,9 @@
    "pages": [
     "/tr/",
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -106,7 +114,9 @@
    "pages": [
     "/tr/",
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -129,7 +139,9 @@
    "pages": [
     "/tr/product",
     "/tr/",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {

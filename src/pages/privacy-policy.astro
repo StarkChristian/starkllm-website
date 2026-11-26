@@ -7,5 +7,5 @@ import head from '../content-html/privacy-policy.head.html?raw';
 import main from '../content-html/privacy-policy.main.html?raw';
 ---
 <SiteLayout title={"Privacy Policy (courtesy translation) | StarkLLM"} headExtra={head} path="/privacy-policy" getLabel={home.en.nav.getBtn}>
-  <LegacyBody html={main} />
+  <div class="wrap prose"><LegacyBody html={main} /></div>
 </SiteLayout>

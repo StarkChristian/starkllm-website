@@ -1,101 +1,113 @@
 ---
+// Help: how the parts fit together, a checklist with a test per step, problems with cause and fix, what to send, limits.
+// Text: src/i18n/help.ts (and langs/<lang>/help.ts). The problems also become the FAQPage structured data of this page.
+import Icon from './Icon.astro';
 import { help } from '../i18n/help';
 import { localePath, type Lang } from '../i18n/ui';
 
-const { lang = 'en' } = Astro.props as { lang?: Lang };
+const { lang } = Astro.props as { lang: Lang };
 const c = help[lang];
 const L = (c as any).labels ?? (lang === 'de'
   ? { cause: 'Wahrscheinliche Ursache', fix: 'Was zu tun ist', jump: 'Springe zu', toc: ['Checkliste', 'Probleme', 'Hilfe holen', 'Grenzen'] }
   : { cause: 'Likely cause', fix: 'What to do', jump: 'Jump to', toc: ['Checklist', 'Problems', 'Get help', 'Limits'] });
 // The code block belongs right after the list item that introduces it (the first one ending with ":"), otherwise after the list.
-const codeAfter = (fix: readonly string[]) => { const i = fix.findIndex((f) => f.trim().endsWith(':')); return i; };
+const codeAfter = (fix: readonly string[]) => fix.findIndex((f) => f.trim().endsWith(':'));
 ---
-<header class="page-hero">
-  <p class="eyebrow">{c.hero.eyebrow}</p>
-  <h1>{c.hero.h1}</h1>
-  <p class="lede">{c.hero.lede}</p>
-  <p class="help-jump"><span>{L.jump}:</span> <a href="#steps-h">{L.toc[0]}</a> · <a href="#problems-h">{L.toc[1]}</a> · <a href="#report-h">{L.toc[2]}</a> · <a href="#limits-h">{L.toc[3]}</a></p>
-</header>
+<div class="wrap">
+  <header class="page-hero">
+    <span class="eyebrow">{c.hero.eyebrow}</span>
+    <h1>{c.hero.h1}</h1>
+    <p class="lede">{c.hero.lede}</p>
+    <nav class="toc" aria-label={L.jump}>
+      <a href="#steps-h">{L.toc[0]}</a><a href="#problems-h">{L.toc[1]}</a><a href="#report-h">{L.toc[2]}</a><a href="#limits-h">{L.toc[3]}</a>
+    </nav>
+  </header>
+</div>
 
-<section class="block" aria-labelledby="how-h">
-  <h2 id="how-h">{c.how.h2}</h2>
-  <p class="sec-lede">{c.how.lede}</p>
-  <div class="opts">
-    {c.how.parts.map((p) => (<div><h3>{p.t}</h3><p>{p.v}</p></div>))}
+<section class="section alt" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="how-h">{c.how.h2}</h2><p class="lede">{c.how.lede}</p></div>
+    <div class="grid-auto">{c.how.parts.map((p) => (<div class="card"><h3>{p.t}</h3><p>{p.v}</p></div>))}</div>
+    <div class="callout warn" style="margin-top:var(--space-m)"><p>{c.how.warn}</p></div>
+    <p class="small muted" style="margin-top:var(--space-m);max-width:80ch">{c.honest}</p>
   </div>
-  <div class="callout"><p>{c.how.warn}</p></div>
-  <div class="notes" style="margin-top:1.5rem"><p>{c.honest}</p></div>
 </section>
 
-<section class="block" aria-labelledby="steps-h">
-  <h2 id="steps-h">{c.steps.h2}</h2>
-  <p class="sec-lede">{c.steps.lede}</p>
-  <ol class="steps help-steps" style="margin-top:2rem">
-    {c.steps.items.map((s) => (
-      <li>
-        <b>{s.t}</b>
-        <span>{s.v}</span>
-        {'code' in s && s.code && <pre class="cmd">{s.code}</pre>}
-        <span class="check-line">{s.check}</span>
-      </li>
+<section class="section" aria-labelledby="steps-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="steps-h">{c.steps.h2}</h2><p class="lede">{c.steps.lede}</p></div>
+    <ol class="steps">
+      {c.steps.items.map((s) => (
+        <li>
+          <b>{s.t}</b>
+          <span>{s.v}</span>
+          {'code' in s && s.code && <pre><code>{s.code}</code></pre>}
+          <span class="check-line">{s.check}</span>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="problems-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="problems-h">{c.problems.h2}</h2><p class="lede">{c.problems.lede}</p></div>
+    {c.problems.groups.map((g) => (
+      <div style="margin-top:var(--space-xl)">
+        <h3 style="font-size:var(--step-2);margin-bottom:var(--space-s)">{g.h}</h3>
+        <div class="faq">
+          {g.items.map((p) => {
+            const n = p.q.split('.')[0];
+            const at = 'code' in p && p.code ? codeAfter(p.fix) : -1;
+            return (
+              <details id={'p' + n}>
+                <summary>{p.q}</summary>
+                <div class="faq-a">
+                  <p><b>{L.cause}:</b> {p.cause}</p>
+                  <p><b>{L.fix}:</b></p>
+                  <ol style="padding-left:1.2rem;display:grid;gap:.35rem">
+                    {p.fix.map((f, i) => (
+                      <>
+                        <li>{f}</li>
+                        {i === at && <li style="list-style:none"><pre><code>{'code' in p ? p.code : ''}</code></pre></li>}
+                      </>
+                    ))}
+                    {'code' in p && p.code && at === -1 && <li style="list-style:none"><pre><code>{p.code}</code></pre></li>}
+                  </ol>
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </div>
     ))}
-  </ol>
+  </div>
 </section>
 
-<section class="block" aria-labelledby="problems-h">
-  <h2 id="problems-h">{c.problems.h2}</h2>
-  <p class="sec-lede">{c.problems.lede}</p>
-  {c.problems.groups.map((g) => (
-    <div class="help-group">
-      <h3>{g.h}</h3>
-      <div class="faq">
-        {g.items.map((p) => {
-          const n = p.q.split('.')[0];
-          const at = 'code' in p && p.code ? codeAfter(p.fix) : -1;
-          return (
-            <details id={'p' + n}>
-              <summary>{p.q}</summary>
-              <div class="help-body">
-                <p><b>{L.cause}:</b> {p.cause}</p>
-                <p class="help-fix-h"><b>{L.fix}:</b></p>
-                <ol>
-                  {p.fix.map((f, i) => (
-                    <>
-                      <li>{f}</li>
-                      {i === at && <li class="code-li"><pre class="cmd">{'code' in p ? p.code : ''}</pre></li>}
-                    </>
-                  ))}
-                  {'code' in p && p.code && at === -1 && <li class="code-li"><pre class="cmd">{p.code}</pre></li>}
-                </ol>
-              </div>
-            </details>
-          );
-        })}
+<section class="section" aria-labelledby="report-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="report-h">{c.report.h2}</h2><p class="lede">{c.report.lede}</p></div>
+    <pre><code>{c.report.code}</code></pre>
+    <p class="muted" style="margin-top:var(--space-s);max-width:80ch">{c.report.note}</p>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="limits-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="limits-h">{c.limits.h2}</h2><p class="lede">{c.limits.lede}</p></div>
+    <dl class="kv grid-2" style="gap:var(--space-s) var(--space-xl)">{c.limits.items.map(([k, v]) => (<div><dt>{k}</dt><dd>{v}</dd></div>))}</dl>
+  </div>
+</section>
+
+<section class="section tight" aria-labelledby="back-h">
+  <div class="wrap">
+    <div class="callout plain" style="padding:var(--space-l)">
+      <h2 id="back-h">{c.cta.h2}</h2>
+      <div class="btn-row">
+        <a class="btn" href={localePath(lang, '/manual')}>{c.cta.manual}</a>
+        <a class="btn" href={localePath(lang, '/download')}><Icon name="download" size={18} />{c.cta.download}</a>
+        <a class="btn ghost" href={localePath(lang, '/contact')}>{c.cta.contact}</a>
       </div>
     </div>
-  ))}
-</section>
-
-<section class="block" aria-labelledby="report-h">
-  <h2 id="report-h">{c.report.h2}</h2>
-  <p class="sec-lede">{c.report.lede}</p>
-  <pre class="cmd" style="margin-top:1.2rem">{c.report.code}</pre>
-  <p class="sec-lede" style="margin-top:1rem">{c.report.note}</p>
-</section>
-
-<section class="block" aria-labelledby="limits-h">
-  <h2 id="limits-h">{c.limits.h2}</h2>
-  <p class="sec-lede">{c.limits.lede}</p>
-  <ul class="check">
-    {c.limits.items.map(([k, v]) => (<li><b>{k}:</b> {v}</li>))}
-  </ul>
-</section>
-
-<section class="cta-band" aria-labelledby="back-h">
-  <h2 id="back-h">{c.cta.h2}</h2>
-  <div class="cta">
-    <a class="btn ghost" href={localePath(lang, '/manual')}>{c.cta.manual}</a>
-    <a class="btn ghost" href={localePath(lang, '/download')}>{c.cta.download}</a>
-    <a class="btn ghost" href={localePath(lang, '/contact')}>{c.cta.contact}</a>
   </div>
 </section>

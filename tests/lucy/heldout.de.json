@@ -6,7 +6,9 @@
     "/de/product",
     "/de/manual",
     "/de/download",
-    "/de/"
+    "/de/",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -33,7 +35,9 @@
     "/de/tech-multimodal",
     "/de/product",
     "/de/manual",
-    "/de/"
+    "/de/",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -43,7 +47,9 @@
     "/de/product",
     "/de/manual",
     "/de/",
-    "/de/help"
+    "/de/help",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -110,7 +116,9 @@
    "pages": [
     "/de/",
     "/de/product",
-    "/de/manual"
+    "/de/manual",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -118,7 +126,9 @@
    "pages": [
     "/de/",
     "/de/product",
-    "/de/manual"
+    "/de/manual",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -141,7 +151,9 @@
    "pages": [
     "/de/product",
     "/de/",
-    "/de/manual"
+    "/de/manual",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {
@@ -150,7 +162,9 @@
     "/de/tech-themes",
     "/de/",
     "/de/manual",
-    "/de/product"
+    "/de/product",
+    "/de/features",
+    "/de/phone"
    ]
   },
   {

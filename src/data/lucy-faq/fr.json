@@ -449,7 +449,7 @@
     "Comment StarkLLM traite-t-il mes courriers ?",
     "Que sont les dossiers et les échéances ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone"
   },
   {
@@ -461,7 +461,7 @@
     "Puis-je utiliser le téléphone hors de chez moi ?",
     "L’application du téléphone fonctionne-t-elle avec les données mobiles ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/phone",
    "match": "L’application StarkLLM pour Android travaille avec votre PC"
   },
   {
@@ -472,7 +472,7 @@
     "Comment les courriers frauduleux sont-ils reconnus ?",
     "StarkLLM repère-t-il les arnaques ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Un encadré rouge apparaît au-dessus de la réponse si un courrier demande un paiement"
   },
   {
@@ -702,7 +702,7 @@
     "Peut-il effacer des fichiers sur mon disque ?",
     "Est-ce qu'il modifie mes documents d'origine ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Il ne renomme, ne déplace et ne supprime jamais vos fichiers"
   },
   {
@@ -712,7 +712,7 @@
     "StarkLLM peut-il faire des choses sur des sites web pour moi ?",
     "Peut-il chercher un vol ou remplir un formulaire sur un site ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "StarkLLM ouvre une fenêtre de navigateur distincte et vous suivez chaque étape"
   },
   {
@@ -722,7 +722,7 @@
     "StarkLLM peut-il aider à coder ?",
     "Peut-il exécuter des commandes ou modifier des fichiers de mon projet ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Il ne quitte jamais ce dossier et ne lit jamais de clés"
   },
   {
@@ -732,7 +732,7 @@
     "Puis-je ajouter l’enregistrement d’une réunion ou un MP3 ?",
     "Peut-il transcrire des fichiers audio ou vidéo ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Réunions, cours et mémos vocaux sont transcrits sur votre PC avec les horodatages"
   },
   {
@@ -742,7 +742,7 @@
     "Puis-je coller une capture d’écran et poser une question dessus ?",
     "Peut-il décrire une image ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/features",
    "match": "Collez une capture d’écran ou choisissez une photo, et un modèle de vision sur votre PC répond"
   },
   {
@@ -752,7 +752,7 @@
     "Comment connecter l’application Android à mon PC ?",
     "Comment fonctionne l’association par code QR ?"
    ],
-   "page": "/fr/product",
+   "page": "/fr/phone",
    "match": "Paramètres › Téléphone affiche un code QR"
   },
   {
@@ -770,5 +770,8 @@
    "page": "/fr/manual",
    "match": "quand vous fermez ou quittez StarkLLM, son moteur s’arrête aussi"
   }
+ ],
+ "exclude": [
+  "/fr/changelog"
  ]
 }

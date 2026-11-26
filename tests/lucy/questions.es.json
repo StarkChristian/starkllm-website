@@ -6,7 +6,9 @@
     "/es/about",
     "/es/",
     "/es/manual",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -133,7 +135,9 @@
    "pages": [
     "/es/manual",
     "/es/product",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -141,7 +145,9 @@
    "pages": [
     "/es/manual",
     "/es/product",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -149,7 +155,9 @@
    "pages": [
     "/es/manual",
     "/es/product",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -157,7 +165,9 @@
    "pages": [
     "/es/product",
     "/es/",
-    "/es/manual"
+    "/es/manual",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -165,7 +175,9 @@
    "pages": [
     "/es/product",
     "/es/manual",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -173,7 +185,9 @@
    "pages": [
     "/es/product",
     "/es/manual",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -182,7 +196,9 @@
     "/es/tech-local-models",
     "/es/manual",
     "/es/help",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -208,7 +224,9 @@
     "/es/tech-rag",
     "/es/product",
     "/es/manual",
-    "/es/"
+    "/es/",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -223,7 +241,9 @@
    "pages": [
     "/es/tech-knowledge-base",
     "/es/manual",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -232,7 +252,9 @@
     "/es/manual",
     "/es/product",
     "/es/tech-workspaces",
-    "/es/tech-knowledge-base"
+    "/es/tech-knowledge-base",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -257,7 +279,9 @@
     "/es/tech-themes",
     "/es/",
     "/es/manual",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -265,7 +289,9 @@
    "pages": [
     "/es/tech-local-tools",
     "/es/manual",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -374,7 +400,9 @@
    "q": "¿El programa puede borrar mis archivos?",
    "pages": [
     "/es/product",
-    "/es/manual"
+    "/es/manual",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {
@@ -423,7 +451,9 @@
     "/es/tech-themes",
     "/es/",
     "/es/manual",
-    "/es/product"
+    "/es/product",
+    "/es/features",
+    "/es/phone"
    ]
   },
   {

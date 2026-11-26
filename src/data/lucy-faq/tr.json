@@ -1914,7 +1914,7 @@
     "Dosyalar ve son tarihler nedir?",
     "Mektupları nasıl ekleyebilirim?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin"
   },
   {
@@ -1927,7 +1927,7 @@
     "Telefonu evden uzaktayken de kullanabilir miyim?",
     "Telefon uygulaması mobil veriyle çalışır mı?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/phone",
    "match": "Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır"
   },
   {
@@ -1942,7 +1942,7 @@
     "Sahte mektubu nasıl fark eder?",
     "Dolandırıcı mektupları nasıl ayırt ediyor?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "yanıtın üstünde kırmızı bir kutu görünür"
   },
   {
@@ -2185,7 +2185,7 @@
     "Program dosyalarımı siler mi?",
     "Dosyalarıma zarar verir mi?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "Dosyalarınızın adını asla değiştirmez, taşımaz veya silmez"
   },
   {
@@ -2195,7 +2195,7 @@
     "StarkLLM benim için web sitelerinde iş yapabilir mi?",
     "Bir web sitesinde uçuş arayabilir veya form doldurabilir mi?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "StarkLLM ayrı bir tarayıcı penceresi açar ve her adımı izlersiniz"
   },
   {
@@ -2205,7 +2205,7 @@
     "StarkLLM kod konusunda yardım edebilir mi?",
     "Projemde komut çalıştırabilir veya dosya değiştirebilir mi?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "O klasörün dışına asla çıkmaz"
   },
   {
@@ -2215,7 +2215,7 @@
     "Bir toplantı kaydı veya MP3 yükleyebilir miyim?",
     "Ses veya video dosyalarını metne çevirebilir mi?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "Toplantılar, dersler ve sesli notlar, Whisper large-v3-turbo ile"
   },
   {
@@ -2225,7 +2225,7 @@
     "Ekran görüntüsü yapıştırıp onu sorabilir miyim?",
     "Bir resmi tarif edebilir mi?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/features",
    "match": "Bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bilgisayarınızdaki bir görü modeli yanıt verir"
   },
   {
@@ -2235,7 +2235,7 @@
     "Android uygulamasını bilgisayarıma nasıl bağlarım?",
     "QR koduyla eşleştirme nasıl çalışır?"
    ],
-   "page": "/tr/product",
+   "page": "/tr/phone",
    "match": "Ayarlar › Telefon bir QR kodu gösterir"
   },
   {
@@ -2253,5 +2253,8 @@
    "page": "/tr/manual",
    "match": "v2.2’den beri hayır: StarkLLM’i kapattığınızda veya ondan çıktığınızda motoru da durur"
   }
+ ],
+ "exclude": [
+  "/tr/changelog"
  ]
 }

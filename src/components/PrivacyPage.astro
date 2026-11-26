@@ -1,0 +1,89 @@
+---
+// Privacy overview (2026, new). The legal privacy policy of the website stays separate (/datenschutz, /privacy-policy).
+import Icon from './Icon.astro';
+import AppShot from './AppShot.astro';
+import CtaBand from './CtaBand.astro';
+import { privacy, common } from '../i18n/site';
+import { localePath, type Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const c = privacy[lang];
+const policy = lang === 'de' ? '/datenschutz' : '/privacy-policy';
+---
+<div class="wrap">
+  <header class="page-hero">
+    <span class="eyebrow">{c.hero.eyebrow}</span>
+    <h1>{c.hero.h1}</h1>
+    <p class="lede">{c.hero.lede}</p>
+  </header>
+</div>
+
+<section class="section alt" aria-labelledby="stays-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="stays-h">{c.stays.h2}</h2><p class="lede">{c.stays.lede}</p></div>
+    <div class="grid-3">
+      {c.stays.items.map((it) => (<div class="card reveal"><span class="ico-tile"><Icon name={it.icon} /></span><h3>{it.title}</h3><p>{it.text}</p></div>))}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="online-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="online-h">{c.online.h2}</h2><p class="lede">{c.online.lede}</p></div>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="online-h">
+      <table class="table">
+        <thead><tr>{c.online.cols.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+        <tbody>
+          {c.online.rows.map((r) => (<tr><th scope="row">{r.what}</th><td>{r.host}</td><td>{r.when}</td><td><span class="pill-off">{r.def}</span></td></tr>))}
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted" style="margin-top:var(--space-s);max-width:80ch">{c.online.note}</p>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="offline-h">
+  <div class="wrap split">
+    <div class="stack" style="--flow:var(--space-m)">
+      <span class="ico-tile"><Icon name="offline" /></span>
+      <h2 id="offline-h" style="font-size:var(--step-3)">{c.offline.h2}</h2>
+      <p class="lede" style="font-size:var(--step-0)">{c.offline.text}</p>
+    </div>
+    <div class="reveal"><AppShot name="13-privacy-network" lang={lang} frame="window" /></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="rest-h">
+  <div class="wrap grid-2" style="align-items:start">
+    <div class="stack" style="--flow:var(--space-s)">
+      <span class="ico-tile"><Icon name="lock" /></span>
+      <h2 id="rest-h" style="font-size:var(--step-3)">{c.atRest.h2}</h2>
+      <p class="lede" style="font-size:var(--step-0)">{c.atRest.lede}</p>
+      <p class="limits"><b>{common[lang].limits}</b>{c.atRest.limits}</p>
+    </div>
+    <dl class="kv">{c.atRest.items.map((it) => (<div><dt>{it.k}</dt><dd>{it.v}</dd></div>))}</dl>
+  </div>
+</section>
+
+<section class="section tight" aria-label={`${c.signed.h2} · ${c.sbom.h2}`}>
+  <div class="wrap grid-2">
+    <div class="card"><span class="ico-tile"><Icon name="shield" /></span><h2 style="font-size:var(--step-2)">{c.signed.h2}</h2><p style="margin-top:var(--space-2xs)">{c.signed.text}</p><p style="margin-top:var(--space-s)"><a class="link-arrow" href="/code-signing" hreflang="en">{c.signed.link}<Icon name="arrow" size={17} /></a></p></div>
+    <div class="card"><span class="ico-tile"><Icon name="list" /></span><h2 style="font-size:var(--step-2)">{c.sbom.h2}</h2><p style="margin-top:var(--space-2xs)">{c.sbom.text}</p><p style="margin-top:var(--space-s)"><a class="link-arrow" href="https://github.com/StarkChristian/StarkLLM/releases" target="_blank" rel="noopener">{c.sbom.link}<Icon name="arrow" size={17} /></a></p></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="check-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="check-h">{c.check.h2}</h2><p class="lede">{c.check.lede}</p></div>
+    <ol class="steps">
+      {c.check.steps.map((s, i) => (<li><b>{s.t}</b><span>{s.v}</span>{i === 1 && <pre><code>{c.check.code}</code></pre>}</li>))}
+    </ol>
+    <p style="margin-top:var(--space-m)"><a class="link-arrow" href="https://github.com/StarkChristian/StarkLLM/blob/main/docs/verify-privacy.md" target="_blank" rel="noopener">{c.check.link}<Icon name="arrow" size={17} /></a></p>
+  </div>
+</section>
+
+<section class="section tight" aria-labelledby="site-h">
+  <div class="wrap">
+    <div class="callout plain"><h2 id="site-h">{c.site.h2}</h2><p>{c.site.text}</p><p><a class="link-arrow" href={localePath(lang, policy)} hreflang={lang === 'de' ? 'de' : 'en'}>{c.site.link}<Icon name="arrow" size={17} /></a></p></div>
+  </div>
+</section>
+<CtaBand lang={lang} />

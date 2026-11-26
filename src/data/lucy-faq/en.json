@@ -136,7 +136,8 @@
  ],
  "exclude": [
   "/impressum",
-  "/datenschutz"
+  "/datenschutz",
+  "/changelog"
  ],
  "extraPages": [],
  "legalPages": [
@@ -354,7 +355,7 @@
     "How does StarkLLM handle my letters?",
     "What are cases and deadlines?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "Add a letter as a PDF, a scan or a photo from your phone"
   },
   {
@@ -366,7 +367,7 @@
     "Can I use the phone away from home?",
     "Does the phone app work over mobile data?"
    ],
-   "page": "/product",
+   "page": "/phone",
    "match": "The StarkLLM app for Android works together with your PC"
   },
   {
@@ -377,7 +378,7 @@
     "How are fraudulent letters recognised?",
     "Can StarkLLM spot fake or fraudulent letters?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "A red box above the answer appears if a letter asks for payment"
   },
   {
@@ -591,7 +592,7 @@
     "Will it rename or move my documents?",
     "Can the program delete my files?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "It never renames, moves or deletes your files"
   },
   {
@@ -601,7 +602,7 @@
     "Can StarkLLM do things on websites for me?",
     "Can it book a flight or fill in a form on a website?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "StarkLLM opens a separate browser window and you watch every step"
   },
   {
@@ -611,7 +612,7 @@
     "Can StarkLLM help with code?",
     "Can it run commands or change files in my project?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "It never leaves that folder and never reads keys or .env files"
   },
   {
@@ -621,7 +622,7 @@
     "Can I upload a meeting recording or an MP3?",
     "Can it write down audio or video files?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "Meetings, lectures and voice memos are written down on your PC with times"
   },
   {
@@ -631,7 +632,7 @@
     "Can I paste a screenshot and ask about it?",
     "Can it describe a picture?"
    ],
-   "page": "/product",
+   "page": "/features",
    "match": "Paste a screenshot or choose a photo, and a vision model on your PC answers"
   },
   {
@@ -641,7 +642,7 @@
     "How do I connect the Android app to my PC?",
     "How does the QR code pairing work?"
    ],
-   "page": "/product",
+   "page": "/phone",
    "match": "Settings › Phone shows a QR code"
   },
   {

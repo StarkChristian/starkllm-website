@@ -1,0 +1,54 @@
+---
+// Features (2026; replaces /product): one section per feature with a picture or loop, what it does, and its limits.
+import Icon from './Icon.astro';
+import AppShot from './AppShot.astro';
+import AppVideo from './AppVideo.astro';
+import CtaBand from './CtaBand.astro';
+import { features, common, type FeatureSection } from '../i18n/site';
+import { localePath, type Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const c = features[lang];
+const cm = common[lang];
+const sections = c.sections as FeatureSection[];
+---
+<div class="wrap">
+  <header class="page-hero">
+    <span class="eyebrow">{c.hero.eyebrow}</span>
+    <h1>{c.hero.h1}</h1>
+    <p class="lede">{c.hero.lede}</p>
+    <nav class="toc" aria-label={cm.onThisPage}>
+      {sections.map((s) => <a href={`#${s.id}`}>{s.tag}</a>)}
+    </nav>
+  </header>
+
+  {sections.map((s) => (
+    <section class="feature" id={s.id} aria-labelledby={`${s.id}-h`}>
+      <div class="feature-in">
+        <div class="feature-copy">
+          <span class="eyebrow">{s.tag}</span>
+          <h2 id={`${s.id}-h`}>{s.h2}</h2>
+          <p class="lede">{s.lede}</p>
+          <ul class="points">
+            {s.points.map((p) => <li><Icon name="check" size={18} /><span><b>{p.k}</b>{p.v}</span></li>)}
+          </ul>
+          {s.limits && <p class="limits"><b>{cm.limits}</b>{s.limits}</p>}
+        </div>
+        <div class="feature-media reveal">
+          {s.video ? <AppVideo name={s.video} lang={lang} frame="window" />
+            : s.shot ? <AppShot name={s.shot} lang={lang} frame="window" />
+            : <div class="icon-panel" aria-hidden="true"><Icon name={s.icon} size={120} /></div>}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="feature" aria-labelledby="phone-teaser-h">
+    <div class="callout plain" style="padding:var(--space-l)">
+      <span class="ico-tile"><Icon name="phone" /></span>
+      <h2 id="phone-teaser-h">{c.phone.h2}</h2>
+      <p>{c.phone.text}</p>
+      <p><a class="link-arrow" href={localePath(lang, '/phone')}>{c.phone.link}<Icon name="arrow" size={17} /></a></p>
+    </div>
+  </section>
+</div>
+<CtaBand lang={lang} />

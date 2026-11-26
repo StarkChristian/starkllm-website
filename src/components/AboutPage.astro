@@ -1,0 +1,68 @@
+---
+// About (2026). Languages without src/i18n/langs/<lang>/about.ts show their older About text (content-html/about.main.<lang>.html).
+import Icon from './Icon.astro';
+import LegacyBody from './LegacyBody.astro';
+import LucyAbout from './LucyAbout.astro';
+import CtaBand from './CtaBand.astro';
+import { about } from '../i18n/site';
+import { defaultLang, localePath, type Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const c = about[lang];
+const files = import.meta.glob('../content-html/about.main*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+const old = files[`../content-html/about.main${lang === defaultLang ? '' : `.${lang}`}.html`];
+---
+{c ? (
+  <>
+    <div class="wrap">
+      <header class="page-hero">
+        <span class="eyebrow">{c.hero.eyebrow}</span>
+        <h1>{c.hero.h1}</h1>
+        <p class="lede">{c.hero.lede}</p>
+      </header>
+    </div>
+    <section class="section tight" aria-labelledby="what-h">
+      <div class="wrap grid-2" style="gap:var(--space-2xl)">
+        <div class="stack"><h2 id="what-h" style="font-size:var(--step-3)">{c.what.h2}</h2>{c.what.p.map((p) => <p>{p}</p>)}</div>
+        <div class="stack"><h2 style="font-size:var(--step-3)">{c.why.h2}</h2>{c.why.p.map((p) => <p>{p}</p>)}</div>
+      </div>
+    </section>
+    <section class="section alt" aria-labelledby="who-h">
+      <div class="wrap grid-2" style="gap:var(--space-2xl)">
+        <div class="stack">
+          <h2 id="who-h" style="font-size:var(--step-3)">{c.who.h2}</h2>
+          <p>{c.who.p}</p>
+          <ul class="card" style="list-style:none;display:grid;gap:.3rem">{c.who.lines.map((l) => <li>{l}</li>)}</ul>
+          <p><a class="link-arrow" href={localePath(lang, '/contact')}>{c.who.contact}<Icon name="arrow" size={17} /></a></p>
+        </div>
+        <div class="stack">
+          <h2 style="font-size:var(--step-3)">{c.open.h2}</h2>
+          {c.open.p.map((p) => <p>{p}</p>)}
+          <div class="btn-row">
+            <a class="btn" href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener"><Icon name="github" size={18} />{c.open.github}</a>
+            <a class="btn ghost" href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">{c.open.issues}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="road-h">
+      <div class="wrap">
+        <div class="sec-head"><h2 id="road-h">{c.roadmap.h2}</h2><p class="lede">{c.roadmap.lede}</p></div>
+        <div class="grid-auto">
+          {c.roadmap.items.map((r) => (<div class="card reveal"><span class="badge">{r.when}</span><h3 style="margin-top:var(--space-xs)">{r.title}</h3><p>{r.text}</p></div>))}
+        </div>
+      </div>
+    </section>
+    <section class="section tight" aria-label="Lucy">
+      <div class="wrap">
+        <LucyAbout lang={lang} />
+        <div class="callout plain" style="margin-top:var(--space-xl)"><h2>{c.related.h2}</h2><p>{c.related.text} <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a></p></div>
+      </div>
+    </section>
+    <CtaBand lang={lang} />
+  </>
+) : (
+  <>
+    <div class="wrap prose"><LegacyBody html={old} /><LucyAbout lang={lang} /></div>
+    <CtaBand lang={lang} />
+  </>
+)}

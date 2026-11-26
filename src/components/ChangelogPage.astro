@@ -1,0 +1,44 @@
+---
+// Changelog (2026, new): every version from the release notes of the app (src/data/changelog.ts parses them at build time).
+// The notes are written in English; on other languages they carry lang="en".
+import CtaBand from './CtaBand.astro';
+import { changelog } from '../i18n/site';
+import { releases, beforeHtml } from '../data/changelog';
+import { V } from '../data/release';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const c = changelog[lang];
+const notesLang = lang === 'en' ? undefined : 'en';
+---
+<div class="wrap">
+  <header class="page-hero">
+    <span class="eyebrow">{c.hero.eyebrow}</span>
+    <h1>{c.hero.h1}</h1>
+    <p class="lede">{c.hero.lede}</p>
+    {c.notesLang && <p class="small muted">{c.notesLang}</p>}
+    <nav class="toc" aria-label={c.versions}>{releases.map((r) => <a href={`#${r.id}`}>{r.version}</a>)}</nav>
+  </header>
+
+  <div class="log">
+    {releases.map((r) => (
+      <article class="log-entry" id={r.id} aria-labelledby={`${r.id}-h`}>
+        <div class="log-ver">
+          <a href={`#${r.id}`}>{r.version}</a>
+          {r.version === V && <span class="badge">{c.latest}</span>}
+        </div>
+        <div class="log-body" lang={notesLang}>
+          <h2 id={`${r.id}-h`}>{r.title}</h2>
+          <Fragment set:html={r.html} />
+        </div>
+      </article>
+    ))}
+    {beforeHtml && (
+      <details class="log-entry faq" style="display:block">
+        <summary>{c.older}</summary>
+        <div class="log-body" lang={notesLang}><Fragment set:html={beforeHtml} /></div>
+      </details>
+    )}
+  </div>
+  <p class="small muted" style="margin-top:var(--space-l)">{c.update}</p>
+</div>
+<CtaBand lang={lang} />

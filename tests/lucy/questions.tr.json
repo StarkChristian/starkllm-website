@@ -6,7 +6,9 @@
     "/tr/about",
     "/tr/",
     "/tr/manual",
-    "/tr/product"
+    "/tr/product",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -128,7 +130,9 @@
    "pages": [
     "/tr/manual",
     "/tr/product",
-    "/tr/"
+    "/tr/",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -136,7 +140,9 @@
    "pages": [
     "/tr/manual",
     "/tr/product",
-    "/tr/"
+    "/tr/",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -144,7 +150,9 @@
    "pages": [
     "/tr/manual",
     "/tr/product",
-    "/tr/"
+    "/tr/",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -152,7 +160,9 @@
    "pages": [
     "/tr/product",
     "/tr/",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -160,7 +170,9 @@
    "pages": [
     "/tr/product",
     "/tr/manual",
-    "/tr/"
+    "/tr/",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -168,7 +180,9 @@
    "pages": [
     "/tr/product",
     "/tr/manual",
-    "/tr/"
+    "/tr/",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -200,7 +214,9 @@
    "pages": [
     "/tr/tech-rag",
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -215,7 +231,9 @@
    "pages": [
     "/tr/tech-knowledge-base",
     "/tr/manual",
-    "/tr/product"
+    "/tr/product",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -225,7 +243,9 @@
     "/tr/product",
     "/tr/tech-workspaces",
     "/tr/tech-knowledge-base",
-    "/tr/download"
+    "/tr/download",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -249,7 +269,9 @@
     "/tr/tech-themes",
     "/tr/",
     "/tr/manual",
-    "/tr/product"
+    "/tr/product",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -257,7 +279,9 @@
    "pages": [
     "/tr/tech-local-tools",
     "/tr/manual",
-    "/tr/product"
+    "/tr/product",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {
@@ -364,7 +388,9 @@
    "q": "Program dosyalarımı silebilir mi?",
    "pages": [
     "/tr/product",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/features",
+    "/tr/phone"
    ]
   },
   {

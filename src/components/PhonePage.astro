@@ -1,0 +1,78 @@
+---
+// Phone (2026, new): the StarkLLM app for Android. "How it connects" and the levels come from release250.ts
+// (product.phone), which exists in every language; the rest from src/i18n/langs/<lang>/phone.ts.
+import Icon from './Icon.astro';
+import AppShot from './AppShot.astro';
+import PhoneFrame from './PhoneFrame.astro';
+import CtaBand from './CtaBand.astro';
+import { phone } from '../i18n/site';
+import { rel250 } from '../i18n/release250';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const c = phone[lang];
+const ph = (rel250[lang] ?? rel250.en)!.product.phone;
+const icons = ['key', 'home', 'relay', 'eyeoff', 'offline', 'lock'];
+---
+<div class="wrap">
+  <header class="page-hero split" style="align-items:center">
+    <div class="stack" style="--flow:var(--space-m)">
+      <span class="eyebrow">{c.hero.eyebrow}</span>
+      <h1>{c.hero.h1}</h1>
+      <p class="lede">{c.hero.lede}</p>
+    </div>
+    <div class="reveal"><PhoneFrame name={c.shots.phone} lang={lang} /></div>
+  </header>
+</div>
+
+<section class="section alt" aria-labelledby="does-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="does-h">{c.does.h2}</h2></div>
+    <div class="grid-3">
+      {c.does.items.map((it) => (<div class="card reveal"><span class="ico-tile"><Icon name={it.icon} /></span><h3>{it.title}</h3><p>{it.text}</p></div>))}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="pair-h">
+  <div class="wrap split" style="align-items:start">
+    <div class="stack" style="--flow:var(--space-m)">
+      <h2 id="pair-h" style="font-size:var(--step-3)">{c.pair.h2}</h2>
+      <ol class="steps">{c.pair.steps.map((s) => <li><b>{s.t}</b><span>{s.v}</span></li>)}</ol>
+      <p class="small muted">{c.pair.note}</p>
+    </div>
+    <div class="reveal"><AppShot name={c.shots.pc} lang={lang} frame="window" /></div>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="connects-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="connects-h">{c.connects.h2}</h2></div>
+    <dl class="kv grid-2" style="gap:var(--space-m) var(--space-xl)">
+      {ph.items.map((it, i) => (<div><dt class="kv-ico"><Icon name={icons[i] ?? 'check'} size={20} />{it.k}</dt><dd>{it.v}</dd></div>))}
+    </dl>
+    <h3 style="margin-top:var(--space-2xl);font-size:var(--step-2)">{c.connects.levelsH}</h3>
+    <div class="grid-3" style="margin-top:var(--space-m)">
+      {ph.levels.map((l, i) => (<div class="card"><span class="badge">{i + 1} / 3</span><h3 style="margin-top:var(--space-xs)">{l.k}</h3><p>{l.v}</p></div>))}
+    </div>
+    <p class="small muted" style="margin-top:var(--space-m);max-width:80ch">{ph.note}</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="relay-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="relay-h">{c.relay.h2}</h2><p class="lede">{c.relay.lede}</p></div>
+    <div class="grid-3">
+      {[c.relay.sees, c.relay.never, c.relay.keeps].map((list, i) => (
+        <div class="card"><h3>{c.relay.cols[i]}</h3><ul class="check-list" style="margin-top:var(--space-s)">{list.map((x) => <li>{x}</li>)}</ul></div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="limits-h">
+  <div class="wrap grid-2" style="align-items:start">
+    <div><h2 id="limits-h" style="font-size:var(--step-3);margin-bottom:var(--space-m)">{c.limits.h2}</h2><ul class="check-list">{c.limits.items.map((x) => <li>{x}</li>)}</ul></div>
+    <div class="callout"><h2>{c.play.h2}</h2><p>{c.play.text}</p></div>
+  </div>
+</section>
+<CtaBand lang={lang} />

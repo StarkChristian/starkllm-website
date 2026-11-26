@@ -6,7 +6,9 @@
     "/about",
     "/",
     "/manual",
-    "/product"
+    "/product",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -134,7 +136,9 @@
    "pages": [
     "/manual",
     "/product",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -142,7 +146,9 @@
    "pages": [
     "/manual",
     "/product",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -150,7 +156,9 @@
    "pages": [
     "/manual",
     "/product",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -158,7 +166,9 @@
    "pages": [
     "/product",
     "/",
-    "/manual"
+    "/manual",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -166,7 +176,9 @@
    "pages": [
     "/product",
     "/manual",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -174,7 +186,9 @@
    "pages": [
     "/product",
     "/manual",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -183,7 +197,9 @@
     "/tech-local-models",
     "/manual",
     "/help",
-    "/product"
+    "/product",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -209,7 +225,9 @@
     "/tech-rag",
     "/product",
     "/manual",
-    "/"
+    "/",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -224,7 +242,9 @@
    "pages": [
     "/tech-knowledge-base",
     "/manual",
-    "/product"
+    "/product",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -233,7 +253,9 @@
     "/manual",
     "/product",
     "/tech-workspaces",
-    "/tech-knowledge-base"
+    "/tech-knowledge-base",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -258,7 +280,9 @@
     "/tech-themes",
     "/",
     "/manual",
-    "/product"
+    "/product",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -266,7 +290,9 @@
    "pages": [
     "/tech-local-tools",
     "/manual",
-    "/product"
+    "/product",
+    "/features",
+    "/phone"
    ]
   },
   {
@@ -378,7 +404,9 @@
    "q": "Can the program delete my files?",
    "pages": [
     "/product",
-    "/manual"
+    "/manual",
+    "/features",
+    "/phone"
    ]
   },
   {

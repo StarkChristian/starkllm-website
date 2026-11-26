@@ -488,7 +488,7 @@
     "¿Cómo trata StarkLLM mis cartas?",
     "¿Qué son los expedientes y los plazos?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
   },
   {
@@ -502,7 +502,7 @@
     "¿Puedo usar el teléfono fuera de casa?",
     "¿Funciona la app del teléfono con datos móviles?"
    ],
-   "page": "/es/product",
+   "page": "/es/phone",
    "match": "La app StarkLLM para Android trabaja junto con su PC"
   },
   {
@@ -513,7 +513,7 @@
     "¿Cómo se reconocen las cartas fraudulentas?",
     "¿Puede StarkLLM descubrir cartas falsas o estafas?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Aparece un recuadro rojo sobre la respuesta si una carta pide un pago"
   },
   {
@@ -736,7 +736,7 @@
     "¿Cambiará el nombre o moverá mis documentos?",
     "¿Puede el programa borrar mis archivos?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Nunca cambia el nombre de tus archivos, ni los mueve, ni los borra"
   },
   {
@@ -746,7 +746,7 @@
     "¿Puede StarkLLM hacer cosas en sitios web por mí?",
     "¿Puede buscar un vuelo o rellenar un formulario en un sitio web?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "StarkLLM abre una ventana de navegador aparte y usted ve cada paso"
   },
   {
@@ -756,7 +756,7 @@
     "¿Puede StarkLLM ayudar con código?",
     "¿Puede ejecutar comandos o cambiar archivos de mi proyecto?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Nunca sale de esa carpeta y nunca lee claves"
   },
   {
@@ -766,7 +766,7 @@
     "¿Puedo subir la grabación de una reunión o un MP3?",
     "¿Puede pasar a texto archivos de audio o vídeo?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Reuniones, clases y notas de voz se transcriben en su PC con marcas de tiempo"
   },
   {
@@ -776,7 +776,7 @@
     "¿Puedo pegar una captura de pantalla y preguntar por ella?",
     "¿Puede describir una imagen?"
    ],
-   "page": "/es/product",
+   "page": "/es/features",
    "match": "Pegue una captura de pantalla o elija una foto, y responde un modelo de visión en su PC"
   },
   {
@@ -786,7 +786,7 @@
     "¿Cómo conecto la app de Android con mi PC?",
     "¿Cómo funciona la vinculación con código QR?"
    ],
-   "page": "/es/product",
+   "page": "/es/phone",
    "match": "Ajustes › Teléfono muestra un código QR"
   },
   {
@@ -806,5 +806,8 @@
    "page": "/es/manual",
    "match": "Desde la v2.2, no: cuando cierras o sales de StarkLLM, su motor también se detiene"
   }
+ ],
+ "exclude": [
+  "/es/changelog"
  ]
 }

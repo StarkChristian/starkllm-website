@@ -9,7 +9,7 @@ export function lucyProfile(path: string): LucyProfile | null {
   const p = path.replace(/\.html$/, '').replace(new RegExp(`^/(${Object.keys(languages).join('|')})(?=/|$)`), '') || '/';
   if (p === '/') return 'home';
   if (p === '/download') return 'download';
-  if (p === '/product') return 'product';
+  if (p === '/features') return 'product';
   if (p === '/help') return 'help';
   if (p === '/manual') return 'manual';
   if (p === '/about') return 'about';
@@ -100,10 +100,10 @@ const lucyBase = {
         { sel: '#faq-h', text: 'Questions people ask, including the Windows warning.' },
       ],
       product: [
-        { sel: '#life-h', text: 'From a file to an answer, step by step.' },
-        { sel: '#let-h', text: 'The inbox for letters: one case per sender.' },
-        { sel: '#dl-h', text: 'Deadlines from your letters, on the start page.' },
-        { sel: '#thm-h', text: 'The app has thirteen themes.' },
+        { sel: '#documents-h', text: 'From a file to an answer, step by step.' },
+        { sel: '#inbox-h', text: 'The inbox for letters: one case per sender.' },
+        { sel: '#inbox .points', text: 'Deadlines from your letters, on the start page.' },
+        { sel: '#themes-h', text: 'The app has thirteen themes.' },
         { sel: '#cta-h', text: 'Ready to try it? The download is at the end of the page.' },
       ],
       tech: [
@@ -207,10 +207,10 @@ const lucyBase = {
         { sel: '#faq-h', text: 'Fragen, die oft gestellt werden, auch zur Windows-Warnung.' },
       ],
       product: [
-        { sel: '#life-h', text: 'Von der Datei zur Antwort, Schritt für Schritt.' },
-        { sel: '#let-h', text: 'Der Posteingang für Briefe: ein Vorgang pro Absender.' },
-        { sel: '#dl-h', text: 'Fristen aus Ihren Briefen, auf der Startseite.' },
-        { sel: '#thm-h', text: 'Die App hat dreizehn Themes.' },
+        { sel: '#documents-h', text: 'Von der Datei zur Antwort, Schritt für Schritt.' },
+        { sel: '#inbox-h', text: 'Der Posteingang für Briefe: ein Vorgang pro Absender.' },
+        { sel: '#inbox .points', text: 'Fristen aus Ihren Briefen, auf der Startseite.' },
+        { sel: '#themes-h', text: 'Die App hat dreizehn Themes.' },
         { sel: '#cta-h', text: 'Lust, es auszuprobieren? Der Download steht am Ende der Seite.' },
       ],
       tech: [

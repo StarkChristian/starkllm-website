@@ -1,25 +1,187 @@
 {
  "questions": [
-  {"q": "Existe-t-il une version pour iPhone ?", "pages": ["/fr/product", "/fr/manual", "/fr/download", "/fr/"]},
-  {"q": "Faut-il un compte pour utiliser StarkLLM ?", "pages": ["/fr/download", "/fr/help", "/fr/manual", "/fr/tech-privacy"]},
-  {"q": "Que se passe-t-il au premier démarrage ?", "pages": ["/fr/download", "/fr/help", "/fr/manual", "/fr/"]},
-  {"q": "Peut-il lire des courriers manuscrits ?", "pages": ["/fr/tech-multimodal", "/fr/product", "/fr/manual", "/fr/"]},
-  {"q": "StarkLLM invente-t-il des réponses ?", "pages": ["/fr/tech-rag", "/fr/product", "/fr/manual", "/fr/", "/fr/help"]},
-  {"q": "Peut-on exporter une conversation ?", "pages": ["/fr/manual"]},
-  {"q": "Comment ajouter un dossier de documents ?", "pages": ["/fr/manual", "/fr/tech-knowledge-base", "/fr/tech-workspaces", "/fr/download"]},
-  {"q": "Est-ce que le site me piste ?", "pages": ["/fr/about"]},
-  {"q": "Quelle carte graphique me faut-il ?", "pages": ["/fr/download", "/fr/manual", "/fr/", "/fr/help"]},
-  {"q": "Puis-je choisir un autre modèle de langage ?", "pages": ["/fr/tech-local-models", "/fr/manual", "/fr/help", "/fr/"]},
-  {"q": "Où signaler un bogue ?", "pages": ["/fr/contact", "/fr/about", "/fr/help", "/fr/download"]},
-  {"q": "Est-ce compatible avec Windows 10 ?", "pages": ["/fr/download", "/fr/", "/fr/help", "/fr/manual"]},
-  {"q": "Qu'est-ce que le bac à sable Python ?", "pages": ["/fr/", "/fr/product", "/fr/manual"]},
-  {"q": "D'autres programmes peuvent-ils utiliser StarkLLM ?", "pages": ["/fr/", "/fr/product", "/fr/manual"]},
-  {"q": "À quoi sert Docker pour StarkLLM ?", "pages": ["/fr/help", "/fr/download", "/fr/manual"]},
-  {"q": "Comment fermer StarkLLM complètement ?", "pages": ["/fr/help", "/fr/manual"]},
-  {"q": "Trouve-t-il les dates limites dans mes lettres ?", "pages": ["/fr/product", "/fr/", "/fr/manual"]},
-  {"q": "Y a-t-il un thème sombre ?", "pages": ["/fr/tech-themes", "/fr/", "/fr/manual", "/fr/product"]},
-  {"q": "À qui appartient ce site ?", "pages": ["/fr/about", "/fr/contact"]},
-  {"q": "Le code source est-il public ?", "pages": ["/fr/about", "/fr/contact", "/fr/download", "/fr/", "/fr/manual"]}
+  {
+   "q": "Existe-t-il une version pour iPhone ?",
+   "pages": [
+    "/fr/product",
+    "/fr/manual",
+    "/fr/download",
+    "/fr/",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "Faut-il un compte pour utiliser StarkLLM ?",
+   "pages": [
+    "/fr/download",
+    "/fr/help",
+    "/fr/manual",
+    "/fr/tech-privacy"
+   ]
+  },
+  {
+   "q": "Que se passe-t-il au premier démarrage ?",
+   "pages": [
+    "/fr/download",
+    "/fr/help",
+    "/fr/manual",
+    "/fr/"
+   ]
+  },
+  {
+   "q": "Peut-il lire des courriers manuscrits ?",
+   "pages": [
+    "/fr/tech-multimodal",
+    "/fr/product",
+    "/fr/manual",
+    "/fr/",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "StarkLLM invente-t-il des réponses ?",
+   "pages": [
+    "/fr/tech-rag",
+    "/fr/product",
+    "/fr/manual",
+    "/fr/",
+    "/fr/help",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "Peut-on exporter une conversation ?",
+   "pages": [
+    "/fr/manual"
+   ]
+  },
+  {
+   "q": "Comment ajouter un dossier de documents ?",
+   "pages": [
+    "/fr/manual",
+    "/fr/tech-knowledge-base",
+    "/fr/tech-workspaces",
+    "/fr/download"
+   ]
+  },
+  {
+   "q": "Est-ce que le site me piste ?",
+   "pages": [
+    "/fr/about"
+   ]
+  },
+  {
+   "q": "Quelle carte graphique me faut-il ?",
+   "pages": [
+    "/fr/download",
+    "/fr/manual",
+    "/fr/",
+    "/fr/help"
+   ]
+  },
+  {
+   "q": "Puis-je choisir un autre modèle de langage ?",
+   "pages": [
+    "/fr/tech-local-models",
+    "/fr/manual",
+    "/fr/help",
+    "/fr/"
+   ]
+  },
+  {
+   "q": "Où signaler un bogue ?",
+   "pages": [
+    "/fr/contact",
+    "/fr/about",
+    "/fr/help",
+    "/fr/download"
+   ]
+  },
+  {
+   "q": "Est-ce compatible avec Windows 10 ?",
+   "pages": [
+    "/fr/download",
+    "/fr/",
+    "/fr/help",
+    "/fr/manual"
+   ]
+  },
+  {
+   "q": "Qu'est-ce que le bac à sable Python ?",
+   "pages": [
+    "/fr/",
+    "/fr/product",
+    "/fr/manual",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "D'autres programmes peuvent-ils utiliser StarkLLM ?",
+   "pages": [
+    "/fr/",
+    "/fr/product",
+    "/fr/manual",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "À quoi sert Docker pour StarkLLM ?",
+   "pages": [
+    "/fr/help",
+    "/fr/download",
+    "/fr/manual"
+   ]
+  },
+  {
+   "q": "Comment fermer StarkLLM complètement ?",
+   "pages": [
+    "/fr/help",
+    "/fr/manual"
+   ]
+  },
+  {
+   "q": "Trouve-t-il les dates limites dans mes lettres ?",
+   "pages": [
+    "/fr/product",
+    "/fr/",
+    "/fr/manual",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "Y a-t-il un thème sombre ?",
+   "pages": [
+    "/fr/tech-themes",
+    "/fr/",
+    "/fr/manual",
+    "/fr/product",
+    "/fr/features",
+    "/fr/phone"
+   ]
+  },
+  {
+   "q": "À qui appartient ce site ?",
+   "pages": [
+    "/fr/about",
+    "/fr/contact"
+   ]
+  },
+  {
+   "q": "Le code source est-il public ?",
+   "pages": [
+    "/fr/about",
+    "/fr/contact",
+    "/fr/download",
+    "/fr/",
+    "/fr/manual"
+   ]
+  }
  ],
  "unrelated": [],
  "advice": []

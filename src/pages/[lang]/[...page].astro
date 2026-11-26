@@ -1,14 +1,18 @@
 ---
-// Every translated page except the home page in the other languages, under the language code: /de/product, /de/tech-rag, ...
+// Every translated page except the home page in the other languages, under the language code: /de/features, /de/tech-rag, ...
+// plus the old addresses of every language that send the visitor on (src/i18n/pages.ts, `redirects`).
 import LocalizedPage from '../../components/LocalizedPage.astro';
+import Redirect from '../../components/Redirect.astro';
 import { otherLangs, localizedPaths, type Lang } from '../../i18n/ui';
-import { pages, paramOf, pathOfParam } from '../../i18n/pages';
+import { pages, redirects, paramOf, pathOfParam } from '../../i18n/pages';
 
 export function getStaticPaths() {
-  return otherLangs.flatMap((lang) =>
-    localizedPaths[lang].filter((p) => p in pages && p !== '/').map((p) => ({ params: { lang, page: paramOf(p) } })),
-  );
+  return otherLangs.flatMap((lang) => [
+    ...localizedPaths[lang].filter((p) => p in pages && p !== '/').map((p) => ({ params: { lang, page: paramOf(p) }, props: {} })),
+    ...Object.entries(redirects).filter(([, r]) => r.everyLang && localizedPaths[lang].includes(r.to)).map(([from, r]) => ({ params: { lang, page: paramOf(from) }, props: { to: r.to } })),
+  ]);
 }
 const { lang, page } = Astro.params;
+const { to } = Astro.props as { to?: string };
 ---
-<LocalizedPage lang={lang as Lang} path={pathOfParam(page)} />
+{to ? <Redirect lang={lang as Lang} to={to} /> : <LocalizedPage lang={lang as Lang} path={pathOfParam(page)} />}
