@@ -22,7 +22,9 @@ const VOID = new Set(['img', 'br', 'hr', 'input', 'meta', 'link', 'source', 'pat
 const BLOCK = new Set(['p', 'li', 'div', 'section', 'article', 'header', 'footer', 'tr', 'td', 'th', 'summary', 'details', 'figcaption', 'figure', 'ul', 'ol', 'dt', 'dd', 'blockquote', 'table', 'br', 'main', 'aside', 'nav', 'dl', 'tbody', 'thead', 'label']);
 const SKIP_TAGS = new Set(['script', 'style', 'template', 'svg', 'pre', 'noscript', 'canvas', 'button', 'select', 'textarea']);
 
-const clean = (s) => decode(s).replace(/\s+/g, ' ').replace(/ ([.,;:!?)\]])/g, '$1').replace(/([(\[]) /g, '$1').trim();
+// Tags inside a Chinese or Japanese sentence leave a space between two characters; it is dropped (no effect on other text).
+const CJK_GAP = /([\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー、。，：；！？（）「」『』“”]) (?=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー、。，：；！？（）「」『』“”])/gu;
+const clean = (s) => decode(s).replace(/\s+/g, ' ').replace(/ ([.,;:!?)\]])/g, '$1').replace(/([(\[]) /g, '$1').replace(CJK_GAP, '$1').trim();
 const attr = (a, n) => { const m = a.match(new RegExp(`\\b${n}\\s*=\\s*("([^"]*)"|'([^']*)')`, 'i')); return m ? (m[2] ?? m[3]) : null; };
 
 /** One built page -> {title, lang, blocks:[{h,id,t}]} */
@@ -71,7 +73,7 @@ export function extractPage(html) {
   return { title, lang, blocks };
 }
 
-const sentenceEnd = (t) => /[.!?:;…)"”»؟؛]$/.test(t);
+const sentenceEnd = (t) => /[.!?:;…)"”»؟؛。！？：；）」』]$/.test(t);
 /** Merge consecutive blocks of one heading into passages of about 450 characters. */
 export function chunk(blocks) {
   const out = [];
@@ -79,8 +81,8 @@ export function chunk(blocks) {
   const push = () => { if (cur && cur.t.replace(/\s/g, '').length >= 25) out.push(cur); cur = null; };
   for (const b of blocks) {
     if (b.heading) { push(); continue; }
-    let t = b.t; if (!sentenceEnd(t)) t += '.';
-    const sentences = t.length > 700 ? t.split(/(?<=[.!?…؟])\s+/) : [t];
+    let t = b.t; if (!sentenceEnd(t)) t += /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]$/u.test(t) ? '。' : '.';
+    const sentences = t.length > 700 ? t.split(/(?<=[.!?…؟])\s+|(?<=[。！？])/) : [t];
     if (b.sum) push();
     for (const s of sentences) {
       if (cur && (cur.h !== b.h || cur.id !== b.id || (!cur.open && cur.t.length + s.length > 520))) push();
@@ -93,7 +95,8 @@ export function chunk(blocks) {
   return out;
 }
 
-// FAQ phrase lookup: the engine's fold (also Arabic script), then letters and digits only.
+// FAQ phrase lookup: the engine's fold (also Arabic script and CJK), then letters and digits only. CJK characters are
+// letters here, so a Chinese or Japanese phrase keeps its text (an a-z0-9 form would be empty and match any passage).
 const norm = (s) => fold(s).replace(/[^\p{L}\p{N}]+/gu, '');
 
 function walk(dir, out = []) {

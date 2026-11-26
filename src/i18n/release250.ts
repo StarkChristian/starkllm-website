@@ -509,6 +509,7 @@ const tr: Rel = {
   },
 };
 
-// Languages added later keep their section in src/i18n/langs/<lang>/release250.ts (default export, type Rel).
+// Languages added later keep their section in src/i18n/langs/<lang>/release250.ts (default export, type Rel; zh and ja
+// carry only the part that is still shown, product.phone, on the phone page).
 const more = Object.fromEntries(Object.entries(import.meta.glob('./langs/*/release250.ts', { eager: true, import: 'default' })).map(([p, v]) => [p.split('/').slice(-2)[0], v as Rel]));
 export const rel250: Partial<Record<Lang, Rel>> = { en, de, es, fr, it, tr, ...more };

@@ -10,6 +10,7 @@ import TrustBar from './TrustBar.astro';
 import Faq from './Faq.astro';
 import { start, media, common, fill } from '../i18n/site';
 import { localePath, languages, type Lang } from '../i18n/ui';
+import { hasShot } from '../lib/media';
 import { lucy } from '../i18n/lucy';
 import { RELEASE, V, SIZE_MB } from '../data/release';
 
@@ -115,7 +116,8 @@ const published = new Date(RELEASE.published + 'T12:00:00Z').toLocaleDateString(
       </div>
       <p><a class="link-arrow" href={L('/phone')}>{c.phone.more}<Icon name="arrow" size={17} /></a></p>
     </div>
-    <div class="reveal"><PhoneFrame name="phone-01-chat" lang={lang} /></div>
+    {/* Until the Android app has a screenshot, the PC side of the phone link (Settings › Phone) stands in, in a window frame. */}
+    <div class="reveal">{hasShot('phone-01-chat', lang) ? <PhoneFrame name="phone-01-chat" lang={lang} /> : <AppShot name="12-settings-phone" lang={lang} frame="window" />}</div>
   </div>
 </section>
 

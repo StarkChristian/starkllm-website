@@ -3,7 +3,8 @@
 // per-page files next to this one, and the routes, canonical URLs, hreflang tags and the language switcher follow from it.
 export const SITE = 'https://www.starkllm.com';
 
-/** `name` is written in the language itself (shown in the switcher), `locale` is for Open Graph, `dir: 'rtl'` marks right-to-left scripts. */
+/** `name` is written in the language itself (shown in the switcher), `locale` is for Open Graph, `dir: 'rtl'` marks right-to-left scripts,
+ *  `tag` (if set) is the BCP 47 tag for <html lang> and hreflang when it differs from the URL code (Simplified Chinese: /zh/, zh-Hans). */
 const allLanguages = {
   en: { name: 'English', locale: 'en_US' },
   de: { name: 'Deutsch', locale: 'de_DE' },
@@ -13,13 +14,17 @@ const allLanguages = {
   tr: { name: 'Türkçe', locale: 'tr_TR' },
   ar: { name: 'العربية', locale: 'ar_AR', dir: 'rtl' },
   fa: { name: 'فارسی', locale: 'fa_IR', dir: 'rtl' },
+  zh: { name: '简体中文', locale: 'zh_CN', tag: 'zh-Hans' },
+  ja: { name: '日本語', locale: 'ja_JP' },
 } as const;
 export type Lang = keyof typeof allLanguages;
 /** SITE_LANGS=en,de,es builds only those languages (used while one language is being translated). Default: all. */
 const wanted = (process.env.SITE_LANGS || Object.keys(allLanguages).join(',')).split(',').map((l) => l.trim());
 export const languages = Object.fromEntries(Object.entries(allLanguages).filter(([l]) => wanted.includes(l))) as Record<Lang, (typeof allLanguages)[Lang]>;
 /** Languages whose text was translated with AI assistance and still needs a native-speaker review (they show a notice). */
-export const aiTranslated: Lang[] = ['es', 'fr', 'it', 'tr', 'ar', 'fa'];
+export const aiTranslated: Lang[] = ['es', 'fr', 'it', 'tr', 'ar', 'fa', 'zh', 'ja'];
+/** The language tag of a site language for <html lang> and hreflang ("zh" -> "zh-Hans"). */
+export const langTag = (l: Lang): string => (allLanguages[l] as { tag?: string }).tag ?? l;
 /** Collects the per-language files src/i18n/langs/<lang>/<name>.ts (import.meta.glob result) into { <lang>: default export }.
  *  With `base` (the English object) it also checks that the translation has every key the English one has, with the same array lengths,
  *  and fails the build with the list of what is missing, so a half-translated language cannot go live unnoticed. */
@@ -110,7 +115,7 @@ const translated = ['/', '/features', '/phone', '/privacy', '/changelog', '/down
   '/tech-local-models', '/tech-privacy', '/tech-local-tools', '/tech-voice', '/tech-themes'];
 /** Pages that exist in each language. A new language may start with fewer pages: missing ones fall back to the default language. */
 // The legal texts are not translated into the new languages: they get a short notice page (/legal) that links to the English courtesy translation and the German originals.
-export const localizedPaths: Record<Lang, string[]> = { en: translated, de: translated, es: [...translated, '/legal'], fr: [...translated, '/legal'], it: [...translated, '/legal'], tr: [...translated, '/legal'], ar: [...translated, '/legal'], fa: [...translated, '/legal'] };
+export const localizedPaths: Record<Lang, string[]> = { en: translated, de: translated, es: [...translated, '/legal'], fr: [...translated, '/legal'], it: [...translated, '/legal'], tr: [...translated, '/legal'], ar: [...translated, '/legal'], fa: [...translated, '/legal'], zh: [...translated, '/legal'], ja: [...translated, '/legal'] };
 
 /** Pages that exist once, in one language (German legal texts, the English manual). They get no hreflang tags and no language switcher. */
 export const singlePages = ['/impressum', '/datenschutz', '/privacy-policy', '/code-signing'];
@@ -137,5 +142,5 @@ export const absoluteUrl = (lang: Lang, path: string) => SITE + localePath(lang,
 export function alternatesFor(path: string): { hreflang: string; href: string }[] {
   const langs = langsFor(path);
   if (langs.length < 2) return [];
-  return [...langs.map((l) => ({ hreflang: l, href: absoluteUrl(l, path) })), { hreflang: 'x-default', href: absoluteUrl(langs.includes(defaultLang) ? defaultLang : langs[0], path) }];
+  return [...langs.map((l) => ({ hreflang: langTag(l), href: absoluteUrl(l, path) })), { hreflang: 'x-default', href: absoluteUrl(langs.includes(defaultLang) ? defaultLang : langs[0], path) }];
 }

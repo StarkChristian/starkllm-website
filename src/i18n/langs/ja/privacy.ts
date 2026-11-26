@@ -1,0 +1,85 @@
+export default {
+  meta: {
+    title: 'プライバシー：PCにとどまるもの | StarkLLM',
+    description: 'PCの外に決して出ないもの、StarkLLMが行いうるすべての接続とそのタイミング、保存データの保護、署名済みのビルド、ソフトウェア部品表、そしてそのすべてをご自身で確かめる方法。',
+  },
+  hero: {
+    eyebrow: 'プライバシー',
+    h1: '設計からプライベート。ご自身で確かめられます。',
+    lede: 'StarkLLMは、ドキュメントがクラウドを一切必要としないように作られています。何をオンラインにするかはお客様が選び、すべての接続を確認でき、私たちの言葉をうのみにする必要はありません。',
+  },
+  stays: {
+    h2: 'PCの外に決して出ないもの',
+    lede: '何をオンにしても、次のものはご自身のディスクと、ご自身のプロセッサーまたはグラフィックスカードの上にとどまります。',
+    items: [
+      { icon: 'doc', title: 'ドキュメント', text: '手紙、契約書、本、スキャン、写真、録音、そしてそこから読み取ったテキスト。' },
+      { icon: 'chat', title: 'チャット', text: '質問、回答、その出典。ご自身でクラウドモデルを選んだ場合を除きます。' },
+      { icon: 'search', title: '検索インデックス', text: 'すべてのドキュメントの箇所とベクトル、そして大きなドキュメントの要約。' },
+      { icon: 'pc', title: 'AIモデル', text: 'Ollamaを通じてPC上で動きます。最初のダウンロードの後は、StarkLLMはインターネットなしで動作します。' },
+      { icon: 'inbox', title: '受信トレイと期限', text: '差出人、金額、口座、日付は、PC上のルールによって見つけ出されます。' },
+      { icon: 'eyeoff', title: 'お客様に関する情報は何も', text: 'テレメトリー、クラッシュレポート、利用統計、広告、サーバー上のアカウントは一切ありません。' },
+    ],
+  },
+  online: {
+    h2: 'オンラインになるもの、そのタイミング',
+    lede: 'StarkLLMが行いうるすべての接続を、「Settings › Privacy & network」（設定 › プライバシーとネットワーク）と同じように示します。どれもオンにするか開始するまではオフであるか、お客様が求めたダウンロードのために一度だけ行われます。',
+    cols: ['接続', '接続先', 'タイミング', '新規インストール時'],
+    rows: [
+      { what: 'アップデートの確認', host: 'api.github.com', when: '起動時（初回起動時に同意した場合）', def: '同意するまでオフ' },
+      { what: 'アップデートのダウンロード', host: 'github.com', when: '「Download and install」（ダウンロードしてインストール）の後だけ', def: 'オフ' },
+      { what: 'AIモデル', host: 'registry.ollama.ai（Ollama経由）', when: '初回起動時、足りないモデルのために', def: '必要なとき' },
+      { what: 'Ollamaのインストーラー', host: 'ollama.com', when: '「Install Ollama for me」（Ollamaをインストール）の後だけ', def: 'オフ' },
+      { what: 'ウェブ検索', host: 'DuckDuckGo。応答がない場合：Startpage、Mojeek、Wikipedia', when: '質問ごと、「Web Search」ボタンがオンのとき', def: 'オフ' },
+      { what: 'ウェブタスク', host: '入力したタスクのサイト', when: 'お客様が開始したウェブタスクのときだけ', def: 'オフ' },
+      { what: 'ウェブからの取り込み', host: '入力したアドレス、YouTube、GitHub', when: '「+ Web URL」「+ YouTube Video」「+ GitHub Repo」の後だけ', def: 'オフ' },
+      { what: 'クラウドモデルのプロバイダー', host: '入力したプロバイダー（例：OpenAI、DeepSeek、OpenRouter、Groq）', when: 'そのようなプロバイダーを選んでいる間のすべてのチャット。チャットにバッジが表示されます', def: 'オフ' },
+      { what: 'Ollamaのクラウドモデル', host: 'ollama.com（Ollama経由）', when: '名前が「cloud」で終わるモデルを選んだ場合だけ', def: 'オフ' },
+      { what: '市場価格', host: 'Yahoo Finance、CoinGecko', when: 'ウィジェットをオンにした後だけ', def: 'オフ' },
+      { what: '音声認識モデル', host: 'huggingface.co', when: '音声入力または録音を初めて使うとき', def: '使うまでオフ' },
+      { what: '文字認識の言語', host: 'github.com', when: '設定で「Download」（ダウンロード）を押した後だけ', def: 'オフ' },
+      { what: '自宅でのスマートフォン', host: '受信のみ。自宅のネットワーク上のペアリング済みスマートフォンから', when: 'スマートフォンとの接続をオンにし、スマートフォンをペアリングした後', def: 'オフ' },
+      { what: '外出先でのスマートフォン', host: 'relay.starkllm.com（スマートフォンからPCまで暗号化）', when: '外出先での利用を許可したスマートフォンだけ', def: 'オフ' },
+    ],
+    note: 'ターミナルで許可したコマンドや追加したツールサーバーは、お客様ご自身のプログラムとして動作します。一覧には表示されず、どこに接続するかはそれら次第です。OllamaとWindowsには独自のアップデート確認があり、StarkLLMはそれを管理しません。',
+  },
+  offline: {
+    h2: '1つのスイッチで完全オフライン',
+    text: '「Settings › Privacy & network」の「Fully offline」（完全オフライン）は、すべてのオンライン機能を拒否し、スマートフォンとリレーへの接続を閉じ、アップデートも含めて何もダウンロードしません。ドキュメント、受信トレイ、ローカルモデルは引き続き使えます。初回起動時に、オンラインのままにするか完全オフラインにするかを一度だけ尋ねます。',
+  },
+  atRest: {
+    h2: '保存データの保護',
+    lede: '「Settings › Protection」（設定 › 保護）で選べるオプションです。ノートPCの紛失、同じPCの別のユーザー、クラウドフォルダー内のバックアップに備えます。',
+    items: [
+      { k: 'ディスク上で暗号化', v: 'ドキュメント、チャット、名前、タイトルはディスク上で暗号化され、検索インデックスもロックできます。鍵はお客様のWindowsアカウントに結び付けられます。' },
+      { k: '起動時のパスフレーズ', v: '回復キー付きのオプションのパスフレーズです。パスフレーズ自体は保存されません。' },
+      { k: '暗号化されたバックアップ', v: 'どこにでも、クラウドフォルダーにも置ける1つのバックアップファイルです。パスフレーズがなければ意味のないデータにすぎません。毎週の自動バックアップは複数の世代を保持します。' },
+    ],
+    limits: 'StarkLLMが開いている間にお客様の権限で動くマルウェアからは守れません。プログラムやモデルも保護できるBitLockerの併用をおすすめします。',
+  },
+  signed: {
+    h2: '署名済みのビルド',
+    text: '2.1.2以降、インストーラー、StarkLLM.exe、アンインストーラー、エンジンのプログラムファイルは、「Open Source Developer Christian Stark」に発行されたCertumの証明書で署名されています。内蔵のアップデーターは、この名前で署名されたアップデートだけをインストールします。',
+    link: 'コード署名ポリシー',
+  },
+  sbom: {
+    h2: 'すべてのリリースに部品表',
+    text: 'GitHubのすべてのリリースには、アプリとエンジンのソフトウェア部品表（SBOM、CycloneDX）が付いています。中に含まれるすべてのライブラリーとそのバージョンの一覧です。',
+    link: 'GitHubのリリース',
+  },
+  check: {
+    h2: 'ご自身で確かめる',
+    lede: 'StarkLLM自身の画面を信じる必要はありません。「Fully offline」をオンにしてアプリを使い、確かめてください。',
+    steps: [
+      { t: 'リソースモニター', v: 'Win + Rで「resmon」と入力し、「ネットワーク」タブを開きます。完全オフラインがオンなら、StarkLLM.exe、python.exe、ollama.exeの通信先は127.0.0.1だけのはずです。' },
+      { t: 'PowerShell', v: 'このPC以外に向かう開いている接続を、それを作ったプログラムとともにすべて一覧表示します：' },
+      { t: 'Wireshark', v: '最も確実な方法です。ネットワークアダプターでキャプチャし、ローカルの通信を除外します。次にウェブ検索をオンにしてDuckDuckGoが現れるのを確認すれば、この確認方法が機能していることがわかります。' },
+    ],
+    code: "Get-NetTCPConnection -State Established |\n  Where-Object { $_.RemoteAddress -notin '127.0.0.1','::1' } |\n  ForEach-Object { $p = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue\n    [pscustomobject]@{ Process = $p.ProcessName; Remote = \"$($_.RemoteAddress):$($_.RemotePort)\" } } |\n  Sort-Object Process, Remote | Format-Table -AutoSize",
+    link: 'GitHubの詳しいガイド（英語）',
+  },
+  site: {
+    h2: 'このウェブサイトは？',
+    text: 'Cookieを使用せず、アクセス解析も行わず、フォント、スクリプト、動画を他のサーバーから読み込みません。このページのアシスタントLucyはブラウザー内で答え、質問はどこにも送られません。',
+    link: 'このウェブサイトのプライバシーポリシー（英語）',
+  },
+};

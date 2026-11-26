@@ -11,7 +11,10 @@ const L = (c as any).labels ?? (lang === 'de'
   ? { cause: 'Wahrscheinliche Ursache', fix: 'Was zu tun ist', jump: 'Springe zu', toc: ['Checkliste', 'Probleme', 'Hilfe holen', 'Grenzen'] }
   : { cause: 'Likely cause', fix: 'What to do', jump: 'Jump to', toc: ['Checklist', 'Problems', 'Get help', 'Limits'] });
 // The code block belongs right after the list item that introduces it (the first one ending with ":"), otherwise after the list.
-const codeAfter = (fix: readonly string[]) => fix.findIndex((f) => f.trim().endsWith(':'));
+const codeAfter = (fix: readonly string[]) => fix.findIndex((f) => /[:：]$/.test(f.trim()));
+// Chinese and Japanese use the full-width colon, without a space after it.
+const colon = lang === 'zh' || lang === 'ja' ? '：' : ':';
+const gap = colon === ':' ? ' ' : '';
 ---
 <div class="wrap">
   <header class="page-hero">
@@ -63,8 +66,8 @@ const codeAfter = (fix: readonly string[]) => fix.findIndex((f) => f.trim().ends
               <details id={'p' + n}>
                 <summary>{p.q}</summary>
                 <div class="faq-a">
-                  <p><b>{L.cause}:</b> {p.cause}</p>
-                  <p><b>{L.fix}:</b></p>
+                  <p><b>{L.cause}{colon}</b>{gap}{p.cause}</p>
+                  <p><b>{L.fix}{colon}</b></p>
                   <ol style="padding-inline-start:1.2rem;display:grid;gap:.35rem">
                     {p.fix.map((f, i) => (
                       <>

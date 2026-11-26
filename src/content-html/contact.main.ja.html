@@ -1,0 +1,68 @@
+<main class="container">
+        <div class="page-header text-center">
+            <h1><span class="text-gradient">お問い合わせとコミュニティ</span></h1>
+            <p>開発者への連絡、問題の報告、ローカルファーストAIの開発への参加はこちらから。</p>
+        </div>
+
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="feature-card">
+                <h3>メールでのお問い合わせ</h3>
+                <p>ソフトウェアの設計、研究での協力、パートナーシップ、ローカルAIの性能に関するご意見などは、メールでお寄せください。</p>
+                <p><strong>メール：</strong><a href="mailto:info@starkllm.com">info@starkllm.com</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">通常、営業日の24～48時間以内にお返事します。</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>オープンソースのリポジトリ</h3>
+                <p>StarkLLMはすべて公開されており、GitHubでホストされています。バグの報告や機能の要望をお送りいただけるほか、ソースコードを確認することもできます。</p>
+                <p><strong>リポジトリ：</strong><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">github.com/StarkChristian/StarkLLM</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">Issueトラッカーとディスカッションは、どなたでも参加できます。</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>開発者の所在地</h3>
+                <p>Homomorphic Privacyの研究活動の一環として、Christian Starkが開発・保守しています。</p>
+                <p>
+                    <strong>住所：</strong><br>
+                    Maxstr. 14<br>
+                    52070 Aachen<br>
+                    ドイツ（Deutschland）
+                </p>
+            </div>
+        </div>
+
+        <div class="content-block" style="max-width: 900px; margin: 0 auto 3rem auto;">
+            <h2>サポートを受けるには</h2>
+            <p>ご用件に応じて、次の方法がいちばん早く適切な情報にたどり着けます。</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>インストールや設定の問題：</strong>まず<a href="/ja/help">ヘルプとトラブルシューティング</a>をご覧ください。各手順を確認できるインストールチェックリストと、よくある問題（Ollama、モデル、ポート、Windowsのセキュリティ警告）の解決方法があります。アプリそのものの使い方は<a href="/ja/manual">ユーザーマニュアル</a>で説明しています。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>バグの報告：</strong>アプリがクラッシュした場合や、ドキュメントの取り込み中に予期しないエラーが起きた場合は、<a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">GitHub Issues</a>でIssueを作成し、システムの仕様と再現手順をお書きください。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>セキュリティ問題の責任ある開示：</strong>ローカルの脆弱性の可能性を見つけた場合は、公開する前に、件名の先頭に<code>[Security]</code>を付けて<a href="mailto:info@starkllm.com">info@starkllm.com</a>へ直接メールでお知らせください。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>ハードウェアとモデルのサイズ：</strong>お使いのPCでQwen、Mistral、Llamaのモデルが快適に動くかどうか知りたい場合は、<a href="/ja/tech-local-models">ローカルモデルのガイド</a>をご覧いただくか、GitHub Discussionsでご質問ください。
+                </li>
+            </ul>
+
+            <h2>よくある質問</h2>
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLMは本当に100%無料のオープンソースですか？</h4>
+                    <p style="font-size: 0.95rem;">はい。StarkLLMはオープンソースライセンスで提供されています。サブスクリプションも、隠れたクラウド料金も、APIの有料制限もありません。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLMはプロンプトのデータを外部のサーバーへ送信しますか？</h4>
+                    <p style="font-size: 0.95rem;">いいえ、ご自身でオンにしない限り送信しません。テキストの生成、ベクトル埋め込み、ドキュメントの分割、データベースは、すべてお使いのPC上で動きます。オプションのオンライン機能（ウェブ検索、ウェブタスク、クラウドのモデルプロバイダー、ウェブからのインポート、市場価格、外出先からのスマートフォン接続（StarkLLMリレー経由）、アップデートの確認）をオンにしない限り、PCの外には何も出ません。「Settings › Privacy &amp; network」（設定 › プライバシーとネットワーク）にこれらが一覧表示され、「Fully offline」（完全オフライン）をオンにするとすべて拒否されます。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">最新版はどこからダウンロードできますか？</h4>
+                    <p style="font-size: 0.95rem;"><a href="/ja/download">ダウンロードページ</a>から公式のWindows用インストーラーを入手し、SHA-256チェックサムで完全性を確認できます。</p>
+                </div>
+            </div>
+        </div>
+    </main>

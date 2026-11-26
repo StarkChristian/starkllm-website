@@ -13,12 +13,25 @@ const SCORE_MIN = 3.2;     // minimum BM25 score of the best passage
 // then the diacritics (harakat, superscript alef, Quranic marks) and the tatweel go, Arabic ي/ى and Persian ی become one
 // letter, ك/ک too, ة -> ه, Arabic-Indic and Persian digits -> 0-9. The zero-width non-joiner (می‌شود) joins the word
 // (people type it joined, with ZWNJ or with a space), and the bidi controls the pages use around English labels are dropped.
+// NFKD also turns full-width Latin and digits into plain ones; the final NFC puts Japanese voiced kana (が = か + ゛) back
+// together. For text without CJK the NFC step changes nothing.
 const arabicMarks = /[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E8\u06EA-\u06ED\u0640]/g;
 const arabicMap = { 'ي': 'ی', 'ى': 'ی', 'ك': 'ک', 'ة': 'ه' };
 export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i')
   .replace(arabicMarks, '').replace(/[يىكة]/g, (c) => arabicMap[c])
   .replace(/[\u0660-\u0669]/g, (d) => String(d.charCodeAt(0) - 0x660)).replace(/[\u06F0-\u06F9]/g, (d) => String(d.charCodeAt(0) - 0x6F0))
-  .replace(/\u200C/g, '').replace(/[\u200B\u200D-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, '');
+  .replace(/\u200C/g, '').replace(/[\u200B\u200D-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, '')
+  .normalize('NFC');
+
+// Chinese and Japanese are written without spaces. Their runs are cut into words with Intl.Segmenter where the
+// browser has it, and every word longer than two characters into overlapping character pairs (bigrams), so "数据保护"
+// and "保护数据" share their words however the segmenter splits them. Without Intl.Segmenter a whole run is cut into
+// pairs. Hiragana-only pieces (Japanese particles and endings) are left out. Text without CJK is not affected.
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]/u;
+const CJK_RUN = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]+/gu;
+const KANA_ONLY = /^[\p{Script=Hiragana}ー]+$/u;
+const KATA_ONLY = /^[\p{Script=Katakana}ー]+$/u;
+const pairs = (w) => { if (w.length <= 2) return [w]; const out = []; for (let i = 0; i + 1 < w.length; i++) out.push(w.slice(i, i + 2)); return out; };
 
 export function createEngine(data) {
   const stop = new Set((data.stop || []).map(fold));
@@ -26,13 +39,38 @@ export function createEngine(data) {
   // prefixes (Arabic: the article and the clitics و ب ل ف ك), stripped before the suffixes; empty for most languages
   const pre = [...(data.pre || [])].map(fold).sort((a, b) => b.length - a.length);
   const advice = (data.advice || []).map(fold);
+  const seg = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(data.lang || undefined, { granularity: 'word' }) : null;
 
   const stem = (t) => {
     for (const p of pre) if (t.length - p.length >= 3 && t.startsWith(p)) { t = t.slice(p.length); break; }
     for (const s of suf) if (t.length - s.length >= 3 && t.endsWith(s)) return t.slice(0, -s.length);
     return t;
   };
-  const tokens = (text) => fold(text).split(/[^\p{L}\p{N}@.]+/u).map((t) => t.replace(/^\.+|\.+$/g, '')).filter((t) => t && !stop.has(t) && (t.length > 1 || /\d/.test(t))).map(stem);
+  const cjkWords = (run) => {
+    const words = seg ? [...seg.segment(run)].map((s) => s.segment) : run.split(/[\p{Script=Hiragana}]+/u);
+    const out = [];
+    for (let w of words) {
+      if (!w || KANA_ONLY.test(w) || stop.has(w)) continue;
+      w = w.replace(/\p{Script=Hiragana}+$/u, '');   // Japanese endings: 使える, 使います -> 使
+      if (stop.has(w)) continue;
+      // katakana loanwords stay whole: their pairs (ール, カー, ップ) are shared by unrelated words (サッカー, ツール)
+      for (const p of (KATA_ONLY.test(w) ? [w] : pairs(w))) if (!stop.has(p) && !KANA_ONLY.test(p)) out.push(p);
+    }
+    return out;
+  };
+  const latin = (text) => text.split(/[^\p{L}\p{N}@.]+/u).map((t) => t.replace(/^\.+|\.+$/g, '')).filter((t) => t && !stop.has(t) && (t.length > 1 || /\d/.test(t))).map(stem);
+  const tokens = (text) => {
+    const f = fold(text);
+    if (!CJK.test(f)) return latin(f);
+    const out = [];
+    let last = 0;
+    for (const m of f.matchAll(CJK_RUN)) {
+      out.push(...latin(f.slice(last, m.index)), ...cjkWords(m[0]));
+      last = m.index + m[0].length;
+    }
+    out.push(...latin(f.slice(last)));
+    return out;
+  };
 
   // documents
   const docs = data.c.map(([pi, id, h, t], i) => {
@@ -97,7 +135,7 @@ export function createEngine(data) {
   function quote(d, q) {
     const t = d.t;
     if (t.length <= 360) return t;
-    const sents = t.split(/(?<=[.!?…؟])\s+/);
+    const sents = t.split(/(?<=[.!?…؟])\s+|(?<=[。！？])/);   // CJK sentences end with 。！？ and no space
     const sc = sents.map((s) => { const tk = new Set(tokens(s)); return q.reduce((a, w) => a + (tk.has(w) ? idf(w) : 0), 0); });
     let bi = 0; for (let i = 1; i < sc.length; i++) if (sc[i] > sc[bi]) bi = i;
     let from = bi, to = bi, out = sents[bi].trim();
@@ -105,7 +143,7 @@ export function createEngine(data) {
     while (out.length < 200) {
       const next = (sc[to + 1] ?? -1) >= (sc[from - 1] ?? -1) ? to + 1 : from - 1;
       if (next > to && next < sents.length) { to = next; } else if (next < from && next >= 0) { from = next; } else break;
-      out = sents.slice(from, to + 1).join(' ').trim();
+      out = sents.slice(from, to + 1).reduce((a, x) => (a ? a + (/[。！？]$/.test(a) ? '' : ' ') + x : x), '').trim();
       if (out.length > 360) { out = out.slice(0, 360); break; }
     }
     return out;

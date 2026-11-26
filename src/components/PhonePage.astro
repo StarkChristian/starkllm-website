@@ -8,19 +8,22 @@ import CtaBand from './CtaBand.astro';
 import { phone } from '../i18n/site';
 import { rel250 } from '../i18n/release250';
 import type { Lang } from '../i18n/ui';
+import { hasShot } from '../lib/media';
 const { lang } = Astro.props as { lang: Lang };
 const c = phone[lang];
 const ph = (rel250[lang] ?? rel250.en)!.product.phone;
+// No Android screenshot yet: the hero is text only (the PC's phone settings follow in the pairing section).
+const phoneShot = hasShot(c.shots.phone, lang);
 const icons = ['key', 'home', 'relay', 'eyeoff', 'offline', 'lock'];
 ---
 <div class="wrap">
-  <header class="page-hero split" style="align-items:center">
+  <header class:list={['page-hero', phoneShot && 'split']} style="align-items:center">
     <div class="stack" style="--flow:var(--space-m)">
       <span class="eyebrow">{c.hero.eyebrow}</span>
       <h1>{c.hero.h1}</h1>
       <p class="lede">{c.hero.lede}</p>
     </div>
-    <div class="reveal"><PhoneFrame name={c.shots.phone} lang={lang} /></div>
+    {phoneShot && <div class="reveal"><PhoneFrame name={c.shots.phone} lang={lang} /></div>}
   </header>
 </div>
 

@@ -1,0 +1,443 @@
+{
+ "questions": [
+  {
+   "q": "StarkLLM到底是什么？",
+   "pages": [
+    "/zh/about",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/phone",
+    "/zh/download"
+   ]
+  },
+  {
+   "q": "它真的是免费的吗？",
+   "pages": [
+    "/zh/download",
+    "/zh/about",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "我需要为它付钱吗？",
+   "pages": [
+    "/zh/download",
+    "/zh/about",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "这个软件用的是什么许可证？",
+   "pages": [
+    "/zh/download",
+    "/zh/about",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "我的数据会被上传到别的地方吗？",
+   "pages": [
+    "/zh/tech-privacy",
+    "/zh/",
+    "/zh/download",
+    "/zh/about",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/privacy",
+    "/zh/contact"
+   ]
+  },
+  {
+   "q": "没有网络连接时StarkLLM能用吗？",
+   "pages": [
+    "/zh/tech-privacy",
+    "/zh/",
+    "/zh/download",
+    "/zh/about",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/privacy",
+    "/zh/contact"
+   ]
+  },
+  {
+   "q": "在Windows上如何安装它？",
+   "pages": [
+    "/zh/download",
+    "/zh/manual",
+    "/zh/help",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "启动安装程序时Windows显示警告，我该怎么办？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "为什么SmartScreen会拦截安装程序？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "怎样检查安装文件是否完整？",
+   "pages": [
+    "/zh/download",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "运行StarkLLM需要多大内存？",
+   "pages": [
+    "/zh/download",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "支持Windows 10吗？",
+   "pages": [
+    "/zh/download",
+    "/zh/manual",
+    "/zh/about",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "我需要安装Docker吗？",
+   "pages": [
+    "/zh/download",
+    "/zh/manual",
+    "/zh/help",
+    "/zh/tech-privacy"
+   ]
+  },
+  {
+   "q": "第一次启动需要多长时间？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "界面有中文版吗？",
+   "pages": [
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "收件箱能做什么？",
+   "pages": [
+    "/zh/features",
+    "/zh/manual",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "能在安卓手机上使用吗？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "怎么拿到Android应用？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "有苹果手机的版本吗？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "出门在外时手机还能连上电脑吗？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "中继服务器能读到我的问题吗？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help",
+    "/zh/privacy"
+   ]
+  },
+  {
+   "q": "手机和电脑怎么配对？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "它能识别诈骗信件吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "可以用哪些人工智能模型？",
+   "pages": [
+    "/zh/tech-local-models",
+    "/zh/manual",
+    "/zh/download"
+   ]
+  },
+  {
+   "q": "能不能接入ChatGPT这样的云端模型？",
+   "pages": [
+    "/zh/privacy",
+    "/zh/tech-privacy",
+    "/zh/manual",
+    "/zh/download"
+   ]
+  },
+  {
+   "q": "回答会告诉我信息来自哪个文档吗？",
+   "pages": [
+    "/zh/tech-rag",
+    "/zh/",
+    "/zh/features",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "RAG是什么意思？",
+   "pages": [
+    "/zh/tech-rag",
+    "/zh/download",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "知识库有什么作用？",
+   "pages": [
+    "/zh/tech-knowledge-base",
+    "/zh/manual",
+    "/zh/download"
+   ]
+  },
+  {
+   "q": "支持哪些文件格式？",
+   "pages": [
+    "/zh/tech-multimodal",
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "可以用语音提问吗？",
+   "pages": [
+    "/zh/tech-voice",
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "一共有几种主题？",
+   "pages": [
+    "/zh/tech-themes",
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "本地工具是做什么的？",
+   "pages": [
+    "/zh/tech-local-tools",
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "我怎样才能联系到你们？",
+   "pages": [
+    "/zh/contact",
+    "/zh/about",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "StarkLLM是谁做的？",
+   "pages": [
+    "/zh/about",
+    "/zh/contact"
+   ]
+  },
+  {
+   "q": "在哪里能看到源代码？",
+   "pages": [
+    "/zh/download",
+    "/zh/about",
+    "/zh/contact"
+   ]
+  },
+  {
+   "q": "别的程序可以调用StarkLLM吗？",
+   "pages": [
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "密码忘了怎么办？",
+   "pages": [
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "怎么把StarkLLM卸载掉？",
+   "pages": [
+    "/zh/help",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "这个网站会用Cookie跟踪我吗？",
+   "pages": [
+    "/zh/privacy"
+   ]
+  },
+  {
+   "q": "为什么回答速度这么慢？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "更新检查会把什么发出去？",
+   "pages": [
+    "/zh/tech-privacy",
+    "/zh/privacy",
+    "/zh/download"
+   ]
+  },
+  {
+   "q": "它会删掉我的文件吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "网页任务是怎么工作的？",
+   "pages": [
+    "/zh/features",
+    "/zh/",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "终端功能安全吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/",
+    "/zh/manual",
+    "/zh/tech-local-tools"
+   ]
+  },
+  {
+   "q": "能把录音转成文字吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/tech-multimodal",
+    "/zh/tech-voice",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "可以针对一张图片提问吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/tech-multimodal",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "关掉窗口后StarkLLM还在运行吗？",
+   "pages": [
+    "/zh/manual",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "需要注册账户吗？",
+   "pages": [
+    "/zh/tech-privacy",
+    "/zh/",
+    "/zh/download",
+    "/zh/about",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/privacy",
+    "/zh/contact",
+    "/zh/help"
+   ]
+  }
+ ],
+ "unrelated": [
+  "今天北京天气怎么样？",
+  "上一届世界杯谁赢了？",
+  "红烧肉怎么做？",
+  "澳大利亚的首都是哪里？",
+  "给我写一首关于大海的诗",
+  "推荐一部好看的电影",
+  "现在买哪款手机最好？",
+  "珠穆朗玛峰有多高？",
+  "讲个笑话吧",
+  "怎样学会弹吉他？",
+  "把“早上好”翻译成日语",
+  "法国总统是谁？"
+ ],
+ "advice": [
+  "在我的律师事务所使用这个软件合法吗？",
+  "如果出了问题，我可以起诉你们吗？",
+  "我需要关于合同的法律建议"
+ ]
+}

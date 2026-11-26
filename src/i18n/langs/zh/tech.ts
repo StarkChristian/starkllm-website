@@ -1,0 +1,146 @@
+type Section = { h: string; p?: string; list?: string[] };
+
+const labels = { what: '这是什么', why: '为什么重要', how: 'StarkLLM如何实现', example: '示例', limits: '值得了解', more: '更多功能', cta: '下载StarkLLM', manual: '阅读用户手册' };
+type L = typeof labels;
+const s = (l: L, what: string, why: string, how: string | Section, example: string, limits?: string): Section[] => [
+  { h: l.what, p: what },
+  { h: l.why, p: why },
+  typeof how === 'string' ? { h: l.how, p: how } : { h: l.how, ...how },
+  { h: l.example, p: example },
+  ...(limits ? [{ h: l.limits, p: limits }] : []),
+];
+const zh = labels;
+
+const pages = {
+  'tech-rag': {
+    title: '基于您文档的回答（RAG）| StarkLLM', eyebrow: '检索增强生成',
+    h1: '基于您文档的回答', lede: 'StarkLLM在回答之前先阅读您文件中的相关段落，并告诉您它们在哪里。',
+    shot: 'chat', shotAlt: 'StarkLLM根据一份本地PDF回答问题，并注明来源（英文界面）',
+    sections: s(zh,
+      '检索增强生成（RAG）是指：模型先获得您文档中与问题相符的段落，再根据这些段落作答。',
+      '语言模型对您的合同、报告或笔记一无所知。没有您的段落，它只能猜测，而猜测听起来可能很有说服力。',
+      '您的问题会在工作区中检索（如果开启，也会在您的知识库中检索）。最佳段落经过重新排序后，与问题一起交给模型。每个回答都会列出来源，包括文件名以及页码或章节。',
+      '您问：“与Smith签订的合同的通知期是多久？” StarkLLM在PDF中找到该条款，据此作答，并显示 “Smith contract.pdf, page 4”。',
+      '模型仍有可能误读某个段落。对于重要的决定，请打开所引用的页面亲自核对。'),
+  },
+  'tech-hybrid-search': {
+    title: '混合检索 | StarkLLM', eyebrow: '检索',
+    h1: '混合检索', lede: '同时按含义和按确切字词进行检索。',
+    sections: s(zh,
+      '混合检索把向量检索（找到含义相同的段落）与关键词检索（BM25，找到确切的字词、名称和数字）结合在一起。',
+      '有些问题需要理解含义（“我们如何处理亏损？”），有些问题需要确切的术语（“发票8492-B”）。单独使用任何一种方法，都会漏掉其中之一。',
+      'StarkLLM在您的本地索引上同时运行两种检索，合并结果，并在语言模型看到之前用一个小型本地模型（TinyBERT交叉编码器）重新排序。',
+      '搜索 “NASA预算” 时，既能找到一段关于 “美国国家航空航天局经费” 的内容，也能找到确切写有 “NASA” 的段落。'),
+  },
+  'tech-semantic-chunking': {
+    title: '语义分块 | StarkLLM', eyebrow: '索引',
+    h1: '语义分块', lede: '文档在含义发生变化的地方切分，而不是按固定的字符数切分。',
+    sections: s(zh,
+      '文档在可供检索之前，会被切分成段落（“块”，chunks）。每个段落都与其所在的文件、页码或章节一起保存。',
+      '在句子或条款中间被截断的段落会失去意义，检索结果也就只剩半个答案。',
+      'StarkLLM把文本拆分成句子，并在话题发生变化的地方开始新的段落，这一变化由嵌入模型来衡量。如果无法做到，则按段落和句子切分，并保留少量重叠。表格（CSV、Excel、Word表格）按行保存，并带有列名。',
+      '一份合同会按条款逐条建立索引。关于 “责任” 的问题会检索到完整的责任条款，而不是被切成两半的内容。',
+      '没有标点的长文件（例如某些日志）仍可能变成很大的段落，其中的单个数值较难找到。'),
+  },
+  'tech-knowledge-base': {
+    title: '知识库 | StarkLLM', eyebrow: '资料库',
+    h1: '知识库', lede: '您电脑上的一个文件夹，每个聊天都可以检索。',
+    shot: 'kb', shotAlt: 'StarkLLM知识库，含一个已建立索引的文件夹（英文界面）',
+    sections: s(zh,
+      '知识库是您电脑上的一个文件夹（默认是 “文档” 中的 “StarkLLM Knowledge Base”），StarkLLM会为其中的文件建立索引并保持更新。',
+      '流程说明、手册或笔记等参考资料在许多项目中都会用到。如果没有共享的资料库，您就得把同样的文件上传到每个工作区。',
+      'StarkLLM每30秒检查一次已登记的文件夹，为新增和修改过的文件建立索引；“Sync Now”（立即同步）可以马上执行。在聊天中，知识库开关决定是否同时检索这些文件。来自知识库的来源标有 “Personal KB”。',
+      '您把团队手册放在这个文件夹里。在关于新项目的工作区中，您可以在同一个问题里同时询问项目文件和团队手册。'),
+  },
+  'tech-workspaces': {
+    title: '工作区 | StarkLLM', eyebrow: '组织',
+    h1: '工作区', lede: '每个项目一个工作区，拥有各自的文档和聊天。',
+    sections: s(zh,
+      '一个工作区包含一个项目的文档和聊天。知识库则由所有工作区共享。',
+      '如果所有文件都放在一起，关于某件事的问题可能会混入另一件事的段落。',
+      '每个工作区都有自己的索引。聊天只检索其所在工作区的文档；如果您开启知识库，也会检索知识库。',
+      '您从 “2025年报税” 切换到 “网站改版”。此后的回答只来自网站相关的文档。'),
+  },
+  'tech-multimodal': {
+    title: '支持的文件和图片 | StarkLLM', eyebrow: '文件',
+    h1: '文件、扫描件和图片', lede: '文档、扫描件、图片和录音。',
+    sections: s(zh,
+      'StarkLLM可以读取文档：PDF、Word（DOCX）、Excel（XLSX）、PowerPoint（PPTX）、EPUB、TXT、Markdown、CSV、JSON、XML、HTML、日志以及图片（PNG、JPG、WEBP、TIFF），每个文件最大100 MB。录音（MP3、M4A、WAV、OGG、FLAC、MP4、MOV和MKV视频中的声音等，最大500 MB）会在您的电脑上转写成带时间标记的文字。您可以用回形针按钮添加文件，或者把文件拖到窗口上。',
+      '真实的文档常常是扫描件或照片，而不是可以选中的文字。普通的文本提取工具在其中什么也找不到。',
+      { p: '每种类型都有自己的读取方式：', list: [
+        '含文字的PDF页面会被直接读取；扫描页面经过本地OCR（Tesseract）识别，如果识别出的内容太少，再交给本地图像模型处理。',
+        '图片由本地图像模型描述并读取其中的文字。第一张图片会一次性下载该模型（llava，约4.4 GB）。',
+        '电子表格和表格会保留列名，使数值与其含义保持对应。',
+      ] },
+      '您添加了一张停车指示牌的照片。之后您问：“访客停车在哪一层？” 得到的回答是 “P2层，40至55号车位”，并以这张照片作为来源。',
+      '手写文字以及细小或模糊的文字识别可靠性较低。图像模型读取印刷文字的效果好于白板。'),
+  },
+  'tech-local-models': {
+    title: '使用Ollama的本地模型 | StarkLLM', eyebrow: '模型',
+    h1: '使用Ollama的本地模型', lede: '语言模型在您的电脑上、用您的硬件运行。',
+    sections: s(zh,
+      'Ollama是一个免费程序，可以在您的CPU或显卡上运行Qwen、Llama或Mistral等开放语言模型。StarkLLM用它来进行聊天、检索和图像处理。',
+      '本地模型不需要账户和订阅，下载后无需联网也能继续工作，您的文档也永远不会发送给模型提供商。',
+      '如果已安装Ollama，StarkLLM会启动它，在首次启动时下载默认模型（约5 GB），并允许您在 “Model Hub”（模型中心）中切换模型。Qwen 3等思考型模型同样可以使用。',
+      '在没有Wi-Fi的火车上，您添加一份PDF并就它提问。一切都在笔记本电脑上运行。',
+      '回答的质量和速度取决于模型和您的硬件。7B模型大约需要8 GB内存；更大的模型回答得更好，但需要更多内存，最好在显卡上运行。'),
+  },
+  'tech-privacy': {
+    title: '隐私 | StarkLLM', eyebrow: '隐私',
+    h1: '哪些内容留在您的电脑上', lede: '文档、索引、聊天和模型都留在您的电脑上。少数可选功能会联网，而且只在您使用时才联网。',
+    sections: [
+      { h: zh.what, p: 'StarkLLM在您的电脑上运行其数据库、检索索引和网页界面（在自己的引擎中运行，自v2.2起无需Docker），语言模型则在同样位于您电脑上的Ollama中运行。它没有遥测，也不需要服务器上的账户。' },
+      { h: zh.why, p: '合同、病历或研究数据，不应该仅仅为了提一个问题就被发送到云服务。' },
+      { h: '可选的联网功能', p: '这些功能只有在您开启或启动时才会连接互联网。当问题离开您的电脑时，聊天中会注明。“Settings › Privacy & network”（设置 › 隐私与网络）列出每一个连接，而 “Fully offline”（完全离线）会拒绝所有连接。', list: [
+        '网络搜索（聊天中的开关）：您的问题会发送到DuckDuckGo；只有在它没有回应时，才依次发送到Startpage、Mojeek，最后才使用Wikipedia的公共搜索。每次只使用一个。',
+        '离家时使用手机（“Settings › Phone”（设置 › 手机），按手机分别设置，默认关闭）：电脑与StarkLLM中继（relay.starkllm.com）保持连接。中继只转发加密后的字节；问题、回答和文档从手机到电脑全程保持加密。',
+        '网页任务（聊天中的 “Web task”（网页任务）开关）：StarkLLM在自己的窗口中打开任务涉及的网站；这些网站会获得您的IP地址以及任务在其中输入的内容。',
+        '云端模型提供商（在设置中，例如DeepSeek、OpenRouter、Groq）：您的问题和找到的段落会发送给该提供商。',
+        '从网络导入（网页、YouTube、GitHub）：应用会下载您输入的网页、字幕或代码仓库。',
+        'Ollama云端模型（名称以 “:cloud” 结尾）：您的问题和找到的段落会发送到Ollama的服务器。',
+        'OCR语言包（“Settings › Reading photos and scans”（设置 › 读取照片和扫描件））：从GitHub下载一个语言文件。',
+        '市场价格（小组件，默认关闭）：从Yahoo Finance和CoinGecko获取。',
+        '检查更新（首次启动时询问一次）：只向GitHub查询最新的版本号，别无其他。',
+      ] },
+      { h: '一次性下载', p: 'AI模型（来自Ollama）、图像模型（处理第一张图片时）、语音模型Whisper base（首次语音输入时，约140 MB）以及Whisper large-v3-turbo（首次录音时，约1.6 GB）都只下载一次。下载时不会发送任何文档、问题或使用数据。检索所用的重排序模型是应用的一部分，可离线工作。' },
+      { h: '不在网络列表中的内容', p: '您在终端中允许的命令（例如npm install或git push）以及您在 “Settings › Local Tools”（设置 › 本地工具）中添加的MCP工具服务器，作为您自己的程序运行。它们可以自行访问互联网，其连接不会出现在 “Settings › Privacy & network” 中。当StarkLLM处于完全离线状态时，需要联网的终端命令会被拒绝，工具服务器也不会启动。' },
+      { h: zh.example, p: '首次启动之后，您可以关闭Wi-Fi。添加文档、检索和回答都会照常工作。' },
+    ],
+  },
+  'tech-local-tools': {
+    title: '需经您批准的本地工具 | StarkLLM', eyebrow: '工具',
+    h1: '本地工具，经您批准', lede: '模型可以请求查找资料。在您确认之前，什么都不会运行。',
+    sections: s(zh,
+      'StarkLLM内置一个小型工具主机（MCP）。模型可以请求三个只读工具：列出工作区的文件、检索知识库，以及获取所引用段落的确切文本。',
+      '有了工具，模型可以核实事实而不是猜测。如果不加控制，工具可能会做出您不希望的事情。',
+      { p: '每一次工具调用都会停在聊天中的一张卡片上：', list: [
+        '卡片显示工具及其参数；您可以编辑参数、执行调用或取消调用。',
+        '三个内置工具只读取内容。终端（在您选择的项目文件夹中）可以修改文件并运行PowerShell命令；每项修改都会先显示出来，每条可能改变内容的命令都要在您同意之后才会运行。',
+        '服务器只接受带有该卡片一次性令牌的工具调用。',
+      ] },
+      '模型不确定某份文档哪个版本最新，于是请求列出工作区文件。您看到请求并执行它，回答便以真实的文件列表为依据。'),
+  },
+  'tech-voice': {
+    title: '语音输入与输出 | StarkLLM', eyebrow: '语音',
+    h1: '语音输入与输出', lede: '用说话来提问，并收听回答，全部在您的电脑上处理。',
+    shot: 'settings', shotAlt: 'StarkLLM设置（英文界面）',
+    sections: s(zh,
+      '语音转文字把您的问题变成文字；文字转语音把回答朗读出来。',
+      '对于较长的问题，说话比打字更快；当您的双手或眼睛正忙时，收听回答也很有帮助。',
+      'StarkLLM使用Whisper进行语音识别，并使用Piper的英语和德语语音，两者都在本地运行。音频不会发送给任何服务。您添加到工作区的录音（会议、讲座、语音备忘录）由Whisper large-v3-turbo在这台电脑上转写成带时间标记的文字；之后您可以像询问任何文档一样询问它们。',
+      '一边阅读纸质文件，一边点击麦克风，说出您的问题，然后收听回答。',
+      '语音识别模型（Whisper base，约140 MB）在首次语音输入时下载，Whisper large-v3-turbo（约1.6 GB）在首次录音时下载。完全离线时，如果电脑上有较小的模型，录音会使用它。'),
+  },
+  'tech-themes': {
+    title: '主题 | StarkLLM', eyebrow: '外观',
+    shot: 'appearance', shotAlt: 'StarkLLM设置中的 “Appearance”（外观）：主题库（英文界面）',
+    h1: '主题', lede: '十三种配色主题，从适合OLED屏幕的纯黑，到浅色主题和图案主题。',
+    sections: [
+      { h: zh.what, p: 'StarkLLM有十三种主题：Midnight Indigo（默认）、OLED Pitch Black、Liquid Glass、Cyberpunk Rose、Matrix Emerald、Sunset Volcano、Arctic Frost和Daylight Minimal，另有五种图案主题：Doodle Chat、Doodle Night、Flower Meadow、Matrix Code和Starry Night。' },
+      { h: zh.why, p: '当对比度和亮度适合您的屏幕和所在的房间时，长时间使用眼睛也不容易疲劳。' },
+      { h: zh.how, p: '可以通过侧边栏底部的调色板按钮，或在 “Settings › Appearance”（设置 › 外观）中更换主题。选择会被保存并立即生效。' },
+    ],
+  },
+};
+
+export default { labels, pages };
