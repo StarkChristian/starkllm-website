@@ -372,3 +372,9 @@ a.card:hover { border-color: var(--accent-line); translate: 0 -2px; box-shadow: 
 /* Placeholders in small tiles: the file name and "follows", without the long alt text (it stays in aria-label) */
 @container (max-width: 420px) { .tile .ph-label span:nth-child(2) { display: none; } }
 @media (max-width: 640px) { .ph-label span:nth-child(2) { display: none; } }
+/* Long button labels (an e-mail address, a repository name) wrap instead of widening the page on phones */
+.btn { max-width: 100%; }
+.callout > *, .stack > *, .card > * { min-width: 0; }
+@media (max-width: 480px) { .btn { white-space: normal; text-align: center; } }
+.log-ver .badge { justify-self: start; }
+.news-pill b { white-space: nowrap; }
