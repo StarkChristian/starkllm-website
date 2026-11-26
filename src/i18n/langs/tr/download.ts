@@ -35,7 +35,7 @@ export default {
       { t: 'StarkLLM’i başlatın', v: 'StarkLLM kısayoluna tıklayın. Uygulama motorunu başlatır ve Ollama’yı denetler.' },
       { t: 'Eksikse Ollama’yı kurun', v: 'Ollama kurulu değilse pencere “Ollama’yı benim için kur” seçeneğini sunar: StarkLLM resmî yükleyiciyi ollama.com adresinden indirir (yaklaşık 2 GB), imzasını denetler ve kurar; yönetici hakları gerekmez. Ollama’yı ollama.com adresinden kendiniz de kurabilirsiniz.' },
       { t: 'İlk başlatmayı bekleyin', v: 'StarkLLM yapay zekâ modellerini indirir (varsayılan olarak qwen2.5:7b ve nomic-embed-text, yaklaşık 5 GB; Ollama’da zaten bulunan uygun modeller kullanılır), ilerlemeyi gösterir ve ardından kendi penceresinde açılır. Bir şey eksikse pencere neyin eksik olduğunu ve nasıl giderileceğini söyler (günlükler: %APPDATA%\\StarkLLM\\engine.log ve engine-native.log).' },
-      { t: 'Bir workspace oluşturun ve bir belge ekleyin', v: 'StarkLLM sizi bu bilgisayarın kullanıcısı olarak oturum açtırır; hesap oluşturmanız gerekmez. Bir workspace oluşturun, bir belge ekleyin ve onunla ilgili bir soru sorun.' },
+      { t: 'Bir çalışma alanı oluşturun ve bir belge ekleyin', v: 'StarkLLM sizi bu bilgisayarın kullanıcısı olarak oturum açtırır; hesap oluşturmanız gerekmez. Bir çalışma alanı oluşturun, bir belge ekleyin ve onunla ilgili bir soru sorun.' },
     ],
   },
   prereq: {
@@ -67,7 +67,7 @@ export default {
     h2: 'Uygulamaya genel bakış',
     lede: 'StarkLLM’i makinenizde çalıştırdığınızda sizi nelerin beklediğine adım adım bir bakış.',
     steps: [
-      { t: 'Adım 1: Knowledge Base ve workspace’ler', v: 'Belgeleri kalıcı bir Knowledge Base (bilgi tabanı) katmanına dizinlemek için yerel klasörleri bağlayın.', kind: 'kb', alt: 'StarkLLM bilgi tabanı yapılandırması (arayüz İngilizce)' },
+      { t: 'Adım 1: Bilgi Tabanı ve çalışma alanları', v: 'Belgeleri kalıcı bir Bilgi Tabanı (Knowledge Base) katmanına dizinlemek için yerel klasörleri bağlayın.', kind: 'kb', alt: 'StarkLLM bilgi tabanı yapılandırması (arayüz İngilizce)' },
       { t: 'Adım 2: Belgeye dayalı sohbet', v: 'Dizinlenmiş belgelere dayanan sorular sorun; kaynak dosya göstergeleriyle birlikte.', kind: 'chat', alt: 'StarkLLM belgeye dayalı sohbet (arayüz İngilizce)' },
       { t: 'Adım 3: Kontrol edebileceğiniz kaynaklar', v: 'Bir yanıtın altındaki kaynağa tıklayarak dayandığı pasajları kelimesi kelimesine okuyun ve belgeyi o sayfada açın.', kind: 'sources', alt: 'Bir yanıtın dayandığı pasajlar kelimesi kelimesine ve sayfaya bağlantıyla gösteriliyor (arayüz İngilizce)' },
       { t: 'Adım 4: Güvenli yerel araçlar', v: 'Süreç içi model aracı çağrılarını doğrudan sohbette inceleyin, düzenleyin ve onaylayın.', kind: 'tool' },
@@ -83,7 +83,7 @@ export default {
       ['Yükleyici imzalı mı? SmartScreen veya Smart App Control uyarı verirse ne yapmalıyım?', 'Evet. v2.1.2’den itibaren yükleyici, StarkLLM.exe ve kaldırma programı “Open Source Developer Christian Stark” tarafından imzalanmıştır; böylece Windows yayımcıyı doğrulayabilir. Windows yine de uyarırsa yayımcı adını kontrol edin (yükleyiciye sağ tıklayın, Özellikler, Dijital İmzalar) ve bu sayfadaki SHA-256 sağlama toplamını karşılaştırın. Dosyayı yalnızca ikisi de eşleşiyorsa çalıştırın. Smart App Control’ü veya başka bir güvenlik ayarını kapatmayın.'],
       ['Nasıl bir donanıma ihtiyacım var?', '3B modeller için en az 8 GB RAM, 7B modeller için 16 GB RAM. İleri düzey modeller (14B ila 32B) için 24 GB VRAM veya 64 GB sistem RAM’i önerilir.'],
       ['Normal sohbet ile belge sohbeti arasındaki fark nedir?', 'Normal sohbet yalnızca modelin önceden eğitilmiş bilgisine dayanır. Belge sohbeti RAG kullanır: önce yüklediğiniz belgelerde arama yapar, ilgili parçaları modele verir ve doğrulanabilir kaynaklarla yanıt verir.'],
-      ['Workspace belgeleri ile Knowledge Base arasındaki fark nedir?', 'Workspace belgeleri tek bir projeye yalıtılmıştır. Knowledge Base ise makinenizde, her sohbetin başvurabileceği kalıcı, genel bir klasördür.'],
+      ['Çalışma alanı (workspace) belgeleri ile Bilgi Tabanı arasındaki fark nedir?', 'Çalışma alanı belgeleri tek bir projeye yalıtılmıştır. Bilgi Tabanı ise makinenizde, her sohbetin başvurabileceği kalıcı, genel bir klasördür.'],
       ['Pencere “StarkLLM başlatılamadı” diyor. Şimdi ne yapmalı?', 'StarkLLM kendi motorunu ve Ollama’yı kendisi başlatır. Bir adım başarısız olduğunda pencere neyin eksik olduğunu listeler (örneğin Ollama kurulu değil, meşgul bir port, Windows’un engellediği bir program dosyası ya da son günlük satırlarıyla bir motor hatası) ve bir “Yeniden dene” düğmesi sunar. Günlükler %APPDATA%\\StarkLLM klasöründedir (engine.log ve motor için engine-native.log). Yardım sayfası çözümleri listeler.'],
       ['Uygulama açılıyor ama sohbet bağlanmıyorsa ne olur?', 'Sohbet Ollama’ya ihtiyaç duyar. Pencere “StarkLLM is running without its AI runtime” dediyse Ollama’yı kurun veya başlatın ve “Yeniden dene” düğmesine basın; StarkLLM ardından modelleri (qwen2.5:7b ve nomic-embed-text) indirir. Motor, bilgisayarınızdaki Ollama ile 127.0.0.1:11434 adresinde konuşur.'],
       ['Kaynak kodunu inceleyebilir miyim?', 'Evet. StarkLLM, GitHub’da StarkChristian/StarkLLM adresinde Apache 2.0 lisansıyla tamamen açık kaynaklıdır.'],
