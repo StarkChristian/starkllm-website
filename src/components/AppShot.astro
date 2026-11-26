@@ -22,14 +22,21 @@ interface Props {
 }
 const { name, lang, sizes = '(max-width: 960px) 100vw, 620px', loading = 'lazy', ratio = '16 / 10', frame = 'none', class: cls } = Astro.props;
 const files = import.meta.glob<{ default: ImageMetadata }>('../assets/media/*/*.png', { eager: true });
-const find = (l: string) => files[`../assets/media/${l}/${l}-${name}.png`]?.default;
+// the names the test laptop used for the same pictures (MSI §46)
+const ALIAS: Record<string, string> = {
+  '04-source-page': '04-source-open', '05-scam-warning': '05-ai-note', '07-image-question': '06-image',
+  '08-recording': '07-recording', '11-compare-models': '11-compare', '12-settings-phone': '12-phone',
+};
+const find = (l: string) => files[`../assets/media/${l}/${l}-${name}.png`]?.default
+  ?? (ALIAS[name] ? files[`../assets/media/${l}/${l}-${ALIAS[name]}.png`]?.default : undefined);
 const src = find(lang) ?? find('en');
+const showPending = !import.meta.env.PROD || process.env.SHOW_PENDING === '1';
 const text = Astro.props.alt ?? (media[lang].shots as Record<string, string>)[name] ?? (media.en.shots as Record<string, string>)[name] ?? '';
 const widths = src ? [640, 960, 1280, 1920].filter((w) => w <= src.width) : [];
 if (src && !widths.length) widths.push(src.width);
 const pending = common[lang].media.shotPending;
 ---
-{frame === 'window' ? (
+{!src && !showPending ? null : frame === 'window' ? (
   <div class:list={['window', cls]}>
     <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>StarkLLM</span></div>
     <div class="shot-frame">
