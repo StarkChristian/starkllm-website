@@ -1,4 +1,56 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/common.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyCommon } from '../../legacy';
-export default legacyCommon('fr');
+// Textes communs à toutes les pages du site 2026 : navigation, pied de page, bandeau de confiance, médias, appel final.
+// Mêmes clés que ../en/common.ts.
+export default {
+  nav: {
+    features: 'Fonctionnalités',
+    phone: 'Téléphone',
+    privacy: 'Confidentialité',
+    manual: 'Manuel',
+    help: 'Aide',
+    about: 'À propos',
+    download: 'Télécharger',
+    github: 'StarkLLM sur GitHub',
+    menu: 'Menu',
+    language: 'Langue',
+    theme: 'Passer du mode clair au mode sombre',
+  },
+  footer: {
+    tagline: 'Une IA privée pour vos documents, sur votre propre PC Windows.',
+    product: 'Produit',
+    learn: 'Comprendre',
+    project: 'Projet',
+    legal: 'Informations légales',
+    changelog: 'Historique des versions',
+    tech: 'Fonctionnement',
+    contact: 'Contact',
+    github: 'Code source sur GitHub',
+    codeSigning: 'Politique de signature du code (en anglais)',
+    privacyEn: 'Politique de confidentialité (traduction anglaise)',
+    disclaimer: 'Fourni « tel quel », sans garantie ni responsabilité. Les réponses proviennent de modèles d’IA locaux et peuvent être fausses : pour tout ce qui compte, vérifiez la source.',
+    site: 'Ce site ne dépose aucun cookie, n’utilise aucun outil d’analyse et ne charge rien depuis d’autres serveurs.',
+    bottom: '© 2026 Christian Stark · Apache 2.0',
+  },
+  trust: [
+    { icon: 'shield', k: 'Signé', v: 'par « Open Source Developer Christian Stark »' },
+    { icon: 'check', k: 'Apache 2.0', v: 'Gratuit et open source' },
+    { icon: 'eyeoff', k: 'Aucune télémétrie', v: 'Ni statistiques, ni compte' },
+    { icon: 'list', k: 'SBOM', v: 'À chaque version' },
+    { icon: 'code', k: 'Sur GitHub', v: 'Chaque ligne du code source' },
+  ],
+  media: {
+    shotPending: 'Capture d’écran de StarkLLM 2.6.0 à venir',
+    videoPending: 'Vidéo de StarkLLM 2.6.0 à venir',
+    pause: 'Mettre la vidéo en pause',
+    play: 'Lire la vidéo',
+    demo: 'Données de démonstration, avec des noms et des chiffres inventés.',
+  },
+  cta: {
+    h2: 'Essayez-le avec vos propres documents.',
+    text: 'Gratuit pour un usage personnel, de recherche et commercial. Windows 10 et 11, 64 bits.',
+    btn: 'Télécharger pour Windows',
+    alt: 'Lire le manuel',
+  },
+  limits: 'Limites',
+  onThisPage: 'Sur cette page',
+  more: 'En savoir plus',
+};

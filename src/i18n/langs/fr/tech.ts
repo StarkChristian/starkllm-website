@@ -95,7 +95,7 @@ const pages = {
       { h: fr.what, p: 'StarkLLM fait tourner sa base de données, son index de recherche et son interface web sur votre PC (dans son propre moteur, sans Docker depuis la v2.2), et le modèle de langage dans Ollama, lui aussi sur votre PC. Il n’a ni télémétrie ni compte sur un serveur.' },
       { h: fr.why, p: 'Des contrats, des dossiers de patients ou des données de recherche ne devraient pas être envoyés à un service cloud juste pour poser une question à leur sujet.' },
       { h: 'Fonctions en ligne facultatives', p: 'Elles ne se connectent à internet que lorsque vous les activez ou les lancez. La discussion indique quand une question quitte votre PC. Paramètres › Confidentialité et réseau liste chaque connexion, et « Entièrement hors ligne » les refuse toutes.', list: [
-        'Recherche web (interrupteur dans la discussion) : votre question est envoyée à DuckDuckGo ; seulement s’il ne répond pas, à Startpage, puis à Mojeek, et en dernier recours à la recherche publique de Wikipédia. Un seul à la fois.',
+        'Recherche web (interrupteur dans la discussion) : votre question est envoyée à DuckDuckGo ; seulement s’il ne répond pas, à Startpage, puis à Mojeek, et en dernier recours à la recherche publique de Wikipedia. Un seul à la fois.',
         'Téléphone hors de chez vous (Paramètres › Téléphone, par téléphone, désactivé par défaut) : le PC garde une connexion au relais StarkLLM (relay.starkllm.com). Le relais ne transmet que des octets chiffrés ; les questions, réponses et documents restent chiffrés du téléphone jusqu’au PC.',
         'Tâches web (interrupteur « Tâche web » dans la discussion) : StarkLLM ouvre les sites web de la tâche dans sa propre fenêtre ; ces sites reçoivent votre adresse IP et ce que la tâche y saisit.',
         'Fournisseurs de modèles dans le cloud (Settings, par exemple DeepSeek, OpenRouter, Groq) : votre question et les passages trouvés sont envoyés à ce fournisseur.',
@@ -139,9 +139,9 @@ const pages = {
     shot: 'appearance', shotAlt: 'Les paramètres de StarkLLM, Appearance : la galerie de thèmes (interface en anglais)',
     h1: 'Thèmes', lede: 'Treize thèmes de couleurs, du noir pur pour les écrans OLED aux thèmes clairs et aux thèmes à motifs.',
     sections: [
-      { h: fr.what, p: 'StarkLLM propose treize thèmes : Midnight Indigo (par défaut), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Volcano, Arctic Frost et Daylight Minimal, plus cinq thèmes à motifs : Doodle Chat, Doodle Night, Flower Meadow, Matrix Code et Starry Night.' },
+      { h: fr.what, p: 'StarkLLM propose treize thèmes : Indigo minuit (par défaut), Noir profond OLED, Verre liquide, Rose cyberpunk, Émeraude Matrix, Volcan au crépuscule, Givre arctique et Lumière du jour minimaliste, plus cinq thèmes à motifs : Chat gribouillis, Gribouillis de nuit, Prairie fleurie, Code Matrix et Nuit étoilée.' },
       { h: fr.why, p: 'Les longues séances fatiguent moins les yeux quand le contraste et la luminosité conviennent à votre écran et à votre pièce.' },
-      { h: fr.how, p: 'Changez de thème avec le bouton de palette en bas de la barre latérale, ou dans Settings, Appearance (Paramètres, Apparence). Votre choix est enregistré et appliqué immédiatement.' },
+      { h: fr.how, p: 'Changez de thème avec le bouton de palette en bas de la barre latérale, ou dans Paramètres › Apparence. Votre choix est enregistré et appliqué immédiatement.' },
     ],
   },
 };
