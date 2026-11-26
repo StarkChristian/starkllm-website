@@ -26,3 +26,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Vazirmatn (Arabic and Persian pages), SIL OFL, see src/assets/fonts/LICENSE-vazirmatn-OFL.txt.
+   From the official release v33.003 (github.com/rastikerdar/vazirmatn, fonts/variable/Vazirmatn[wght].ttf), subset with
+   fonttools to Arabic (U+0600-06FF, U+0750-077F, U+08A0-08FF, presentation forms) + Latin (U+0000-00FF) + punctuation,
+   ZWNJ and the bidi controls, as variable woff2. Loaded only by pages in a right-to-left language (tokens.css). */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../assets/fonts/vazirmatn-arabic-latin-wght.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -7,7 +7,7 @@ import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import LucyGuide from '../components/LucyGuide.astro';
 import { lucyProfile, lucyLangFor } from '../i18n/lucy';
-import { alternatesFor, absoluteUrl, languages, ui, SITE, type Lang } from '../i18n/ui';
+import { alternatesFor, absoluteUrl, languages, ui, SITE, dirOf, type Lang } from '../i18n/ui';
 import { ogPathFor } from '../lib/pagemeta';
 
 interface Props {
@@ -44,7 +44,7 @@ const speculation = JSON.stringify({
 });
 ---
 <!doctype html>
-<html lang={contentLang ?? lang}>
+<html lang={contentLang ?? lang} dir={dirOf(contentLang ?? lang)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

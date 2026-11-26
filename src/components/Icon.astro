@@ -43,5 +43,7 @@ const paths: Record<string, string> = {
 };
 const { name, size = 22, class: cls = '' } = Astro.props as { name: string; size?: number; class?: string };
 const d = paths[name] ?? paths.check;
+// Icons that point in the reading direction; [dir='rtl'] .ico-dir mirrors them (components.css).
+const directional = ['arrow'];
 ---
-<svg class:list={['ico', cls]} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={d} />
+<svg class:list={['ico', directional.includes(name) && 'ico-dir', cls]} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={d} />

@@ -5,10 +5,12 @@ import CtaBand from './CtaBand.astro';
 import { changelog } from '../i18n/site';
 import { releases, beforeHtml } from '../data/changelog';
 import { V } from '../data/release';
-import type { Lang } from '../i18n/ui';
+import { dirOf, type Lang } from '../i18n/ui';
 const { lang } = Astro.props as { lang: Lang };
 const c = changelog[lang];
 const notesLang = lang === 'en' ? undefined : 'en';
+// On right-to-left pages the English notes keep their own direction.
+const notesDir = dirOf(lang) === 'rtl' ? 'ltr' : undefined;
 ---
 <div class="wrap">
   <header class="page-hero">
@@ -26,7 +28,7 @@ const notesLang = lang === 'en' ? undefined : 'en';
           <a href={`#${r.id}`}>{r.version}</a>
           {r.version === V && <span class="badge">{c.latest}</span>}
         </div>
-        <div class="log-body" lang={notesLang}>
+        <div class="log-body" lang={notesLang} dir={notesDir}>
           <h2 id={`${r.id}-h`}>{r.title}</h2>
           <Fragment set:html={r.html} />
         </div>
@@ -35,7 +37,7 @@ const notesLang = lang === 'en' ? undefined : 'en';
     {beforeHtml && (
       <details class="log-entry faq" style="display:block">
         <summary>{c.older}</summary>
-        <div class="log-body" lang={notesLang}><Fragment set:html={beforeHtml} /></div>
+        <div class="log-body" lang={notesLang} dir={notesDir}><Fragment set:html={beforeHtml} /></div>
       </details>
     )}
   </div>

@@ -111,3 +111,11 @@
     }
   }
 }
+
+/* Arabic and Persian pages: Vazirmatn (self-hosted) first, then the Arabic-script fonts of Windows (Segoe UI, Tahoma).
+   No negative letter-spacing: it breaks the joining of Arabic letters. */
+:root:is(:lang(ar), :lang(fa)) {
+  --font-sans: 'Vazirmatn', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --tracking-tight: 0;
+}
+:root:is(:lang(ar), :lang(fa)) :is(h1, h2, h3, h4, .brand, .eyebrow) { letter-spacing: 0; }

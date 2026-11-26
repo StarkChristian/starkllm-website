@@ -118,4 +118,6 @@ const tr: Rel260 = {
   more: 'Telefon evden uzakta nasıl çalışır',
 };
 
-export const rel260: Partial<Record<Lang, Rel260>> = { en, de, es, fr, it, tr };
+// Languages added later keep their section in src/i18n/langs/<lang>/release260.ts (default export, type Rel260).
+const more = Object.fromEntries(Object.entries(import.meta.glob('./langs/*/release260.ts', { eager: true, import: 'default' })).map(([p, v]) => [p.split('/').slice(-2)[0], v as Rel260]));
+export const rel260: Partial<Record<Lang, Rel260>> = { en, de, es, fr, it, tr, ...more };

@@ -65,7 +65,7 @@ const codeAfter = (fix: readonly string[]) => fix.findIndex((f) => f.trim().ends
                 <div class="faq-a">
                   <p><b>{L.cause}:</b> {p.cause}</p>
                   <p><b>{L.fix}:</b></p>
-                  <ol style="padding-left:1.2rem;display:grid;gap:.35rem">
+                  <ol style="padding-inline-start:1.2rem;display:grid;gap:.35rem">
                     {p.fix.map((f, i) => (
                       <>
                         <li>{f}</li>

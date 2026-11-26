@@ -1,0 +1,57 @@
+// Strings shared by every page of the 2026 site (Arabic). Same keys as src/i18n/langs/en/common.ts.
+const L = (s: string) => `⁦${s}⁩`;
+
+export default {
+  nav: {
+    features: 'الميزات',
+    phone: 'الهاتف',
+    privacy: 'الخصوصية',
+    manual: 'دليل الاستخدام',
+    help: 'المساعدة',
+    about: 'نبذة عنا',
+    download: 'التنزيل',
+    github: 'StarkLLM على GitHub',
+    menu: 'القائمة',
+    language: 'اللغة',
+    theme: 'التبديل بين الوضع الفاتح والداكن',
+  },
+  footer: {
+    tagline: 'ذكاء اصطناعي خاص لمستنداتك، على حاسوبك الشخصي الذي يعمل بنظام Windows.',
+    product: 'المنتج',
+    learn: 'تعرّف أكثر',
+    project: 'المشروع',
+    legal: 'المعلومات القانونية',
+    changelog: 'سجل الإصدارات',
+    tech: 'كيف يعمل',
+    contact: 'اتصل بنا',
+    github: 'الشيفرة المصدرية على GitHub',
+    codeSigning: 'سياسة توقيع الشيفرة (بالإنجليزية)',
+    privacyEn: 'سياسة الخصوصية (ترجمة إنجليزية)',
+    disclaimer: 'يُقدَّم «كما هو» دون ضمان أو مسؤولية. تأتي الإجابات من نماذج ذكاء اصطناعي محلية وقد تكون خاطئة: تحقّق من المصدر في كل أمر مهم.',
+    site: 'لا يضع هذا الموقع ملفات تعريف الارتباط (كوكيز)، ولا يستخدم أدوات تحليل، ولا يحمّل أي شيء من خوادم أخرى.',
+    bottom: '© 2026 Christian Stark · Apache 2.0',
+  },
+  trust: [
+    { icon: 'shield', k: 'موقَّع', v: `باسم «${L('Open Source Developer Christian Stark')}»` },
+    { icon: 'check', k: L('Apache 2.0'), v: 'مجاني ومفتوح المصدر' },
+    { icon: 'eyeoff', k: 'بلا قياس عن بُعد', v: 'بلا أدوات تحليل، وبلا حساب' },
+    { icon: 'list', k: 'SBOM', v: 'مع كل إصدار' },
+    { icon: 'code', k: 'على GitHub', v: 'كل سطر من الشيفرة المصدرية' },
+  ],
+  media: {
+    shotPending: `لقطة شاشة من StarkLLM ${L('2.6.0')} قريبًا`,
+    videoPending: `فيديو من StarkLLM ${L('2.6.0')} قريبًا`,
+    pause: 'إيقاف الفيديو مؤقتًا',
+    play: 'تشغيل الفيديو',
+    demo: 'بيانات تجريبية بأسماء وأرقام مختلَقة.',
+  },
+  cta: {
+    h2: 'جرّبه بمستنداتك أنت.',
+    text: 'مجاني للاستخدام الشخصي والبحثي والتجاري. Windows 10 و11، إصدار 64 بت.',
+    btn: 'التنزيل لنظام Windows',
+    alt: 'اقرأ دليل الاستخدام',
+  },
+  limits: 'الحدود',
+  onThisPage: 'في هذه الصفحة',
+  more: 'اعرف المزيد',
+};

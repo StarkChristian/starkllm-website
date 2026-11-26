@@ -108,7 +108,7 @@ html[data-lucy="off"] .lucy-fig, html[data-lucy="off"] .lucy-say:not([data-keep]
 html:not([data-lucy="off"]) .lucy-off { display: none !important; }
 
 .lucy-say { --lucy-w: 120px; display: flex; align-items: flex-end; gap: 1.1rem; margin-top: 2rem; max-width: 46rem; }
-.lucy-say.right { flex-direction: row-reverse; margin-left: auto; }
+.lucy-say.right { flex-direction: row-reverse; margin-inline-start: auto; }
 .lucy-fig { flex: none; width: var(--lucy-w); }
 .lucy-bubble { position: relative; flex: 1 1 auto; min-width: 0; background: var(--c-surface-2); border: 1px solid rgba(212, 175, 55, .45); border-radius: 18px; padding: 1rem 1.2rem; color: var(--c-fg); font-size: .98rem; line-height: 1.55; }
 .lucy-bubble p { margin: 0; color: inherit; }
@@ -183,9 +183,9 @@ html[data-lucy="off"] .lucy-say[data-keep] .lucy-bubble::after { display: none; 
 .lucy-dock.lucy-shift { transition: transform .4s ease; }
 .lucy-dock-btn { pointer-events: auto; display: block; width: 100%; padding: 0; background: none; border: 0; border-radius: 16px; cursor: pointer; color: inherit; }
 .lucy-dock-btn .lucy { width: 100%; height: auto; }
-.lucy-dock-x { pointer-events: auto; position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; padding: 0; border-radius: 50%; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 400 16px/1 var(--font-body); cursor: pointer; }
+.lucy-dock-x { pointer-events: auto; position: absolute; top: -8px; inset-inline-end: -8px; width: 24px; height: 24px; padding: 0; border-radius: 50%; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 400 16px/1 var(--font-body); cursor: pointer; }
 .lucy-dock-x:hover, .lucy-dock-btn:hover + .lucy-dock-x { border-color: var(--c-violet-soft); }
-.lucy-chip { display: none; position: fixed; right: 16px; bottom: 16px; z-index: 55; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 600 .85rem var(--font-body); cursor: pointer; }
+.lucy-chip { display: none; position: fixed; inset-inline-end: 16px; bottom: 16px; z-index: 55; padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--c-line); background: var(--c-surface-2); color: var(--c-fg); font: 600 .85rem var(--font-body); cursor: pointer; }
 html[data-lucy="off"] .lucy-chip { display: block; }
 .lucy-chip:hover { border-color: var(--c-violet-soft); }
 .lucy-slot { aspect-ratio: 1080 / 1050; }
@@ -196,7 +196,7 @@ html[data-lucy="off"] .lucy-chip { display: block; }
 }
 
 /* ---- The chat panel: a non-modal dialog above her; a bottom sheet on phones ----------------------------------------- */
-.lucy-panel { position: fixed; z-index: 58; right: 16px; bottom: 100px; width: min(380px, calc(100vw - 32px)); max-height: min(560px, calc(100vh - 120px)); display: flex; flex-direction: column; gap: .6rem; padding: .9rem 1rem 1rem; background: var(--c-surface-2); border: 1px solid rgba(212, 175, 55, .6); border-radius: 18px; box-shadow: 0 24px 70px -20px rgba(0, 0, 0, .85); color: var(--c-fg); font-size: .95rem; line-height: 1.5; }
+.lucy-panel { position: fixed; z-index: 58; inset-inline-end: 16px; bottom: 100px; width: min(380px, calc(100vw - 32px)); max-height: min(560px, calc(100vh - 120px)); display: flex; flex-direction: column; gap: .6rem; padding: .9rem 1rem 1rem; background: var(--c-surface-2); border: 1px solid rgba(212, 175, 55, .6); border-radius: 18px; box-shadow: 0 24px 70px -20px rgba(0, 0, 0, .85); color: var(--c-fg); font-size: .95rem; line-height: 1.5; }
 .lucy-panel[hidden] { display: none; }
 .lucy-panel-head { display: flex; align-items: center; justify-content: space-between; font: 700 1.05rem var(--font-display); }
 .lucy-panel-x { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--c-line); background: transparent; color: var(--c-fg); font: 400 20px/1 var(--font-body); cursor: pointer; }
@@ -223,7 +223,18 @@ html[data-lucy="off"] .lucy-chip { display: block; }
 .lucy-log { min-height: 150px; }
 .lucy-panel button:focus-visible, .lucy-panel input:focus-visible, .lucy-panel a:focus-visible, .lucy-dock button:focus-visible, .lucy-chip:focus-visible { outline: 2px solid var(--c-gold); outline-offset: 2px; }
 @media (max-width: 600px) {
-  .lucy-panel { left: 0 !important; right: 0 !important; bottom: 0 !important; width: auto; max-height: 72vh; border-radius: 18px 18px 0 0; padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .lucy-panel { left: 0 !important; right: 0 !important; inset-inline: 0 !important; bottom: 0 !important; width: auto; max-height: 72vh; border-radius: 18px 18px 0 0; padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
   .lucy-chat-open .lucy-dock { visibility: hidden; }
 }
 @media print { .lucy-say, .lucy-lost, .lucy-host, .lucy-dock, .lucy-panel, .lucy-chip { display: none !important; } }
+
+/* ---- Right-to-left pages (ar, fa): Lucy stands on the other side and the bubble tails point the other way.
+   The figure itself is not mirrored. The dock starts in the bottom-left corner (src/scripts/lucy-dock.ts). */
+[dir='rtl'] .lucy-say:not(.right) .lucy-bubble::after { left: auto; right: -8px; border: 1px solid rgba(212, 175, 55, .45); border-left: 0; border-bottom: 0; }
+[dir='rtl'] .lucy-say.right .lucy-bubble::after { right: auto; left: -8px; border: 1px solid rgba(212, 175, 55, .45); border-right: 0; border-top: 0; }
+@media (min-width: 1040px) {
+  [dir='rtl'] .lucy-hero { right: auto; left: 0; }
+  [dir='rtl'] .lucy-hero .lucy-bubble::after { right: auto; left: 56px; border: 1px solid rgba(212, 175, 55, .45); border-left: 0; border-top: 0; }
+  [dir='rtl'] .lucy-hero .lucy-fig { margin-right: 0; margin-left: 8px; }
+}
+[dir='rtl'] .lucy-news .lucy-bubble::after { bottom: auto; }
