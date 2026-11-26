@@ -382,7 +382,7 @@
     "¿Cómo lo configuro?"
    ],
    "page": "/es/download",
-   "match": "StarkLLM trae su propio motor; no necesitas Docker Desktop ni WSL2"
+   "match": "StarkLLM trae su propio motor; no necesita Docker Desktop ni WSL2"
   },
   {
    "id": "smartscreen",
@@ -398,7 +398,7 @@
     "¿Debo desactivar Smart App Control?"
    ],
    "page": "/es/download",
-   "match": "Si Windows sigue avisando, comprueba el nombre del editor"
+   "match": "Si Windows sigue avisando, compruebe el nombre del editor"
   },
   {
    "id": "checksum",
@@ -453,7 +453,7 @@
     "¿Qué función tiene Docker?"
    ],
    "page": "/es/download",
-   "match": "Solo Ollama, para los modelos de IA. StarkLLM puede instalar la versión oficial por ti"
+   "match": "Solo Ollama, para los modelos de IA. StarkLLM puede instalar la versión oficial por usted"
   },
   {
    "id": "firststart",
@@ -465,7 +465,7 @@
     "¿Cuánto tiempo tarda la primera vez?"
    ],
    "page": "/es/download",
-   "match": "El primer arranque descarga los modelos de IA que aún no tengas"
+   "match": "El primer arranque descarga los modelos de IA que aún no tenga"
   },
   {
    "id": "languages",
@@ -489,7 +489,7 @@
     "¿Qué son los expedientes y los plazos?"
    ],
    "page": "/es/features",
-   "match": "Añade una carta como PDF, escaneo o foto hecha con el móvil"
+   "match": "Añada una carta como PDF, escaneo o foto hecha con el móvil"
   },
   {
    "id": "phone",
@@ -536,7 +536,7 @@
     "¿Admite proveedores de modelos en la nube?"
    ],
    "page": "/es/tech-privacy",
-   "match": "Proveedores de modelos en la nube (Settings, p. ej. DeepSeek, OpenRouter, Groq)"
+   "match": "Proveedores de modelos en la nube (Ajustes, p. ej. DeepSeek, OpenRouter, Groq)"
   },
   {
    "id": "sources",
@@ -706,8 +706,8 @@
     "¿Qué datos guardáis de los visitantes del sitio web?",
     "¿Qué datos guarda este sitio web sobre los visitantes?"
    ],
-   "page": "/es/about",
-   "match": "tampoco usa analítica, seguimiento ni cookies"
+   "page": "/es/privacy",
+   "match": "No instala cookies, no usa analítica y no carga fuentes"
   },
   {
    "id": "slow",
@@ -737,7 +737,7 @@
     "¿Puede el programa borrar mis archivos?"
    ],
    "page": "/es/features",
-   "match": "Nunca cambia el nombre de tus archivos, ni los mueve, ni los borra"
+   "match": "Nunca cambia el nombre de sus archivos, ni los mueve, ni los borra"
   },
   {
    "id": "webtasks",

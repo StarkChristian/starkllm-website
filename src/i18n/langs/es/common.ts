@@ -1,4 +1,54 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/common.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyCommon } from '../../legacy';
-export default legacyCommon('es');
+export default {
+  nav: {
+    features: 'Funciones',
+    phone: 'Teléfono',
+    privacy: 'Privacidad',
+    manual: 'Manual',
+    help: 'Ayuda',
+    about: 'Acerca de',
+    download: 'Descargar',
+    github: 'StarkLLM en GitHub',
+    menu: 'Menú',
+    language: 'Idioma',
+    theme: 'Cambiar entre modo claro y oscuro',
+  },
+  footer: {
+    tagline: 'IA privada para sus documentos, en su propio PC con Windows.',
+    product: 'Producto',
+    learn: 'Aprender',
+    project: 'Proyecto',
+    legal: 'Legal',
+    changelog: 'Versiones',
+    tech: 'Cómo funciona',
+    contact: 'Contacto',
+    github: 'Código fuente en GitHub',
+    codeSigning: 'Política de firma de código (en inglés)',
+    privacyEn: 'Política de privacidad (traducción al inglés)',
+    disclaimer: 'Se ofrece «tal cual», sin garantía ni responsabilidad. Las respuestas proceden de modelos de IA locales y pueden ser erróneas: compruebe la fuente en todo lo importante.',
+    site: 'Este sitio web no instala cookies, no usa analítica y no carga nada desde otros servidores.',
+    bottom: '© 2026 Christian Stark · Apache 2.0',
+  },
+  trust: [
+    { icon: 'shield', k: 'Firmado', v: 'por «Open Source Developer Christian Stark»' },
+    { icon: 'check', k: 'Apache 2.0', v: 'Gratuito y de código abierto' },
+    { icon: 'eyeoff', k: 'Sin telemetría', v: 'Sin analítica, sin cuenta' },
+    { icon: 'list', k: 'SBOM', v: 'Con cada versión' },
+    { icon: 'code', k: 'En GitHub', v: 'Cada línea del código fuente' },
+  ],
+  media: {
+    shotPending: 'Próximamente: captura de StarkLLM 2.6.0',
+    videoPending: 'Próximamente: vídeo de StarkLLM 2.6.0',
+    pause: 'Pausar el vídeo',
+    play: 'Reproducir el vídeo',
+    demo: 'Datos de demostración con nombres y cifras inventados.',
+  },
+  cta: {
+    h2: 'Pruébelo con sus propios documentos.',
+    text: 'Gratuito para uso personal, de investigación y comercial. Windows 10 y 11, 64 bits.',
+    btn: 'Descargar para Windows',
+    alt: 'Leer el manual',
+  },
+  limits: 'Límites',
+  onThisPage: 'En esta página',
+  more: 'Más información',
+};

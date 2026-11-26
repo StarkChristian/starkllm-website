@@ -1,4 +1,85 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/privacy.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyPrivacy } from '../../legacy';
-export default legacyPrivacy('es');
+export default {
+  meta: {
+    title: 'Privacidad: lo que se queda en su PC | StarkLLM',
+    description: 'Lo que nunca sale de su PC, cada conexión que StarkLLM puede establecer y cuándo, la protección de los datos guardados, las compilaciones firmadas, una lista de materiales de software y cómo comprobarlo todo usted mismo.',
+  },
+  hero: {
+    eyebrow: 'Privacidad',
+    h1: 'Privado por diseño. Comprobable por usted.',
+    lede: 'StarkLLM está hecho para que sus documentos nunca necesiten la nube. Lo que se conecta a internet lo decide usted, puede ver cada conexión y no tiene que fiarse de nuestra palabra.',
+  },
+  stays: {
+    h2: 'Lo que nunca sale de su PC',
+    lede: 'Esto se queda en su propio disco y en su propio procesador o tarjeta gráfica, active lo que active.',
+    items: [
+      { icon: 'doc', title: 'Sus documentos', text: 'Cartas, contratos, libros, escaneos, fotos y grabaciones, y el texto extraído de ellos.' },
+      { icon: 'chat', title: 'Sus chats', text: 'Preguntas, respuestas y sus fuentes, salvo que usted mismo elija un modelo en la nube.' },
+      { icon: 'search', title: 'El índice de búsqueda', text: 'Los pasajes y vectores de cada documento, y los resúmenes de los documentos grandes.' },
+      { icon: 'pc', title: 'Los modelos de IA', text: 'Se ejecutan en su PC mediante Ollama. Tras la primera descarga, StarkLLM funciona sin internet.' },
+      { icon: 'inbox', title: 'Bandeja de entrada y plazos', text: 'Remitentes, importes, cuentas y fechas se encuentran mediante reglas en su PC.' },
+      { icon: 'eyeoff', title: 'Nada sobre usted', text: 'Sin telemetría, sin informes de errores, sin estadísticas de uso, sin publicidad, sin cuenta en ningún servidor.' },
+    ],
+  },
+  online: {
+    h2: 'Lo que se conecta a internet, y cuándo',
+    lede: 'Cada conexión que StarkLLM puede establecer, como en Ajustes › Privacidad y red. Cada una está desactivada hasta que usted la activa o la inicia, o se produce una sola vez para una descarga que usted pidió.',
+    cols: ['Conexión', 'Destino', 'Cuándo', 'En una instalación nueva'],
+    rows: [
+      { what: 'Comprobación de actualizaciones', host: 'api.github.com', when: 'Al iniciar, si usted lo aceptó en el primer arranque', def: 'Desactivada hasta que usted acepta' },
+      { what: 'Descarga de la actualización', host: 'github.com', when: 'Solo tras «Descargar e instalar»', def: 'Desactivada' },
+      { what: 'Modelos de IA', host: 'registry.ollama.ai (a través de Ollama)', when: 'Primer arranque, para los modelos que falten', def: 'Cuando hace falta' },
+      { what: 'Instalador de Ollama', host: 'ollama.com', when: 'Solo tras «Instalar Ollama por mí»', def: 'Desactivado' },
+      { what: 'Búsqueda web', host: 'DuckDuckGo; si no responde: Startpage, Mojeek, Wikipedia', when: 'En cada pregunta, con el botón Búsqueda web activado', def: 'Desactivada' },
+      { what: 'Tareas web', host: 'Los sitios de la tarea que usted escribió', when: 'Solo para una tarea web que usted inicia', def: 'Desactivadas' },
+      { what: 'Importaciones desde la web', host: 'La dirección que usted introduce, YouTube, GitHub', when: 'Solo tras «+ URL web», «+ Video de YouTube» o «+ Repositorio de GitHub»', def: 'Desactivadas' },
+      { what: 'Proveedores de modelos en la nube', host: 'El proveedor que usted introduce (por ejemplo OpenAI, DeepSeek, OpenRouter, Groq)', when: 'Cada chat mientras esté seleccionado ese proveedor; el chat muestra una etiqueta', def: 'Desactivados' },
+      { what: 'Modelos en la nube de Ollama', host: 'ollama.com (a través de Ollama)', when: 'Solo si elige un modelo cuyo nombre termina en «cloud»', def: 'Desactivados' },
+      { what: 'Cotizaciones de mercado', host: 'Yahoo Finance, CoinGecko', when: 'Solo después de activar el widget', def: 'Desactivadas' },
+      { what: 'Modelos de voz', host: 'huggingface.co', when: 'Primer uso de la entrada de voz o de una grabación', def: 'Desactivados hasta su uso' },
+      { what: 'Idiomas de reconocimiento de texto', host: 'github.com', when: 'Solo tras «Descargar» en Ajustes', def: 'Desactivados' },
+      { what: 'Teléfono en casa', host: 'Entrante, desde un teléfono vinculado en la red de su casa', when: 'Después de activar la conexión con el teléfono y vincular un teléfono', def: 'Desactivado' },
+      { what: 'Teléfono fuera de casa', host: 'relay.starkllm.com (cifrado desde el teléfono hasta su PC)', when: 'Solo para los teléfonos que usted permitió fuera de casa', def: 'Desactivado' },
+    ],
+    note: 'Los comandos que usted permite en el Terminal y los servidores de herramientas que añade se ejecutan como sus propios programas: no aparecen en la lista, y a qué se conectan depende de ellos. Ollama y Windows tienen sus propias comprobaciones de actualizaciones, que StarkLLM no controla.',
+  },
+  offline: {
+    h2: 'Un solo interruptor: totalmente sin conexión',
+    text: '«Totalmente sin conexión», en Ajustes › Privacidad y red, rechaza todas las funciones en línea, cierra la conexión con su teléfono y con el relé y no descarga nada, ni siquiera una actualización. Sus documentos, la bandeja de entrada y los modelos locales siguen funcionando. El primer arranque pregunta una vez si desea seguir en línea o quedarse totalmente sin conexión.',
+  },
+  atRest: {
+    h2: 'Protección de los datos guardados',
+    lede: 'Opcional, en Ajustes › Protección: para un portátil perdido, otro usuario del mismo PC o una copia de seguridad en una carpeta en la nube.',
+    items: [
+      { k: 'Cifrado en el disco', v: 'Los documentos, los chats, los nombres y los títulos se cifran en el disco, y el índice de búsqueda también se puede bloquear. La clave está vinculada a su cuenta de Windows.' },
+      { k: 'Frase de contraseña de inicio', v: 'Una frase de contraseña opcional con una clave de recuperación. La frase de contraseña nunca se guarda.' },
+      { k: 'Copia de seguridad cifrada', v: 'Un único archivo de copia de seguridad que puede guardar en cualquier sitio, también en una carpeta en la nube; sin la frase de contraseña es puro ruido. Una copia de seguridad automática semanal conserva varias copias.' },
+    ],
+    limits: 'No protege contra un software malicioso que se ejecute con su usuario mientras StarkLLM está abierto. Se sigue recomendando BitLocker: cubre también los programas y los modelos.',
+  },
+  signed: {
+    h2: 'Compilaciones firmadas',
+    text: 'Desde la 2.1.2, el instalador, StarkLLM.exe, el desinstalador y los archivos de programa del motor están firmados con un certificado de Certum emitido a nombre de «Open Source Developer Christian Stark». El actualizador integrado solo instala actualizaciones firmadas con este nombre.',
+    link: 'Política de firma de código',
+  },
+  sbom: {
+    h2: 'Una lista de materiales para cada versión',
+    text: 'Cada versión en GitHub incluye una lista de materiales de software (SBOM, CycloneDX) de la aplicación y del motor: la lista de todas las bibliotecas que contienen, con su versión.',
+    link: 'Versiones en GitHub',
+  },
+  check: {
+    h2: 'Compruébelo usted mismo',
+    lede: 'No tiene que fiarse de las pantallas de StarkLLM. Active «Totalmente sin conexión», use la aplicación y observe.',
+    steps: [
+      { t: 'Monitor de recursos', v: 'Win + R, «resmon», pestaña Red. Con «Totalmente sin conexión» activado, StarkLLM.exe, python.exe y ollama.exe solo deberían comunicarse con 127.0.0.1.' },
+      { t: 'PowerShell', v: 'Enumere todas las conexiones abiertas que no van a este PC, con el programa que las estableció:' },
+      { t: 'Wireshark', v: 'La comprobación más rigurosa: capture en su adaptador de red y filtre el tráfico local. Después active la búsqueda web y vea aparecer DuckDuckGo; así sabe que la comprobación funciona.' },
+    ],
+    code: "Get-NetTCPConnection -State Established |\n  Where-Object { $_.RemoteAddress -notin '127.0.0.1','::1' } |\n  ForEach-Object { $p = Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue\n    [pscustomobject]@{ Process = $p.ProcessName; Remote = \"$($_.RemoteAddress):$($_.RemotePort)\" } } |\n  Sort-Object Process, Remote | Format-Table -AutoSize",
+    link: 'La guía completa en GitHub',
+  },
+  site: {
+    h2: '¿Y este sitio web?',
+    text: 'No instala cookies, no usa analítica y no carga fuentes, scripts ni vídeos de otros servidores. Lucy, la asistente de estas páginas, responde en su navegador; sus preguntas no se envían a ningún sitio.',
+    link: 'Política de privacidad de este sitio web',
+  },
+};

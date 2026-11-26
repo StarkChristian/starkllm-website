@@ -19,7 +19,7 @@ export default {
     privacy: 'Política de privacidad (Datenschutz, en alemán)',
     legalPage: 'Información legal',
     aiNote: {
-      text: 'Traducido con ayuda de IA; si encuentras algún error, cuéntanoslo.',
+      text: 'Traducido con ayuda de IA; si encuentra algún error, díganoslo.',
       issues: 'Incidencias en GitHub',
       contact: 'Contacto',
     },

@@ -218,14 +218,14 @@
 
             <section id="workspaces">
                 <h2>10. Crear un Workspace</h2>
-                <p>Los Workspaces (espacios de trabajo) aíslan tus datos. En la barra lateral izquierda, haz clic en «New Workspace» (nuevo Workspace) para crear un contexto nuevo.
+                <p>Los Workspaces (espacios de trabajo) aíslan tus datos. En la barra lateral izquierda, haz clic en «Nuevo espacio de trabajo» para crear un contexto nuevo.
                     Por ejemplo, puedes crear un Workspace «Revisión legal» y otro aparte, «Estudio de mercado».
                     Los documentos y los chats de un Workspace no pueden contaminar los de otro.</p>
             </section>
 
             <section id="documents">
                 <h2>11. Subir documentos y buenas prácticas</h2>
-                <p>Dentro de un Workspace, haz clic en el botón «Upload Document» (subir documento) o arrastra y suelta los archivos compatibles (documentos como PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, registros e imágenes de hasta 100 MB, y grabaciones como MP3, M4A, WAV o el sonido de un vídeo de hasta 500 MB) en la zona indicada. StarkLLM procesa el documento en
+                <p>Dentro de un Workspace, haz clic en el botón «Subir archivos» o arrastra y suelta los archivos compatibles (documentos como PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, registros e imágenes de hasta 100 MB, y grabaciones como MP3, M4A, WAV o el sonido de un vídeo de hasta 500 MB) en la zona indicada. StarkLLM procesa el documento en
                     segundo plano: extrae el texto, genera fragmentos semánticos e incrusta los vectores en la ChromaDB local.
                 </p>
 
@@ -239,13 +239,13 @@
 
             <section id="inbox">
                 <h2>12. Bandeja de entrada, expedientes y plazos</h2>
-                <p>Añade una carta como PDF, escaneo o foto hecha con el móvil (arrástrala a la ventana o usa <em>Add a letter or document</em> en la página de inicio). StarkLLM la lee en tu PC y la muestra en <strong>Inbox</strong> (la bandeja de entrada). No se cambia el nombre de nada, ni se mueve, ni se borra en tu disco; StarkLLM solo te hace sugerencias.</p>
+                <p>Añade una carta como PDF, escaneo o foto hecha con el móvil (arrástrala a la ventana o usa <em>Añadir una carta o un documento</em> en la página de inicio). StarkLLM la lee en tu PC y la muestra en la <strong>Bandeja de entrada</strong>. No se cambia el nombre de nada, ni se mueve, ni se borra en tu disco; StarkLLM solo te hace sugerencias.</p>
                 <ul>
                     <li><strong>Qué lee:</strong> el tipo de carta (factura, reclamación de pago, notificación de Hacienda, contrato, multa, reclamación de deuda, mensaje de texto y más), el remitente, la fecha de la carta, los números de referencia (de cliente, de contrato, fiscal y más), los importes, las cuentas bancarias y los plazos.</li>
                     <li><strong>Cada valor tiene su fuente:</strong> cada valor se encuentra literalmente en una página de la carta. Haz clic en él y la carta se abre en esa página con la línea marcada.</li>
                     <li><strong>Expedientes:</strong> las cartas de un mismo remitente se agrupan, con el expediente del plazo más cercano en primer lugar. Se marca la misma carta como foto y como PDF, y también una carta sustituida y una posible estafa.</li>
-                    <li><strong>Nuevas y resueltas:</strong> el número de cartas nuevas aparece junto a <em>Inbox</em>. Marca una carta como resuelta cuando te hayas ocupado de ella, o ponle tu propio título. Las notas, las hojas de cálculo, los registros y las descripciones de fotos no se tratan como cartas.</li>
-                    <li><strong>Plazos en la página de inicio:</strong> la página de inicio enumera los plazos, las citas y las fechas de pago encontrados en tus cartas, con el importe y la página. <em>Add to calendar</em> (añadir al calendario) los guarda como archivo de calendario.</li>
+                    <li><strong>Nuevas y resueltas:</strong> el número de cartas nuevas aparece junto a <em>Bandeja de entrada</em>. Marca una carta como resuelta cuando te hayas ocupado de ella, o ponle tu propio título. Las notas, las hojas de cálculo, los registros y las descripciones de fotos no se tratan como cartas.</li>
+                    <li><strong>Plazos en la página de inicio:</strong> la página de inicio enumera los plazos, las citas y las fechas de pago encontrados en tus cartas, con el importe y la página. <em>Añadir al calendario</em> los guarda como archivo de calendario.</li>
                 </ul>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-inbox.webp?v=10" alt="Bandeja de entrada de StarkLLM, que agrupa las cartas en expedientes por remitente, con el siguiente plazo y una marca de &quot;sospechosa&quot; en una carta (interfaz en inglés)" class="showcase-img zoomable-img">
@@ -261,7 +261,7 @@
 
             <section id="warnings">
                 <h2>13. Avisos de cartas falsas</h2>
-                <p>Antes de que el modelo vea los pasajes de una carta, StarkLLM los comprueba con reglas fijas. Aparece un recuadro rojo sobre la respuesta, y una marca <em>Possible scam</em> (posible estafa) en la bandeja de entrada, cuando una carta:</p>
+                <p>Antes de que el modelo vea los pasajes de una carta, StarkLLM los comprueba con reglas fijas. Aparece un recuadro rojo sobre la respuesta, y una marca <em>Posible estafa</em> en la bandeja de entrada, cuando una carta:</p>
                 <ul>
                     <li>pide un pago a una cuenta extranjera (por ejemplo de una autoridad), con un vale, una tarjeta regalo o criptomonedas, o a través de un enlace;</li>
                     <li>combina varias señales típicas de estafa, como una presión de tiempo extrema, amenazas de detención o la petición de mantenerlo en secreto;</li>
@@ -298,7 +298,7 @@
                 </div>
 
                 <h3>Cómo añadir una carpeta a la Knowledge Base</h3>
-                <p>En la aplicación, abre <strong>Knowledge Base</strong> en la barra lateral. Pon los documentos en tu carpeta de la Knowledge Base (la ruta aparece en <em>Your knowledge base folder</em>; <strong>Copy Path</strong> la copia) o haz clic en <strong>Add Folder</strong> (Añadir carpeta) para añadir otra carpeta de este PC. StarkLLM lee por sí solo los archivos nuevos y modificados; <strong>Sync Now</strong> (Sincronizar ahora) lo hace al momento. No necesitas un terminal para esto.</p>
+                <p>En la aplicación, abre <strong>Base de conocimiento</strong> en la barra lateral. Pon los documentos en tu carpeta de la Knowledge Base (la ruta aparece en <em>Su carpeta de la base de conocimiento</em>; <strong>Copiar ruta</strong> la copia) o haz clic en <strong>Añadir carpeta</strong> para añadir otra carpeta de este PC. StarkLLM lee por sí solo los archivos nuevos y modificados; <strong>Sincronizar ahora</strong> lo hace al momento. No necesitas un terminal para esto.</p>
 
                 <div class="alert info">
                     <h4>Orientación sobre la Knowledge Base</h4>
@@ -379,8 +379,8 @@
                 <p>StarkLLM exige una confirmación manual para cada ejecución de una herramienta. Cuando el modelo invoca una herramienta:</p>
                 <ol>
                     <li>Aparece en el flujo del chat una tarjeta de confirmación con el nombre de la herramienta y sus argumentos.</li>
-                    <li>Puedes revisar los argumentos, hacer clic en los campos de parámetros para ajustar valores (p. ej. afinar una consulta de búsqueda o aumentar <code>top_k</code>) y hacer clic en <strong>Approve &amp; Execute</strong> (aprobar y ejecutar).</li>
-                    <li>Si prefieres que el modelo continúe sin ejecutar la herramienta, haz clic en <strong>Reject</strong> (rechazar). El token de la llamada pendiente se cancela y tu sesión de chat continúa sin interrupciones.</li>
+                    <li>Puedes revisar los argumentos, hacer clic en los campos de parámetros para ajustar valores (p. ej. afinar una consulta de búsqueda o aumentar <code>top_k</code>) y hacer clic en <strong>Confirmar y ejecutar</strong>.</li>
+                    <li>Si prefieres que el modelo continúe sin ejecutar la herramienta, haz clic en <strong>Cancelar</strong>. El token de la llamada pendiente se cancela y tu sesión de chat continúa sin interrupciones.</li>
                 </ol>
 
                 <div class="alert info">
@@ -394,7 +394,7 @@
 
             <section id="other-apps">
                 <h2>20. Usar StarkLLM desde otros programas</h2>
-                <p>En <strong>Settings &rarr; Other apps</strong> (Ajustes, Otras aplicaciones) puedes dejar que programas de este PC usen StarkLLM: editores como VS Code y Cursor, asistentes de IA compatibles con MCP o tus propios scripts. Pueden buscar en tus documentos y hacerles preguntas. No pueden modificar ni borrar nada.</p>
+                <p>En <strong>Ajustes &rarr; Otras aplicaciones</strong> puedes dejar que programas de este PC usen StarkLLM: editores como VS Code y Cursor, asistentes de IA compatibles con MCP o tus propios scripts. Pueden buscar en tus documentos y hacerles preguntas. No pueden modificar ni borrar nada.</p>
                 <ul>
                     <li><strong>Desactivado por defecto.</strong> Solo pueden conectarse los programas de este PC, y cada uno necesita una clave que creas en esa página.</li>
                     <li><strong>Dos vías de acceso:</strong> un servidor MCP y una API compatible con OpenAI (<code>/v1</code>). Si ya usabas antes la API <code>/v1</code>, ahora necesita una clave.</li>
@@ -424,7 +424,7 @@
                 <p>Puedes cambiar de tema de dos maneras:</p>
                 <ul>
                     <li><strong>Selector rápido:</strong> Haz clic en el icono de la paleta (&#127912;) en la parte inferior de la barra lateral izquierda. Se abre al instante un cuadro emergente; haz clic en cualquier tema para aplicarlo de inmediato.</li>
-                    <li><strong>Galería de ajustes:</strong> Abre Settings desde la barra lateral, ve a <strong>Appearance</strong> y explora todas las tarjetas de temas, con puntos de muestra en vivo, barras de degradado y descripciones.</li>
+                    <li><strong>Galería de ajustes:</strong> Abre Ajustes desde la barra lateral, ve a <strong>Apariencia</strong> y explora todas las tarjetas de temas, con puntos de muestra en vivo, barras de degradado y descripciones.</li>
                 </ul>
                 <p>Tu tema activo se recuerda automáticamente entre pestañas del navegador y reinicios del sistema mediante el almacenamiento del lado del cliente.</p>
             </section>

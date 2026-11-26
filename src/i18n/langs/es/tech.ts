@@ -95,7 +95,7 @@ const pages = {
         'Búsqueda web (interruptor en el chat): su pregunta va a DuckDuckGo; solo si no responde, a Startpage, después a Mojeek y, como último recurso, a la búsqueda pública de Wikipedia. De uno en uno.',
         'Teléfono fuera de casa (Ajustes › Teléfono, por teléfono, desactivado por defecto): el PC mantiene una conexión con el relé de StarkLLM (relay.starkllm.com). El relé solo pasa bytes cifrados; las preguntas, respuestas y documentos siguen cifrados del teléfono al PC.',
         'Tareas web (interruptor «Tarea web» en el chat): StarkLLM abre los sitios web de la tarea en su propia ventana; esos sitios reciben su dirección IP y lo que la tarea introduce en ellos.',
-        'Proveedores de modelos en la nube (Settings, p. ej. DeepSeek, OpenRouter, Groq): tu pregunta y los pasajes encontrados van a ese proveedor.',
+        'Proveedores de modelos en la nube (Ajustes, p. ej. DeepSeek, OpenRouter, Groq): tu pregunta y los pasajes encontrados van a ese proveedor.',
         'Importación desde la web (página web, YouTube, GitHub): la aplicación descarga la página, la transcripción o el repositorio indicado.',
         'Modelos en la nube de Ollama (nombres que terminan en «:cloud»): su pregunta y los pasajes encontrados van a los servidores de Ollama.',
         'Paquetes de idioma para OCR (Ajustes › Lectura de fotos y escaneos): se descarga un archivo de idioma desde GitHub.',
@@ -133,12 +133,12 @@ const pages = {
   },
   'tech-themes': {
     title: 'Temas | StarkLLM', eyebrow: 'Apariencia',
-    shot: 'appearance', shotAlt: 'Ajustes de StarkLLM, Appearance: la galería de temas (interfaz en inglés)',
+    shot: 'appearance', shotAlt: 'Ajustes de StarkLLM, Apariencia: la galería de temas (interfaz en inglés)',
     h1: 'Temas', lede: 'Trece temas de color, desde el negro puro para pantallas OLED hasta temas claros y temas con motivos.',
     sections: [
       { h: es.what, p: 'StarkLLM tiene trece temas: Midnight Indigo (el predeterminado), OLED Pitch Black, Liquid Glass, Cyberpunk Rose, Matrix Emerald, Sunset Volcano, Arctic Frost y Daylight Minimal, más cinco temas con motivos: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code y Starry Night.' },
       { h: es.why, p: 'Las sesiones largas cansan menos la vista cuando el contraste y el brillo se adaptan a tu pantalla y a tu habitación.' },
-      { h: es.how, p: 'Cambia el tema con el botón de la paleta, al final de la barra lateral, o en Settings, Appearance. La elección se guarda y se aplica de inmediato.' },
+      { h: es.how, p: 'Cambia el tema con el botón de la paleta, al final de la barra lateral, o en Ajustes › Apariencia. La elección se guarda y se aplica de inmediato.' },
     ],
   },
 };

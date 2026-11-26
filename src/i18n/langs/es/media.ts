@@ -1,4 +1,27 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/media.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyMedia } from '../../legacy';
-export default legacyMedia('es');
+export default {
+  shots: {
+    '01-home': 'Página de inicio de StarkLLM: los próximos plazos y fechas de pago encontrados en cartas, cada uno con su importe y su página, y los documentos más recientes',
+    '02-inbox': 'Bandeja de entrada de StarkLLM: cartas agrupadas en un expediente por remitente, el plazo más próximo primero, y una carta marcada como posible estafa',
+    '03-chat-sources': 'Chat de StarkLLM: una pregunta sobre una carta se responde con el importe y la fecha de vencimiento, con las fuentes debajo de la respuesta',
+    '04-source-page': 'Una fuente abierta en su página, con el pasaje en el que se basa la respuesta resaltado',
+    '05-scam-warning': 'Un aviso rojo sobre una respuesta: la carta pide el pago con un vale y a través de un enlace, y contiene una nota oculta para asistentes de IA',
+    '06-book-summary': 'Una respuesta sobre un libro entero, elaborada a partir de los resúmenes de los capítulos, con las páginas que abarca',
+    '07-image-question': 'Una pregunta sobre una captura de pantalla pegada, respondida por un modelo de visión en el PC',
+    '08-recording': 'La grabación de una reunión transcrita como documento con marcas de tiempo, y una pregunta sobre ella',
+    '09-web-task': 'Una tarea web en la ventana de navegador de StarkLLM con su barra de direcciones y los pasos enumerados junto a la página',
+    '10-terminal': 'Terminal en una carpeta de proyecto: un cambio en un archivo se muestra antes de hacerlo, con botones para permitirlo o no',
+    '11-compare-models': 'Comparar modelos: la misma pregunta respondida por dos modelos locales, uno al lado del otro',
+    '12-settings-phone': 'Ajustes, Teléfono: un teléfono Android vinculado con el interruptor «También fuera de casa (a través del relé)»',
+    '13-privacy-network': 'Ajustes, Privacidad y red: la lista de todas las conexiones con hora, servidor y finalidad, y el interruptor «Totalmente sin conexión»',
+    '14-themes': 'Ajustes, Apariencia: la galería de temas, uno claro y uno oscuro',
+    '15-settings-models': 'Ajustes, Modelos: el modelo de chat, el modelo de embedding y el modelo de visión de este PC',
+    'phone-01-chat': 'La app StarkLLM para Android: una respuesta del PC con sus fuentes',
+  },
+  videos: {
+    'v1-letter-answer': { title: 'Una carta, una pregunta, una respuesta con su fuente', caption: 'Se añade una carta. La respuesta indica el importe y la fecha, y un clic en la fuente abre la página.' },
+    'v2-web-task': { title: 'Una tarea web', caption: 'StarkLLM abre un sitio en su propia ventana de navegador, lo recorre con clics y responde con el enlace.' },
+    'v3-terminal': { title: 'Terminal: ayuda con código', caption: 'Un cambio se muestra primero, se ejecuta tras un sí, y «Deshacer los cambios de archivos» lo revierte.' },
+    'v4-inbox': { title: 'La bandeja de entrada', caption: 'Las cartas se convierten en expedientes por remitente, con plazos, importes y la página de la que procede cada dato.' },
+    'v5-privacy': { title: 'Privacidad y red', caption: 'Cada conexión aparece en la lista, y un solo interruptor deja StarkLLM totalmente sin conexión.' },
+  },
+};
