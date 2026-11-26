@@ -119,3 +119,5 @@
   --tracking-tight: 0;
 }
 :root:is(:lang(ar), :lang(fa)) :is(h1, h2, h3, h4, .brand, .eyebrow) { letter-spacing: 0; }
+/* the mono font has no Arabic, Persian, Chinese or Japanese letters: mixed fonts broke words ("پیشنما یش") */
+:root:is(:lang(ar), :lang(fa), :lang(zh), :lang(ja)) .eyebrow { font-family: inherit; }
