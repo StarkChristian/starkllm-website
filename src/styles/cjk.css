@@ -1,0 +1,34 @@
+/* Simplified Chinese (zh) and Japanese (ja).
+   Fonts: no web font download for CJK (a CJK font is several MB); the system fonts of Windows, macOS and Linux are used.
+   Geist stays first, so Latin letters and digits look the same as on the other languages (its files cover Latin only,
+   so CJK characters fall through to the next family). */
+html:lang(zh) {
+  --font-sans: 'Geist', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC', monospace;
+}
+html:lang(ja) {
+  --font-sans: 'Geist', 'Yu Gothic UI', 'Meiryo', 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, 'Yu Gothic UI', 'Meiryo', 'Hiragino Sans', 'Noto Sans CJK JP', monospace;
+}
+
+/* Text: CJK needs more line height; strict line breaking keeps small kana and closing punctuation off the start of a
+   line; Latin words and version numbers inside CJK text never break (word-break: normal). */
+html:is(:lang(zh), :lang(ja)) {
+  --lh-body: 1.8;
+  --lh-snug: 1.35;
+  --lh-tight: 1.22;
+  --tracking-tight: 0;
+  line-break: strict;
+  word-break: normal;
+}
+:is(:lang(zh), :lang(ja)) :is(h1, h2, h3, h4) { hyphens: manual; letter-spacing: 0; }
+:is(:lang(zh), :lang(ja)) h2 { line-height: var(--lh-snug); }
+/* Headlines break at phrase boundaries where the browser can (Chrome 119+), otherwise balanced lines. */
+:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
+:is(:lang(zh), :lang(ja)) :is(.eyebrow, .tag, .badge) { letter-spacing: 0.02em; }
+/* No italics for CJK: browsers fake them by slanting the glyphs. */
+:is(:lang(zh), :lang(ja)) :is(em, i, cite) { font-style: normal; }
+:lang(zh) em { font-weight: 620; }
+:lang(ja) em { font-weight: 620; }
+/* English text inside a CJK page (the release notes on the changelog) keeps the Latin rhythm. */
+:is(:lang(zh), :lang(ja)) [lang='en'] { line-break: auto; --tracking-tight: -0.035em; }

@@ -21,7 +21,9 @@ const VOID = new Set(['img', 'br', 'hr', 'input', 'meta', 'link', 'source', 'pat
 const BLOCK = new Set(['p', 'li', 'div', 'section', 'article', 'header', 'footer', 'tr', 'td', 'th', 'summary', 'details', 'figcaption', 'figure', 'ul', 'ol', 'dt', 'dd', 'blockquote', 'table', 'br', 'main', 'aside', 'nav', 'dl', 'tbody', 'thead', 'label']);
 const SKIP_TAGS = new Set(['script', 'style', 'template', 'svg', 'pre', 'noscript', 'canvas', 'button', 'select', 'textarea']);
 
-const clean = (s) => decode(s).replace(/\s+/g, ' ').replace(/ ([.,;:!?)\]])/g, '$1').replace(/([(\[]) /g, '$1').trim();
+// Tags inside a Chinese or Japanese sentence leave a space between two characters; it is dropped (no effect on other text).
+const CJK_GAP = /([\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー、。，：；！？（）「」『』“”]) (?=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー、。，：；！？（）「」『』“”])/gu;
+const clean = (s) => decode(s).replace(/\s+/g, ' ').replace(/ ([.,;:!?)\]])/g, '$1').replace(/([(\[]) /g, '$1').replace(CJK_GAP, '$1').trim();
 const attr = (a, n) => { const m = a.match(new RegExp(`\\b${n}\\s*=\\s*("([^"]*)"|'([^']*)')`, 'i')); return m ? (m[2] ?? m[3]) : null; };
 
 /** One built page -> {title, lang, blocks:[{h,id,t}]} */
@@ -70,7 +72,7 @@ export function extractPage(html) {
   return { title, lang, blocks };
 }
 
-const sentenceEnd = (t) => /[.!?:;…)"”»]$/.test(t);
+const sentenceEnd = (t) => /[.!?:;…)"”»。！？：；）」』]$/.test(t);
 /** Merge consecutive blocks of one heading into passages of about 450 characters. */
 export function chunk(blocks) {
   const out = [];
@@ -79,7 +81,7 @@ export function chunk(blocks) {
   for (const b of blocks) {
     if (b.heading) { push(); continue; }
     let t = b.t; if (!sentenceEnd(t)) t += '.';
-    const sentences = t.length > 700 ? t.split(/(?<=[.!?…])\s+/) : [t];
+    const sentences = t.length > 700 ? t.split(/(?<=[.!?…])\s+|(?<=[。！？])/) : [t];
     if (b.sum) push();
     for (const s of sentences) {
       if (cur && (cur.h !== b.h || cur.id !== b.id || (!cur.open && cur.t.length + s.length > 520))) push();
@@ -92,7 +94,8 @@ export function chunk(blocks) {
   return out;
 }
 
-const norm = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '');
+// CJK characters are kept: the a-z0-9 form of a Chinese or Japanese phrase would be empty and match any passage.
+const norm = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').normalize('NFC').replace(/[^a-z0-9\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]+/gu, '');
 
 function walk(dir, out = []) {
   for (const n of readdirSync(dir)) { const p = join(dir, n); statSync(p).isDirectory() ? walk(p, out) : n.endsWith('.html') && out.push(p); }

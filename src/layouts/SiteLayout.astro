@@ -3,11 +3,12 @@ import '../styles/fonts.css';
 import '../styles/tokens.css';
 import '../styles/base.css';
 import '../styles/components.css';
+import '../styles/cjk.css';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import LucyGuide from '../components/LucyGuide.astro';
 import { lucyProfile, lucyLangFor } from '../i18n/lucy';
-import { alternatesFor, absoluteUrl, languages, ui, SITE, type Lang } from '../i18n/ui';
+import { alternatesFor, absoluteUrl, languages, langTag, ui, SITE, type Lang } from '../i18n/ui';
 import { ogPathFor } from '../lib/pagemeta';
 
 interface Props {
@@ -44,7 +45,7 @@ const speculation = JSON.stringify({
 });
 ---
 <!doctype html>
-<html lang={contentLang ?? lang}>
+<html lang={contentLang ?? langTag(lang)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

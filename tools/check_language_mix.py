@@ -20,7 +20,11 @@ _count = {w: sum(w in l for l in STOP.values()) for w in _all}
 STOP = {k: [w for w in v if _count[w] == 1] for k, v in STOP.items()}
 ap = argparse.ArgumentParser(); ap.add_argument("--root", default="dist"); ap.add_argument("--max", type=float, default=0.025)
 a = ap.parse_args(); root = pathlib.Path(a.root)
-LANGS = {"de", "es", "fr", "it", "tr"}
+LANGS = {"de", "es", "fr", "it", "tr", "zh", "ja"}
+CJK_LANGS = {"zh", "ja"}
+HAN = re.compile(r"[㐀-䶿一-鿿豈-﫿]")
+KANA = re.compile(r"[぀-ゟ゠-ヿㇰ-ㇿｦ-ﾟ]")
+CJK = re.compile(r"[぀-ヿㇰ-ㇿ㐀-䶿一-鿿豈-﫿ｦ-ﾟ]+")
 SINGLE = {"impressum": "de", "datenschutz": "de", "privacy-policy": "en", "404": "en"}
 
 def visible(h):
@@ -31,8 +35,19 @@ bad = 0
 for f in sorted(root.rglob("*.html")):
     rel = f.relative_to(root).as_posix()[:-5]
     lang = SINGLE.get(rel) or (rel.split("/")[0] if rel.split("/")[0] in LANGS else "en")
-    words = re.findall(r"[^\W\d_]+", visible(f.read_text(encoding="utf-8")).lower())
-    n = max(1, len(words))
+    text = visible(f.read_text(encoding="utf-8"))
+    # Chinese and Japanese have no spaces: every Han or kana character counts as one word, and the script tells them
+    # apart (Japanese text has kana, Chinese text has none). Latin words are counted as before.
+    han, kana = len(HAN.findall(text)), len(KANA.findall(text))
+    words = re.findall(r"[^\W\d_]+", CJK.sub(" ", text).lower())
+    n = max(1, len(words) + han + kana)
+    if lang in CJK_LANGS:
+        if lang == "zh" and kana / n > a.max and kana > 8:
+            print(f"{rel}: {kana} Japanese kana in a zh page ({kana / n:.1%})"); bad += 1
+        if lang == "ja" and han + kana > 200 and kana < 0.15 * (han + kana):
+            print(f"{rel}: only {kana} kana among {han + kana} CJK characters, Chinese text in a ja page?"); bad += 1
+    elif (han + kana) / n > a.max and han + kana > 20:
+        print(f"{rel}: {han + kana} Chinese/Japanese characters in a {lang} page ({(han + kana) / n:.1%})"); bad += 1
     for other, lst in STOP.items():
         if other == lang: continue
         hits = sum(1 for w in words if w in lst)

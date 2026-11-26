@@ -1,0 +1,68 @@
+<main class="container">
+        <div class="page-header text-center">
+            <h1><span class="text-gradient">联系与社区</span></h1>
+            <p>联系维护者、报告问题，或为本地优先的AI开发贡献力量。</p>
+        </div>
+
+        <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="feature-card">
+                <h3>直接发送电子邮件咨询</h3>
+                <p>适用于有关软件架构、研究合作、合作机会的问题，或对本地AI性能的反馈。</p>
+                <p><strong>电子邮件：</strong><a href="mailto:info@starkllm.com">info@starkllm.com</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">通常在工作日24–48小时内回复。</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>开源代码仓库</h3>
+                <p>StarkLLM完全公开透明，托管在GitHub上。您可以提交错误报告、提出功能请求或查看源代码。</p>
+                <p><strong>代码仓库：</strong><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">github.com/StarkChristian/StarkLLM</a></p>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">问题跟踪和讨论区向所有人开放。</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>维护者所在地</h3>
+                <p>由Christian Stark在Homomorphic Privacy研究计划下维护。</p>
+                <p>
+                    <strong>地址：</strong><br>
+                    Maxstr. 14<br>
+                    52070 Aachen<br>
+                    德国（Deutschland）
+                </p>
+            </div>
+        </div>
+
+        <div class="content-block" style="max-width: 900px; margin: 0 auto 3rem auto;">
+            <h2>如何获得帮助</h2>
+            <p>根据您需要帮助的内容，以下是找到合适资源的最有效途径：</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>安装或设置问题：</strong>请先查看<a href="/zh/help">帮助与故障排除</a>。那里有一份安装检查清单，每一步都有检查方法，还有最常见问题（Ollama、模型、端口、Windows安全警告）的解决办法。<a href="/zh/manual">用户手册</a>介绍应用本身。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>错误报告：</strong>如果您在导入文档时遇到应用崩溃或意外错误，请在<a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">GitHub Issues</a>上提交问题，并附上系统配置和可复现的步骤。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>负责任地披露安全问题：</strong>如果您发现了潜在的本地安全漏洞，请在公开披露之前，先直接发送电子邮件至<a href="mailto:info@starkllm.com">info@starkllm.com</a>，主题以<code>[Security]</code>开头。
+                </li>
+                <li style="margin-bottom: 0.75rem;">
+                    <strong>硬件与模型规模：</strong>想知道您的电脑能否流畅运行Qwen、Mistral或Llama模型？请查看我们的<a href="/zh/tech-local-models">本地模型指南</a>，或在GitHub Discussions中提问。
+                </li>
+            </ul>
+
+            <h2>常见问题</h2>
+            <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLM真的完全免费且开源吗？</h4>
+                    <p style="font-size: 0.95rem;">是的。StarkLLM依据开源许可证提供。没有订阅费、隐藏的云服务费用或API付费墙。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">StarkLLM会把提示词数据传输到外部服务器吗？</h4>
+                    <p style="font-size: 0.95rem;">不会，除非您主动开启。文字生成、向量嵌入、文档分块和数据库都在您的电脑上本地运行。除非您开启某项可选的联网功能，否则任何内容都不会离开您的电脑：网络搜索、网页任务、云端模型服务商、从网络导入、市场价格、外出时使用手机（通过StarkLLM中继）或检查更新。Settings › Privacy &amp; network（设置 › 隐私与网络）会列出这些功能，而 “Fully offline”（完全离线）会拒绝所有这些功能。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">在哪里可以下载最新版本？</h4>
+                    <p style="font-size: 0.95rem;">请访问<a href="/zh/download">下载页面</a>，获取官方的Windows安装程序，并核对SHA-256完整性校验和。</p>
+                </div>
+            </div>
+        </div>
+    </main>

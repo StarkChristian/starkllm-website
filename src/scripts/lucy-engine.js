@@ -9,18 +9,53 @@ const COVER_MIN = 0.55;    // share of the question's content words (idf-weighte
 const UNSEEN_MAX = 0.3;    // share of the question's words that appear nowhere on the site (then it is probably about something else)
 const SCORE_MIN = 3.2;     // minimum BM25 score of the best passage
 
-export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i');
+// NFKD turns full-width Latin and digits into plain ones; the final NFC puts Japanese voiced kana (が = か + ゛) back
+// together. For text without CJK the NFC step changes nothing.
+export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss').replace(/ı/g, 'i').normalize('NFC');
+
+// Chinese and Japanese are written without spaces. Their runs are cut into words with Intl.Segmenter where the
+// browser has it, and every word longer than two characters into overlapping character pairs (bigrams), so "数据保护"
+// and "保护数据" share their words however the segmenter splits them. Without Intl.Segmenter a whole run is cut into
+// pairs. Hiragana-only pieces (Japanese particles and endings) are left out. Text without CJK is not affected.
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]/u;
+const CJK_RUN = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]+/gu;
+const KANA_ONLY = /^[\p{Script=Hiragana}ー]+$/u;
+const pairs = (w) => { if (w.length <= 2) return [w]; const out = []; for (let i = 0; i + 1 < w.length; i++) out.push(w.slice(i, i + 2)); return out; };
 
 export function createEngine(data) {
   const stop = new Set((data.stop || []).map(fold));
   const suf = [...(data.suf || [])].sort((a, b) => b.length - a.length);
   const advice = (data.advice || []).map(fold);
+  const seg = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(data.lang || undefined, { granularity: 'word' }) : null;
 
   const stem = (t) => {
     for (const s of suf) if (t.length - s.length >= 3 && t.endsWith(s)) return t.slice(0, -s.length);
     return t;
   };
-  const tokens = (text) => fold(text).split(/[^\p{L}\p{N}@.]+/u).map((t) => t.replace(/^\.+|\.+$/g, '')).filter((t) => t && !stop.has(t) && (t.length > 1 || /\d/.test(t))).map(stem);
+  const cjkWords = (run) => {
+    const words = seg ? [...seg.segment(run)].map((s) => s.segment) : run.split(/[\p{Script=Hiragana}]+/u);
+    const out = [];
+    for (let w of words) {
+      if (!w || KANA_ONLY.test(w) || stop.has(w)) continue;
+      w = w.replace(/\p{Script=Hiragana}+$/u, '');   // Japanese endings: 使える, 使います -> 使
+      if (stop.has(w)) continue;
+      for (const p of pairs(w)) if (!stop.has(p) && !KANA_ONLY.test(p)) out.push(p);
+    }
+    return out;
+  };
+  const latin = (text) => text.split(/[^\p{L}\p{N}@.]+/u).map((t) => t.replace(/^\.+|\.+$/g, '')).filter((t) => t && !stop.has(t) && (t.length > 1 || /\d/.test(t))).map(stem);
+  const tokens = (text) => {
+    const f = fold(text);
+    if (!CJK.test(f)) return latin(f);
+    const out = [];
+    let last = 0;
+    for (const m of f.matchAll(CJK_RUN)) {
+      out.push(...latin(f.slice(last, m.index)), ...cjkWords(m[0]));
+      last = m.index + m[0].length;
+    }
+    out.push(...latin(f.slice(last)));
+    return out;
+  };
 
   // documents
   const docs = data.c.map(([pi, id, h, t], i) => {
@@ -85,7 +120,7 @@ export function createEngine(data) {
   function quote(d, q) {
     const t = d.t;
     if (t.length <= 360) return t;
-    const sents = t.split(/(?<=[.!?…])\s+/);
+    const sents = t.split(/(?<=[.!?…])\s+|(?<=[。！？])/);   // CJK sentences end with 。！？ and no space
     const sc = sents.map((s) => { const tk = new Set(tokens(s)); return q.reduce((a, w) => a + (tk.has(w) ? idf(w) : 0), 0); });
     let bi = 0; for (let i = 1; i < sc.length; i++) if (sc[i] > sc[bi]) bi = i;
     let from = bi, to = bi, out = sents[bi].trim();
@@ -93,7 +128,7 @@ export function createEngine(data) {
     while (out.length < 200) {
       const next = (sc[to + 1] ?? -1) >= (sc[from - 1] ?? -1) ? to + 1 : from - 1;
       if (next > to && next < sents.length) { to = next; } else if (next < from && next >= 0) { from = next; } else break;
-      out = sents.slice(from, to + 1).join(' ').trim();
+      out = sents.slice(from, to + 1).reduce((a, x) => (a ? a + (/[。！？]$/.test(a) ? '' : ' ') + x : x), '').trim();
       if (out.length > 360) { out = out.slice(0, 360); break; }
     }
     return out;

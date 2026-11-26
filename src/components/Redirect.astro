@@ -1,12 +1,12 @@
 ---
 // A moved page: sends the visitor to its new address. noindex, canonical = the target, not in the sitemap
 // (tools/check_i18n.py treats pages with http-equiv="refresh" this way).
-import { localePath, SITE, type Lang } from '../i18n/ui';
+import { localePath, langTag, SITE, type Lang } from '../i18n/ui';
 const { lang, to } = Astro.props as { lang: Lang; to: string };
 const target = localePath(lang, to);
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={langTag(lang)}>
   <head>
     <meta charset="UTF-8" />
     <title>StarkLLM</title>
