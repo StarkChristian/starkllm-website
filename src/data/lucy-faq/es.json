@@ -359,7 +359,7 @@
     "¿Qué sale de mi ordenador?"
    ],
    "page": "/es/tech-privacy",
-   "match": "Estas se conectan a internet solo cuando las activas o las inicias"
+   "match": "Estas se conectan a internet solo cuando usted las activa o las inicia"
   },
   {
    "id": "offline",
@@ -571,7 +571,7 @@
     "¿Cómo vinculo una carpeta de mi PC?"
    ],
    "page": "/es/tech-knowledge-base",
-   "match": "La Knowledge Base (base de conocimiento) es una carpeta de tu PC"
+   "match": "La base de conocimiento es una carpeta de su PC"
   },
   {
    "id": "formats",
@@ -673,7 +673,7 @@
     "¿Pueden mis propios scripts usar StarkLLM?"
    ],
    "page": "/es/manual",
-   "match": "puedes dejar que programas de este PC usen StarkLLM"
+   "match": "puede dejar que programas de este PC usen StarkLLM"
   },
   {
    "id": "password",
@@ -804,7 +804,7 @@
     "Quiero apagar el motor de StarkLLM y Docker del todo"
    ],
    "page": "/es/manual",
-   "match": "Desde la v2.2, no: cuando cierras o sales de StarkLLM, su motor también se detiene"
+   "match": "Desde la v2.2, no: cuando usted cierra o sale de StarkLLM, su motor también se detiene"
   }
  ],
  "exclude": [
