@@ -349,7 +349,8 @@
   {
    "q": "Il sito usa i cookie?",
    "pages": [
-    "/it/about"
+    "/it/about",
+    "/it/privacy"
    ]
   },
   {
@@ -363,7 +364,8 @@
   {
    "q": "Quali dati salva il sito sui visitatori?",
    "pages": [
-    "/it/about"
+    "/it/about",
+    "/it/privacy"
    ]
   },
   {

@@ -1,4 +1,102 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/start.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyStart } from '../../legacy';
-export default legacyStart('it');
+// Pagina iniziale (2026). {v} = versione, {mb} = dimensione dell'installer in MB; entrambi arrivano dalla release su GitHub.
+// Ogni affermazione è verificata su RELEASE_NOTES.md e sui documenti della v2.6.0 (repository dell'app).
+export default {
+  meta: {
+    title: 'StarkLLM · IA privata per i Suoi documenti, sul Suo PC Windows',
+    description: 'StarkLLM legge le Sue lettere e i Suoi documenti sul Suo PC Windows e risponde indicando la pagina in cui ha trovato la risposta. Gratuito e open source, senza telemetria. Funzioni online solo quando Lei le attiva.',
+  },
+  hero: {
+    news: 'Novità della 2.6.0',
+    newsText: 'Il Suo telefono, anche fuori casa',
+    h1: ['Interroghi i Suoi documenti.', 'Li tenga sul Suo PC.'],
+    lede: 'StarkLLM legge lettere, contratti e libri sul Suo PC Windows, trova scadenze e importi e risponde indicando la pagina in cui li ha trovati. I modelli di IA girano sul Suo PC tramite Ollama. Nulla va online se Lei non lo attiva.',
+    cta1: 'Scarica per Windows',
+    cta2: 'Guardi come funziona',
+    meta: 'Versione {v} · {mb} MB · Windows 10 e 11 · Gratuito, Apache 2.0',
+  },
+  promises: {
+    h2: 'Tre promesse, mantenute nel codice.',
+    items: [
+      { k: 'Locale', title: 'Gira sul Suo PC.', text: 'Documenti, chat, indice di ricerca e modelli di IA restano sul Suo disco e sulla Sua scheda grafica. Nessun account su un server, nessuna telemetria.' },
+      { k: 'Con le fonti', title: 'Ogni risposta mostra la sua fonte.', text: 'Le risposte sui Suoi documenti indicano il file e la pagina. Con un clic si apre la pagina con il passaggio evidenziato, così può controllare prima di agire.' },
+      { k: 'Chiede prima', title: 'Chiede prima di agire.', text: 'Le attività web e il Terminale mostrano prima ogni passaggio e attendono il Suo sì prima di qualsiasi cosa che acquisti, invii, elimini o modifichi un file.' },
+    ],
+  },
+  bento: {
+    h2: 'Che cosa fa per Lei.',
+    lede: 'Nove delle cose che StarkLLM sa fare, tutte sul Suo PC, salvo dove è indicato diversamente.',
+    items: [
+      { tag: 'Posta in arrivo', title: 'Lettere lette e archiviate', text: 'Bollette, solleciti, avvisi fiscali e contratti in sei lingue: mittente, importi, conti e scadenze, ciascuno trovato parola per parola su una pagina. Una pratica per mittente, la scadenza più vicina in alto.', shot: '02-inbox', size: 'w4' },
+      { tag: 'Fonti', title: 'Fonti che può aprire', text: 'Clicchi su una fonte sotto una risposta e il documento si apre a quella pagina, con il passaggio evidenziato.', shot: '04-source-page', size: 'w2' },
+      { tag: 'Sicurezza', title: 'Avvisi per le lettere false', text: 'Un riquadro rosso quando una lettera chiede un pagamento con un buono, tramite un link o su un nuovo conto, o nasconde una nota per gli assistenti IA.', shot: '05-scam-warning', size: 'w2' },
+      { tag: 'Libri', title: 'Libri interi', text: 'I documenti lunghi ricevono in background i riassunti dei capitoli, così anche «Come finisce?» ha una risposta, con le pagine.', shot: '06-book-summary', size: 'w2' },
+      { tag: 'Immagini', title: 'Foto, scansioni e screenshot', text: 'Il testo di foto e scansioni viene letto sul Suo PC. Incolli uno screenshot e risponde un modello visivo sul Suo PC.', shot: '07-image-question', size: 'w2' },
+      { tag: 'Registrazioni', title: 'Riunioni come documenti', text: 'Le registrazioni vengono trascritte con i tempi sul Suo PC. Poi può fare domande su di esse come su qualsiasi documento.', shot: '08-recording', size: 'w3' },
+      { tag: 'Attività web', title: 'Attività web che può seguire', text: 'StarkLLM lavora sui siti web in una propria finestra del browser. Lei vede ogni passaggio; accessi e pagamenti restano a Lei.', shot: '09-web-task', size: 'w3' },
+      { tag: 'Terminale', title: 'Aiuto con il codice', text: 'In una cartella di progetto scelta da Lei: ogni modifica mostrata prima, ogni comando solo dopo il Suo sì, e un pulsante per annullare.', shot: '10-terminal', size: 'w3' },
+      { tag: 'Modelli', title: 'Due modelli, fianco a fianco', text: 'Ponga la stessa domanda a un secondo modello locale e tenga la risposta migliore.', shot: '11-compare-models', size: 'w3' },
+    ],
+    more: 'Tutte le funzioni e i loro limiti',
+  },
+  tour: {
+    h2: 'Guardi come funziona.',
+    lede: 'Brevi clip senza audio di StarkLLM 2.6.0, con sottotitoli. Solo dati dimostrativi.',
+  },
+  privacy: {
+    h2: 'I Suoi dati restano qui.',
+    lede: 'Tutto ciò che è a sinistra avviene sul Suo PC. La parte destra va online solo quando Lei la attiva, e Impostazioni › Privacy e rete elenca ogni connessione.',
+    pcTitle: 'Sul Suo PC',
+    pcSub: 'sempre, anche completamente offline',
+    pc: ['Documenti, scansioni e foto', 'Chat e indice di ricerca', 'Modelli di IA (Ollama)', 'Posta in arrivo, scadenze e importi', 'Registrazioni e il loro testo'],
+    netTitle: 'Online solo quando Lei lo attiva',
+    netSub: 'spento finché Lei non lo attiva o lo avvia',
+    net: [
+      { k: 'Ricerca web', v: 'DuckDuckGo, poi Startpage, Mojeek, Wikipedia' },
+      { k: 'Attività web', v: 'solo i siti della Sua attività' },
+      { k: 'Controllo aggiornamenti', v: 'chiesto una volta al primo avvio' },
+      { k: 'Relay del telefono', v: 'cifrato da un capo all’altro, per ogni telefono' },
+      { k: 'Modelli cloud', v: 'solo un provider scelto da Lei' },
+    ],
+    offline: '«Completamente offline»: un solo interruttore le rifiuta tutte.',
+    more: 'Come funziona la privacy in StarkLLM',
+  },
+  phone: {
+    h2: 'Il telefono chiede. Il PC risponde.',
+    lede: 'L’app StarkLLM per Android invia le Sue domande e le foto delle lettere al Suo PC e mostra le risposte con le loro fonti. I documenti e il modello di IA restano sul PC.',
+    home: { title: 'A casa, direttamente', text: 'Attraverso la Sua rete di casa, cifrato, verso il PC di cui il telefono ha verificato il certificato all’abbinamento.' },
+    away: { title: 'Fuori casa, tramite il relay', text: 'Solo per un telefono che Lei ha autorizzato. Cifrato dal telefono al Suo PC: il relay inoltra byte che non può leggere.' },
+    badge: 'Android · anteprima',
+    more: 'L’app per il telefono',
+  },
+  audience: {
+    h2: 'Fatto per chi ha a che fare con le carte.',
+    items: [
+      { title: 'Famiglie', text: 'Bollette, solleciti e lettere del fisco di tutta la famiglia in un solo posto, con la prossima scadenza nella pagina iniziale.' },
+      { title: 'Liberi professionisti', text: 'Contratti, fatture e avvisi: importi e date con la pagina da cui provengono, senza caricare nulla.' },
+      { title: 'Studenti e ricercatori', text: 'Libri interi, articoli e registrazioni delle lezioni, con risposte che citano la pagina.' },
+      { title: 'Piccoli uffici', text: 'Più account su un solo PC, protezione dei dati salvati e backup cifrati. Nulla richiede un cloud.' },
+    ],
+  },
+  download: {
+    h2: 'Gratuito. Open source. Suo.',
+    lede: 'Un solo installer con tutto il necessario. StarkLLM può installare Ollama per Lei, poi scarica una volta i modelli di IA (circa 5 GB).',
+    req: 'Windows 10 o 11 (64 bit) · 16 GB di RAM consigliati · 15 GB di spazio libero su disco',
+    btn: 'Scarica StarkLLM {v}',
+    all: 'Checksum e passaggi di installazione',
+    size: 'Installer',
+    version: 'Versione',
+    released: 'Pubblicata il',
+    sha: 'SHA-256',
+  },
+  faq: {
+    h2: 'Domande e risposte.',
+    items: [
+      ['StarkLLM è gratuito?', 'Sì. StarkLLM è gratuito e open source con licenza Apache 2.0, per uso personale, di ricerca e commerciale. Non ci sono account, abbonamenti né versioni a pagamento.'],
+      ['Qualcosa lascia il mio PC?', 'No, a meno che Lei non lo attivi. Ricerca web, attività web, modelli cloud, importazioni dal web, prezzi di mercato, relay del telefono e controllo degli aggiornamenti restano spenti finché Lei non li attiva o li avvia. Impostazioni › Privacy e rete elenca ogni connessione, e «Completamente offline» le rifiuta tutte.'],
+      ['Di che cosa ha bisogno il mio PC?', 'Windows 10 o 11 (64 bit), 16 GB di RAM (almeno 8 GB), 15 GB di spazio libero su disco e Ollama, che StarkLLM può installare per Lei. Una scheda grafica NVIDIA con 8 GB di memoria video rende le risposte molto più veloci; vengono usate anche le grafiche integrate AMD Radeon e Intel Arc o Iris.'],
+      ['Mi serve Docker?', 'No. Dalla versione 2.2 StarkLLM porta il proprio motore all’interno dell’installer. Docker Desktop è un’opzione per utenti esperti, niente di più.'],
+      ['Esiste un’app per il telefono?', 'Sì, per Android, come anteprima in un test chiuso su Google Play. Lavora insieme al Suo PC: i documenti e il modello di IA restano sul PC. Non esiste un’app per iPhone.'],
+      ['Posso fidarmi delle risposte?', 'Le controlli. I modelli di IA sono piccoli modelli locali e possono sbagliare. Per questo ogni risposta sui Suoi documenti indica la sua fonte, e una citazione che non si trova nei Suoi documenti viene segnalata sotto la risposta.'],
+    ],
+  },
+};

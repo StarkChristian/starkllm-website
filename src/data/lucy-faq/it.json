@@ -512,7 +512,7 @@
     "Che cosa sono le pratiche e le scadenze?"
    ],
    "page": "/it/features",
-   "match": "Aggiungi una lettera come PDF, scansione o foto dal telefono"
+   "match": "Aggiunga una lettera come PDF, scansione o foto dal telefono"
   },
   {
    "id": "phone",
@@ -722,8 +722,8 @@
     "Che dati salvate sui visitatori del sito?",
     "Quali dati salva questo sito sui visitatori?"
    ],
-   "page": "/it/about",
-   "match": "nemmeno questo sito pubblico (starkllm.com) usa strumenti di analisi, tracciamento o cookie"
+   "page": "/it/privacy",
+   "match": "Non imposta cookie, non usa strumenti di analisi e non carica caratteri, script o video da altri server"
   },
   {
    "id": "slow",
@@ -753,7 +753,7 @@
     "Il programma può cancellare i miei file?"
    ],
    "page": "/it/features",
-   "match": "Non rinomina, non sposta e non elimina mai i tuoi file"
+   "match": "Non rinomina, non sposta e non elimina mai i Suoi file"
   },
   {
    "id": "webtasks",
