@@ -1,0 +1,26 @@
+{
+ "questions": [
+  { "q": "iPhone版はありますか？", "pages": ["/ja/product", "/ja/manual", "/ja/download", "/ja/", "/ja/features", "/ja/phone"] },
+  { "q": "StarkLLMを使うのにアカウントは必要ですか？", "pages": ["/ja/download", "/ja/help", "/ja/manual", "/ja/tech-privacy", "/ja/privacy", "/ja/", "/ja/tech-local-models"] },
+  { "q": "初めて起動したときはどうなりますか？", "pages": ["/ja/download", "/ja/help", "/ja/manual", "/ja/"] },
+  { "q": "手書きの手紙も読めますか？", "pages": ["/ja/tech-multimodal", "/ja/product", "/ja/manual", "/ja/", "/ja/features", "/ja/phone"] },
+  { "q": "StarkLLMは答えをでっち上げることがありますか？", "pages": ["/ja/tech-rag", "/ja/product", "/ja/manual", "/ja/help", "/ja/features"] },
+  { "q": "本を1冊まるごと要約できますか？", "pages": ["/ja/features", "/ja/manual", "/ja/"] },
+  { "q": "チャットをPDFとして保存できますか？", "pages": ["/ja/features", "/ja/manual"] },
+  { "q": "2つのモデルの回答を比べられますか？", "pages": ["/ja/features", "/ja/manual", "/ja/"] },
+  { "q": "リレーは私の質問を読めますか？", "pages": ["/ja/phone", "/ja/privacy", "/ja/manual", "/ja/download"] },
+  { "q": "完全にオフラインにするスイッチはありますか？", "pages": ["/ja/privacy", "/ja/tech-privacy", "/ja/", "/ja/manual", "/ja/features"] },
+  { "q": "ノートパソコンでも動きますか？", "pages": ["/ja/download", "/ja/manual", "/ja/help", "/ja/tech-local-models"] },
+  { "q": "グラフィックボードがなくても使えますか？", "pages": ["/ja/download", "/ja/help", "/ja/manual"] },
+  { "q": "ポート5173が使用中と表示されます", "pages": ["/ja/help"] },
+  { "q": "ウェブ検索はどの検索エンジンを使いますか？", "pages": ["/ja/features", "/ja/tech-privacy", "/ja/privacy", "/ja/", "/ja/download"] },
+  { "q": "データのバックアップはできますか？", "pages": ["/ja/help", "/ja/manual", "/ja/phone"] },
+  { "q": "保存されたデータは暗号化されていますか？", "pages": ["/ja/privacy", "/ja/tech-privacy", "/ja/manual", "/ja/help"] },
+  { "q": "テーマを切り替えるには再起動が必要ですか？", "pages": ["/ja/features", "/ja/tech-themes", "/ja/manual"] },
+  { "q": "家族とPCを共有しても大丈夫ですか？", "pages": ["/ja/help", "/ja/manual"] },
+  { "q": "Lucyとは誰ですか？", "pages": ["/ja/about"] },
+  { "q": "テレメトリーは送信されますか？", "pages": ["/ja/download", "/ja/manual", "/ja/tech-privacy", "/ja/privacy", "/ja/", "/ja/about"] }
+ ],
+ "unrelated": [],
+ "advice": []
+}

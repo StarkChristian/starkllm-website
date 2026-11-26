@@ -80,7 +80,7 @@ export function chunk(blocks) {
   const push = () => { if (cur && cur.t.replace(/\s/g, '').length >= 25) out.push(cur); cur = null; };
   for (const b of blocks) {
     if (b.heading) { push(); continue; }
-    let t = b.t; if (!sentenceEnd(t)) t += '.';
+    let t = b.t; if (!sentenceEnd(t)) t += /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]$/u.test(t) ? '。' : '.';
     const sentences = t.length > 700 ? t.split(/(?<=[.!?…])\s+|(?<=[。！？])/) : [t];
     if (b.sum) push();
     for (const s of sentences) {

@@ -20,6 +20,7 @@ export const fold = (s) => s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,
 const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]/u;
 const CJK_RUN = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々〆]+/gu;
 const KANA_ONLY = /^[\p{Script=Hiragana}ー]+$/u;
+const KATA_ONLY = /^[\p{Script=Katakana}ー]+$/u;
 const pairs = (w) => { if (w.length <= 2) return [w]; const out = []; for (let i = 0; i + 1 < w.length; i++) out.push(w.slice(i, i + 2)); return out; };
 
 export function createEngine(data) {
@@ -39,7 +40,8 @@ export function createEngine(data) {
       if (!w || KANA_ONLY.test(w) || stop.has(w)) continue;
       w = w.replace(/\p{Script=Hiragana}+$/u, '');   // Japanese endings: 使える, 使います -> 使
       if (stop.has(w)) continue;
-      for (const p of pairs(w)) if (!stop.has(p) && !KANA_ONLY.test(p)) out.push(p);
+      // katakana loanwords stay whole: their pairs (ール, カー, ップ) are shared by unrelated words (サッカー, ツール)
+      for (const p of (KATA_ONLY.test(w) ? [w] : pairs(w))) if (!stop.has(p) && !KANA_ONLY.test(p)) out.push(p);
     }
     return out;
   };

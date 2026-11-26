@@ -1,0 +1,185 @@
+{
+ "questions": [
+  {
+   "q": "StarkLLM支持哪些语言？",
+   "pages": [
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "有没有iOS版本？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "我需要一个账号才能用吗？",
+   "pages": [
+    "/zh/tech-privacy",
+    "/zh/",
+    "/zh/download",
+    "/zh/about",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/privacy",
+    "/zh/contact",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "第一次打开时会发生什么？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "它能读手写的信吗？",
+   "pages": [
+    "/zh/tech-multimodal",
+    "/zh/features",
+    "/zh/manual",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "StarkLLM会编造答案吗？",
+   "pages": [
+    "/zh/tech-rag",
+    "/zh/features",
+    "/zh/manual",
+    "/zh/help",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "可以导出聊天记录吗？",
+   "pages": [
+    "/zh/manual",
+    "/zh/features"
+   ]
+  },
+  {
+   "q": "能比较两个模型的回答吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/manual",
+    "/zh/"
+   ]
+  },
+  {
+   "q": "网络搜索会把我的问题发给谁？",
+   "pages": [
+    "/zh/features",
+    "/zh/tech-privacy",
+    "/zh/privacy",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "“Fully offline”开关是做什么的？",
+   "pages": [
+    "/zh/privacy",
+    "/zh/tech-privacy",
+    "/zh/",
+    "/zh/features",
+    "/zh/manual",
+    "/zh/phone"
+   ]
+  },
+  {
+   "q": "签名证书是谁的？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/privacy"
+   ]
+  },
+  {
+   "q": "工作区和知识库有什么区别？",
+   "pages": [
+    "/zh/manual",
+    "/zh/download",
+    "/zh/tech-workspaces",
+    "/zh/tech-knowledge-base"
+   ]
+  },
+  {
+   "q": "能读取整本书吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "录音文件最大可以多大？",
+   "pages": [
+    "/zh/features",
+    "/zh/tech-multimodal"
+   ]
+  },
+  {
+   "q": "端口5173被占用怎么办？",
+   "pages": [
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "显卡有什么用？",
+   "pages": [
+    "/zh/download",
+    "/zh/manual",
+    "/zh/tech-local-models",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "手机应用有指纹锁吗？",
+   "pages": [
+    "/zh/phone",
+    "/zh/download",
+    "/zh/",
+    "/zh/manual",
+    "/zh/features",
+    "/zh/help"
+   ]
+  },
+  {
+   "q": "Ollama在哪里下载？",
+   "pages": [
+    "/zh/download",
+    "/zh/help",
+    "/zh/manual",
+    "/zh/tech-local-models"
+   ]
+  },
+  {
+   "q": "StarkLLM会把我的文件重命名吗？",
+   "pages": [
+    "/zh/features",
+    "/zh/manual"
+   ]
+  },
+  {
+   "q": "语音输入需要下载什么吗？",
+   "pages": [
+    "/zh/tech-voice",
+    "/zh/tech-privacy",
+    "/zh/manual",
+    "/zh/features"
+   ]
+  }
+ ],
+ "unrelated": [],
+ "advice": []
+}

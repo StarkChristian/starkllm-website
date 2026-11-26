@@ -1,0 +1,869 @@
+{
+ "lang": "zh",
+ "stop": [
+  "a",
+  "about",
+  "actually",
+  "again",
+  "also",
+  "am",
+  "an",
+  "and",
+  "any",
+  "anything",
+  "app",
+  "application",
+  "are",
+  "as",
+  "at",
+  "be",
+  "been",
+  "being",
+  "but",
+  "by",
+  "came",
+  "can",
+  "come",
+  "comes",
+  "could",
+  "did",
+  "do",
+  "does",
+  "doing",
+  "don",
+  "each",
+  "exactly",
+  "for",
+  "from",
+  "get",
+  "had",
+  "has",
+  "have",
+  "he",
+  "here",
+  "how",
+  "i",
+  "if",
+  "in",
+  "into",
+  "is",
+  "it",
+  "its",
+  "just",
+  "look",
+  "make",
+  "many",
+  "may",
+  "me",
+  "might",
+  "more",
+  "most",
+  "much",
+  "must",
+  "my",
+  "need",
+  "no",
+  "not",
+  "of",
+  "on",
+  "only",
+  "or",
+  "other",
+  "our",
+  "over",
+  "own",
+  "please",
+  "program",
+  "really",
+  "s",
+  "same",
+  "see",
+  "shall",
+  "she",
+  "should",
+  "so",
+  "software",
+  "some",
+  "something",
+  "somewhere",
+  "such",
+  "t",
+  "than",
+  "that",
+  "the",
+  "their",
+  "them",
+  "then",
+  "there",
+  "these",
+  "they",
+  "thing",
+  "this",
+  "those",
+  "to",
+  "too",
+  "under",
+  "use",
+  "using",
+  "very",
+  "want",
+  "was",
+  "we",
+  "were",
+  "what",
+  "when",
+  "where",
+  "whether",
+  "which",
+  "who",
+  "whom",
+  "why",
+  "will",
+  "with",
+  "would",
+  "yes",
+  "you",
+  "your",
+  "一下",
+  "一个",
+  "一些",
+  "上",
+  "下",
+  "不",
+  "与",
+  "东西",
+  "个",
+  "中",
+  "为",
+  "为什么",
+  "为何",
+  "么",
+  "之",
+  "也",
+  "了",
+  "事情",
+  "于",
+  "些",
+  "什么",
+  "从",
+  "他",
+  "他们",
+  "以",
+  "会",
+  "会不会",
+  "但",
+  "但是",
+  "你",
+  "你们",
+  "你的",
+  "使用",
+  "做",
+  "关于",
+  "其",
+  "别的",
+  "到",
+  "到底",
+  "到底是",
+  "办",
+  "办法",
+  "又",
+  "及",
+  "可不可以",
+  "可以",
+  "同",
+  "向",
+  "吗",
+  "吧",
+  "呀",
+  "告诉",
+  "呢",
+  "呢？",
+  "和",
+  "哪",
+  "哪个",
+  "哪些",
+  "哪儿",
+  "哪里",
+  "啊",
+  "嘛",
+  "因为",
+  "在",
+  "多少钱",
+  "太",
+  "她",
+  "如何",
+  "如果",
+  "它",
+  "对",
+  "对于",
+  "就",
+  "干",
+  "并",
+  "应用",
+  "应用程序",
+  "应该",
+  "底是",
+  "弄",
+  "很",
+  "得",
+  "必须",
+  "怎么",
+  "怎么办",
+  "怎么样",
+  "怎样",
+  "您",
+  "您的",
+  "想",
+  "想要",
+  "我",
+  "我们",
+  "我的",
+  "或",
+  "或者",
+  "所以",
+  "才能",
+  "把",
+  "方法",
+  "方面",
+  "时",
+  "时候",
+  "是",
+  "是不是",
+  "是否",
+  "是谁",
+  "更",
+  "最",
+  "有",
+  "有没有",
+  "没",
+  "没有",
+  "然后",
+  "用",
+  "的",
+  "的是",
+  "的话",
+  "真的",
+  "真的是",
+  "知道",
+  "程序",
+  "究竟",
+  "给",
+  "而",
+  "能",
+  "能不能",
+  "能够",
+  "能用",
+  "能读",
+  "被",
+  "要",
+  "让",
+  "该",
+  "请",
+  "请问",
+  "谁",
+  "跟",
+  "软件",
+  "还",
+  "还是",
+  "还能",
+  "这",
+  "这个",
+  "这些",
+  "这里",
+  "通过",
+  "那",
+  "那个",
+  "那么",
+  "那些",
+  "那里",
+  "都",
+  "里",
+  "需要",
+  "非常"
+ ],
+ "suffixes": [],
+ "extraPages": [],
+ "legalPages": [
+  "/zh/legal",
+  "/privacy-policy",
+  "/impressum",
+  "/datenschutz"
+ ],
+ "advice": [
+  "法律建议",
+  "法律咨询",
+  "法律意见",
+  "律师",
+  "起诉",
+  "打官司",
+  "诉讼",
+  "是否合法",
+  "合法吗",
+  "合不合法",
+  "违法吗",
+  "是否违法",
+  "法律责任"
+ ],
+ "links": {
+  "help": "/zh/help",
+  "manual": "/zh/manual",
+  "contact": "/zh/contact",
+  "issues": "https://github.com/StarkChristian/StarkLLM/issues"
+ },
+ "faq": [
+  {
+   "id": "what",
+   "q": [
+    "StarkLLM是什么？",
+    "StarkLLM是做什么的？",
+    "这是什么软件？",
+    "给我介绍一下StarkLLM",
+    "StarkLLM有什么用？",
+    "StarkLLM究竟是什么东西？"
+   ],
+   "page": "/zh/about",
+   "match": "StarkLLM是一款适用于Windows的私密、本地优先的AI助手"
+  },
+  {
+   "id": "free",
+   "q": [
+    "StarkLLM免费吗？",
+    "StarkLLM要钱吗？",
+    "需要付费吗？",
+    "多少钱？",
+    "价格是多少？",
+    "有订阅或隐藏费用吗？",
+    "是免费的吗？",
+    "收费吗？",
+    "要付钱吗？",
+    "需要花钱吗？",
+    "用它要掏钱吗？"
+   ],
+   "page": "/zh/download",
+   "match": "StarkLLM免费吗？ 是的。它免费且开源"
+  },
+  {
+   "id": "license",
+   "q": [
+    "StarkLLM用什么许可证？",
+    "是什么开源许可？",
+    "许可证是哪种？",
+    "可以商用吗？",
+    "商业用途免费吗？"
+   ],
+   "page": "/zh/about",
+   "match": "StarkLLM基于Apache 2.0许可证开源"
+  },
+  {
+   "id": "leave",
+   "q": [
+    "我的数据会离开电脑吗？",
+    "我的数据会上传到哪里吗？",
+    "数据会发送到云端吗？",
+    "有遥测吗？",
+    "需要注册账户吗？",
+    "我的文档会被上传吗？",
+    "需要账号吗？",
+    "要不要注册账号？"
+   ],
+   "page": "/zh/tech-privacy",
+   "match": "它没有遥测，也不需要服务器上的账户"
+  },
+  {
+   "id": "online",
+   "q": [
+    "哪些功能会联网？",
+    "什么时候会连接互联网？",
+    "哪些功能需要上网？",
+    "它会访问互联网吗？"
+   ],
+   "page": "/zh/tech-privacy",
+   "match": "这些功能只有在您开启或启动时才会连接互联网"
+  },
+  {
+   "id": "offline",
+   "q": [
+    "能离线使用吗？",
+    "没有网络能用吗？",
+    "断网可以工作吗？",
+    "不联网能用吗？"
+   ],
+   "page": "/zh/tech-local-models",
+   "match": "下载后无需联网也能继续工作"
+  },
+  {
+   "id": "install",
+   "q": [
+    "如何安装StarkLLM？",
+    "怎么安装？",
+    "安装步骤是什么？",
+    "在Windows上怎么安装？"
+   ],
+   "page": "/zh/download",
+   "match": "StarkLLM自带运行引擎，无需Docker Desktop和WSL2"
+  },
+  {
+   "id": "smartscreen",
+   "q": [
+    "为什么Windows会发出警告？",
+    "SmartScreen拦截了安装程序怎么办？",
+    "Windows提示风险怎么办？",
+    "安装时出现安全警告",
+    "Smart App Control阻止了安装程序"
+   ],
+   "page": "/zh/download",
+   "match": "签名让Windows能够验证发布者，但对于不常见的文件"
+  },
+  {
+   "id": "checksum",
+   "q": [
+    "如何验证下载的文件？",
+    "怎么核对校验和？",
+    "SHA-256在哪里？",
+    "怎样确认安装文件没有被篡改？"
+   ],
+   "page": "/zh/download",
+   "match": "运行前如需验证文件完整性"
+  },
+  {
+   "id": "requirements",
+   "q": [
+    "系统要求是什么？",
+    "需要什么硬件？",
+    "需要多少内存？",
+    "电脑配置要求",
+    "我的电脑够用吗？"
+   ],
+   "page": "/zh/download",
+   "match": "3B模型最低需要8 GB内存，7B模型需要16 GB内存"
+  },
+  {
+   "id": "os",
+   "q": [
+    "支持哪些Windows版本？",
+    "支持Windows 10吗？",
+    "能在Windows 11上运行吗？",
+    "支持Mac或Linux吗？"
+   ],
+   "page": "/zh/download",
+   "match": "Windows 10或11（64位）"
+  },
+  {
+   "id": "docker",
+   "q": [
+    "需要Docker吗？",
+    "需要安装什么其他软件？",
+    "需要WSL2吗？",
+    "必须安装Ollama吗？"
+   ],
+   "page": "/zh/download",
+   "match": "只需要Ollama，用于运行AI模型"
+  },
+  {
+   "id": "firststart",
+   "q": [
+    "第一次启动要多久？",
+    "首次启动会做什么？",
+    "为什么第一次启动这么慢？",
+    "首次启动下载多少数据？"
+   ],
+   "page": "/zh/download",
+   "match": "首次启动时会下载您尚未拥有的AI模型"
+  },
+  {
+   "id": "languages",
+   "q": [
+    "StarkLLM支持哪些语言？",
+    "有中文界面吗？",
+    "界面是中文的吗？",
+    "可以用中文提问吗？",
+    "支持中文吗？",
+    "界面语言有哪些？"
+   ],
+   "page": "/zh/manual",
+   "match": "界面：英语、德语、西班牙语、法语、意大利语和土耳其语"
+  },
+  {
+   "id": "inbox",
+   "q": [
+    "收件箱是什么？",
+    "收件箱有什么用？",
+    "它能读取我的信件吗？",
+    "能找出信件里的截止日期和金额吗？"
+   ],
+   "page": "/zh/features",
+   "match": "以PDF、扫描件或手机拍摄的照片形式添加一封信件"
+  },
+  {
+   "id": "phone",
+   "q": [
+    "能在手机上用吗？",
+    "有手机应用吗？",
+    "有安卓版吗？",
+    "手机应用能做什么？"
+   ],
+   "page": "/zh/phone",
+   "match": "StarkLLM Android应用与您的电脑配合工作"
+  },
+  {
+   "id": "getapp",
+   "q": [
+    "怎么获取安卓应用？",
+    "Google Play上有吗？",
+    "在哪里下载Android应用？",
+    "有APK下载吗？",
+    "怎么得到安卓应用的链接？",
+    "怎么拿到安卓应用？",
+    "如何拿到Android手机应用？",
+    "去哪里下载手机应用？"
+   ],
+   "page": "/zh/phone",
+   "match": "Android应用目前在Google Play上处于测试阶段"
+  },
+  {
+   "id": "iphone",
+   "q": [
+    "有iPhone版吗？",
+    "支持苹果手机吗？",
+    "有iOS应用吗？"
+   ],
+   "page": "/zh/phone",
+   "match": "该应用为预览版。没有iPhone应用"
+  },
+  {
+   "id": "away",
+   "q": [
+    "在外面能用手机连接电脑吗？",
+    "中继能看到我的数据吗？",
+    "离家时怎么用手机？",
+    "中继是什么？",
+    "中继能读取我的问题吗？",
+    "出门在外能用手机连接电脑吗？",
+    "在外面手机能连上家里的电脑吗？"
+   ],
+   "page": "/zh/phone",
+   "match": "加密从手机一直延续到您的电脑，因此中继只负责转发字节"
+  },
+  {
+   "id": "pairing",
+   "q": [
+    "如何配对手机？",
+    "手机怎么连接电脑？",
+    "怎么扫码配对？"
+   ],
+   "page": "/zh/phone",
+   "match": "“Settings › Phone”（设置 › 手机）会显示一个二维码"
+  },
+  {
+   "id": "scam",
+   "q": [
+    "能识别诈骗信件吗？",
+    "它会提醒我假账单吗？",
+    "能发现诈骗吗？",
+    "假信件会有警告吗？"
+   ],
+   "page": "/zh/features",
+   "match": "回答上方就会出现红色提示框"
+  },
+  {
+   "id": "models",
+   "q": [
+    "可以使用哪些AI模型？",
+    "用的是什么模型？",
+    "Ollama是什么？",
+    "能换模型吗？",
+    "能用哪些人工智能模型？",
+    "支持哪些大模型？"
+   ],
+   "page": "/zh/tech-local-models",
+   "match": "Ollama是一个免费程序"
+  },
+  {
+   "id": "cloudmodels",
+   "q": [
+    "能用ChatGPT或云端模型吗？",
+    "可以接入DeepSeek吗？",
+    "支持OpenAI吗？",
+    "能用云端模型服务商吗？"
+   ],
+   "page": "/zh/privacy",
+   "match": "您输入的服务商（例如OpenAI、DeepSeek、OpenRouter、Groq）"
+  },
+  {
+   "id": "sources",
+   "q": [
+    "回答会显示出处吗？",
+    "能看到答案来自哪里吗？",
+    "回答有引用来源吗？",
+    "怎么核对回答？",
+    "回答会说明信息来自哪个文档吗？"
+   ],
+   "page": "/zh/tech-rag",
+   "match": "每个回答都会列出来源，包括文件名以及页码或章节"
+  },
+  {
+   "id": "rag",
+   "q": [
+    "什么是RAG？",
+    "检索增强生成是什么意思？",
+    "RAG如何工作？"
+   ],
+   "page": "/zh/tech-rag",
+   "match": "检索增强生成（RAG）是指"
+  },
+  {
+   "id": "kb",
+   "q": [
+    "知识库是什么？",
+    "Knowledge Base是什么？",
+    "怎么添加知识库文件夹？"
+   ],
+   "page": "/zh/tech-knowledge-base",
+   "match": "知识库是您电脑上的一个文件夹"
+  },
+  {
+   "id": "formats",
+   "q": [
+    "StarkLLM能读取哪些文件类型？",
+    "支持哪些文件格式？",
+    "能读Excel和PowerPoint吗？",
+    "支持PDF吗？",
+    "能读扫描件吗？"
+   ],
+   "page": "/zh/tech-multimodal",
+   "match": "StarkLLM可以读取文档：PDF、Word（DOCX）"
+  },
+  {
+   "id": "voice",
+   "q": [
+    "支持语音输入吗？",
+    "能朗读回答吗？",
+    "有语音功能吗？",
+    "可以用说话提问吗？"
+   ],
+   "page": "/zh/tech-voice",
+   "match": "StarkLLM使用Whisper进行语音识别"
+  },
+  {
+   "id": "themes",
+   "q": [
+    "有多少种主题？",
+    "有深色模式吗？",
+    "怎么更换主题？",
+    "能改界面颜色吗？"
+   ],
+   "page": "/zh/tech-themes",
+   "match": "StarkLLM有十三种主题"
+  },
+  {
+   "id": "tools",
+   "q": [
+    "本地工具是什么？",
+    "MCP工具怎么用？",
+    "模型会自己运行工具吗？"
+   ],
+   "page": "/zh/tech-local-tools",
+   "match": "每一次工具调用都会停在聊天中的一张卡片上"
+  },
+  {
+   "id": "contact",
+   "q": [
+    "怎么联系你们？",
+    "联系方式是什么？",
+    "电子邮件地址是什么？",
+    "我怎么联系开发者？"
+   ],
+   "page": "/zh/contact",
+   "match": "通常在工作日24–48小时内回复"
+  },
+  {
+   "id": "creator",
+   "q": [
+    "谁开发了StarkLLM？",
+    "StarkLLM的作者是谁？",
+    "背后是哪家公司？",
+    "开发者是谁？",
+    "这个软件是谁做出来的？",
+    "谁做了StarkLLM？"
+   ],
+   "page": "/zh/about",
+   "match": "StarkLLM由Christian Stark设计和开发"
+  },
+  {
+   "id": "source",
+   "q": [
+    "源代码在哪里？",
+    "是开源的吗？",
+    "GitHub地址是什么？",
+    "能看代码吗？"
+   ],
+   "page": "/zh/download",
+   "match": "StarkLLM完全开源，代码位于GitHub上的StarkChristian/StarkLLM"
+  },
+  {
+   "id": "otherapps",
+   "q": [
+    "其他程序能使用StarkLLM吗？",
+    "有OpenAI兼容的API吗？",
+    "能在VS Code里用吗？",
+    "有MCP服务器吗？",
+    "其他软件能调用StarkLLM吗？"
+   ],
+   "page": "/zh/manual",
+   "match": "您可以允许这台电脑上的程序使用StarkLLM"
+  },
+  {
+   "id": "password",
+   "q": [
+    "我忘记了密码",
+    "怎么重置密码？",
+    "密码找不回来了怎么办？",
+    "密码忘了怎么办？"
+   ],
+   "page": "/zh/help",
+   "match": "StarkLLM目前还没有密码重置功能"
+  },
+  {
+   "id": "uninstall",
+   "q": [
+    "如何卸载StarkLLM？",
+    "怎么删除StarkLLM？",
+    "怎么卸载？"
+   ],
+   "page": "/zh/help",
+   "match": "卸载程序：Windows设置 > 应用 > StarkLLM"
+  },
+  {
+   "id": "analytics",
+   "q": [
+    "这个网站会追踪我吗？",
+    "网站用Cookie吗？",
+    "网站有分析工具吗？"
+   ],
+   "page": "/zh/privacy",
+   "match": "它不设置Cookie，不使用分析工具"
+  },
+  {
+   "id": "slow",
+   "q": [
+    "为什么回答很慢？",
+    "回答太慢怎么办？",
+    "怎样让回答更快？",
+    "需要显卡吗？"
+   ],
+   "page": "/zh/download",
+   "match": "为什么回答可能很慢？"
+  },
+  {
+   "id": "update",
+   "q": [
+    "检查更新会做什么？",
+    "怎么更新StarkLLM？",
+    "更新检查会发送什么？",
+    "会自动更新吗？",
+    "检查更新时会发出哪些数据？",
+    "更新检查会发给谁？"
+   ],
+   "page": "/zh/tech-privacy",
+   "match": "检查更新（首次启动时询问一次）"
+  },
+  {
+   "id": "delete",
+   "q": [
+    "StarkLLM会删除或修改我的文件吗？",
+    "它会移动我的文件吗？",
+    "会改动我的文档吗？",
+    "它会删掉我的文件吗？"
+   ],
+   "page": "/zh/features",
+   "match": "它从不重命名、移动或删除您的文件"
+  },
+  {
+   "id": "webtasks",
+   "q": [
+    "网页任务是什么？",
+    "它能帮我操作网站吗？",
+    "网页任务会替我付款吗？",
+    "Web task怎么用？"
+   ],
+   "page": "/zh/features",
+   "match": "StarkLLM会打开一个单独的浏览器窗口，您可以看到每一步"
+  },
+  {
+   "id": "terminal",
+   "q": [
+    "终端功能是什么？",
+    "能帮我写代码吗？",
+    "Terminal能做什么？",
+    "编程帮助安全吗？"
+   ],
+   "page": "/zh/features",
+   "match": "它从不离开该文件夹，也从不读取密钥或.env文件"
+  },
+  {
+   "id": "recordings",
+   "q": [
+    "StarkLLM能转写录音吗？",
+    "能把会议录音转成文字吗？",
+    "支持音频文件吗？",
+    "能转写视频吗？"
+   ],
+   "page": "/zh/features",
+   "match": "会议、讲座和语音备忘录在您的电脑上被转写成带时间的文字"
+  },
+  {
+   "id": "images",
+   "q": [
+    "能就图片提问吗？",
+    "可以分析截图吗？",
+    "能看懂照片吗？"
+   ],
+   "page": "/zh/features",
+   "match": "粘贴一张截图或选择一张照片，由您电脑上的视觉模型来回答"
+  },
+  {
+   "id": "keepsrunning",
+   "q": [
+    "关闭StarkLLM后它还会继续运行吗？",
+    "退出后还在后台运行吗？",
+    "关掉窗口后引擎会停止吗？"
+   ],
+   "page": "/zh/manual",
+   "match": "自v2.2起不会：关闭或退出StarkLLM时，它的引擎也会随之停止"
+  },
+  {
+   "id": "books",
+   "q": [
+    "能总结整本书吗？",
+    "能处理很长的文档吗？",
+    "能读电子书吗？",
+    "能给长文档写摘要吗？"
+   ],
+   "page": "/zh/features",
+   "match": "对于大约30页及以上的文档，StarkLLM会在后台撰写摘要"
+  },
+  {
+   "id": "invent",
+   "q": [
+    "StarkLLM会瞎编吗？",
+    "回答会是编造的吗？",
+    "AI会胡说八道吗？"
+   ],
+   "page": "/zh/tech-rag",
+   "match": "没有您的段落，它只能猜测"
+  },
+  {
+   "id": "websearch",
+   "q": [
+    "网络搜索用哪个搜索引擎？",
+    "网络搜索会发送什么内容？",
+    "能上网搜索吗？"
+   ],
+   "page": "/zh/features",
+   "match": "您的问题会发送给DuckDuckGo"
+  }
+ ],
+ "exclude": [
+  "/zh/changelog"
+ ]
+}
