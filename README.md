@@ -14,12 +14,16 @@ npm run check-i18n     # build first; checks <html lang>, canonical, hreflang, l
 
 | Path | What |
 |---|---|
-| `src/layouts/SiteLayout.astro` | The page shell: nav, footer, fonts, tokens, canonical and hreflang tags (computed from `lang` + `path`). |
+| `src/layouts/SiteLayout.astro` | The page shell: nav, footer, fonts, design tokens, canonical, hreflang, Open Graph (one image per page, `src/pages/og/`), JSON-LD, speculation rules, theme toggle. |
+| `src/styles/{tokens,base,components}.css` | The 2026 design system: OKLCH colours with `light-dark()`, type scale, spacing, components. No framework. |
+| `src/i18n/langs/<lang>/{common,media,start,features,phone,privacy,about,changelog}.ts` | Texts of the 2026 pages, one file per language and page, loaded by `src/i18n/site.ts`. es/fr/it/tr: see `docs/translating-2026.md`. |
+| `src/components/{AppShot,AppVideo}.astro` | App screenshots and clips by media name, with a placeholder until the file exists (see "Media"). |
+| `src/data/RELEASE_NOTES.md`, `src/data/changelog.ts` | The app's release notes, parsed at build time into `/changelog`. Copy the new file over it for a new release. |
 | `src/i18n/ui.ts` | **The language setup**: `languages`, `defaultLang`, `localizedPaths` (which pages exist in which language), `localePath()`, `alternatesFor()`, and the nav/footer strings. |
 | `src/i18n/pages.ts` | The translated pages and what renders them (`home`, `product`, `download`, `help`, `tech-*`). |
 | `src/pages/[...page].astro`, `src/pages/[lang]/` | One route template for every translated page: English at the root (`/product`), every other language under its code (`/de/product`). No per-language page files. |
 | `src/components/LocalizedPage.astro` | Picks body component, title, description and head tags for a (language, page). |
-| `src/components/{Home,ProductPage,DownloadPage,HelpPage,TechPage}.astro` | The page bodies. Copy for every language lives in `src/i18n/{home,product,download,help,tech}.ts`, one object per language. |
+| `src/components/{Home,FeaturesPage,PhonePage,PrivacyPage,AboutPage,ChangelogPage,DownloadPage,HelpPage,TechPage}.astro` | The page bodies. Download, help and technology copy is in `src/i18n/{download,help,tech}.ts` (+ `langs/<lang>/`); the 2026 pages read `src/i18n/langs/<lang>/<page>.ts`. |
 | `src/i18n/shots.ts`, `src/assets/shots/` | Screenshots of the app per UI language, with alt texts. |
 | `src/pages/{manual,about,contact,impressum,datenschutz}.astro` | Pages that exist once (the manual is English, the legal pages are German). Body HTML is in `src/content-html/*.main.html`. They have no hreflang tags and no language switcher. |
 | `src/components/` | `SiteNav`/`SiteFooter`; the language switcher in the nav lists only the languages a page really exists in. |
@@ -89,6 +93,12 @@ Example: Portuguese (`pt`). Nothing in the English or German files changes; ever
 
 If the app has an interface in that language, add its screenshots (`tools/screenshots/`, `tools/make_shots.py --lang pt`) and point `shots` at them in `src/i18n/shots.ts` instead of the English ones.
 
-## Screenshots
+## Media
+
+Screenshots: `src/assets/media/<lang>/<lang>-<name>.png` (PNG, at least 1920 px wide; the build makes AVIF and WebP in 640/960/1280/1920). Names: `01-home`, `02-inbox`, `03-chat-sources`, `04-source-page`, `05-scam-warning`, `06-book-summary`, `07-image-question`, `08-recording`, `09-web-task`, `10-terminal`, `11-compare-models`, `12-settings-phone`, `13-privacy-network`, `14-themes`, `15-settings-models`, and the Android app `phone-01-chat` (portrait). Videos: `public/media/video/<lang>-<name>.webm` (AV1) and `.mp4` (H.264), poster `.jpg`, captions `.vtt`; names `v1-letter-answer` (per language), `v2-web-task`, `v3-terminal`, `v4-inbox`, `v5-privacy` (English; captions per language). A missing file falls back to English, then to a placeholder that shows the expected file name. Alt texts and captions: `src/i18n/langs/<lang>/media.ts`.
+
+Old addresses: `/product` (every language) and `/android` are redirect pages to `/features` and `/phone` (`redirects` in `src/i18n/pages.ts`).
+
+## Screenshots (older, 2.x)
 
 `tools/screenshots/README.md` explains how the screenshots are made (invented demo data only). `tools/make_shots.py` turns them into the optimised WebP files.
