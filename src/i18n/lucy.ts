@@ -195,7 +195,7 @@ const lucyBase = {
         { sel: '.hero h1', text: 'StarkLLM ist ein kostenloser Assistent für Ihre Briefe und Dokumente. Er läuft auf Ihrem eigenen Windows-PC.' },
         { sel: '#how', text: 'So läuft eine Frage ab: Ihre Dateien, in Abschnitte geteilt, nach Bedeutung und nach Wörtern durchsucht, beantwortet von einem Modell auf Ihrem PC, mit der Quellseite.' },
         { sel: '.shot', text: 'Die App in Aktion: eine Frage zu einem Brief, beantwortet mit Betrag, Fälligkeit und der Seite, aus der die Antwort stammt.' },
-        { sel: '#features-h', text: 'Hier die wichtigsten Funktionen: der Posteingang für Briefe, Fristen, Scans und Fotos, Warnungen vor gefälschten Briefen, Workspaces und mehr.' },
+        { sel: '#features-h', text: 'Hier die wichtigsten Funktionen: der Posteingang für Briefe, Fristen, Scans und Fotos, Warnungen vor gefälschten Briefen, Arbeitsbereiche und mehr.' },
         { sel: '#priv-h', text: 'Datenschutz: keine Telemetrie in der App. Online-Funktionen sind aus, bis Sie sie einschalten.' },
         { sel: '#download', text: 'Und hier können Sie es herunterladen. Es ist kostenlos und Open Source.' },
       ],

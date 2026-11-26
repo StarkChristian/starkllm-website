@@ -12,13 +12,13 @@
                 <li><a href="#installation">7. Installation im Überblick</a></li>
                 <li><a href="#first-launch">8. StarkLLM starten (v{{V}} Native Desktop)</a></li>
                 <li><a href="#first-week">9. Der Weg durch die erste Woche</a></li>
-                <li><a href="#workspaces">10. Einen Workspace anlegen</a></li>
+                <li><a href="#workspaces">10. Einen Arbeitsbereich anlegen</a></li>
                 <li><a href="#documents">11. Dokumente hochladen &amp; Best Practices</a></li>
                 <li><a href="#inbox">12. Posteingang, Vorgänge und Fristen</a></li>
                 <li><a href="#warnings">13. Warnungen vor gefälschten Briefen</a></li>
                 <li><a href="#chat">14. Mit Dokumenten chatten</a></li>
                 <li><a href="#knowledge-base">15. Die Wissensdatenbank nutzen &amp; Best Practices</a></li>
-                <li><a href="#workspace-vs-kb">16. Workspace oder Wissensdatenbank</a></li>
+                <li><a href="#workspace-vs-kb">16. Arbeitsbereich oder Wissensdatenbank</a></li>
                 <li><a href="#switching-models">17. Modelle wechseln</a></li>
                 <li><a href="#voice">18. Sprachfunktionen</a></li>
                 <li><a href="#local-tools">19. Lokale Tools im Prozess nutzen (MCP-Host)</a></li>
@@ -202,7 +202,7 @@
                 <h2>9. Der Weg durch die erste Woche</h2>
                 <p>Um StarkLLM optimal zu nutzen, empfehlen wir in der ersten Woche diese Abfolge:</p>
                 <ol>
-                    <li><strong>Tag 1:</strong> Fangen Sie klein an. Legen Sie einen einzelnen Workspace an, laden Sie 2-3 gewöhnliche Dokumente hoch
+                    <li><strong>Tag 1:</strong> Fangen Sie klein an. Legen Sie einen einzelnen Arbeitsbereich an, laden Sie 2-3 gewöhnliche Dokumente hoch
                         (etwa Forschungsarbeiten oder Handbücher) und üben Sie das Fragenstellen. Beobachten Sie, wie die Quellenangaben
                         funktionieren.</li>
                     <li><strong>Tag 2:</strong> Probieren Sie den Modellwechsel aus. Laden Sie über Ollama ein anderes Modell herunter
@@ -210,7 +210,7 @@
                         vergleichen Sie, wie sie dieselben Dokumentfragen beantworten.</li>
                     <li><strong>Tag 3:</strong> Laden Sie einen komplexen, mehrseitigen Bericht hoch. Beobachten Sie, wie das semantische Chunking
                         ihn in logische Blöcke zerlegt.</li>
-                    <li><strong>Tag 4:</strong> Ordnen Sie. Legen Sie getrennte Workspaces für verschiedene Projekte an (z. B.
+                    <li><strong>Tag 4:</strong> Ordnen Sie. Legen Sie getrennte Arbeitsbereiche für verschiedene Projekte an (z. B.
                         „Finanzen“, „Codebasis“, „Recht“).</li>
                     <li><strong>Tag 5+:</strong> Richten Sie Ihre globale Wissensdatenbank ein. Verweisen Sie StarkLLM auf Ihren Ordner mit dauerhaften
                         Notizen, damit Sie ihn in allen Chat-Sitzungen abfragen können.</li>
@@ -218,15 +218,15 @@
             </section>
 
             <section id="workspaces">
-                <h2>10. Einen Workspace anlegen</h2>
-                <p>Workspaces trennen Ihre Daten voneinander. Klicken Sie in der linken Seitenleiste auf „Neuer Arbeitsbereich“, um einen neuen Kontext anzulegen.
-                    Sie könnten zum Beispiel einen Workspace „Rechtsprüfung“ und einen getrennten Workspace „Marktforschung“ anlegen.
-                    Dokumente und Chats eines Workspaces vermischen sich nicht mit denen eines anderen.</p>
+                <h2>10. Einen Arbeitsbereich anlegen</h2>
+                <p>Arbeitsbereiche trennen Ihre Daten voneinander. Klicken Sie in der linken Seitenleiste auf „Neuer Arbeitsbereich“, um einen neuen Kontext anzulegen.
+                    Sie könnten zum Beispiel einen Arbeitsbereich „Rechtsprüfung“ und einen getrennten Arbeitsbereich „Marktforschung“ anlegen.
+                    Dokumente und Chats eines Arbeitsbereichs vermischen sich nicht mit denen eines anderen.</p>
             </section>
 
             <section id="documents">
                 <h2>11. Dokumente hochladen &amp; Best Practices</h2>
-                <p>Klicken Sie in einem Workspace auf die Schaltfläche „Dokument hochladen“ oder ziehen Sie unterstützte Dateien (Dokumente wie PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, Logs und Bilder bis 100 MB sowie Aufnahmen wie MP3, M4A, WAV oder den Ton eines Videos bis 500 MB) per Drag-and-drop in den vorgesehenen Bereich. StarkLLM verarbeitet das Dokument
+                <p>Klicken Sie in einem Arbeitsbereich auf die Schaltfläche „Dateien hochladen“ oder ziehen Sie unterstützte Dateien (Dokumente wie PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, Logs und Bilder bis 100 MB sowie Aufnahmen wie MP3, M4A, WAV oder den Ton eines Videos bis 500 MB) per Drag-and-drop in den vorgesehenen Bereich. StarkLLM verarbeitet das Dokument
                     im Hintergrund: Es extrahiert Text, erzeugt semantische Chunks und bettet Vektoren in die lokale ChromaDB ein.
                 </p>
 
@@ -290,7 +290,7 @@
                 <h2>15. Die Wissensdatenbank nutzen &amp; Best Practices</h2>
                 <p>Mit der Funktion Wissensdatenbank können Sie einen lokalen Ordner Ihres Windows-Hosts einbinden. StarkLLM liest
                     unterstützte Dokumente (PDF, Word, Excel, PowerPoint, EPUB, Text, Markdown, HTML, Logs und Bilder; keine Aufnahmen) daraus (nur lesend: die Dateien werden nie verändert) und
-                    indexiert sie in eine globale Vektorsammlung. Anders als Dokumente eines Workspaces dient die Wissensdatenbank
+                    indexiert sie in eine globale Vektorsammlung. Anders als Dokumente eines Arbeitsbereichs dient die Wissensdatenbank
                     als globale Referenzbibliothek, die Sie aus jeder Chat-Sitzung abfragen können. Das System prüft
                     den eingebundenen Ordner alle 30 Sekunden und indexiert neue oder geänderte Dateien automatisch neu.
                     Quelldateien auf Ihrem Host werden nie gelöscht oder verändert.</p>
@@ -309,17 +309,17 @@
             </section>
 
             <section id="workspace-vs-kb">
-                <h2>16. Workspace oder Wissensdatenbank</h2>
+                <h2>16. Arbeitsbereich oder Wissensdatenbank</h2>
                 <p>StarkLLM bietet zwei Wege, der KI Kontext zu geben. Den Unterschied zu verstehen ist entscheidend, um
                     Ihr Wissen zu ordnen:</p>
 
                 <div class="grid"
                     style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
                     <div class="glass-panel" style="border-top: 4px solid #c084fc;">
-                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Workspace-Dokumente</h3>
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Dokumente im Arbeitsbereich</h3>
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
-                            <li>An genau einen einzelnen Workspace gebunden.</li>
+                            <li>An genau einen einzelnen Arbeitsbereich gebunden.</li>
                             <li>Hält die Arbeit getrennt, um Kontextvermischung zu verhindern.</li>
                             <li>Am besten für temporäre oder projektbezogene Dokumentsätze.</li>
                         </ul>
@@ -335,7 +335,7 @@
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
                             <li>Eine dauerhafte, globale Wissensebene.</li>
-                            <li>Gleichzeitig in allen Chats und Workspaces verfügbar.</li>
+                            <li>Gleichzeitig in allen Chats und Arbeitsbereichen verfügbar.</li>
                             <li>Am besten für dauerhaftes Referenzmaterial und persönliche Archive.</li>
                         </ul>
                         <div
@@ -370,7 +370,7 @@
                 <h2>19. Lokale Tools im Prozess nutzen (MCP-Host)</h2>
                 <p>Phase 2 ergänzt sicheres, im Prozess laufendes, nur lesendes Aufrufen von Tools. Wenn ein offenes Modell feststellt, dass es mehr Informationen braucht, um Ihre Anfrage zu erfüllen, löst es einen strukturierten Tool-Aufruf aus. StarkLLM stellt drei integrierte Tools bereit:</p>
                 <ul>
-                    <li><code>list_workspace_files</code>: Ermittelt Dokumentnamen, Dateigrößen, Chunk-Anzahlen und Upload-Zeitstempel in Ihrem aktuellen Workspace, ohne das Dateisystem zu verlassen.</li>
+                    <li><code>list_workspace_files</code>: Ermittelt Dokumentnamen, Dateigrößen, Chunk-Anzahlen und Upload-Zeitstempel in Ihrem aktuellen Arbeitsbereich, ohne das Dateisystem zu verlassen.</li>
                     <li><code>search_local_kb</code>: Führt eine hybride Vektor- und BM25-Suche über Ihre globale Wissensdatenbank aus, um passende Passagen zu finden.</li>
                     <li><code>fetch_cited_chunk</code>: Ruft den genauen gespeicherten Passagentext zu jeder Fundstelle direkt aus den Chroma-Collections ab.</li>
                 </ul>
@@ -443,12 +443,12 @@
 
             <section id="folders">
                 <h2>23. Chat-Ordner &amp; Organisation</h2>
-                <p>Mit wachsender Recherche hält StarkLLM Ihren Workspace mit Konversationsordnern in der Seitenleiste sauber und übersichtlich:</p>
+                <p>Mit wachsender Recherche hält StarkLLM Ihren Arbeitsbereich mit Konversationsordnern in der Seitenleiste sauber und übersichtlich:</p>
                 <ul>
                     <li><strong>Ordner anlegen:</strong> Klicken Sie in der Konversationsliste der Seitenleiste auf das Symbol <strong>+ Neuer Ordner</strong>, um Sitzungen nach Projekt, Kunde oder Thema zu gruppieren (z. B. „Finanzprüfungen“, „Rechtsgutachten“, „Code-Reviews“).</li>
                     <li><strong>Ziehen oder zuweisen:</strong> Weisen Sie jede aktive Konversation über das Drei-Punkte-Kontextmenü oder ein Ordner-Auswahlmenü einem Ordner zu.</li>
                     <li><strong>Einklappbare Baumansicht:</strong> Klappen Sie Ordner auf oder zu, um den Fokus ohne visuelles Durcheinander auf Ihrem aktiven Verlauf zu halten.</li>
-                    <li><strong>Ordnerfilter:</strong> Durchsuchen Sie Konversationen in Echtzeit innerhalb eines bestimmten Ordners oder im gesamten Workspace.</li>
+                    <li><strong>Ordnerfilter:</strong> Durchsuchen Sie Konversationen in Echtzeit innerhalb eines bestimmten Ordners oder im gesamten Arbeitsbereich.</li>
                 </ul>
             </section>
 
@@ -480,7 +480,7 @@
                 <ul>
                     <li><strong>VRAM &amp; GPU-Auslastung:</strong> Überwachen Sie den belegten Grafikspeicher, damit Ihr gewähltes Modell (3B, 7B, 14B) bequem in den VRAM Ihrer GPU passt, ohne in den Arbeitsspeicher auszuweichen.</li>
                     <li><strong>Systemzustand:</strong> Sofortige Statusanzeigen für das FastAPI-Backend, den ChromaDB-Vektorspeicher und den Ollama-Inferenz-Daemon.</li>
-                    <li><strong>Workspace-Kennzahlen:</strong> Gesamtzahl indexierter Chunks, aktive Dokumente, Gesamtzahl der Konversationen und Schnellzugriffe auf Ihre letzten Chat-Sitzungen.</li>
+                    <li><strong>Kennzahlen des Arbeitsbereichs:</strong> Gesamtzahl indexierter Chunks, aktive Dokumente, Gesamtzahl der Konversationen und Schnellzugriffe auf Ihre letzten Chat-Sitzungen.</li>
                 </ul>
             </section>
 

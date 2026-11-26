@@ -12,13 +12,13 @@
                 <li><a href="#installation">7. Présentation de l’installation</a></li>
                 <li><a href="#first-launch">8. Lancer StarkLLM (v{{V}}, application de bureau native)</a></li>
                 <li><a href="#first-week">9. Parcours de la première semaine</a></li>
-                <li><a href="#workspaces">10. Créer un Workspace</a></li>
+                <li><a href="#workspaces">10. Créer un espace de travail</a></li>
                 <li><a href="#documents">11. Ajouter des documents et bonnes pratiques</a></li>
                 <li><a href="#inbox">12. Boîte de réception, dossiers et échéances</a></li>
                 <li><a href="#warnings">13. Alertes contre les faux courriers</a></li>
                 <li><a href="#chat">14. Discuter avec vos documents</a></li>
-                <li><a href="#knowledge-base">15. Utiliser la Knowledge Base et bonnes pratiques</a></li>
-                <li><a href="#workspace-vs-kb">16. Workspace ou Knowledge Base ?</a></li>
+                <li><a href="#knowledge-base">15. Utiliser la base de connaissances et bonnes pratiques</a></li>
+                <li><a href="#workspace-vs-kb">16. Espace de travail ou base de connaissances ?</a></li>
                 <li><a href="#switching-models">17. Changer de modèle</a></li>
                 <li><a href="#voice">18. Fonctions vocales</a></li>
                 <li><a href="#local-tools">19. Utiliser les outils locaux intégrés (hôte MCP)</a></li>
@@ -187,7 +187,7 @@
                 </div>
 
                 <h3>Option 1 &mdash; Installeur de bureau Windows (recommandé)</h3>
-                <p>Exécutez <code>StarkLLM-v{{V}}-Setup.exe</code> pour installer l’application Windows native. Il crée des raccourcis sur le bureau et dans le menu Démarrer. Au lancement, l’application démarre son moteur intégré et Ollama, télécharge les modèles manquants, puis affiche StarkLLM dans sa propre fenêtre. Les données sont stockées dans <code>%APPDATA%\StarkLLM\data</code>, et le dossier de la Knowledge Base est <code>Documents\StarkLLM Knowledge Base</code>. Quand vous quittez StarkLLM, le moteur s’arrête aussi.</p>
+                <p>Exécutez <code>StarkLLM-v{{V}}-Setup.exe</code> pour installer l’application Windows native. Il crée des raccourcis sur le bureau et dans le menu Démarrer. Au lancement, l’application démarre son moteur intégré et Ollama, télécharge les modèles manquants, puis affiche StarkLLM dans sa propre fenêtre. Les données sont stockées dans <code>%APPDATA%\StarkLLM\data</code>, et le dossier de la base de connaissances est <code>Documents\StarkLLM Knowledge Base</code>. Quand vous quittez StarkLLM, le moteur s’arrête aussi.</p>
 
                 <h3>Option 2 &mdash; À partir des sources avec Docker Compose (développeurs)</h3>
                 <p>Pour le développement, les environnements sans interface ou les serveurs, démarrez le moteur à partir du code source sur GitHub dans des conteneurs (nécessite Docker) :</p>
@@ -199,7 +199,7 @@
                 <h2>9. Parcours de la première semaine</h2>
                 <p>Pour tirer le meilleur de StarkLLM, nous recommandons cette progression pendant votre première semaine :</p>
                 <ol>
-                    <li><strong>Jour 1 :</strong> commencez petit. Créez un seul Workspace, ajoutez 2 ou 3 documents classiques
+                    <li><strong>Jour 1 :</strong> commencez petit. Créez un seul espace de travail, ajoutez 2 ou 3 documents classiques
                         (comme des articles de recherche ou des manuels) et exercez-vous à poser des questions. Observez comment les citations
                         fonctionnent.</li>
                     <li><strong>Jour 2 :</strong> essayez de changer de modèle. Téléchargez un autre modèle via Ollama
@@ -207,23 +207,23 @@
                         comparez leurs réponses aux mêmes questions sur vos documents.</li>
                     <li><strong>Jour 3 :</strong> ajoutez un rapport complexe de plusieurs pages. Remarquez comment le découpage sémantique
                         le répartit en blocs logiques.</li>
-                    <li><strong>Jour 4 :</strong> organisez-vous. Créez des Workspaces distincts pour différents projets (par exemple
+                    <li><strong>Jour 4 :</strong> organisez-vous. Créez des espaces de travail distincts pour différents projets (par exemple
                         « Finances », « Code source », « Juridique »).</li>
-                    <li><strong>Jour 5 et suivants :</strong> configurez votre Global Knowledge Base (base de connaissances globale). Indiquez à StarkLLM votre dossier
+                    <li><strong>Jour 5 et suivants :</strong> configurez votre base de connaissances globale. Indiquez à StarkLLM votre dossier
                         de notes permanentes pour pouvoir l’interroger depuis toutes vos discussions.</li>
                 </ol>
             </section>
 
             <section id="workspaces">
-                <h2>10. Créer un Workspace</h2>
-                <p>Les Workspaces (espaces de travail) isolent vos données. Dans la barre latérale gauche, cliquez sur « New Workspace » (Nouveau Workspace) pour créer un nouveau contexte.
-                    Vous pouvez par exemple créer un Workspace « Legal Review » (examen juridique) et un autre, distinct, « Market Research » (étude de marché).
-                    Les documents et les discussions d’un Workspace ne peuvent pas contaminer ceux d’un autre.</p>
+                <h2>10. Créer un espace de travail</h2>
+                <p>Les espaces de travail isolent vos données. Dans la barre latérale gauche, cliquez sur « Nouvel espace de travail » pour créer un nouveau contexte.
+                    Vous pouvez par exemple créer un espace de travail « Legal Review » (examen juridique) et un autre, distinct, « Market Research » (étude de marché).
+                    Les documents et les discussions d’un espace de travail ne peuvent pas contaminer ceux d’un autre.</p>
             </section>
 
             <section id="documents">
                 <h2>11. Ajouter des documents et bonnes pratiques</h2>
-                <p>Dans un Workspace, cliquez sur le bouton « Upload Document » (Ajouter un document) ou glissez-déposez des fichiers pris en charge (documents comme PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, journaux et images jusqu’à 100 Mo, et enregistrements comme MP3, M4A, WAV ou le son d’une vidéo jusqu’à 500 Mo) dans la zone prévue. StarkLLM traite le document en
+                <p>Dans un espace de travail, cliquez sur le bouton « Envoyer des fichiers » ou glissez-déposez des fichiers pris en charge (documents comme PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, journaux et images jusqu’à 100 Mo, et enregistrements comme MP3, M4A, WAV ou le son d’une vidéo jusqu’à 500 Mo) dans la zone prévue. StarkLLM traite le document en
                     arrière-plan : il extrait le texte, génère des segments sémantiques et enregistre les vecteurs d’embedding dans ChromaDB en local.
                 </p>
 
@@ -237,13 +237,13 @@
 
             <section id="inbox">
                 <h2>12. Boîte de réception, dossiers et échéances</h2>
-                <p>Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone (glissez-le sur la fenêtre ou utilisez <em>Add a letter or document</em> (Ajouter un courrier ou un document) sur la page d’accueil). StarkLLM le lit sur votre PC et le range dans <strong>Inbox</strong> (la boîte de réception). Rien n’est renommé, déplacé ni supprimé sur votre disque ; StarkLLM ne fait que des suggestions.</p>
+                <p>Ajoutez un courrier sous forme de PDF, de scan ou de photo prise avec votre téléphone (glissez-le sur la fenêtre ou utilisez <em>Ajouter un courrier ou un document</em> sur la page d’accueil). StarkLLM le lit sur votre PC et le range dans la <strong>Boîte de réception</strong>. Rien n’est renommé, déplacé ni supprimé sur votre disque ; StarkLLM ne fait que des suggestions.</p>
                 <ul>
                     <li><strong>Ce qui est lu :</strong> le type de courrier (facture, rappel, avis d’imposition, contrat, amende, recouvrement de créance, SMS et autres), l’expéditeur, la date du courrier, les numéros de référence (client, contrat, numéro fiscal et autres), les montants, les comptes bancaires et les échéances.</li>
                     <li><strong>Chaque valeur a une source :</strong> chaque valeur est retrouvée mot pour mot sur une page du courrier. Cliquez dessus : le courrier s’ouvre à cette page, avec la ligne surlignée.</li>
                     <li><strong>Dossiers :</strong> les courriers d’un même expéditeur sont regroupés, le dossier dont l’échéance est la plus proche en premier. Le même courrier en photo et en PDF est signalé, tout comme un courrier remplacé et une arnaque possible.</li>
-                    <li><strong>Nouveau et traité :</strong> le nombre de nouveaux courriers s’affiche à côté de <em>Inbox</em>. Marquez un courrier comme traité quand vous vous en êtes occupé, ou donnez-lui votre propre titre. Les notes, les feuilles de calcul, les journaux et les descriptions de photos ne sont pas traités comme des courriers.</li>
-                    <li><strong>Échéances sur la page d’accueil :</strong> la page d’accueil liste les échéances, les rendez-vous et les dates de paiement trouvés dans vos courriers, avec le montant et la page. <em>Add to calendar</em> (Ajouter au calendrier) les enregistre dans un fichier de calendrier.</li>
+                    <li><strong>Nouveau et traité :</strong> le nombre de nouveaux courriers s’affiche à côté de <em>Boîte de réception</em>. Marquez un courrier comme traité quand vous vous en êtes occupé, ou donnez-lui votre propre titre. Les notes, les feuilles de calcul, les journaux et les descriptions de photos ne sont pas traités comme des courriers.</li>
+                    <li><strong>Échéances sur la page d’accueil :</strong> la page d’accueil liste les échéances, les rendez-vous et les dates de paiement trouvés dans vos courriers, avec le montant et la page. <em>Ajouter au calendrier</em> les enregistre dans un fichier de calendrier.</li>
                 </ul>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-inbox.webp?v=10" alt="Boîte de réception de StarkLLM : les courriers regroupés en dossiers par expéditeur, avec la prochaine échéance et une mention &quot;suspicious&quot; (suspect) sur un courrier (interface en anglais)" class="showcase-img zoomable-img">
@@ -259,7 +259,7 @@
 
             <section id="warnings">
                 <h2>13. Alertes contre les faux courriers</h2>
-                <p>Avant que le modèle ne voie les passages d’un courrier, StarkLLM les contrôle avec des règles fixes. Un encadré rouge au-dessus de la réponse, et une mention <em>Possible scam</em> (arnaque possible) dans la boîte de réception, apparaissent quand un courrier :</p>
+                <p>Avant que le modèle ne voie les passages d’un courrier, StarkLLM les contrôle avec des règles fixes. Un encadré rouge au-dessus de la réponse, et une mention <em>Arnaque possible</em> dans la boîte de réception, apparaissent quand un courrier :</p>
                 <ul>
                     <li>demande un paiement vers un compte étranger (par exemple de la part d’une administration), par bon d’achat, carte cadeau ou cryptomonnaie, ou via un lien ;</li>
                     <li>combine plusieurs signes typiques d’une arnaque, comme une pression de temps extrême, des menaces d’arrestation ou une demande de garder le secret ;</li>
@@ -284,40 +284,39 @@
             </section>
 
             <section id="knowledge-base">
-                <h2>15. Utiliser la Knowledge Base et bonnes pratiques</h2>
-                <p>La fonction Knowledge Base (base de connaissances) vous permet de relier un dossier local de votre hôte Windows. StarkLLM lit
+                <h2>15. Utiliser la base de connaissances et bonnes pratiques</h2>
+                <p>La fonction <strong>Base de connaissances</strong> vous permet de relier un dossier local de votre hôte Windows. StarkLLM lit
                     les documents pris en charge (PDF, Word, Excel, PowerPoint, EPUB, texte, Markdown, HTML, journaux et images ; pas les enregistrements) de ce dossier (à sens unique : les fichiers ne sont jamais modifiés) et
-                    les indexe dans une collection vectorielle globale. À la différence des documents propres à un Workspace, la Knowledge
-                    Base joue le rôle d’une bibliothèque de référence globale que vous pouvez interroger depuis n’importe quelle discussion. Le système examine
+                    les indexe dans une collection vectorielle globale. À la différence des documents propres à un espace de travail, la base de connaissances joue le rôle d’une bibliothèque de référence globale que vous pouvez interroger depuis n’importe quelle discussion. Le système examine
                     le dossier relié toutes les 30 secondes et réindexe automatiquement les fichiers nouveaux ou modifiés.
                     Les fichiers sources de votre hôte ne sont jamais supprimés ni modifiés.</p>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
-                    <img src="/assets/shots/en-kb.webp?v=10" alt="La Knowledge Base de StarkLLM : des dossiers de ce PC, lus et gardés consultables, avec les fichiers indexés (interface en anglais)" class="showcase-img zoomable-img">
+                    <img src="/assets/shots/en-kb.webp?v=10" alt="La base de connaissances de StarkLLM : des dossiers de ce PC, lus et gardés consultables, avec les fichiers indexés (interface en anglais)" class="showcase-img zoomable-img">
                 </div>
 
-                <h3>Comment ajouter un dossier à la Knowledge Base</h3>
-                <p>Dans l’application, ouvrez <strong>Knowledge Base</strong> dans la barre latérale. Placez vos documents dans votre dossier de Knowledge Base (le chemin est affiché sous <em>Your knowledge base folder</em> ; <strong>Copy Path</strong> le copie) ou cliquez sur <strong>Add Folder</strong> (Ajouter un dossier) pour ajouter un autre dossier de ce PC. StarkLLM lit tout seul les fichiers nouveaux et modifiés ; <strong>Sync Now</strong> (Synchroniser maintenant) le fait immédiatement. Vous n’avez pas besoin d’un terminal pour cela.</p>
+                <h3>Comment ajouter un dossier à la base de connaissances</h3>
+                <p>Dans l’application, ouvrez <strong>Base de connaissances</strong> dans la barre latérale. Placez vos documents dans votre dossier de base de connaissances (le chemin est affiché sous <em>Votre dossier de base de connaissances</em> ; <strong>Copier le chemin</strong> le copie) ou cliquez sur <strong>Ajouter un dossier</strong> pour ajouter un autre dossier de ce PC. StarkLLM lit tout seul les fichiers nouveaux et modifiés ; <strong>Synchroniser maintenant</strong> le fait immédiatement. Vous n’avez pas besoin d’un terminal pour cela.</p>
 
                 <div class="alert info">
-                    <h4>Conseils pour la Knowledge Base</h4>
+                    <h4>Conseils pour la base de connaissances</h4>
                     <p>Structurez logiquement votre dossier local avec des documents riches en texte (Markdown, TXT, PDF propres).
-                        Évitez de pointer la Knowledge Base vers un lecteur entier contenant des milliers de fichiers système
+                        Évitez de pointer la base de connaissances vers un lecteur entier contenant des milliers de fichiers système
                         binaires.</p>
                 </div>
             </section>
 
             <section id="workspace-vs-kb">
-                <h2>16. Workspace ou Knowledge Base ?</h2>
+                <h2>16. Espace de travail ou base de connaissances ?</h2>
                 <p>StarkLLM propose deux façons de donner du contexte à l’IA. Comprendre la différence est essentiel pour
                     bien organiser vos connaissances :</p>
 
                 <div class="grid"
                     style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
                     <div class="glass-panel" style="border-top: 4px solid #c084fc;">
-                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Documents d’un Workspace</h3>
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Documents d’un espace de travail</h3>
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
-                            <li>Liés strictement à un seul Workspace.</li>
+                            <li>Liés strictement à un seul espace de travail.</li>
                             <li>Gardent le travail cloisonné pour éviter de mélanger les contextes.</li>
                             <li>Idéal pour des ensembles de documents temporaires ou propres à un projet.</li>
                         </ul>
@@ -329,11 +328,11 @@
                     </div>
 
                     <div class="glass-panel" style="border-top: 4px solid #d4af37;">
-                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Knowledge Base</h3>
+                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Base de connaissances</h3>
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
                             <li>Une couche de connaissances globale et durable.</li>
-                            <li>Disponible dans toutes les discussions et tous les Workspaces à la fois.</li>
+                            <li>Disponible dans toutes les discussions et tous les espaces de travail à la fois.</li>
                             <li>Idéale pour la documentation de référence permanente et les archives personnelles.</li>
                         </ul>
                         <div
@@ -368,8 +367,8 @@
                 <h2>19. Utiliser les outils locaux intégrés (hôte MCP)</h2>
                 <p>La phase 2 ajoute des appels d’outils sûrs, intégrés au processus et en lecture seule. Quand un modèle à poids ouverts estime qu’il lui faut plus d’informations pour répondre à votre demande, il émet un appel d’outil structuré. StarkLLM fournit trois outils intégrés :</p>
                 <ul>
-                    <li><code>list_workspace_files</code> : repère les noms de documents, les tailles de fichiers, le nombre de segments et les horodatages d’ajout dans votre Workspace actuel, sans sortir du système de fichiers autorisé.</li>
-                    <li><code>search_local_kb</code> : exécute une recherche hybride, vectorielle et BM25, dans votre Knowledge Base globale pour trouver les passages correspondants.</li>
+                    <li><code>list_workspace_files</code> : repère les noms de documents, les tailles de fichiers, le nombre de segments et les horodatages d’ajout dans votre espace de travail actuel, sans sortir du système de fichiers autorisé.</li>
+                    <li><code>search_local_kb</code> : exécute une recherche hybride, vectorielle et BM25, dans votre base de connaissances globale pour trouver les passages correspondants.</li>
                     <li><code>fetch_cited_chunk</code> : récupère le texte exact du passage stocké pour n’importe quel repère de citation, directement depuis les collections Chroma.</li>
                 </ul>
 
@@ -392,7 +391,7 @@
 
             <section id="other-apps">
                 <h2>20. Utiliser StarkLLM depuis d’autres programmes</h2>
-                <p>Dans <strong>Settings &rarr; Other apps</strong> (Réglages &rarr; Autres applications), vous pouvez laisser des programmes de ce PC utiliser StarkLLM : des éditeurs comme VS Code et Cursor, des assistants IA compatibles MCP, ou vos propres scripts. Ils peuvent rechercher dans vos documents et leur poser des questions. Ils ne peuvent rien modifier ni supprimer.</p>
+                <p>Dans <strong>Paramètres &rarr; Autres applications</strong>, vous pouvez laisser des programmes de ce PC utiliser StarkLLM : des éditeurs comme VS Code et Cursor, des assistants IA compatibles MCP, ou vos propres scripts. Ils peuvent rechercher dans vos documents et leur poser des questions. Ils ne peuvent rien modifier ni supprimer.</p>
                 <ul>
                     <li><strong>Désactivé par défaut.</strong> Seuls les programmes de ce PC peuvent se connecter, et chacun a besoin d’une clé que vous créez sur cette page.</li>
                     <li><strong>Deux voies d’accès :</strong> un serveur MCP et une API compatible OpenAI (<code>/v1</code>). Si vous utilisiez déjà l’API <code>/v1</code>, elle demande désormais une clé.</li>
@@ -422,7 +421,7 @@
                 <p>Vous pouvez changer de thème de deux façons :</p>
                 <ul>
                     <li><strong>Sélecteur rapide :</strong> cliquez sur l’icône de palette (&#127912;) en bas de la barre latérale gauche. Une fenêtre contextuelle s’ouvre aussitôt ; cliquez sur un thème pour l’appliquer instantanément.</li>
-                    <li><strong>Galerie des réglages :</strong> ouvrez Settings (Réglages) depuis la barre latérale, rendez-vous dans <strong>Appearance</strong> (Apparence) et parcourez toutes les cartes de thèmes, avec leurs pastilles de couleur en direct, leurs barres de dégradé et leurs descriptions.</li>
+                    <li><strong>Galerie des réglages :</strong> ouvrez Paramètres depuis la barre latérale, rendez-vous dans <strong>Apparence</strong> et parcourez toutes les cartes de thèmes, avec leurs pastilles de couleur en direct, leurs barres de dégradé et leurs descriptions.</li>
                 </ul>
                 <p>Votre thème actif est mémorisé automatiquement entre les onglets du navigateur et les redémarrages du système, grâce au stockage côté client.</p>
             </section>
@@ -443,10 +442,10 @@
                 <h2>23. Dossiers de discussions et organisation</h2>
                 <p>À mesure que vos recherches s’étendent, StarkLLM garde votre espace propre et organisé grâce aux dossiers de conversations de la barre latérale :</p>
                 <ul>
-                    <li><strong>Créer des dossiers :</strong> cliquez sur l’icône <strong>+ New Folder</strong> (Nouveau dossier) de la liste des conversations dans la barre latérale pour regrouper vos sessions par projet, par client ou par sujet (par exemple « Audits financiers », « Dossiers juridiques », « Revues de code »).</li>
+                    <li><strong>Créer des dossiers :</strong> cliquez sur l’icône <strong>+ Nouveau dossier</strong> de la liste des conversations dans la barre latérale pour regrouper vos sessions par projet, par client ou par sujet (par exemple « Audits financiers », « Dossiers juridiques », « Revues de code »).</li>
                     <li><strong>Glisser ou affecter :</strong> placez n’importe quelle conversation active dans un dossier via le menu contextuel à trois points ou la liste déroulante de sélection de dossier.</li>
                     <li><strong>Arborescence repliable :</strong> déployez ou repliez les dossiers pour rester concentré sur votre flux actif, sans encombrement visuel.</li>
-                    <li><strong>Filtrage par dossier :</strong> recherchez des conversations dans un dossier précis ou dans tout le Workspace, en temps réel.</li>
+                    <li><strong>Filtrage par dossier :</strong> recherchez des conversations dans un dossier précis ou dans tout l’espace de travail, en temps réel.</li>
                 </ul>
             </section>
 
@@ -478,7 +477,7 @@
                 <ul>
                     <li><strong>VRAM et utilisation du GPU :</strong> surveillez la mémoire vidéo allouée pour vous assurer que le modèle choisi (3B, 7B, 14B) tient confortablement dans la VRAM de votre GPU, sans déborder sur la RAM du système.</li>
                     <li><strong>État du système :</strong> des indicateurs d’état instantanés pour le backend FastAPI, la base vectorielle ChromaDB et le démon d’inférence Ollama.</li>
-                    <li><strong>Mesures du Workspace :</strong> nombre total de segments indexés, documents actifs, nombre total de conversations et liens d’accès rapide vers vos sessions de discussion récentes.</li>
+                    <li><strong>Mesures de l’espace de travail :</strong> nombre total de segments indexés, documents actifs, nombre total de conversations et liens d’accès rapide vers vos sessions de discussion récentes.</li>
                 </ul>
             </section>
 

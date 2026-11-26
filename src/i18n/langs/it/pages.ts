@@ -1,5 +1,5 @@
 export default {
-  manual: { title: 'Manuale d\'uso | StarkLLM', description: 'Il manuale d\'uso di StarkLLM: installazione, primo avvio, documenti, lettere e scadenze, chat con fonti, Knowledge Base, strumenti, impostazioni e risoluzione dei problemi.' },
+  manual: { title: 'Manuale d\'uso | StarkLLM', description: 'Il manuale d\'uso di StarkLLM: installazione, primo avvio, documenti, lettere e scadenze, chat con fonti, base di conoscenza, strumenti, impostazioni e risoluzione dei problemi.' },
   about: { title: 'Chi siamo | StarkLLM', description: 'Chi siamo: StarkLLM è un assistente IA gratuito, open source e locale per Windows, creato da Christian Stark ad Aquisgrana.' },
   contact: { title: 'Contatti e assistenza | StarkLLM', description: 'Contatti e assistenza per StarkLLM: e-mail, GitHub e community.' },
   legal: {

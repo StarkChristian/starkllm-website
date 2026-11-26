@@ -558,7 +558,7 @@
     "Supporta i provider di modelli nel cloud?"
    ],
    "page": "/it/tech-privacy",
-   "match": "Provider di modelli cloud (Settings, per esempio DeepSeek, OpenRouter, Groq)"
+   "match": "Provider di modelli cloud (Impostazioni, per esempio DeepSeek, OpenRouter, Groq)"
   },
   {
    "id": "sources",
@@ -590,7 +590,7 @@
     "Che differenza c'è tra un workspace e la Knowledge Base?"
    ],
    "page": "/it/tech-knowledge-base",
-   "match": "La Knowledge Base (base di conoscenza) è una cartella sul Suo PC"
+   "match": "La base di conoscenza è una cartella sul Suo PC"
   },
   {
    "id": "formats",
