@@ -17,7 +17,7 @@ export default {
     '12-settings-phone': 'Impostazioni, Telefono: un telefono Android abbinato con l’interruttore «Anche fuori casa (tramite il relay)»',
     '13-privacy-network': 'Impostazioni, Privacy e rete: l’elenco di tutte le connessioni con ora, host e scopo, e l’interruttore «Completamente offline»',
     '14-themes': 'Impostazioni, Aspetto: la galleria dei temi, con un tema chiaro e uno scuro',
-    '15-settings-models': 'Impostazioni, Modelli: il modello di chat, il modello di embedding e il modello visivo su questo PC',
+    '15-settings-models': 'Impostazioni, Impostazioni del modello: il modello di chat, il modello di embedding e il modello visivo su questo PC',
     'phone-01-chat': 'L’app StarkLLM per Android: una risposta del PC con le fonti',
   },
   videos: {

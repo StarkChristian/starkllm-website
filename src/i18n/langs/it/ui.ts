@@ -21,7 +21,7 @@ export default {
     bottom: '© 2026 Christian Stark. Fornito "così com\'è", senza garanzie né responsabilità.',
     legalPage: 'Informazioni legali',
     aiNote: {
-      text: 'Tradotto con l\'aiuto dell\'IA: se trovi un errore, segnalacelo.',
+      text: 'Tradotto con l\'aiuto dell\'IA: se trova un errore, ce lo segnali.',
       issues: 'GitHub issues',
       contact: 'Contatti',
     },

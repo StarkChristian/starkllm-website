@@ -379,7 +379,7 @@
     "Che cosa esce dal mio computer?"
    ],
    "page": "/it/tech-privacy",
-   "match": "Si collegano a internet solo quando le attivi o le avvii"
+   "match": "Si collegano a internet solo quando Lei le attiva o le avvia"
   },
   {
    "id": "offline",
@@ -421,7 +421,7 @@
     "Devo disattivare Smart App Control?"
    ],
    "page": "/it/download",
-   "match": "Se Windows mostra comunque un avviso, controlla il nome dell'editore"
+   "match": "Se Windows mostra comunque un avviso, controlli il nome dell'editore"
   },
   {
    "id": "checksum",
@@ -475,7 +475,7 @@
     "Quali sono i prerequisiti?"
    ],
    "page": "/it/download",
-   "match": "Solo Ollama, per i modelli di IA. StarkLLM può installare per te la versione ufficiale"
+   "match": "Solo Ollama, per i modelli di IA. StarkLLM può installare per Lei la versione ufficiale"
   },
   {
    "id": "firststart",
@@ -487,7 +487,7 @@
     "Cosa succede durante il primo avvio?"
    ],
    "page": "/it/download",
-   "match": "Il primo avvio scarica i modelli di IA che ancora non hai"
+   "match": "Il primo avvio scarica i modelli di IA che ancora non ha"
   },
   {
    "id": "languages",
@@ -590,7 +590,7 @@
     "Che differenza c'è tra un workspace e la Knowledge Base?"
    ],
    "page": "/it/tech-knowledge-base",
-   "match": "La Knowledge Base (base di conoscenza) è una cartella sul tuo PC"
+   "match": "La Knowledge Base (base di conoscenza) è una cartella sul Suo PC"
   },
   {
    "id": "formats",
@@ -689,7 +689,7 @@
     "I miei script possono usare StarkLLM?"
    ],
    "page": "/it/manual",
-   "match": "puoi permettere ai programmi di questo PC di usare StarkLLM"
+   "match": "può permettere ai programmi di questo PC di usare StarkLLM"
   },
   {
    "id": "password",
@@ -818,7 +818,7 @@
     "Come fermo il motore di StarkLLM e i suoi container?"
    ],
    "page": "/it/manual",
-   "match": "Dalla v2.2 no: quando chiudi o esci da StarkLLM, si ferma anche il suo motore"
+   "match": "Dalla v2.2 no: quando Lei chiude StarkLLM o ne esce, si ferma anche il suo motore"
   }
  ],
  "exclude": [
