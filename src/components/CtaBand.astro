@@ -1,0 +1,28 @@
+---
+// The closing call to action of a page: download, with version and size from the release.
+import Icon from './Icon.astro';
+import { common } from '../i18n/site';
+import { localePath, type Lang } from '../i18n/ui';
+import { V, SIZE_MB } from '../data/release';
+const { lang, id = 'cta-h' } = Astro.props as { lang: Lang; id?: string };
+const c = common[lang].cta;
+---
+<section class="section tight" aria-labelledby={id}>
+  <div class="wrap">
+    <div class="dl-band reveal">
+      <div class="dl-band-in">
+        <div class="stack" style="--flow:var(--space-s)">
+          <h2 id={id} style="font-size:var(--step-3)">{c.h2}</h2>
+          <p>{c.text}</p>
+        </div>
+        <div class="stack" style="--flow:var(--space-xs)">
+          <div class="btn-row">
+            <a class="btn primary" href={localePath(lang, '/download')}><Icon name="download" size={18} />{c.btn}</a>
+            <a class="btn" href={localePath(lang, '/manual')}>{c.alt}</a>
+          </div>
+          <p class="small mono muted">v{V} · {SIZE_MB} MB · Apache 2.0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

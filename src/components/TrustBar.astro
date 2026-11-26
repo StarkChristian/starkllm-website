@@ -1,0 +1,10 @@
+---
+// Facts a visitor can check: signed, licence, no telemetry, SBOM, source.
+import Icon from './Icon.astro';
+import { common } from '../i18n/site';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+---
+<ul class="trust">
+  {common[lang].trust.map((t) => <li><b><Icon name={t.icon} size={17} />{t.k}</b><span>{t.v}</span></li>)}
+</ul>

@@ -1,0 +1,57 @@
+---
+// "Your data stays here": what stays on the PC (left) and what goes online only when the user switches it on (right),
+// each online feature with its switch, shown off. Inline SVG with theme colours; a plain list on narrow screens.
+import Icon from './Icon.astro';
+import { start } from '../i18n/site';
+import type { Lang } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const p = start[lang].privacy;
+const rows = [130, 206, 282, 358, 434];
+const uid = `pd-${lang}`;
+---
+<figure class="pdiag-fig">
+  <svg class="pdiag" viewBox="0 0 1000 600" role="img" aria-labelledby={`${uid}-t ${uid}-d`}>
+    <title id={`${uid}-t`}>{p.pcTitle} / {p.netTitle}</title>
+    <desc id={`${uid}-d`}>{p.pc.join(', ')}. {p.net.map((n) => `${n.k}: ${n.v}`).join('; ')}. {p.offline}</desc>
+    <rect class="box-pc" x="20" y="20" width="450" height="500" rx="26" />
+    <text class="h" x="52" y="72">{p.pcTitle}</text>
+    <text class="sub" x="52" y="98">{p.pcSub}</text>
+    <path class="wire-live" d={`M72 ${rows[0] + 29} V ${rows[4] + 29}`} />
+    {p.pc.map((t, i) => (
+      <g>
+        <rect class="row-pc" x="44" y={rows[i]} width="402" height="58" rx="14" />
+        <circle class="dot" cx="72" cy={rows[i] + 29} r="6" />
+        <text class="item" x="94" y={rows[i] + 35}>{t}</text>
+      </g>
+    ))}
+    <rect class="box-net" x="530" y="20" width="450" height="500" rx="26" />
+    <text class="h" x="562" y="72">{p.netTitle}</text>
+    <text class="sub" x="562" y="98">{p.netSub}</text>
+    {p.net.map((n, i) => (
+      <g>
+        <path class="wire" d={`M446 ${rows[i] + 29} H 554`} />
+        <circle class="gate" cx="500" cy={rows[i] + 29} r="7" />
+        <rect class="row-net" x="554" y={rows[i]} width="402" height="58" rx="14" />
+        <text class="item" x="578" y={rows[i] + 25}>{n.k}</text>
+        <text class="note" x="578" y={rows[i] + 45}>{n.v}</text>
+        <rect class="sw-track" x="902" y={rows[i] + 18} width="40" height="22" rx="11" />
+        <circle class="sw-knob" cx="913" cy={rows[i] + 29} r="7" />
+      </g>
+    ))}
+    <circle class="gold" cx={500 - p.offline.length * 3.05 - 12} cy="566" r="5" />
+    <text class="sub" x="500" y="571" text-anchor="middle">{p.offline}</text>
+  </svg>
+  <div class="pdiag-list grid-2">
+    <div class="card">
+      <h3>{p.pcTitle}</h3>
+      <p class="small muted">{p.pcSub}</p>
+      <ul class="check-list" style="margin-top:var(--space-s)">{p.pc.map((t) => <li>{t}</li>)}</ul>
+    </div>
+    <div class="card">
+      <h3>{p.netTitle}</h3>
+      <p class="small muted">{p.netSub}</p>
+      <ul class="points">{p.net.map((n) => <li><Icon name="offline" size={18} /><span><b>{n.k}</b>{n.v}</span></li>)}</ul>
+      <p class="small" style="margin-top:var(--space-s)">{p.offline}</p>
+    </div>
+  </div>
+</figure>

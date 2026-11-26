@@ -1,0 +1,62 @@
+---
+// A short silent clip of the app, by media name ("v1-letter-answer") and language.
+// Files: public/media/video/<lang>-<name>.webm (AV1) and .mp4 (H.264), a poster <lang>-<name>.jpg and captions
+// <lang>-<name>.vtt; the English files are the fallback (captions in the page's language are preferred).
+// Muted, loops, playsinline; loads only near the viewport (IntersectionObserver) and has a pause button.
+// With prefers-reduced-motion it shows the poster only, until the visitor presses play.
+// Without a video file it renders the same clean placeholder as <AppShot>.
+import fs from 'node:fs';
+import path from 'node:path';
+import Icon from './Icon.astro';
+import { media, common } from '../i18n/site';
+import type { Lang } from '../i18n/ui';
+
+interface Props { name: string; lang: Lang; frame?: 'none' | 'window'; ratio?: string; class?: string }
+const { name, lang, frame = 'none', ratio = '16 / 10', class: cls } = Astro.props;
+const dir = path.join(process.cwd(), 'public', 'media', 'video');
+const has = (f: string) => fs.existsSync(path.join(dir, f));
+const base = [`${lang}-${name}`, `en-${name}`].find((b) => has(`${b}.webm`) || has(`${b}.mp4`));
+const poster = base && has(`${base}.jpg`) ? `/media/video/${base}.jpg` : undefined;
+const vtt = [`${lang}-${name}.vtt`, base ? `${base}.vtt` : ''].find((f) => f && has(f));
+const vttLang = vtt ? vtt.split('-')[0] : lang;
+const v = (media[lang].videos as Record<string, { title: string; caption: string }>)[name] ?? (media.en.videos as Record<string, { title: string; caption: string }>)[name] ?? { title: name, caption: '' };
+const m = common[lang].media;
+---
+<div class:list={[frame === 'window' && 'window', cls]}>
+  {frame === 'window' && <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>StarkLLM</span></div>}
+  <div class="shot-frame video" data-video={base ? '' : undefined} data-state="paused">
+    {base ? (
+      <>
+        <video muted loop playsinline preload="none" poster={poster} width="1280" height="800" aria-label={v.title}>
+          {has(`${base}.webm`) && <source data-src={`/media/video/${base}.webm`} type="video/webm" />}
+          {has(`${base}.mp4`) && <source data-src={`/media/video/${base}.mp4`} type="video/mp4" />}
+          {vtt && <track kind="captions" src={`/media/video/${vtt}`} srclang={vttLang} label={v.title} default />}
+        </video>
+        <button type="button" class="video-ctl" data-play={m.play} data-pause={m.pause} aria-label={m.play}><Icon name="pause" size={18} class="ico-pause" /><Icon name="play" size={18} class="ico-play" /></button>
+      </>
+    ) : (
+      <div class="ph" role="img" aria-label={`${v.title}. ${v.caption}`} style={`--ph-ratio:${ratio}`}><div class="ph-side" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="ph-main" aria-hidden="true"><i></i><i></i><i></i><i></i><p class="ph-label"><span>{m.videoPending}</span><span>{v.title}</span><code>{lang}-{name}.webm</code></p></div></div>
+    )}
+  </div>
+</div>
+
+<script>
+  // One small script for every clip on the page (Astro bundles it once).
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const box of document.querySelectorAll<HTMLElement>('[data-video]')) {
+    const video = box.querySelector('video')!;
+    const btn = box.querySelector<HTMLButtonElement>('.video-ctl')!;
+    let loaded = false;
+    let userPaused = false;
+    const state = (s: 'playing' | 'paused') => { box.dataset.state = s; btn.setAttribute('aria-label', (s === 'playing' ? btn.dataset.pause : btn.dataset.play) || ''); };
+    const load = () => { if (loaded) return; loaded = true; for (const s of video.querySelectorAll<HTMLSourceElement>('source[data-src]')) s.src = s.dataset.src!; video.load(); };
+    const play = () => { load(); video.play().then(() => state('playing'), () => state('paused')); };
+    btn.addEventListener('click', () => { if (video.paused) { userPaused = false; play(); } else { userPaused = true; video.pause(); state('paused'); } });
+    if (!reduce) {
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) { if (!userPaused) play(); }
+        else if (!video.paused) { video.pause(); state('paused'); }
+      }, { rootMargin: '200px 0px' }).observe(box);
+    }
+  }
+</script>

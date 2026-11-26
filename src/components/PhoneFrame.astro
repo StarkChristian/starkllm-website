@@ -1,0 +1,9 @@
+---
+// A phone with a screenshot of the StarkLLM app for Android (media name, e.g. "phone-01-chat"), or its placeholder.
+import AppShot from './AppShot.astro';
+import type { Lang } from '../i18n/ui';
+const { name, lang } = Astro.props as { name: string; lang: Lang };
+---
+<div class="phone">
+  <div class="phone-screen"><AppShot name={name} lang={lang} frame="phone" sizes="300px" ratio="9 / 19.5" /></div>
+</div>

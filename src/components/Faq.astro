@@ -1,0 +1,10 @@
+---
+// Questions and answers as <details> (no JavaScript). `items`: [question, answer] pairs; answers are plain text.
+interface Props { items: readonly (readonly [string, string])[] | readonly string[][]; id?: string }
+const { items, id } = Astro.props;
+---
+<div class="faq" id={id}>
+  {items.map(([q, a]) => (
+    <details><summary>{q}</summary><div class="faq-a"><p>{a}</p></div></details>
+  ))}
+</div>

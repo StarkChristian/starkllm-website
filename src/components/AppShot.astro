@@ -1,0 +1,45 @@
+---
+// A screenshot of the app, by media name ("03-chat-sources") and language.
+// Looks for src/assets/media/<lang>/<lang>-<name>.png, then the English one; renders AVIF and WebP in 640/960/1280/1920
+// with explicit sizes. Without either file it shows a clean placeholder that carries the alt text, so pages can be
+// built before the pictures exist (names: docs/redesign-2026.md §5 and "Media" in README.md).
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { media, common } from '../i18n/site';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  name: string;
+  lang: Lang;
+  alt?: string;
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  /** Aspect ratio of the placeholder (the real picture keeps its own). */
+  ratio?: string;
+  /** "window": inside an app-window frame; "phone": the placeholder of a phone screen. */
+  frame?: 'none' | 'window' | 'phone';
+  class?: string;
+}
+const { name, lang, sizes = '(max-width: 960px) 100vw, 620px', loading = 'lazy', ratio = '16 / 10', frame = 'none', class: cls } = Astro.props;
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/media/*/*.png', { eager: true });
+const find = (l: string) => files[`../assets/media/${l}/${l}-${name}.png`]?.default;
+const src = find(lang) ?? find('en');
+const text = Astro.props.alt ?? (media[lang].shots as Record<string, string>)[name] ?? (media.en.shots as Record<string, string>)[name] ?? '';
+const widths = src ? [640, 960, 1280, 1920].filter((w) => w <= src.width) : [];
+if (src && !widths.length) widths.push(src.width);
+const pending = common[lang].media.shotPending;
+---
+{frame === 'window' ? (
+  <div class:list={['window', cls]}>
+    <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>StarkLLM</span></div>
+    <div class="shot-frame">
+      {src ? <Picture src={src} alt={text} formats={['avif', 'webp']} fallbackFormat="webp" widths={widths} sizes={sizes} loading={loading} />
+           : <div class="ph" role="img" aria-label={text} style={`--ph-ratio:${ratio}`}><div class="ph-side" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="ph-main" aria-hidden="true"><i></i><i></i><i></i><i></i><p class="ph-label"><span>{pending}</span><span>{text}</span><code>{lang}-{name}.png</code></p></div></div>}
+    </div>
+  </div>
+) : (
+  <div class:list={['shot-frame', cls]}>
+    {src ? <Picture src={src} alt={text} formats={['avif', 'webp']} fallbackFormat="webp" widths={widths} sizes={sizes} loading={loading} />
+         : <div class:list={['ph', frame === 'phone' && 'phone-ph']} role="img" aria-label={text} style={`--ph-ratio:${ratio}`}><div class="ph-side" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="ph-main" aria-hidden="true"><i></i><i></i><i></i><i></i><p class="ph-label"><span>{pending}</span><span>{text}</span><code>{lang}-{name}.png</code></p></div></div>}
+  </div>
+)}
