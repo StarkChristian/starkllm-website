@@ -42,7 +42,8 @@
     "/fr/contact",
     "/fr/download",
     "/fr/about",
-    "/fr/manual"
+    "/fr/manual",
+    "/fr/privacy"
    ]
   },
   {
@@ -51,7 +52,8 @@
     "/fr/tech-local-models",
     "/fr/tech-privacy",
     "/fr/",
-    "/fr/manual"
+    "/fr/manual",
+    "/fr/privacy"
    ]
   },
   {
@@ -215,7 +217,8 @@
    "pages": [
     "/fr/tech-privacy",
     "/fr/manual",
-    "/fr/help"
+    "/fr/help",
+    "/fr/privacy"
    ]
   },
   {
@@ -371,7 +374,8 @@
     "/fr/download",
     "/fr/contact",
     "/fr/manual",
-    "/fr/about"
+    "/fr/about",
+    "/fr/privacy"
    ]
   },
   {
@@ -385,7 +389,8 @@
   {
    "q": "À quoi sert la vérification des mises à jour ?",
    "pages": [
-    "/fr/tech-privacy"
+    "/fr/tech-privacy",
+    "/fr/privacy"
    ]
   },
   {
@@ -412,7 +417,8 @@
     "/fr/",
     "/fr/about",
     "/fr/manual",
-    "/fr/tech-local-models"
+    "/fr/tech-local-models",
+    "/fr/privacy"
    ]
   },
   {

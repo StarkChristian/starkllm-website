@@ -42,7 +42,8 @@
     "/es/contact",
     "/es/download",
     "/es/about",
-    "/es/manual"
+    "/es/manual",
+    "/es/privacy"
    ]
   },
   {
@@ -51,7 +52,8 @@
     "/es/tech-local-models",
     "/es/tech-privacy",
     "/es/",
-    "/es/manual"
+    "/es/manual",
+    "/es/privacy"
    ]
   },
   {
@@ -215,7 +217,8 @@
    "pages": [
     "/es/tech-privacy",
     "/es/manual",
-    "/es/help"
+    "/es/help",
+    "/es/privacy"
    ]
   },
   {
@@ -371,7 +374,8 @@
     "/es/download",
     "/es/contact",
     "/es/manual",
-    "/es/about"
+    "/es/about",
+    "/es/privacy"
    ]
   },
   {
@@ -385,7 +389,8 @@
   {
    "q": "¿Qué hace la comprobación de actualizaciones?",
    "pages": [
-    "/es/tech-privacy"
+    "/es/tech-privacy",
+    "/es/privacy"
    ]
   },
   {
@@ -412,7 +417,8 @@
     "/es/",
     "/es/about",
     "/es/manual",
-    "/es/tech-local-models"
+    "/es/tech-local-models",
+    "/es/privacy"
    ]
   },
   {
@@ -428,7 +434,8 @@
    "pages": [
     "/es/help",
     "/es/tech-privacy",
-    "/es/manual"
+    "/es/manual",
+    "/es/privacy"
    ]
   },
   {

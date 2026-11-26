@@ -43,7 +43,8 @@
     "/download",
     "/about",
     "/privacy-policy",
-    "/manual"
+    "/manual",
+    "/privacy"
    ]
   },
   {
@@ -52,7 +53,8 @@
     "/tech-local-models",
     "/tech-privacy",
     "/",
-    "/manual"
+    "/manual",
+    "/privacy"
    ]
   },
   {
@@ -216,7 +218,8 @@
    "pages": [
     "/tech-privacy",
     "/manual",
-    "/help"
+    "/help",
+    "/privacy"
    ]
   },
   {
@@ -374,7 +377,8 @@
     "/privacy-policy",
     "/contact",
     "/manual",
-    "/about"
+    "/about",
+    "/privacy"
    ]
   },
   {
@@ -389,7 +393,8 @@
    "q": "What does the update check do?",
    "pages": [
     "/tech-privacy",
-    "/privacy-policy"
+    "/privacy-policy",
+    "/privacy"
    ]
   },
   {
@@ -416,7 +421,8 @@
     "/",
     "/about",
     "/manual",
-    "/tech-local-models"
+    "/tech-local-models",
+    "/privacy"
    ]
   },
   {

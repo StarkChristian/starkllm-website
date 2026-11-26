@@ -42,7 +42,8 @@
     "/tr/contact",
     "/tr/download",
     "/tr/about",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/privacy"
    ]
   },
   {
@@ -51,7 +52,8 @@
     "/tr/tech-local-models",
     "/tr/tech-privacy",
     "/tr/",
-    "/tr/manual"
+    "/tr/manual",
+    "/tr/privacy"
    ]
   },
   {
@@ -206,7 +208,8 @@
    "pages": [
     "/tr/tech-privacy",
     "/tr/manual",
-    "/tr/help"
+    "/tr/help",
+    "/tr/privacy"
    ]
   },
   {
@@ -359,7 +362,8 @@
    "pages": [
     "/tr/tech-privacy",
     "/tr/",
-    "/tr/download"
+    "/tr/download",
+    "/tr/privacy"
    ]
   },
   {
@@ -373,7 +377,8 @@
   {
    "q": "Güncelleme denetimi ne yapıyor?",
    "pages": [
-    "/tr/tech-privacy"
+    "/tr/tech-privacy",
+    "/tr/privacy"
    ]
   },
   {
@@ -399,7 +404,8 @@
     "/tr/tech-privacy",
     "/tr/",
     "/tr/about",
-    "/tr/tech-local-models"
+    "/tr/tech-local-models",
+    "/tr/privacy"
    ]
   },
   {

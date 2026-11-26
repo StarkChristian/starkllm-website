@@ -44,7 +44,8 @@
     "/de/about",
     "/datenschutz",
     "/de/manual",
-    "/de/tech-local-models"
+    "/de/tech-local-models",
+    "/de/privacy"
    ]
   },
   {
@@ -54,7 +55,8 @@
     "/de/tech-privacy",
     "/de/",
     "/de/manual",
-    "/datenschutz"
+    "/datenschutz",
+    "/de/privacy"
    ]
   },
   {
@@ -219,7 +221,8 @@
     "/de/tech-privacy",
     "/de/manual",
     "/de/help",
-    "/datenschutz"
+    "/datenschutz",
+    "/de/privacy"
    ]
   },
   {
@@ -378,7 +381,8 @@
     "/de/download",
     "/datenschutz",
     "/de/manual",
-    "/de/about"
+    "/de/about",
+    "/de/privacy"
    ]
   },
   {
@@ -393,7 +397,8 @@
    "q": "Was macht die Update-Prüfung?",
    "pages": [
     "/de/tech-privacy",
-    "/datenschutz"
+    "/datenschutz",
+    "/de/privacy"
    ]
   },
   {
@@ -420,7 +425,8 @@
     "/de/",
     "/de/about",
     "/de/manual",
-    "/de/tech-local-models"
+    "/de/tech-local-models",
+    "/de/privacy"
    ]
   },
   {

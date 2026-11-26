@@ -42,7 +42,8 @@
     "/it/contact",
     "/it/download",
     "/it/about",
-    "/it/manual"
+    "/it/manual",
+    "/it/privacy"
    ]
   },
   {
@@ -51,7 +52,8 @@
     "/it/tech-local-models",
     "/it/tech-privacy",
     "/it/",
-    "/it/manual"
+    "/it/manual",
+    "/it/privacy"
    ]
   },
   {
@@ -215,7 +217,8 @@
    "pages": [
     "/it/tech-privacy",
     "/it/manual",
-    "/it/help"
+    "/it/help",
+    "/it/privacy"
    ]
   },
   {
@@ -371,7 +374,8 @@
     "/it/download",
     "/it/contact",
     "/it/manual",
-    "/it/about"
+    "/it/about",
+    "/it/privacy"
    ]
   },
   {
@@ -385,7 +389,8 @@
   {
    "q": "Che cosa fa il controllo degli aggiornamenti?",
    "pages": [
-    "/it/tech-privacy"
+    "/it/tech-privacy",
+    "/it/privacy"
    ]
   },
   {
@@ -412,7 +417,8 @@
     "/it/",
     "/it/about",
     "/it/manual",
-    "/it/tech-local-models"
+    "/it/tech-local-models",
+    "/it/privacy"
    ]
   },
   {
