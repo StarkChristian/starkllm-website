@@ -42,13 +42,13 @@ export default {
   limits: {
     h2: 'Good to know',
     items: [
-      'The app is a preview in a closed test on Google Play. There is no iPhone app.',
+      'The app is a preview. There is no iPhone app.',
       'Away from home works only while the PC is on, StarkLLM is running and it is not fully offline.',
       'Away from home, all data passes through the relay, encrypted. A direct connection between phone and PC is planned, with the relay as fallback.',
       'A question from the phone is answered on your PC without web search and without cloud models, also away from home.',
       'Android 10 or newer. The app has no analytics, no crash reporting service and no Google Play services.',
     ],
   },
-  play: { h2: 'Want to test it?', text: 'The Android app is in a closed test on Google Play. If you would like to take part, write to info@starkllm.com.' },
+  play: { h2: 'Getting the Android app', text: 'The Android app is on Google Play in a test phase. If you would like it from Google Play, send your e-mail address to info@starkllm.com, and you will receive the link to Google Play.' },
   shots: { pc: '12-settings-phone', phone: 'phone-01-chat' },
 };

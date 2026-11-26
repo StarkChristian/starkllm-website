@@ -108,7 +108,7 @@ export default {
       ['Nessun ripristino della password', 'Veda il problema 23.'],
       ['Velocità', 'I PC con la sola CPU sono lenti; veda il problema 13.'],
       ['Le attività web e il Terminale richiedono un modello più grande', 'Funzionano meglio con un modello locale da 14B o più (per esempio qwen3:14b); i piccoli modelli da 7B si fermano in modo sicuro, ma portano a termine poche attività. Veda il problema 27.'],
-      ['L’app per il telefono è un’anteprima', 'L’app Android è in test chiuso su Google Play. Funziona nella Sua rete di casa e, solo per un telefono che Lei consente, fuori casa tramite il relay di StarkLLM (cifrato dal telefono al PC). Veda il problema 26.'],
+      ['L’app per il telefono è un’anteprima', 'L’app Android è su Google Play in fase di test. Se desidera riceverla da Google Play, invii il Suo indirizzo e-mail a info@starkllm.com e riceverà il link a Google Play. Funziona nella Sua rete di casa e, solo per un telefono che Lei consente, fuori casa tramite il relay di StarkLLM (cifrato dal telefono al PC). Veda il problema 26.'],
       ['La prima registrazione scarica un modello vocale', 'La prima registrazione che aggiunge scarica una sola volta Whisper large-v3-turbo (circa 1,6 GB). Completamente offline si usa il modello di dettatura più piccolo.'],
       ['I comandi del Terminale non sono nell’elenco di rete', 'Un comando che Lei consente nel Terminale (per esempio npm install o git push) e un server di strumenti che Lei aggiunge girano come Suoi programmi. Le loro connessioni non compaiono in Impostazioni › Privacy e rete; finché StarkLLM è completamente offline, i comandi che usano internet vengono rifiutati.'],
     ],

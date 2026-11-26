@@ -60,7 +60,7 @@ export default {
   },
   phone: {
     h2: 'Ihr Handy fragt. Ihr PC antwortet.',
-    lede: 'Die StarkLLM-App für Android schickt Ihre Fragen und Fotos von Briefen an Ihren PC und zeigt die Antworten mit ihren Quellen. Die Dokumente und das KI-Modell bleiben auf dem PC.',
+    lede: 'Die StarkLLM-App für Android schickt Ihre Fragen und Fotos von Briefen an Ihren PC und zeigt die Antworten mit ihren Quellen. Die Dokumente und das KI-Modell bleiben auf dem PC. Die Android-App ist bei Google Play in einer Testphase. Wenn Sie sie über Google Play erhalten möchten, senden Sie Ihre E-Mail-Adresse an info@starkllm.com; Sie erhalten dann den Link zu Google Play.',
     home: { title: 'Zu Hause: direkt', text: 'Über Ihr Heimnetz, verschlüsselt, zu dem PC, dessen Zertifikat das Handy beim Koppeln geprüft hat.' },
     away: { title: 'Unterwegs: über das Relay', text: 'Nur für ein Handy, das Sie freigegeben haben. Verschlüsselt vom Handy bis zu Ihrem PC: Das Relay leitet Daten weiter, die es nicht lesen kann.' },
     badge: 'Android · Vorschau',
@@ -93,7 +93,7 @@ export default {
       ['Verlässt etwas meinen PC?', 'Nicht, solange Sie es nicht einschalten. Websuche, Web-Aufgaben, Cloud-Modelle, Importe aus dem Web, Marktpreise, das Handy-Relay und die Update-Prüfung sind aus, bis Sie sie einschalten oder starten. Einstellungen › Datenschutz & Netzwerk listet jede Verbindung auf, und „Vollständig offline“ lehnt alle ab.'],
       ['Was braucht mein PC?', 'Windows 10 oder 11 (64 Bit), 16 GB RAM (mindestens 8 GB), 15 GB freien Speicher und Ollama, das StarkLLM für Sie installieren kann. Eine NVIDIA-Grafikkarte mit 8 GB Grafikspeicher macht Antworten deutlich schneller; integrierte Grafik von AMD Radeon und Intel Arc oder Iris wird ebenfalls genutzt.'],
       ['Brauche ich Docker?', 'Nein. Seit Version 2.2 bringt StarkLLM seine eigene Engine im Installer mit. Docker Desktop ist eine Option für Fortgeschrittene, mehr nicht.'],
-      ['Gibt es eine Handy-App?', 'Ja, für Android, als Vorschau im geschlossenen Test bei Google Play. Sie arbeitet mit Ihrem PC zusammen: Die Dokumente und das KI-Modell bleiben auf dem PC. Eine iPhone-App gibt es nicht.'],
+      ['Gibt es eine Handy-App?', 'Ja, für Android, als Vorschau. Sie arbeitet mit Ihrem PC zusammen: Die Dokumente und das KI-Modell bleiben auf dem PC. Eine iPhone-App gibt es nicht. Die Android-App ist bei Google Play in einer Testphase. Wenn Sie sie über Google Play erhalten möchten, senden Sie Ihre E-Mail-Adresse an info@starkllm.com; Sie erhalten dann den Link zu Google Play.'],
       ['Kann ich den Antworten trauen?', 'Prüfen Sie sie. Die KI-Modelle sind kleine lokale Modelle und können sich irren. Deshalb nennt jede Antwort zu Ihren Dokumenten ihre Quelle, und ein Zitat, das nicht in Ihren Dokumenten steht, wird unter der Antwort markiert.'],
     ],
   },

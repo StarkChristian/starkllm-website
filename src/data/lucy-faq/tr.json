@@ -1931,6 +1931,16 @@
    "match": "Android için StarkLLM uygulaması bilgisayarınızla birlikte çalışır"
   },
   {
+   "id": "getapp",
+   "q": [
+    "Android uygulamasını nasıl edinirim?",
+    "Android uygulamasını nereden indirebilirim?",
+    "Uygulama Google Play’de mi?"
+   ],
+   "page": "/tr/phone",
+   "match": "e-posta adresinizi info@starkllm.com adresine gönderin"
+  },
+  {
    "id": "scam",
    "q": [
     "Dolandırıcılık mektuplarına karşı uyarır mı?",

@@ -62,7 +62,7 @@ export default {
   },
   phone: {
     h2: 'Telefonunuz sorar. Bilgisayarınız yanıtlar.',
-    lede: 'Android için StarkLLM uygulaması sorularınızı ve mektup fotoğraflarınızı bilgisayarınıza gönderir ve yanıtları kaynaklarıyla birlikte gösterir. Belgeler ve yapay zekâ modeli bilgisayarda kalır.',
+    lede: 'Android için StarkLLM uygulaması sorularınızı ve mektup fotoğraflarınızı bilgisayarınıza gönderir ve yanıtları kaynaklarıyla birlikte gösterir. Belgeler ve yapay zekâ modeli bilgisayarda kalır. Android uygulaması Google Play’de test aşamasındadır. Uygulamayı Google Play’den almak isterseniz e-posta adresinizi info@starkllm.com adresine gönderin; size Google Play bağlantısı gönderilir.',
     home: { title: 'Evde, doğrudan', text: 'Ev ağınız üzerinden, şifreli olarak; sertifikasını telefonun eşleştirme sırasında doğruladığı bilgisayara.' },
     away: { title: 'Evden uzakta, aktarıcı üzerinden', text: 'Yalnızca izin verdiğiniz bir telefon için. Telefondan bilgisayarınıza kadar şifreli: aktarıcı, okuyamadığı baytları yalnızca iletir.' },
     badge: 'Android · önizleme',
@@ -95,7 +95,7 @@ export default {
       ['Bilgisayarımdan dışarı bir şey çıkar mı?', 'Siz açmadıkça hayır. Web araması, web görevleri, bulut modelleri, web’den içe aktarmalar, piyasa fiyatları, telefon aktarıcısı ve güncelleme denetimi, siz açana veya başlatana kadar kapalıdır. Ayarlar › Gizlilik ve ağ her bağlantıyı listeler ve “Tamamen çevrimdışı” hepsini reddeder.'],
       ['Bilgisayarımın neye ihtiyacı var?', 'Windows 10 veya 11 (64 bit), 16 GB RAM (en az 8 GB), 15 GB boş disk alanı ve StarkLLM’in sizin için kurabileceği Ollama. 8 GB video belleğine sahip bir NVIDIA ekran kartı yanıtları çok hızlandırır; tümleşik AMD Radeon ve Intel Arc veya Iris grafik birimleri de kullanılır.'],
       ['Docker gerekli mi?', 'Hayır. StarkLLM 2.2 sürümünden beri kendi motorunu yükleyicinin içinde getirir. Docker Desktop yalnızca ileri düzey kullanıcılar için bir seçenektir, o kadar.'],
-      ['Telefon uygulaması var mı?', 'Evet, Android için; Google Play’de kapalı testte bir önizleme olarak. Bilgisayarınızla birlikte çalışır: belgeler ve yapay zekâ modeli bilgisayarda kalır. iPhone uygulaması yoktur.'],
+      ['Telefon uygulaması var mı?', 'Evet, Android için, önizleme olarak. Bilgisayarınızla birlikte çalışır: belgeler ve yapay zekâ modeli bilgisayarda kalır. iPhone uygulaması yoktur. Android uygulaması Google Play’de test aşamasındadır. Uygulamayı Google Play’den almak isterseniz e-posta adresinizi info@starkllm.com adresine gönderin; size Google Play bağlantısı gönderilir.'],
       ['Yanıtlara güvenebilir miyim?', 'Kontrol edin. Yapay zekâ modelleri küçük yerel modellerdir ve yanılabilir. Bu yüzden belgelerinizle ilgili her yanıt kaynağını belirtir ve belgelerinizde bulunmayan bir alıntı yanıtın altında işaretlenir.'],
     ],
   },

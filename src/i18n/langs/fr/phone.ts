@@ -41,13 +41,13 @@ export default {
   limits: {
     h2: 'Bon à savoir',
     items: [
-      'L’application est un aperçu en test fermé sur Google Play. Il n’existe pas d’application pour iPhone.',
+      'L’application est un aperçu. Il n’existe pas d’application pour iPhone.',
       'Hors de chez vous, cela ne fonctionne que si le PC est allumé, que StarkLLM tourne et qu’il n’est pas entièrement hors ligne.',
       'Hors de chez vous, toutes les données passent par le relais, chiffrées. Une connexion directe entre le téléphone et le PC est prévue, avec le relais en solution de repli.',
       'Une question posée depuis le téléphone reçoit sa réponse sur votre PC, sans recherche web ni modèles cloud, hors de chez vous également.',
       'Android 10 ou plus récent. L’application n’a ni outil d’analyse, ni service de rapport de plantage, ni services Google Play.',
     ],
   },
-  play: { h2: 'Envie de la tester ?', text: 'L’application Android est en test fermé sur Google Play. Si vous souhaitez y participer, écrivez à info@starkllm.com.' },
+  play: { h2: 'Obtenir l’application Android', text: 'L’application Android est sur Google Play en phase de test. Si vous souhaitez l’obtenir sur Google Play, envoyez votre adresse e-mail à info@starkllm.com : vous recevrez le lien vers Google Play.' },
   shots: { pc: '12-settings-phone', phone: 'phone-01-chat' },
 };

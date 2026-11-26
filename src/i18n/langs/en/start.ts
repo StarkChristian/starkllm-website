@@ -62,7 +62,7 @@ export default {
   },
   phone: {
     h2: 'Your phone asks. Your PC answers.',
-    lede: 'The StarkLLM app for Android sends your questions and photos of letters to your PC and shows the answers with their sources. The documents and the AI model stay on the PC.',
+    lede: 'The StarkLLM app for Android sends your questions and photos of letters to your PC and shows the answers with their sources. The documents and the AI model stay on the PC. The Android app is on Google Play in a test phase. If you would like it from Google Play, send your e-mail address to info@starkllm.com, and you will receive the link to Google Play.',
     home: { title: 'At home, directly', text: 'Over your home network, encrypted, to the PC whose certificate the phone checked at pairing.' },
     away: { title: 'Away from home, through the relay', text: 'Only for a phone you allowed. Encrypted from the phone to your PC: the relay passes on bytes it cannot read.' },
     badge: 'Android · preview',
@@ -95,7 +95,7 @@ export default {
       ['Does anything leave my PC?', 'Not unless you switch it on. Web search, web tasks, cloud models, imports from the web, market prices, the phone relay and the update check are off until you turn them on or start them. Settings › Privacy & network lists every connection, and "Fully offline" refuses all of them.'],
       ['What does my PC need?', 'Windows 10 or 11 (64-bit), 16 GB of RAM (8 GB at least), 15 GB of free disk space and Ollama, which StarkLLM can install for you. An NVIDIA graphics card with 8 GB of video memory makes answers much faster; integrated AMD Radeon and Intel Arc or Iris graphics are used too.'],
       ['Do I need Docker?', 'No. Since version 2.2 StarkLLM brings its own engine inside the installer. Docker Desktop is an option for advanced users, nothing more.'],
-      ['Is there a phone app?', 'Yes, for Android, as a preview in a closed test on Google Play. It works together with your PC: the documents and the AI model stay on the PC. There is no iPhone app.'],
+      ['Is there a phone app?', 'Yes, for Android, as a preview. It works together with your PC: the documents and the AI model stay on the PC. There is no iPhone app. The Android app is on Google Play in a test phase. If you would like it from Google Play, send your e-mail address to info@starkllm.com, and you will receive the link to Google Play.'],
       ['Can I trust the answers?', 'Check them. The AI models are small local models and can be wrong. That is why every answer about your documents names its source, and a quotation that is not in your documents is flagged under the answer.'],
     ],
   },

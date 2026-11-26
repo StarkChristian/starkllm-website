@@ -40,13 +40,13 @@ export default {
   limits: {
     h2: 'Gut zu wissen',
     items: [
-      'Die App ist eine Vorschau im geschlossenen Test bei Google Play. Eine iPhone-App gibt es nicht.',
+      'Die App ist eine Vorschau. Eine iPhone-App gibt es nicht.',
       'Unterwegs funktioniert es nur, solange der PC an ist, StarkLLM läuft und nicht vollständig offline ist.',
       'Unterwegs laufen alle Daten verschlüsselt über das Relay. Eine direkte Verbindung zwischen Handy und PC ist geplant, mit dem Relay als Rückfall.',
       'Eine Frage vom Handy wird auf Ihrem PC ohne Websuche und ohne Cloud-Modelle beantwortet, auch unterwegs.',
       'Android 10 oder neuer. Die App hat keine Analyse, keinen Absturzbericht-Dienst und keine Google-Play-Dienste.',
     ],
   },
-  play: { h2: 'Möchten Sie testen?', text: 'Die Android-App ist im geschlossenen Test bei Google Play. Wenn Sie mitmachen möchten, schreiben Sie an info@starkllm.com.' },
+  play: { h2: 'So erhalten Sie die Android-App', text: 'Die Android-App ist bei Google Play in einer Testphase. Wenn Sie sie über Google Play erhalten möchten, senden Sie Ihre E-Mail-Adresse an info@starkllm.com; Sie erhalten dann den Link zu Google Play.' },
   shots: { pc: '12-settings-phone', phone: 'phone-01-chat' },
 };

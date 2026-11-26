@@ -60,7 +60,7 @@ export default {
   },
   phone: {
     h2: 'Su teléfono pregunta. Su PC responde.',
-    lede: 'La app StarkLLM para Android envía sus preguntas y las fotos de sus cartas a su PC y muestra las respuestas con sus fuentes. Los documentos y el modelo de IA se quedan en el PC.',
+    lede: 'La app StarkLLM para Android envía sus preguntas y las fotos de sus cartas a su PC y muestra las respuestas con sus fuentes. Los documentos y el modelo de IA se quedan en el PC. La app para Android está en Google Play en fase de prueba. Si desea obtenerla en Google Play, mande su dirección de correo electrónico a info@starkllm.com y recibirá el enlace a Google Play.',
     home: { title: 'En casa, directamente', text: 'Por la red de su casa, con cifrado, hasta el PC cuyo certificado comprobó el teléfono al vincularlo.' },
     away: { title: 'Fuera de casa, a través del relé', text: 'Solo para un teléfono que usted haya permitido. Cifrado desde el teléfono hasta su PC: el relé transmite bytes que no puede leer.' },
     badge: 'Android · vista previa',
@@ -93,7 +93,7 @@ export default {
       ['¿Sale algo de mi PC?', 'No, salvo que usted lo active. La búsqueda web, las tareas web, los modelos en la nube, las importaciones desde la web, las cotizaciones de mercado, el relé del teléfono y la comprobación de actualizaciones están desactivados hasta que usted los activa o los inicia. Ajustes › Privacidad y red enumera cada conexión, y «Totalmente sin conexión» las rechaza todas.'],
       ['¿Qué necesita mi PC?', 'Windows 10 u 11 (64 bits), 16 GB de RAM (8 GB como mínimo), 15 GB de espacio libre en disco y Ollama, que StarkLLM puede instalar por usted. Una tarjeta gráfica NVIDIA con 8 GB de memoria de vídeo hace que las respuestas sean mucho más rápidas; también se aprovechan los gráficos integrados AMD Radeon e Intel Arc o Iris.'],
       ['¿Necesito Docker?', 'No. Desde la versión 2.2, StarkLLM trae su propio motor dentro del instalador. Docker Desktop es una opción para usuarios avanzados, nada más.'],
-      ['¿Hay una app para el teléfono?', 'Sí, para Android, como vista previa en una prueba cerrada en Google Play. Trabaja junto con su PC: los documentos y el modelo de IA se quedan en el PC. No hay app para iPhone.'],
+      ['¿Hay una app para el teléfono?', 'Sí, para Android, como vista previa. Trabaja junto con su PC: los documentos y el modelo de IA se quedan en el PC. No hay app para iPhone. La app para Android está en Google Play en fase de prueba. Si desea obtenerla en Google Play, mande su dirección de correo electrónico a info@starkllm.com y recibirá el enlace a Google Play.'],
       ['¿Puedo fiarme de las respuestas?', 'Compruébelas. Los modelos de IA son modelos locales pequeños y pueden equivocarse. Por eso cada respuesta sobre sus documentos indica su fuente, y una cita que no está en sus documentos se señala debajo de la respuesta.'],
     ],
   },

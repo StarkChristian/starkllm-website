@@ -42,13 +42,13 @@ export default {
   limits: {
     h2: 'Bilmenizde yarar var',
     items: [
-      'Uygulama, Google Play’de kapalı testte olan bir önizlemedir. iPhone uygulaması yoktur.',
+      'Uygulama bir önizlemedir. iPhone uygulaması yoktur.',
       'Evden uzakta kullanım yalnızca bilgisayar açıkken, StarkLLM çalışırken ve tamamen çevrimdışı değilken mümkündür.',
       'Evden uzakta tüm veriler şifreli olarak aktarıcıdan geçer. Telefon ile bilgisayar arasında doğrudan bir bağlantı planlanıyor; aktarıcı o zaman yedek yol olarak kalacak.',
       'Telefondan gelen bir soru bilgisayarınızda web araması ve bulut modelleri olmadan yanıtlanır; evden uzaktayken de.',
       'Android 10 veya daha yenisi. Uygulamada analiz aracı, çökme raporlama hizmeti ve Google Play hizmetleri yoktur.',
     ],
   },
-  play: { h2: 'Denemek ister misiniz?', text: 'Android uygulaması Google Play’de kapalı testte. Katılmak isterseniz info@starkllm.com adresine yazın.' },
+  play: { h2: 'Android uygulamasını edinme', text: 'Android uygulaması Google Play’de test aşamasındadır. Uygulamayı Google Play’den almak isterseniz e-posta adresinizi info@starkllm.com adresine gönderin; size Google Play bağlantısı gönderilir.' },
   shots: { pc: '12-settings-phone', phone: 'phone-01-chat' },
 };

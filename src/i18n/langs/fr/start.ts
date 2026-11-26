@@ -61,7 +61,7 @@ export default {
   },
   phone: {
     h2: 'Votre téléphone demande. Votre PC répond.',
-    lede: 'L’application StarkLLM pour Android envoie vos questions et les photos de vos courriers à votre PC et affiche les réponses avec leurs sources. Les documents et le modèle d’IA restent sur le PC.',
+    lede: 'L’application StarkLLM pour Android envoie vos questions et les photos de vos courriers à votre PC et affiche les réponses avec leurs sources. Les documents et le modèle d’IA restent sur le PC. L’application Android est sur Google Play en phase de test. Si vous souhaitez l’obtenir sur Google Play, envoyez votre adresse e-mail à info@starkllm.com : vous recevrez le lien vers Google Play.',
     home: { title: 'À la maison, en direct', text: 'Par votre réseau domestique, chiffré, vers le PC dont le téléphone a vérifié le certificat lors de l’association.' },
     away: { title: 'Hors de chez vous, via le relais', text: 'Seulement pour un téléphone que vous avez autorisé. Chiffré du téléphone jusqu’à votre PC : le relais transmet des octets qu’il ne peut pas lire.' },
     badge: 'Android · aperçu',
@@ -94,7 +94,7 @@ export default {
       ['Quelque chose quitte-t-il mon PC ?', 'Pas tant que vous ne l’activez pas. La recherche web, les tâches web, les modèles cloud, les imports depuis le web, les cours du marché, le relais du téléphone et la vérification des mises à jour sont désactivés jusqu’à ce que vous les activiez ou les lanciez. Paramètres › Confidentialité et réseau liste chaque connexion, et « Entièrement hors ligne » les refuse toutes.'],
       ['De quoi mon PC a-t-il besoin ?', 'Windows 10 ou 11 (64 bits), 16 Go de RAM (8 Go au minimum), 15 Go d’espace disque libre et Ollama, que StarkLLM peut installer pour vous. Une carte graphique NVIDIA avec 8 Go de mémoire vidéo rend les réponses bien plus rapides ; les puces graphiques intégrées AMD Radeon et Intel Arc ou Iris sont aussi utilisées.'],
       ['Ai-je besoin de Docker ?', 'Non. Depuis la version 2.2, StarkLLM apporte son propre moteur dans l’installeur. Docker Desktop est une option pour les utilisateurs avancés, rien de plus.'],
-      ['Existe-t-il une application pour téléphone ?', 'Oui, pour Android, en aperçu dans un test fermé sur Google Play. Elle fonctionne avec votre PC : les documents et le modèle d’IA restent sur le PC. Il n’existe pas d’application pour iPhone.'],
+      ['Existe-t-il une application pour téléphone ?', 'Oui, pour Android, en aperçu. Elle fonctionne avec votre PC : les documents et le modèle d’IA restent sur le PC. Il n’existe pas d’application pour iPhone. L’application Android est sur Google Play en phase de test. Si vous souhaitez l’obtenir sur Google Play, envoyez votre adresse e-mail à info@starkllm.com : vous recevrez le lien vers Google Play.'],
       ['Puis-je me fier aux réponses ?', 'Vérifiez-les. Les modèles d’IA sont de petits modèles locaux et peuvent se tromper. C’est pourquoi chaque réponse sur vos documents indique sa source, et une citation qui ne figure pas dans vos documents est signalée sous la réponse.'],
     ],
   },

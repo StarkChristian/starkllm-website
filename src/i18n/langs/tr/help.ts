@@ -110,7 +110,7 @@ export default {
       ['Parola sıfırlama yok', '23. soruna bakın.'],
       ['Hız', 'Yalnızca CPU’lu bilgisayarlar yavaştır; 13. soruna bakın.'],
       ['Web görevleri ve Terminal daha büyük bir model ister', 'En iyi 14B veya daha büyük bir yerel modelle çalışırlar (örneğin qwen3:14b); küçük 7B modeller güvenle durur ama az görevi bitirir. 27. soruna bakın.'],
-      ['Telefon uygulaması bir önizlemedir', 'Android uygulaması Google Play’de kapalı testtedir. Ev ağınızda ve yalnızca izin verdiğiniz bir telefon için evden uzakta StarkLLM aktarıcısı üzerinden (telefondan bilgisayara kadar şifreli) çalışır. 26. soruna bakın.'],
+      ['Telefon uygulaması bir önizlemedir', 'Android uygulaması Google Play’de test aşamasındadır. Uygulamayı Google Play’den almak isterseniz e-posta adresinizi info@starkllm.com adresine gönderin; size Google Play bağlantısı gönderilir. Ev ağınızda ve yalnızca izin verdiğiniz bir telefon için evden uzakta StarkLLM aktarıcısı üzerinden (telefondan bilgisayara kadar şifreli) çalışır. 26. soruna bakın.'],
       ['İlk kayıt bir konuşma modeli indirir', 'Eklediğiniz ilk kayıt, Whisper large-v3-turbo modelini bir kez indirir (yaklaşık 1,6 GB). Tamamen çevrimdışıyken daha küçük dikte modeli kullanılır.'],
       ['Terminal komutları ağ listesinde yer almaz', 'Terminal’de izin verdiğiniz bir komut (örneğin npm install veya git push) ve eklediğiniz bir araç sunucusu sizin kendi programlarınız olarak çalışır. Bağlantıları Ayarlar › Gizlilik ve ağ listesinde görünmez; StarkLLM tamamen çevrimdışıyken internet kullanan komutlar reddedilir.'],
     ],

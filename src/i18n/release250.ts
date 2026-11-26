@@ -79,7 +79,7 @@ const en = {
         { k: 'Ask and send documents', v: 'Also sends photos and documents, deletes chats and marks deadlines as done.' },
         { k: 'Ask, send and manage this PC', v: 'Also starts a backup and can switch StarkLLM fully offline. The phone asks for your fingerprint first.' },
       ] as KV[],
-      note: 'The Android app is a preview in a closed test on Google Play. Away from home, all data passes through the relay, encrypted; a direct connection between phone and PC is not part of this version. Away from home needs the PC on and StarkLLM running. The relay allows up to 16 phone connections at the same time and 200 MB per minute for each PC, and closes a connection after 6 minutes without any traffic.',
+      note: 'The Android app is a preview. Away from home, all data passes through the relay, encrypted; a direct connection between phone and PC is not part of this version. Away from home needs the PC on and StarkLLM running. The relay allows up to 16 phone connections at the same time and 200 MB per minute for each PC, and closes a connection after 6 minutes without any traffic.',
     },
   },
 };
@@ -154,7 +154,7 @@ const de: typeof en = {
         { k: 'Fragen und Dokumente senden', v: 'Sendet außerdem Fotos und Dokumente, löscht Chats und markiert Fristen als erledigt.' },
         { k: 'Fragen, senden und diesen PC verwalten', v: 'Startet außerdem eine Sicherung und kann StarkLLM vollständig offline schalten. Das Handy fragt vorher nach Ihrem Fingerabdruck.' },
       ],
-      note: 'Die Android-App ist eine Vorschau im geschlossenen Test bei Google Play. Unterwegs laufen alle Daten verschlüsselt über das Relay; eine direkte Verbindung zwischen Handy und PC gehört nicht zu dieser Version. Unterwegs muss der PC an sein und StarkLLM laufen. Das Relay erlaubt je PC bis zu 16 Handy-Verbindungen gleichzeitig und 200 MB pro Minute und schließt eine Verbindung nach 6 Minuten ohne jeden Datenverkehr.',
+      note: 'Die Android-App ist eine Vorschau. Unterwegs laufen alle Daten verschlüsselt über das Relay; eine direkte Verbindung zwischen Handy und PC gehört nicht zu dieser Version. Unterwegs muss der PC an sein und StarkLLM laufen. Das Relay erlaubt je PC bis zu 16 Handy-Verbindungen gleichzeitig und 200 MB pro Minute und schließt eine Verbindung nach 6 Minuten ohne jeden Datenverkehr.',
     },
   },
 };
@@ -239,7 +239,7 @@ const es: Rel = {
         { k: 'Preguntar y enviar documentos', v: 'Además envía fotos y documentos, elimina chats y marca plazos como hechos.' },
         { k: 'Preguntar, enviar y gestionar este PC', v: 'Además inicia una copia de seguridad y puede poner StarkLLM totalmente sin conexión. El teléfono pide antes su huella.' },
       ],
-      note: 'La app para Android es una vista previa en una prueba cerrada en Google Play. Fuera de casa, todos los datos pasan cifrados por el relé; una conexión directa entre teléfono y PC no forma parte de esta versión. Fuera de casa, el PC debe estar encendido y StarkLLM en marcha. El relé admite por PC hasta 16 conexiones de teléfono a la vez y 200 MB por minuto, y cierra una conexión tras 6 minutos sin ningún tráfico.',
+      note: 'La app para Android es una vista previa. Fuera de casa, todos los datos pasan cifrados por el relé; una conexión directa entre teléfono y PC no forma parte de esta versión. Fuera de casa, el PC debe estar encendido y StarkLLM en marcha. El relé admite por PC hasta 16 conexiones de teléfono a la vez y 200 MB por minuto, y cierra una conexión tras 6 minutos sin ningún tráfico.',
     },
   },
   privacy: {
@@ -324,7 +324,7 @@ const fr: Rel = {
         { k: 'Poser des questions et envoyer des documents', v: 'Envoie aussi des photos et des documents, supprime des chats et marque des échéances comme faites.' },
         { k: 'Poser des questions, envoyer et gérer ce PC', v: 'Lance aussi une sauvegarde et peut passer StarkLLM entièrement hors ligne. Le téléphone demande d’abord votre empreinte.' },
       ],
-      note: 'L’application Android est un aperçu en test fermé sur Google Play. Hors de chez vous, toutes les données passent chiffrées par le relais ; une connexion directe entre le téléphone et le PC ne fait pas partie de cette version. Hors de chez vous, le PC doit être allumé et StarkLLM doit tourner. Le relais accepte par PC jusqu’à 16 connexions de téléphone simultanées et 200 Mo par minute, et ferme une connexion après 6 minutes sans aucun trafic.',
+      note: 'L’application Android est un aperçu. Hors de chez vous, toutes les données passent chiffrées par le relais ; une connexion directe entre le téléphone et le PC ne fait pas partie de cette version. Hors de chez vous, le PC doit être allumé et StarkLLM doit tourner. Le relais accepte par PC jusqu’à 16 connexions de téléphone simultanées et 200 Mo par minute, et ferme une connexion après 6 minutes sans aucun trafic.',
     },
   },
   privacy: {
@@ -409,7 +409,7 @@ const it: Rel = {
         { k: 'Fare domande e inviare documenti', v: 'Invia anche foto e documenti, elimina chat e segna le scadenze come fatte.' },
         { k: 'Fare domande, inviare e gestire questo PC', v: 'Avvia anche un backup e può mettere StarkLLM completamente offline. Il telefono chiede prima la Sua impronta.' },
       ],
-      note: "L'app Android è un'anteprima in test chiuso su Google Play. Fuori casa tutti i dati passano cifrati attraverso il relay; un collegamento diretto tra telefono e PC non fa parte di questa versione. Fuori casa il PC deve essere acceso e StarkLLM in esecuzione. Il relay consente per ogni PC fino a 16 connessioni di telefoni contemporanee e 200 MB al minuto, e chiude una connessione dopo 6 minuti senza alcun traffico.",
+      note: "L'app Android è un'anteprima. Fuori casa tutti i dati passano cifrati attraverso il relay; un collegamento diretto tra telefono e PC non fa parte di questa versione. Fuori casa il PC deve essere acceso e StarkLLM in esecuzione. Il relay consente per ogni PC fino a 16 connessioni di telefoni contemporanee e 200 MB al minuto, e chiude una connessione dopo 6 minuti senza alcun traffico.",
     },
   },
   privacy: {
@@ -494,7 +494,7 @@ const tr: Rel = {
         { k: 'Soru sormak ve belge göndermek', v: 'Ayrıca fotoğraf ve belge gönderir, sohbetleri siler ve son tarihleri tamamlandı olarak işaretler.' },
         { k: 'Soru sormak, göndermek ve bu bilgisayarı yönetmek', v: 'Ayrıca bir yedekleme başlatır ve StarkLLM’i tamamen çevrimdışı yapabilir. Telefon önce parmak izinizi ister.' },
       ],
-      note: 'Android uygulaması, Google Play’de kapalı testte olan bir önizlemedir. Evden uzakta tüm veriler şifreli olarak aktarıcıdan geçer; telefon ile bilgisayar arasında doğrudan bağlantı bu sürümün parçası değildir. Evden uzakta bilgisayarın açık olması ve StarkLLM’in çalışması gerekir. Aktarıcı her bilgisayar için aynı anda en fazla 16 telefon bağlantısına ve dakikada 200 MB’a izin verir ve hiç trafik olmayan bir bağlantıyı 6 dakika sonra kapatır.',
+      note: 'Android uygulaması bir önizlemedir. Evden uzakta tüm veriler şifreli olarak aktarıcıdan geçer; telefon ile bilgisayar arasında doğrudan bağlantı bu sürümün parçası değildir. Evden uzakta bilgisayarın açık olması ve StarkLLM’in çalışması gerekir. Aktarıcı her bilgisayar için aynı anda en fazla 16 telefon bağlantısına ve dakikada 200 MB’a izin verir ve hiç trafik olmayan bir bağlantıyı 6 dakika sonra kapatır.',
     },
   },
   privacy: {

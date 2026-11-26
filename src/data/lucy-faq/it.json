@@ -527,6 +527,16 @@
    "match": "app StarkLLM per Android lavora insieme al Suo PC"
   },
   {
+   "id": "getapp",
+   "q": [
+    "Come ottengo l’app Android?",
+    "Dove posso scaricare l’app Android?",
+    "L’app è su Google Play?"
+   ],
+   "page": "/it/phone",
+   "match": "invii il Suo indirizzo e-mail a info@starkllm.com"
+  },
+  {
    "id": "scam",
    "q": [
     "Mi avvisa delle lettere truffa?",

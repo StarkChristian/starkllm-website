@@ -40,13 +40,13 @@ export default {
   limits: {
     h2: 'Conviene saber',
     items: [
-      'La app es una vista previa en una prueba cerrada en Google Play. No hay app para iPhone.',
+      'La app es una vista previa. No hay app para iPhone.',
       'Fuera de casa solo funciona mientras el PC está encendido, StarkLLM está en marcha y no está totalmente sin conexión.',
       'Fuera de casa, todos los datos pasan cifrados por el relé. Está prevista una conexión directa entre teléfono y PC, con el relé como alternativa.',
       'Una pregunta desde el teléfono se responde en su PC sin búsqueda web y sin modelos en la nube, también fuera de casa.',
       'Android 10 o posterior. La app no tiene analítica, ni servicio de informes de errores, ni servicios de Google Play.',
     ],
   },
-  play: { h2: '¿Quiere probarla?', text: 'La app para Android está en una prueba cerrada en Google Play. Si desea participar, escriba a info@starkllm.com.' },
+  play: { h2: 'Cómo obtener la app para Android', text: 'La app para Android está en Google Play en fase de prueba. Si desea obtenerla en Google Play, mande su dirección de correo electrónico a info@starkllm.com y recibirá el enlace a Google Play.' },
   shots: { pc: '12-settings-phone', phone: 'phone-01-chat' },
 };
