@@ -1,19 +1,113 @@
-/* Design tokens for the redesign (Direction A: dark cinematic).
-   Legacy markup does not use these yet; Phase 3 migrates components onto them. */
+/* StarkLLM design tokens (2026 redesign): "calm, precise, trustworthy".
+   Two bases (warm off-white, deep ink), the StarkLLM violet (#8c14fc family) as the only accent, gold for tiny details.
+   Colours are OKLCH. Light and dark come from light-dark(): it follows `color-scheme`, which follows the system
+   (prefers-color-scheme) unless the visitor picked a theme (html[data-theme], kept in localStorage by the toggle). */
 :root {
-  --c-bg: #07060b;
-  --c-surface: #100e18;
-  --c-surface-2: #171425;
-  --c-line: #272238;
-  --c-fg: #f2eefb;
-  --c-muted: #9d96b6;
-  --c-violet: #8c14fc;
-  --c-violet-soft: #b777ff;
-  --c-gold: #d4af37;
-  --font-display: 'Geist', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'Geist', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, Consolas, monospace;
-}
+  color-scheme: light dark;
 
-.footer-disclaimer { margin-top: 1rem; font-size: 0.8rem; color: #71717a; }
-.lang-switch a { font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--c-line); border-radius: 4px; padding: 0.15rem 0.45rem; }
+  /* ---- colour ---------------------------------------------------------------------------------------------------- */
+  --bg:          light-dark(oklch(98.4% 0.006 85),  oklch(15.5% 0.018 290));
+  --bg-2:        light-dark(oklch(96.3% 0.009 85),  oklch(18.2% 0.022 290));
+  --surface:     light-dark(oklch(100% 0 0),        oklch(20.5% 0.024 290));
+  --surface-2:   light-dark(oklch(97.2% 0.007 85),  oklch(24% 0.027 290));
+  --line:        light-dark(oklch(90% 0.01 85),     oklch(30% 0.026 290));
+  --line-strong: light-dark(oklch(81% 0.013 85),    oklch(40% 0.03 290));
+  --fg:          light-dark(oklch(21% 0.025 290),   oklch(96% 0.008 290));
+  --fg-2:        light-dark(oklch(40% 0.022 290),   oklch(80% 0.014 290));
+  --fg-3:        light-dark(oklch(50% 0.018 290),   oklch(68% 0.016 290));
+  /* The brand violet fills buttons in both themes (white text stays above 4.5:1); --accent is the violet for text. */
+  --brand:       oklch(53.5% 0.285 298);
+  --brand-hover: oklch(47.5% 0.265 298);
+  --on-brand:    oklch(100% 0 0);
+  --accent:      light-dark(oklch(50% 0.27 298),    oklch(75% 0.17 300));
+  --accent-soft: light-dark(oklch(95.5% 0.03 300),  oklch(27% 0.075 300));
+  --accent-line: light-dark(oklch(84% 0.08 300),    oklch(42% 0.14 300));
+  --gold:        light-dark(oklch(62% 0.12 82),     oklch(80% 0.13 88));
+  --danger:      light-dark(oklch(52% 0.19 25),     oklch(72% 0.15 25));
+  --focus:       var(--accent);
+
+  /* ---- type ------------------------------------------------------------------------------------------------------ */
+  --font-sans: 'Geist', ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --step--2: clamp(0.75rem, 0.73rem + 0.08vw, 0.8rem);
+  --step--1: clamp(0.84rem, 0.81rem + 0.14vw, 0.92rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --step-1:  clamp(1.18rem, 1.1rem + 0.38vw, 1.375rem);
+  --step-2:  clamp(1.42rem, 1.26rem + 0.8vw, 1.875rem);
+  --step-3:  clamp(1.85rem, 1.5rem + 1.75vw, 2.875rem);
+  --step-4:  clamp(2.35rem, 1.75rem + 3vw, 4.125rem);
+  --step-5:  clamp(2.7rem, 1.8rem + 4.6vw, 5.5rem);
+  --lh-tight: 1.04;
+  --lh-snug: 1.22;
+  --lh-body: 1.62;
+  --tracking-tight: -0.035em;
+  --measure: 62ch;
+
+  /* ---- space ----------------------------------------------------------------------------------------------------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: clamp(3.5rem, 2.6rem + 4vw, 6rem);
+  --space-3xl: clamp(4rem, 3rem + 4.5vw, 7rem);
+  --gutter: clamp(1rem, 0.4rem + 3vw, 2.5rem);
+  --wrap: 1240px;
+  --wrap-wide: 1320px;
+
+  /* ---- shape ----------------------------------------------------------------------------------------------------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+  --shadow-color: light-dark(oklch(35% 0.04 290 / 0.10), oklch(5% 0.02 290 / 0.55));
+  --shadow-1: 0 1px 2px var(--shadow-color);
+  --shadow-2: 0 1px 2px var(--shadow-color), 0 8px 24px -12px var(--shadow-color);
+  --shadow-3: 0 2px 4px var(--shadow-color), 0 30px 60px -24px var(--shadow-color), 0 12px 24px -16px var(--shadow-color);
+  --ring: 0 0 0 3px color-mix(in oklch, var(--accent) 35%, transparent);
+
+  /* ---- motion ---------------------------------------------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-1: 140ms;
+  --dur-2: 260ms;
+  --dur-3: 600ms;
+
+  /* ---- names the Lucy styles use (src/styles/lucy.css) ---------------------------------------------------------- */
+  --c-bg: var(--bg);
+  --c-surface: var(--surface);
+  --c-surface-2: var(--surface-2);
+  --c-line: var(--line);
+  --c-fg: var(--fg);
+  --c-muted: var(--fg-3);
+  --c-violet: var(--brand);
+  --c-violet-soft: var(--accent);
+  --c-gold: var(--gold);
+  --font-body: var(--font-sans);
+  --font-display: var(--font-sans);
+}
+:root[data-theme='light'] { color-scheme: light; }
+:root[data-theme='dark'] { color-scheme: dark; }
+
+/* Browsers without light-dark() (before 2024): plain values, dark by prefers-color-scheme. The toggle needs light-dark(). */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --bg: oklch(98.4% 0.006 85); --bg-2: oklch(96.3% 0.009 85); --surface: oklch(100% 0 0); --surface-2: oklch(97.2% 0.007 85);
+    --line: oklch(90% 0.01 85); --line-strong: oklch(81% 0.013 85); --fg: oklch(21% 0.025 290); --fg-2: oklch(40% 0.022 290);
+    --fg-3: oklch(50% 0.018 290); --accent: oklch(50% 0.27 298); --accent-soft: oklch(95.5% 0.03 300);
+    --accent-line: oklch(84% 0.08 300); --gold: oklch(62% 0.12 82); --danger: oklch(52% 0.19 25);
+    --shadow-color: oklch(35% 0.04 290 / 0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: oklch(15.5% 0.018 290); --bg-2: oklch(18.2% 0.022 290); --surface: oklch(20.5% 0.024 290); --surface-2: oklch(24% 0.027 290);
+      --line: oklch(30% 0.026 290); --line-strong: oklch(40% 0.03 290); --fg: oklch(96% 0.008 290); --fg-2: oklch(80% 0.014 290);
+      --fg-3: oklch(68% 0.016 290); --accent: oklch(75% 0.17 300); --accent-soft: oklch(27% 0.075 300);
+      --accent-line: oklch(42% 0.14 300); --gold: oklch(80% 0.13 88); --danger: oklch(72% 0.15 25);
+      --shadow-color: oklch(5% 0.02 290 / 0.55);
+    }
+  }
+}

@@ -1,37 +1,41 @@
 ---
-import { ui, languages, langsFor, localePath, type Lang } from '../i18n/ui';
-const { lang = 'en', path = '/', getLabel } = Astro.props as { lang?: Lang; path?: string; getLabel: string };
-const t = ui[lang].nav;
-// Offer a language only where this page exists in it; pages that exist once (the legal texts) get no switcher.
+// The top bar. On narrow screens the links live in a popover (no JavaScript: popover + popovertarget).
+// The language switch offers only the languages this page exists in; pages that exist once get none.
+import Icon from './Icon.astro';
+import { languages, langsFor, localePath, type Lang } from '../i18n/ui';
+import { common } from '../i18n/site';
+const { lang = 'en', path = '/' } = Astro.props as { lang?: Lang; path?: string };
+const t = common[lang].nav;
 const switchTo = langsFor(path).filter((l) => l !== lang);
 const items = [
-  { href: '/', label: t.home },
-  { href: '/product', label: t.product },
+  { href: '/features', label: t.features },
+  { href: '/phone', label: t.phone },
+  { href: '/privacy', label: t.privacy },
   { href: '/manual', label: t.manual },
-  { href: '/download', label: t.download },
+  { href: '/help', label: t.help },
   { href: '/about', label: t.about },
-  { href: '/contact', label: t.contact },
 ];
+const here = path.replace(/\.html$/, '');
 ---
-<nav class="nav" aria-label="Main">
-  <a class="brand" href={localePath(lang, '/')}><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26" />StarkLLM</a>
-  <button class="menu-btn" id="menuBtn" aria-controls="navLinks" aria-expanded="false" aria-label={ui[lang].menu}>&#9776;</button>
-  <ul class="nav-links" id="navLinks">
-    {items.map((i) => (
-      <li><a href={localePath(lang, i.href)} aria-current={i.href === path ? 'page' : undefined}>{i.label}</a></li>
-    ))}
-    <li><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">{t.github}</a></li>
-    {switchTo.length > 0 && (
-      <li class="lang">
-        <details>
-          <summary aria-label={languages[lang].name} title={languages[lang].name}>{lang.toUpperCase()}</summary>
-          <div class="lang-menu">
-            {switchTo.map((l) => <a href={localePath(l, path)} hreflang={l} lang={l}>{languages[l].name}</a>)}
-          </div>
-        </details>
-      </li>
-    )}
-    {/* Goes to the download page, not to the .exe: requirements (Ollama, RAM, disk space) and the signature check come first. */}
-    <li><a class="btn primary small" href={localePath(lang, '/download')}>{getLabel}</a></li>
-  </ul>
-</nav>
+<header class="nav">
+  <nav class="wrap-wide nav-in" aria-label="Main">
+    <a class="brand" href={localePath(lang, '/')}><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26" />StarkLLM</a>
+    <div class="nav-menu" id="nav-menu" popover>
+      <ul>
+        {items.map((i) => (
+          <li><a class="nav-link" href={localePath(lang, i.href)} aria-current={i.href === here ? 'page' : undefined}>{i.label}</a></li>
+        ))}
+      </ul>
+      <a class="btn primary small nav-get-in" href={localePath(lang, '/download')}><Icon name="download" size={16} />{t.download}</a>
+    </div>
+    <ul class="nav-tools" role="list">
+      {switchTo.length > 0 && (
+        <li class="lang"><details><summary aria-label={`${t.language}: ${languages[lang].name}`}><Icon name="globe" size={17} />{lang.toUpperCase()}</summary><div class="lang-menu">{switchTo.map((l) => <a href={localePath(l, path)} hreflang={l} lang={l}>{languages[l].name}</a>)}</div></details></li>
+      )}
+      <li><button type="button" class="icon-btn theme-toggle" data-theme-toggle aria-label={t.theme} title={t.theme}><Icon name="moon" size={19} class="ico-moon" /><Icon name="sun" size={19} class="ico-sun" /></button></li>
+      <li><a class="icon-btn" href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener" aria-label={t.github} title={t.github}><Icon name="github" size={19} /></a></li>
+      <li class="nav-get-wide"><a class="btn primary small" href={localePath(lang, '/download')}>{t.download}</a></li>
+      <li><button type="button" class="icon-btn menu-btn" popovertarget="nav-menu" aria-label={t.menu}><Icon name="menu" size={20} /></button></li>
+    </ul>
+  </nav>
+</header>

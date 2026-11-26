@@ -1,19 +1,20 @@
 ---
 import '../styles/fonts.css';
 import '../styles/tokens.css';
-import '../styles/site.css';
-import '../styles/refresh.css';
+import '../styles/base.css';
+import '../styles/components.css';
 import SiteNav from '../components/SiteNav.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import LucyGuide from '../components/LucyGuide.astro';
 import { lucyProfile, lucyLangFor } from '../i18n/lucy';
-import { alternatesFor, absoluteUrl, languages, ui, type Lang } from '../i18n/ui';
+import { alternatesFor, absoluteUrl, languages, ui, SITE, type Lang } from '../i18n/ui';
+import { ogPathFor } from '../lib/pagemeta';
 
 interface Props {
   title: string;
   description?: string;
   canonical?: string;
-  /** Raw meta/link/JSON-LD tags (OG, Twitter, structured data). */
+  /** Raw meta/link tags of older pages (their own Open Graph or canonical). */
   headExtra?: string;
   /** Language of the interface (navigation, footer). */
   lang?: Lang;
@@ -21,48 +22,79 @@ interface Props {
   contentLang?: string;
   /** Path of this page without locale prefix. */
   path?: string;
-  getLabel: string;
   alternates?: { hreflang: string; href: string }[];
+  /** Structured data (schema.org), one object or a list. */
+  jsonLd?: object | object[];
+  ogType?: string;
+  /** Older callers pass the label of the download button; the 2026 nav has its own. */
+  getLabel?: string;
 }
-const { title, description, canonical, headExtra = '', lang = 'en', contentLang, path = '/', getLabel, alternates } = Astro.props;
-// Canonical and hreflang follow from lang + path unless the page gives its own (a page's raw head may already contain a canonical).
+const { title, description, canonical, headExtra = '', lang = 'en', contentLang, path = '/', alternates, jsonLd, ogType = 'website' } = Astro.props;
 const ownCanonical = headExtra.includes('rel="canonical"');
 const canonicalUrl = canonical ?? (ownCanonical ? undefined : absoluteUrl(lang, path));
 const hreflangs = alternates ?? alternatesFor(path);
-// Lucy is docked on every page. Pages with a profile also get the tour and her explanations; legal pages get neither (see src/i18n/lucy.ts).
 const lucyKind = lucyProfile(path);
+// Open Graph: every page gets its own image (src/pages/og/[slug].png.ts) unless its older head brings tags of its own.
+const ownOg = headExtra.includes('og:title');
+const ogImage = SITE + ogPathFor(lang, path);
+const ld = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const ldJson = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
+// Speculation Rules: same-site pages the visitor points at are fetched ahead (no third party, nothing stored).
+const speculation = JSON.stringify({
+  prefetch: [{ where: { and: [{ href_matches: '/*' }, { not: { href_matches: '/*.*' } }] }, eagerness: 'moderate' }],
+});
 ---
 <!doctype html>
 <html lang={contentLang ?? lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#07060b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f0d16" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
     <Fragment set:html={headExtra} />
+    {!ownOg && (
+      <>
+        <meta property="og:title" content={title} />
+        {description && <meta property="og:description" content={description} />}
+        {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+        <meta property="og:type" content={ogType} />
+        <meta property="og:site_name" content="StarkLLM" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content={languages[lang]?.locale ?? 'en_US'} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </>
+    )}
     {hreflangs.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     <link rel="icon" href="/favicon.ico?v=10" sizes="any" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=10" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=10" />
     <link rel="manifest" href="/site.webmanifest" />
-    <script is:inline>try{if(localStorage.getItem('lucy-hidden')==='1')document.documentElement.setAttribute('data-lucy','off')}catch(e){}</script>
+    {ld.map((o) => <script type="application/ld+json" set:html={ldJson(o)} />)}
+    <script type="speculationrules" set:html={speculation} />
+    <script is:inline>try{var d=document.documentElement,t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);if(localStorage.getItem('lucy-hidden')==='1')d.setAttribute('data-lucy','off')}catch(e){}</script>
   </head>
   <body>
     <a class="skip" href="#main">{ui[lang].skip}</a>
-    <div class="wrap">
-      <SiteNav lang={lang} path={path} getLabel={getLabel} />
-      <main id="main"><slot /></main>
-      <LucyGuide lang={lucyLangFor(path, lang)} profile={lucyKind} />
-      <SiteFooter lang={lang} />
-    </div>
-    <script>
-      const btn = document.getElementById('menuBtn');
-      const links = document.getElementById('navLinks');
-      btn?.addEventListener('click', () => {
-        const open = links!.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(open));
+    <SiteNav lang={lang} path={path} />
+    <main id="main"><slot /></main>
+    <LucyGuide lang={lucyLangFor(path, lang)} profile={lucyKind} />
+    <SiteFooter lang={lang} />
+    <script is:inline>
+      // Theme toggle: flips between light and dark and remembers the choice on this device only (localStorage, try/catch).
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest && e.target.closest('[data-theme-toggle]');
+        if (!b) return;
+        var d = document.documentElement, cur = d.getAttribute('data-theme');
+        var dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        var next = dark ? 'light' : 'dark';
+        d.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (err) {}
       });
     </script>
   </body>

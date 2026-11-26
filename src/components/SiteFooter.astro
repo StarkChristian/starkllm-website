@@ -1,29 +1,62 @@
 ---
 import { ui, localePath, type Lang } from '../i18n/ui';
+import { common } from '../i18n/site';
+import { techOrder, tech } from '../i18n/tech';
 const { lang = 'en' } = Astro.props as { lang?: Lang };
-const f = ui[lang].footer;
+const f = common[lang].footer;
+const n = common[lang].nav;
+const old = ui[lang].footer;
+const L = (p: string) => localePath(lang, p);
 ---
-<footer class="foot">
-  <div>
-    <a class="brand" href={localePath(lang, '/')} style="padding:0"><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26" />StarkLLM</a>
-    <p style="margin-top:.8rem">{f.tagline1}</p>
-    <p>{f.tagline2}</p>
-    <p class="small">{f.disclaimer.map((l, i) => (<>{l}{i < f.disclaimer.length - 1 && <br />}</>))}</p>
+<footer class="site-foot">
+  <div class="wrap-wide">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href={L('/')}><img src="/assets/logo-mark.webp?v=10" alt="" width="46" height="26" loading="lazy" />StarkLLM</a>
+        <p>{f.tagline}</p>
+      </div>
+      <nav aria-label={f.product}>
+        <h2>{f.product}</h2>
+        <ul>
+          <li><a href={L('/features')}>{n.features}</a></li>
+          <li><a href={L('/phone')}>{n.phone}</a></li>
+          <li><a href={L('/privacy')}>{n.privacy}</a></li>
+          <li><a href={L('/download')}>{n.download}</a></li>
+          <li><a href={L('/changelog')}>{f.changelog}</a></li>
+        </ul>
+      </nav>
+      <nav aria-label={f.learn}>
+        <h2>{f.learn}</h2>
+        <ul>
+          <li><a href={L('/manual')}>{n.manual}</a></li>
+          <li><a href={L('/help')}>{n.help}</a></li>
+          {techOrder.slice(0, 4).map((s) => <li><a href={L('/' + s)}>{tech[lang][s].h1}</a></li>)}
+        </ul>
+      </nav>
+      <nav aria-label={f.project}>
+        <h2>{f.project}</h2>
+        <ul>
+          <li><a href={L('/about')}>{n.about}</a></li>
+          <li><a href={L('/contact')}>{f.contact}</a></li>
+          <li><a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">{f.github}</a></li>
+          <li><a href="/code-signing" hreflang="en">{f.codeSigning}</a></li>
+          <li><a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a></li>
+        </ul>
+      </nav>
+      <nav aria-label={f.legal}>
+        <h2>{f.legal}</h2>
+        <ul>
+          {old.legalPage
+            ? <li><a href={L('/legal')}>{old.legalPage}</a></li>
+            : <><li><a href="/impressum" hreflang="de">{old.impressum}</a></li><li><a href="/datenschutz" hreflang="de">{old.privacy}</a></li></>}
+          {lang !== 'de' && <li><a href="/privacy-policy" hreflang="en">{f.privacyEn}</a></li>}
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-note">
+      <p>{f.disclaimer} {f.site}</p>
+      <p>{f.bottom}</p>
+    </div>
+    {old.aiNote && <p class="small" style="margin-top:var(--space-s)">{old.aiNote.text} <a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">{old.aiNote.issues}</a> · <a href={L('/contact')}>{old.aiNote.contact}</a></p>}
   </div>
-  <div>
-    <h4>{f.related}</h4>
-    <a href="https://github.com/StarkChristian/StarkLLM" target="_blank" rel="noopener">{f.repo}</a>
-    <a href="https://homomorphicprivacy.com" target="_blank" rel="noopener">homomorphicprivacy.com</a>
-    <a href={localePath(lang, '/help')}>{f.help}</a>
-  </div>
-  <div>
-    <h4>{f.legal}</h4>
-    {f.legalPage
-      ? <a href={localePath(lang, '/legal')}>{f.legalPage}</a>
-      : <><a href="/impressum" hreflang="de">{f.impressum}</a><a href="/datenschutz" hreflang="de">{f.privacy}</a></>}
-    {lang === 'en' && <a href="/privacy-policy">Privacy policy (English translation)</a>}
-    <a href={localePath(lang, '/contact')}>{f.contact}</a>
-  </div>
-  {f.aiNote && <p class="foot-ai">{f.aiNote.text} <a href="https://github.com/StarkChristian/StarkLLM/issues" target="_blank" rel="noopener">{f.aiNote.issues}</a> · <a href={localePath(lang, '/contact')}>{f.aiNote.contact}</a></p>}
-  <div class="foot-bottom">{f.bottom}</div>
 </footer>
