@@ -1,18 +1,14 @@
 ---
-// About (2026). Languages without src/i18n/langs/<lang>/about.ts show their older About text (content-html/about.main.<lang>.html).
+// About (2026): src/i18n/langs/<lang>/about.ts.
 import Icon from './Icon.astro';
-import LegacyBody from './LegacyBody.astro';
 import LucyAbout from './LucyAbout.astro';
 import CtaBand from './CtaBand.astro';
 import { about } from '../i18n/site';
-import { defaultLang, localePath, type Lang } from '../i18n/ui';
+import { localePath, type Lang } from '../i18n/ui';
 const { lang } = Astro.props as { lang: Lang };
 const c = about[lang];
-const files = import.meta.glob('../content-html/about.main*.html', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
-const old = files[`../content-html/about.main${lang === defaultLang ? '' : `.${lang}`}.html`];
 ---
-{c ? (
-  <>
+<>
     <div class="wrap">
       <header class="page-hero">
         <span class="eyebrow">{c.hero.eyebrow}</span>
@@ -59,10 +55,4 @@ const old = files[`../content-html/about.main${lang === defaultLang ? '' : `.${l
       </div>
     </section>
     <CtaBand lang={lang} />
-  </>
-) : (
-  <>
-    <div class="wrap prose"><LegacyBody html={old} /><LucyAbout lang={lang} /></div>
-    <CtaBand lang={lang} />
-  </>
-)}
+</>

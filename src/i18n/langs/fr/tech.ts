@@ -52,7 +52,7 @@ const pages = {
     sections: s(fr,
       'La base de connaissances est un dossier sur votre PC (par défaut « StarkLLM Knowledge Base », dans vos Documents) dont StarkLLM indexe les fichiers et qu’il maintient à jour.',
       'Les documents de référence, comme des procédures, des manuels ou des notes, servent dans de nombreux projets. Sans bibliothèque commune, vous ajouteriez les mêmes fichiers dans chaque espace de travail.',
-      'StarkLLM examine les dossiers enregistrés toutes les 30 secondes et indexe les fichiers nouveaux et modifiés ; « Sync Now » (Synchroniser maintenant) le fait immédiatement. Dans la discussion, l’interrupteur Base de connaissances décide si ces fichiers sont eux aussi consultés. Les sources qui en proviennent sont marquées « Personal KB ».',
+      'StarkLLM examine les dossiers enregistrés toutes les 30 secondes et indexe les fichiers nouveaux et modifiés ; « Synchroniser maintenant » le fait immédiatement. Dans la discussion, l’interrupteur Base de connaissances décide si ces fichiers sont eux aussi consultés. Les sources qui en proviennent sont marquées « Personal KB ».',
       'Vous gardez le manuel de votre équipe dans ce dossier. Dans un espace de travail consacré à un nouveau projet, vous pouvez interroger les fichiers du projet et le manuel dans la même question.'),
   },
   'tech-workspaces': {
@@ -98,7 +98,7 @@ const pages = {
         'Recherche web (interrupteur dans la discussion) : votre question est envoyée à DuckDuckGo ; seulement s’il ne répond pas, à Startpage, puis à Mojeek, et en dernier recours à la recherche publique de Wikipedia. Un seul à la fois.',
         'Téléphone hors de chez vous (Paramètres › Téléphone, par téléphone, désactivé par défaut) : le PC garde une connexion au relais StarkLLM (relay.starkllm.com). Le relais ne transmet que des octets chiffrés ; les questions, réponses et documents restent chiffrés du téléphone jusqu’au PC.',
         'Tâches web (interrupteur « Tâche web » dans la discussion) : StarkLLM ouvre les sites web de la tâche dans sa propre fenêtre ; ces sites reçoivent votre adresse IP et ce que la tâche y saisit.',
-        'Fournisseurs de modèles dans le cloud (Settings, par exemple DeepSeek, OpenRouter, Groq) : votre question et les passages trouvés sont envoyés à ce fournisseur.',
+        'Fournisseurs de modèles dans le cloud (Paramètres, par exemple DeepSeek, OpenRouter, Groq) : votre question et les passages trouvés sont envoyés à ce fournisseur.',
         'Import depuis le web (page web, YouTube, GitHub) : l’application télécharge la page, la transcription ou le dépôt que vous avez indiqué.',
         'Modèles cloud d’Ollama (noms se terminant par « :cloud ») : votre question et les passages trouvés sont envoyés aux serveurs d’Ollama.',
         'Packs de langue OCR (Paramètres › Lecture des photos et des scans) : un fichier de langue est téléchargé depuis GitHub.',

@@ -24,7 +24,7 @@ export default {
     'tech-rag': 'İşte uygulamada bir yanıt. Kaynaklar altında listelenir; böylece kontrol edebilirsiniz.',
     'tech-knowledge-base': 'Bu, dizinlenmiş bir klasörü olan Bilgi Tabanı (Knowledge Base).',
     'tech-voice': 'Ses seçeneklerini ayarlarda bulursunuz.',
-    'tech-themes': 'Bu, Ayarlar › Görünüm (Settings, Appearance) bölümündeki tema galerisi. Bir temaya tıklayın; hemen uygulanır.',
+    'tech-themes': 'Bu, Ayarlar › Görünüm bölümündeki tema galerisi. Bir temaya tıklayın; hemen uygulanır.',
   },
   lost: { line: 'Hmm, o sayfa nereye gitti? Her yere baktım ama bulamıyorum.', back: 'Ana sayfaya dön' },
   about: {

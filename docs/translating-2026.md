@@ -1,5 +1,8 @@
 # Translating the 2026 site (phase 2: es, fr, it, tr)
 
+**Done (November 2026).** All four languages are translated; `src/i18n/legacy.ts`, the old `home.ts`/`product.ts` data and
+the older `about.main.<lang>.html` pages were removed. This file stays as the record of how phase 2 was done.
+
 Phase 1 wrote every page in English and German. Spanish, French, Italian and Turkish already have all pages, but their
 2026 texts are built from their older texts plus English (`src/i18n/legacy.ts`); every such file says `TODO translate`.
 Phase 2 replaces those files with real translations. Formal address everywhere (usted, vous, Lei, siz). Feature and

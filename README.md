@@ -86,8 +86,8 @@ Rules the build checks (`npm run check-i18n`): every page has one canonical URL 
 Example: Portuguese (`pt`). Nothing in the English or German files changes; everything for a language is in its own files, and the build fails with the list of missing keys if a file does not have every key (and the same list lengths) as the English one.
 
 1. `src/i18n/ui.ts`: add `pt: { name: 'Português', locale: 'pt_PT' }` to `allLanguages`, add `pt` to `localizedPaths` (`[...translated, '/legal']`) and to `aiTranslated` (so it shows the AI notice and the English screenshots).
-2. Create `src/i18n/langs/pt/`: `ui.ts`, `home.ts`, `product.ts`, `download.ts`, `help.ts`, `tech.ts` (`{ labels, pages }`), `shots.ts` (alt texts), `pages.ts` (titles and the legal-notice text), `lucy.ts`. Each is a default export shaped like the `en` object of the file of the same name.
-3. Create `src/content-html/manual.main.pt.html`, `about.main.pt.html`, `contact.main.pt.html` (translations of the English ones; links go to `/pt/...`).
+2. Create `src/i18n/langs/pt/`: the 2026 page texts `common.ts`, `media.ts`, `start.ts`, `features.ts`, `phone.ts`, `privacy.ts`, `about.ts`, `changelog.ts` (shaped like `src/i18n/langs/en/`), and `ui.ts`, `download.ts`, `help.ts`, `tech.ts` (`{ labels, pages }`), `shots.ts` (alt texts), `pages.ts` (titles and the legal-notice text), `lucy.ts`, each a default export shaped like the `en` object of the file of the same name in `src/i18n/`. Add the language's sections to `src/i18n/release250.ts` and `release260.ts`.
+3. Create `src/content-html/manual.main.pt.html` and `contact.main.pt.html` (translations of the English ones; links go to `/pt/...`).
 4. Lucy: `src/data/lucy-faq/pt.json` (stop words, suffixes, FAQ questions with the phrase of the answer passage) and `tests/lucy/questions.pt.json` (40+ questions, unrelated and legal-advice questions). `npm run build` runs the quality gate.
 5. Build with `SITE_LANGS=en,pt npm run build` while working (only those languages are built), then `npm run build`, `npm run check-links`, `npm run check-i18n`.
 

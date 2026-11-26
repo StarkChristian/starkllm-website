@@ -14,7 +14,7 @@ export default {
     news: 'È uscita la versione {v}!',
     newsDate: 'Rilasciata il {d}.',
     point:
-      'Il grande pulsante viola scarica l\'installer. Dalla v2.1.2 è firmato da "Open Source Developer Christian Stark", così Windows può verificare l\'editore. Per controllarlo personalmente: clic destro sul file, "Properties" (Proprietà), "Digital Signatures" (Firme digitali). Se Windows mostra comunque un avviso, controlli quel nome e confronti il checksum qui sotto.',
+      'Il grande pulsante viola scarica l\'installer. Dalla v2.1.2 è firmato da "Open Source Developer Christian Stark", così Windows può verificare l\'editore. Per controllarlo personalmente: clic destro sul file, "Proprietà" (Properties), "Firme digitali" (Digital Signatures). Se Windows mostra comunque un avviso, controlli quel nome e confronti il checksum qui sotto.',
   },
   privacy: 'I Suoi documenti, il Suo indice di ricerca, le Sue chat e i Suoi modelli restano su questo PC. Alcune funzioni in più possono andare online, ma solo quando Lei le attiva, e la chat Le dice quando una domanda esce dal Suo PC.',
   localModels: 'I modelli linguistici girano sul Suo PC con Ollama. Dopo il primo download, StarkLLM continua a funzionare senza internet.',

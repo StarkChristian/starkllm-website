@@ -24,7 +24,7 @@ export default {
     'tech-rag': 'Voici une réponse dans l’application. Les sources sont listées en dessous, pour que vous puissiez les vérifier.',
     'tech-knowledge-base': 'Voici la base de connaissances avec un dossier qui a été indexé.',
     'tech-voice': 'Vous trouverez les options vocales dans les paramètres.',
-    'tech-themes': 'Voici la galerie de thèmes, dans Settings, Appearance (Paramètres, Apparence). Cliquez sur un thème et il s’applique aussitôt.',
+    'tech-themes': 'Voici la galerie de thèmes, dans Paramètres › Apparence. Cliquez sur un thème et il s’applique aussitôt.',
   } as Record<string, string>,
   lost: { line: 'Hmm, où est passée cette page ? J’ai cherché partout, mais je ne la trouve pas.', back: 'Retour à la page d’accueil' },
   about: {

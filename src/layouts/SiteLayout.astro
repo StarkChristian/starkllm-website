@@ -27,7 +27,6 @@ interface Props {
   jsonLd?: object | object[];
   ogType?: string;
   /** Older callers pass the label of the download button; the 2026 nav has its own. */
-  getLabel?: string;
 }
 const { title, description, canonical, headExtra = '', lang = 'en', contentLang, path = '/', alternates, jsonLd, ogType = 'website' } = Astro.props;
 const ownCanonical = headExtra.includes('rel="canonical"');

@@ -25,7 +25,7 @@ export function metaOf(lang: Lang, path: string): PageMeta {
     case 'download': return download[lang].meta as PageMeta;
     case 'help': return help[lang].meta as PageMeta;
     case 'tech': { const t = tech[lang][def.slug!]; return { title: t.title, description: t.lede }; }
-    case 'about': return about[lang]?.meta ?? { title: pageMeta[lang].about.title, description: descIn(headOf('about', lang)) };
+    case 'about': return about[lang].meta;
     case 'manual':
     case 'contact': { const m = pageMeta[lang][def.kind]; return { title: m.title, description: m.description ?? descIn(headOf(def.kind, lang)) }; }
     case 'legal': { const L = pageMeta[lang].legal!; return { title: L.title, description: L.description }; }

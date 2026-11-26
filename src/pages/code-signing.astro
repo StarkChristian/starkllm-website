@@ -2,10 +2,9 @@
 // Code signing policy of StarkLLM (the text of the README section "Code signing policy" in the app repo). English only.
 import SiteLayout from '../layouts/SiteLayout.astro';
 import LegacyBody from '../components/LegacyBody.astro';
-import { home } from '../i18n/home';
 import head from '../content-html/code-signing.head.html?raw';
 import main from '../content-html/code-signing.main.html?raw';
 ---
-<SiteLayout title={"Code signing policy | StarkLLM"} headExtra={head} path="/code-signing" getLabel={home.en.nav.getBtn}>
+<SiteLayout title={"Code signing policy | StarkLLM"} headExtra={head} path="/code-signing">
   <div class="wrap prose"><LegacyBody html={main} /></div>
 </SiteLayout>
