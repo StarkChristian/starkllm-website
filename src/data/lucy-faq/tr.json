@@ -1973,7 +1973,7 @@
     "Groq kullanabilir miyim?"
    ],
    "page": "/tr/tech-privacy",
-   "match": "Bulut model sağlayıcıları (Settings, örneğin DeepSeek, OpenRouter, Groq)"
+   "match": "Bulut model sağlayıcıları (Ayarlar, örneğin DeepSeek, OpenRouter, Groq)"
   },
   {
    "id": "sources",
@@ -2010,7 +2010,7 @@
     "Ortak kütüphane klasörü nasıl çalışır?"
    ],
    "page": "/tr/tech-knowledge-base",
-   "match": "Knowledge Base, bilgisayarınızdaki bir klasördür"
+   "match": "Bilgi Tabanı, bilgisayarınızdaki bir klasördür"
   },
   {
    "id": "formats",
@@ -2152,8 +2152,8 @@
     "Bu site ziyaretçiler hakkında hangi verileri topluyor?",
     "Siteyi gezerken takip ediliyor muyum?"
    ],
-   "page": "/tr/about",
-   "match": "de web analitiği, izleme ve çerez kullanmaz"
+   "page": "/tr/privacy",
+   "match": "Çerez yerleştirmez, analiz aracı kullanmaz ve başka sunuculardan yazı tipi, betik veya video yüklemez"
   },
   {
    "id": "slow",
@@ -2216,7 +2216,7 @@
     "Ses veya video dosyalarını metne çevirebilir mi?"
    ],
    "page": "/tr/features",
-   "match": "Toplantılar, dersler ve sesli notlar, Whisper large-v3-turbo ile"
+   "match": "Toplantılar, dersler ve sesli notlar bilgisayarınızda zaman bilgileriyle yazıya dökülür"
   },
   {
    "id": "images",
@@ -2226,7 +2226,7 @@
     "Bir resmi tarif edebilir mi?"
    ],
    "page": "/tr/features",
-   "match": "Bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bilgisayarınızdaki bir görü modeli yanıt verir"
+   "match": "Bir ekran görüntüsü yapıştırın veya bir fotoğraf seçin; bilgisayarınızdaki bir görme modeli yanıt verir"
   },
   {
    "id": "pairing",

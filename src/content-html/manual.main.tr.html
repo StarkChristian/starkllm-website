@@ -12,13 +12,13 @@
                 <li><a href="#installation">7. Kuruluma genel bakış</a></li>
                 <li><a href="#first-launch">8. StarkLLM’i başlatma (v{{V}} yerel masaüstü)</a></li>
                 <li><a href="#first-week">9. İlk hafta kullanım yolu</a></li>
-                <li><a href="#workspaces">10. Workspace oluşturma</a></li>
+                <li><a href="#workspaces">10. Çalışma alanı oluşturma</a></li>
                 <li><a href="#documents">11. Belge yükleme ve en iyi uygulamalar</a></li>
                 <li><a href="#inbox">12. Gelen kutusu, dosyalar ve son tarihler</a></li>
                 <li><a href="#warnings">13. Sahte mektuplara karşı uyarılar</a></li>
                 <li><a href="#chat">14. Belgelerle sohbet</a></li>
-                <li><a href="#knowledge-base">15. Knowledge Base kullanımı ve en iyi uygulamalar</a></li>
-                <li><a href="#workspace-vs-kb">16. Workspace mi, Knowledge Base mi?</a></li>
+                <li><a href="#knowledge-base">15. Bilgi Tabanı kullanımı ve en iyi uygulamalar</a></li>
+                <li><a href="#workspace-vs-kb">16. Çalışma alanı mı, Bilgi Tabanı mı?</a></li>
                 <li><a href="#switching-models">17. Model değiştirme</a></li>
                 <li><a href="#voice">18. Ses özellikleri</a></li>
                 <li><a href="#local-tools">19. Süreç içi yerel araçları (MCP ana bilgisayarı) kullanma</a></li>
@@ -187,7 +187,7 @@
                 </div>
 
                 <h3>Seçenek 1 &mdash; Windows masaüstü yükleyicisi (önerilir)</h3>
-                <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda yerleşik motorunu ve Ollama’yı başlatır, eksik modelleri indirir ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Knowledge Base klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. StarkLLM’den çıktığınızda motor da durur.</p>
+                <p>Yerel Windows uygulamasını kurmak için <code>StarkLLM-v{{V}}-Setup.exe</code> dosyasını çalıştırın. Masaüstü ve başlat menüsü kısayolları oluşturur. Başlattığınızda yerleşik motorunu ve Ollama’yı başlatır, eksik modelleri indirir ve ardından StarkLLM’i kendi penceresinde gösterir. Veriler <code>%APPDATA%\StarkLLM\data</code> içinde saklanır; Bilgi Tabanı klasörü <code>Documents\StarkLLM Knowledge Base</code> klasörüdür. StarkLLM’den çıktığınızda motor da durur.</p>
 
                 <h3>Seçenek 2 &mdash; Kaynaktan Docker Compose ile (geliştiriciler)</h3>
                 <p>Geliştirme, başsız (headless) veya sunucu ortamları için motoru GitHub’daki kaynak koddan kapsayıcılarda başlatın (Docker gerekir):</p>
@@ -199,7 +199,7 @@
                 <h2>9. İlk hafta kullanım yolu</h2>
                 <p>StarkLLM’den en iyi şekilde yararlanmak için ilk haftanızda şu sırayı öneriyoruz:</p>
                 <ol>
-                    <li><strong>1. gün:</strong> Küçük başlayın. Tek bir workspace oluşturun, 2-3 standart belge
+                    <li><strong>1. gün:</strong> Küçük başlayın. Tek bir çalışma alanı oluşturun, 2-3 standart belge
                         yükleyin (araştırma makaleleri veya kılavuzlar gibi) ve soru sorma alıştırması yapın. Kaynak gösterimlerinin
                         nasıl çalıştığını gözlemleyin.</li>
                     <li><strong>2. gün:</strong> Model değiştirmeyi deneyin. Ollama ile farklı bir model indirin
@@ -207,23 +207,23 @@
                         aynı belge sorularını nasıl yanıtladıklarını karşılaştırın.</li>
                     <li><strong>3. gün:</strong> Karmaşık, çok sayfalı bir rapor yükleyin. Anlamsal parçalamanın bunu
                         mantıksal bloklara nasıl ayırdığına dikkat edin.</li>
-                    <li><strong>4. gün:</strong> Düzenleyin. Farklı projeler için ayrı workspace’ler oluşturun (örneğin
+                    <li><strong>4. gün:</strong> Düzenleyin. Farklı projeler için ayrı çalışma alanları oluşturun (örneğin
                         “Finans”, “Kod tabanı”, “Hukuk”).</li>
-                    <li><strong>5. gün ve sonrası:</strong> Genel Knowledge Base’inizi kurun. StarkLLM’i kalıcı
+                    <li><strong>5. gün ve sonrası:</strong> Genel Bilgi Tabanınızı kurun. StarkLLM’i kalıcı
                         notlar klasörünüze yönlendirin; böylece onu tüm sohbet oturumlarında sorgulayabilirsiniz.</li>
                 </ol>
             </section>
 
             <section id="workspaces">
-                <h2>10. Workspace oluşturma</h2>
-                <p>Workspace’ler verilerinizi yalıtır. Sol kenar çubuğunda yeni bir bağlam oluşturmak için “New Workspace” (yeni workspace) düğmesine tıklayın.
-                    Örneğin bir “Legal Review” (hukuki inceleme) workspace’i ve ayrı bir “Market Research” (pazar araştırması) workspace’i oluşturabilirsiniz.
-                    Bir workspace’teki belgeler ve sohbetler bir diğerini kirletemez.</p>
+                <h2>10. Çalışma alanı oluşturma</h2>
+                <p>Çalışma alanları verilerinizi yalıtır. Sol kenar çubuğunda yeni bir bağlam oluşturmak için “Yeni Çalışma Alanı” düğmesine tıklayın.
+                    Örneğin bir “Hukuki inceleme” çalışma alanı ve ayrı bir “Pazar araştırması” çalışma alanı oluşturabilirsiniz.
+                    Bir çalışma alanındaki belgeler ve sohbetler bir diğerini kirletemez.</p>
             </section>
 
             <section id="documents">
                 <h2>11. Belge yükleme ve en iyi uygulamalar</h2>
-                <p>Bir workspace’in içinde “Upload Document” (belge yükle) düğmesine tıklayın veya desteklenen dosyaları (100 MB’a kadar PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, günlükler ve görüntüler gibi belgeleri ve 500 MB’a kadar MP3, M4A, WAV veya bir videonun sesi gibi kayıtları) belirlenen alana sürükleyip bırakın. StarkLLM belgeyi arka planda
+                <p>Bir çalışma alanının içinde “Dosya yükle” düğmesine tıklayın veya desteklenen dosyaları (100 MB’a kadar PDF, Word, Excel, PowerPoint, EPUB, TXT, Markdown, CSV, JSON, XML, HTML, günlükler ve görüntüler gibi belgeleri ve 500 MB’a kadar MP3, M4A, WAV veya bir videonun sesi gibi kayıtları) belirlenen alana sürükleyip bırakın. StarkLLM belgeyi arka planda
                     işler: metni çıkarır, anlamsal parçalar üretir ve vektörleri yerel ChromaDB’ye gömer.
                 </p>
 
@@ -237,12 +237,12 @@
 
             <section id="inbox">
                 <h2>12. Gelen kutusu, dosyalar ve son tarihler</h2>
-                <p>Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin (pencerenin üzerine sürükleyin veya ana sayfadaki <em>Add a letter or document</em> (mektup veya belge ekle) seçeneğini kullanın). StarkLLM bunu bilgisayarınızda okur ve <strong>Inbox</strong> (gelen kutusu) içinde listeler. Diskinizde hiçbir şeyin adı değiştirilmez, hiçbir şey taşınmaz veya silinmez; StarkLLM yalnızca önerir.</p>
+                <p>Bir mektubu PDF, tarama veya telefonunuzdan bir fotoğraf olarak ekleyin (pencerenin üzerine sürükleyin veya ana sayfadaki <em>Mektup veya belge ekle</em> seçeneğini kullanın). StarkLLM bunu bilgisayarınızda okur ve <strong>Gelen kutusu</strong> içinde listeler. Diskinizde hiçbir şeyin adı değiştirilmez, hiçbir şey taşınmaz veya silinmez; StarkLLM yalnızca önerir.</p>
                 <ul>
                     <li><strong>Neleri okur:</strong> mektubun türü (fatura, hatırlatma, vergi bildirimi, sözleşme, para cezası, borç tahsilatı, kısa mesaj ve daha fazlası), gönderen, mektubun tarihi, referans numaraları (müşteri, sözleşme, vergi numarası ve daha fazlası), tutarlar, banka hesapları ve son tarihler.</li>
                     <li><strong>Her değerin bir kaynağı var:</strong> her değer, mektubun bir sayfasında kelimesi kelimesine bulunur. Üzerine tıklayın; mektup o sayfada, ilgili satır işaretlenmiş olarak açılır.</li>
-                    <li><strong>Dosyalar (cases):</strong> aynı göndericinin mektupları bir araya getirilir; en yakın son tarihli dosya en üstte yer alır. Aynı mektubun fotoğraf ve PDF olarak iki kez eklenmesi, değiştirilmiş bir mektup ve olası bir dolandırıcılık da işaretlenir.</li>
-                    <li><strong>Yeni ve tamamlanan:</strong> yeni mektupların sayısı <em>Inbox</em> yanında gösterilir. Bir mektupla ilgilendiğinizde onu tamamlandı olarak işaretleyin veya ona kendi başlığınızı verin. Notlar, hesap tabloları, günlükler ve fotoğraf betimlemeleri mektup olarak ele alınmaz.</li>
+                    <li><strong>Yazışmalar:</strong> aynı göndericinin mektupları bir araya getirilir; en yakın son tarihli yazışma en üstte yer alır. Aynı mektubun fotoğraf ve PDF olarak iki kez eklenmesi, değiştirilmiş bir mektup ve olası bir dolandırıcılık da işaretlenir.</li>
+                    <li><strong>Yeni ve tamamlanan:</strong> yeni mektupların sayısı <em>Gelen kutusu</em> yanında gösterilir. Bir mektupla ilgilendiğinizde onu tamamlandı olarak işaretleyin veya ona kendi başlığınızı verin. Notlar, hesap tabloları, günlükler ve fotoğraf betimlemeleri mektup olarak ele alınmaz.</li>
                     <li><strong>Ana sayfada son tarihler:</strong> ana sayfa, mektuplarınızda bulunan son tarihleri, randevuları ve ödeme tarihlerini tutar ve sayfa bilgisiyle listeler. <em>Add to calendar</em> (takvime ekle) bunları bir takvim dosyası olarak kaydeder.</li>
                 </ul>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
@@ -284,40 +284,40 @@
             </section>
 
             <section id="knowledge-base">
-                <h2>15. Knowledge Base kullanımı ve en iyi uygulamalar</h2>
-                <p>Knowledge Base özelliği, Windows ana bilgisayarınızdaki yerel bir klasörü bağlamanıza olanak tanır. StarkLLM,
+                <h2>15. Bilgi Tabanı kullanımı ve en iyi uygulamalar</h2>
+                <p>Bilgi Tabanı özelliği, Windows ana bilgisayarınızdaki yerel bir klasörü bağlamanıza olanak tanır. StarkLLM,
                     desteklenen belgeleri (PDF, Word, Excel, PowerPoint, EPUB, metin, Markdown, HTML, günlükler ve görüntüler; kayıtlar hariç) oradan okur (tek yönlü: dosyalar asla değiştirilmez) ve
-                    genel bir vektör koleksiyonuna dizinler. Workspace’e özgü belgelerden farklı olarak Knowledge
-                    Base, her sohbet oturumundan sorgulayabileceğiniz genel bir başvuru kütüphanesi işlevi görür. Sistem,
+                    genel bir vektör koleksiyonuna dizinler. Çalışma alanına özgü belgelerden farklı olarak Bilgi
+                    Tabanı, her sohbet oturumundan sorgulayabileceğiniz genel bir başvuru kütüphanesi işlevi görür. Sistem,
                     bağlanan klasörü 30 saniyede bir yoklar ve yeni veya değiştirilmiş dosyaları otomatik olarak yeniden dizinler.
                     Ana bilgisayarınızdaki kaynak dosyalar asla silinmez veya değiştirilmez.</p>
                 <div class="showcase-frame frame-dark" style="margin: 1.5rem 0;">
                     <img src="/assets/shots/en-kb.webp?v=10" alt="StarkLLM Knowledge Base: bu bilgisayarda okunan ve aranabilir tutulan klasörler, dizinlenmiş dosyalarla (arayüz İngilizce)" class="showcase-img zoomable-img">
                 </div>
 
-                <h3>Knowledge Base klasörü nasıl eklenir?</h3>
-                <p>Uygulamada kenar çubuğundaki <strong>Knowledge Base</strong> bölümünü açın. Belgeleri Knowledge Base klasörünüze koyun (yol <em>Your knowledge base folder</em> altında gösterilir; <strong>Copy Path</strong> yolu kopyalar) veya bu bilgisayardaki başka bir klasörü eklemek için <strong>Add Folder</strong>’a (Klasör ekle) tıklayın. StarkLLM yeni ve değişen dosyaları kendiliğinden okur; <strong>Sync Now</strong> (Şimdi eşitle) bunu hemen yapar. Bunun için terminale gerek yoktur.</p>
+                <h3>Bilgi Tabanı klasörü nasıl eklenir?</h3>
+                <p>Uygulamada kenar çubuğundaki <strong>Bilgi Tabanı</strong> bölümünü açın. Belgeleri Bilgi Tabanı klasörünüze koyun (yol <em>Bilgi Tabanı klasörünüz</em> altında gösterilir; <strong>Yolu Kopyala</strong> yolu kopyalar) veya bu bilgisayardaki başka bir klasörü eklemek için <strong>Klasör Ekle</strong>’ye tıklayın. StarkLLM yeni ve değişen dosyaları kendiliğinden okur; <strong>Şimdi Eşitle</strong> bunu hemen yapar. Bunun için terminale gerek yoktur.</p>
 
                 <div class="alert info">
-                    <h4>Knowledge Base rehberi</h4>
+                    <h4>Bilgi Tabanı rehberi</h4>
                     <p>Yerel klasörünüzü mantıklı bir biçimde, metin ağırlıklı belgelerle (Markdown, TXT, temiz PDF’ler) yapılandırın.
-                        Knowledge Base’i, binlerce ikili sistem dosyası içeren bir kök sürücünün tamamına
+                        Bilgi Tabanını, binlerce ikili sistem dosyası içeren bir kök sürücünün tamamına
                         yönlendirmekten kaçının.</p>
                 </div>
             </section>
 
             <section id="workspace-vs-kb">
-                <h2>16. Workspace mi, Knowledge Base mi?</h2>
+                <h2>16. Çalışma alanı mı, Bilgi Tabanı mı?</h2>
                 <p>StarkLLM, yapay zekâya bağlam kazandırmanın iki yolunu sunar. Aradaki farkı anlamak, bilgilerinizi
                     düzenlemek için çok önemlidir:</p>
 
                 <div class="grid"
                     style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; margin-bottom: 2rem;">
                     <div class="glass-panel" style="border-top: 4px solid #c084fc;">
-                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Workspace belgeleri</h3>
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-bottom: 0.8rem;">Çalışma alanı belgeleri</h3>
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
-                            <li>Kesinlikle tek bir workspace’e bağlıdır.</li>
+                            <li>Kesinlikle tek bir çalışma alanına bağlıdır.</li>
                             <li>Bağlam karışmasını önlemek için işi yalıtılmış tutar.</li>
                             <li>Geçici veya projeye özel belge kümeleri için en uygunudur.</li>
                         </ul>
@@ -329,11 +329,11 @@
                     </div>
 
                     <div class="glass-panel" style="border-top: 4px solid #d4af37;">
-                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Knowledge Base</h3>
+                        <h3 style="color: #d4af37; font-size: 1.3rem; margin-bottom: 0.8rem;">Bilgi Tabanı</h3>
                         <ul
                             style="padding-left: 1.2rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
                             <li>Kalıcı, genel bir bilgi katmanıdır.</li>
-                            <li>Tüm sohbetlerde ve workspace’lerde aynı anda kullanılabilir.</li>
+                            <li>Tüm sohbetlerde ve çalışma alanlarında aynı anda kullanılabilir.</li>
                             <li>Kalıcı başvuru materyali ve kişisel arşivler için en uygunudur.</li>
                         </ul>
                         <div
@@ -368,8 +368,8 @@
                 <h2>19. Süreç içi yerel araçları (MCP ana bilgisayarı) kullanma</h2>
                 <p>Faz 2, güvenli, süreç içi, salt okunur araç çağırma ekler. Açık ağırlıklı bir model isteğinizi yerine getirmek için daha fazla bilgiye ihtiyaç duyduğunu belirlediğinde yapılandırılmış bir araç çağrısı yapar. StarkLLM üç yerleşik araç sunar:</p>
                 <ul>
-                    <li><code>list_workspace_files</code>: Dosya sistemi dışına çıkmadan, geçerli workspace’inizdeki belge adlarını, dosya boyutlarını, parça sayılarını ve yükleme zaman damgalarını bulur.</li>
-                    <li><code>search_local_kb</code>: Eşleşen pasajları bulmak için genel Knowledge Base’inizde hibrit vektör ve BM25 araması yürütür.</li>
+                    <li><code>list_workspace_files</code>: Dosya sistemi dışına çıkmadan, geçerli çalışma alanınızdaki belge adlarını, dosya boyutlarını, parça sayılarını ve yükleme zaman damgalarını bulur.</li>
+                    <li><code>search_local_kb</code>: Eşleşen pasajları bulmak için genel Bilgi Tabanınızda hibrit vektör ve BM25 araması yürütür.</li>
                     <li><code>fetch_cited_chunk</code>: Herhangi bir kaynak gösterimi konumu için saklanan tam pasaj metnini doğrudan Chroma koleksiyonlarından getirir.</li>
                 </ul>
 
@@ -392,7 +392,7 @@
 
             <section id="other-apps">
                 <h2>20. StarkLLM’i diğer programlardan kullanma</h2>
-                <p><strong>Settings &rarr; Other apps</strong> (Ayarlar &rarr; Diğer uygulamalar) altında bu bilgisayardaki programların StarkLLM’i kullanmasına izin verebilirsiniz: VS Code ve Cursor gibi düzenleyiciler, MCP’yi destekleyen yapay zekâ asistanları veya kendi betikleriniz. Belgelerinizde arama yapabilir ve belgeler hakkında soru sorabilirler. Hiçbir şeyi değiştiremez veya silemezler.</p>
+                <p><strong>Ayarlar &rarr; Diğer uygulamalar</strong> altında bu bilgisayardaki programların StarkLLM’i kullanmasına izin verebilirsiniz: VS Code ve Cursor gibi düzenleyiciler, MCP’yi destekleyen yapay zekâ asistanları veya kendi betikleriniz. Belgelerinizde arama yapabilir ve belgeler hakkında soru sorabilirler. Hiçbir şeyi değiştiremez veya silemezler.</p>
                 <ul>
                     <li><strong>Varsayılan olarak kapalı.</strong> Yalnızca bu bilgisayardaki programlar bağlanabilir ve her biri için o sayfada oluşturduğunuz bir anahtar gerekir.</li>
                     <li><strong>İki giriş yolu:</strong> bir MCP sunucusu ve OpenAI uyumlu bir API (<code>/v1</code>). Daha önce <code>/v1</code> API’sini kullandıysanız artık bir anahtar gerektirir.</li>
@@ -407,22 +407,22 @@
                 <h2>21. Temaları ve görünümü özelleştirme</h2>
                 <p>StarkLLM, gündüz ve gece oturumlarında rahatlık için tasarlanmış on üç renk teması içerir. Bunlar sekiz klasik tema:</p>
                 <ul>
-                    <li><strong>Cyberpunk Rose:</strong> Yüksek enerjili pembe, gül rengi ve macenta neon vurgular.</li>
-                    <li><strong>OLED Pitch Black:</strong> OLED ekranlar için optimize edilmiş mutlak #000000 gerçek siyah arka planlar.</li>
-                    <li><strong>Liquid Glass:</strong> Buzlu bulanıklık katmanları ve parlayan kenarlıklarla yarı saydam glassmorphism.</li>
-                    <li><strong>Matrix Emerald:</strong> Terminalden ilham alan siberpunk zümrüt yeşili.</li>
-                    <li><strong>Sunset Volcano:</strong> Sıcak volkanik kehribar ve turuncu gradyan vurgular.</li>
-                    <li><strong>Arctic Frost:</strong> Serin camgöbeği ve kutup mavisi minimal tonlar.</li>
-                    <li><strong>Midnight Indigo:</strong> Derin kozmik mor ve menekşe (varsayılan).</li>
-                    <li><strong>Daylight Minimal:</strong> Yüksek gün ışığı kontrastına sahip temiz, net açık mod.</li>
+                    <li><strong>Siberpunk Gül:</strong> Yüksek enerjili pembe, gül rengi ve macenta neon vurgular.</li>
+                    <li><strong>OLED Zifiri Siyah:</strong> OLED ekranlar için optimize edilmiş mutlak #000000 gerçek siyah arka planlar.</li>
+                    <li><strong>Sıvı Cam:</strong> Buzlu bulanıklık katmanları ve parlayan kenarlıklarla yarı saydam glassmorphism.</li>
+                    <li><strong>Matrix Zümrüt:</strong> Terminalden ilham alan siberpunk zümrüt yeşili.</li>
+                    <li><strong>Gün Batımı Volkanı:</strong> Sıcak volkanik kehribar ve turuncu gradyan vurgular.</li>
+                    <li><strong>Arktik Ayaz:</strong> Serin camgöbeği ve kutup mavisi minimal tonlar.</li>
+                    <li><strong>Gece Yarısı Çivit:</strong> Derin kozmik mor ve menekşe (varsayılan).</li>
+                    <li><strong>Minimal Gün Işığı:</strong> Yüksek gün ışığı kontrastına sahip temiz, net açık mod.</li>
                 </ul>
-                <p>Beş desenli tema, çizilmiş bir arka plan ekler: Doodle Chat, Doodle Night, Flower Meadow, Matrix Code ve Starry Night.</p>
+                <p>Beş desenli tema, çizilmiş bir arka plan ekler: Karalama Sohbet, Karalama Gece, Çiçek Çayırı, Matrix Kodu ve Yıldızlı Gece.</p>
 
                 <h3>Temalar nasıl değiştirilir?</h3>
                 <p>Temaları iki yolla değiştirebilirsiniz:</p>
                 <ul>
                     <li><strong>Quick Switcher (hızlı değiştirici):</strong> Sol kenar çubuğunun altındaki Palet simgesine (&#127912;) tıklayın. Bir açılır pencere hemen açılır; uygulamak için herhangi bir temaya tıklayın, anında uygulanır.</li>
-                    <li><strong>Settings Gallery (ayarlar galerisi):</strong> Kenar çubuğundan Settings’i açın, <strong>Appearance</strong> bölümüne gidin ve canlı renk noktaları, gradyan çubukları ve açıklamalarla tüm tema kartlarına göz atın.</li>
+                    <li><strong>Ayarlar galerisi:</strong> Kenar çubuğundan Ayarlar’ı açın, <strong>Görünüm</strong> bölümüne gidin ve canlı renk noktaları, gradyan çubukları ve açıklamalarla tüm tema kartlarına göz atın.</li>
                 </ul>
                 <p>Etkin temanız, istemci tarafı depolama sayesinde tarayıcı sekmeleri ve sistem yeniden başlatmaları boyunca otomatik olarak hatırlanır.</p>
             </section>
@@ -446,7 +446,7 @@
                     <li><strong>Klasör oluşturma:</strong> Oturumları proje, müşteri veya konuya göre gruplamak için kenar çubuğu konuşma listesindeki <strong>+ New Folder</strong> (yeni klasör) simgesine tıklayın (örneğin “Mali denetimler”, “Hukuki dosyalar”, “Kod incelemeleri”).</li>
                     <li><strong>Sürükleme veya atama:</strong> Etkin bir konuşmayı, üç noktalı bağlam menüsü veya klasör seçimi açılır listesi aracılığıyla bir klasöre atayın.</li>
                     <li><strong>Daraltılabilir ağaç:</strong> Görsel karmaşa olmadan etkin akışınıza odaklanmak için klasörleri genişletin veya daraltın.</li>
-                    <li><strong>Klasör filtreleme:</strong> Konuşmaları belirli bir klasörde veya tüm workspace’te gerçek zamanlı arayın.</li>
+                    <li><strong>Klasör filtreleme:</strong> Konuşmaları belirli bir klasörde veya tüm çalışma alanında gerçek zamanlı arayın.</li>
                 </ul>
             </section>
 
@@ -478,7 +478,7 @@
                 <ul>
                     <li><strong>VRAM ve GPU kullanımı:</strong> Seçtiğiniz modelin (3B, 7B, 14B) sistem RAM’ine taşmadan GPU VRAM’inize rahatça sığdığından emin olmak için ayrılan video belleğini izleyin.</li>
                     <li><strong>Sistem sağlığı:</strong> FastAPI arka ucu, ChromaDB vektör deposu ve Ollama çıkarım arka plan programı için anlık durum göstergeleri.</li>
-                    <li><strong>Workspace ölçümleri:</strong> Toplam dizinlenen parça sayısı, etkin belgeler, toplam konuşmalar ve son sohbet oturumlarınıza hızlı erişim bağlantıları.</li>
+                    <li><strong>Çalışma alanı ölçümleri:</strong> Toplam dizinlenen parça sayısı, etkin belgeler, toplam konuşmalar ve son sohbet oturumlarınıza hızlı erişim bağlantıları.</li>
                 </ul>
             </section>
 

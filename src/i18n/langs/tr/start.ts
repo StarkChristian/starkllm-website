@@ -1,4 +1,102 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/start.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyStart } from '../../legacy';
-export default legacyStart('tr');
+// Ana sayfa (2026). {v} = sürüm, {mb} = yükleyici boyutu (MB); ikisi de derleme sırasında GitHub sürümünden gelir.
+// Her ifade v2.6.0'ın RELEASE_NOTES.md dosyasına ve belgelerine göre denetlenmiştir (uygulama deposu).
+export default {
+  meta: {
+    title: 'StarkLLM · Belgeleriniz için mahremiyetinizi koruyan yapay zekâ, Windows bilgisayarınızda',
+    description: 'StarkLLM mektuplarınızı ve belgelerinizi kendi Windows bilgisayarınızda okur ve yanıtı bulduğu sayfayla birlikte verir. Ücretsiz ve açık kaynaklı, telemetri yok. Çevrimiçi özellikler yalnızca siz açtığınızda çalışır.',
+  },
+  hero: {
+    news: '2.6.0’da yeni',
+    newsText: 'Telefonunuz, evden uzaktayken de',
+    h1: ['Belgelerinize sorun.', 'Onlar bilgisayarınızda kalsın.'],
+    lede: 'StarkLLM mektuplarınızı, sözleşmelerinizi ve kitaplarınızı Windows bilgisayarınızda okur, son tarihleri ve tutarları bulur ve yanıtı, bunları bulduğu sayfayla birlikte verir. Yapay zekâ modelleri Ollama aracılığıyla bilgisayarınızda çalışır. Siz açmadıkça hiçbir şey çevrimiçi olmaz.',
+    cta1: 'Windows için indirin',
+    cta2: 'Nasıl çalıştığını izleyin',
+    meta: 'Sürüm {v} · {mb} MB · Windows 10 ve 11 · Ücretsiz, Apache 2.0',
+  },
+  promises: {
+    h2: 'Kodda tutulan üç söz.',
+    items: [
+      { k: 'Yerel', title: 'Bilgisayarınızda çalışır.', text: 'Belgeler, sohbetler, arama dizini ve yapay zekâ modelleri kendi diskinizde ve kendi ekran kartınızda kalır. Bir sunucuda hesap yok, telemetri yok.' },
+      { k: 'Kaynaklı', title: 'Her yanıt kaynağını gösterir.', text: 'Belgelerinizle ilgili yanıtlar dosyayı ve sayfayı belirtir. Tek tıklamayla sayfa, ilgili pasaj işaretlenmiş olarak açılır; böylece harekete geçmeden önce kontrol edebilirsiniz.' },
+      { k: 'Önce sorar', title: 'Harekete geçmeden önce sorar.', text: 'Web görevleri ve terminal her adımı önce gösterir; satın alan, gönderen, silen veya bir dosyayı değiştiren her şeyden önce onayınızı bekler.' },
+    ],
+  },
+  bento: {
+    h2: 'Sizin için yaptıkları.',
+    lede: 'StarkLLM’in yaptığı işlerden dokuzu; aksi belirtilmedikçe hepsi bilgisayarınızda.',
+    items: [
+      { tag: 'Gelen kutusu', title: 'Mektuplar okunur ve dosyalanır', text: 'Altı dilde faturalar, ödeme hatırlatmaları, vergi bildirimleri ve sözleşmeler: gönderen, tutarlar, hesaplar ve son tarihler, her biri bir sayfada kelimesi kelimesine bulunur. Her gönderen için bir yazışma, en yakın son tarih en üstte.', shot: '02-inbox', size: 'w4' },
+      { tag: 'Kaynaklar', title: 'Açabileceğiniz kaynaklar', text: 'Bir yanıtın altındaki kaynağa tıklayın; belge o sayfada, pasaj işaretlenmiş olarak açılır.', shot: '04-source-page', size: 'w2' },
+      { tag: 'Güvenlik', title: 'Sahte mektuplara karşı uyarılar', text: 'Bir mektup hediye çekiyle, bir bağlantı üzerinden veya yeni bir hesaba ödeme istediğinde ya da yapay zekâ asistanlarına gizli bir not sakladığında kırmızı bir kutu çıkar.', shot: '05-scam-warning', size: 'w2' },
+      { tag: 'Kitaplar', title: 'Bütün kitaplar', text: 'Büyük belgeler için arka planda bölüm özetleri yazılır; böylece “Sonu nasıl bitiyor?” sorusu da sayfalarıyla yanıt bulur.', shot: '06-book-summary', size: 'w2' },
+      { tag: 'Görseller', title: 'Fotoğraflar, taramalar ve ekran görüntüleri', text: 'Fotoğraflardaki ve taramalardaki metin bilgisayarınızda okunur. Bir ekran görüntüsü yapıştırın; bilgisayarınızdaki bir görme modeli yanıt verir.', shot: '07-image-question', size: 'w2' },
+      { tag: 'Kayıtlar', title: 'Toplantılar belgeye dönüşür', text: 'Kayıtlar bilgisayarınızda zaman bilgileriyle yazıya dökülür. Ardından onlar hakkında da her belgede olduğu gibi soru sorarsınız.', shot: '08-recording', size: 'w3' },
+      { tag: 'Web görevleri', title: 'İzleyebileceğiniz web görevleri', text: 'StarkLLM web sitelerinde kendi tarayıcı penceresinde çalışır. Her adımı görürsünüz; oturum açma ve ödemeler sizde kalır.', shot: '09-web-task', size: 'w3' },
+      { tag: 'Terminal', title: 'Kod yardımı', text: 'Seçtiğiniz tek bir proje klasöründe: her değişiklik önce gösterilir, her komut onayınızdan sonra çalışır ve geri alınabilir.', shot: '10-terminal', size: 'w3' },
+      { tag: 'Modeller', title: 'Yan yana iki model', text: 'Aynı soruyu ikinci bir yerel modele sorun ve daha iyi yanıtı tutun.', shot: '11-compare-models', size: 'w3' },
+    ],
+    more: 'Tüm özellikler ve sınırları',
+  },
+  tour: {
+    h2: 'Nasıl çalıştığını izleyin.',
+    lede: 'StarkLLM 2.6.0’dan altyazılı, sessiz kısa videolar. Yalnızca örnek veriler.',
+  },
+  privacy: {
+    h2: 'Verileriniz burada kalır.',
+    lede: 'Soldaki her şey bilgisayarınızda olur. Sağ taraf yalnızca siz açtığınızda çevrimiçi olur ve Ayarlar › Gizlilik ve ağ her bağlantıyı listeler.',
+    pcTitle: 'Bilgisayarınızda',
+    pcSub: 'her zaman, tamamen çevrimdışıyken de',
+    pc: ['Belgeler, taramalar ve fotoğraflar', 'Sohbetler ve arama dizini', 'Yapay zekâ modelleri (Ollama)', 'Gelen kutusu, son tarihler ve tutarlar', 'Kayıtlar ve metinleri'],
+    netTitle: 'Yalnızca siz açtığınızda çevrimiçi',
+    netSub: 'siz açana veya başlatana kadar kapalı',
+    net: [
+      { k: 'Web araması', v: 'DuckDuckGo, ardından Startpage, Mojeek, Wikipedia' },
+      { k: 'Web görevi', v: 'yalnızca görevinizdeki siteler' },
+      { k: 'Güncelleme denetimi', v: 'ilk başlatmada bir kez sorulur' },
+      { k: 'Telefon aktarıcısı', v: 'uçtan uca şifreli, telefon başına' },
+      { k: 'Bulut modelleri', v: 'yalnızca seçtiğiniz bir sağlayıcı' },
+    ],
+    offline: '“Tamamen çevrimdışı”: tek bir anahtar bunların hepsini reddeder.',
+    more: 'StarkLLM’de gizlilik nasıl işler',
+  },
+  phone: {
+    h2: 'Telefonunuz sorar. Bilgisayarınız yanıtlar.',
+    lede: 'Android için StarkLLM uygulaması sorularınızı ve mektup fotoğraflarınızı bilgisayarınıza gönderir ve yanıtları kaynaklarıyla birlikte gösterir. Belgeler ve yapay zekâ modeli bilgisayarda kalır.',
+    home: { title: 'Evde, doğrudan', text: 'Ev ağınız üzerinden, şifreli olarak; sertifikasını telefonun eşleştirme sırasında doğruladığı bilgisayara.' },
+    away: { title: 'Evden uzakta, aktarıcı üzerinden', text: 'Yalnızca izin verdiğiniz bir telefon için. Telefondan bilgisayarınıza kadar şifreli: aktarıcı, okuyamadığı baytları yalnızca iletir.' },
+    badge: 'Android · önizleme',
+    more: 'Telefon uygulaması hakkında',
+  },
+  audience: {
+    h2: 'Evrak işi olan herkes için.',
+    items: [
+      { title: 'Haneler', text: 'Ailenin faturaları, ödeme hatırlatmaları ve vergi mektupları tek bir yerde; en yakın son tarih başlangıç sayfasında.' },
+      { title: 'Serbest çalışanlar', text: 'Sözleşmeler, faturalar ve bildirimler: tutarlar ve tarihler, geldikleri sayfayla birlikte; hiçbir şey yüklenmez.' },
+      { title: 'Öğrenciler ve araştırmacılar', text: 'Bütün kitaplar, makaleler ve ders kayıtları; sayfayı belirten yanıtlarla.' },
+      { title: 'Küçük ofisler', text: 'Bir bilgisayarda birden fazla hesap, diskte koruma ve şifreli yedekler. Hiçbir şey için bulut gerekmez.' },
+    ],
+  },
+  download: {
+    h2: 'Ücretsiz. Açık kaynaklı. Sizin.',
+    lede: 'İhtiyaç duyduğu her şeyi içeren tek bir yükleyici. StarkLLM Ollama’yı sizin için kurabilir, ardından yapay zekâ modellerini bir kez indirir (yaklaşık 5 GB).',
+    req: 'Windows 10 veya 11 (64 bit) · 16 GB RAM önerilir · 15 GB boş disk alanı',
+    btn: 'StarkLLM {v} sürümünü indirin',
+    all: 'Sağlama toplamları ve kurulum adımları',
+    size: 'Yükleyici',
+    version: 'Sürüm',
+    released: 'Yayın tarihi',
+    sha: 'SHA-256',
+  },
+  faq: {
+    h2: 'Sorular ve yanıtlar.',
+    items: [
+      ['StarkLLM ücretsiz mi?', 'Evet. StarkLLM, Apache 2.0 lisansı altında ücretsiz ve açık kaynaklıdır; kişisel, araştırma ve ticari kullanım için. Hesap, abonelik veya ücretli bir sürüm yoktur.'],
+      ['Bilgisayarımdan dışarı bir şey çıkar mı?', 'Siz açmadıkça hayır. Web araması, web görevleri, bulut modelleri, web’den içe aktarmalar, piyasa fiyatları, telefon aktarıcısı ve güncelleme denetimi, siz açana veya başlatana kadar kapalıdır. Ayarlar › Gizlilik ve ağ her bağlantıyı listeler ve “Tamamen çevrimdışı” hepsini reddeder.'],
+      ['Bilgisayarımın neye ihtiyacı var?', 'Windows 10 veya 11 (64 bit), 16 GB RAM (en az 8 GB), 15 GB boş disk alanı ve StarkLLM’in sizin için kurabileceği Ollama. 8 GB video belleğine sahip bir NVIDIA ekran kartı yanıtları çok hızlandırır; tümleşik AMD Radeon ve Intel Arc veya Iris grafik birimleri de kullanılır.'],
+      ['Docker gerekli mi?', 'Hayır. StarkLLM 2.2 sürümünden beri kendi motorunu yükleyicinin içinde getirir. Docker Desktop yalnızca ileri düzey kullanıcılar için bir seçenektir, o kadar.'],
+      ['Telefon uygulaması var mı?', 'Evet, Android için; Google Play’de kapalı testte bir önizleme olarak. Bilgisayarınızla birlikte çalışır: belgeler ve yapay zekâ modeli bilgisayarda kalır. iPhone uygulaması yoktur.'],
+      ['Yanıtlara güvenebilir miyim?', 'Kontrol edin. Yapay zekâ modelleri küçük yerel modellerdir ve yanılabilir. Bu yüzden belgelerinizle ilgili her yanıt kaynağını belirtir ve belgelerinizde bulunmayan bir alıntı yanıtın altında işaretlenir.'],
+    ],
+  },
+};

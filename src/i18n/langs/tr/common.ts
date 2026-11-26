@@ -1,4 +1,56 @@
-// TODO translate: phase 2 replaces this file with a translation shaped like ../en/common.ts (see docs/translating-2026.md).
-// Until then it is built from this language's older texts where they exist, and English otherwise (src/i18n/legacy.ts).
-import { legacyCommon } from '../../legacy';
-export default legacyCommon('tr');
+// 2026 sitesinin her sayfasında ortak metinler: gezinme, alt bilgi, güven çubuğu, medya etiketleri, kapanış çağrısı.
+// Şekli ../en/common.ts ile aynıdır (aynı anahtarlar, aynı liste uzunlukları).
+export default {
+  nav: {
+    features: 'Özellikler',
+    phone: 'Telefon',
+    privacy: 'Gizlilik',
+    manual: 'Kılavuz',
+    help: 'Yardım',
+    about: 'Hakkında',
+    download: 'İndir',
+    github: 'GitHub’da StarkLLM',
+    menu: 'Menü',
+    language: 'Dil',
+    theme: 'Açık ve koyu mod arasında geçiş yapın',
+  },
+  footer: {
+    tagline: 'Belgeleriniz için mahremiyetinizi koruyan yapay zekâ, kendi Windows bilgisayarınızda.',
+    product: 'Ürün',
+    learn: 'Öğrenin',
+    project: 'Proje',
+    legal: 'Yasal',
+    changelog: 'Sürüm geçmişi',
+    tech: 'Nasıl çalışır',
+    contact: 'İletişim',
+    github: 'GitHub’daki kaynak kodu',
+    codeSigning: 'Kod imzalama politikası',
+    privacyEn: 'Gizlilik politikası (İngilizce çeviri)',
+    disclaimer: 'Olduğu gibi, hiçbir garanti veya sorumluluk üstlenilmeden sunulur. Yanıtlar yerel yapay zekâ modellerinden gelir ve yanlış olabilir: önemli olan her şeyde kaynağı kontrol edin.',
+    site: 'Bu web sitesi çerez yerleştirmez, analiz aracı kullanmaz ve başka sunuculardan hiçbir şey yüklemez.',
+    bottom: '© 2026 Christian Stark · Apache 2.0',
+  },
+  trust: [
+    { icon: 'shield', k: 'İmzalı', v: '“Open Source Developer Christian Stark” adına' },
+    { icon: 'check', k: 'Apache 2.0', v: 'Ücretsiz ve açık kaynaklı' },
+    { icon: 'eyeoff', k: 'Telemetri yok', v: 'Analiz yok, hesap yok' },
+    { icon: 'list', k: 'SBOM', v: 'Her sürümle birlikte' },
+    { icon: 'code', k: 'GitHub’da', v: 'Kaynak kodunun her satırı' },
+  ],
+  media: {
+    shotPending: 'StarkLLM 2.6.0’dan ekran görüntüsü eklenecek',
+    videoPending: 'StarkLLM 2.6.0’dan video eklenecek',
+    pause: 'Videoyu duraklat',
+    play: 'Videoyu oynat',
+    demo: 'Uydurma adlar ve sayılarla örnek veriler.',
+  },
+  cta: {
+    h2: 'Kendi belgelerinizle deneyin.',
+    text: 'Kişisel, araştırma ve ticari kullanım için ücretsiz. Windows 10 ve 11, 64 bit.',
+    btn: 'Windows için indirin',
+    alt: 'Kılavuzu okuyun',
+  },
+  limits: 'Sınırlar',
+  onThisPage: 'Bu sayfada',
+  more: 'Daha fazla bilgi',
+};

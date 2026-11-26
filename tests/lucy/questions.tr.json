@@ -339,7 +339,8 @@
    "q": "Web sitesi çerez kullanıyor mu?",
    "pages": [
     "/tr/about",
-    "/tr/legal"
+    "/tr/legal",
+    "/tr/privacy"
    ]
   },
   {
@@ -354,7 +355,8 @@
    "q": "Web sitesi ziyaretçiler hakkında hangi verileri saklıyor?",
    "pages": [
     "/tr/about",
-    "/tr/legal"
+    "/tr/legal",
+    "/tr/privacy"
    ]
   },
   {
